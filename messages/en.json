@@ -55,5 +55,35 @@
     "apply": "Apply",
     "success": "You get 10% discount",
     "wrongPromo": "Wrong promo code"
+  },
+  "intro": {
+    "subtitleP1": "Korean product",
+    "subtitleP2": "Official distributor",
+    "title": "Exoxe Exosome in Israel",
+    "text": "MitoDerm combines advanced aesthetic technology with science to bring innovative solutions to the field of aesthetics. Are you a doctor or cosmetologist looking to enhance your services? Let's innovate together!",
+    "eventSubtitle": "Intimate and Inspiring Conference",
+    "eventTitle": "Join Conference by Mitoderm"
+  },
+  "howToUse": {
+    "titleP1": "How ",
+    "titleP2": "Exosome",
+    "titleP3": " can be used",
+    "item1": "Post-Surgery scars Recovery",
+    "item2": "Acne and post-acne Scars",
+    "item3": "Hair Loss treatment",
+    "item4": "Facial Skin Rejuvenation"
+  },
+  "about": {
+    "titleP1": "What is ",
+    "titleP2": "Exosome",
+    "text1": "Exosomes have gained attention in the field of aesthetics due to their potential for ",
+    "text1Colored": "skin rejuvenation, anti-aging effects, and breakthroughs in treating acne scars and hair loss.",
+    "text2": "These exosomes are rich in growth factors, cytokines, and other bioactive molecules that have the potential to promote tissue regeneration, collagen synthesis, and provide a more radiant youthful appearance. Combined with ",
+    "text2Colored": "advanced technologies, exosomes offer innovative solutions for improving skin texture, reducing scarring, and revitalizing hair follicles.",
+    "itemExp1": "Milliard cells",
+    "itemExp2": "Inflammation Reduction",
+    "itemExp3": "Growth factors and cytokines",
+    "itemExp4": "Increase in intracellular collagen and hyaluronic acid.",
+    "itemExp5": "Nanometers"
   }
 }
