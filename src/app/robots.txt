@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://mitoderm.com/sitemap.xml
+
+Disallow: 

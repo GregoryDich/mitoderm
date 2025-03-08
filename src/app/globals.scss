@@ -1,0 +1,92 @@
+:root {
+  --font-Rubik: 'Rubik', sans-serif;
+  --fontSizeH1: 88px;
+  --fontSizeH2: 48px;
+  --fontSizeP1: 24px;
+  --fontSizeP2: 16px;
+  --fontSizeMobH1: 44px;
+  --fontSizeMobH2: 24px;
+  --fontSizeMobP1: 18px;
+  --fontSizeMobP2: 14px;
+  --fontSizeMobExtra: 12px;
+  --colorAccentDark: #451715;
+  --colorAccentLight: #9c3e5c;
+  --colorBG: #faf5f7;
+  --colorWhite: #fff;
+  --colorDark: #222222;
+  --contentWidthDesktop: 1200px;
+  --buttonAccentColor: #940030;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #000;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+  color: var(--colorAccentDark);
+  background-color: var(--colorBG);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+section {
+  scroll-margin-top: 60px;
+}
+
+.formPage {
+  width: 100%;
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.successPage {
+  padding-top: 60px;
+  height: calc(100vh - 195px);
+}
+
+@media screen and (max-width: 1224px) {
+  body.modalOpened {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  .formPage {
+    min-height: unset;
+    height: auto;
+  }
+  .successPage {
+    padding-top: 72px;
+    height: calc(100vh - 284px);
+  }
+}

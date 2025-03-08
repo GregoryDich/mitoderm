@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Главная страница (EN) -->
+  <url>
+    <loc>https://www.mitoderm.com/en</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <!-- hreflang примеры: если у вас есть /he, /ru -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mitoderm.com/en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.mitoderm.com/he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mitoderm.com/ru"/>
+  </url>
+
+  <!-- Якорь #solution (товар, product) -->
+  <url>
+    <loc>https://www.mitoderm.com/en#solution</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Якорь #gallery (результаты) -->
+  <url>
+    <loc>https://www.mitoderm.com/en#gallery</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Якорь #mission (о нас) -->
+  <url>
+    <loc>https://www.mitoderm.com/en#mission</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Страница Event -->
+  <url>
+    <loc>https://www.mitoderm.com/en/event</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
