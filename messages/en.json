@@ -142,5 +142,27 @@
     "textP5": "Our commitment to quality and professionalism in a supportive environment empowers you, promotes your personal growth, and  ",
     "textP6": "helps you excel at the professional level. ",
     "textP7": "At Mitoderm, we provide advanced solutions for skin rejuvenation, anti-aging, hair thinning, and other skin concerns, tailored to your unique needs. Be part of our family today!"
+  },
+  "contactUs": {
+    "item1title": "Contact Us",
+    "phone": "Phone",
+    "phoneText": "For all details: ",
+    "address": "Address",
+    "addressText": "רפאל איתן 38, Ramat Gan, 5590500",
+    "email": "Email",
+    "emailText": "info@mitoderm.com",
+    "item2title": "Office Hours",
+    "workWeek": "Sunday - Thursday",
+    "friday": "Friday",
+    "fridayText": "By appointment only",
+    "saturday": "Saturday",
+    "closed": "Closed",
+    "followUs": "Follow us on"
+  },
+  "footer": {
+    "copyright": "© 2024 Mitoderm. All Rights Reserved.",
+    "accessibility": "Accessibility Statement",
+    "privacy": "Privacy Policy",
+    "group": "SinoSciences Group"
   }
 }
