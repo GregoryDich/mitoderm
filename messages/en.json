@@ -164,5 +164,24 @@
     "accessibility": "Accessibility Statement",
     "privacy": "Privacy Policy",
     "group": "SinoSciences Group"
+  },
+  "accessibility": {
+    "title": "Accessibility Declaration for mitoderm.com and mitoderm.co.il",
+    "general": "General Information",
+    "websites": "The websites mitoderm.com and mitoderm.co.il are committed to providing equal access to all digital services for people with disabilities in accordance with international accessibility standards. We are continuously working to improve the usability of our websites to make them accessible to a wide audience.",
+    "interfaceTitle": "Interface Accessibility",
+    "interfaceText": "The website is adapted following WCAG 2.1 guidelines (Levels A and AA), including:",
+    "readers": "Support for screen readers.",
+    "navigating": "Navigation via keyboard.",
+    "contrast": "High-contrast design for visually impaired users.",
+    "alt": "Image descriptions using the ALT attribute.",
+    "scaling": "Easy font scaling and interface adjustments.",
+    "feedbackTitle": "Feedback",
+    "difficulties": "If you encounter difficulties using the mitoderm.com or mitoderm.co.il websites, please let us know:",
+    "email": "Email: ",
+    "phone": "Phone: ",
+    "feedbackHelp": "Your feedback helps us improve accessibility.",
+    "obligationsTitle": "Legal Obligations",
+    "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes."
   }
 }
