@@ -85,5 +85,35 @@
     "itemExp3": "Growth factors and cytokines",
     "itemExp4": "Increase in intracellular collagen and hyaluronic acid.",
     "itemExp5": "Nanometers"
+  },
+  "solution": {
+    "titleP1": "Our Solution - ",
+    "titleP2": "Exoxe",
+    "titleP3": " Exosome",
+    "subtitle": "Only for professional usage",
+    "item1title": "Pure exo - lyophilized powder 50mg",
+    "item1textP1": "Hydrolyzed Collagen - 886,000PPM",
+    "item1textP2": "Collagen - 100,000PPM",
+    "item1textP3": "Sodium Hyaluronate",
+    "item1textP4": "Trehalose",
+    "item2title": "Sterilized solution 5ml",
+    "item2textP1": "Aqua",
+    "item2textP2": "Sodium Hyaluronate",
+    "usage": "Only for professional usage."
+  },
+  "faq": {
+    "title": "FAQs",
+    "item1": {
+      "title": "What are exosomes?",
+      "text": "Exosomes are tiny vesicles, rich in growth factors, proteins, and regenerative signals. These powerful messengers interact with your body's cells, stimulating healing and rejuvenation."
+    },
+    "item2": {
+      "title": "How do exosomes work?",
+      "text": "Exosomes deliver growth factors, proteins, and regenerative signals directly to your body's target cells. When applied to a treatment area, they communicate with these cells to promote repair, regeneration, and rejuvenation. By harnessing your body's natural healing processes, exosome therapy stimulates tissue renewal, boosts collagen production, and enhances overall cellular health. The result is significant improvement in the treated area—whether it's skin, hair or other specific regions."
+    },
+    "item3": {
+      "title": "What conditions are helped by exosomes?",
+      "text": "At Mitoderm, our exosome therapy offers transformative solutions—including skin rejuvenation to enhance texture and reduce signs of aging; hair restoration to promote growth and address thinning hair; reduction of acne scars for smoother skin and post-procedure healing to accelerate recovery—all by unlocking your body's natural ability to renew."
+    }
   }
 }
