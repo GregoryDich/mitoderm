@@ -1,0 +1,59 @@
+{
+  "navigation": {
+    "product": "Продукция",
+    "results": "Результаты",
+    "about": "О нас",
+    "info": "Доп. информация",
+    "contact": "Связаться с нами",
+    "event": "Ивент",
+    "agenda": "Программа"
+  },
+  "buttons": {
+    "contact": "Связаться с нами",
+    "learnMore": "Узнать больше",
+    "moreAbout": "Подробнее о продукте",
+    "contactForPrice": "Уточнить цену",
+    "contactForInfo": "Получить дополнительную информацию",
+    "requestCallback": "Заказать обратный звонок",
+    "contactForSolutions": "Индивидуальные решения",
+    "seat": "Забронировать место",
+    "reserveSeat": "Зарезериваровать"
+  },
+  "form": {
+    "titleP1": "Получите персонализированные",
+    "titleP2": "решения ",
+    "titleP3": "для вашей практики",
+    "subtitle": "Наш специалист свяжется с вами",
+    "placeholderInputName": "Имя",
+    "placeholderInputID": "Номер удостоверения личности",
+    "placeholderEmailName": "E-mail",
+    "placeholderPhoneName": "Номер телефона",
+    "placeholderProfession": "Профессия",
+    "checkboxLabel": "Я согласен(а) с правилами MitoDerm *",
+    "sharing": "Ваша информация не будет передана третьим лицам *",
+    "errors": {
+      "name_length": "Имя должно содержать не менее 3 символов",
+      "name_required": "Имя обязательно к заполнению",
+      "id_required": "Номер У.Л. обязателен",
+      "id_length": "Номер должен содержать 9 цифр",
+      "email_required": "E-mail обязателен к заполнению",
+      "email_invalid": "Некорректный формат E-mail",
+      "phone_required": "Номер телефона обязателен к заполнению",
+      "phone_length": "Номер телефона должен содержать не менее 9 символов",
+      "profession_length": "Profession name must be at least 3 characters",
+      "profession_required": "Profession name is required"
+    },
+    "sent": {
+      "mobTitle": "Поздравляем!",
+      "text": "Ваша форма успешно ",
+      "textColored": "отправлена"
+    },
+    "eventTitle": "Забронируйте место на мероприятие",
+    "numberTickets": "Билеты",
+    "total": "Итого",
+    "promo": "Промокод",
+    "apply": "Применить",
+    "success": "You get 10% discount",
+    "wrongPromo": "Wrong promo code"
+  }
+}
