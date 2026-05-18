@@ -9,10 +9,18 @@ interface Props {
   accent: ProductAccent;
   alt: string;
   label?: string;
+  sublabel?: string;
   className?: string;
 }
 
-const ProductMedia: FC<Props> = ({ image, accent, alt, label, className }) => {
+const ProductMedia: FC<Props> = ({
+  image,
+  accent,
+  alt,
+  label,
+  sublabel,
+  className,
+}) => {
   const [failed, setFailed] = useState(false);
   const showImage = image && !failed;
 
@@ -31,7 +39,13 @@ const ProductMedia: FC<Props> = ({ image, accent, alt, label, className }) => {
           onError={() => setFailed(true)}
         />
       ) : (
-        <span className={styles.placeholder}>{label ?? alt}</span>
+        <>
+          <span className={styles.orb} aria-hidden="true" />
+          <span className={styles.frame} aria-hidden="true">
+            {label && <span className={styles.label}>{label}</span>}
+            {sublabel && <span className={styles.sublabel}>{sublabel}</span>}
+          </span>
+        </>
       )}
     </div>
   );

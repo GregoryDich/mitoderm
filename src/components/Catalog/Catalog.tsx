@@ -3,8 +3,7 @@
 import { FC, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { CatalogItem, ProductCategory } from '@/products';
-import Button from '@/components/Shared/Button/Button';
+import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
 import styles from './Catalog.module.scss';
@@ -23,6 +22,12 @@ const filters: { key: Filter; labelKey: string }[] = [
   { key: 'bio-spicules', labelKey: 'filterBioSpicules' },
 ];
 
+const accentVar: Record<ProductAccent, string> = {
+  teal: '#6fb7ba',
+  gold: '#c9a24a',
+  rose: '#b4607e',
+};
+
 const Catalog: FC<Props> = ({ items }) => {
   const t = useTranslations('catalog');
   const [active, setActive] = useState<Filter>('all');
@@ -35,13 +40,20 @@ const Catalog: FC<Props> = ({ items }) => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>{t('eyebrow')}</p>
-          <h1 className={styles.title}>{t('title')}</h1>
-          <p className={styles.subtitle}>{t('subtitle')}</p>
+      <div className={styles.glows} aria-hidden="true">
+        <span className={styles.glowA} />
+        <span className={styles.glowB} />
+        <span className={styles.glowC} />
+      </div>
+
+      <header className={styles.intro}>
+        <div className={styles.eyebrow}>
+          <span className={styles.eyebrowLine} />
+          {t('eyebrow')}
         </div>
-      </section>
+        <h1 className={styles.title}>{t('title')}</h1>
+        <p className={styles.subtitle}>{t('subtitle')}</p>
+      </header>
 
       <main className={styles.content}>
         <div className={styles.filters}>
@@ -65,26 +77,29 @@ const Catalog: FC<Props> = ({ items }) => {
               key={item.slug}
               href={item.href}
               className={styles.card}
+              style={{ ['--accent' as string]: accentVar[item.accent] }}
             >
-              <ProductMedia
-                image={item.image}
-                accent={item.accent}
-                alt={item.name}
-                label={'photo'}
-                className={styles.cardMedia}
-              />
+              <div className={styles.cardMedia}>
+                <ProductMedia
+                  image={item.image}
+                  accent={item.accent}
+                  alt={item.name}
+                  className={styles.media}
+                />
+              </div>
               <div className={styles.cardBody}>
                 <div className={styles.tags}>
                   <span className={styles.tag}>
                     {item.category.replace('-', ' ').toUpperCase()}
                   </span>
-                  <span
-                    className={`${styles.status} ${
-                      item.status === 'available'
-                        ? styles.statusAvailable
-                        : styles.statusSoon
-                    }`}
-                  >
+                  <span className={styles.status}>
+                    <span
+                      className={`${styles.dot} ${
+                        item.status === 'available'
+                          ? styles.dotOk
+                          : styles.dotSoon
+                      }`}
+                    />
                     {item.status === 'available'
                       ? t('available')
                       : t('comingSoon')}
@@ -99,19 +114,15 @@ const Catalog: FC<Props> = ({ items }) => {
         </div>
 
         <section className={styles.ctaBand}>
+          <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaText')}</p>
-          <Button
-            text={t('ctaButton')}
-            colored
-            href="/form"
-            style={{
-              backgroundColor: 'var(--colorWhite)',
-              color: 'var(--buttonAccentColor)',
-            }}
-          />
+          <Link href="/form" className={styles.ctaButton}>
+            {t('ctaButton')}
+          </Link>
         </section>
       </main>
+
       <Footer />
     </div>
   );

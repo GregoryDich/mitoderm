@@ -4,20 +4,23 @@
   left: 0;
   right: 0;
   z-index: 50;
-  height: 80px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 120px;
-  background-color: var(--colorBlack);
+  padding: 0 140px;
+  background-color: rgba(8, 8, 10, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logo {
   font-family: var(--font-Rubik);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--colorWhite);
+  letter-spacing: 3px;
+  color: #f5f2f0;
 }
 
 .right {
@@ -33,12 +36,12 @@
 }
 
 .navLink {
-  font-size: var(--fontSizeP2);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  color: rgba(245, 242, 240, 0.7);
   transition: color 0.15s ease;
 
   &:hover {
-    color: var(--colorWhite);
+    color: #f5f2f0;
   }
 }
 
@@ -49,17 +52,17 @@
 }
 
 .langLink {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  color: rgba(245, 242, 240, 0.4);
   transition: color 0.15s ease;
 
   &:hover {
-    color: var(--colorWhite);
+    color: #f5f2f0;
   }
 }
 
 .langActive {
-  color: var(--colorWhite);
+  color: #f5f2f0;
   font-weight: 500;
 }
 
@@ -74,13 +77,13 @@
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--colorWhite);
+    background-color: #f5f2f0;
   }
 }
 
 @media screen and (max-width: 1224px) {
   .header {
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .burger {
@@ -89,13 +92,13 @@
 
   .right {
     position: fixed;
-    top: 80px;
+    top: 88px;
     left: 0;
     right: 0;
     flex-direction: column;
     gap: 24px;
-    padding: 28px 20px 36px;
-    background-color: var(--colorBlack);
+    padding: 28px 24px 36px;
+    background-color: #08080a;
     transform: translateY(-12px);
     opacity: 0;
     pointer-events: none;

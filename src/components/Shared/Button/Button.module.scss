@@ -21,14 +21,14 @@
 }
 
 .colored {
-  background-color: var(--buttonAccentColor);
-  color: var(--colorWhite);
+  background-color: #f5f2f0;
+  color: #08080a;
 }
 
 .outline {
   background-color: transparent;
-  color: var(--colorWhite);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #f5f2f0;
+  border: 1px solid rgba(245, 242, 240, 0.25);
 }
 
 @media screen and (max-width: 1224px) {
