@@ -53,6 +53,8 @@ export interface Product {
   accent: ProductAccent;
   /** Path under /public, e.g. /products/exocell-mask/hero.png. Falls back to a branded placeholder when missing. */
   image?: string;
+  /** Additional product photos shown in the gallery section. */
+  gallery?: string[];
   content: Record<LocaleType, ProductContent>;
 }
 
@@ -287,7 +289,15 @@ const exoNad: Product = {
   category: 'peel',
   status: 'available',
   accent: 'gold',
-  image: '/products/exo-nad/hero.png',
+  image: '/products/exo-nad/hero.jpg',
+  gallery: [
+    '/products/exo-nad/g1.jpg',
+    '/products/exo-nad/g2.jpg',
+    '/products/exo-nad/g3.jpg',
+    '/products/exo-nad/g4.jpg',
+    '/products/exo-nad/g6.jpg',
+    '/products/exo-nad/g5.png',
+  ],
   content: {
     en: {
       name: 'EXO-NAD',

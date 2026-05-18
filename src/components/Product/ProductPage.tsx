@@ -175,6 +175,24 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           </Section>
         )}
 
+        {product.gallery && product.gallery.length > 0 && (
+          <Section num={next()} label="GALLERY" title={t('gallery')}>
+            <div className={styles.gallery}>
+              {product.gallery.map((src, i) => (
+                <div
+                  key={src}
+                  className={`${styles.galleryItem} ${
+                    i === 0 ? styles.galleryWide : ''
+                  }`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={src} alt={`${c.name} — ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </Section>
+        )}
+
         <Section num={next()} label="INDICATIONS" title={c.chipsTitle}>
           <div className={styles.chips}>
             {c.chips.map((ch) => (
