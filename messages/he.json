@@ -6,7 +6,32 @@
     "info": "מידע נוסף",
     "contact": "צור קשר",
     "event": "אירוע",
-    "agenda": "תוכנית האירוע"
+    "agenda": "תוכנית האירוע",
+    "catalog": "קטלוג"
+  },
+  "catalog": {
+    "eyebrow": "קטלוג",
+    "title": "המוצרים שלנו",
+    "subtitle": "פתרונות מקצועיים מבוססי אקסוזומים למרפאות ולמטפלי אסתטיקה — מאקסוזום הדגל EXOXE ועד מסכות, פילינגים וביו-ספיקולות מתקדמים.",
+    "filterAll": "הכל",
+    "filterExosome": "אקסוזומים",
+    "filterMask": "מסכות",
+    "filterPeel": "פילינגים",
+    "filterBioSpicules": "ביו-ספיקולות",
+    "available": "במלאי",
+    "comingSoon": "בקרוב",
+    "learnMore": "מידע נוסף",
+    "ctaTitle": "מחפשים את הפתרון המתאים?",
+    "ctaText": "המומחה שלנו יעזור לכם לבחור מוצרים ופרוטוקולים למרפאה שלכם.",
+    "ctaButton": "צור קשר"
+  },
+  "product": {
+    "keyBenefits": "יתרונות מרכזיים",
+    "activeIngredients": "רכיבים פעילים",
+    "backToCatalog": "חזרה לקטלוג",
+    "contactForPrice": "לפרטי מחיר",
+    "learnMore": "מידע נוסף",
+    "professionalBadge": "לשימוש מקצועי בלבד"
   },
   "buttons": {
     "contact": "צור קשר",
@@ -72,5 +97,27 @@
     "item2": "אקנה וצלקות פוסט אקנה",
     "item3": "דילול ונשירת שיער",
     "item4": "התחדשות העור"
+  },
+  "footer": {
+    "copyright": "© 2026 Mitoderm. כל הזכויות שמורות.",
+    "accessibility": "הצהרת נגישות",
+    "privacy": "מדיניות פרטיות",
+    "group": "SinoSciences Group"
+  },
+  "accessibility": {
+    "title": "הצהרת נגישות עבור mitoderm.com ו-mitoderm.co.il",
+    "general": "מידע כללי",
+    "websites": "האתרים mitoderm.com ו-mitoderm.co.il מחויבים לספק גישה שווה לכל השירותים הדיגיטליים לאנשים עם מוגבלות בהתאם לתקני הנגישות הבינלאומיים.",
+    "interfaceTitle": "נגישות הממשק",
+    "interfaceText": "האתר מותאם בהתאם להנחיות WCAG 2.1 (רמות A ו-AA), כולל:",
+    "readers": "תמיכה בקוראי מסך.",
+    "navigating": "ניווט באמצעות מקלדת.",
+    "contrast": "עיצוב בניגודיות גבוהה עבור משתמשים לקויי ראייה.",
+    "alt": "תיאורי תמונות באמצעות תכונת ALT.",
+    "scaling": "הגדלת גופן והתאמת ממשק בקלות.",
+    "feedbackTitle": "משוב",
+    "difficulties": "אם נתקלתם בקשיים בשימוש באתרים mitoderm.com או mitoderm.co.il, אנא הודיעו לנו:",
+    "feedbackHelp": "המשוב שלכם עוזר לנו לשפר את הנגישות.",
+    "obligationsText": "הצהרה זו נערכה בהתאם לדרישות החוק בישראל ולתקני הנגישות הבינלאומיים. היא תעודכן עם שינויים בפונקציונליות האתר."
   }
 }

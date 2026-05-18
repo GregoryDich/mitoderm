@@ -16,6 +16,17 @@
   --colorDark: #222222;
   --contentWidthDesktop: 1200px;
   --buttonAccentColor: #940030;
+  --colorGold: #c9a24a;
+  --colorTeal: #6ea8ab;
+  --colorBlack: #000;
+}
+
+.pageScroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 html,

@@ -6,7 +6,32 @@
     "info": "More info",
     "contact": "Contact us",
     "event": "Event",
-    "agenda": "Event program"
+    "agenda": "Event program",
+    "catalog": "Catalog"
+  },
+  "catalog": {
+    "eyebrow": "CATALOG",
+    "title": "Our Products",
+    "subtitle": "Professional exosome-based solutions for clinics and aesthetic practitioners — from our flagship EXOXE exosome to advanced masks, peels and bio-spicules.",
+    "filterAll": "All",
+    "filterExosome": "Exosomes",
+    "filterMask": "Masks",
+    "filterPeel": "Peels",
+    "filterBioSpicules": "Bio-Spicules",
+    "available": "Available",
+    "comingSoon": "Coming soon",
+    "learnMore": "Learn more",
+    "ctaTitle": "Looking for the right solution?",
+    "ctaText": "Our specialist will help you choose products and protocols for your clinic.",
+    "ctaButton": "Contact us"
+  },
+  "product": {
+    "keyBenefits": "Key Benefits",
+    "activeIngredients": "Active Ingredients",
+    "backToCatalog": "Back to catalog",
+    "contactForPrice": "Contact for Price",
+    "learnMore": "Learn More",
+    "professionalBadge": "For professional use only"
   },
   "buttons": {
     "contact": "Contact us",
