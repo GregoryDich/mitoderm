@@ -60,7 +60,7 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <Link href="/catalog" className={styles.back}>
-            ← {t('backToCatalog')}
+            <span className={styles.arrow}>←</span> {t('backToCatalog')}
           </Link>
           <div className={styles.eyebrow}>
             <span className={styles.eyebrowLine} />
@@ -72,7 +72,7 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           <div className={styles.ctaRow}>
             <Button text={t('contactForPrice')} colored href="/form" />
             <a href="#formula" className={styles.ghost}>
-              {t('learnMore')}
+              {t('learnMore')} <span className={styles.arrowDown}>↓</span>
             </a>
           </div>
         </div>

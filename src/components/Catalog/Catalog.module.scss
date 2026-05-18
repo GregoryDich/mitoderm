@@ -5,7 +5,7 @@
   --glass: rgba(255, 255, 255, 0.035);
   --glassBorder: rgba(255, 255, 255, 0.08);
   --cw: 1160px;
-  --pad: 140px;
+  --gutter: clamp(20px, 5vw, 60px);
 
   position: absolute;
   inset: 0;
@@ -13,6 +13,14 @@
   background-color: var(--bg);
   color: var(--txt);
   padding-top: 88px;
+}
+
+.arrow {
+  display: inline-block;
+}
+
+:global([dir='rtl']) .arrow {
+  transform: scaleX(-1);
 }
 
 .glows {
@@ -32,7 +40,7 @@
 
 .glowA {
   top: 80px;
-  left: -260px;
+  inset-inline-start: -260px;
   width: 900px;
   height: 900px;
   background: rgba(111, 183, 186, 0.08);
@@ -40,7 +48,7 @@
 
 .glowB {
   top: 900px;
-  right: -260px;
+  inset-inline-end: -260px;
   width: 820px;
   height: 820px;
   background: rgba(201, 162, 74, 0.05);
@@ -48,7 +56,7 @@
 
 .glowC {
   top: 1700px;
-  left: -200px;
+  inset-inline-start: -200px;
   width: 820px;
   height: 820px;
   background: rgba(180, 96, 126, 0.05);
@@ -56,9 +64,9 @@
 
 .intro {
   position: relative;
-  max-width: var(--cw);
-  margin: 0 auto;
-  padding: 120px 0 0;
+  width: min(var(--cw), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  padding: clamp(72px, 11vw, 120px) 0 0;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -81,27 +89,28 @@
 }
 
 .title {
-  font-size: 72px;
+  font-size: clamp(38px, 6vw, 72px);
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .subtitle {
   max-width: 720px;
-  font-size: 17px;
+  font-size: clamp(15px, 1.8vw, 17px);
   line-height: 1.6;
-  color: rgba(245, 242, 240, 0.5);
+  color: rgba(245, 242, 240, 0.6);
 }
 
 .content {
   position: relative;
-  max-width: var(--cw);
-  margin: 0 auto;
-  padding: 50px 0 130px;
+  width: min(var(--cw), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  padding: clamp(36px, 5vw, 50px) 0 clamp(72px, 11vw, 130px);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: clamp(36px, 5vw, 50px);
 }
 
 .filters {
@@ -200,7 +209,7 @@
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  color: rgba(245, 242, 240, 0.5);
+  color: rgba(245, 242, 240, 0.6);
 }
 
 .dot {
@@ -226,7 +235,7 @@
 .cardDesc {
   font-size: 14px;
   line-height: 1.5;
-  color: rgba(245, 242, 240, 0.5);
+  color: rgba(245, 242, 240, 0.6);
 }
 
 .cardLink {
@@ -265,9 +274,10 @@
 
 .ctaTitle {
   position: relative;
-  font-size: 38px;
+  font-size: clamp(26px, 3.4vw, 38px);
   font-weight: 300;
   letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
 }
 
 .ctaText {
@@ -275,7 +285,7 @@
   max-width: 520px;
   font-size: 15px;
   line-height: 1.6;
-  color: rgba(245, 242, 240, 0.55);
+  color: rgba(245, 242, 240, 0.65);
 }
 
 .ctaButton {
@@ -293,40 +303,14 @@
   }
 }
 
-@media screen and (max-width: 1224px) {
-  .page {
-    --pad: 24px;
-  }
-
-  .intro,
-  .content {
-    padding-left: var(--pad);
-    padding-right: var(--pad);
-  }
-
-  .intro {
-    padding-top: 72px;
-  }
-
-  .title {
-    font-size: 48px;
-  }
-
+@media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ctaTitle {
-    font-size: 30px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .title {
-    font-size: 40px;
   }
 }

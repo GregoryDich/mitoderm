@@ -61,6 +61,7 @@ const Catalog: FC<Props> = ({ items }) => {
             <button
               key={f.key}
               type="button"
+              aria-pressed={active === f.key}
               className={`${styles.filter} ${
                 active === f.key ? styles.filterActive : ''
               }`}
@@ -107,7 +108,9 @@ const Catalog: FC<Props> = ({ items }) => {
                 </div>
                 <h3 className={styles.cardName}>{item.name}</h3>
                 <p className={styles.cardDesc}>{item.shortDescription}</p>
-                <span className={styles.cardLink}>{t('learnMore')} →</span>
+                <span className={styles.cardLink}>
+                  {t('learnMore')} <span className={styles.arrow}>→</span>
+                </span>
               </div>
             </Link>
           ))}

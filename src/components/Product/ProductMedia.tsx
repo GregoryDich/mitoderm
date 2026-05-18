@@ -27,8 +27,7 @@ const ProductMedia: FC<Props> = ({
   return (
     <div
       className={`${styles.media} ${styles[accent]} ${className ?? ''}`}
-      role="img"
-      aria-label={alt}
+      {...(showImage ? {} : { role: 'img', 'aria-label': alt })}
     >
       {showImage ? (
         // eslint-disable-next-line @next/next/no-img-element
