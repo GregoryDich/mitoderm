@@ -18,7 +18,8 @@ const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <span className={styles.logo}>MITODERM</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/brand/logo.svg" alt="Mitoderm" className={styles.logo} />
       <span className={styles.copyright}>{t('copyright')}</span>
       <div className={styles.links}>
         <button type="button" onClick={() => openModal('privatePolicy')}>

@@ -23,7 +23,8 @@ const Header: FC = () => {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} onClick={() => setOpen(false)}>
-        MITODERM
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/logo.svg" alt="Mitoderm" className={styles.logoImg} />
       </Link>
 
       <button

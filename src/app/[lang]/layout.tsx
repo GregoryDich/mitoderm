@@ -31,8 +31,29 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: 'MitoDerm',
-  description: 'Something will be here',
+  metadataBase: new URL('https://mitoderm.com'),
+  title: {
+    default: 'Mitoderm — Professional Exosome Skincare',
+    template: '%s | Mitoderm',
+  },
+  description:
+    'Professional exosome-based solutions for clinics and aesthetic practitioners — advanced masks, longevity peels and bio-spicules. Where science meets beauty.',
+  keywords: [
+    'Mitoderm',
+    'exosomes',
+    'professional skincare',
+    'EXOCELL Mask',
+    'EXO-NAD',
+    'aesthetic medicine',
+  ],
+  openGraph: {
+    title: 'Mitoderm — Professional Exosome Skincare',
+    description:
+      'Professional exosome-based solutions for clinics and aesthetic practitioners. Where science meets beauty.',
+    url: 'https://mitoderm.com',
+    siteName: 'Mitoderm',
+    type: 'website',
+  },
   icons: [
     {
       rel: 'icon',

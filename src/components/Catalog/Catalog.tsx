@@ -24,7 +24,7 @@ const filters: { key: Filter; labelKey: string }[] = [
 
 const accentVar: Record<ProductAccent, string> = {
   teal: '#6fb7ba',
-  gold: '#c9a24a',
+  gold: '#dfba74',
   rose: '#b4607e',
 };
 
