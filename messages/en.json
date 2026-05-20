@@ -209,5 +209,70 @@
     "feedbackHelp": "Your feedback helps us improve accessibility.",
     "obligationsTitle": "Legal Obligations",
     "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes."
+  },
+  "home": {
+    "eyebrow": "MITODERM",
+    "title": "Where science meets beauty",
+    "tagline": "Professional exosome skincare for clinics and aesthetic practitioners.",
+    "description": "Advanced exosome-based masks, longevity peels and bio-spicules — engineered for visible regeneration and clinical-grade results.",
+    "ctaPrimary": "Explore the catalog",
+    "ctaSecondary": "Contact us",
+    "stats": [
+      {
+        "value": "3+",
+        "label": "Product lines"
+      },
+      {
+        "value": "3",
+        "label": "Locales served"
+      },
+      {
+        "value": "100%",
+        "label": "Professional use"
+      },
+      {
+        "value": "IL",
+        "label": "Mitoderm HQ"
+      }
+    ],
+    "featuredLabel": "FEATURED",
+    "featuredTitle": "Engineered for visible results",
+    "viewProduct": "View product",
+    "whyLabel": "WHY MITODERM",
+    "whyTitle": "Built for professionals",
+    "why": [
+      {
+        "title": "Clinical-grade actives",
+        "text": "Exosome technology paired with NAD+ and peptides for measurable cellular renewal."
+      },
+      {
+        "title": "Made for clinics",
+        "text": "Designed end-to-end for aesthetic practitioners — protocols, training and support."
+      },
+      {
+        "title": "Israeli R&D",
+        "text": "Developed and validated in Israel; trusted by clinics and partners across the region."
+      }
+    ],
+    "ctaBandTitle": "Bring Mitoderm to your clinic",
+    "ctaBandText": "Get in touch — our specialist will help with pricing, protocols and onboarding.",
+    "ctaBandButton": "Contact us"
+  },
+  "contactForm": {
+    "eyebrow": "CONTACT",
+    "title": "Talk to a specialist",
+    "subtitle": "Tell us about your clinic and what you are looking to add. We will reach out with pricing and protocol.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "clinic": "Clinic / Company",
+    "message": "How can we help?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Thank you — message received",
+    "successText": "Our specialist will contact you within one business day.",
+    "errorRequired": "This field is required",
+    "errorEmail": "Please enter a valid email",
+    "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request."
   }
 }

@@ -1,9 +1,12 @@
-import { redirect } from 'next/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import HomePage from '@/components/Home/HomePage';
+import { LocaleType } from '@/types';
 
-export default function HomePage({
+export default function Home({
   params: { lang },
 }: {
   params: { lang: string };
 }) {
-  redirect(`/${lang}/catalog`);
+  unstable_setRequestLocale(lang);
+  return <HomePage locale={lang as LocaleType} />;
 }

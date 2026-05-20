@@ -1,11 +1,11 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import MainForm from '@/components/Forms/MainForm';
+import ContactForm from '@/components/Contact/ContactForm';
 
-export default function FormPage({ params: { lang } }: any) {
+export default function FormPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   unstable_setRequestLocale(lang);
-  return (
-    <main className='formPage'>
-      <MainForm />
-    </main>
-  );
+  return <ContactForm />;
 }
