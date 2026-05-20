@@ -416,6 +416,79 @@
   color: rgba(245, 242, 240, 0.8);
 }
 
+/* related products */
+.related {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.relCard {
+  --accent: #6fb7ba;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--glass);
+  border: 1px solid var(--glassBorder);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+}
+
+.relMedia {
+  width: 100%;
+  height: 200px;
+}
+
+.relMediaInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--glassBorder);
+}
+
+.relBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+}
+
+.relTag {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.relName {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.relDesc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(245, 242, 240, 0.6);
+}
+
+.relLink {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
 /* CTA */
 .ctaBand {
   position: relative;
@@ -468,6 +541,18 @@
 }
 
 /* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 1024px) {
+  .related {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .related {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hero {
     flex-direction: column;

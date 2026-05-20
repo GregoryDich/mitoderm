@@ -31,6 +31,7 @@ const ContactForm: FC = () => {
   );
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const set = (k: keyof FormState) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -50,11 +51,37 @@ const ContactForm: FC = () => {
     e.preventDefault();
     if (!validate()) return;
     setSending(true);
-    // No backend wired in this environment — simulate a brief send so the
-    // UX flows; replace with a real POST when an endpoint is available.
-    await new Promise((r) => setTimeout(r, 500));
-    setSending(false);
-    setSubmitted(true);
+    setServerError(null);
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(v),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as {
+          errors?: Record<string, string>;
+        };
+        if (data.errors) {
+          setErrors({
+            name: data.errors.name && t('errorRequired'),
+            email:
+              data.errors.email === 'invalid'
+                ? t('errorEmail')
+                : data.errors.email && t('errorRequired'),
+            message: data.errors.message && t('errorRequired'),
+          });
+        } else {
+          setServerError(t('errorServer'));
+        }
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setServerError(t('errorServer'));
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -165,6 +192,11 @@ const ContactForm: FC = () => {
             >
               {sending ? t('sending') : t('submit')}
             </button>
+            {serverError && (
+              <p role="alert" className={styles.errMsg}>
+                {serverError}
+              </p>
+            )}
             <p className={styles.disclaimer}>{t('disclaimer')}</p>
           </form>
         )}

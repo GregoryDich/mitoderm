@@ -6,3 +6,6 @@ tsconfig.tsbuildinfo
 .env.development
 .env.production
 **/*.env.development
+
+# Local-only sinks (api/leads writes here in dev)
+data/

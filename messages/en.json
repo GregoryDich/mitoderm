@@ -32,7 +32,8 @@
     "contactForPrice": "Contact for Price",
     "learnMore": "Learn More",
     "gallery": "Gallery",
-    "professionalBadge": "For professional use only"
+    "professionalBadge": "For professional use only",
+    "related": "Related products"
   },
   "buttons": {
     "contact": "Contact us",
@@ -273,6 +274,7 @@
     "successText": "Our specialist will contact you within one business day.",
     "errorRequired": "This field is required",
     "errorEmail": "Please enter a valid email",
-    "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request."
+    "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request.",
+    "errorServer": "Something went wrong. Please try again or email us directly."
   }
 }

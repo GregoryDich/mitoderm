@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Product, ProductAccent } from '@/products';
+import { Product, ProductAccent, getCatalogItems } from '@/products';
 import { LocaleType } from '@/types';
 import Button from '@/components/Shared/Button/Button';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -49,6 +49,13 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
+
+  const related = getCatalogItems(locale)
+    .filter((i) => i.slug !== product.slug)
+    .sort((a, b) =>
+      a.status === b.status ? 0 : a.status === 'available' ? -1 : 1
+    )
+    .slice(0, 3);
 
   const sectionNav: { id: string; label: string }[] = [
     { id: 'benefits', label: 'Benefits' },
@@ -222,6 +229,46 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
             ))}
           </div>
         </Section>
+
+        {related.length > 0 && (
+          <section className={styles.block}>
+            <SectionLabel num={next()} label="RELATED" />
+            <h2 className={styles.h2}>{t('related')}</h2>
+            <div className={styles.related}>
+              {related.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={item.href}
+                  className={styles.relCard}
+                  style={{
+                    ['--accent' as string]:
+                      accentVar[item.accent as ProductAccent],
+                  }}
+                >
+                  <div className={styles.relMedia}>
+                    <ProductMedia
+                      image={item.image}
+                      accent={item.accent}
+                      alt={item.name}
+                      className={styles.relMediaInner}
+                    />
+                  </div>
+                  <div className={styles.relBody}>
+                    <span className={styles.relTag}>
+                      {item.category.replace('-', ' ').toUpperCase()}
+                    </span>
+                    <h3 className={styles.relName}>{item.name}</h3>
+                    <p className={styles.relDesc}>{item.shortDescription}</p>
+                    <span className={styles.relLink}>
+                      {t('learnMore')}{' '}
+                      <span className={styles.arrow}>→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />

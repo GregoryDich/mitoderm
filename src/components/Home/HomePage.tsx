@@ -5,6 +5,7 @@ import { getCatalogItems, ProductAccent } from '@/products';
 import { LocaleType } from '@/types';
 import ProductMedia from '@/components/Product/ProductMedia';
 import Footer from '@/components/Layout/Footer/Footer';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import styles from './HomePage.module.scss';
 
 interface Props {
@@ -61,6 +62,7 @@ const HomePage: FC<Props> = ({ locale }) => {
       </div>
 
       <main className={styles.content}>
+        <Reveal>
         <section className={styles.block}>
           <div className={styles.secLabel}>
             <span className={styles.secNum}>01</span>
@@ -99,7 +101,9 @@ const HomePage: FC<Props> = ({ locale }) => {
             ))}
           </div>
         </section>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.block}>
           <div className={styles.secLabel}>
             <span className={styles.secNum}>02</span>
@@ -119,7 +123,9 @@ const HomePage: FC<Props> = ({ locale }) => {
             ))}
           </div>
         </section>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{t('ctaBandTitle')}</h2>
@@ -128,6 +134,7 @@ const HomePage: FC<Props> = ({ locale }) => {
             {t('ctaBandButton')}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />
