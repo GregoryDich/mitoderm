@@ -6,6 +6,8 @@ import { LocaleType } from '@/types';
 import Button from '@/components/Shared/Button/Button';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from './ProductMedia';
+import LightboxGallery from './LightboxGallery';
+import ProductSectionNav from './ProductSectionNav';
 import styles from './ProductPage.module.scss';
 
 interface Props {
@@ -31,9 +33,10 @@ const Section: FC<{
   num: string;
   label: string;
   title: string;
+  id?: string;
   children: ReactNode;
-}> = ({ num, label, title, children }) => (
-  <section className={styles.block}>
+}> = ({ num, label, title, id, children }) => (
+  <section className={styles.block} id={id}>
     <SectionLabel num={num} label={label} />
     <h2 className={styles.h2}>{title}</h2>
     {children}
@@ -46,6 +49,17 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
+
+  const sectionNav: { id: string; label: string }[] = [
+    { id: 'benefits', label: 'Benefits' },
+    ...(c.steps ? [{ id: 'protocol', label: 'Protocol' }] : []),
+    { id: 'formula', label: 'Formula' },
+    ...(c.pack ? [{ id: 'kit', label: 'Kit' }] : []),
+    ...(product.gallery && product.gallery.length > 0
+      ? [{ id: 'gallery', label: 'Gallery' }]
+      : []),
+    { id: 'indications', label: 'Indications' },
+  ];
 
   return (
     <div
@@ -96,7 +110,13 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
       </div>
 
       <main className={styles.content}>
-        <Section num={next()} label="BENEFITS" title={t('keyBenefits')}>
+        <ProductSectionNav sections={sectionNav} />
+        <Section
+          id="benefits"
+          num={next()}
+          label="BENEFITS"
+          title={t('keyBenefits')}
+        >
           <div className={styles.benefits}>
             {c.benefits.map((b, i) => (
               <article key={b.title} className={styles.card}>
@@ -113,6 +133,7 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
         {c.steps && (
           <Section
+            id="protocol"
             num={next()}
             label="PROTOCOL"
             title={c.stepsTitle as string}
@@ -157,6 +178,7 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
         {c.pack && (
           <Section
+            id="kit"
             num={next()}
             label="KIT"
             title={c.packTitle as string}
@@ -176,24 +198,22 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
         )}
 
         {product.gallery && product.gallery.length > 0 && (
-          <Section num={next()} label="GALLERY" title={t('gallery')}>
-            <div className={styles.gallery}>
-              {product.gallery.map((src, i) => (
-                <div
-                  key={src}
-                  className={`${styles.galleryItem} ${
-                    i === 0 ? styles.galleryWide : ''
-                  }`}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={src} alt={`${c.name} — ${i + 1}`} loading="lazy" />
-                </div>
-              ))}
-            </div>
+          <Section
+            id="gallery"
+            num={next()}
+            label="GALLERY"
+            title={t('gallery')}
+          >
+            <LightboxGallery images={product.gallery} name={c.name} />
           </Section>
         )}
 
-        <Section num={next()} label="INDICATIONS" title={c.chipsTitle}>
+        <Section
+          id="indications"
+          num={next()}
+          label="INDICATIONS"
+          title={c.chipsTitle}
+        >
           <div className={styles.chips}>
             {c.chips.map((ch) => (
               <span key={ch} className={styles.chip}>
