@@ -101,17 +101,32 @@
     "item4": "Facial Skin Rejuvenation"
   },
   "about": {
-    "titleP1": "What is ",
-    "titleP2": "Exosome",
-    "text1": "Exosomes have gained attention in the field of aesthetics due to their potential for ",
-    "text1Colored": "skin rejuvenation, anti-aging effects, and breakthroughs in treating acne scars and hair loss.",
-    "text2": "These exosomes are rich in growth factors, cytokines, and other bioactive molecules that have the potential to promote tissue regeneration, collagen synthesis, and provide a more radiant youthful appearance. Combined with ",
-    "text2Colored": "advanced technologies, exosomes offer innovative solutions for improving skin texture, reducing scarring, and revitalizing hair follicles.",
-    "itemExp1": "Milliard cells",
-    "itemExp2": "Inflammation Reduction",
-    "itemExp3": "Growth factors and cytokines",
-    "itemExp4": "Increase in intracellular collagen and hyaluronic acid.",
-    "itemExp5": "Nanometers"
+    "eyebrow": "ABOUT MITODERM",
+    "title": "Science is our craft. Beauty is the outcome.",
+    "tagline": "Mitoderm brings clinical-grade exosome technology to aesthetic practitioners — from Israel to the world.",
+    "missionLabel": "MISSION",
+    "missionTitle": "Built for the clinic, grounded in science",
+    "missionText": "We partner with researchers, formulators and clinicians to bring exosome-based treatments to professional practices — products, protocols and training designed around real clinical outcomes, not trends.",
+    "scienceLabel": "THE SCIENCE",
+    "scienceTitle": "What exosomes do, simply put",
+    "scienceText": "Exosomes are tiny vesicles loaded with growth factors, peptides and signaling molecules. Applied professionally, they instruct skin cells to repair, regenerate and produce more collagen — accelerating recovery, refining texture and visibly restoring radiance.",
+    "stats": [
+      {
+        "value": "Billions",
+        "label": "Active cells delivered per treatment"
+      },
+      {
+        "value": "40+",
+        "label": "Growth factors & cytokines"
+      },
+      {
+        "value": "~30 nm",
+        "label": "Vesicle scale"
+      }
+    ],
+    "ctaTitle": "Talk to a Mitoderm specialist",
+    "ctaText": "Get pricing, protocols and onboarding for your clinic.",
+    "ctaButton": "Contact us"
   },
   "solution": {
     "titleP1": "Our Solution - ",

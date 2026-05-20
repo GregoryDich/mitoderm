@@ -17,6 +17,7 @@ const Header: FC = () => {
   const navItems = [
     { label: t('product'), href: '/' },
     { label: t('catalog'), href: '/catalog' },
+    { label: t('about'), href: '/about' },
     { label: t('contact'), href: '/form' },
   ];
 
