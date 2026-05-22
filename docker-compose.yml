@@ -1,0 +1,40 @@
+# `docker compose up -d --build` boots the production image and persists
+# admin-edited product data + lead submissions across container restarts.
+#
+# Set ADMIN_PASSWORD (and optionally the RESEND_* / GITHUB_* vars from
+# .env.example) in an .env file next to this compose file — compose reads
+# it automatically.
+
+services:
+  web:
+    build: .
+    image: mitoderm:latest
+    container_name: mitoderm
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      # Required for /admin login. No default — must be supplied.
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      # Optional: lead email delivery via Resend.
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      LEADS_TO_EMAIL: ${LEADS_TO_EMAIL:-}
+      LEADS_FROM_EMAIL: ${LEADS_FROM_EMAIL:-}
+      # Optional: when set, admin saves commit via GitHub Contents API
+      # instead of writing the local volume.
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_OWNER: ${GITHUB_OWNER:-}
+      GITHUB_REPO: ${GITHUB_REPO:-}
+      GITHUB_BRANCH: ${GITHUB_BRANCH:-main}
+    volumes:
+      # Catalog source-of-truth. The image bakes a seed file; the named
+      # volume is mounted on top so admin edits survive `docker compose
+      # down`. Run `docker compose down -v` to reset to seed.
+      - mitoderm-data:/app/src/data
+      # Lead submissions (api/leads appends here in dev mode).
+      - mitoderm-leads:/app/data
+
+volumes:
+  mitoderm-data:
+  mitoderm-leads:
