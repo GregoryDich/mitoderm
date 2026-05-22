@@ -19,6 +19,39 @@
   --colorGold: #dfba74;
   --colorTeal: #6ea8ab;
   --colorBlack: #000;
+  --a11y-font-scale: 1;
+}
+
+/* Accessibility widget — user preference layer */
+html {
+  font-size: calc(16px * var(--a11y-font-scale, 1));
+}
+
+html.a11y-high-contrast {
+  filter: contrast(1.18);
+}
+
+html.a11y-high-contrast body,
+html.a11y-high-contrast .pageScroll {
+  background-color: #000 !important;
+}
+
+html.a11y-high-contrast :where(p, li, span, h1, h2, h3, h4, a, button) {
+  color: #fff !important;
+}
+
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
 }
 
 .pageScroll {

@@ -126,7 +126,23 @@
     "feedbackTitle": "משוב",
     "difficulties": "אם נתקלתם בקשיים בשימוש באתרים mitoderm.com או mitoderm.co.il, אנא הודיעו לנו:",
     "feedbackHelp": "המשוב שלכם עוזר לנו לשפר את הנגישות.",
-    "obligationsText": "הצהרה זו נערכה בהתאם לדרישות החוק בישראל ולתקני הנגישות הבינלאומיים. היא תעודכן עם שינויים בפונקציונליות האתר."
+    "obligationsText": "הצהרה זו נערכה בהתאם לדרישות החוק בישראל ולתקני הנגישות הבינלאומיים. היא תעודכן עם שינויים בפונקציונליות האתר.",
+    "widget": {
+      "open": "אפשרויות נגישות",
+      "title": "נגישות",
+      "fontSize": "גודל טקסט",
+      "fontDecrease": "קטן יותר",
+      "fontReset": "ברירת מחדל",
+      "fontIncrease": "גדול יותר",
+      "contrast": "ניגודיות",
+      "contrastNormal": "רגיל",
+      "contrastHigh": "ניגודיות גבוהה",
+      "motion": "תנועה",
+      "motionReduce": "צמצום אנימציות",
+      "underlineLinks": "סימון קישורים בקו תחתון",
+      "reset": "איפוס",
+      "close": "סגירה"
+    }
   },
   "home": {
     "eyebrow": "MITODERM",

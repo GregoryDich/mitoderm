@@ -21,6 +21,11 @@ const Modal = dynamic(() => import('@/components/Layout/Modal/Modal'), {
   ssr: false,
 });
 
+const A11yWidget = dynamic(
+  () => import('@/components/Layout/A11yWidget/A11yWidget'),
+  { ssr: false }
+);
+
 const rubik = Rubik({
   weight: ['300', '400', '500', '900'],
   style: 'normal',
@@ -124,6 +129,7 @@ export default async function RootLayout({
           {children}
           <Footer />
           <ScrollToTop />
+          <A11yWidget />
           <JsonLd id="ld-organization" data={orgJsonLd()} />
           <JsonLd id="ld-website" data={siteJsonLd()} />
         </body>

@@ -230,7 +230,23 @@
     "feedbackTitle": "Feedback",
     "difficulties": "If you encounter difficulties using the mitoderm.com or mitoderm.co.il websites, please let us know:",
     "feedbackHelp": "Your feedback helps us improve accessibility.",
-    "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes."
+    "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes.",
+    "widget": {
+      "open": "Accessibility options",
+      "title": "Accessibility",
+      "fontSize": "Text size",
+      "fontDecrease": "Smaller text",
+      "fontReset": "Default text size",
+      "fontIncrease": "Larger text",
+      "contrast": "Contrast",
+      "contrastNormal": "Default",
+      "contrastHigh": "High contrast",
+      "motion": "Motion",
+      "motionReduce": "Reduce animations",
+      "underlineLinks": "Underline links",
+      "reset": "Reset",
+      "close": "Close"
+    }
   },
   "home": {
     "eyebrow": "MITODERM",
