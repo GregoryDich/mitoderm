@@ -16,9 +16,32 @@
 >   research summary, full prioritised backlog). Cross-link, don't
 >   duplicate.
 
-Last updated: **2026-05-22**. Branch **`claude/add-catalog-page-65V89`**
-@ commit **`6ec6ec7`**. Snapshot of the "before" state preserved as
-branch + tag **`cycle-0-snapshot`** @ `96e029c`.
+Last updated: **2026-05-22** (Cycle 1 continued). Branch
+**`claude/add-catalog-page-65V89`** @ commit **`124eef3`**. Snapshot
+of the "before" state preserved as branch + tag
+**`cycle-0-snapshot`** @ `96e029c`.
+
+### Done in this push (since `d5bf194`)
+
+- **A07** sticky mobile WhatsApp/quote bar on product pages
+- **A13** `/[lang]/accessibility` route + footer link (IS 5568)
+- **A16** `scripts/check-locales.mjs` + `npm run check:locales`
+- **A14** A11y widget (font scale / high contrast / reduce motion /
+  underline links), preference persisted in localStorage
+- **A15** Design tokens consolidated → `src/styles/tokens.scss`
+- **A19** Audit log of all admin writes →
+  `data/audit.jsonl` + `/admin/audit` viewer
+- **A18** `POST /api/admin/products/[slug]/duplicate` + Duplicate
+  button in admin list
+- **A02 / A03** Structural slots `clinicalResults` and `bundle`
+  ("protocol kit") on `ProductContent`; render conditionally
+- **A12** RTL audit — Modal switched to logical properties
+- **A20** `next/image` migration for Header / Footer logo +
+  LightboxGallery stage image
+- Drive-by: fixed product POST category validator to accept
+  current catalog categories (serum/gel/hair/mask)
+- Marked `STATE.md` and `CLAUDE.md` as **Mitoderm-only** so a
+  parallel fitscan worktree won't import these conventions
 
 ---
 
@@ -239,22 +262,21 @@ Each item carries a priority (**A** ship this cycle / **B** next cycle /
 does not require the owner to rewrite product copy. Effort sized
 **S** (≤ 1 day), **M** (≤ 1 week), **L** (> 1 week).
 
-### Cycle 1 — remaining (A bucket, still in flight)
+### Cycle 1 — remaining (A bucket)
+
+A07, A12, A13, A14, A15, A16, A18, A19, A20, A02, A03 — **all
+shipped** in commits `e1cd447` → `124eef3`. See the "Done in this
+push" list near the top.
+
+Still open:
 
 | # | Item | Effort | Text-stable |
 | - | - | - | - |
-| A07 | Sticky mobile **Request quote / WhatsApp** bar on product pages | S | Y |
-| A12 | RTL audit: any remaining directional glyph (icons, form arrows) | S | Y |
-| A13 | `/accessibility` page + visible link from footer (IS 5568) | S | one new page |
-| A14 | Accessibility widget (font scale + contrast toggle), floating button | M | Y |
-| A15 | Consolidate `--colorGold` / `--colorTeal` / `--bg` / `--txt` / `--glass*` into `src/styles/tokens.scss` | M | Y |
-| A16 | Locale-parity CI check — fail build when an `en.json` key is missing from `ru.json` / `he.json` | S | Y |
-| A17 | **Cloudinary** image adapter (env-gated) — bypasses 4 MB API cap | M | Y |
-| A19 | Audit log — every admin write appends `who/when/slug/diff-summary` to `data/admin.jsonl` | S | Y |
-| A20 | Migrate logo + lightbox stage to `next/image` (remaining `<img>` holdouts) | S | Y |
-| A02 | Structural `clinicalResults` block on product page (renders only when present) | S | slot empty until content |
-| A03 | Structural `bundle` block ("Shop the protocol") | M | slot empty until content |
-| A18 | `POST /api/admin/products/[slug]/duplicate` — clone for variants | S | Y |
+| A17 | **Cloudinary** image adapter (env-gated) — bypasses 4 MB Next API cap for admin uploads | M | Y |
+
+A17 is the last A-item and is gated on the owner deciding whether
+to wire Cloudinary credentials (or stay on local/GitHub storage,
+which works fine within 4 MB). Skipped until that choice is made.
 
 ### Cycle 2 — next sprint (B bucket)
 
