@@ -9,6 +9,8 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Layout/Footer/Footer';
 import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
+import JsonLd from '@/components/Seo/JsonLd';
+import { orgJsonLd, siteJsonLd } from '@/lib/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
@@ -122,6 +124,8 @@ export default async function RootLayout({
           {children}
           <Footer />
           <ScrollToTop />
+          <JsonLd id="ld-organization" data={orgJsonLd()} />
+          <JsonLd id="ld-website" data={siteJsonLd()} />
         </body>
       </NextIntlClientProvider>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID as string} />
