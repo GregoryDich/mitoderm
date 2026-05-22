@@ -26,7 +26,10 @@
     "ctaButton": "צור קשר",
     "filterSerum": "סרומים",
     "filterGel": "ג'לים",
-    "filterHair": "לשיער"
+    "filterHair": "לשיער",
+    "searchPlaceholder": "חיפוש בקטלוג",
+    "searchLabel": "חיפוש בקטלוג",
+    "noResults": "לא נמצאו מוצרים מתאימים."
   },
   "product": {
     "keyBenefits": "יתרונות מרכזיים",

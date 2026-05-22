@@ -31,12 +31,18 @@ const accentVar: Record<ProductAccent, string> = {
 const Catalog: FC<Props> = ({ items }) => {
   const t = useTranslations('catalog');
   const [active, setActive] = useState<Filter>('all');
+  const [query, setQuery] = useState('');
 
-  const visible = useMemo(
-    () =>
-      active === 'all' ? items : items.filter((i) => i.category === active),
-    [active, items]
-  );
+  const visible = useMemo(() => {
+    const byCategory =
+      active === 'all' ? items : items.filter((i) => i.category === active);
+    const q = query.trim().toLowerCase();
+    if (!q) return byCategory;
+    return byCategory.filter((i) => {
+      const haystack = `${i.name} ${i.shortDescription} ${i.category}`.toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [active, items, query]);
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -56,21 +62,59 @@ const Catalog: FC<Props> = ({ items }) => {
       </header>
 
       <main className={styles.content}>
-        <div className={styles.filters}>
-          {filters.map((f) => (
-            <button
-              key={f.key}
-              type="button"
-              aria-pressed={active === f.key}
-              className={`${styles.filter} ${
-                active === f.key ? styles.filterActive : ''
-              }`}
-              onClick={() => setActive(f.key)}
+        <div className={styles.controls}>
+          <div className={styles.filters}>
+            {filters.map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                aria-pressed={active === f.key}
+                className={`${styles.filter} ${
+                  active === f.key ? styles.filterActive : ''
+                }`}
+                onClick={() => setActive(f.key)}
+              >
+                {t(f.labelKey)}
+              </button>
+            ))}
+          </div>
+          <label className={styles.searchWrap}>
+            <span className="sr-only">{t('searchLabel')}</span>
+            <svg
+              className={styles.searchIcon}
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              aria-hidden="true"
             >
-              {t(f.labelKey)}
-            </button>
-          ))}
+              <circle
+                cx="11"
+                cy="11"
+                r="6.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              />
+              <path
+                d="M20 20l-3.6-3.6"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+            <input
+              type="search"
+              className={styles.search}
+              placeholder={t('searchPlaceholder')}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              aria-label={t('searchLabel')}
+            />
+          </label>
         </div>
+        {visible.length === 0 && (
+          <p className={styles.empty}>{t('noResults')}</p>
+        )}
 
         <div className={styles.grid}>
           {visible.map((item) => (

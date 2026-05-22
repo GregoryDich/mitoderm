@@ -113,10 +113,66 @@
   gap: clamp(36px, 5vw, 50px);
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.searchWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: clamp(220px, 32vw, 320px);
+}
+
+.searchIcon {
+  position: absolute;
+  inset-inline-start: 14px;
+  color: rgba(245, 242, 240, 0.55);
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  padding: 11px 16px 11px 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(245, 242, 240, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--txt);
+  font-family: var(--font-Rubik);
+  font-size: 14px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+[dir='rtl'] .search {
+  padding: 11px 40px 11px 16px;
+}
+
+.search::placeholder {
+  color: rgba(245, 242, 240, 0.4);
+}
+
+.search:focus {
+  outline: none;
+  border-color: rgba(245, 242, 240, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.empty {
+  margin: 32px 0;
+  color: rgba(245, 242, 240, 0.55);
+  font-size: 15px;
+  text-align: center;
 }
 
 .filter {
