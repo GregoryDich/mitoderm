@@ -47,10 +47,16 @@
   text-transform: uppercase;
 }
 
-.nav {
+.navRow {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navLink {
@@ -65,6 +71,11 @@
     background-color: rgba(255, 255, 255, 0.06);
     color: #f5f2f0;
   }
+}
+
+.navActive {
+  background-color: rgba(223, 186, 116, 0.14);
+  color: #f5f2f0;
 }
 
 .main {

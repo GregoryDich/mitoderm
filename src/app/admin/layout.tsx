@@ -5,6 +5,7 @@ import { Rubik } from 'next/font/google';
 import '../globals.scss';
 import { isAdmin, SESSION_COOKIE } from '@/lib/admin-auth';
 import AdminLogoutButton from '@/components/Admin/AdminLogoutButton';
+import AdminNav from '@/components/Admin/AdminNav';
 import styles from './admin.module.scss';
 
 const rubik = Rubik({
@@ -26,7 +27,6 @@ export default function AdminLayout({
   // Read cookie just to decide whether to render the nav — the actual auth
   // check happens in each page / API route.
   const authed = isAdmin();
-  // Touch the cookie name so the static analyser keeps the import.
   void SESSION_COOKIE;
   void cookies;
 
@@ -39,21 +39,10 @@ export default function AdminLayout({
             <span className={styles.brandName}>Mitoderm admin</span>
           </Link>
           {authed && (
-            <nav className={styles.nav}>
-              <Link href="/admin/products" className={styles.navLink}>
-                Products
-              </Link>
-              <Link href="/admin/leads" className={styles.navLink}>
-                Leads
-              </Link>
-              <Link
-                href="/admin/products/new"
-                className={styles.navLink}
-              >
-                + New
-              </Link>
+            <div className={styles.navRow}>
+              <AdminNav />
               <AdminLogoutButton />
-            </nav>
+            </div>
           )}
         </header>
         <main className={styles.main}>{children}</main>
