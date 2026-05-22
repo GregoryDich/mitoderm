@@ -1,0 +1,50 @@
+/**
+ * Design tokens — single source of truth.
+ *
+ * Use these CSS custom properties from any component .module.scss
+ * via the `var(--token)` syntax. They're defined on :root in
+ * globals.scss (which @uses this file), so they're available
+ * everywhere without per-module imports.
+ *
+ * Don't hard-code the underlying hex values inside component files.
+ * If a new color is needed, add it here first.
+ */
+
+:root {
+  /* surfaces */
+  --mt-bg: #08080a;
+  --mt-bg-2: #0a0a0c;
+  --mt-text: #f5f2f0;
+  --mt-text-muted: rgba(245, 242, 240, 0.7);
+  --mt-text-faint: rgba(245, 242, 240, 0.55);
+  --mt-hair: rgba(255, 255, 255, 0.1);
+
+  /* glass cards */
+  --mt-glass: rgba(255, 255, 255, 0.035);
+  --mt-glass-border: rgba(255, 255, 255, 0.08);
+  --mt-glass-strong: rgba(255, 255, 255, 0.06);
+
+  /* per-product accents */
+  --mt-accent-teal: #6fb7ba;
+  --mt-accent-gold: #dfba74;
+  --mt-accent-rose: #b4607e;
+
+  /* legacy brand */
+  --mt-brand-burgundy-dark: #451715;
+  --mt-brand-burgundy: #9c3e5c;
+  --mt-brand-accent: #940030;
+
+  /* layout */
+  --mt-content-w: 1160px;
+  --mt-gutter: clamp(20px, 5vw, 60px);
+  --mt-radius-sm: 8px;
+  --mt-radius-md: 12px;
+  --mt-radius-lg: 18px;
+
+  /* typography scale */
+  --mt-fs-h1: clamp(40px, 6vw, 88px);
+  --mt-fs-h2: clamp(28px, 4vw, 48px);
+  --mt-fs-h3: clamp(20px, 2.4vw, 28px);
+  --mt-fs-body: clamp(15px, 1.4vw, 18px);
+  --mt-fs-meta: 13px;
+}
