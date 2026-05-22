@@ -7,7 +7,8 @@
     "contact": "Contact us",
     "event": "Event",
     "agenda": "Event program",
-    "catalog": "Catalog"
+    "catalog": "Catalog",
+    "clinics": "Clinics"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -180,6 +181,35 @@
       "role": "Patient"
     },
     "eyebrow": "REVIEWS"
+  },
+  "clinics": {
+    "eyebrow": "CERTIFIED CLINICS",
+    "title": "Find a Mitoderm-certified clinic near you",
+    "subtitle": "Doctors and aesthetic specialists across Israel trained on Mitoderm protocols. Filter by region, profession, or search by name and city.",
+    "areaLabel": "Region",
+    "professionLabel": "Profession",
+    "searchPlaceholder": "Search by name or city",
+    "searchLabel": "Search the directory",
+    "emptyDirectory": "We're building out the directory — check back soon.",
+    "noResults": "No specialists match your filters.",
+    "contact": "Contact",
+    "ctaTitle": "Are you a practitioner?",
+    "ctaText": "Get in touch to join the Mitoderm certified network.",
+    "ctaButton": "Apply to join",
+    "area": {
+      "all": "All regions",
+      "north": "North",
+      "center": "Center",
+      "jerusalem": "Jerusalem",
+      "south": "South",
+      "eilat": "Eilat"
+    },
+    "profession": {
+      "all": "All",
+      "doctor": "Doctor",
+      "cosmetologist": "Cosmetologist",
+      "clinic": "Clinic"
+    }
   },
   "gallery": {
     "title": "Gallery",

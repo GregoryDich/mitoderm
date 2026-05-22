@@ -1,0 +1,271 @@
+.page {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  background: #08080a;
+  color: #f5f2f0;
+  padding-top: 88px;
+}
+
+.intro {
+  max-width: 920px;
+  margin-inline: auto;
+  padding: clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px) 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dfba74;
+  margin-bottom: 18px;
+}
+
+.eyebrowLine {
+  width: 28px;
+  height: 1px;
+  background-color: #dfba74;
+}
+
+.title {
+  font-size: clamp(36px, 5.4vw, 64px);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+.subtitle {
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.7);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding: 0 clamp(20px, 5vw, 48px) 60px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterLabel {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.55);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(245, 242, 240, 0.16);
+  color: rgba(245, 242, 240, 0.7);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pill:hover {
+  color: #f5f2f0;
+  border-color: rgba(245, 242, 240, 0.36);
+}
+
+.pillActive {
+  background: #f5f2f0;
+  border-color: #f5f2f0;
+  color: #08080a;
+}
+
+.searchWrap {
+  display: block;
+}
+
+.search {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(245, 242, 240, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f2f0;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.search::placeholder {
+  color: rgba(245, 242, 240, 0.4);
+}
+
+.search:focus {
+  outline: none;
+  border-color: rgba(245, 242, 240, 0.45);
+}
+
+.empty {
+  text-align: center;
+  color: rgba(245, 242, 240, 0.55);
+  padding: 60px 20px;
+  font-size: 15px;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cardHead {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.avatar {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 500;
+  color: #dfba74;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cardProf {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #dfba74;
+  font-weight: 600;
+}
+
+.cardName {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+  color: #f5f2f0;
+}
+
+.cardCity {
+  font-size: 13px;
+  color: rgba(245, 242, 240, 0.6);
+}
+
+.cardBio {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.72);
+  margin: 0;
+}
+
+.cardActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.cardLink {
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f5f2f0;
+  font-size: 12.5px;
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ctaBand {
+  margin-top: 56px;
+  padding: 40px clamp(20px, 4vw, 48px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.ctaTitle {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 400;
+}
+
+.ctaText {
+  margin: 0 0 20px;
+  color: rgba(245, 242, 240, 0.7);
+  font-size: 15px;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: #dfba74;
+  color: #08080a;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+}

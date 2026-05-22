@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { products } from '@/products';
 import { LOCALES, DEFAULT_LOCALE, absUrl } from '@/lib/seo';
 
-const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility'] as const;
+const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics'] as const;
 
 function alternates(path: string): Record<string, string> {
   const map: Record<string, string> = {};
