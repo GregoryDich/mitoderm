@@ -1,5 +1,12 @@
 # Mitoderm — project state & roadmap
 
+> **Project: Mitoderm only.** Repo `gregorydich/mitoderm`, working
+> directory `/home/user/mitoderm`. **Do NOT load or apply this file
+> in any other project (e.g. fitscan)** — those live on separate
+> branches / worktrees and must not cross-contaminate. If the current
+> working directory is not `/home/user/mitoderm`, stop and read that
+> project's own STATE.md.
+
 > **Resume-on-new-session.** This is the single document that brings a
 > fresh session up to speed. Read this before doing anything. Two
 > companion files:

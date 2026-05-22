@@ -1,5 +1,12 @@
 # Mitoderm — project memory
 
+> **Scope: Mitoderm only** (`gregorydich/mitoderm`,
+> `/home/user/mitoderm`). Conventions, tokens, skills and the roadmap
+> below apply to this repo only. **Do not import them into other
+> projects** (e.g. fitscan) — those live in separate working
+> directories with their own CLAUDE.md / STATE.md. If `pwd` is not
+> `/home/user/mitoderm`, this file does not apply.
+
 > **Read `STATE.md` first** for the current state, open questions and
 > the prioritised roadmap. This file holds durable Claude memory:
 > stack, conventions and reusable techniques.
