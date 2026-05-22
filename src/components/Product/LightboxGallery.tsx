@@ -132,11 +132,14 @@ const LightboxGallery: FC<Props> = ({ images, name }) => {
             </svg>
           </button>
           <div className={styles.stage} onClick={(e) => e.stopPropagation()}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={images[openAt]}
               alt={`${name} — ${openAt + 1}`}
               className={styles.stageImg}
+              width={1600}
+              height={1200}
+              sizes="(max-width: 1024px) 100vw, 90vw"
+              priority
             />
             <span className={styles.counter}>
               {openAt + 1} / {images.length}

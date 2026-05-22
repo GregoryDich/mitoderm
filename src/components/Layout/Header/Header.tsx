@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import { LocaleType } from '@/types';
@@ -24,8 +25,14 @@ const Header: FC = () => {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} onClick={() => setOpen(false)}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo.svg" alt="Mitoderm" className={styles.logoImg} />
+        <Image
+          src="/brand/logo.svg"
+          alt="Mitoderm"
+          className={styles.logoImg}
+          width={160}
+          height={40}
+          priority
+        />
       </Link>
 
       <button

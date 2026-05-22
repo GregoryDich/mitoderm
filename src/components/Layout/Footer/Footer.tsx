@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import useAppStore from '@/store/store';
@@ -19,8 +20,13 @@ const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/brand/logo.svg" alt="Mitoderm" className={styles.logo} />
+      <Image
+        src="/brand/logo.svg"
+        alt="Mitoderm"
+        className={styles.logo}
+        width={140}
+        height={36}
+      />
       <span className={styles.copyright}>{t('copyright')}</span>
       <div className={styles.links}>
         <button type="button" onClick={() => openModal('privatePolicy')}>
