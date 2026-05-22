@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import path from 'node:path';
 import { isAdmin } from '@/lib/admin-auth';
 import { writeAsset } from '@/lib/admin-store';
+import { logAudit, requestMeta } from '@/lib/audit-log';
 
 const ALLOWED_TYPES = [
   'image/jpeg',
@@ -79,6 +80,13 @@ export async function POST(req: Request) {
       bytes,
       `chore(admin): upload ${rel}`
     );
+    await logAudit({
+      at: new Date().toISOString(),
+      action: 'asset.upload',
+      target: rel,
+      ...requestMeta(req),
+      meta: { persisted, bytes: bytes.length, type: file.type },
+    });
     return NextResponse.json({ ok: true, url, persisted, bytes: bytes.length });
   } catch (e) {
     return NextResponse.json(

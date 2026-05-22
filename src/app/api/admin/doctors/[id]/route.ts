@@ -7,6 +7,7 @@ import {
   type DoctorArea,
   type DoctorProfession,
 } from '@/lib/doctors-store';
+import { logAudit, requestMeta } from '@/lib/audit-log';
 
 const PROFESSIONS: DoctorProfession[] = ['doctor', 'cosmetologist', 'clinic'];
 const AREAS: DoctorArea[] = ['north', 'center', 'south', 'jerusalem', 'eilat'];
@@ -52,15 +53,28 @@ export async function PATCH(
   }
   const doc = await updateDoctor(params.id, patch);
   if (!doc) return bad('not_found', 404);
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'doctor.update',
+    target: params.id,
+    ...requestMeta(req),
+    meta: { keys: Object.keys(patch) },
+  });
   return NextResponse.json({ ok: true, doctor: doc });
 }
 
 export async function DELETE(
-  _req: Request,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
   if (!isAdmin()) return bad('unauthorized', 401);
   const ok = await deleteDoctor(params.id);
   if (!ok) return bad('not_found', 404);
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'doctor.delete',
+    target: params.id,
+    ...requestMeta(req),
+  });
   return NextResponse.json({ ok: true });
 }

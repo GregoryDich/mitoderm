@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { readProducts, writeProducts } from '@/lib/admin-store';
+import { logAudit, requestMeta } from '@/lib/audit-log';
 import type { Product } from '@/products';
 
 function bad(reason: string, status = 400) {
@@ -41,11 +42,18 @@ export async function PATCH(
     next,
     `chore(admin): update product ${params.slug}`
   );
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'product.update',
+    target: params.slug,
+    ...requestMeta(req),
+    meta: { persisted, slugChanged: !!patch.slug && patch.slug !== params.slug },
+  });
   return NextResponse.json({ ok: true, persisted, product: merged });
 }
 
 export async function DELETE(
-  _req: Request,
+  req: Request,
   { params }: { params: { slug: string } }
 ) {
   if (!isAdmin()) return bad('unauthorized', 401);
@@ -57,5 +65,12 @@ export async function DELETE(
     next,
     `chore(admin): delete product ${params.slug}`
   );
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'product.delete',
+    target: params.slug,
+    ...requestMeta(req),
+    meta: { persisted },
+  });
   return NextResponse.json({ ok: true, persisted });
 }

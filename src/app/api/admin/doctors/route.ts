@@ -6,6 +6,7 @@ import {
   type DoctorArea,
   type DoctorProfession,
 } from '@/lib/doctors-store';
+import { logAudit, requestMeta } from '@/lib/audit-log';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,6 +62,13 @@ export async function POST(req: Request) {
     photo,
     bio,
     isPublished,
+  });
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'doctor.create',
+    target: doc.id,
+    ...requestMeta(req),
+    meta: { name },
   });
   return NextResponse.json({ ok: true, doctor: doc });
 }

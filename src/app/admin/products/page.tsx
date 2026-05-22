@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { isAdmin } from '@/lib/admin-auth';
 import { readProducts } from '@/lib/admin-store';
 import AdminDeleteButton from '@/components/Admin/AdminDeleteButton';
+import AdminDuplicateButton from '@/components/Admin/AdminDuplicateButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -158,6 +159,7 @@ export default async function AdminProducts() {
                   >
                     Edit
                   </Link>
+                  <AdminDuplicateButton slug={p.slug} />
                   <AdminDeleteButton slug={p.slug} name={p.content.en?.name} />
                 </Td>
               </tr>

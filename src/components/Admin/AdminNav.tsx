@@ -9,6 +9,7 @@ const SECTIONS = [
   { href: '/admin/products', label: 'Catalog' },
   { href: '/admin/doctors', label: 'Family' },
   { href: '/admin/leads', label: 'Leads' },
+  { href: '/admin/audit', label: 'Audit' },
 ];
 
 const AdminNav: FC = () => {

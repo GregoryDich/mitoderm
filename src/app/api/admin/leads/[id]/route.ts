@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { isAdmin } from '@/lib/admin-auth';
 import { deleteLead, updateLead, type LeadStatus } from '@/lib/leads-store';
+import { logAudit, requestMeta } from '@/lib/audit-log';
 
 const STATUSES: LeadStatus[] = ['new', 'contacted', 'closed', 'archived'];
 
@@ -29,11 +30,18 @@ export async function PATCH(
   }
   const lead = await updateLead(params.id, patch);
   if (!lead) return NextResponse.json({ error: 'not_found' }, { status: 404 });
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'lead.update',
+    target: params.id,
+    ...requestMeta(req),
+    meta: { status: patch.status, noteLen: patch.note?.length },
+  });
   return NextResponse.json({ ok: true, lead });
 }
 
 export async function DELETE(
-  _req: Request,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
   if (!isAdmin()) {
@@ -41,5 +49,11 @@ export async function DELETE(
   }
   const ok = await deleteLead(params.id);
   if (!ok) return NextResponse.json({ error: 'not_found' }, { status: 404 });
+  await logAudit({
+    at: new Date().toISOString(),
+    action: 'lead.delete',
+    target: params.id,
+    ...requestMeta(req),
+  });
   return NextResponse.json({ ok: true });
 }
