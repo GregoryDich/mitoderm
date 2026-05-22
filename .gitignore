@@ -7,5 +7,6 @@ tsconfig.tsbuildinfo
 .env.production
 **/*.env.development
 
-# Local-only sinks (api/leads writes here in dev)
-data/
+# Local-only sinks (api/leads writes here in dev). Root-only so it doesn't
+# accidentally swallow src/data/, which is committed source-of-truth data.
+/data/

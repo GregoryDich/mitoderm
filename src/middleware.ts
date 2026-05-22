@@ -10,6 +10,7 @@ export default function middleware(req: NextRequest) {
   // (sitemap.xml, robots.txt, /brand/logo.svg, /products/.../hero.jpg, …).
   if (
     pathname.startsWith('/api') ||
+    pathname.startsWith('/admin') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/_vercel') ||
     /\.[^/]+$/.test(pathname)
