@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { appendLead } from '@/lib/leads-store';
 
 interface LeadBody {
   name?: string;
@@ -40,28 +39,22 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
-  const lead = {
-    ts: new Date().toISOString(),
-    name,
-    email,
-    phone,
-    clinic,
-    message,
-  };
-
   // Best-effort local persistence for dev; safe to fail in serverless.
   // Production: replace with a real sink — DB, CRM, or an email transport
   // configured via env (SMTP/Resend/SendGrid).
+  let lead;
   try {
-    const dir = path.join(process.cwd(), 'data');
-    await fs.mkdir(dir, { recursive: true });
-    await fs.appendFile(
-      path.join(dir, 'leads.jsonl'),
-      JSON.stringify(lead) + '\n',
-      'utf8'
-    );
+    lead = await appendLead({ name, email, phone, clinic, message });
   } catch {
-    // ignore — fall back to console only
+    // ignore — fall back to a transient record so email + log still fire
+    lead = {
+      ts: new Date().toISOString(),
+      name,
+      email,
+      phone,
+      clinic,
+      message,
+    };
   }
   // Always log so the operator sees the lead in dev/server logs.
   // eslint-disable-next-line no-console

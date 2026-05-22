@@ -12,7 +12,7 @@
   "catalog": {
     "eyebrow": "CATALOG",
     "title": "Our Products",
-    "subtitle": "Professional exosome-based solutions for clinics and aesthetic practitioners — from our flagship EXOXE exosome to advanced masks, peels and bio-spicules.",
+    "subtitle": "Professional exosome-based solutions for clinics and aesthetic practitioners — V-Tech serums and masks, Exotech gels, Exosignal hair treatments.",
     "filterAll": "All",
     "filterExosome": "Exosomes",
     "filterMask": "Masks",
@@ -23,7 +23,10 @@
     "learnMore": "Learn more",
     "ctaTitle": "Looking for the right solution?",
     "ctaText": "Our specialist will help you choose products and protocols for your clinic.",
-    "ctaButton": "Contact us"
+    "ctaButton": "Contact us",
+    "filterSerum": "Serums",
+    "filterGel": "Gels",
+    "filterHair": "Hair"
   },
   "product": {
     "keyBenefits": "Key Benefits",

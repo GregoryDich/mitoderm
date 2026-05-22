@@ -16,10 +16,10 @@ type Filter = 'all' | ProductCategory;
 
 const filters: { key: Filter; labelKey: string }[] = [
   { key: 'all', labelKey: 'filterAll' },
-  { key: 'exosome', labelKey: 'filterExosome' },
+  { key: 'serum', labelKey: 'filterSerum' },
   { key: 'mask', labelKey: 'filterMask' },
-  { key: 'peel', labelKey: 'filterPeel' },
-  { key: 'bio-spicules', labelKey: 'filterBioSpicules' },
+  { key: 'gel', labelKey: 'filterGel' },
+  { key: 'hair', labelKey: 'filterHair' },
 ];
 
 const accentVar: Record<ProductAccent, string> = {

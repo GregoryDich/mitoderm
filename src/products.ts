@@ -1,7 +1,14 @@
 import productsData from '@/data/products.json';
 import { LocaleType } from './types';
 
-export type ProductCategory = 'exosome' | 'mask' | 'peel' | 'bio-spicules';
+export type ProductCategory =
+  | 'exosome'
+  | 'serum'
+  | 'mask'
+  | 'gel'
+  | 'peel'
+  | 'hair'
+  | 'bio-spicules';
 export type ProductStatus = 'available' | 'coming-soon';
 export type ProductAccent = 'teal' | 'gold' | 'rose';
 
@@ -88,30 +95,8 @@ export interface CatalogItem {
   shortDescription: string;
 }
 
-const exoxeName: Record<LocaleType, string> = {
-  en: 'EXOXE Exosome',
-  ru: 'Экзосомы EXOXE',
-  he: 'אקסוזום EXOXE',
-};
-
-const exoxeShort: Record<LocaleType, string> = {
-  en: 'Pure lyophilized exosome powder + sterilized solution for professional skin rejuvenation.',
-  ru: 'Чистый лиофилизированный порошок экзосом + стерильный раствор для профессионального омоложения кожи.',
-  he: 'אבקת אקסוזומים מיובשת בהקפאה + תמיסה סטרילית להתחדשות עור מקצועית.',
-};
-
-export const getCatalogItems = (locale: LocaleType): CatalogItem[] => [
-  {
-    slug: 'exoxe',
-    href: '/',
-    category: 'exosome',
-    status: 'available',
-    accent: 'teal',
-    image: '/products/exoxe/hero.png',
-    name: exoxeName[locale],
-    shortDescription: exoxeShort[locale],
-  },
-  ...products.map((p) => ({
+export const getCatalogItems = (locale: LocaleType): CatalogItem[] =>
+  products.map((p) => ({
     slug: p.slug,
     href: `/products/${p.slug}`,
     category: p.category,
@@ -120,5 +105,4 @@ export const getCatalogItems = (locale: LocaleType): CatalogItem[] => [
     image: p.image,
     name: p.content[locale].name,
     shortDescription: p.content[locale].shortDescription,
-  })),
-];
+  }));
