@@ -37,7 +37,9 @@
     "gallery": "Галерея",
     "professionalBadge": "Только для профессионального использования",
     "related": "Похожие продукты",
-    "keyFacts": "Ключевые факты"
+    "keyFacts": "Ключевые факты",
+    "contactViaWhatsApp": "Написать в WhatsApp",
+    "trustedBy": "С НАМИ РАБОТАЮТ"
   },
   "buttons": {
     "contact": "Связаться с нами",

@@ -37,7 +37,9 @@
     "gallery": "Gallery",
     "professionalBadge": "For professional use only",
     "related": "Related products",
-    "keyFacts": "Key facts"
+    "keyFacts": "Key facts",
+    "contactViaWhatsApp": "Contact via WhatsApp",
+    "trustedBy": "TRUSTED BY"
   },
   "buttons": {
     "contact": "Contact us",

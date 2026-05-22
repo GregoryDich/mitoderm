@@ -146,6 +146,34 @@
   }
 }
 
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 40px;
+  background-color: #25d366;
+  color: #08231a;
+  font-weight: 500;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+
+  &::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2308231a'><path d='M20.52 3.48A12 12 0 0 0 2.5 18l-1.5 5.5 5.6-1.46A12 12 0 1 0 20.52 3.48Zm-8.5 18.2a9.96 9.96 0 0 1-5.07-1.38l-.36-.22-3.32.87.89-3.24-.24-.38a9.96 9.96 0 1 1 8.1 4.35Zm5.5-7.45c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.7.15-.2.3-.8.97-.98 1.17-.18.2-.36.22-.66.08-.3-.15-1.27-.47-2.42-1.5-.9-.81-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.62.14-.15.3-.39.45-.59.15-.2.2-.34.3-.56.1-.22.05-.42-.03-.59-.08-.16-.66-1.6-.9-2.18-.24-.57-.49-.5-.66-.5-.18-.01-.39-.01-.59-.01-.2 0-.53.07-.81.37-.28.3-1.06 1.03-1.06 2.5 0 1.48 1.08 2.9 1.23 3.1.15.2 2.13 3.27 5.16 4.59.72.31 1.28.5 1.72.64.72.22 1.38.19 1.9.11.58-.08 1.78-.73 2.04-1.43.25-.7.25-1.31.18-1.43-.08-.13-.27-.2-.57-.35Z'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
+  }
+}
+
 .heroMedia {
   flex: 0 1 520px;
   width: 520px;

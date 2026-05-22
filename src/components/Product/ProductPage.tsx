@@ -8,11 +8,15 @@ import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from './ProductMedia';
 import LightboxGallery from './LightboxGallery';
 import ProductSectionNav from './ProductSectionNav';
+import TrustedByStrip from './TrustedByStrip';
+import type { Doctor } from '@/lib/doctors-store';
+import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
 
 interface Props {
   product: Product;
   locale: LocaleType;
+  trustedBy?: Doctor[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -43,9 +47,10 @@ const Section: FC<{
   </section>
 );
 
-const ProductPage: FC<Props> = ({ product, locale }) => {
+const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
   const t = useTranslations('product');
   const c = product.content[locale];
+  const waHref = whatsappHref(productInquiryMessage(c.name, locale));
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
@@ -94,7 +99,19 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           <p className={styles.tagline}>{c.tagline}</p>
           <p className={styles.desc}>{c.description}</p>
           <div className={styles.ctaRow}>
-            <Button text={t('contactForPrice')} colored href="/form" />
+            {waHref ? (
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.waBtn}
+                aria-label={t('contactViaWhatsApp')}
+              >
+                {t('contactViaWhatsApp')}
+              </a>
+            ) : (
+              <Button text={t('contactForPrice')} colored href="/form" />
+            )}
             <a href="#formula" className={styles.ghost}>
               {t('learnMore')} <span className={styles.arrowDown}>↓</span>
             </a>
@@ -111,6 +128,10 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           sizes="(max-width: 1024px) 100vw, 520px"
         />
       </section>
+
+      {trustedBy.length > 0 && (
+        <TrustedByStrip doctors={trustedBy} label={t('trustedBy')} />
+      )}
 
       {c.keyFacts && c.keyFacts.length > 0 && (
         <aside className={styles.keyFacts} aria-label={t('keyFacts')}>
@@ -353,7 +374,18 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{c.ctaTitle}</h2>
           <p className={styles.ctaText}>{c.ctaText}</p>
-          <Button text={t('contactForPrice')} colored href="/form" />
+          {waHref ? (
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.waBtn}
+            >
+              {t('contactViaWhatsApp')}
+            </a>
+          ) : (
+            <Button text={t('contactForPrice')} colored href="/form" />
+          )}
         </section>
       </main>
 

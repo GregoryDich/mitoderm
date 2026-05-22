@@ -34,12 +34,26 @@ export async function generateMetadata({
   };
 }
 
-export default function AboutRoute({
+export default async function AboutRoute({
   params: { lang },
 }: {
   params: { lang: LocaleType };
 }) {
   unstable_setRequestLocale(lang);
+
+  const tFaq = await getTranslations({ locale: lang, namespace: 'faq' });
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [1, 2, 3].map((i) => ({
+      '@type': 'Question',
+      name: tFaq(`item${i}.title`),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: tFaq(`item${i}.text`),
+      },
+    })),
+  };
 
   const medicalBusinessLd = {
     '@context': 'https://schema.org',
@@ -59,6 +73,7 @@ export default function AboutRoute({
     <>
       <AboutPage />
       <JsonLd id="ld-medical-business" data={medicalBusinessLd} />
+      <JsonLd id="ld-faq" data={faqLd} />
     </>
   );
 }

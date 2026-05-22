@@ -5,6 +5,7 @@ import ProductPage from '@/components/Product/ProductPage';
 import JsonLd from '@/components/Seo/JsonLd';
 import { getProduct, products } from '@/products';
 import { LocaleType } from '@/types';
+import { readDoctors } from '@/lib/doctors-store';
 import {
   SITE_URL,
   SITE_NAME,
@@ -47,7 +48,7 @@ export function generateMetadata({
   };
 }
 
-export default function Page({
+export default async function Page({
   params: { lang, slug },
 }: {
   params: { lang: LocaleType; slug: string };
@@ -60,6 +61,7 @@ export default function Page({
   const images = [product.image, ...(product.gallery ?? [])]
     .filter((x): x is string => !!x)
     .map((p) => `${SITE_URL}${p}`);
+  const doctors = await readDoctors();
 
   const productLd = {
     '@context': 'https://schema.org',
@@ -122,11 +124,27 @@ export default function Page({
     ],
   } as const;
 
+  const medicalProcedureLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    name: c.name,
+    description: c.description,
+    url: absUrl(lang, path),
+    procedureType: 'https://schema.org/TherapeuticProcedure',
+    bodyLocation:
+      product.category === 'hair' ? 'Scalp and hair' : 'Skin (face / body)',
+    preparation: c.protocol?.items.join(' ') ?? undefined,
+    followup: c.aftercare?.items.join(' ') ?? undefined,
+    contraindication: c.contraindications?.items.join(', ') ?? undefined,
+    provider: { '@id': `${SITE_URL}#medicalbusiness` },
+  } as const;
+
   return (
     <main>
-      <ProductPage product={product} locale={lang} />
+      <ProductPage product={product} locale={lang} trustedBy={doctors} />
       <JsonLd id="ld-product" data={productLd} />
       <JsonLd id="ld-breadcrumb" data={breadcrumbsLd} />
+      <JsonLd id="ld-medical-procedure" data={medicalProcedureLd} />
     </main>
   );
 }
