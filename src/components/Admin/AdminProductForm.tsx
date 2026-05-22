@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import type { Product, ProductContent } from '@/products';
 import { LocaleType } from '@/types';
 import LocaleContentEditor from './LocaleContentEditor';
+import ImageUploadButton from './ImageUploadButton';
 import styles from './admin-form.module.scss';
 
 interface Props {
@@ -238,13 +239,21 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
             <span className={styles.fieldLabel}>
               Hero image (path under /public)
             </span>
-            <input
-              type="text"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              placeholder="/products/my-product/hero.jpg"
-              className={styles.input}
-            />
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+              <input
+                type="text"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="/products/my-product/hero.jpg"
+                className={styles.input}
+                style={{ flex: 1 }}
+              />
+              <ImageUploadButton
+                slug={slug}
+                label="Upload hero"
+                onUploaded={(url) => setImage(url)}
+              />
+            </div>
           </label>
           <label className={`${styles.field} ${styles.wide}`}>
             <span className={styles.fieldLabel}>
@@ -258,6 +267,14 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
                 '/products/my-product/g1.jpg\n/products/my-product/g2.jpg'
               }
               className={styles.textarea}
+            />
+            <ImageUploadButton
+              slug={slug}
+              label="Upload to gallery (multi-select)"
+              multiple
+              onUploaded={(url) =>
+                setGallery((cur) => (cur ? `${cur}\n${url}` : url))
+              }
             />
           </label>
         </div>
