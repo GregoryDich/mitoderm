@@ -67,5 +67,48 @@ export async function POST(req: Request) {
   // eslint-disable-next-line no-console
   console.log('[lead]', lead);
 
+  // Optional email delivery via Resend (https://resend.com).
+  // Set RESEND_API_KEY + LEADS_TO_EMAIL (and optionally LEADS_FROM_EMAIL)
+  // to enable. The lead response never fails because of email errors.
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.LEADS_TO_EMAIL;
+  if (apiKey && to) {
+    try {
+      const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
+      const subject = `New Mitoderm lead — ${name}`;
+      const text = [
+        `Name:    ${name}`,
+        `Email:   ${email}`,
+        phone && `Phone:   ${phone}`,
+        clinic && `Clinic:  ${clinic}`,
+        '',
+        message,
+      ]
+        .filter(Boolean)
+        .join('\n');
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          from,
+          to: [to],
+          reply_to: email,
+          subject,
+          text,
+        }),
+      });
+      if (!res.ok) {
+        // eslint-disable-next-line no-console
+        console.warn('[lead] resend send failed', res.status, await res.text());
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.warn('[lead] resend send error', err);
+    }
+  }
+
   return NextResponse.json({ ok: true });
 }

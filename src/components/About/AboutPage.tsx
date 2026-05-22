@@ -7,7 +7,12 @@ import styles from './AboutPage.module.scss';
 
 const AboutPage: FC = () => {
   const t = useTranslations('about');
+  const tFaq = useTranslations('faq');
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
+  const faq = [1, 2, 3].map((i) => ({
+    q: tFaq(`item${i}.title`),
+    a: tFaq(`item${i}.text`),
+  }));
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -53,6 +58,34 @@ const AboutPage: FC = () => {
                   <span className={styles.statValue}>{s.value}</span>
                   <span className={styles.statLabel}>{s.label}</span>
                 </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section className={styles.block}>
+            <div className={styles.secLabel}>
+              <span className={styles.secNum}>03</span>
+              <span className={styles.secLine} />
+              <span className={styles.secName}>FAQ</span>
+            </div>
+            <h2 className={styles.h2}>{tFaq('title')}</h2>
+            <div className={styles.faqList}>
+              {faq.map((f, i) => (
+                <details
+                  key={f.q}
+                  className={styles.faqItem}
+                  {...(i === 0 ? { open: true } : {})}
+                >
+                  <summary className={styles.faqQ}>
+                    <span>{f.q}</span>
+                    <span className={styles.faqChev} aria-hidden="true">
+                      +
+                    </span>
+                  </summary>
+                  <p className={styles.faqA}>{f.a}</p>
+                </details>
               ))}
             </div>
           </section>

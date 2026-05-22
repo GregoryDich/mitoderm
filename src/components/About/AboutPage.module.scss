@@ -175,6 +175,60 @@
   color: rgba(245, 242, 240, 0.7);
 }
 
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border: 1px solid var(--glassBorder);
+  border-radius: 16px;
+  background-color: var(--glass);
+  overflow: hidden;
+}
+
+.faqQ {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 400;
+  color: #f5f2f0;
+  list-style: none;
+  transition: background-color 0.15s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.faqChev {
+  flex: 0 0 auto;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--accent);
+  transition: transform 0.18s ease;
+}
+
+.faqItem[open] .faqChev {
+  transform: rotate(45deg);
+}
+
+.faqA {
+  padding: 0 24px 22px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.65;
+  color: rgba(245, 242, 240, 0.78);
+}
+
 .ctaBand {
   position: relative;
   overflow: hidden;
