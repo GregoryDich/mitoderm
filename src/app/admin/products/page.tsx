@@ -80,6 +80,7 @@ export default async function AdminProducts() {
         >
           <thead>
             <tr style={{ background: 'rgba(255,255,255,0.04)' }}>
+              <Th style={{ width: 84 }}>Image</Th>
               <Th>Name (en)</Th>
               <Th>Slug</Th>
               <Th>Category</Th>
@@ -94,6 +95,36 @@ export default async function AdminProducts() {
                 key={p.slug}
                 style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
               >
+                <Td style={{ width: 84 }}>
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      width: 56,
+                      height: 56,
+                      borderRadius: 8,
+                      overflow: 'hidden',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image}
+                        alt=""
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    ) : (
+                      <span style={{ color: 'rgba(245,242,240,0.3)' }}>—</span>
+                    )}
+                  </span>
+                </Td>
                 <Td>
                   <Link
                     href={`/admin/products/${p.slug}/edit`}

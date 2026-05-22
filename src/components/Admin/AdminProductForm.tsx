@@ -6,6 +6,7 @@ import type { Product, ProductContent } from '@/products';
 import { LocaleType } from '@/types';
 import LocaleContentEditor from './LocaleContentEditor';
 import ImageUploadButton from './ImageUploadButton';
+import GalleryEditor from './GalleryEditor';
 import styles from './admin-form.module.scss';
 
 interface Props {
@@ -101,7 +102,8 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
   const [status, setStatus] = useState<Product['status']>(seed.status);
   const [accent, setAccent] = useState<Product['accent']>(seed.accent);
   const [image, setImage] = useState(seed.image ?? '');
-  const [gallery, setGallery] = useState((seed.gallery ?? []).join('\n'));
+  const [gallery, setGallery] = useState<string[]>(seed.gallery ?? []);
+  const [heroFailed, setHeroFailed] = useState(false);
   const [activeLoc, setActiveLoc] = useState<LocaleType>('en');
   const [content, setContent] = useState<Record<LocaleType, ProductContent>>({
     en: seed.content.en,
@@ -129,19 +131,16 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
       he: clean(content.he),
     };
 
+    const cleanedGallery = gallery.map((s) => s.trim()).filter(Boolean);
     const payload: Product = {
       slug: slug.trim(),
       category,
       status,
       accent,
       image: image.trim() || undefined,
-      gallery: gallery
-        .split('\n')
-        .map((s) => s.trim())
-        .filter(Boolean),
+      gallery: cleanedGallery.length ? cleanedGallery : undefined,
       content: cleaned,
     };
-    if (payload.gallery && payload.gallery.length === 0) delete payload.gallery;
 
     setPending(true);
     const url =
@@ -235,48 +234,54 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
               <option value="rose">Rose</option>
             </select>
           </label>
-          <label className={`${styles.field} ${styles.wide}`}>
-            <span className={styles.fieldLabel}>
-              Hero image (path under /public)
-            </span>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-              <input
-                type="text"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-                placeholder="/products/my-product/hero.jpg"
-                className={styles.input}
-                style={{ flex: 1 }}
-              />
-              <ImageUploadButton
-                slug={slug}
-                label="Upload hero"
-                onUploaded={(url) => setImage(url)}
-              />
+          <div className={`${styles.field} ${styles.wide}`}>
+            <span className={styles.fieldLabel}>Hero image</span>
+            <div className={styles.heroPreview}>
+              {image && !heroFailed ? (
+                <span className={styles.thumb}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={image}
+                    alt=""
+                    onError={() => setHeroFailed(true)}
+                  />
+                </span>
+              ) : (
+                <span className={styles.thumb}>
+                  <span className={styles.thumbEmpty}>—</span>
+                </span>
+              )}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <input
+                  type="text"
+                  value={image}
+                  onChange={(e) => {
+                    setImage(e.target.value);
+                    setHeroFailed(false);
+                  }}
+                  placeholder="/products/my-product/hero.jpg"
+                  className={styles.input}
+                />
+                <ImageUploadButton
+                  slug={slug}
+                  label="Upload hero image"
+                  variant="drop"
+                  onUploaded={(url) => {
+                    setImage(url);
+                    setHeroFailed(false);
+                  }}
+                />
+              </div>
             </div>
-          </label>
-          <label className={`${styles.field} ${styles.wide}`}>
-            <span className={styles.fieldLabel}>
-              Gallery (one path per line)
-            </span>
-            <textarea
+          </div>
+          <div className={`${styles.field} ${styles.wide}`}>
+            <span className={styles.fieldLabel}>Gallery</span>
+            <GalleryEditor
               value={gallery}
-              onChange={(e) => setGallery(e.target.value)}
-              rows={4}
-              placeholder={
-                '/products/my-product/g1.jpg\n/products/my-product/g2.jpg'
-              }
-              className={styles.textarea}
-            />
-            <ImageUploadButton
+              onChange={setGallery}
               slug={slug}
-              label="Upload to gallery (multi-select)"
-              multiple
-              onUploaded={(url) =>
-                setGallery((cur) => (cur ? `${cur}\n${url}` : url))
-              }
             />
-          </label>
+          </div>
         </div>
       </section>
 
