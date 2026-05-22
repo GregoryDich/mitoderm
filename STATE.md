@@ -16,12 +16,15 @@
 >   research summary, full prioritised backlog). Cross-link, don't
 >   duplicate.
 
-Last updated: **2026-05-22** (Cycle 1 continued). Branch
-**`claude/add-catalog-page-65V89`** @ commit **`124eef3`**. Snapshot
-of the "before" state preserved as branch + tag
+Last updated: **2026-05-22** (Cycle 1 closed + Cycle 2 in flight).
+Branch **`claude/add-catalog-page-65V89`** @ commit **`9d23044`**.
+Snapshot of the "before" state preserved as branch + tag
 **`cycle-0-snapshot`** @ `96e029c`.
 
 ### Done in this push (since `d5bf194`)
+
+**Cycle 1 A bucket — all shipped except A17 (Cloudinary, gated on
+owner decision):**
 
 - **A07** sticky mobile WhatsApp/quote bar on product pages
 - **A13** `/[lang]/accessibility` route + footer link (IS 5568)
@@ -42,6 +45,24 @@ of the "before" state preserved as branch + tag
   current catalog categories (serum/gel/hair/mask)
 - Marked `STATE.md` and `CLAUDE.md` as **Mitoderm-only** so a
   parallel fitscan worktree won't import these conventions
+
+**Cycle 2 B bucket — first batch shipped:**
+
+- **B17** Search input on `/catalog` (filters by name + description
+  + category)
+- **B18** Hardened response headers via middleware — HSTS,
+  X-Frame-Options, CSP, Permissions-Policy
+- **B14** Logistics structural slot on `ProductContent` (region /
+  lead time / notes)
+- **B15** Comparison structural slot (semantic accessible table)
+- **B10** `/api/leads` forwards to `LEADS_WEBHOOK_URL` (CRM
+  fan-out), optional HMAC-SHA256 signature
+- **B19** `POST /api/admin/leads/mirror?token=…` — leads snapshot to
+  GitHub via Contents API (cron-friendly endpoint)
+- **B04** `/[lang]/clinics` certified-clinic directory backed by
+  doctors store + LocalBusiness JSON-LD
+- **B05** `/[lang]/protocols` "Shop the protocol" landing page —
+  aggregates every product's `bundle` slot into numbered protocols
 
 ---
 
