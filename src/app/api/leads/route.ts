@@ -103,5 +103,42 @@ export async function POST(req: Request) {
     }
   }
 
+  // Optional CRM webhook fan-out. Set LEADS_WEBHOOK_URL to forward
+  // every successful lead (HubSpot, Pipedrive, Make, n8n, Zapier — any
+  // endpoint that accepts JSON). Failures are logged and swallowed so
+  // a downstream outage never blocks lead capture. Optionally signs
+  // the body with HMAC-SHA256 when LEADS_WEBHOOK_SECRET is set.
+  const webhookUrl = process.env.LEADS_WEBHOOK_URL;
+  if (webhookUrl) {
+    try {
+      const payload = JSON.stringify({
+        source: 'mitoderm.com',
+        receivedAt: new Date().toISOString(),
+        lead,
+      });
+      const headers: Record<string, string> = {
+        'content-type': 'application/json',
+      };
+      const secret = process.env.LEADS_WEBHOOK_SECRET;
+      if (secret) {
+        const { createHmac } = await import('node:crypto');
+        const sig = createHmac('sha256', secret).update(payload).digest('hex');
+        headers['x-mitoderm-signature'] = `sha256=${sig}`;
+      }
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers,
+        body: payload,
+      });
+      if (!res.ok) {
+        // eslint-disable-next-line no-console
+        console.warn('[lead] webhook failed', res.status);
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.warn('[lead] webhook error', err);
+    }
+  }
+
   return NextResponse.json({ ok: true });
 }
