@@ -182,6 +182,18 @@
     },
     "eyebrow": "REVIEWS"
   },
+  "protocols": {
+    "eyebrow": "PROTOCOLS",
+    "title": "Shop the protocol",
+    "subtitle": "Each protocol pairs the anchor product with the partner SKUs that complete a session — the same combinations our practitioners ship in real clinics.",
+    "anchor": "Anchored on",
+    "viewAnchor": "View anchor product",
+    "emptyText": "Protocols will appear here once partner-product bundles are mapped from /admin/products.",
+    "browseCatalog": "Browse the catalog",
+    "ctaTitle": "Need help mapping a protocol?",
+    "ctaText": "Our specialists tailor bundles to your patient flow.",
+    "ctaButton": "Talk to a specialist"
+  },
   "clinics": {
     "eyebrow": "CERTIFIED CLINICS",
     "title": "Find a Mitoderm-certified clinic near you",
