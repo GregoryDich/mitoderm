@@ -63,9 +63,22 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
     )
     .slice(0, 3);
 
+  const bundleItems =
+    c.bundle && c.bundle.items.length > 0
+      ? c.bundle.items
+          .map((bi) => {
+            const ref = getCatalogItems(locale).find((i) => i.slug === bi.slug);
+            return ref ? { ...ref, role: bi.role } : null;
+          })
+          .filter((x): x is NonNullable<typeof x> => x !== null)
+      : [];
+
   const sectionNav: { id: string; label: string }[] = [
     { id: 'benefits', label: 'Benefits' },
     ...(c.steps ? [{ id: 'system', label: 'System' }] : []),
+    ...(c.clinicalResults && c.clinicalResults.items.length > 0
+      ? [{ id: 'results', label: 'Results' }]
+      : []),
     { id: 'formula', label: 'Formula' },
     ...(c.pack ? [{ id: 'kit', label: 'Kit' }] : []),
     ...(c.protocol ? [{ id: 'protocol', label: 'Protocol' }] : []),
@@ -74,6 +87,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
     ...(product.gallery && product.gallery.length > 0
       ? [{ id: 'gallery', label: 'Gallery' }]
       : []),
+    ...(bundleItems.length > 0 ? [{ id: 'bundle', label: 'Protocol kit' }] : []),
     { id: 'indications', label: 'Indications' },
   ];
 
@@ -199,6 +213,30 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
           </Section>
         )}
 
+        {c.clinicalResults && c.clinicalResults.items.length > 0 && (
+          <Section
+            id="results"
+            num={next()}
+            label="RESULTS"
+            title={c.clinicalResults.title}
+          >
+            {c.clinicalResults.intro && (
+              <p className={styles.sectionIntro}>{c.clinicalResults.intro}</p>
+            )}
+            <div className={styles.results}>
+              {c.clinicalResults.items.map((r) => (
+                <article key={`${r.label}-${r.value}`} className={styles.resultCard}>
+                  <span className={styles.resultValue}>{r.value}</span>
+                  <span className={styles.resultLabel}>{r.label}</span>
+                  {r.source && (
+                    <span className={styles.resultSource}>{r.source}</span>
+                  )}
+                </article>
+              ))}
+            </div>
+          </Section>
+        )}
+
         <section className={styles.block} id="formula">
           <SectionLabel num={next()} label="FORMULA" />
           <h2 className={styles.h2}>{t('activeIngredients')}</h2>
@@ -312,6 +350,46 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             title={t('gallery')}
           >
             <LightboxGallery images={product.gallery} name={c.name} />
+          </Section>
+        )}
+
+        {bundleItems.length > 0 && c.bundle && (
+          <Section
+            id="bundle"
+            num={next()}
+            label="PROTOCOL KIT"
+            title={c.bundle.title}
+          >
+            {c.bundle.intro && (
+              <p className={styles.sectionIntro}>{c.bundle.intro}</p>
+            )}
+            <div className={styles.bundle}>
+              {bundleItems.map((b) => (
+                <Link
+                  key={b.slug}
+                  href={b.href}
+                  className={styles.bundleCard}
+                  style={{
+                    ['--accent' as string]: accentVar[b.accent as ProductAccent],
+                  }}
+                >
+                  <div className={styles.bundleMedia}>
+                    <ProductMedia
+                      image={b.image}
+                      accent={b.accent}
+                      alt={b.name}
+                      className={styles.bundleMediaInner}
+                      sizes="(max-width: 600px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className={styles.bundleBody}>
+                    {b.role && <span className={styles.bundleRole}>{b.role}</span>}
+                    <h3 className={styles.bundleName}>{b.name}</h3>
+                    <p className={styles.bundleDesc}>{b.shortDescription}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </Section>
         )}
 

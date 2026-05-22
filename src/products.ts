@@ -58,6 +58,22 @@ export interface ProductContent {
   aftercare?: { title: string; items: string[] };
   /** Contraindications / safety notes. */
   contraindications?: { title: string; items: string[] };
+  /** Clinical / study-style result metrics. Rendered as a strip of
+   *  "value + label + source" cards. Optional — block hides when empty. */
+  clinicalResults?: {
+    title: string;
+    intro?: string;
+    items: { value: string; label: string; source?: string }[];
+  };
+  /** "Shop the protocol" structural slot — a curated bundle of the
+   *  partner products that complete a session. Each item references
+   *  another product slug, with an optional role label (e.g. "Step 1
+   *  — Cleanse"). Rendered only when populated. */
+  bundle?: {
+    title: string;
+    intro?: string;
+    items: { slug: string; role?: string }[];
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;

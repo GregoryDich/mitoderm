@@ -783,3 +783,132 @@
     grid-column: span 1;
   }
 }
+
+/* Clinical results — strip of value/label/source cards */
+.sectionIntro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245, 242, 240, 0.72);
+  margin: 0 0 24px;
+  max-width: 720px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.resultCard {
+  background: var(--glass);
+  border: 1px solid var(--glassBorder);
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resultValue {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--accent, #dfba74);
+  line-height: 1;
+}
+
+.resultLabel {
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--txt);
+}
+
+.resultSource {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(245, 242, 240, 0.5);
+  letter-spacing: 0.01em;
+}
+
+/* Protocol kit / bundle */
+.bundle {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.bundleCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--glass);
+  border: 1px solid var(--glassBorder);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.bundleCard:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent, #dfba74) 40%, transparent);
+}
+
+.bundleCard:focus-visible {
+  outline: 2px solid var(--accent, #dfba74);
+  outline-offset: 2px;
+}
+
+.bundleMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bundleMediaInner {
+  width: 100%;
+  height: 100%;
+}
+
+.bundleBody {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bundleRole {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #dfba74);
+  font-weight: 600;
+}
+
+.bundleName {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.bundleDesc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(245, 242, 240, 0.65);
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .results,
+  .bundle {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .results,
+  .bundle {
+    grid-template-columns: 1fr;
+  }
+}
