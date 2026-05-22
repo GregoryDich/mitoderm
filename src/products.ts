@@ -74,6 +74,24 @@ export interface ProductContent {
     intro?: string;
     items: { slug: string; role?: string }[];
   };
+  /** Per-region logistics transparency block — lead time, cold chain,
+   *  shipping notes for each of IL / EU / Worldwide. Owner-written
+   *  facts, rendered as a small 3-up strip. */
+  logistics?: {
+    title: string;
+    intro?: string;
+    items: { region: string; leadTime: string; notes?: string }[];
+  };
+  /** Neutral comparison block — Mitoderm vs other brands across a few
+   *  rows. Owner controls the headers, rows and cells. Rendered as a
+   *  simple semantic table; column 0 is the row label. */
+  comparison?: {
+    title: string;
+    intro?: string;
+    /** Column headers — first must be the row-label column. */
+    columns: string[];
+    rows: { label: string; cells: string[] }[];
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;

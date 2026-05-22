@@ -88,6 +88,12 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
       ? [{ id: 'gallery', label: 'Gallery' }]
       : []),
     ...(bundleItems.length > 0 ? [{ id: 'bundle', label: 'Protocol kit' }] : []),
+    ...(c.logistics && c.logistics.items.length > 0
+      ? [{ id: 'logistics', label: 'Logistics' }]
+      : []),
+    ...(c.comparison && c.comparison.rows.length > 0
+      ? [{ id: 'compare', label: 'Compare' }]
+      : []),
     { id: 'indications', label: 'Indications' },
   ];
 
@@ -389,6 +395,75 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                   </div>
                 </Link>
               ))}
+            </div>
+          </Section>
+        )}
+
+        {c.logistics && c.logistics.items.length > 0 && (
+          <Section
+            id="logistics"
+            num={next()}
+            label="LOGISTICS"
+            title={c.logistics.title}
+          >
+            {c.logistics.intro && (
+              <p className={styles.sectionIntro}>{c.logistics.intro}</p>
+            )}
+            <div className={styles.logistics}>
+              {c.logistics.items.map((it) => (
+                <article key={it.region} className={styles.logiCard}>
+                  <span className={styles.logiRegion}>{it.region}</span>
+                  <span className={styles.logiLead}>{it.leadTime}</span>
+                  {it.notes && <p className={styles.logiNotes}>{it.notes}</p>}
+                </article>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {c.comparison && c.comparison.rows.length > 0 && (
+          <Section
+            id="compare"
+            num={next()}
+            label="COMPARE"
+            title={c.comparison.title}
+          >
+            {c.comparison.intro && (
+              <p className={styles.sectionIntro}>{c.comparison.intro}</p>
+            )}
+            <div className={styles.compareWrap}>
+              <table className={styles.compare}>
+                <thead>
+                  <tr>
+                    {c.comparison.columns.map((col, i) => (
+                      <th
+                        key={`${col}-${i}`}
+                        scope={i === 0 ? 'col' : 'col'}
+                        className={i === 0 ? styles.compareRowHead : ''}
+                      >
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {c.comparison.rows.map((row) => (
+                    <tr key={row.label}>
+                      <th scope="row" className={styles.compareRowHead}>
+                        {row.label}
+                      </th>
+                      {row.cells.map((cell, j) => (
+                        <td
+                          key={`${row.label}-${j}`}
+                          className={j === 0 ? styles.compareUs : ''}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </Section>
         )}
