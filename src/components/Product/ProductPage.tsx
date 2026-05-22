@@ -9,6 +9,7 @@ import ProductMedia from './ProductMedia';
 import LightboxGallery from './LightboxGallery';
 import ProductSectionNav from './ProductSectionNav';
 import TrustedByStrip from './TrustedByStrip';
+import StickyMobileCta from './StickyMobileCta';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -390,6 +391,12 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
       </main>
 
       <Footer />
+
+      <StickyMobileCta
+        waHref={waHref}
+        waLabel={t('contactViaWhatsApp')}
+        quoteLabel={t('contactForPrice')}
+      />
     </div>
   );
 };

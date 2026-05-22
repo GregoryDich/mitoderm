@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import useAppStore from '@/store/store';
 import { ModalType } from '@/types';
 import styles from './Footer.module.scss';
@@ -25,9 +26,7 @@ const Footer: FC = () => {
         <button type="button" onClick={() => openModal('privatePolicy')}>
           {t('privacy')}
         </button>
-        <button type="button" onClick={() => openModal('accessibility')}>
-          {t('accessibility')}
-        </button>
+        <Link href="/accessibility">{t('accessibility')}</Link>
       </div>
     </footer>
   );
