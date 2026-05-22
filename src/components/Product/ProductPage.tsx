@@ -59,9 +59,12 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
   const sectionNav: { id: string; label: string }[] = [
     { id: 'benefits', label: 'Benefits' },
-    ...(c.steps ? [{ id: 'protocol', label: 'Protocol' }] : []),
+    ...(c.steps ? [{ id: 'system', label: 'System' }] : []),
     { id: 'formula', label: 'Formula' },
     ...(c.pack ? [{ id: 'kit', label: 'Kit' }] : []),
+    ...(c.protocol ? [{ id: 'protocol', label: 'Protocol' }] : []),
+    ...(c.aftercare ? [{ id: 'aftercare', label: 'Aftercare' }] : []),
+    ...(c.contraindications ? [{ id: 'safety', label: 'Safety' }] : []),
     ...(product.gallery && product.gallery.length > 0
       ? [{ id: 'gallery', label: 'Gallery' }]
       : []),
@@ -156,9 +159,9 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
 
         {c.steps && (
           <Section
-            id="protocol"
+            id="system"
             num={next()}
-            label="PROTOCOL"
+            label="SYSTEM"
             title={c.stepsTitle as string}
           >
             <div className={styles.steps}>
@@ -217,6 +220,65 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
                 </article>
               ))}
             </div>
+          </Section>
+        )}
+
+        {c.protocol && (
+          <Section
+            id="protocol"
+            num={next()}
+            label="PROTOCOL"
+            title={c.protocol.title}
+          >
+            <ol className={styles.numList}>
+              {c.protocol.items.map((it, i) => (
+                <li key={it} className={styles.numItem}>
+                  <span className={styles.numIndex}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ol>
+          </Section>
+        )}
+
+        {c.aftercare && (
+          <Section
+            id="aftercare"
+            num={next()}
+            label="AFTERCARE"
+            title={c.aftercare.title}
+          >
+            <ul className={styles.bulletList}>
+              {c.aftercare.items.map((it) => (
+                <li key={it} className={styles.bulletItem}>
+                  <span className={styles.bulletDot} aria-hidden="true" />
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )}
+
+        {c.contraindications && (
+          <Section
+            id="safety"
+            num={next()}
+            label="SAFETY"
+            title={c.contraindications.title}
+          >
+            <ul className={`${styles.bulletList} ${styles.bulletListWarn}`}>
+              {c.contraindications.items.map((it) => (
+                <li key={it} className={styles.bulletItem}>
+                  <span
+                    className={`${styles.bulletDot} ${styles.bulletDotWarn}`}
+                    aria-hidden="true"
+                  />
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
           </Section>
         )}
 

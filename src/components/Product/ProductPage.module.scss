@@ -468,6 +468,84 @@
   color: rgba(245, 242, 240, 0.8);
 }
 
+/* numbered protocol list */
+.numList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  list-style: none;
+}
+
+.numItem {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 26px;
+  background-color: var(--glass);
+  border: 1px solid var(--glassBorder);
+  border-radius: 16px;
+  font-size: clamp(15px, 1.7vw, 17px);
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.88);
+}
+
+.numIndex {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+/* bullet list (aftercare / safety) */
+.bulletList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 28px;
+  padding: 26px;
+  background-color: var(--glass);
+  border: 1px solid var(--glassBorder);
+  border-radius: 16px;
+  list-style: none;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(15px, 1.6vw, 16px);
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.85);
+}
+
+.bulletDot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 10px;
+  background-color: var(--accent);
+}
+
+.bulletListWarn {
+  border-color: rgba(217, 142, 160, 0.35);
+}
+
+.bulletDotWarn {
+  background-color: #d98ea0;
+}
+
+@media screen and (max-width: 720px) {
+  .bulletList {
+    grid-template-columns: 1fr;
+  }
+  .numItem {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+  }
+}
+
 /* related products */
 .related {
   display: grid;

@@ -283,15 +283,15 @@
     "content": {
       "en": {
         "name": "EXO-NAD",
-        "eyebrow": "MEDICAL-GRADE LONGEVITY PEEL",
-        "tagline": "Skin Longevity Peeling",
-        "description": "A next-generation 3-step exfoliating system pairing cutting-edge exosome technology with NAD+ to drive cellular renewal — visibly improving tone, texture and firmness for a longevity effect.",
-        "shortDescription": "3-step longevity peeling system pairing exosomes with NAD+ for cellular renewal.",
+        "eyebrow": "REVOLUTIONARY BIOHACKING PEEL",
+        "tagline": "A revolutionary biohacking peel for skin renewal and cellular longevity",
+        "description": "EXO-NAD is a peel born from biopharmaceutical research — a skin biohacking system focused on rejuvenation, recovery and improving the viability of the skin at the cellular level.",
+        "shortDescription": "3-step biohacking peel pairing synthetic exosomes with NAD+ for cellular renewal and skin longevity.",
         "keyFacts": [
-          "3-step longevity peeling system combining exosome technology with NAD+.",
-          "Active stack: Epitalon, NAD+ complex, GHK-Cu peptide, biomimetic growth factors.",
-          "Gold-infused pH normalizer for controlled barrier recovery between steps.",
-          "Targets aging signs, dullness, texture irregularities and loss of firmness."
+          "A biohacking system that optimises cellular processes via synthetic exosomes and NAD+ activation, providing long-term DNA protection.",
+          "Advanced peptides — Epitalon, GHK-Cu and biomimetic growth factors — drive sustained skin regeneration.",
+          "3-step protocol: biphasic peel → pH normalizer with collagen, peptides and vitamin B12 → longevity serum with NAD+ and exosomes.",
+          "Targets pigmentation (post-acne, melasma, lentigo), loss of firmness, fine lines and hyperpigmentation."
         ],
         "stats": [
           {
@@ -313,88 +313,119 @@
         ],
         "benefits": [
           {
-            "title": "Even tone & texture",
-            "text": "Visibly uniform tone and refined surface after the controlled peel."
+            "title": "Pigmentation correction",
+            "text": "Visibly reduces post-acne marks, melasma and lentigo through controlled cellular renewal."
           },
           {
-            "title": "Radiant complexion",
-            "text": "A refreshed, luminous look with restored suppleness."
+            "title": "Firmness & density",
+            "text": "Stimulates fibroblasts and collagen synthesis, restoring dermal density and a lifted look."
           },
           {
-            "title": "Fewer fine lines",
-            "text": "Reduces the visibility of fine lines and wrinkles."
+            "title": "Wrinkles & lines",
+            "text": "Smooths fine lines and reduces signs of aging through deep regenerative actives."
           },
           {
-            "title": "Restored firmness",
-            "text": "NAD+ and peptides support collagen and cellular repair."
+            "title": "DNA-level longevity",
+            "text": "NAD+ activation and Epitalon support DNA repair and cellular longevity at the source."
           }
         ],
-        "ingredientsIntro": "Biomimetic actives work in synergy to renew, repair and revitalise the skin.",
+        "ingredientsIntro": "Synergistic actives engineered to work at the cellular level.",
         "ingredients": [
-          "Epitalon peptide",
-          "NAD+ complex",
-          "GHK-Cu peptide",
-          "Biomimetic growth factors",
-          "Glycolic acid complex",
-          "Gold-infused pH normalizer"
+          "Epitalon — stimulates telomerase, protects DNA, slows ageing markers",
+          "NAD+ — boosts ATP production and supports DNA repair",
+          "GHK-Cu (copper peptide) — collagen synthesis, healing, antioxidant defence",
+          "Biomimetic growth factors — activate fibroblasts, improve density and elasticity",
+          "Synthetic exosomes — nano-vesicles that improve cell-to-cell communication and active delivery",
+          "Glycolic acid complex (biphasic) — controlled exfoliation",
+          "Lipid phase — prepares and protects the skin during the peel",
+          "Collagen, peptides and vitamin B12 — in the pH normalizer for soothing and hydration"
         ],
         "stepsTitle": "The 3-Step System",
         "steps": [
           {
             "num": "01",
             "title": "Intelligent Exfoliation",
-            "text": "Dual-phase peel combining the Epitalon peptide with a glycolic complex for controlled renewal."
+            "text": "A biphasic peel based on acids and Epitalon delivers controlled cellular renewal."
           },
           {
             "num": "02",
             "title": "Barrier Recovery",
-            "text": "A gold-infused pH normalizer soothes and rebalances the skin for maximum absorption."
+            "text": "The pH normalizer instantly neutralises acids and restores the skin barrier."
           },
           {
             "num": "03",
-            "title": "Deep Renewal",
-            "text": "A longevity serum with NAD+ and GHK-Cu stimulates collagen and cellular repair."
+            "title": "Deep Cellular Regeneration",
+            "text": "The Longevity Serum activates renewal at the DNA level via NAD+ and exosomes."
           }
         ],
-        "packTitle": "What's in the Box",
+        "packTitle": "What’s in the box",
         "pack": [
           {
             "qty": "1×",
-            "title": "Exo Peel",
-            "text": "15 ml biphasic peel — Epitalon + glycolic complex."
+            "title": "Biphasic Exo Peel",
+            "text": "15 ml biphasic peel — Epitalon + glycolic acid complex."
           },
           {
             "qty": "5×",
             "title": "pH Normalizer",
-            "text": "5 ml each — gold-infused, soothes & rebalances."
+            "text": "Soothes and neutralises with collagen, peptides and vitamin B12."
           },
           {
             "qty": "5×",
             "title": "Longevity Serum",
-            "text": "5 ml each — NAD+ & biomimetic peptides."
+            "text": "Synthetic exosomes, NAD+, peptides and biomimetic growth factors."
           }
         ],
         "chipsTitle": "Targets",
         "chips": [
-          "Aging signs",
-          "Dullness",
-          "Texture irregularities",
+          "Post-acne pigmentation",
+          "Melasma",
+          "Lentigo",
+          "Fine lines",
+          "Hyperpigmentation",
           "Loss of firmness"
         ],
         "ctaTitle": "Bring EXO-NAD to your clinic",
-        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol."
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "protocol": {
+          "title": "Application protocol",
+          "items": [
+            "Peel — apply 1 ml to the skin; leave for up to 20 minutes depending on sensitivity.",
+            "Neutralizer — apply 1.5 ml to the treated area, leave 2–3 minutes, then rinse with water.",
+            "Serum — apply 1.5 ml; do not rinse."
+          ]
+        },
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Do not wash the face for 24 hours after the procedure.",
+            "Avoid acid-based products for 4 days before and after.",
+            "Repeat the protocol once every 4 weeks.",
+            "Mild flaking is normal — keep the skin well moisturised."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Active acne",
+            "Pregnancy and lactation",
+            "Autoimmune conditions",
+            "Active herpes",
+            "Individual sensitivity"
+          ]
+        }
       },
       "ru": {
         "name": "EXO-NAD",
-        "eyebrow": "ПИЛИНГ ДОЛГОЛЕТИЯ КОЖИ МЕДИЦИНСКОГО КЛАССА",
-        "tagline": "Пилинг для долголетия кожи",
-        "description": "Трёхэтапная отшелушивающая система нового поколения, объединяющая передовую технологию экзосом с NAD+ для запуска клеточного обновления — заметно улучшает тон, текстуру и упругость кожи для эффекта долголетия.",
-        "shortDescription": "Трёхэтапная система пилинга долголетия: экзосомы + NAD+ для клеточного обновления.",
+        "eyebrow": "РЕВОЛЮЦИОННЫЙ БИОХАКИНГ-ПИЛИНГ",
+        "tagline": "Революционный биохакинг-пилинг для обновления кожи и продления жизни клеток",
+        "description": "EXO-NAD — пилинг биофармацевтических исследований. Система биохакинга кожи, направленная на омоложение, восстановление и улучшение жизнеспособности кожи на клеточном уровне.",
+        "shortDescription": "Трёхэтапный биохакинг-пилинг: синтетические экзосомы + NAD+ для клеточного обновления и долголетия кожи.",
         "keyFacts": [
-          "Трёхэтапная система пилинга долголетия: экзосомные технологии в связке с NAD+.",
-          "Активный стек: Эпиталон, комплекс NAD+, пептид GHK-Cu, биомиметические факторы роста.",
-          "pH-нормализатор с золотом для контролируемого восстановления барьера между этапами.",
-          "Работает с признаками старения, тусклостью, неровностями текстуры и потерей упругости."
+          "Биохакинг-система: оптимизация клеточных процессов с помощью синтетических экзосом и активации NAD+ для долговременной защиты ДНК.",
+          "Продвинутые пептиды — Эпиталон, GHK-Cu и биомиметические факторы роста — обеспечивают устойчивую регенерацию кожи.",
+          "Трёхэтапный протокол: двухфазный пилинг → pH-нейтрализатор с коллагеном, пептидами и витамином B12 → сыворотка долголетия с NAD+ и экзосомами.",
+          "Работает с пигментацией (постакне, мелазма, лентиго), потерей упругости, мелкими морщинами и гиперпигментацией."
         ],
         "stats": [
           {
@@ -416,88 +447,119 @@
         ],
         "benefits": [
           {
-            "title": "Ровный тон и текстура",
-            "text": "Заметно ровный тон и улучшенная поверхность кожи после контролируемого пилинга."
+            "title": "Коррекция пигментации",
+            "text": "Заметно уменьшает следы постакне, мелазму и лентиго за счёт контролируемого клеточного обновления."
           },
           {
-            "title": "Сияющий цвет лица",
-            "text": "Свежий, сияющий вид и восстановленная эластичность."
+            "title": "Упругость и плотность",
+            "text": "Стимулирует фибробласты и синтез коллагена, восстанавливает плотность дермы и подтянутый вид."
           },
           {
-            "title": "Меньше мелких морщин",
-            "text": "Уменьшает выраженность мелких морщин и линий."
+            "title": "Морщины и линии",
+            "text": "Разглаживает мелкие морщины и снижает признаки старения благодаря глубоким регенеративным активам."
           },
           {
-            "title": "Восстановление упругости",
-            "text": "NAD+ и пептиды поддерживают синтез коллагена и репарацию клеток."
+            "title": "Долголетие на уровне ДНК",
+            "text": "Активация NAD+ и Эпиталон поддерживают репарацию ДНК и клеточное долголетие у самого источника."
           }
         ],
-        "ingredientsIntro": "Биомиметические активы работают синергично, обновляя, восстанавливая и оживляя кожу.",
+        "ingredientsIntro": "Синергичные активы, работающие на клеточном уровне.",
         "ingredients": [
-          "Пептид Эпиталон",
-          "Комплекс NAD+",
-          "Пептид GHK-Cu",
-          "Биомиметические факторы роста",
-          "Комплекс гликолевой кислоты",
-          "pH-нормализатор с золотом"
+          "Эпиталон — стимулирует теломеразу, защищает ДНК, замедляет маркеры старения",
+          "NAD+ — повышает выработку ATP и поддерживает репарацию ДНК",
+          "GHK-Cu (медный пептид) — синтез коллагена, заживление, антиоксидантная защита",
+          "Биомиметические факторы роста — активируют фибробласты, улучшают плотность и эластичность",
+          "Синтетические экзосомы — нановезикулы, улучшающие межклеточную коммуникацию и доставку активов",
+          "Гликолевый комплекс (двухфазный) — контролируемая эксфолиация",
+          "Липидная фаза — подготавливает и защищает кожу во время пилинга",
+          "Коллаген, пептиды и витамин B12 — в pH-нейтрализаторе для успокоения и увлажнения"
         ],
         "stepsTitle": "Трёхэтапная система",
         "steps": [
           {
             "num": "01",
             "title": "Интеллектуальное отшелушивание",
-            "text": "Двухфазный пилинг с пептидом Эпиталон и гликолевым комплексом для контролируемого обновления."
+            "text": "Двухфазный пилинг на основе кислот и Эпиталона обеспечивает контролируемое клеточное обновление."
           },
           {
             "num": "02",
             "title": "Восстановление барьера",
-            "text": "pH-нормализатор с золотом успокаивает и восстанавливает баланс кожи для максимального впитывания."
+            "text": "pH-нейтрализатор мгновенно нейтрализует кислоты и восстанавливает кожный барьер."
           },
           {
             "num": "03",
-            "title": "Глубокое обновление",
-            "text": "Сыворотка долголетия с NAD+ и GHK-Cu стимулирует коллаген и репарацию клеток."
+            "title": "Глубокая клеточная регенерация",
+            "text": "Сыворотка Longevity активирует обновление на уровне ДНК благодаря NAD+ и экзосомам."
           }
         ],
-        "packTitle": "Что в коробке",
+        "packTitle": "Состав набора",
         "pack": [
           {
             "qty": "1×",
-            "title": "Exo Peel",
-            "text": "Двухфазный пилинг 15 мл — Эпиталон + гликолевый комплекс."
+            "title": "Biphasic Exo Peel",
+            "text": "Двухфазный пилинг 15 мл — Эпиталон и гликолевый комплекс."
           },
           {
             "qty": "5×",
-            "title": "pH-нормализатор",
-            "text": "По 5 мл — с золотом, успокаивает и балансирует."
+            "title": "pH-нейтрализатор",
+            "text": "Успокаивает и нейтрализует — коллаген, пептиды, витамин B12."
           },
           {
             "qty": "5×",
-            "title": "Сыворотка долголетия",
-            "text": "По 5 мл — NAD+ и биомиметические пептиды."
+            "title": "Сыворотка Longevity",
+            "text": "Синтетические экзосомы, NAD+, пептиды и биомиметические факторы роста."
           }
         ],
-        "chipsTitle": "Воздействует на",
+        "chipsTitle": "Цели",
         "chips": [
-          "Признаки старения",
-          "Тусклость",
-          "Неровности текстуры",
+          "Пигментация постакне",
+          "Мелазма",
+          "Лентиго",
+          "Мелкие морщины",
+          "Гиперпигментация",
           "Потеря упругости"
         ],
         "ctaTitle": "Добавьте EXO-NAD в свою клинику",
-        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу."
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "protocol": {
+          "title": "Протокол применения",
+          "items": [
+            "Пилинг — нанести 1 мл на кожу, оставить до 20 минут в зависимости от чувствительности.",
+            "Нейтрализатор — 1.5 мл на обработанную зону, оставить 2–3 минуты, смыть водой.",
+            "Сыворотка — 1.5 мл, не смывать."
+          ]
+        },
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Не умываться 24 часа.",
+            "Исключить кислоты за 4 дня до и после.",
+            "Повторять процедуру раз в 4 недели.",
+            "Возможны лёгкие шелушения — обеспечить хорошее увлажнение."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активное акне",
+            "Беременность и лактация",
+            "Аутоиммунные заболевания",
+            "Активный герпес",
+            "Индивидуальная чувствительность"
+          ]
+        }
       },
       "he": {
         "name": "EXO-NAD",
-        "eyebrow": "פילינג לאריכות חיי העור — דרגה רפואית",
-        "tagline": "פילינג לאריכות חיי העור",
-        "description": "מערכת פילינג תלת-שלבית מהדור הבא המשלבת טכנולוגיית אקסוזומים מתקדמת עם NAD+ להנעת התחדשות תאית — משפרת באופן נראה את הגוון, המרקם והמוצקות לאפקט אריכות חיים.",
-        "shortDescription": "מערכת פילינג תלת-שלבית לאריכות חיי העור: אקסוזומים + NAD+ להתחדשות תאית.",
+        "eyebrow": "פילינג ביו-האקינג מהפכני",
+        "tagline": "פילינג ביו-האקינג מהפכני להתחדשות העור והארכת חיי התאים",
+        "description": "EXO-NAD הוא פילינג ממחקר ביו-פרמצבטי — מערכת ביו-האקינג לעור, מכוונת להתחדשות, שיקום והגברת חיוניות העור ברמה התאית.",
+        "shortDescription": "פילינג ביו-האקינג בן 3 שלבים: אקסוזומים סינתטיים + NAD+ להתחדשות תאית ולאריכות חיי העור.",
         "keyFacts": [
-          "מערכת פילינג תלת-שלבית לאריכות חיי העור: טכנולוגיית אקסוזומים בשילוב עם NAD+.",
-          "מרכיבים פעילים: אפיטלון, קומפלקס NAD+, פפטיד GHK-Cu, גורמי גדילה ביו-מימטיים.",
-          "נורמלייזר pH עם זהב לשיקום מבוקר של מחסום העור בין השלבים.",
-          "מטפל בסימני הזדקנות, עמעום, אי-סדירות מרקם ואובדן מוצקות."
+          "מערכת ביו-האקינג: ייעול תהליכים תאיים בעזרת אקסוזומים סינתטיים והפעלת NAD+ להגנה ארוכת-טווח על הדנ\"א.",
+          "פפטידים מתקדמים — אפיטלון, GHK-Cu וגורמי גדילה ביו-מימטיים — מספקים התחדשות עור עקבית.",
+          "פרוטוקול תלת-שלבי: פילינג דו-פאזי → נורמלייזר pH עם קולגן, פפטידים וויטמין B12 → סרום אריכות חיים עם NAD+ ואקסוזומים.",
+          "מטפל בפיגמנטציה (פוסט-אקנה, מלזמה, לנטיגו), אובדן מוצקות, קווים דקים והיפר-פיגמנטציה."
         ],
         "stats": [
           {
@@ -519,76 +581,107 @@
         ],
         "benefits": [
           {
-            "title": "גוון ומרקם אחידים",
-            "text": "גוון אחיד ומרקם מעודן באופן נראה לאחר הפילינג המבוקר."
+            "title": "תיקון פיגמנטציה",
+            "text": "מפחית באופן ניכר סימני פוסט-אקנה, מלזמה ולנטיגו באמצעות התחדשות תאית מבוקרת."
           },
           {
-            "title": "מראה זוהר",
-            "text": "מראה רענן וזוהר עם גמישות משוקמת."
+            "title": "מוצקות וצפיפות",
+            "text": "מעורר פיברובלסטים וייצור קולגן, משקם צפיפות עורית ומראה מוצק."
           },
           {
-            "title": "פחות קווים דקים",
-            "text": "מפחית את נראות הקווים הדקים והקמטוטים."
+            "title": "קמטים וקווים דקים",
+            "text": "מחליק קווים דקים ומפחית סימני הזדקנות באמצעות פעילים רגנרטיביים עמוקים."
           },
           {
-            "title": "מוצקות משוקמת",
-            "text": "NAD+ ופפטידים תומכים בקולגן ובתיקון תאי."
+            "title": "אריכות חיים ברמת הדנ\"א",
+            "text": "הפעלת NAD+ ואפיטלון תומכות בתיקון הדנ\"א ובאריכות חיים תאית מהמקור."
           }
         ],
-        "ingredientsIntro": "פעילים ביו-מימטיים פועלים בסינרגיה לחידוש, תיקון והחייאת העור.",
+        "ingredientsIntro": "פעילים סינרגטיים שעובדים ברמה התאית.",
         "ingredients": [
-          "פפטיד אפיטלון",
-          "קומפלקס NAD+",
-          "פפטיד GHK-Cu",
-          "גורמי גדילה ביו-מימטיים",
-          "קומפלקס חומצה גליקולית",
-          "נורמלייזר pH עם זהב"
+          "אפיטלון — מעורר טלומראז, מגן על הדנ\"א, מאט סמני הזדקנות",
+          "NAD+ — מגביר ייצור ATP ותומך בתיקון הדנ\"א",
+          "GHK-Cu (פפטיד נחושת) — סינתזת קולגן, ריפוי, הגנה אנטי-אוקסידנטית",
+          "גורמי גדילה ביו-מימטיים — מעוררים פיברובלסטים, משפרים צפיפות וגמישות",
+          "אקסוזומים סינתטיים — שלפוחיות ננו המשפרות תקשורת בין-תאית והעברת פעילים",
+          "קומפלקס חומצה גליקולית (דו-פאזי) — אקספוליאציה מבוקרת",
+          "פאזה ליפידית — מכינה ומגנה על העור במהלך הפילינג",
+          "קולגן, פפטידים וויטמין B12 — בנורמלייזר pH להרגעה ולחות"
         ],
         "stepsTitle": "המערכת בת 3 השלבים",
         "steps": [
           {
             "num": "01",
             "title": "פילינג חכם",
-            "text": "פילינג דו-פאזי המשלב את פפטיד האפיטלון עם קומפלקס גליקולי לחידוש מבוקר."
+            "text": "פילינג דו-פאזי על בסיס חומצות ואפיטלון מבצע התחדשות תאית מבוקרת."
           },
           {
             "num": "02",
-            "title": "שיקום מחסום",
-            "text": "נורמלייזר pH עם זהב מרגיע ומאזן את העור לספיגה מרבית."
+            "title": "שיקום המחסום",
+            "text": "נורמלייזר pH מנטרל מיד את החומצות ומשקם את מחסום העור."
           },
           {
             "num": "03",
-            "title": "חידוש עמוק",
-            "text": "סרום אריכות חיים עם NAD+ ו-GHK-Cu מעורר קולגן ותיקון תאי."
+            "title": "התחדשות תאית עמוקה",
+            "text": "סרום Longevity מפעיל התחדשות ברמת הדנ\"א באמצעות NAD+ ואקסוזומים."
           }
         ],
         "packTitle": "מה בקופסה",
         "pack": [
           {
             "qty": "1×",
-            "title": "Exo Peel",
-            "text": "פילינג דו-פאזי 15 מ\"ל — אפיטלון + קומפלקס גליקולי."
+            "title": "Biphasic Exo Peel",
+            "text": "פילינג דו-פאזי 15 מ\"ל — אפיטלון וקומפלקס גליקולי."
           },
           {
             "qty": "5×",
             "title": "נורמלייזר pH",
-            "text": "5 מ\"ל כל אחד — עם זהב, מרגיע ומאזן."
+            "text": "מרגיע ומנטרל — קולגן, פפטידים, ויטמין B12."
           },
           {
             "qty": "5×",
-            "title": "סרום אריכות חיים",
-            "text": "5 מ\"ל כל אחד — NAD+ ופפטידים ביו-מימטיים."
+            "title": "סרום Longevity",
+            "text": "אקסוזומים סינתטיים, NAD+, פפטידים וגורמי גדילה ביו-מימטיים."
           }
         ],
-        "chipsTitle": "מטפל ב",
+        "chipsTitle": "מטרות",
         "chips": [
-          "סימני הזדקנות",
-          "עמעום",
-          "אי-סדירות מרקם",
+          "פיגמנטציה פוסט-אקנה",
+          "מלזמה",
+          "לנטיגו",
+          "קווים דקים",
+          "היפר-פיגמנטציה",
           "אובדן מוצקות"
         ],
         "ctaTitle": "הביאו את EXO-NAD למרפאה שלכם",
-        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול."
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "protocol": {
+          "title": "פרוטוקול היישום",
+          "items": [
+            "פילינג — ליישם 1 מ\"ל על העור, להשאיר עד 20 דקות בהתאם לרגישות.",
+            "נורמלייזר — 1.5 מ\"ל לאזור המטופל, להשאיר 2–3 דקות, לשטוף במים.",
+            "סרום — 1.5 מ\"ל, לא לשטוף."
+          ]
+        },
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "אין לרחוץ פנים במשך 24 שעות.",
+            "להימנע ממוצרים על בסיס חומצות 4 ימים לפני ואחרי.",
+            "לחזור על הפרוטוקול אחת ל-4 שבועות.",
+            "ייתכן קילוף קל — להבטיח לחות טובה."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "אקנה פעיל",
+            "הריון והנקה",
+            "מחלות אוטואימוניות",
+            "הרפס פעיל",
+            "רגישות אישית"
+          ]
+        }
       }
     }
   },

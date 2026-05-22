@@ -45,6 +45,12 @@ export interface ProductContent {
   steps?: StepItem[];
   packTitle?: string;
   pack?: PackItem[];
+  /** Application protocol — concrete volumes, timing, technique. */
+  protocol?: { title: string; items: string[] };
+  /** After-care recommendations between sessions. */
+  aftercare?: { title: string; items: string[] };
+  /** Contraindications / safety notes. */
+  contraindications?: { title: string; items: string[] };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;
