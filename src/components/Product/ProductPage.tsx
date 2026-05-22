@@ -104,8 +104,24 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
           label={c.name}
           sublabel={`Add /products/${product.slug}/hero.png to replace`}
           className={styles.heroMedia}
+          priority
+          sizes="(max-width: 1024px) 100vw, 520px"
         />
       </section>
+
+      {c.keyFacts && c.keyFacts.length > 0 && (
+        <aside className={styles.keyFacts} aria-label={t('keyFacts')}>
+          <h2 className={styles.kfTitle}>{t('keyFacts')}</h2>
+          <ul className={styles.kfList}>
+            {c.keyFacts.map((f) => (
+              <li key={f} className={styles.kfItem}>
+                <span className={styles.kfBullet} aria-hidden="true" />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
 
       <div className={styles.statStrip}>
         {c.stats.map((s) => (
@@ -251,6 +267,7 @@ const ProductPage: FC<Props> = ({ product, locale }) => {
                       accent={item.accent}
                       alt={item.name}
                       className={styles.relMediaInner}
+                      sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                   <div className={styles.relBody}>

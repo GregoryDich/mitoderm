@@ -86,6 +86,7 @@ const Catalog: FC<Props> = ({ items }) => {
                   accent={item.accent}
                   alt={item.name}
                   className={styles.media}
+                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className={styles.cardBody}>

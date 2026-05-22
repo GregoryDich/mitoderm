@@ -71,6 +71,15 @@ export default function Page({
     brand: { '@type': 'Brand', name: SITE_NAME },
     category: product.category,
     image: images,
+    ...(c.keyFacts && c.keyFacts.length > 0
+      ? {
+          additionalProperty: c.keyFacts.map((value, i) => ({
+            '@type': 'PropertyValue',
+            name: `Key fact ${i + 1}`,
+            value,
+          })),
+        }
+      : {}),
     audience: {
       '@type': 'PeopleAudience',
       audienceType: 'Medical professionals and aesthetic clinics',

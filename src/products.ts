@@ -32,6 +32,10 @@ export interface ProductContent {
   tagline: string;
   description: string;
   shortDescription: string;
+  /** 3-5 declarative bullets shown at the top of the product page — written
+   *  to be cite-able by AI Overviews and to surface the most important facts
+   *  to a clinical reader in one glance. */
+  keyFacts?: string[];
   stats: StatItem[];
   benefits: BenefitItem[];
   ingredientsIntro: string;
@@ -73,6 +77,12 @@ const exocellMask: Product = {
         'An ultra-fine biocellulose mask with synthetic exosome technology. It surpasses the epidermal barrier to deliver deep hydration, an immediate lifting effect and advanced skin repair — the ideal finish after professional aesthetic procedures.',
       shortDescription:
         'Ultra-fine biocellulose mask with synthetic exosomes — your second skin for bio-regeneration.',
+      keyFacts: [
+        'Ultra-fine biocellulose "second-skin" matrix engineered to cross the epidermal barrier.',
+        'Synthetic exosome technology paired with low-molecular polynucleotides and hyaluronic acids.',
+        'Delivers an immediate lifting effect and accelerates post-procedure recovery.',
+        '5 single-use masks per box (5×25 ml), 45-minute application.',
+      ],
       stats: [
         { value: '5', label: 'Face masks per box' },
         { value: '5×25 ml', label: 'Net content' },
@@ -145,6 +155,12 @@ const exocellMask: Product = {
         'Ультратонкая биоцеллюлозная маска с технологией синтетических экзосом. Она преодолевает эпидермальный барьер, обеспечивая глубокое увлажнение, мгновенный лифтинг-эффект и продвинутое восстановление кожи — идеальное завершение профессиональных эстетических процедур.',
       shortDescription:
         'Ультратонкая биоцеллюлозная маска с синтетическими экзосомами — ваша вторая кожа для биорегенерации.',
+      keyFacts: [
+        'Ультратонкая биоцеллюлозная матрица «вторая кожа», проникающая за эпидермальный барьер.',
+        'Синтетические экзосомы в синергии с низкомолекулярными полинуклеотидами и гиалуроновыми кислотами.',
+        'Мгновенный лифтинг-эффект и ускорение восстановления после процедур.',
+        '5 одноразовых масок в упаковке (5×25 мл), 45 минут на аппликацию.',
+      ],
       stats: [
         { value: '5', label: 'Масок в упаковке' },
         { value: '5×25 мл', label: 'Объём' },
@@ -217,6 +233,12 @@ const exocellMask: Product = {
         'מסכת ביו-תאית אולטרה-דקה עם טכנולוגיית אקסוזומים סינתטיים. היא חוצה את מחסום האפידרמיס ומספקת לחות עמוקה, אפקט מתיחה מיידי ושיקום עור מתקדם — הסיום האידיאלי לאחר טיפולים אסתטיים מקצועיים.',
       shortDescription:
         'מסכת ביו-תאית אולטרה-דקה עם אקסוזומים סינתטיים — העור השני שלך לביו-התחדשות.',
+      keyFacts: [
+        'מטריצת "עור שני" ביו-תאית אולטרה-דקה, חוצה את מחסום האפידרמיס.',
+        'טכנולוגיית אקסוזומים סינתטיים בשילוב פולינוקלאוטידים וחומצות היאלורוניות במשקל מולקולרי נמוך.',
+        'אפקט מתיחה מיידי והאצת ההחלמה אחרי הליכים אסתטיים.',
+        '5 מסכות חד-פעמיות בקופסה (5×25 מ"ל), 45 דקות יישום.',
+      ],
       stats: [
         { value: '5', label: 'מסכות בקופסה' },
         { value: '5×25 מ"ל', label: 'תכולה' },
@@ -307,6 +329,12 @@ const exoNad: Product = {
         'A next-generation 3-step exfoliating system pairing cutting-edge exosome technology with NAD+ to drive cellular renewal — visibly improving tone, texture and firmness for a longevity effect.',
       shortDescription:
         '3-step longevity peeling system pairing exosomes with NAD+ for cellular renewal.',
+      keyFacts: [
+        '3-step longevity peeling system combining exosome technology with NAD+.',
+        'Active stack: Epitalon, NAD+ complex, GHK-Cu peptide, biomimetic growth factors.',
+        'Gold-infused pH normalizer for controlled barrier recovery between steps.',
+        'Targets aging signs, dullness, texture irregularities and loss of firmness.',
+      ],
       stats: [
         { value: '3-step', label: 'Intelligent system' },
         { value: '15 ml', label: 'Exo Peel vial' },
@@ -396,6 +424,12 @@ const exoNad: Product = {
         'Трёхэтапная отшелушивающая система нового поколения, объединяющая передовую технологию экзосом с NAD+ для запуска клеточного обновления — заметно улучшает тон, текстуру и упругость кожи для эффекта долголетия.',
       shortDescription:
         'Трёхэтапная система пилинга долголетия: экзосомы + NAD+ для клеточного обновления.',
+      keyFacts: [
+        'Трёхэтапная система пилинга долголетия: экзосомные технологии в связке с NAD+.',
+        'Активный стек: Эпиталон, комплекс NAD+, пептид GHK-Cu, биомиметические факторы роста.',
+        'pH-нормализатор с золотом для контролируемого восстановления барьера между этапами.',
+        'Работает с признаками старения, тусклостью, неровностями текстуры и потерей упругости.',
+      ],
       stats: [
         { value: '3 этапа', label: 'Интеллектуальная система' },
         { value: '15 мл', label: 'Флакон Exo Peel' },
@@ -485,6 +519,12 @@ const exoNad: Product = {
         'מערכת פילינג תלת-שלבית מהדור הבא המשלבת טכנולוגיית אקסוזומים מתקדמת עם NAD+ להנעת התחדשות תאית — משפרת באופן נראה את הגוון, המרקם והמוצקות לאפקט אריכות חיים.',
       shortDescription:
         'מערכת פילינג תלת-שלבית לאריכות חיי העור: אקסוזומים + NAD+ להתחדשות תאית.',
+      keyFacts: [
+        'מערכת פילינג תלת-שלבית לאריכות חיי העור: טכנולוגיית אקסוזומים בשילוב עם NAD+.',
+        'מרכיבים פעילים: אפיטלון, קומפלקס NAD+, פפטיד GHK-Cu, גורמי גדילה ביו-מימטיים.',
+        'נורמלייזר pH עם זהב לשיקום מבוקר של מחסום העור בין השלבים.',
+        'מטפל בסימני הזדקנות, עמעום, אי-סדירות מרקם ואובדן מוצקות.',
+      ],
       stats: [
         { value: '3 שלבים', label: 'מערכת חכמה' },
         { value: '15 מ"ל', label: 'בקבוקון Exo Peel' },
@@ -578,6 +618,12 @@ function bioSpicule(n: number): Product {
       'A Spongilla-based micro-spicule treatment that creates micro-channels for active delivery and stimulates skin renewal. Full details coming soon.',
     shortDescription:
       'Spongilla micro-spicule treatment for skin renewal and active delivery.',
+    keyFacts: [
+      'Natural Spongilla-derived micro-spicules for clinical-grade skin renewal.',
+      'Creates controlled micro-channels for actives to reach deeper skin layers.',
+      'Designed for in-clinic protocols by trained aesthetic practitioners.',
+      'Launching soon — contact us to be notified.',
+    ],
     stats: [
       { value: 'Spongilla', label: 'Natural source' },
       { value: 'Micro', label: 'Spicule technology' },
@@ -618,6 +664,12 @@ function bioSpicule(n: number): Product {
       'Средство на основе микроспикул Spongilla, которое формирует микроканалы для доставки активов и стимулирует обновление кожи. Подробности скоро.',
     shortDescription:
       'Средство с микроспикулами Spongilla для обновления кожи и доставки активов.',
+    keyFacts: [
+      'Натуральные микроспикулы Spongilla для клинического обновления кожи.',
+      'Формирует контролируемые микроканалы для глубокой доставки активов.',
+      'Разработано для протоколов в клинике обученными специалистами.',
+      'Скоро в продаже — свяжитесь, чтобы узнать первыми.',
+    ],
     stats: [
       { value: 'Spongilla', label: 'Натуральный источник' },
       { value: 'Микро', label: 'Технология спикул' },
@@ -658,6 +710,12 @@ function bioSpicule(n: number): Product {
       'טיפול מבוסס מיקרו-ספיקולות Spongilla היוצר מיקרו-תעלות להעברת פעילים ומעורר התחדשות עור. פרטים מלאים בקרוב.',
     shortDescription:
       'טיפול מיקרו-ספיקולות Spongilla להתחדשות העור והעברת פעילים.',
+    keyFacts: [
+      'מיקרו-ספיקולות טבעיות מ-Spongilla להתחדשות עור ברמה קלינית.',
+      'יוצרות מיקרו-תעלות מבוקרות להעברת פעילים לשכבות עמוקות יותר.',
+      'מיועדות לפרוטוקולים במרפאה על ידי מטפלי אסתטיקה מוסמכים.',
+      'בקרוב במלאי — צרו קשר כדי להיות הראשונים לדעת.',
+    ],
     stats: [
       { value: 'Spongilla', label: 'מקור טבעי' },
       { value: 'מיקרו', label: 'טכנולוגיית ספיקולות' },

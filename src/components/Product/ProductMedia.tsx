@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
+import Image from 'next/image';
 import { ProductAccent } from '@/products';
 import styles from './ProductMedia.module.scss';
 
@@ -11,7 +12,14 @@ interface Props {
   label?: string;
   sublabel?: string;
   className?: string;
+  /** Mark the LCP image so it's preloaded and not lazy-loaded. */
+  priority?: boolean;
+  /** `sizes` hint for next/image. Defaults to a sensible responsive value. */
+  sizes?: string;
 }
+
+const DEFAULT_SIZES =
+  '(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 520px';
 
 const ProductMedia: FC<Props> = ({
   image,
@@ -20,6 +28,8 @@ const ProductMedia: FC<Props> = ({
   label,
   sublabel,
   className,
+  priority,
+  sizes = DEFAULT_SIZES,
 }) => {
   const [failed, setFailed] = useState(false);
   const showImage = image && !failed;
@@ -30,11 +40,13 @@ const ProductMedia: FC<Props> = ({
       {...(showImage ? {} : { role: 'img', 'aria-label': alt })}
     >
       {showImage ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={image}
           alt={alt}
+          fill
           className={styles.img}
+          sizes={sizes}
+          priority={priority}
           onError={() => setFailed(true)}
         />
       ) : (

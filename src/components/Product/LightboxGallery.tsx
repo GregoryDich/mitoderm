@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
 import styles from './LightboxGallery.module.scss';
 
 interface Props {
@@ -51,8 +52,17 @@ const LightboxGallery: FC<Props> = ({ images, name }) => {
               i === 0 ? styles.galleryWide : ''
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={`${name} — ${i + 1}`} loading="lazy" />
+            <Image
+              src={src}
+              alt={`${name} — ${i + 1}`}
+              fill
+              sizes={
+                i === 0
+                  ? '(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 66vw'
+                  : '(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw'
+              }
+              className={styles.thumb}
+            />
           </button>
         ))}
       </div>
