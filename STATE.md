@@ -95,6 +95,27 @@ owner decision):**
   PDP CTA, sticky FAB with count badge, right-side drawer with
   per-product rows, "Send list on WhatsApp" / "Send via form"
   CTAs, localStorage with cross-tab sync.
+- **Top promo bar** — auto-surfaces the next upcoming seminar,
+  dismissible per-id in localStorage, pushes the fixed header down
+  via an `html.has-promo` class.
+- **Press / "As seen at" strip** — `/admin/press` CRUD + public
+  strip on the homepage. White-on-transparent rendering of any
+  uploaded logo. Audit-logged.
+- **Recently viewed** — provider + horizontal rail at the bottom
+  of the catalog and PDPs. localStorage cap 8, newest-first,
+  excludes the current product on PDP.
+- **Sample request CTA** — pre-filled WhatsApp template
+  "request a sample of <product> to evaluate at my clinic" in
+  en/ru/he, new ghost button in the PDP hero CTA row.
+- **Ingredient glossary tooltips** — case-insensitive substring
+  lookup over a per-locale `messages.glossary` dictionary. Each
+  matched ingredient gets a dotted underline + ⓘ marker + native
+  title tooltip; locale-parity script treats `glossary` as loose.
+- **Brand Stories** — IG-style circles above the featured grid,
+  full vertical viewer with progress bars, tap-to-navigate,
+  click-to-play CTA per slide, ESC/space/arrow keyboard control.
+  `/admin/stories` CRUD with per-slide editor, schedule window
+  (publishAt/expireAt), per-visitor seen tracking.
 
 ---
 
