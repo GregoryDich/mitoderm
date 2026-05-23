@@ -11,6 +11,9 @@ export type AuditAction =
   | 'doctor.delete'
   | 'lead.update'
   | 'lead.delete'
+  | 'social.create'
+  | 'social.update'
+  | 'social.delete'
   | 'asset.upload'
   | 'auth.login'
   | 'auth.logout';

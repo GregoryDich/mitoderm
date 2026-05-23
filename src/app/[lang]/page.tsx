@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import HomePage from '@/components/Home/HomePage';
+import { readSocial } from '@/lib/social-store';
 import { LocaleType } from '@/types';
 import {
   SITE_NAME,
@@ -32,11 +33,14 @@ export async function generateMetadata({
   };
 }
 
-export default function Home({
+export default async function Home({
   params: { lang },
 }: {
   params: { lang: LocaleType };
 }) {
   unstable_setRequestLocale(lang);
-  return <HomePage locale={lang} />;
+  const social = (await readSocial())
+    .filter((p) => p.isPublished)
+    .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
+  return <HomePage locale={lang} social={social} />;
 }

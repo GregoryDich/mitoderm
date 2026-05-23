@@ -6,10 +6,13 @@ import { LocaleType } from '@/types';
 import ProductMedia from '@/components/Product/ProductMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
+import SocialStrip from '@/components/Social/SocialStrip';
+import type { SocialPost } from '@/lib/social-store';
 import styles from './HomePage.module.scss';
 
 interface Props {
   locale: LocaleType;
+  social?: SocialPost[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -18,7 +21,7 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const HomePage: FC<Props> = ({ locale }) => {
+const HomePage: FC<Props> = ({ locale, social = [] }) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
     .filter((i) => i.status === 'available')
@@ -103,6 +106,12 @@ const HomePage: FC<Props> = ({ locale }) => {
           </div>
         </section>
         </Reveal>
+
+        {social.length > 0 && (
+          <Reveal>
+            <SocialStrip posts={social} />
+          </Reveal>
+        )}
 
         <Reveal>
         <section className={styles.block}>

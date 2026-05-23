@@ -8,6 +8,7 @@ import styles from '../../app/admin/admin.module.scss';
 const SECTIONS = [
   { href: '/admin/products', label: 'Catalog' },
   { href: '/admin/doctors', label: 'Family' },
+  { href: '/admin/social', label: 'Social' },
   { href: '/admin/leads', label: 'Leads' },
   { href: '/admin/audit', label: 'Audit' },
 ];

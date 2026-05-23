@@ -8,7 +8,8 @@
     "event": "Event",
     "agenda": "Event program",
     "catalog": "Catalog",
-    "clinics": "Clinics"
+    "clinics": "Clinics",
+    "seminars": "Seminars"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -197,6 +198,31 @@
       "role": "Patient"
     },
     "eyebrow": "REVIEWS"
+  },
+  "social": {
+    "eyebrow": "LIVE FROM THE CLINIC",
+    "title": "Reels, posts and upcoming seminars",
+    "openInInstagram": "Open in Instagram",
+    "prev": "Previous",
+    "next": "Next",
+    "kind": {
+      "reel": "Reel",
+      "post": "Post",
+      "seminar": "Seminar"
+    }
+  },
+  "seminars": {
+    "eyebrow": "SEMINARS",
+    "title": "Upcoming Mitoderm seminars",
+    "subtitle": "Hands-on training sessions for clinics and aesthetic practitioners. Reserve your seat on Instagram or reach out directly.",
+    "viewOnInstagram": "View on Instagram",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "empty": "No seminars announced yet — follow us on Instagram for the next dates.",
+    "noUpcoming": "No upcoming seminars scheduled. Recent ones are below.",
+    "ctaTitle": "Want a private seminar at your clinic?",
+    "ctaText": "We host on-site training and certification across Israel and EU.",
+    "ctaButton": "Request a seminar"
   },
   "regimen": {
     "eyebrow": "REGIMEN BUILDER",
