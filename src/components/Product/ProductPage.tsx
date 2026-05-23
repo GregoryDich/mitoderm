@@ -11,6 +11,7 @@ import ProductSectionNav from './ProductSectionNav';
 import TrustedByStrip from './TrustedByStrip';
 import StickyMobileCta from './StickyMobileCta';
 import BeforeAfter from './BeforeAfter';
+import ProductChat from './ProductChat';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -100,6 +101,9 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
       : []),
     ...(c.economics && c.economics.items.length > 0
       ? [{ id: 'economics', label: 'Economics' }]
+      : []),
+    ...(c.faq && c.faq.items.length > 0
+      ? [{ id: 'faq', label: 'Ask' }]
       : []),
     { id: 'indications', label: 'Indications' },
   ];
@@ -518,6 +522,32 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             {c.economics.disclaimer && (
               <p className={styles.disclaimer}>{c.economics.disclaimer}</p>
             )}
+          </Section>
+        )}
+
+        {c.faq && c.faq.items.length > 0 && (
+          <Section
+            id="faq"
+            num={next()}
+            label="ASK"
+            title={c.faq.title}
+          >
+            <ProductChat
+              productName={c.name}
+              items={c.faq.items}
+              whatsappBase={waHref}
+              formHref="/form"
+              strings={{
+                title: t('chatTitle'),
+                intro: c.faq.intro,
+                askPlaceholder: t('chatPlaceholder'),
+                askButton: t('chatAsk'),
+                escalateOnWhatsApp: t('chatEscalateWhatsApp'),
+                escalateOnForm: t('chatEscalateForm'),
+                suggestions: t('chatSuggestions'),
+                noMatch: t('chatNoMatch'),
+              }}
+            />
           </Section>
         )}
 

@@ -47,7 +47,14 @@
     "trustedBy": "עובדים איתנו",
     "downloadBrief": "הורדת תקציר (PDF)",
     "before": "לפני",
-    "after": "אחרי"
+    "after": "אחרי",
+    "chatTitle": "שאלות על המוצר",
+    "chatPlaceholder": "הקלידו שאלה…",
+    "chatAsk": "שאלה",
+    "chatEscalateWhatsApp": "המשך ב-WhatsApp",
+    "chatEscalateForm": "שליחה דרך הטופס",
+    "chatSuggestions": "שאלות נפוצות",
+    "chatNoMatch": "אין לי תשובה מוכנה — נמשיך ב-WhatsApp, מומחה ישלח תשובה מפורטת."
   },
   "brief": {
     "download": "שמירה כ-PDF",

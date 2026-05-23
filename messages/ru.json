@@ -47,7 +47,14 @@
     "trustedBy": "С НАМИ РАБОТАЮТ",
     "downloadBrief": "Скачать бриф (PDF)",
     "before": "До",
-    "after": "После"
+    "after": "После",
+    "chatTitle": "Спросите о продукте",
+    "chatPlaceholder": "Напишите ваш вопрос…",
+    "chatAsk": "Спросить",
+    "chatEscalateWhatsApp": "Продолжить в WhatsApp",
+    "chatEscalateForm": "Отправить через форму",
+    "chatSuggestions": "ЧАСТЫЕ ВОПРОСЫ",
+    "chatNoMatch": "У меня нет готового ответа — продолжим в WhatsApp, наш специалист пришлёт развёрнутый ответ."
   },
   "brief": {
     "download": "Сохранить как PDF",

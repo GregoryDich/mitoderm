@@ -6,6 +6,20 @@ const LEGACY_PATH = 'data/leads.jsonl';
 
 export type LeadStatus = 'new' | 'contacted' | 'closed' | 'archived';
 
+export interface LeadClassification {
+  lang: 'en' | 'ru' | 'he' | 'other';
+  intent:
+    | 'pricing'
+    | 'training'
+    | 'partnership'
+    | 'research'
+    | 'support'
+    | 'other';
+  size: 'solo' | 'small' | 'mid' | 'chain' | 'unknown';
+  score: number;
+  tags: string[];
+}
+
 export interface Lead {
   id: string;
   ts: string;
@@ -17,6 +31,7 @@ export interface Lead {
   status: LeadStatus;
   note?: string;
   updatedAt?: string;
+  classification?: LeadClassification;
 }
 
 function abs(p: string) {
@@ -90,6 +105,7 @@ export async function appendLead(
   input: Omit<Lead, 'id' | 'ts' | 'status'> & {
     ts?: string;
     status?: LeadStatus;
+    classification?: LeadClassification;
   }
 ): Promise<Lead> {
   const ts = input.ts ?? new Date().toISOString();
@@ -102,6 +118,7 @@ export async function appendLead(
     clinic: input.clinic,
     message: input.message,
     status: input.status ?? 'new',
+    classification: input.classification,
   };
   const all = await readLeads();
   all.push(lead);

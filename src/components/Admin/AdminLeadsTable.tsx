@@ -25,6 +25,7 @@ const STATUS_COLOR: Record<LeadStatus, string> = {
 const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
   const [leads, setLeads] = useState<Lead[]>(initialLeads);
   const [filter, setFilter] = useState<LeadStatus | 'all'>('all');
+  const [onlyHot, setOnlyHot] = useState(false);
   const [q, setQ] = useState('');
   const [openId, setOpenId] = useState<string | null>(null);
   const [pendingId, setPendingId] = useState<string | null>(null);
@@ -33,6 +34,7 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
     const term = q.trim().toLowerCase();
     return leads.filter((l) => {
       if (filter !== 'all' && l.status !== filter) return false;
+      if (onlyHot && (l.classification?.score ?? 0) < 70) return false;
       if (!term) return true;
       return (
         l.name.toLowerCase().includes(term) ||
@@ -42,7 +44,12 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
         l.message.toLowerCase().includes(term)
       );
     });
-  }, [leads, filter, q]);
+  }, [leads, filter, onlyHot, q]);
+
+  const hotCount = useMemo(
+    () => leads.filter((l) => (l.classification?.score ?? 0) >= 70).length,
+    [leads]
+  );
 
   const updateStatus = async (id: string, status: LeadStatus) => {
     setPendingId(id);
@@ -132,6 +139,24 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
             </button>
           ))}
         </div>
+        <button
+          type="button"
+          onClick={() => setOnlyHot((v) => !v)}
+          aria-pressed={onlyHot}
+          title="Show only leads with classifier score ≥ 70"
+          style={{
+            padding: '8px 14px',
+            borderRadius: 20,
+            border: `1px solid ${onlyHot ? '#dfba74' : 'rgba(255,255,255,0.14)'}`,
+            background: onlyHot ? '#dfba74' : 'transparent',
+            color: onlyHot ? '#08080a' : 'rgba(245,242,240,0.78)',
+            fontSize: 12,
+            fontWeight: 500,
+            cursor: 'pointer',
+          }}
+        >
+          🔥 Hot {hotCount > 0 ? `(${hotCount})` : ''}
+        </button>
         <input
           type="search"
           placeholder="Search name / email / clinic / message…"
@@ -172,6 +197,7 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
               <Th>Contact</Th>
               <Th>Clinic</Th>
               <Th>Message</Th>
+              <Th style={{ width: 220 }}>Signals</Th>
               <Th style={{ width: 130 }}>Status</Th>
               <Th style={{ width: 80, textAlign: 'right' }}>Actions</Th>
             </tr>
@@ -212,6 +238,28 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
                       }}
                     >
                       {l.message}
+                    </Td>
+                    <Td>
+                      {l.classification ? (
+                        <div
+                          style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: 4,
+                            alignItems: 'center',
+                          }}
+                        >
+                          <ScoreChip score={l.classification.score} />
+                          {l.classification.tags.slice(0, 4).map((t) => (
+                            <SignalChip key={t} label={t} />
+                          ))}
+                          <SignalChip label={l.classification.lang} dim />
+                        </div>
+                      ) : (
+                        <span style={{ color: 'rgba(245,242,240,0.3)', fontSize: 12 }}>
+                          —
+                        </span>
+                      )}
                     </Td>
                     <Td>
                       <span
@@ -546,6 +594,52 @@ function Row({
       <span style={{ color: 'rgba(245,242,240,0.5)' }}>{label}</span>
       <span>{children}</span>
     </div>
+  );
+}
+
+function ScoreChip({ score }: { score: number }) {
+  const color =
+    score >= 70 ? '#66cc80' : score >= 40 ? '#dfba74' : '#9aa0a6';
+  return (
+    <span
+      title={`Lead score ${score}/100`}
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 4,
+        padding: '2px 8px',
+        borderRadius: 6,
+        background: `${color}22`,
+        border: `1px solid ${color}55`,
+        color,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: 0.4,
+        fontVariantNumeric: 'tabular-nums',
+      }}
+    >
+      {score}
+    </span>
+  );
+}
+
+function SignalChip({ label, dim }: { label: string; dim?: boolean }) {
+  return (
+    <span
+      style={{
+        padding: '2px 7px',
+        borderRadius: 6,
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.1)',
+        color: dim ? 'rgba(245,242,240,0.45)' : 'rgba(245,242,240,0.8)',
+        fontSize: 11,
+        letterSpacing: 0.2,
+        textTransform: 'uppercase',
+        fontWeight: 500,
+      }}
+    >
+      {label}
+    </span>
   );
 }
 

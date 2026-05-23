@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { appendLead } from '@/lib/leads-store';
+import { classifyLead } from '@/lib/lead-classifier';
 
 interface LeadBody {
   name?: string;
@@ -39,12 +40,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
+  const classification = classifyLead({ message, clinic, email });
+
   // Best-effort local persistence for dev; safe to fail in serverless.
   // Production: replace with a real sink — DB, CRM, or an email transport
   // configured via env (SMTP/Resend/SendGrid).
   let lead;
   try {
-    lead = await appendLead({ name, email, phone, clinic, message });
+    lead = await appendLead({ name, email, phone, clinic, message, classification });
   } catch {
     // ignore — fall back to a transient record so email + log still fire
     lead = {
@@ -54,6 +57,7 @@ export async function POST(req: Request) {
       phone,
       clinic,
       message,
+      classification,
     };
   }
   // Always log so the operator sees the lead in dev/server logs.

@@ -47,7 +47,14 @@
     "trustedBy": "TRUSTED BY",
     "downloadBrief": "Download brief (PDF)",
     "before": "Before",
-    "after": "After"
+    "after": "After",
+    "chatTitle": "Ask about this product",
+    "chatPlaceholder": "Type your question…",
+    "chatAsk": "Ask",
+    "chatEscalateWhatsApp": "Continue on WhatsApp",
+    "chatEscalateForm": "Send via form",
+    "chatSuggestions": "POPULAR QUESTIONS",
+    "chatNoMatch": "I don't have that answer ready — let's continue on WhatsApp and a specialist will reply with the details."
   },
   "brief": {
     "download": "Download as PDF",

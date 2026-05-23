@@ -116,6 +116,15 @@ export interface ProductContent {
       weeksAfter?: string;
     }[];
   };
+  /** Product-specific FAQ surfaced as a chat-style assistant on the
+   *  PDP. Each item has a short question and a canned answer; the
+   *  widget also offers a free-text input that escalates to WhatsApp
+   *  with the typed question pre-filled. */
+  faq?: {
+    title: string;
+    intro?: string;
+    items: { q: string; a: string }[];
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;
