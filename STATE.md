@@ -85,6 +85,16 @@ owner decision):**
 - **B13** Heuristic lead classifier — language / intent / clinic
   size / score chip on every entry in `/admin/leads` + 🔥 Hot
   toggle
+- **B03** Training-hub structural slot — videos (lazy YouTube
+  iframe), PDFs, certifications, links. New `training` field on
+  `ProductContent`.
+- **Dynamic OG images** via `next/og` (edge runtime). Branded
+  1200×630 PNG per page; wired into every public route +
+  Twitter card upgraded to `summary_large_image`.
+- **Interest list (B2B-cart)** — heart toggle on catalog cards +
+  PDP CTA, sticky FAB with count badge, right-side drawer with
+  per-product rows, "Send list on WhatsApp" / "Send via form"
+  CTAs, localStorage with cross-tab sync.
 
 ---
 
