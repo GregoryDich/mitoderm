@@ -72,6 +72,19 @@ owner decision):**
   → top-2 product recommendation with pre-filled WhatsApp inquiry
 - **B07** Before/after structural slot + tap-to-compare slider
   (mouse / touch / keyboard, RTL-mirrored handle)
+- **Social (new beyond B-list)** — Instagram strip on homepage,
+  `/admin/social` curation with drafts queue, dedicated
+  `/[lang]/seminars` page with Schema.org Event JSON-LD,
+  `POST /api/integrations/social/ingest` endpoint for n8n →
+  draft pipeline (Bearer + optional HMAC, dedup, heuristic kind &
+  date, downloads poster from IG thumbnail to `/public/social/`).
+  Setup walkthrough in `docs/n8n-instagram.md`.
+- **B11-lite** Product chat on the PDP — pre-baked Q&A chips +
+  free-text Jaccard match + WhatsApp escalation with the typed
+  question appended. No LLM dependency.
+- **B13** Heuristic lead classifier — language / intent / clinic
+  size / score chip on every entry in `/admin/leads` + 🔥 Hot
+  toggle
 
 ---
 
