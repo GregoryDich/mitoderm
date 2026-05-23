@@ -46,7 +46,7 @@ owner decision):**
 - Marked `STATE.md` and `CLAUDE.md` as **Mitoderm-only** so a
   parallel fitscan worktree won't import these conventions
 
-**Cycle 2 B bucket — first batch shipped:**
+**Cycle 2 B bucket — shipped so far:**
 
 - **B17** Search input on `/catalog` (filters by name + description
   + category)
@@ -63,6 +63,15 @@ owner decision):**
   doctors store + LocalBusiness JSON-LD
 - **B05** `/[lang]/protocols` "Shop the protocol" landing page —
   aggregates every product's `bundle` slot into numbered protocols
+- **B06** Treatment-economics structural slot (`economics`) — same
+  card strip as `clinicalResults`, plus a small disclaimer line
+- **B16** Print-friendly product brief at
+  `/[lang]/products/[slug]/brief` — single click → browser
+  Save-as-PDF, no PDF runtime dependency
+- **B12** Regimen quiz at `/[lang]/regimen` — three questions
+  → top-2 product recommendation with pre-filled WhatsApp inquiry
+- **B07** Before/after structural slot + tap-to-compare slider
+  (mouse / touch / keyboard, RTL-mirrored handle)
 
 ---
 
