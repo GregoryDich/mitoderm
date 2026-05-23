@@ -20,6 +20,10 @@ export type AuditAction =
   | 'story.create'
   | 'story.update'
   | 'story.delete'
+  | 'clinic.approve'
+  | 'clinic.reject'
+  | 'clinic.delete'
+  | 'clinic.regenerateToken'
   | 'asset.upload'
   | 'auth.login'
   | 'auth.logout';

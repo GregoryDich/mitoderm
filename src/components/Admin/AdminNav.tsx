@@ -16,6 +16,7 @@ const SECTIONS = [
   { href: '/admin/social', label: 'Social' },
   { href: '/admin/press', label: 'Press' },
   { href: '/admin/leads', label: 'Leads' },
+  { href: '/admin/applications', label: 'Pro apps' },
   { href: '/admin/audit', label: 'Audit' },
 ];
 
