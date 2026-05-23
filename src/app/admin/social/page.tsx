@@ -20,8 +20,14 @@ const KIND_COLOR: Record<string, string> = {
 
 export default async function AdminSocial() {
   if (!isAdmin()) redirect('/admin');
-  const posts = await readSocial();
-  posts.sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
+  const all = await readSocial();
+  // Drafts first (so newly-ingested items from n8n surface immediately),
+  // then by order, then newest createdAt.
+  const posts = [...all].sort((a, b) => {
+    if (a.isPublished !== b.isPublished) return a.isPublished ? 1 : -1;
+    return a.order - b.order || b.createdAt.localeCompare(a.createdAt);
+  });
+  const draftCount = all.filter((p) => !p.isPublished).length;
 
   return (
     <div>
@@ -39,10 +45,16 @@ export default async function AdminSocial() {
             Social
           </h1>
           <p style={{ margin: '6px 0 0', fontSize: 13, color: 'rgba(245,242,240,0.55)' }}>
-            {posts.length} item(s). Published items surface on the homepage
-            social strip; <strong>seminar</strong>-kind entries also appear at
-            /seminars. Paste the Instagram URL (reel / post / IGTV); upload a
-            poster image (9:16 best for Reels, 1:1 for posts).
+            {posts.length} item(s){draftCount > 0 ? ` · ` : ''}
+            {draftCount > 0 && (
+              <strong style={{ color: '#dfba74' }}>
+                {draftCount} draft{draftCount > 1 ? 's' : ''} awaiting review
+              </strong>
+            )}
+            . Published items surface on the homepage social strip;{' '}
+            <strong>seminar</strong>-kind entries also appear at /seminars.
+            Drafts arrive automatically from n8n if the ingest endpoint is
+            wired (<code>SOCIAL_INGEST_TOKEN</code> in env).
           </p>
         </div>
         <Link

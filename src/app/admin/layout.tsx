@@ -4,9 +4,12 @@ import { cookies } from 'next/headers';
 import { Rubik } from 'next/font/google';
 import '../globals.scss';
 import { isAdmin, SESSION_COOKIE } from '@/lib/admin-auth';
+import { readSocial } from '@/lib/social-store';
 import AdminLogoutButton from '@/components/Admin/AdminLogoutButton';
 import AdminNav from '@/components/Admin/AdminNav';
 import styles from './admin.module.scss';
+
+export const dynamic = 'force-dynamic';
 
 const rubik = Rubik({
   weight: ['300', '400', '500', '700'],
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -29,6 +32,12 @@ export default function AdminLayout({
   const authed = isAdmin();
   void SESSION_COOKIE;
   void cookies;
+
+  let socialDrafts = 0;
+  if (authed) {
+    const social = await readSocial();
+    socialDrafts = social.filter((p) => !p.isPublished).length;
+  }
 
   return (
     <html lang="en">
@@ -40,7 +49,7 @@ export default function AdminLayout({
           </Link>
           {authed && (
             <div className={styles.navRow}>
-              <AdminNav />
+              <AdminNav socialDrafts={socialDrafts} />
               <AdminLogoutButton />
             </div>
           )}
