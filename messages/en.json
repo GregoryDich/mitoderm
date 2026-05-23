@@ -62,7 +62,8 @@
     "trainingDownload": "Download",
     "trainingEnroll": "Enroll",
     "addToList": "Add to my list",
-    "removeFromList": "In my list — remove"
+    "removeFromList": "In my list — remove",
+    "requestSample": "Request a sample"
   },
   "brief": {
     "download": "Download as PDF",
@@ -213,6 +214,29 @@
       "role": "Patient"
     },
     "eyebrow": "REVIEWS"
+  },
+  "press": {
+    "title": "AS SEEN AT"
+  },
+  "recentlyViewed": {
+    "title": "RECENTLY VIEWED"
+  },
+  "glossary": {
+    "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
+    "niacinamide": "Vitamin B3. Reinforces the skin barrier, evens tone, reduces sebum production and redness. Tolerated by most skin types.",
+    "hyaluronic acid": "A glycosaminoglycan that holds up to 1000× its weight in water. Plumps fine lines, restores bounce, and helps active ingredients spread evenly.",
+    "peptide": "Short chain of amino acids that signal skin cells. Different peptides stimulate collagen, elasticity, or barrier repair.",
+    "collagen": "Structural protein providing skin firmness. Production drops ~1% per year after age 25; many actives target its synthesis.",
+    "nad+": "Coenzyme central to cellular energy. Topical NAD+ supports mitochondrial recovery — relevant for longevity protocols.",
+    "retinol": "Vitamin A derivative. Accelerates cell turnover, smooths texture, reduces fine lines. Photosensitising — use in evening protocols.",
+    "ahas": "Alpha-hydroxy acids (glycolic, lactic, mandelic). Water-soluble exfoliants targeting tone and texture.",
+    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin."
+  },
+  "promo": {
+    "label": "Upcoming promotion",
+    "tag": "UPCOMING",
+    "cta": "Reserve a seat",
+    "dismiss": "Dismiss"
   },
   "interest": {
     "open": "Open my interest list",

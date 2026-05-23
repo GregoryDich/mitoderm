@@ -14,8 +14,14 @@ import BeforeAfter from './BeforeAfter';
 import ProductChat from './ProductChat';
 import TrainingHub from './TrainingHub';
 import InterestToggle from '@/components/InterestList/InterestToggle';
+import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
+import IngredientChip from './IngredientChip';
 import type { Doctor } from '@/lib/doctors-store';
-import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
+import {
+  productInquiryMessage,
+  sampleRequestMessage,
+  whatsappHref,
+} from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
 
 interface Props {
@@ -56,6 +62,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
+  const sampleHref = whatsappHref(sampleRequestMessage(c.name, locale));
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
@@ -152,6 +159,24 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             <Link href={`/products/${product.slug}/brief`} className={styles.ghost}>
               {t('downloadBrief')}
             </Link>
+            {sampleHref ? (
+              <a
+                href={sampleHref}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.ghost}
+                aria-label={t('requestSample')}
+              >
+                {t('requestSample')}
+              </a>
+            ) : (
+              <Link
+                href={`/form?intent=sample&product=${encodeURIComponent(product.slug)}`}
+                className={styles.ghost}
+              >
+                {t('requestSample')}
+              </Link>
+            )}
             <InterestToggle
               slug={product.slug}
               addLabel={t('addToList')}
@@ -274,12 +299,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
           <div className={styles.ingWrap}>
             <ul className={styles.ingList}>
               {c.ingredients.map((ing, i) => (
-                <li key={ing} className={styles.ingRow}>
-                  <span>{ing}</span>
-                  <span className={styles.ingIndex}>
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </li>
+                <IngredientChip key={ing} ingredient={ing} index={i} />
               ))}
             </ul>
             <ProductMedia
@@ -658,6 +678,8 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
           )}
         </section>
       </main>
+
+      <RecentlyViewedStrip excludeSlug={product.slug} trackSlug={product.slug} />
 
       <Footer />
 

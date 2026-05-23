@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import HomePage from '@/components/Home/HomePage';
 import { readSocial } from '@/lib/social-store';
+import { readPress } from '@/lib/press-store';
 import { LocaleType } from '@/types';
 import {
   SITE_NAME,
@@ -57,5 +58,8 @@ export default async function Home({
   const social = (await readSocial())
     .filter((p) => p.isPublished)
     .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
-  return <HomePage locale={lang} social={social} />;
+  const press = (await readPress())
+    .filter((p) => p.isPublished)
+    .sort((a, b) => a.order - b.order);
+  return <HomePage locale={lang} social={social} press={press} />;
 }

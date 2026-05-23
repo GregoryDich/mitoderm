@@ -32,6 +32,9 @@ const InterestDrawer = dynamic(
 );
 
 import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
+import { RecentlyViewedProvider } from '@/components/RecentlyViewed/RecentlyViewedProvider';
+import PromoBar from '@/components/Layout/PromoBar/PromoBar';
+import { nextUpcomingSeminar } from '@/lib/promo';
 
 const rubik = Rubik({
   weight: ['300', '400', '500', '900'],
@@ -124,6 +127,8 @@ export default async function RootLayout({
 
   unstable_setRequestLocale(params.lang);
 
+  const upcoming = await nextUpcomingSeminar();
+
   return (
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
@@ -132,6 +137,15 @@ export default async function RootLayout({
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
           <InterestListProvider>
+          <RecentlyViewedProvider>
+            {upcoming && (
+              <PromoBar
+                id={`seminar-${upcoming.id}`}
+                text={upcoming.caption || 'Mitoderm seminar'}
+                date={upcoming.date}
+                href={`/${params.lang}/seminars`}
+              />
+            )}
             <Header />
             <Modal />
             {children}
@@ -141,6 +155,7 @@ export default async function RootLayout({
             <InterestDrawer />
             <JsonLd id="ld-organization" data={orgJsonLd()} />
             <JsonLd id="ld-website" data={siteJsonLd()} />
+          </RecentlyViewedProvider>
           </InterestListProvider>
         </body>
       </NextIntlClientProvider>

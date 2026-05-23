@@ -23,6 +23,19 @@ export function productInquiryMessage(name: string, locale: LocaleType): string 
   return (TEMPLATES[locale] ?? TEMPLATES.en)(name);
 }
 
+const SAMPLE_TEMPLATES: Record<LocaleType, (name: string) => string> = {
+  en: (name) =>
+    `Hello! I'd like to request a sample of ${name} to evaluate at my clinic before placing a full order.`,
+  ru: (name) =>
+    `Здравствуйте! Я бы хотел(а) запросить пробник ${name} для тестирования в нашей клинике до полного заказа.`,
+  he: (name) =>
+    `שלום! אשמח לקבל דגימה של ${name} לבדיקה במרפאה לפני הזמנה מלאה.`,
+};
+
+export function sampleRequestMessage(name: string, locale: LocaleType): string {
+  return (SAMPLE_TEMPLATES[locale] ?? SAMPLE_TEMPLATES.en)(name);
+}
+
 const GENERIC_TEMPLATES: Record<LocaleType, string> = {
   en: 'Hello! I run an aesthetic clinic and would like to learn about Mitoderm products and pricing.',
   ru: 'Здравствуйте! Я представляю эстетическую клинику и хотел(а) бы узнать о продуктах Mitoderm и условиях.',

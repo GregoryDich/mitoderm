@@ -7,6 +7,7 @@ import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
 import InterestToggle from '@/components/InterestList/InterestToggle';
+import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import styles from './Catalog.module.scss';
 
 interface Props {
@@ -178,6 +179,8 @@ const Catalog: FC<Props> = ({ items }) => {
           </Link>
         </section>
       </main>
+
+      <RecentlyViewedStrip />
 
       <Footer />
     </div>

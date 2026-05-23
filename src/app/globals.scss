@@ -149,3 +149,13 @@ section {
   white-space: nowrap;
   border: 0;
 }
+
+/* Promo bar — when active, shift the fixed header below it and add
+ * matching padding to every pageScroll container. */
+html.has-promo header[class*="header"] {
+  top: 36px;
+}
+
+html.has-promo .pageScroll {
+  padding-top: 124px;
+}

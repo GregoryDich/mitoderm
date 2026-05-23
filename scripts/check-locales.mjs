@@ -43,6 +43,12 @@ function has(obj, dotted) {
   return true;
 }
 
+/** Namespaces where keys are intentionally locale-native (e.g. the
+ *  glossary's keys ARE the localized terms — "exosomes" in en,
+ *  "экзосомы" in ru). For these we only check that the namespace
+ *  exists in every target locale, not that every key matches. */
+const LOOSE_NAMESPACES = new Set(['glossary']);
+
 const en = load(ref);
 let failed = false;
 
@@ -54,8 +60,10 @@ for (const t of targets) {
    * namespaces show as a soft warning, not a failure. */
   const sharedNs = Object.keys(en).filter((ns) => ns in tr);
   const legacyNs = Object.keys(en).filter((ns) => !(ns in tr));
+  const looseNs = sharedNs.filter((ns) => LOOSE_NAMESPACES.has(ns));
+  const strictNs = sharedNs.filter((ns) => !LOOSE_NAMESPACES.has(ns));
 
-  const enSharedKeys = sharedNs.flatMap((ns) => flatten(en[ns], ns));
+  const enSharedKeys = strictNs.flatMap((ns) => flatten(en[ns], ns));
   const missing = enSharedKeys.filter((k) => !has(tr, k));
 
   if (missing.length) {
@@ -66,7 +74,7 @@ for (const t of targets) {
     for (const k of missing) console.error(`  - ${k}`);
   } else {
     console.log(
-      `[locale-parity] ${t}.json — OK (${enSharedKeys.length} keys across ${sharedNs.length} shared namespaces)`
+      `[locale-parity] ${t}.json — OK (${enSharedKeys.length} keys across ${strictNs.length} strict namespaces; ${looseNs.length} loose)`
     );
   }
 

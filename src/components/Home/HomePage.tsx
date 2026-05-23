@@ -7,12 +7,15 @@ import ProductMedia from '@/components/Product/ProductMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
 import SocialStrip from '@/components/Social/SocialStrip';
+import PressStrip from '@/components/Press/PressStrip';
 import type { SocialPost } from '@/lib/social-store';
+import type { PressItem } from '@/lib/press-store';
 import styles from './HomePage.module.scss';
 
 interface Props {
   locale: LocaleType;
   social?: SocialPost[];
+  press?: PressItem[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -21,7 +24,7 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const HomePage: FC<Props> = ({ locale, social = [] }) => {
+const HomePage: FC<Props> = ({ locale, social = [], press = [] }) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
     .filter((i) => i.status === 'available')
@@ -110,6 +113,12 @@ const HomePage: FC<Props> = ({ locale, social = [] }) => {
         {social.length > 0 && (
           <Reveal>
             <SocialStrip posts={social} />
+          </Reveal>
+        )}
+
+        {press.length > 0 && (
+          <Reveal>
+            <PressStrip items={press} />
           </Reveal>
         )}
 
