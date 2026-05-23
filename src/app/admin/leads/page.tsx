@@ -53,22 +53,38 @@ export default async function AdminLeads() {
             product-page enquiry.
           </p>
         </div>
-        <a
-          href="/api/admin/leads"
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            padding: '10px 18px',
-            borderRadius: 30,
-            border: '1px solid rgba(245,242,240,0.2)',
-            color: 'rgba(245,242,240,0.85)',
-            fontSize: 13,
-            fontWeight: 500,
-            textDecoration: 'none',
-          }}
-        >
-          Export JSON
-        </a>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <a
+            href="/api/admin/export/leads"
+            style={{
+              padding: '10px 18px',
+              borderRadius: 30,
+              background: '#dfba74',
+              color: '#08080a',
+              fontSize: 13,
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
+          >
+            Export CSV
+          </a>
+          <a
+            href="/api/admin/leads"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              padding: '10px 18px',
+              borderRadius: 30,
+              border: '1px solid rgba(245,242,240,0.2)',
+              color: 'rgba(245,242,240,0.85)',
+              fontSize: 13,
+              fontWeight: 500,
+              textDecoration: 'none',
+            }}
+          >
+            JSON
+          </a>
+        </div>
       </header>
 
       <AdminLeadsTable initialLeads={leads} />

@@ -59,20 +59,36 @@ export default async function AdminDoctors() {
             on /about.
           </p>
         </div>
-        <Link
-          href="/admin/doctors/new"
-          style={{
-            padding: '12px 22px',
-            borderRadius: 30,
-            background: '#dfba74',
-            color: '#08080a',
-            fontSize: 14,
-            fontWeight: 500,
-            textDecoration: 'none',
-          }}
-        >
-          + New entry
-        </Link>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <a
+            href="/api/admin/export/doctors"
+            style={{
+              padding: '12px 18px',
+              borderRadius: 30,
+              border: '1px solid rgba(245,242,240,0.2)',
+              color: 'rgba(245,242,240,0.85)',
+              fontSize: 13,
+              fontWeight: 500,
+              textDecoration: 'none',
+            }}
+          >
+            Export CSV
+          </a>
+          <Link
+            href="/admin/doctors/new"
+            style={{
+              padding: '12px 22px',
+              borderRadius: 30,
+              background: '#dfba74',
+              color: '#08080a',
+              fontSize: 14,
+              fontWeight: 500,
+              textDecoration: 'none',
+            }}
+          >
+            + New entry
+          </Link>
+        </div>
       </header>
 
       {doctors.length === 0 ? (

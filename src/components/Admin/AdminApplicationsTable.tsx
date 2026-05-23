@@ -48,6 +48,28 @@ const AdminApplicationsTable: FC<Props> = ({ initial }) => {
     setPendingId(null);
   };
 
+  const setPerks = async (
+    id: string,
+    perks: {
+      referralCode?: string | null;
+      referralRate?: number | null;
+      loyaltyTier?: string | null;
+      loyaltyDiscount?: number | null;
+    }
+  ) => {
+    setPendingId(id);
+    const res = await fetch(`/api/admin/applications/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ action: 'perks', perks }),
+    });
+    if (res.ok) {
+      const { clinic } = (await res.json()) as { clinic: ClinicAccount };
+      setClinics((cur) => cur.map((c) => (c.id === id ? clinic : c)));
+    }
+    setPendingId(null);
+  };
+
   return (
     <div>
       <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
@@ -266,6 +288,13 @@ const AdminApplicationsTable: FC<Props> = ({ initial }) => {
                                 Available after approval.
                               </p>
                             )}
+                            {c.status === 'approved' && (
+                              <PerksPanel
+                                clinic={c}
+                                disabled={busy}
+                                onSave={(perks) => setPerks(c.id, perks)}
+                              />
+                            )}
                           </div>
                         </div>
                       </Td>
@@ -366,6 +395,145 @@ function Td({
     </td>
   );
 }
+
+interface PerksPanelProps {
+  clinic: ClinicAccount;
+  disabled?: boolean;
+  onSave: (perks: {
+    referralCode?: string | null;
+    referralRate?: number | null;
+    loyaltyTier?: string | null;
+    loyaltyDiscount?: number | null;
+  }) => void;
+}
+
+function PerksPanel({ clinic, disabled, onSave }: PerksPanelProps) {
+  const [code, setCode] = useState(clinic.referralCode ?? '');
+  const [rate, setRate] = useState<number | ''>(
+    clinic.referralRate ?? ''
+  );
+  const [tier, setTier] = useState(clinic.loyaltyTier ?? '');
+  const [discount, setDiscount] = useState<number | ''>(
+    clinic.loyaltyDiscount ?? ''
+  );
+
+  const save = () =>
+    onSave({
+      referralCode: code.trim() ? code.trim() : null,
+      referralRate: rate === '' ? null : Number(rate),
+      loyaltyTier: tier.trim() ? tier.trim() : null,
+      loyaltyDiscount: discount === '' ? null : Number(discount),
+    });
+
+  return (
+    <div
+      style={{
+        marginTop: 18,
+        padding: 14,
+        borderRadius: 10,
+        background: 'rgba(255,255,255,0.025)',
+        border: '1px solid rgba(255,255,255,0.06)',
+      }}
+    >
+      <h5 style={{ ...detailH4, marginBottom: 10 }}>Perks · referral &amp; loyalty</h5>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+        <label style={perkLabel}>
+          <span>Referral code</span>
+          <input
+            type="text"
+            value={code}
+            onChange={(e) => setCode(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))}
+            placeholder="e.g. clinic-abc"
+            style={perkInput}
+          />
+        </label>
+        <label style={perkLabel}>
+          <span>Commission %</span>
+          <input
+            type="number"
+            min={0}
+            max={100}
+            step={1}
+            value={rate}
+            onChange={(e) =>
+              setRate(e.target.value === '' ? '' : Number(e.target.value))
+            }
+            placeholder="e.g. 10"
+            style={perkInput}
+          />
+        </label>
+        <label style={perkLabel}>
+          <span>Loyalty tier</span>
+          <input
+            type="text"
+            value={tier}
+            onChange={(e) => setTier(e.target.value)}
+            placeholder="silver / gold / partner"
+            style={perkInput}
+          />
+        </label>
+        <label style={perkLabel}>
+          <span>Loyalty discount %</span>
+          <input
+            type="number"
+            min={0}
+            max={100}
+            step={1}
+            value={discount}
+            onChange={(e) =>
+              setDiscount(e.target.value === '' ? '' : Number(e.target.value))
+            }
+            placeholder="e.g. 5"
+            style={perkInput}
+          />
+        </label>
+      </div>
+      {clinic.referredById && (
+        <p style={{ ...detailP, marginTop: 10, color: 'rgba(245,242,240,0.55)' }}>
+          Referred by: <code>{clinic.referredById}</code>
+        </p>
+      )}
+      <button
+        type="button"
+        onClick={save}
+        disabled={disabled}
+        style={{
+          marginTop: 12,
+          padding: '8px 16px',
+          borderRadius: 8,
+          background: '#dfba74',
+          border: 0,
+          color: '#08080a',
+          fontWeight: 600,
+          fontSize: 12.5,
+          cursor: disabled ? 'progress' : 'pointer',
+          fontFamily: 'inherit',
+        }}
+      >
+        Save perks
+      </button>
+    </div>
+  );
+}
+
+const perkLabel: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 4,
+  fontSize: 11.5,
+  color: 'rgba(245,242,240,0.55)',
+  letterSpacing: 0.4,
+};
+
+const perkInput: React.CSSProperties = {
+  padding: '8px 10px',
+  borderRadius: 6,
+  border: '1px solid rgba(255,255,255,0.12)',
+  background: 'rgba(0,0,0,0.25)',
+  color: '#f5f2f0',
+  fontFamily: 'inherit',
+  fontSize: 13,
+};
 
 const detailH4: React.CSSProperties = {
   margin: '0 0 8px',
