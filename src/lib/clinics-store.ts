@@ -27,6 +27,22 @@ export interface ClinicAccount {
   lastLoginAt?: string;
   /** Free-text internal note from the admin reviewer. */
   note?: string;
+  /** Referral program (C04). Owner-tunable per clinic.
+   *  - referralCode: unique slug the clinic gives out; tracked when a
+   *    new application arrives with it pre-filled.
+   *  - referralRate: % commission on the first wholesale order from
+   *    every clinic that signed up with this code. 0 disables.
+   *  - referredById: backref — set when this clinic was itself
+   *    referred by another. */
+  referralCode?: string;
+  referralRate?: number;
+  referredById?: string;
+  /** Loyalty / reorder discount (C06).
+   *  - loyaltyTier: free-text label ('silver' / 'gold' / 'partner').
+   *  - loyaltyDiscount: % off list applied to wholesale invoices.
+   *    Defaults to 0 (no discount). */
+  loyaltyTier?: string;
+  loyaltyDiscount?: number;
 }
 
 function abs(p: string) {
@@ -74,12 +90,25 @@ function makeToken() {
 }
 
 export async function applyClinic(
-  input: Omit<ClinicAccount, 'id' | 'status' | 'appliedAt' | 'token'>
+  input: Omit<ClinicAccount, 'id' | 'status' | 'appliedAt' | 'token'> & {
+    referralCode?: string;
+  }
 ): Promise<{ ok: true; clinic: ClinicAccount } | { ok: false; error: string }> {
   const all = await readClinics();
   const email = input.email.toLowerCase().trim();
   if (all.some((c) => c.email.toLowerCase() === email)) {
     return { ok: false, error: 'duplicate_email' };
+  }
+  // Resolve referral code → referredById, if the code matches an
+  // approved clinic with a non-empty code. Unknown codes are silently
+  // dropped to avoid leaking who's in the program.
+  let referredById: string | undefined;
+  if (input.referralCode) {
+    const code = input.referralCode.trim().toLowerCase();
+    const referrer = all.find(
+      (c) => c.status === 'approved' && c.referralCode?.toLowerCase() === code
+    );
+    if (referrer) referredById = referrer.id;
   }
   const clinic: ClinicAccount = {
     id: makeId(email),
@@ -93,6 +122,7 @@ export async function applyClinic(
     message: input.message?.trim() || undefined,
     status: 'pending',
     appliedAt: new Date().toISOString(),
+    referredById,
   };
   all.push(clinic);
   await persist(all);
@@ -116,6 +146,52 @@ export async function reviewClinic(
   };
   await persist(all);
   return all[idx];
+}
+
+export async function setClinicPerks(
+  id: string,
+  patch: {
+    referralCode?: string | null;
+    referralRate?: number | null;
+    loyaltyTier?: string | null;
+    loyaltyDiscount?: number | null;
+  }
+): Promise<ClinicAccount | null> {
+  const all = await readClinics();
+  const idx = all.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  const cur = all[idx];
+  // Treat explicit null as "clear"; undefined as "leave alone".
+  const next: ClinicAccount = {
+    ...cur,
+    referralCode:
+      patch.referralCode === null
+        ? undefined
+        : patch.referralCode !== undefined
+        ? patch.referralCode.trim().toLowerCase() || undefined
+        : cur.referralCode,
+    referralRate:
+      patch.referralRate === null
+        ? undefined
+        : patch.referralRate !== undefined
+        ? Math.max(0, Math.min(100, Number(patch.referralRate) || 0))
+        : cur.referralRate,
+    loyaltyTier:
+      patch.loyaltyTier === null
+        ? undefined
+        : patch.loyaltyTier !== undefined
+        ? patch.loyaltyTier.trim() || undefined
+        : cur.loyaltyTier,
+    loyaltyDiscount:
+      patch.loyaltyDiscount === null
+        ? undefined
+        : patch.loyaltyDiscount !== undefined
+        ? Math.max(0, Math.min(100, Number(patch.loyaltyDiscount) || 0))
+        : cur.loyaltyDiscount,
+  };
+  all[idx] = next;
+  await persist(all);
+  return next;
 }
 
 export async function regenerateToken(id: string): Promise<ClinicAccount | null> {

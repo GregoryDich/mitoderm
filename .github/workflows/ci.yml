@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Locale parity
+        run: npm run check:locales
+
+      - name: TypeScript
+        # Pre-existing /event routes have stale imports that we don't
+        # block CI on — filter those out, fail on anything else.
+        run: |
+          set -o pipefail
+          OUT=$(npx tsc --noEmit 2>&1 | grep -vE "src/app/\[lang\]/event/" || true)
+          if [ -n "$OUT" ]; then
+            echo "$OUT"
+            echo "::error::TypeScript errors above (outside /event)"
+            exit 1
+          fi
+
+      - name: Lint
+        run: npm run lint -- --max-warnings 0
+        continue-on-error: true

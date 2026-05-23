@@ -184,6 +184,24 @@
             }
           ],
           "disclaimer": "Numbers are placeholders for layout preview. Replace via /admin/products before publishing."
+        },
+        "bundle": {
+          "title": "V-Tech anti-aging facial protocol",
+          "intro": "The full V-Tech session — biostimulation, sealing and post-procedure recovery — in three steps.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Step 1 — Active"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Step 2 — Seal & soothe"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Step 3 — Recovery finish"
+            }
+          ]
         }
       },
       "ru": {
@@ -363,6 +381,24 @@
             }
           ],
           "disclaimer": "Цифры — заглушки для предпросмотра вёрстки. Замените через /admin/products перед публикацией."
+        },
+        "bundle": {
+          "title": "Антивозрастной протокол V-Tech",
+          "intro": "Полная сессия V-Tech — биостимуляция, запечатывание и постпроцедурное восстановление — в три шага.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Шаг 1 — Активная фаза"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Шаг 2 — Запечатывание"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Шаг 3 — Восстановление"
+            }
+          ]
         }
       },
       "he": {
@@ -542,6 +578,24 @@
             }
           ],
           "disclaimer": "המספרים הם מציבים זמניים לתצוגה. החליפו ב-/admin/products לפני פרסום."
+        },
+        "bundle": {
+          "title": "פרוטוקול אנטי-אייג׳ינג של V-Tech",
+          "intro": "הסשן המלא של V-Tech — ביוסטימולציה, אטימה והתאוששות פוסט-פרוצדורה — בשלושה שלבים.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "שלב 1 — פעיל"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "שלב 2 — אטימה והרגעה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "שלב 3 — סיום והתאוששות"
+            }
+          ]
         }
       }
     }
@@ -1378,6 +1432,20 @@
               "label": "Maintenance cadence"
             }
           ]
+        },
+        "bundle": {
+          "title": "Hair restoration protocol",
+          "intro": "In-clinic Exosignal Hair sessions backed by Exosignal Hair Spray at home — continuous regenerative signalling.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Step 1 — In-clinic ampoule"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Step 2 — Daily home care"
+            }
+          ]
         }
       },
       "ru": {
@@ -1518,6 +1586,20 @@
               "label": "Цикл поддержки"
             }
           ]
+        },
+        "bundle": {
+          "title": "Протокол восстановления волос",
+          "intro": "Клиническая сессия Exosignal Hair + домашний Exosignal Hair Spray — непрерывный регенеративный сигнал.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Шаг 1 — Сессия в клинике"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Шаг 2 — Домашний уход"
+            }
+          ]
         }
       },
       "he": {
@@ -1656,6 +1738,20 @@
             {
               "value": "6–8 שבועות",
               "label": "מחזור תחזוקה"
+            }
+          ]
+        },
+        "bundle": {
+          "title": "פרוטוקול שיקום שיער",
+          "intro": "טיפול Exosignal Hair במרפאה עם Exosignal Hair Spray בבית — איתות רגנרטיבי רציף.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "שלב 1 — אמפולה במרפאה"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "שלב 2 — טיפוח יומי בבית"
             }
           ]
         }

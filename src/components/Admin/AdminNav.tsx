@@ -18,6 +18,7 @@ const SECTIONS = [
   { href: '/admin/leads', label: 'Leads' },
   { href: '/admin/applications', label: 'Pro apps' },
   { href: '/admin/audit', label: 'Audit' },
+  { href: '/admin/health', label: 'Health' },
 ];
 
 const AdminNav: FC<Props> = ({ socialDrafts = 0 }) => {

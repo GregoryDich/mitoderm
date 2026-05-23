@@ -23,6 +23,7 @@ export async function POST(req: Request) {
   const city = clip(body.city, 80);
   const instagram = clip(body.instagram, 120);
   const message = clip(body.message, 2000);
+  const referralCode = clip(body.referralCode, 80);
 
   const errors: Record<string, string> = {};
   if (!name) errors.name = 'required';
@@ -42,6 +43,7 @@ export async function POST(req: Request) {
     city,
     instagram,
     message,
+    referralCode: referralCode || undefined,
   });
 
   if (!result.ok) {

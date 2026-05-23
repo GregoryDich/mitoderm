@@ -15,6 +15,7 @@ const ApplyForm: FC = () => {
   const [city, setCity] = useState('');
   const [instagram, setInstagram] = useState('');
   const [message, setMessage] = useState('');
+  const [referralCode, setReferralCode] = useState('');
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -35,6 +36,7 @@ const ApplyForm: FC = () => {
         city,
         instagram,
         message,
+        referralCode,
       }),
     });
     if (!res.ok) {
@@ -146,6 +148,16 @@ const ApplyForm: FC = () => {
                   onChange={(e) => setMessage(e.target.value.slice(0, 2000))}
                   className={styles.input}
                   placeholder={t('messagePlaceholder')}
+                />
+              </label>
+              <label className={styles.field}>
+                <span className={styles.label}>{t('referralCode')}</span>
+                <input
+                  type="text"
+                  value={referralCode}
+                  onChange={(e) => setReferralCode(e.target.value.slice(0, 80))}
+                  className={styles.input}
+                  placeholder={t('referralCodePlaceholder')}
                 />
               </label>
             </div>

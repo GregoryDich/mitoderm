@@ -240,6 +240,8 @@
     "instagram": "Instagram",
     "message": "Anything we should know",
     "messagePlaceholder": "Specialty, team size, current product lines, expected volume…",
+    "referralCode": "Referral code (optional)",
+    "referralCodePlaceholder": "Code shared by an existing Mitoderm partner",
     "submit": "Apply",
     "sending": "Sending…",
     "disclaimer": "We typically review applications within one business day. Approved accounts get a one-click magic link to the /pro portal — keep it private; one device per account is fine.",
