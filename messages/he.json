@@ -44,7 +44,9 @@
     "keyFacts": "עובדות מרכזיות",
     "contactViaWhatsApp": "שיחה ב-WhatsApp",
     "trustedBy": "עובדים איתנו",
-    "downloadBrief": "הורדת תקציר (PDF)"
+    "downloadBrief": "הורדת תקציר (PDF)",
+    "before": "לפני",
+    "after": "אחרי"
   },
   "brief": {
     "download": "שמירה כ-PDF",

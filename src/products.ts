@@ -102,6 +102,20 @@ export interface ProductContent {
     items: { label: string; value: string; sub?: string }[];
     disclaimer?: string;
   };
+  /** Before/after image pairs from real clinical sessions. Each pair
+   *  has a "before" and "after" public path; optional indication and
+   *  weeksAfter for the corner label. Rendered as a tap-to-compare
+   *  slider; empty stays invisible. */
+  beforeAfter?: {
+    title: string;
+    intro?: string;
+    pairs: {
+      before: string;
+      after: string;
+      indication?: string;
+      weeksAfter?: string;
+    }[];
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;

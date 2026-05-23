@@ -44,7 +44,9 @@
     "keyFacts": "Ключевые факты",
     "contactViaWhatsApp": "Написать в WhatsApp",
     "trustedBy": "С НАМИ РАБОТАЮТ",
-    "downloadBrief": "Скачать бриф (PDF)"
+    "downloadBrief": "Скачать бриф (PDF)",
+    "before": "До",
+    "after": "После"
   },
   "brief": {
     "download": "Сохранить как PDF",

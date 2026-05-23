@@ -10,6 +10,7 @@ import LightboxGallery from './LightboxGallery';
 import ProductSectionNav from './ProductSectionNav';
 import TrustedByStrip from './TrustedByStrip';
 import StickyMobileCta from './StickyMobileCta';
+import BeforeAfter from './BeforeAfter';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -84,6 +85,9 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
     ...(c.protocol ? [{ id: 'protocol', label: 'Protocol' }] : []),
     ...(c.aftercare ? [{ id: 'aftercare', label: 'Aftercare' }] : []),
     ...(c.contraindications ? [{ id: 'safety', label: 'Safety' }] : []),
+    ...(c.beforeAfter && c.beforeAfter.pairs.length > 0
+      ? [{ id: 'beforeafter', label: 'Before / After' }]
+      : []),
     ...(product.gallery && product.gallery.length > 0
       ? [{ id: 'gallery', label: 'Gallery' }]
       : []),
@@ -351,6 +355,24 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 </li>
               ))}
             </ul>
+          </Section>
+        )}
+
+        {c.beforeAfter && c.beforeAfter.pairs.length > 0 && (
+          <Section
+            id="beforeafter"
+            num={next()}
+            label="BEFORE / AFTER"
+            title={c.beforeAfter.title}
+          >
+            {c.beforeAfter.intro && (
+              <p className={styles.sectionIntro}>{c.beforeAfter.intro}</p>
+            )}
+            <BeforeAfter
+              pairs={c.beforeAfter.pairs}
+              beforeLabel={t('before')}
+              afterLabel={t('after')}
+            />
           </Section>
         )}
 
