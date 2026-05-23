@@ -43,7 +43,21 @@
     "related": "Похожие продукты",
     "keyFacts": "Ключевые факты",
     "contactViaWhatsApp": "Написать в WhatsApp",
-    "trustedBy": "С НАМИ РАБОТАЮТ"
+    "trustedBy": "С НАМИ РАБОТАЮТ",
+    "downloadBrief": "Скачать бриф (PDF)"
+  },
+  "brief": {
+    "download": "Сохранить как PDF",
+    "backToProduct": "Назад к продукту",
+    "keyFacts": "Ключевые факты",
+    "benefits": "Ключевые преимущества",
+    "ingredients": "Активные ингредиенты",
+    "protocol": "Протокол применения",
+    "aftercare": "Уход после процедуры",
+    "safety": "Безопасность и противопоказания",
+    "indications": "Показания",
+    "professionalOnly": "Только для профессионального использования",
+    "version": "Версия"
   },
   "buttons": {
     "contact": "Связаться с нами",

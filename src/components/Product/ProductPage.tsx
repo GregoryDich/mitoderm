@@ -94,6 +94,9 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
     ...(c.comparison && c.comparison.rows.length > 0
       ? [{ id: 'compare', label: 'Compare' }]
       : []),
+    ...(c.economics && c.economics.items.length > 0
+      ? [{ id: 'economics', label: 'Economics' }]
+      : []),
     { id: 'indications', label: 'Indications' },
   ];
 
@@ -133,6 +136,9 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             ) : (
               <Button text={t('contactForPrice')} colored href="/form" />
             )}
+            <Link href={`/products/${product.slug}/brief`} className={styles.ghost}>
+              {t('downloadBrief')}
+            </Link>
             <a href="#formula" className={styles.ghost}>
               {t('learnMore')} <span className={styles.arrowDown}>↓</span>
             </a>
@@ -465,6 +471,31 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 </tbody>
               </table>
             </div>
+          </Section>
+        )}
+
+        {c.economics && c.economics.items.length > 0 && (
+          <Section
+            id="economics"
+            num={next()}
+            label="ECONOMICS"
+            title={c.economics.title}
+          >
+            {c.economics.intro && (
+              <p className={styles.sectionIntro}>{c.economics.intro}</p>
+            )}
+            <div className={styles.results}>
+              {c.economics.items.map((it) => (
+                <article key={it.label} className={styles.resultCard}>
+                  <span className={styles.resultValue}>{it.value}</span>
+                  <span className={styles.resultLabel}>{it.label}</span>
+                  {it.sub && <span className={styles.resultSource}>{it.sub}</span>}
+                </article>
+              ))}
+            </div>
+            {c.economics.disclaimer && (
+              <p className={styles.disclaimer}>{c.economics.disclaimer}</p>
+            )}
           </Section>
         )}
 

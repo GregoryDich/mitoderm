@@ -92,6 +92,16 @@ export interface ProductContent {
     columns: string[];
     rows: { label: string; cells: string[] }[];
   };
+  /** Per-clinic economics — cost per session, suggested patient
+   *  charge, gross margin, total sessions per kit. Owner-authored
+   *  figures (currency, format, anything). Rendered as a clean
+   *  numbers strip with a small disclaimer line. */
+  economics?: {
+    title: string;
+    intro?: string;
+    items: { label: string; value: string; sub?: string }[];
+    disclaimer?: string;
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;

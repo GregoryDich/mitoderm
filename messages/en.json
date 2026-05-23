@@ -43,7 +43,21 @@
     "related": "Related products",
     "keyFacts": "Key facts",
     "contactViaWhatsApp": "Contact via WhatsApp",
-    "trustedBy": "TRUSTED BY"
+    "trustedBy": "TRUSTED BY",
+    "downloadBrief": "Download brief (PDF)"
+  },
+  "brief": {
+    "download": "Download as PDF",
+    "backToProduct": "Back to product",
+    "keyFacts": "Key facts",
+    "benefits": "Key benefits",
+    "ingredients": "Active ingredients",
+    "protocol": "Application protocol",
+    "aftercare": "Aftercare",
+    "safety": "Safety & contraindications",
+    "indications": "Indications",
+    "professionalOnly": "For professional use only",
+    "version": "Version"
   },
   "buttons": {
     "contact": "Contact us",

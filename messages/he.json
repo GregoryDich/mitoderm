@@ -43,7 +43,21 @@
     "related": "מוצרים נוספים",
     "keyFacts": "עובדות מרכזיות",
     "contactViaWhatsApp": "שיחה ב-WhatsApp",
-    "trustedBy": "עובדים איתנו"
+    "trustedBy": "עובדים איתנו",
+    "downloadBrief": "הורדת תקציר (PDF)"
+  },
+  "brief": {
+    "download": "שמירה כ-PDF",
+    "backToProduct": "חזרה למוצר",
+    "keyFacts": "עובדות מרכזיות",
+    "benefits": "יתרונות עיקריים",
+    "ingredients": "מרכיבים פעילים",
+    "protocol": "פרוטוקול שימוש",
+    "aftercare": "טיפול לאחר הטיפול",
+    "safety": "בטיחות והתוויות-נגד",
+    "indications": "התוויות",
+    "professionalOnly": "לשימוש מקצועי בלבד",
+    "version": "גרסה"
   },
   "buttons": {
     "contact": "צור קשר",
