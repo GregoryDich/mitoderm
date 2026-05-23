@@ -10,6 +10,12 @@ interface QA {
 
 interface Props {
   productName: string;
+  /** Product slug — used to call the server LLM endpoint with the
+   *  per-product system prompt. */
+  productSlug: string;
+  /** Visitor locale — passed to the LLM so it answers in the right
+   *  language. */
+  locale: 'en' | 'ru' | 'he';
   items: QA[];
   /** wa.me link with the productInquiryMessage already baked in. The
    *  widget will append the typed question when escalating. */
@@ -26,6 +32,7 @@ interface Props {
     escalateOnForm: string;
     suggestions: string;
     noMatch: string;
+    thinking: string;
   };
 }
 
@@ -53,6 +60,8 @@ function score(query: string, q: string): number {
 
 const ProductChat: FC<Props> = ({
   productName,
+  productSlug,
+  locale,
   items,
   whatsappBase,
   formHref,
@@ -60,6 +69,10 @@ const ProductChat: FC<Props> = ({
 }) => {
   const [query, setQuery] = useState('');
   const [opened, setOpened] = useState<number | null>(null);
+  const [thinking, setThinking] = useState(false);
+  // After the first LLM endpoint failure we stop trying for this session
+  // and fall back to the local fuzzy matcher silently.
+  const [llmAvailable, setLlmAvailable] = useState(true);
   const [log, setLog] = useState<
     { kind: 'user' | 'bot'; text: string; idx?: number }[]
   >([]);
@@ -89,19 +102,66 @@ const ProductChat: FC<Props> = ({
     });
   }, [log]);
 
-  const ask = (e?: React.FormEvent) => {
+  const fuzzyAnswer = (q: string): string => {
+    if (best) return items[best.idx].a;
+    return strings.noMatch;
+  };
+
+  const llmAnswer = async (
+    q: string,
+    history: typeof log
+  ): Promise<string | null> => {
+    try {
+      const res = await fetch('/api/chat/product', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          slug: productSlug,
+          locale,
+          message: q,
+          history: history
+            .filter((m) => m.kind === 'user' || m.kind === 'bot')
+            .map((m) => ({
+              role: m.kind === 'user' ? 'user' : 'assistant',
+              content: m.text,
+            })),
+        }),
+      });
+      if (!res.ok) {
+        // 501 = not configured → disable for the rest of the session.
+        if (res.status === 501) setLlmAvailable(false);
+        return null;
+      }
+      const data = (await res.json()) as { ok?: boolean; text?: string };
+      return data.ok && data.text ? data.text : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const ask = async (e?: React.FormEvent) => {
     e?.preventDefault();
     const q = query.trim();
-    if (!q) return;
+    if (!q || thinking) return;
     setQuery('');
-    const next: typeof log = [...log, { kind: 'user', text: q }];
-    if (best) {
-      next.push({ kind: 'bot', text: items[best.idx].a, idx: best.idx });
-    } else {
-      next.push({ kind: 'bot', text: strings.noMatch });
+    setLog((cur) => [...cur, { kind: 'user', text: q }]);
+
+    if (!llmAvailable) {
+      setLog((cur) => [...cur, { kind: 'bot', text: fuzzyAnswer(q) }]);
+      inputRef.current?.focus();
+      return;
     }
-    setLog(next);
-    // keep focus on the input so the user can keep typing
+
+    setThinking(true);
+    // Snapshot of history *before* the new user message would be redundant —
+    // we already pushed it. Compute history excluding the just-added one.
+    const histForApi = log;
+    const llmText = await llmAnswer(q, histForApi);
+    setThinking(false);
+    setLog((cur) => [
+      ...cur,
+      { kind: 'bot', text: llmText ?? fuzzyAnswer(q) },
+    ]);
     inputRef.current?.focus();
   };
 
@@ -156,7 +216,7 @@ const ProductChat: FC<Props> = ({
           </div>
         </div>
 
-        {log.length > 0 && (
+        {(log.length > 0 || thinking) && (
           <div className={styles.thread} ref={scroller} aria-live="polite">
             {log.map((m, i) => (
               <div
@@ -168,6 +228,14 @@ const ProductChat: FC<Props> = ({
                 {m.text}
               </div>
             ))}
+            {thinking && (
+              <div className={`${styles.msg} ${styles.bot} ${styles.typing}`}>
+                <span className={styles.dotPulse} />
+                <span className={styles.dotPulse} />
+                <span className={styles.dotPulse} />
+                <span className="sr-only">{strings.thinking}</span>
+              </div>
+            )}
           </div>
         )}
       </div>

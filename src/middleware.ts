@@ -37,6 +37,9 @@ function applySecurityHeaders(res: NextResponse): NextResponse {
       "font-src 'self' https://fonts.gstatic.com data:",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+      // Note: anthropic.com is only contacted server-to-server (from the
+      // /api/chat/product route), never directly from the browser, so it
+      // doesn't need to be in connect-src.
       "connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
       "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "object-src 'none'",

@@ -587,6 +587,8 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
           >
             <ProductChat
               productName={c.name}
+              productSlug={product.slug}
+              locale={locale}
               items={c.faq.items}
               whatsappBase={waHref}
               formHref="/form"
@@ -599,6 +601,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 escalateOnForm: t('chatEscalateForm'),
                 suggestions: t('chatSuggestions'),
                 noMatch: t('chatNoMatch'),
+                thinking: t('chatThinking'),
               }}
             />
           </Section>
