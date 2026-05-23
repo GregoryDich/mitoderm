@@ -3,6 +3,7 @@ import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import HomePage from '@/components/Home/HomePage';
 import { readSocial } from '@/lib/social-store';
 import { readPress } from '@/lib/press-store';
+import { readStories, isLive } from '@/lib/stories-store';
 import { LocaleType } from '@/types';
 import {
   SITE_NAME,
@@ -61,5 +62,10 @@ export default async function Home({
   const press = (await readPress())
     .filter((p) => p.isPublished)
     .sort((a, b) => a.order - b.order);
-  return <HomePage locale={lang} social={social} press={press} />;
+  const stories = (await readStories())
+    .filter((s) => isLive(s))
+    .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
+  return (
+    <HomePage locale={lang} social={social} press={press} stories={stories} />
+  );
 }

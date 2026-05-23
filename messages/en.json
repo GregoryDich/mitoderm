@@ -218,6 +218,14 @@
   "press": {
     "title": "AS SEEN AT"
   },
+  "stories": {
+    "label": "Stories",
+    "open": "Open story",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "seeMore": "See more"
+  },
   "recentlyViewed": {
     "title": "RECENTLY VIEWED"
   },

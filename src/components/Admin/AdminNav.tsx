@@ -12,6 +12,7 @@ interface Props {
 const SECTIONS = [
   { href: '/admin/products', label: 'Catalog' },
   { href: '/admin/doctors', label: 'Family' },
+  { href: '/admin/stories', label: 'Stories' },
   { href: '/admin/social', label: 'Social' },
   { href: '/admin/press', label: 'Press' },
   { href: '/admin/leads', label: 'Leads' },

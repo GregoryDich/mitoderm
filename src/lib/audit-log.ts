@@ -17,6 +17,9 @@ export type AuditAction =
   | 'press.create'
   | 'press.update'
   | 'press.delete'
+  | 'story.create'
+  | 'story.update'
+  | 'story.delete'
   | 'asset.upload'
   | 'auth.login'
   | 'auth.logout';

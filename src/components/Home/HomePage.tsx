@@ -8,14 +8,17 @@ import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
+import StoriesStrip from '@/components/Stories/StoriesStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
+import type { Story } from '@/lib/stories-store';
 import styles from './HomePage.module.scss';
 
 interface Props {
   locale: LocaleType;
   social?: SocialPost[];
   press?: PressItem[];
+  stories?: Story[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -24,7 +27,7 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const HomePage: FC<Props> = ({ locale, social = [], press = [] }) => {
+const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
     .filter((i) => i.status === 'available')
@@ -68,6 +71,8 @@ const HomePage: FC<Props> = ({ locale, social = [], press = [] }) => {
       </div>
 
       <main className={styles.content}>
+        {stories.length > 0 && <StoriesStrip stories={stories} />}
+
         <Reveal>
         <section className={styles.block}>
           <div className={styles.secLabel}>
