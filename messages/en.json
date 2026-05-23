@@ -196,6 +196,41 @@
     },
     "eyebrow": "REVIEWS"
   },
+  "regimen": {
+    "eyebrow": "REGIMEN BUILDER",
+    "title": "Find the right Mitoderm protocol",
+    "subtitle": "Three quick questions — we'll suggest the products that match the indication, sensitivity and intensity you described.",
+    "progressLabel": "Quiz progress",
+    "back": "Back",
+    "resultEyebrow": "RECOMMENDED",
+    "resultTitle": "Your matched products",
+    "resultIntro": "Based on your answers. A Mitoderm specialist can fine-tune the bundle and protocol for your patient flow.",
+    "noMatch": "We couldn't match a product — let's chat about your case.",
+    "ctaWhatsApp": "Discuss on WhatsApp",
+    "ctaForm": "Request pricing",
+    "restart": "Start over",
+    "q": {
+      "concern": {
+        "title": "What's the primary concern?",
+        "aging": "Skin aging, texture, fine lines",
+        "hair": "Hair thinning or hair loss",
+        "acne": "Acne, post-acne or scarring",
+        "recovery": "Post-procedure recovery"
+      },
+      "sens": {
+        "title": "How does the skin react to actives?",
+        "normal": "Normal — tolerates most actives",
+        "sensitive": "Sensitive — reacts sometimes",
+        "very": "Very sensitive — needs gentle protocols"
+      },
+      "sess": {
+        "title": "What session intensity do you want?",
+        "gentle": "Gentle — minimal downtime",
+        "standard": "Standard — balanced result and recovery",
+        "intensive": "Intensive — strongest result, longer recovery"
+      }
+    }
+  },
   "protocols": {
     "eyebrow": "PROTOCOLS",
     "title": "Shop the protocol",
