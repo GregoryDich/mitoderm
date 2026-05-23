@@ -7,6 +7,7 @@ import {
   absUrl,
   alternatesFor,
   openGraphLocaleFor,
+  ogImageMeta,
 } from '@/lib/seo';
 import { readSocial } from '@/lib/social-store';
 import JsonLd from '@/components/Seo/JsonLd';
@@ -21,6 +22,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale: lang, namespace: 'seminars' });
   const og = openGraphLocaleFor(lang);
+  const img = ogImageMeta({
+    title: t('title'),
+    eyebrow: t('eyebrow'),
+    tagline: t('subtitle'),
+    accent: 'rose',
+    locale: lang,
+  });
   return {
     title: `${t('title')} | ${SITE_NAME}`,
     description: t('subtitle'),
@@ -33,6 +41,13 @@ export async function generateMetadata({
       type: 'website',
       locale: og.locale,
       alternateLocale: og.alternateLocale,
+      images: img.openGraph,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('title')} | ${SITE_NAME}`,
+      description: t('subtitle'),
+      images: img.twitter,
     },
   };
 }

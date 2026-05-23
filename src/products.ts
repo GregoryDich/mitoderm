@@ -125,6 +125,21 @@ export interface ProductContent {
     intro?: string;
     items: { q: string; a: string }[];
   };
+  /** Practitioner training resources — short videos (YouTube /
+   *  self-hosted), protocol PDFs, certification info. Rendered as a
+   *  resource grid; items with a 'video' kind embed lazily on click. */
+  training?: {
+    title: string;
+    intro?: string;
+    items: {
+      kind: 'video' | 'pdf' | 'cert' | 'link';
+      title: string;
+      /** YouTube URL, PDF path under /public, or external link. */
+      href: string;
+      duration?: string;
+      description?: string;
+    }[];
+  };
   chipsTitle: string;
   chips: string[];
   ctaTitle: string;

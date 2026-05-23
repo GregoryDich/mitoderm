@@ -54,7 +54,11 @@
     "chatEscalateWhatsApp": "Продолжить в WhatsApp",
     "chatEscalateForm": "Отправить через форму",
     "chatSuggestions": "ЧАСТЫЕ ВОПРОСЫ",
-    "chatNoMatch": "У меня нет готового ответа — продолжим в WhatsApp, наш специалист пришлёт развёрнутый ответ."
+    "chatNoMatch": "У меня нет готового ответа — продолжим в WhatsApp, наш специалист пришлёт развёрнутый ответ.",
+    "trainingPlay": "Смотреть",
+    "trainingOpen": "Открыть",
+    "trainingDownload": "Скачать",
+    "trainingEnroll": "Записаться"
   },
   "brief": {
     "download": "Сохранить как PDF",

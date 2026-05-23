@@ -6,6 +6,7 @@ import {
   absUrl,
   alternatesFor,
   openGraphLocaleFor,
+  ogImageMeta,
 } from '@/lib/seo';
 import { products } from '@/products';
 import ProtocolsPage from '@/components/Protocols/ProtocolsPage';
@@ -17,6 +18,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale: lang, namespace: 'protocols' });
   const og = openGraphLocaleFor(lang);
+  const img = ogImageMeta({
+    title: t('title'),
+    eyebrow: t('eyebrow'),
+    tagline: t('subtitle'),
+    accent: 'gold',
+    locale: lang,
+  });
   return {
     title: `${t('title')} | ${SITE_NAME}`,
     description: t('subtitle'),
@@ -29,6 +37,13 @@ export async function generateMetadata({
       type: 'website',
       locale: og.locale,
       alternateLocale: og.alternateLocale,
+      images: img.openGraph,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('title')} | ${SITE_NAME}`,
+      description: t('subtitle'),
+      images: img.twitter,
     },
   };
 }

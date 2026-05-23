@@ -12,6 +12,7 @@ import TrustedByStrip from './TrustedByStrip';
 import StickyMobileCta from './StickyMobileCta';
 import BeforeAfter from './BeforeAfter';
 import ProductChat from './ProductChat';
+import TrainingHub from './TrainingHub';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -101,6 +102,9 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
       : []),
     ...(c.economics && c.economics.items.length > 0
       ? [{ id: 'economics', label: 'Economics' }]
+      : []),
+    ...(c.training && c.training.items.length > 0
+      ? [{ id: 'training', label: 'Training' }]
       : []),
     ...(c.faq && c.faq.items.length > 0
       ? [{ id: 'faq', label: 'Ask' }]
@@ -522,6 +526,28 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             {c.economics.disclaimer && (
               <p className={styles.disclaimer}>{c.economics.disclaimer}</p>
             )}
+          </Section>
+        )}
+
+        {c.training && c.training.items.length > 0 && (
+          <Section
+            id="training"
+            num={next()}
+            label="TRAINING"
+            title={c.training.title}
+          >
+            {c.training.intro && (
+              <p className={styles.sectionIntro}>{c.training.intro}</p>
+            )}
+            <TrainingHub
+              items={c.training.items}
+              strings={{
+                play: t('trainingPlay'),
+                open: t('trainingOpen'),
+                download: t('trainingDownload'),
+                enroll: t('trainingEnroll'),
+              }}
+            />
           </Section>
         )}
 

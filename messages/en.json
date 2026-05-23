@@ -54,7 +54,11 @@
     "chatEscalateWhatsApp": "Continue on WhatsApp",
     "chatEscalateForm": "Send via form",
     "chatSuggestions": "POPULAR QUESTIONS",
-    "chatNoMatch": "I don't have that answer ready — let's continue on WhatsApp and a specialist will reply with the details."
+    "chatNoMatch": "I don't have that answer ready — let's continue on WhatsApp and a specialist will reply with the details.",
+    "trainingPlay": "Play",
+    "trainingOpen": "Open",
+    "trainingDownload": "Download",
+    "trainingEnroll": "Enroll"
   },
   "brief": {
     "download": "Download as PDF",

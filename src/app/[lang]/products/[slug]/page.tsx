@@ -12,6 +12,7 @@ import {
   absUrl,
   alternatesFor,
   openGraphLocaleFor,
+  ogImage,
 } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -43,7 +44,34 @@ export function generateMetadata({
       type: 'website',
       locale: og.locale,
       alternateLocale: og.alternateLocale,
-      images: product.image ? [{ url: `${SITE_URL}${product.image}` }] : [],
+      images: [
+        {
+          url: ogImage({
+            title: c.name,
+            eyebrow: c.eyebrow,
+            tagline: c.tagline || c.shortDescription,
+            accent: product.accent,
+            locale: lang,
+          }),
+          width: 1200,
+          height: 630,
+          alt: c.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${c.name} | ${SITE_NAME}`,
+      description: c.shortDescription,
+      images: [
+        ogImage({
+          title: c.name,
+          eyebrow: c.eyebrow,
+          tagline: c.tagline || c.shortDescription,
+          accent: product.accent,
+          locale: lang,
+        }),
+      ],
     },
   };
 }

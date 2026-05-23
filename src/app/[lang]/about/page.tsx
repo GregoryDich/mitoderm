@@ -9,6 +9,7 @@ import {
   absUrl,
   alternatesFor,
   openGraphLocaleFor,
+  ogImageMeta,
 } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -18,6 +19,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale: lang, namespace: 'about' });
   const og = openGraphLocaleFor(lang);
+  const img = ogImageMeta({
+    title: t('title'),
+    eyebrow: t('eyebrow'),
+    tagline: t('tagline'),
+    accent: 'gold',
+    locale: lang,
+  });
   return {
     title: `${t('title')} | ${SITE_NAME}`,
     description: t('tagline'),
@@ -30,6 +38,13 @@ export async function generateMetadata({
       type: 'website',
       locale: og.locale,
       alternateLocale: og.alternateLocale,
+      images: img.openGraph,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('title')} | ${SITE_NAME}`,
+      description: t('tagline'),
+      images: img.twitter,
     },
   };
 }

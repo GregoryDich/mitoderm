@@ -54,7 +54,11 @@
     "chatEscalateWhatsApp": "המשך ב-WhatsApp",
     "chatEscalateForm": "שליחה דרך הטופס",
     "chatSuggestions": "שאלות נפוצות",
-    "chatNoMatch": "אין לי תשובה מוכנה — נמשיך ב-WhatsApp, מומחה ישלח תשובה מפורטת."
+    "chatNoMatch": "אין לי תשובה מוכנה — נמשיך ב-WhatsApp, מומחה ישלח תשובה מפורטת.",
+    "trainingPlay": "צפייה",
+    "trainingOpen": "פתיחה",
+    "trainingDownload": "הורדה",
+    "trainingEnroll": "הרשמה"
   },
   "brief": {
     "download": "שמירה כ-PDF",

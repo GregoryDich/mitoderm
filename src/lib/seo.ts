@@ -73,3 +73,34 @@ export function siteJsonLd() {
     publisher: { '@id': `${SITE_URL}#organization` },
   };
 }
+
+/** Build the dynamic OG image URL for a given page. The image route
+ *  is edge-rendered and aggressively cached, so each unique (locale,
+ *  title, tagline, eyebrow, accent) combination produces one image. */
+export interface OgOpts {
+  title: string;
+  eyebrow?: string;
+  tagline?: string;
+  accent?: 'teal' | 'gold' | 'rose';
+  locale?: LocaleType;
+}
+
+export function ogImage(opts: OgOpts): string {
+  const params = new URLSearchParams();
+  params.set('title', opts.title);
+  if (opts.eyebrow) params.set('eyebrow', opts.eyebrow);
+  if (opts.tagline) params.set('tagline', opts.tagline);
+  if (opts.accent) params.set('accent', opts.accent);
+  if (opts.locale) params.set('locale', opts.locale);
+  return `${SITE_URL}/api/og?${params.toString()}`;
+}
+
+/** Build OpenGraph + Twitter image entries in one go. Pass to
+ *  `Metadata.openGraph.images` and `Metadata.twitter.images`. */
+export function ogImageMeta(opts: OgOpts) {
+  const url = ogImage(opts);
+  return {
+    openGraph: [{ url, width: 1200, height: 630, alt: opts.title }],
+    twitter: [url],
+  };
+}
