@@ -14,10 +14,13 @@ interface Props {
   multiple?: boolean;
   /** "pill" = small button only; "drop" = larger drop zone with hover hint. */
   variant?: 'pill' | 'drop';
+  /** Override the accept string + MIME allow-list — pass e.g.
+   *  "video/mp4,video/webm" to accept videos instead of images. */
+  accept?: string;
 }
 
-const ACCEPT = 'image/jpeg,image/png,image/webp,image/avif,image/svg+xml';
-const ALLOWED = new Set([
+const DEFAULT_ACCEPT = 'image/jpeg,image/png,image/webp,image/avif,image/svg+xml';
+const DEFAULT_ALLOWED = new Set([
   'image/jpeg',
   'image/png',
   'image/webp',
@@ -31,7 +34,12 @@ const ImageUploadButton: FC<Props> = ({
   label = 'Upload image',
   multiple = false,
   variant = 'pill',
+  accept,
 }) => {
+  const ACCEPT = accept ?? DEFAULT_ACCEPT;
+  const ALLOWED = accept
+    ? new Set(accept.split(',').map((s) => s.trim()))
+    : DEFAULT_ALLOWED;
   const inputRef = useRef<HTMLInputElement>(null);
   const [pending, setPending] = useState(false);
   const [err, setErr] = useState<string | null>(null);

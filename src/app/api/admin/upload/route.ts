@@ -4,14 +4,21 @@ import { isAdmin } from '@/lib/admin-auth';
 import { writeAsset } from '@/lib/admin-store';
 import { logAudit, requestMeta } from '@/lib/audit-log';
 
-const ALLOWED_TYPES = [
+const IMAGE_TYPES = [
   'image/jpeg',
   'image/png',
   'image/webp',
   'image/avif',
   'image/svg+xml',
 ];
-const MAX_BYTES = 4 * 1024 * 1024; // ~4 MB — Next API body limit
+const VIDEO_TYPES = ['video/mp4', 'video/webm'];
+const ALLOWED_TYPES = [...IMAGE_TYPES, ...VIDEO_TYPES];
+
+// Next API body limit is ~4.5MB by default; we cap conservatively per kind.
+// Video clips for hover-loops should be short (4-10s muted) — 12MB is
+// already generous for an H.264 1080p 8s clip.
+const MAX_IMAGE_BYTES = 4 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 12 * 1024 * 1024;
 const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$/;
 
 function sanitizeName(input: string, fallbackExt: string): string {
@@ -31,6 +38,8 @@ function extFromType(t: string): string {
   if (t === 'image/webp') return '.webp';
   if (t === 'image/avif') return '.avif';
   if (t === 'image/svg+xml') return '.svg';
+  if (t === 'video/mp4') return '.mp4';
+  if (t === 'video/webm') return '.webm';
   return '.bin';
 }
 
@@ -60,9 +69,11 @@ export async function POST(req: Request) {
       { status: 415 }
     );
   }
-  if (file.size > MAX_BYTES) {
+  const isVideo = VIDEO_TYPES.includes(file.type);
+  const max = isVideo ? MAX_VIDEO_BYTES : MAX_IMAGE_BYTES;
+  if (file.size > max) {
     return NextResponse.json(
-      { error: 'too_large', size: file.size, max: MAX_BYTES },
+      { error: 'too_large', size: file.size, max, kind: isVideo ? 'video' : 'image' },
       { status: 413 }
     );
   }

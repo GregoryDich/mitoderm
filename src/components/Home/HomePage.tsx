@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { getCatalogItems, ProductAccent } from '@/products';
 import { LocaleType } from '@/types';
-import ProductMedia from '@/components/Product/ProductMedia';
+import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
 import SocialStrip from '@/components/Social/SocialStrip';
@@ -90,8 +90,9 @@ const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) 
                 style={{ ['--accent' as string]: accentVar[item.accent] }}
               >
                 <div className={styles.cardMedia}>
-                  <ProductMedia
+                  <HoverVideoMedia
                     image={item.image}
+                    video={item.cardVideo}
                     accent={item.accent}
                     alt={item.name}
                     className={styles.media}

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
-import ProductMedia from '@/components/Product/ProductMedia';
+import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import styles from './Catalog.module.scss';
@@ -127,8 +127,9 @@ const Catalog: FC<Props> = ({ items }) => {
               style={{ ['--accent' as string]: accentVar[item.accent] }}
             >
               <div className={styles.cardMedia}>
-                <ProductMedia
+                <HoverVideoMedia
                   image={item.image}
+                  video={item.cardVideo}
                   accent={item.accent}
                   alt={item.name}
                   className={styles.media}

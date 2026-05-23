@@ -103,6 +103,7 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
   const [accent, setAccent] = useState<Product['accent']>(seed.accent);
   const [image, setImage] = useState(seed.image ?? '');
   const [gallery, setGallery] = useState<string[]>(seed.gallery ?? []);
+  const [cardVideo, setCardVideo] = useState(seed.cardVideo ?? '');
   const [heroFailed, setHeroFailed] = useState(false);
   const [activeLoc, setActiveLoc] = useState<LocaleType>('en');
   const [content, setContent] = useState<Record<LocaleType, ProductContent>>({
@@ -139,6 +140,7 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
       accent,
       image: image.trim() || undefined,
       gallery: cleanedGallery.length ? cleanedGallery : undefined,
+      cardVideo: cardVideo.trim() || undefined,
       content: cleaned,
     };
 
@@ -281,6 +283,59 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
               onChange={setGallery}
               slug={slug}
             />
+          </div>
+          <div className={`${styles.field} ${styles.wide}`}>
+            <span className={styles.fieldLabel}>
+              Hover-to-play card video (optional)
+            </span>
+            <span
+              style={{
+                fontSize: 12,
+                color: 'rgba(245,242,240,0.55)',
+                marginBottom: 6,
+                lineHeight: 1.5,
+              }}
+            >
+              Short muted clip (4–10s, MP4 or WebM, ≤ 12 MB) that auto-plays
+              when a visitor hovers the catalog or featured card. Owner-uploaded
+              content only — your own footage / Reels — no third-party clips.
+            </span>
+            <div className={styles.heroPreview}>
+              <span
+                className={styles.thumb}
+                style={{ background: '#000', overflow: 'hidden' }}
+              >
+                {cardVideo ? (
+                  // eslint-disable-next-line jsx-a11y/media-has-caption
+                  <video
+                    src={cardVideo}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <span className={styles.thumbEmpty}>—</span>
+                )}
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <input
+                  type="text"
+                  value={cardVideo}
+                  onChange={(e) => setCardVideo(e.target.value)}
+                  placeholder="/products/my-product/loop.mp4"
+                  className={styles.input}
+                />
+                <ImageUploadButton
+                  slug={slug}
+                  label="Upload card video"
+                  variant="drop"
+                  accept="video/mp4,video/webm"
+                  onUploaded={(url) => setCardVideo(url)}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -155,6 +155,10 @@ export interface Product {
   image?: string;
   /** Additional product photos shown in the gallery section. */
   gallery?: string[];
+  /** Short muted autoplay loop (mp4 / webm) used as a hover-to-play
+   *  preview on catalog and featured cards. Must be owner-uploaded
+   *  content — no third-party clips. Typical length 4–10s, ≤ 12 MB. */
+  cardVideo?: string;
   content: Record<LocaleType, ProductContent>;
 }
 
@@ -173,6 +177,7 @@ export interface CatalogItem {
   status: ProductStatus;
   accent: ProductAccent;
   image?: string;
+  cardVideo?: string;
   name: string;
   shortDescription: string;
 }
@@ -185,6 +190,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItem[] =>
     status: p.status,
     accent: p.accent,
     image: p.image,
+    cardVideo: p.cardVideo,
     name: p.content[locale].name,
     shortDescription: p.content[locale].shortDescription,
   }));
