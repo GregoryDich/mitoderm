@@ -26,6 +26,13 @@ const A11yWidget = dynamic(
   { ssr: false }
 );
 
+const InterestDrawer = dynamic(
+  () => import('@/components/InterestList/InterestDrawer'),
+  { ssr: false }
+);
+
+import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
+
 const rubik = Rubik({
   weight: ['300', '400', '500', '900'],
   style: 'normal',
@@ -124,14 +131,17 @@ export default async function RootLayout({
           className={rubik.className}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
-          <Header />
-          <Modal />
-          {children}
-          <Footer />
-          <ScrollToTop />
-          <A11yWidget />
-          <JsonLd id="ld-organization" data={orgJsonLd()} />
-          <JsonLd id="ld-website" data={siteJsonLd()} />
+          <InterestListProvider>
+            <Header />
+            <Modal />
+            {children}
+            <Footer />
+            <ScrollToTop />
+            <A11yWidget />
+            <InterestDrawer />
+            <JsonLd id="ld-organization" data={orgJsonLd()} />
+            <JsonLd id="ld-website" data={siteJsonLd()} />
+          </InterestListProvider>
         </body>
       </NextIntlClientProvider>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID as string} />

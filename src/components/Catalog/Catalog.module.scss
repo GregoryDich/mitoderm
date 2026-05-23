@@ -225,8 +225,16 @@
 }
 
 .cardMedia {
+  position: relative;
   width: 100%;
   height: 200px;
+}
+
+.cardFav {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 10px;
+  z-index: 2;
 }
 
 .media {

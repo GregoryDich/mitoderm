@@ -31,7 +31,9 @@
     "filterHair": "Hair",
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
-    "noResults": "No products match your search."
+    "noResults": "No products match your search.",
+    "addToList": "Add to my list",
+    "removeFromList": "Remove from my list"
   },
   "product": {
     "keyBenefits": "Key Benefits",
@@ -58,7 +60,9 @@
     "trainingPlay": "Play",
     "trainingOpen": "Open",
     "trainingDownload": "Download",
-    "trainingEnroll": "Enroll"
+    "trainingEnroll": "Enroll",
+    "addToList": "Add to my list",
+    "removeFromList": "In my list — remove"
   },
   "brief": {
     "download": "Download as PDF",
@@ -209,6 +213,19 @@
       "role": "Patient"
     },
     "eyebrow": "REVIEWS"
+  },
+  "interest": {
+    "open": "Open my interest list",
+    "title": "My interest list",
+    "subtitle": "{count} product(s) selected — send the list and our specialist will follow up with pricing and protocol.",
+    "subtitleEmpty": "Nothing here yet. Tap the heart on any product to add it.",
+    "emptyHint": "Browse the catalog, tap the heart icon on the products you'd like to evaluate, and the whole shortlist will come back here. Send it in one go — much faster than emailing back and forth.",
+    "removeOne": "Remove",
+    "sendWhatsApp": "Send list on WhatsApp",
+    "sendForm": "Send via form",
+    "clear": "Clear list",
+    "clearConfirm": "Clear the whole interest list?",
+    "close": "Close"
   },
   "social": {
     "eyebrow": "LIVE FROM THE CLINIC",

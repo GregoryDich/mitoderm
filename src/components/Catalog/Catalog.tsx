@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
+import InterestToggle from '@/components/InterestList/InterestToggle';
 import styles from './Catalog.module.scss';
 
 interface Props {
@@ -132,6 +133,13 @@ const Catalog: FC<Props> = ({ items }) => {
                   className={styles.media}
                   sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <span className={styles.cardFav}>
+                  <InterestToggle
+                    slug={item.slug}
+                    addLabel={t('addToList')}
+                    removeLabel={t('removeFromList')}
+                  />
+                </span>
               </div>
               <div className={styles.cardBody}>
                 <div className={styles.tags}>

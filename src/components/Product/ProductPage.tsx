@@ -13,6 +13,7 @@ import StickyMobileCta from './StickyMobileCta';
 import BeforeAfter from './BeforeAfter';
 import ProductChat from './ProductChat';
 import TrainingHub from './TrainingHub';
+import InterestToggle from '@/components/InterestList/InterestToggle';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -151,6 +152,12 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             <Link href={`/products/${product.slug}/brief`} className={styles.ghost}>
               {t('downloadBrief')}
             </Link>
+            <InterestToggle
+              slug={product.slug}
+              addLabel={t('addToList')}
+              removeLabel={t('removeFromList')}
+              variant="wide"
+            />
             <a href="#formula" className={styles.ghost}>
               {t('learnMore')} <span className={styles.arrowDown}>↓</span>
             </a>
