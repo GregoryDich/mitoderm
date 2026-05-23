@@ -116,6 +116,21 @@ owner decision):**
   click-to-play CTA per slide, ESC/space/arrow keyboard control.
   `/admin/stories` CRUD with per-slide editor, schedule window
   (publishAt/expireAt), per-visitor seen tracking.
+- **Hover-to-play card video** — copyright-clean owner-uploaded
+  MP4/WebM (≤ 12 MB) on catalog + featured grid cards. Lazy-mounts
+  the `<video>` on hover/touch/focus, respects reduced-motion.
+  Admin product form gets the upload field.
+- **`docs/hosting.md`** — Vercel-recommended deployment guide
+  (preview-per-branch, custom domain, env vars, migration notes).
+- **B01 + B02** — `/[lang]/apply` public form + `/admin/applications`
+  reviewer + `/[lang]/pro` magic-link portal. HMAC-signed HttpOnly
+  cookie via `pro-auth.ts` (90-day session, seeded from
+  ADMIN_PASSWORD). Admin copies the magic-link URL from the
+  expanded row → sends via WhatsApp / email. Audit-logged.
+- **B11 (full LLM)** — `/api/chat/product` calls Anthropic Haiku
+  4.5 with a per-product system prompt (facts, rules, locale).
+  Rate-limited 10 req/IP/min. Frontend falls back to fuzzy
+  matcher when `ANTHROPIC_API_KEY` is unset.
 
 ---
 
