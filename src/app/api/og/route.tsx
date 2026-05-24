@@ -162,7 +162,7 @@ export async function GET(req: Request) {
             color: 'rgba(245, 242, 240, 0.55)',
           }}
         >
-          <div style={{ display: 'flex' }}>mitoderm.com</div>
+          <div style={{ display: 'flex' }}>exoskin.co.il</div>
           <div
             style={{
               display: 'flex',

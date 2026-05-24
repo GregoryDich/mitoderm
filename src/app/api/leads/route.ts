@@ -116,7 +116,7 @@ export async function POST(req: Request) {
   if (webhookUrl) {
     try {
       const payload = JSON.stringify({
-        source: 'mitoderm.com',
+        source: 'exoskin.co.il',
         receivedAt: new Date().toISOString(),
         lead,
       });

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { LocaleType } from '@/types';
 
-export const SITE_URL = 'https://mitoderm.com';
+export const SITE_URL = 'https://exoskin.co.il';
 export const SITE_NAME = 'Mitoderm';
 export const LOCALES: LocaleType[] = ['en', 'ru', 'he'];
 export const DEFAULT_LOCALE: LocaleType = 'en';

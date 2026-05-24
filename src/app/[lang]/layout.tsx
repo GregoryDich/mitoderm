@@ -49,7 +49,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mitoderm.com'),
+  metadataBase: new URL('https://exoskin.co.il'),
   title: {
     default: 'Mitoderm — Professional Exosome Skincare',
     template: '%s | Mitoderm',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: 'Mitoderm — Professional Exosome Skincare',
     description:
       'Professional exosome-based solutions for clinics and aesthetic practitioners. Where science meets beauty.',
-    url: 'https://mitoderm.com',
+    url: 'https://exoskin.co.il',
     siteName: 'Mitoderm',
     type: 'website',
   },

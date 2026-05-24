@@ -37,7 +37,7 @@ openssl rand -hex 32
 ```bash
 # Health probe — should return { ok: true, ready: true }
 curl -H "Authorization: Bearer $SOCIAL_INGEST_TOKEN" \
-     https://mitoderm.com/api/integrations/social/ingest
+     https://exoskin.co.il/api/integrations/social/ingest
 
 # Create a draft (manual smoke test)
 curl -X POST \
@@ -50,7 +50,7 @@ curl -X POST \
         "caption": "Семинар по экзосомам — 15.03.2026",
         "postedAt": "2026-02-10T14:22:00Z"
       }' \
-  https://mitoderm.com/api/integrations/social/ingest
+  https://exoskin.co.il/api/integrations/social/ingest
 ```
 
 Expected response:
@@ -134,7 +134,7 @@ return [{
 Add an **HTTP Request** node:
 
 - Method: `POST`
-- URL: `https://mitoderm.com/api/integrations/social/ingest`
+- URL: `https://exoskin.co.il/api/integrations/social/ingest`
 - Authentication: **Header Auth** with
   - Name: `Authorization`
   - Value: `Bearer {{ $credentials.mitodermIngestToken }}`

@@ -142,7 +142,7 @@ const ProductBrief: FC<Props> = ({ product, locale, strings }) => {
         </section>
 
         <footer className={styles.foot}>
-          <span>mitoderm.com</span>
+          <span>exoskin.co.il</span>
           <span>{c.name}</span>
           <span>{today}</span>
         </footer>
