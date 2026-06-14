@@ -1,0 +1,49 @@
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  height: 140px;
+  padding: 0 140px;
+  background-color: #08080a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.copyright {
+  font-size: 13px;
+  color: rgba(245, 242, 240, 0.55);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  button {
+    background: transparent;
+    font-size: 13px;
+    color: rgba(245, 242, 240, 0.55);
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #f5f2f0;
+    }
+  }
+}
+
+@media screen and (max-width: 1224px) {
+  .footer {
+    height: auto;
+    padding: 32px 24px;
+    justify-content: center;
+    text-align: center;
+  }
+}

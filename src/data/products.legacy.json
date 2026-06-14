@@ -1,0 +1,1557 @@
+[
+  {
+    "slug": "exocell-mask",
+    "category": "mask",
+    "status": "available",
+    "accent": "teal",
+    "image": "/products/exocell-mask/hero.png",
+    "content": {
+      "en": {
+        "name": "EXOCELL Mask",
+        "eyebrow": "PROFESSIONAL EXOSOME MASK",
+        "tagline": "A second-skin matrix that delivers exosomes beyond the epidermal barrier",
+        "description": "EXOCELL Mask is an ultra-fine biocellulose sheet engineered as a true second skin. Its micrometric structure and hydro-lipophilic balance carry synthetic exosomes, low-molecular polynucleotides and low-molecular hyaluronic acids deep into the skin — accelerating recovery, restoring hydration and visibly lifting the contour.",
+        "shortDescription": "Ultra-fine biocellulose mask with synthetic exosomes — your second skin for bio-regeneration.",
+        "keyFacts": [
+          "Ultra-fine biocellulose second-skin matrix engineered to cross the epidermal barrier.",
+          "Synthetic exosomes + low-molecular polynucleotides + low-molecular hyaluronic acids in a single 25 ml dose.",
+          "Delivers an immediate lifting effect and deep hydration; accelerates recovery from in-clinic procedures.",
+          "5 single-use masks per box; 45-minute application; pairs with peels, lasers, microneedling and fillers."
+        ],
+        "stats": [
+          {
+            "value": "5",
+            "label": "Face masks per box"
+          },
+          {
+            "value": "5×25 ml",
+            "label": "Net content"
+          },
+          {
+            "value": "45 min",
+            "label": "Application time"
+          },
+          {
+            "value": "Biocellulose",
+            "label": "Second-skin matrix"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Deep penetration",
+            "text": "The micrometric matrix and hydro-lipophilic balance carry the actives beyond the epidermal barrier."
+          },
+          {
+            "title": "Immediate lifting",
+            "text": "Active lifting agents tighten and smooth the contour from the first application."
+          },
+          {
+            "title": "Bio-restructuring",
+            "text": "Polynucleotides and exosome-mimetic peptides accelerate cellular renewal and dermal density."
+          },
+          {
+            "title": "Post-procedure recovery",
+            "text": "Soothes and regenerates the skin after invasive aesthetic treatments."
+          }
+        ],
+        "ingredientsIntro": "Bio-restructuring actives engineered to work in synergy at the cellular level.",
+        "ingredients": [
+          "Synthetic exosomes — nano-vesicles that improve cell-to-cell communication and active delivery",
+          "Exosome-mimetic peptides — signalling cues for repair and regeneration",
+          "Low-molecular polynucleotides — support fibroblast metabolism and skin density",
+          "Low-molecular hyaluronic acids — deep hydration and plumping",
+          "Active lifting agents — immediate tightening and contour smoothing",
+          "Biocellulose second-skin matrix — micrometric structure for hydro-lipophilic balance"
+        ],
+        "stepsTitle": "How it works",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Apply",
+            "text": "Place the biocellulose mask on cleansed skin after the professional procedure."
+          },
+          {
+            "num": "02",
+            "title": "Absorb",
+            "text": "Leave on for at least 45 minutes — the second-skin matrix drives deep penetration."
+          },
+          {
+            "num": "03",
+            "title": "Regenerate",
+            "text": "Exosome-mimetic actives stimulate metabolism, hydration and a lifting effect."
+          }
+        ],
+        "chipsTitle": "Best used after",
+        "chips": [
+          "Peeling",
+          "Fractional laser",
+          "Filler",
+          "Microneedling",
+          "Mesotherapy",
+          "LED therapy"
+        ],
+        "ctaTitle": "Bring EXOCELL Mask to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "protocol": {
+          "title": "Application protocol",
+          "items": [
+            "Cleanse the skin thoroughly — the mask is applied to dry, prepared skin.",
+            "Peel the protective film, place the textured side on the skin and smooth out any air pockets.",
+            "Leave the mask on for 30–45 minutes; it can be repositioned during the session.",
+            "Remove the sheet, gently pat the remaining serum into the skin — no rinsing required."
+          ]
+        },
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Avoid acid-based and abrasive products for 24 hours.",
+            "Skip direct sun exposure for 24 hours; apply SPF when going out.",
+            "Keep a gentle cleansing routine for the first 48 hours.",
+            "Repeat the protocol once every 2–4 weeks for sustained results."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Open wounds or active dermatitis on the treatment area",
+            "Active herpes",
+            "Known sensitivity to any of the listed ingredients"
+          ]
+        }
+      },
+      "ru": {
+        "name": "EXOCELL Mask",
+        "eyebrow": "ПРОФЕССИОНАЛЬНАЯ ЭКЗОСОМНАЯ МАСКА",
+        "tagline": "Матрица «вторая кожа», доставляющая экзосомы за эпидермальный барьер",
+        "description": "EXOCELL Mask — ультратонкое биоцеллюлозное полотно, спроектированное как настоящая «вторая кожа». Микрометрическая структура и гидро-липофильный баланс доставляют синтетические экзосомы, низкомолекулярные полинуклеотиды и низкомолекулярные гиалуроновые кислоты вглубь кожи — ускоряя восстановление, возвращая увлажнение и заметно подтягивая контур.",
+        "shortDescription": "Ультратонкая биоцеллюлозная маска с синтетическими экзосомами — ваша вторая кожа для биорегенерации.",
+        "keyFacts": [
+          "Ультратонкая биоцеллюлозная матрица «вторая кожа», проникающая за эпидермальный барьер.",
+          "Синтетические экзосомы + низкомолекулярные полинуклеотиды + низкомолекулярные гиалуроновые кислоты в одной дозе 25 мл.",
+          "Мгновенный лифтинг-эффект и глубокое увлажнение; ускоряет восстановление после кабинетных процедур.",
+          "5 одноразовых масок в упаковке; 45 минут на аппликацию; сочетается с пилингами, лазером, микронидлингом и филлерами."
+        ],
+        "stats": [
+          {
+            "value": "5",
+            "label": "Масок в упаковке"
+          },
+          {
+            "value": "5×25 мл",
+            "label": "Объём"
+          },
+          {
+            "value": "45 мин",
+            "label": "Время аппликации"
+          },
+          {
+            "value": "Биоцеллюлоза",
+            "label": "Матрица «вторая кожа»"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Глубокое проникновение",
+            "text": "Микрометрическая матрица и гидро-липофильный баланс доставляют активы за эпидермальный барьер."
+          },
+          {
+            "title": "Мгновенный лифтинг",
+            "text": "Активные лифтинг-компоненты подтягивают и разглаживают контур уже с первого применения."
+          },
+          {
+            "title": "Биореструктуризация",
+            "text": "Полинуклеотиды и экзосомо-миметические пептиды ускоряют клеточное обновление и плотность дермы."
+          },
+          {
+            "title": "Восстановление после процедур",
+            "text": "Успокаивает и регенерирует кожу после инвазивных эстетических процедур."
+          }
+        ],
+        "ingredientsIntro": "Биореструктурирующие активы работают синергично на клеточном уровне.",
+        "ingredients": [
+          "Синтетические экзосомы — нановезикулы, улучшающие межклеточную коммуникацию и доставку активов",
+          "Экзосомо-миметические пептиды — сигналы для репарации и регенерации",
+          "Низкомолекулярные полинуклеотиды — поддерживают метаболизм фибробластов и плотность кожи",
+          "Низкомолекулярные гиалуроновые кислоты — глубокое увлажнение и плампинг",
+          "Активные лифтинг-компоненты — мгновенная подтяжка и сглаживание контура",
+          "Биоцеллюлозная матрица «вторая кожа» — микрометрическая структура для гидро-липофильного баланса"
+        ],
+        "stepsTitle": "Как это работает",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Нанесение",
+            "text": "Поместите биоцеллюлозную маску на очищенную кожу после профессиональной процедуры."
+          },
+          {
+            "num": "02",
+            "title": "Впитывание",
+            "text": "Оставьте минимум на 45 минут — матрица «вторая кожа» обеспечивает глубокое проникновение."
+          },
+          {
+            "num": "03",
+            "title": "Регенерация",
+            "text": "Экзосомо-миметические активы стимулируют метаболизм, увлажнение и лифтинг."
+          }
+        ],
+        "chipsTitle": "Лучше всего после",
+        "chips": [
+          "Пилинг",
+          "Фракционный лазер",
+          "Филлеры",
+          "Микронидлинг",
+          "Мезотерапия",
+          "LED-терапия"
+        ],
+        "ctaTitle": "Добавьте EXOCELL Mask в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "protocol": {
+          "title": "Протокол применения",
+          "items": [
+            "Тщательно очистите кожу — маска применяется на сухую, подготовленную кожу.",
+            "Снимите защитную плёнку, приложите текстурированной стороной и разгладьте воздушные пузыри.",
+            "Оставьте маску на 30–45 минут; во время сеанса можно поправить положение.",
+            "Снимите полотно, мягко вбейте остатки сыворотки в кожу — смывать не нужно."
+          ]
+        },
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Исключите кислоты и абразивы на 24 часа.",
+            "Избегайте прямого солнца 24 часа; используйте SPF при выходе на улицу.",
+            "Используйте мягкий уход в первые 48 часов.",
+            "Повторяйте процедуру раз в 2–4 недели для устойчивого результата."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Открытые раны или активный дерматит в зоне нанесения",
+            "Активный герпес",
+            "Индивидуальная чувствительность к компонентам"
+          ]
+        }
+      },
+      "he": {
+        "name": "EXOCELL Mask",
+        "eyebrow": "מסכת אקסוזומים מקצועית",
+        "tagline": "מטריצת \"עור שני\" המעבירה אקסוזומים מעבר למחסום האפידרמיס",
+        "description": "EXOCELL Mask היא יריעה ביו-תאית אולטרה-דקה שתוכננה כעור שני אמיתי. המבנה המיקרומטרי והאיזון ההידרו-ליפופילי מעבירים אקסוזומים סינתטיים, פולינוקלאוטידים וחומצות היאלורוניות במשקל מולקולרי נמוך עמוק לתוך העור — מאיצים את ההחלמה, משקמים את הלחות ומותחים באופן נראה את קווי המתאר.",
+        "shortDescription": "מסכת ביו-תאית אולטרה-דקה עם אקסוזומים סינתטיים — העור השני שלך לביו-התחדשות.",
+        "keyFacts": [
+          "מטריצת \"עור שני\" ביו-תאית אולטרה-דקה החוצה את מחסום האפידרמיס.",
+          "אקסוזומים סינתטיים + פולינוקלאוטידים וחומצות היאלורוניות במשקל מולקולרי נמוך — במנה אחת של 25 מ\"ל.",
+          "אפקט מתיחה מיידי ולחות עמוקה; מאיץ ההחלמה לאחר טיפולים אסתטיים.",
+          "5 מסכות חד-פעמיות בקופסה; 45 דקות יישום; משתלב עם פילינגים, לייזרים, מיקרונידלינג ופילרים."
+        ],
+        "stats": [
+          {
+            "value": "5",
+            "label": "מסכות בקופסה"
+          },
+          {
+            "value": "5×25 מ\"ל",
+            "label": "תכולה"
+          },
+          {
+            "value": "45 דק׳",
+            "label": "זמן יישום"
+          },
+          {
+            "value": "ביו-תאית",
+            "label": "מטריצת עור שני"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "חדירה עמוקה",
+            "text": "מבנה מיקרומטרי ואיזון הידרו-ליפופילי מעבירים את הפעילים מעבר למחסום האפידרמיס."
+          },
+          {
+            "title": "מתיחה מיידית",
+            "text": "רכיבי מתיחה פעילים מהדקים ומחליקים את קווי המתאר כבר ביישום הראשון."
+          },
+          {
+            "title": "ביו-רסטרוקטורינג",
+            "text": "פולינוקלאוטידים ופפטידים מימטיים-אקסוזומיים מאיצים התחדשות תאית וצפיפות עורית."
+          },
+          {
+            "title": "שיקום לאחר טיפולים",
+            "text": "מרגיע ומחדש את העור לאחר טיפולים אסתטיים פולשניים."
+          }
+        ],
+        "ingredientsIntro": "פעילים ביו-רסטרוקטורינג שעובדים בסינרגיה ברמה התאית.",
+        "ingredients": [
+          "אקסוזומים סינתטיים — שלפוחיות ננו המשפרות תקשורת בין-תאית והעברת פעילים",
+          "פפטידים מימטיים לאקסוזומים — איתות לתיקון והתחדשות",
+          "פולינוקלאוטידים במשקל מולקולרי נמוך — תומכים בחילוף החומרים של פיברובלסטים ובצפיפות העור",
+          "חומצות היאלורוניות במשקל מולקולרי נמוך — לחות עמוקה ומלאות",
+          "רכיבי מתיחה פעילים — מתיחה מיידית והחלקת קווי המתאר",
+          "מטריצת \"עור שני\" ביו-תאית — מבנה מיקרומטרי לאיזון הידרו-ליפופילי"
+        ],
+        "stepsTitle": "איך זה עובד",
+        "steps": [
+          {
+            "num": "01",
+            "title": "יישום",
+            "text": "הניחו את המסכה הביו-תאית על עור נקי לאחר הטיפול המקצועי."
+          },
+          {
+            "num": "02",
+            "title": "ספיגה",
+            "text": "השאירו לפחות 45 דקות — מטריצת העור השני מאפשרת חדירה עמוקה."
+          },
+          {
+            "num": "03",
+            "title": "התחדשות",
+            "text": "פעילים מימטיים לאקסוזומים מעוררים חילוף חומרים, לחות ואפקט מתיחה."
+          }
+        ],
+        "chipsTitle": "מומלץ במיוחד לאחר",
+        "chips": [
+          "פילינג",
+          "לייזר פרקציוני",
+          "פילר",
+          "מיקרונידלינג",
+          "מזותרפיה",
+          "טיפול LED"
+        ],
+        "ctaTitle": "הביאו את EXOCELL Mask למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "protocol": {
+          "title": "פרוטוקול היישום",
+          "items": [
+            "ניקיון יסודי — המסכה מיועדת ליישום על עור יבש ומוכן.",
+            "הסירו את הסרט המגן, הניחו את הצד התאי על העור והחליקו בועות אוויר.",
+            "השאירו את המסכה למשך 30–45 דקות; ניתן להזיז מעט במהלך המפגש.",
+            "הסירו את היריעה, טפחו עדינות את שאריות הסרום לעור — אין צורך לשטוף."
+          ]
+        },
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "להימנע ממוצרי חומצה וחומרים שוחקים למשך 24 שעות.",
+            "להימנע מחשיפה ישירה לשמש למשך 24 שעות; להשתמש ב-SPF ביציאה החוצה.",
+            "לשמור על שגרת ניקוי עדינה ב-48 השעות הראשונות.",
+            "לחזור על הפרוטוקול אחת ל-2–4 שבועות לתוצאות מתמשכות."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "פצעים פתוחים או דרמטיטיס פעיל באזור הטיפול",
+            "הרפס פעיל",
+            "רגישות ידועה לאחד הרכיבים"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "exo-nad",
+    "category": "peel",
+    "status": "available",
+    "accent": "gold",
+    "image": "/products/exo-nad/hero.jpg",
+    "gallery": [
+      "/products/exo-nad/g1.jpg",
+      "/products/exo-nad/g2.jpg",
+      "/products/exo-nad/g3.jpg",
+      "/products/exo-nad/g4.jpg",
+      "/products/exo-nad/g6.jpg",
+      "/products/exo-nad/g5.png"
+    ],
+    "content": {
+      "en": {
+        "name": "EXO-NAD",
+        "eyebrow": "REVOLUTIONARY BIOHACKING PEEL",
+        "tagline": "A revolutionary biohacking peel for skin renewal and cellular longevity",
+        "description": "EXO-NAD is a peel born from biopharmaceutical research — a skin biohacking system focused on rejuvenation, recovery and improving the viability of the skin at the cellular level.",
+        "shortDescription": "3-step biohacking peel pairing synthetic exosomes with NAD+ for cellular renewal and skin longevity.",
+        "keyFacts": [
+          "A biohacking system that optimises cellular processes via synthetic exosomes and NAD+ activation, providing long-term DNA protection.",
+          "Advanced peptides — Epitalon, GHK-Cu and biomimetic growth factors — drive sustained skin regeneration.",
+          "3-step protocol: biphasic peel → pH normalizer with collagen, peptides and vitamin B12 → longevity serum with NAD+ and exosomes.",
+          "Targets pigmentation (post-acne, melasma, lentigo), loss of firmness, fine lines and hyperpigmentation."
+        ],
+        "stats": [
+          {
+            "value": "3-step",
+            "label": "Intelligent system"
+          },
+          {
+            "value": "15 ml",
+            "label": "Exo Peel vial"
+          },
+          {
+            "value": "5×5 ml",
+            "label": "Normalizer + Serum"
+          },
+          {
+            "value": "NAD+",
+            "label": "Longevity actives"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Pigmentation correction",
+            "text": "Visibly reduces post-acne marks, melasma and lentigo through controlled cellular renewal."
+          },
+          {
+            "title": "Firmness & density",
+            "text": "Stimulates fibroblasts and collagen synthesis, restoring dermal density and a lifted look."
+          },
+          {
+            "title": "Wrinkles & lines",
+            "text": "Smooths fine lines and reduces signs of aging through deep regenerative actives."
+          },
+          {
+            "title": "DNA-level longevity",
+            "text": "NAD+ activation and Epitalon support DNA repair and cellular longevity at the source."
+          }
+        ],
+        "ingredientsIntro": "Synergistic actives engineered to work at the cellular level.",
+        "ingredients": [
+          "Epitalon — stimulates telomerase, protects DNA, slows ageing markers",
+          "NAD+ — boosts ATP production and supports DNA repair",
+          "GHK-Cu (copper peptide) — collagen synthesis, healing, antioxidant defence",
+          "Biomimetic growth factors — activate fibroblasts, improve density and elasticity",
+          "Synthetic exosomes — nano-vesicles that improve cell-to-cell communication and active delivery",
+          "Glycolic acid complex (biphasic) — controlled exfoliation",
+          "Lipid phase — prepares and protects the skin during the peel",
+          "Collagen, peptides and vitamin B12 — in the pH normalizer for soothing and hydration"
+        ],
+        "stepsTitle": "The 3-Step System",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Intelligent Exfoliation",
+            "text": "A biphasic peel based on acids and Epitalon delivers controlled cellular renewal."
+          },
+          {
+            "num": "02",
+            "title": "Barrier Recovery",
+            "text": "The pH normalizer instantly neutralises acids and restores the skin barrier."
+          },
+          {
+            "num": "03",
+            "title": "Deep Cellular Regeneration",
+            "text": "The Longevity Serum activates renewal at the DNA level via NAD+ and exosomes."
+          }
+        ],
+        "packTitle": "What’s in the box",
+        "pack": [
+          {
+            "qty": "1×",
+            "title": "Biphasic Exo Peel",
+            "text": "15 ml biphasic peel — Epitalon + glycolic acid complex."
+          },
+          {
+            "qty": "5×",
+            "title": "pH Normalizer",
+            "text": "Soothes and neutralises with collagen, peptides and vitamin B12."
+          },
+          {
+            "qty": "5×",
+            "title": "Longevity Serum",
+            "text": "Synthetic exosomes, NAD+, peptides and biomimetic growth factors."
+          }
+        ],
+        "chipsTitle": "Targets",
+        "chips": [
+          "Post-acne pigmentation",
+          "Melasma",
+          "Lentigo",
+          "Fine lines",
+          "Hyperpigmentation",
+          "Loss of firmness"
+        ],
+        "ctaTitle": "Bring EXO-NAD to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "protocol": {
+          "title": "Application protocol",
+          "items": [
+            "Peel — apply 1 ml to the skin; leave for up to 20 minutes depending on sensitivity.",
+            "Neutralizer — apply 1.5 ml to the treated area, leave 2–3 minutes, then rinse with water.",
+            "Serum — apply 1.5 ml; do not rinse."
+          ]
+        },
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Do not wash the face for 24 hours after the procedure.",
+            "Avoid acid-based products for 4 days before and after.",
+            "Repeat the protocol once every 4 weeks.",
+            "Mild flaking is normal — keep the skin well moisturised."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Active acne",
+            "Pregnancy and lactation",
+            "Autoimmune conditions",
+            "Active herpes",
+            "Individual sensitivity"
+          ]
+        }
+      },
+      "ru": {
+        "name": "EXO-NAD",
+        "eyebrow": "РЕВОЛЮЦИОННЫЙ БИОХАКИНГ-ПИЛИНГ",
+        "tagline": "Революционный биохакинг-пилинг для обновления кожи и продления жизни клеток",
+        "description": "EXO-NAD — пилинг биофармацевтических исследований. Система биохакинга кожи, направленная на омоложение, восстановление и улучшение жизнеспособности кожи на клеточном уровне.",
+        "shortDescription": "Трёхэтапный биохакинг-пилинг: синтетические экзосомы + NAD+ для клеточного обновления и долголетия кожи.",
+        "keyFacts": [
+          "Биохакинг-система: оптимизация клеточных процессов с помощью синтетических экзосом и активации NAD+ для долговременной защиты ДНК.",
+          "Продвинутые пептиды — Эпиталон, GHK-Cu и биомиметические факторы роста — обеспечивают устойчивую регенерацию кожи.",
+          "Трёхэтапный протокол: двухфазный пилинг → pH-нейтрализатор с коллагеном, пептидами и витамином B12 → сыворотка долголетия с NAD+ и экзосомами.",
+          "Работает с пигментацией (постакне, мелазма, лентиго), потерей упругости, мелкими морщинами и гиперпигментацией."
+        ],
+        "stats": [
+          {
+            "value": "3 этапа",
+            "label": "Интеллектуальная система"
+          },
+          {
+            "value": "15 мл",
+            "label": "Флакон Exo Peel"
+          },
+          {
+            "value": "5×5 мл",
+            "label": "Нормализатор + сыворотка"
+          },
+          {
+            "value": "NAD+",
+            "label": "Активы долголетия"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Коррекция пигментации",
+            "text": "Заметно уменьшает следы постакне, мелазму и лентиго за счёт контролируемого клеточного обновления."
+          },
+          {
+            "title": "Упругость и плотность",
+            "text": "Стимулирует фибробласты и синтез коллагена, восстанавливает плотность дермы и подтянутый вид."
+          },
+          {
+            "title": "Морщины и линии",
+            "text": "Разглаживает мелкие морщины и снижает признаки старения благодаря глубоким регенеративным активам."
+          },
+          {
+            "title": "Долголетие на уровне ДНК",
+            "text": "Активация NAD+ и Эпиталон поддерживают репарацию ДНК и клеточное долголетие у самого источника."
+          }
+        ],
+        "ingredientsIntro": "Синергичные активы, работающие на клеточном уровне.",
+        "ingredients": [
+          "Эпиталон — стимулирует теломеразу, защищает ДНК, замедляет маркеры старения",
+          "NAD+ — повышает выработку ATP и поддерживает репарацию ДНК",
+          "GHK-Cu (медный пептид) — синтез коллагена, заживление, антиоксидантная защита",
+          "Биомиметические факторы роста — активируют фибробласты, улучшают плотность и эластичность",
+          "Синтетические экзосомы — нановезикулы, улучшающие межклеточную коммуникацию и доставку активов",
+          "Гликолевый комплекс (двухфазный) — контролируемая эксфолиация",
+          "Липидная фаза — подготавливает и защищает кожу во время пилинга",
+          "Коллаген, пептиды и витамин B12 — в pH-нейтрализаторе для успокоения и увлажнения"
+        ],
+        "stepsTitle": "Трёхэтапная система",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Интеллектуальное отшелушивание",
+            "text": "Двухфазный пилинг на основе кислот и Эпиталона обеспечивает контролируемое клеточное обновление."
+          },
+          {
+            "num": "02",
+            "title": "Восстановление барьера",
+            "text": "pH-нейтрализатор мгновенно нейтрализует кислоты и восстанавливает кожный барьер."
+          },
+          {
+            "num": "03",
+            "title": "Глубокая клеточная регенерация",
+            "text": "Сыворотка Longevity активирует обновление на уровне ДНК благодаря NAD+ и экзосомам."
+          }
+        ],
+        "packTitle": "Состав набора",
+        "pack": [
+          {
+            "qty": "1×",
+            "title": "Biphasic Exo Peel",
+            "text": "Двухфазный пилинг 15 мл — Эпиталон и гликолевый комплекс."
+          },
+          {
+            "qty": "5×",
+            "title": "pH-нейтрализатор",
+            "text": "Успокаивает и нейтрализует — коллаген, пептиды, витамин B12."
+          },
+          {
+            "qty": "5×",
+            "title": "Сыворотка Longevity",
+            "text": "Синтетические экзосомы, NAD+, пептиды и биомиметические факторы роста."
+          }
+        ],
+        "chipsTitle": "Цели",
+        "chips": [
+          "Пигментация постакне",
+          "Мелазма",
+          "Лентиго",
+          "Мелкие морщины",
+          "Гиперпигментация",
+          "Потеря упругости"
+        ],
+        "ctaTitle": "Добавьте EXO-NAD в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "protocol": {
+          "title": "Протокол применения",
+          "items": [
+            "Пилинг — нанести 1 мл на кожу, оставить до 20 минут в зависимости от чувствительности.",
+            "Нейтрализатор — 1.5 мл на обработанную зону, оставить 2–3 минуты, смыть водой.",
+            "Сыворотка — 1.5 мл, не смывать."
+          ]
+        },
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Не умываться 24 часа.",
+            "Исключить кислоты за 4 дня до и после.",
+            "Повторять процедуру раз в 4 недели.",
+            "Возможны лёгкие шелушения — обеспечить хорошее увлажнение."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активное акне",
+            "Беременность и лактация",
+            "Аутоиммунные заболевания",
+            "Активный герпес",
+            "Индивидуальная чувствительность"
+          ]
+        }
+      },
+      "he": {
+        "name": "EXO-NAD",
+        "eyebrow": "פילינג ביו-האקינג מהפכני",
+        "tagline": "פילינג ביו-האקינג מהפכני להתחדשות העור והארכת חיי התאים",
+        "description": "EXO-NAD הוא פילינג ממחקר ביו-פרמצבטי — מערכת ביו-האקינג לעור, מכוונת להתחדשות, שיקום והגברת חיוניות העור ברמה התאית.",
+        "shortDescription": "פילינג ביו-האקינג בן 3 שלבים: אקסוזומים סינתטיים + NAD+ להתחדשות תאית ולאריכות חיי העור.",
+        "keyFacts": [
+          "מערכת ביו-האקינג: ייעול תהליכים תאיים בעזרת אקסוזומים סינתטיים והפעלת NAD+ להגנה ארוכת-טווח על הדנ\"א.",
+          "פפטידים מתקדמים — אפיטלון, GHK-Cu וגורמי גדילה ביו-מימטיים — מספקים התחדשות עור עקבית.",
+          "פרוטוקול תלת-שלבי: פילינג דו-פאזי → נורמלייזר pH עם קולגן, פפטידים וויטמין B12 → סרום אריכות חיים עם NAD+ ואקסוזומים.",
+          "מטפל בפיגמנטציה (פוסט-אקנה, מלזמה, לנטיגו), אובדן מוצקות, קווים דקים והיפר-פיגמנטציה."
+        ],
+        "stats": [
+          {
+            "value": "3 שלבים",
+            "label": "מערכת חכמה"
+          },
+          {
+            "value": "15 מ\"ל",
+            "label": "בקבוקון Exo Peel"
+          },
+          {
+            "value": "5×5 מ\"ל",
+            "label": "נורמלייזר + סרום"
+          },
+          {
+            "value": "NAD+",
+            "label": "פעילי אריכות חיים"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "תיקון פיגמנטציה",
+            "text": "מפחית באופן ניכר סימני פוסט-אקנה, מלזמה ולנטיגו באמצעות התחדשות תאית מבוקרת."
+          },
+          {
+            "title": "מוצקות וצפיפות",
+            "text": "מעורר פיברובלסטים וייצור קולגן, משקם צפיפות עורית ומראה מוצק."
+          },
+          {
+            "title": "קמטים וקווים דקים",
+            "text": "מחליק קווים דקים ומפחית סימני הזדקנות באמצעות פעילים רגנרטיביים עמוקים."
+          },
+          {
+            "title": "אריכות חיים ברמת הדנ\"א",
+            "text": "הפעלת NAD+ ואפיטלון תומכות בתיקון הדנ\"א ובאריכות חיים תאית מהמקור."
+          }
+        ],
+        "ingredientsIntro": "פעילים סינרגטיים שעובדים ברמה התאית.",
+        "ingredients": [
+          "אפיטלון — מעורר טלומראז, מגן על הדנ\"א, מאט סמני הזדקנות",
+          "NAD+ — מגביר ייצור ATP ותומך בתיקון הדנ\"א",
+          "GHK-Cu (פפטיד נחושת) — סינתזת קולגן, ריפוי, הגנה אנטי-אוקסידנטית",
+          "גורמי גדילה ביו-מימטיים — מעוררים פיברובלסטים, משפרים צפיפות וגמישות",
+          "אקסוזומים סינתטיים — שלפוחיות ננו המשפרות תקשורת בין-תאית והעברת פעילים",
+          "קומפלקס חומצה גליקולית (דו-פאזי) — אקספוליאציה מבוקרת",
+          "פאזה ליפידית — מכינה ומגנה על העור במהלך הפילינג",
+          "קולגן, פפטידים וויטמין B12 — בנורמלייזר pH להרגעה ולחות"
+        ],
+        "stepsTitle": "המערכת בת 3 השלבים",
+        "steps": [
+          {
+            "num": "01",
+            "title": "פילינג חכם",
+            "text": "פילינג דו-פאזי על בסיס חומצות ואפיטלון מבצע התחדשות תאית מבוקרת."
+          },
+          {
+            "num": "02",
+            "title": "שיקום המחסום",
+            "text": "נורמלייזר pH מנטרל מיד את החומצות ומשקם את מחסום העור."
+          },
+          {
+            "num": "03",
+            "title": "התחדשות תאית עמוקה",
+            "text": "סרום Longevity מפעיל התחדשות ברמת הדנ\"א באמצעות NAD+ ואקסוזומים."
+          }
+        ],
+        "packTitle": "מה בקופסה",
+        "pack": [
+          {
+            "qty": "1×",
+            "title": "Biphasic Exo Peel",
+            "text": "פילינג דו-פאזי 15 מ\"ל — אפיטלון וקומפלקס גליקולי."
+          },
+          {
+            "qty": "5×",
+            "title": "נורמלייזר pH",
+            "text": "מרגיע ומנטרל — קולגן, פפטידים, ויטמין B12."
+          },
+          {
+            "qty": "5×",
+            "title": "סרום Longevity",
+            "text": "אקסוזומים סינתטיים, NAD+, פפטידים וגורמי גדילה ביו-מימטיים."
+          }
+        ],
+        "chipsTitle": "מטרות",
+        "chips": [
+          "פיגמנטציה פוסט-אקנה",
+          "מלזמה",
+          "לנטיגו",
+          "קווים דקים",
+          "היפר-פיגמנטציה",
+          "אובדן מוצקות"
+        ],
+        "ctaTitle": "הביאו את EXO-NAD למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "protocol": {
+          "title": "פרוטוקול היישום",
+          "items": [
+            "פילינג — ליישם 1 מ\"ל על העור, להשאיר עד 20 דקות בהתאם לרגישות.",
+            "נורמלייזר — 1.5 מ\"ל לאזור המטופל, להשאיר 2–3 דקות, לשטוף במים.",
+            "סרום — 1.5 מ\"ל, לא לשטוף."
+          ]
+        },
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "אין לרחוץ פנים במשך 24 שעות.",
+            "להימנע ממוצרים על בסיס חומצות 4 ימים לפני ואחרי.",
+            "לחזור על הפרוטוקול אחת ל-4 שבועות.",
+            "ייתכן קילוף קל — להבטיח לחות טובה."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "אקנה פעיל",
+            "הריון והנקה",
+            "מחלות אוטואימוניות",
+            "הרפס פעיל",
+            "רגישות אישית"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "bio-spicule-01",
+    "category": "bio-spicules",
+    "status": "coming-soon",
+    "accent": "rose",
+    "content": {
+      "en": {
+        "name": "Bio-Spicule 01",
+        "eyebrow": "SPONGILLA BIO-SPICULES",
+        "tagline": "Micro-spicule renewal — natural channels for active delivery",
+        "description": "A Spongilla-derived micro-spicule treatment that creates a controlled network of micro-channels in the upper skin layers, enhancing the penetration of paired actives and stimulating natural cellular renewal. Designed for in-clinic protocols by trained aesthetic practitioners. Full product details will be published at launch.",
+        "shortDescription": "Spongilla micro-spicule treatment for skin renewal and active delivery.",
+        "keyFacts": [
+          "Natural micro-spicules harvested from freshwater Spongilla — clinical-grade biocompatible action.",
+          "Creates controlled micro-channels in the stratum corneum for deeper delivery of paired serums and peptides.",
+          "Stimulates the skin’s natural turnover and dermal density without external acids.",
+          "In-clinic protocol — to be performed by a trained aesthetic practitioner."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Natural source"
+          },
+          {
+            "value": "Micro",
+            "label": "Spicule technology"
+          },
+          {
+            "value": "Pro",
+            "label": "Professional use"
+          },
+          {
+            "value": "Soon",
+            "label": "Availability"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Skin renewal",
+            "text": "Micro-spicules stimulate the skin’s natural cellular turnover."
+          },
+          {
+            "title": "Active delivery",
+            "text": "Micro-channels enhance the penetration of paired actives and serums."
+          },
+          {
+            "title": "Natural origin",
+            "text": "Derived from freshwater Spongilla for a biocompatible, predictable action."
+          },
+          {
+            "title": "Professional protocol",
+            "text": "Designed for in-clinic use by trained aesthetic practitioners."
+          }
+        ],
+        "ingredientsIntro": "Full ingredient list and concentration will be published at launch.",
+        "ingredients": [
+          "Spongilla spicules",
+          "Supporting actives — to be announced"
+        ],
+        "chipsTitle": "Targets",
+        "chips": [
+          "Texture",
+          "Dullness",
+          "Skin renewal",
+          "Active delivery"
+        ],
+        "ctaTitle": "Bio-Spicule 01 — get notified",
+        "ctaText": "This product is launching soon. Contact us to be the first to know."
+      },
+      "ru": {
+        "name": "Bio-Spicule 01",
+        "eyebrow": "БИОСПИКУЛЫ SPONGILLA",
+        "tagline": "Обновление кожи микроспикулами — натуральные каналы для доставки активов",
+        "description": "Средство на основе микроспикул Spongilla формирует контролируемую сеть микроканалов в верхних слоях кожи, усиливая проникновение сопутствующих активов и стимулируя естественное обновление клеток. Разработано для протоколов в клинике обученными специалистами. Полные данные о продукте будут опубликованы к запуску.",
+        "shortDescription": "Средство с микроспикулами Spongilla для обновления кожи и доставки активов.",
+        "keyFacts": [
+          "Натуральные микроспикулы пресноводной Spongilla — клинически биосовместимое действие.",
+          "Формирует контролируемые микроканалы в роговом слое для глубокой доставки сопутствующих сывороток и пептидов.",
+          "Стимулирует естественное обновление кожи и плотность дермы без внешних кислот.",
+          "Кабинетный протокол — выполняется обученным эстетическим специалистом."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Натуральный источник"
+          },
+          {
+            "value": "Микро",
+            "label": "Технология спикул"
+          },
+          {
+            "value": "Pro",
+            "label": "Профессиональное"
+          },
+          {
+            "value": "Скоро",
+            "label": "Доступность"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Обновление кожи",
+            "text": "Микроспикулы стимулируют естественное обновление клеток."
+          },
+          {
+            "title": "Доставка активов",
+            "text": "Микроканалы усиливают проникновение сопутствующих активов и сывороток."
+          },
+          {
+            "title": "Натуральное происхождение",
+            "text": "Получено из пресноводной Spongilla — биосовместимое, предсказуемое действие."
+          },
+          {
+            "title": "Профессиональный протокол",
+            "text": "Для применения в клинике обученными эстетическими специалистами."
+          }
+        ],
+        "ingredientsIntro": "Полный состав и концентрация будут опубликованы к запуску.",
+        "ingredients": [
+          "Спикулы Spongilla",
+          "Сопутствующие активы — уточняется"
+        ],
+        "chipsTitle": "Воздействует на",
+        "chips": [
+          "Текстура",
+          "Тусклость",
+          "Обновление кожи",
+          "Доставка активов"
+        ],
+        "ctaTitle": "Bio-Spicule 01 — узнайте первыми",
+        "ctaText": "Продукт скоро выходит. Свяжитесь с нами, чтобы узнать первыми."
+      },
+      "he": {
+        "name": "Bio-Spicule 01",
+        "eyebrow": "ביו-ספיקולות SPONGILLA",
+        "tagline": "התחדשות עור באמצעות מיקרו-ספיקולות — תעלות טבעיות להעברת פעילים",
+        "description": "טיפול מבוסס מיקרו-ספיקולות Spongilla יוצר רשת מבוקרת של מיקרו-תעלות בשכבות העליונות של העור, משפר את החדירה של פעילים נלווים ומעורר התחדשות תאית טבעית. מיועד לפרוטוקולים במרפאה על ידי מטפלי אסתטיקה מוסמכים. הפרטים המלאים יפורסמו עם ההשקה.",
+        "shortDescription": "טיפול מיקרו-ספיקולות Spongilla להתחדשות העור והעברת פעילים.",
+        "keyFacts": [
+          "מיקרו-ספיקולות טבעיות מ-Spongilla של מים מתוקים — פעולה ביו-תואמת ברמה קלינית.",
+          "יוצרות מיקרו-תעלות מבוקרות בשכבת הקרנית להעברה עמוקה של סרומים ופפטידים נלווים.",
+          "מעוררות התחדשות עור טבעית וצפיפות עורית — ללא חומצות חיצוניות.",
+          "פרוטוקול במרפאה — לביצוע על ידי מטפל אסתטיקה מוסמך."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "מקור טבעי"
+          },
+          {
+            "value": "מיקרו",
+            "label": "טכנולוגיית ספיקולות"
+          },
+          {
+            "value": "Pro",
+            "label": "שימוש מקצועי"
+          },
+          {
+            "value": "בקרוב",
+            "label": "זמינות"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "התחדשות עור",
+            "text": "מיקרו-ספיקולות מעוררות התחדשות תאית טבעית."
+          },
+          {
+            "title": "העברת פעילים",
+            "text": "מיקרו-תעלות משפרות את חדירת הפעילים והסרומים הנלווים."
+          },
+          {
+            "title": "מקור טבעי",
+            "text": "מופק מ-Spongilla של מים מתוקים — פעולה ביו-תואמת וצפויה."
+          },
+          {
+            "title": "פרוטוקול מקצועי",
+            "text": "מיועד לשימוש במרפאה על ידי מטפלי אסתטיקה מוסמכים."
+          }
+        ],
+        "ingredientsIntro": "רשימת הרכיבים והריכוז המלאים יפורסמו עם ההשקה.",
+        "ingredients": [
+          "ספיקולות Spongilla",
+          "פעילים נלווים — יפורסם"
+        ],
+        "chipsTitle": "מטפל ב",
+        "chips": [
+          "מרקם",
+          "עמעום",
+          "התחדשות עור",
+          "העברת פעילים"
+        ],
+        "ctaTitle": "Bio-Spicule 01 — קבלו עדכון",
+        "ctaText": "המוצר יושק בקרוב. צרו קשר כדי להיות הראשונים לדעת."
+      }
+    }
+  },
+  {
+    "slug": "bio-spicule-02",
+    "category": "bio-spicules",
+    "status": "coming-soon",
+    "accent": "rose",
+    "content": {
+      "en": {
+        "name": "Bio-Spicule 02",
+        "eyebrow": "SPONGILLA BIO-SPICULES",
+        "tagline": "Micro-spicule renewal — natural channels for active delivery",
+        "description": "A Spongilla-derived micro-spicule treatment that creates a controlled network of micro-channels in the upper skin layers, enhancing the penetration of paired actives and stimulating natural cellular renewal. Designed for in-clinic protocols by trained aesthetic practitioners. Full product details will be published at launch.",
+        "shortDescription": "Spongilla micro-spicule treatment for skin renewal and active delivery.",
+        "keyFacts": [
+          "Natural micro-spicules harvested from freshwater Spongilla — clinical-grade biocompatible action.",
+          "Creates controlled micro-channels in the stratum corneum for deeper delivery of paired serums and peptides.",
+          "Stimulates the skin’s natural turnover and dermal density without external acids.",
+          "In-clinic protocol — to be performed by a trained aesthetic practitioner."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Natural source"
+          },
+          {
+            "value": "Micro",
+            "label": "Spicule technology"
+          },
+          {
+            "value": "Pro",
+            "label": "Professional use"
+          },
+          {
+            "value": "Soon",
+            "label": "Availability"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Skin renewal",
+            "text": "Micro-spicules stimulate the skin’s natural cellular turnover."
+          },
+          {
+            "title": "Active delivery",
+            "text": "Micro-channels enhance the penetration of paired actives and serums."
+          },
+          {
+            "title": "Natural origin",
+            "text": "Derived from freshwater Spongilla for a biocompatible, predictable action."
+          },
+          {
+            "title": "Professional protocol",
+            "text": "Designed for in-clinic use by trained aesthetic practitioners."
+          }
+        ],
+        "ingredientsIntro": "Full ingredient list and concentration will be published at launch.",
+        "ingredients": [
+          "Spongilla spicules",
+          "Supporting actives — to be announced"
+        ],
+        "chipsTitle": "Targets",
+        "chips": [
+          "Texture",
+          "Dullness",
+          "Skin renewal",
+          "Active delivery"
+        ],
+        "ctaTitle": "Bio-Spicule 02 — get notified",
+        "ctaText": "This product is launching soon. Contact us to be the first to know."
+      },
+      "ru": {
+        "name": "Bio-Spicule 02",
+        "eyebrow": "БИОСПИКУЛЫ SPONGILLA",
+        "tagline": "Обновление кожи микроспикулами — натуральные каналы для доставки активов",
+        "description": "Средство на основе микроспикул Spongilla формирует контролируемую сеть микроканалов в верхних слоях кожи, усиливая проникновение сопутствующих активов и стимулируя естественное обновление клеток. Разработано для протоколов в клинике обученными специалистами. Полные данные о продукте будут опубликованы к запуску.",
+        "shortDescription": "Средство с микроспикулами Spongilla для обновления кожи и доставки активов.",
+        "keyFacts": [
+          "Натуральные микроспикулы пресноводной Spongilla — клинически биосовместимое действие.",
+          "Формирует контролируемые микроканалы в роговом слое для глубокой доставки сопутствующих сывороток и пептидов.",
+          "Стимулирует естественное обновление кожи и плотность дермы без внешних кислот.",
+          "Кабинетный протокол — выполняется обученным эстетическим специалистом."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Натуральный источник"
+          },
+          {
+            "value": "Микро",
+            "label": "Технология спикул"
+          },
+          {
+            "value": "Pro",
+            "label": "Профессиональное"
+          },
+          {
+            "value": "Скоро",
+            "label": "Доступность"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Обновление кожи",
+            "text": "Микроспикулы стимулируют естественное обновление клеток."
+          },
+          {
+            "title": "Доставка активов",
+            "text": "Микроканалы усиливают проникновение сопутствующих активов и сывороток."
+          },
+          {
+            "title": "Натуральное происхождение",
+            "text": "Получено из пресноводной Spongilla — биосовместимое, предсказуемое действие."
+          },
+          {
+            "title": "Профессиональный протокол",
+            "text": "Для применения в клинике обученными эстетическими специалистами."
+          }
+        ],
+        "ingredientsIntro": "Полный состав и концентрация будут опубликованы к запуску.",
+        "ingredients": [
+          "Спикулы Spongilla",
+          "Сопутствующие активы — уточняется"
+        ],
+        "chipsTitle": "Воздействует на",
+        "chips": [
+          "Текстура",
+          "Тусклость",
+          "Обновление кожи",
+          "Доставка активов"
+        ],
+        "ctaTitle": "Bio-Spicule 02 — узнайте первыми",
+        "ctaText": "Продукт скоро выходит. Свяжитесь с нами, чтобы узнать первыми."
+      },
+      "he": {
+        "name": "Bio-Spicule 02",
+        "eyebrow": "ביו-ספיקולות SPONGILLA",
+        "tagline": "התחדשות עור באמצעות מיקרו-ספיקולות — תעלות טבעיות להעברת פעילים",
+        "description": "טיפול מבוסס מיקרו-ספיקולות Spongilla יוצר רשת מבוקרת של מיקרו-תעלות בשכבות העליונות של העור, משפר את החדירה של פעילים נלווים ומעורר התחדשות תאית טבעית. מיועד לפרוטוקולים במרפאה על ידי מטפלי אסתטיקה מוסמכים. הפרטים המלאים יפורסמו עם ההשקה.",
+        "shortDescription": "טיפול מיקרו-ספיקולות Spongilla להתחדשות העור והעברת פעילים.",
+        "keyFacts": [
+          "מיקרו-ספיקולות טבעיות מ-Spongilla של מים מתוקים — פעולה ביו-תואמת ברמה קלינית.",
+          "יוצרות מיקרו-תעלות מבוקרות בשכבת הקרנית להעברה עמוקה של סרומים ופפטידים נלווים.",
+          "מעוררות התחדשות עור טבעית וצפיפות עורית — ללא חומצות חיצוניות.",
+          "פרוטוקול במרפאה — לביצוע על ידי מטפל אסתטיקה מוסמך."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "מקור טבעי"
+          },
+          {
+            "value": "מיקרו",
+            "label": "טכנולוגיית ספיקולות"
+          },
+          {
+            "value": "Pro",
+            "label": "שימוש מקצועי"
+          },
+          {
+            "value": "בקרוב",
+            "label": "זמינות"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "התחדשות עור",
+            "text": "מיקרו-ספיקולות מעוררות התחדשות תאית טבעית."
+          },
+          {
+            "title": "העברת פעילים",
+            "text": "מיקרו-תעלות משפרות את חדירת הפעילים והסרומים הנלווים."
+          },
+          {
+            "title": "מקור טבעי",
+            "text": "מופק מ-Spongilla של מים מתוקים — פעולה ביו-תואמת וצפויה."
+          },
+          {
+            "title": "פרוטוקול מקצועי",
+            "text": "מיועד לשימוש במרפאה על ידי מטפלי אסתטיקה מוסמכים."
+          }
+        ],
+        "ingredientsIntro": "רשימת הרכיבים והריכוז המלאים יפורסמו עם ההשקה.",
+        "ingredients": [
+          "ספיקולות Spongilla",
+          "פעילים נלווים — יפורסם"
+        ],
+        "chipsTitle": "מטפל ב",
+        "chips": [
+          "מרקם",
+          "עמעום",
+          "התחדשות עור",
+          "העברת פעילים"
+        ],
+        "ctaTitle": "Bio-Spicule 02 — קבלו עדכון",
+        "ctaText": "המוצר יושק בקרוב. צרו קשר כדי להיות הראשונים לדעת."
+      }
+    }
+  },
+  {
+    "slug": "bio-spicule-03",
+    "category": "bio-spicules",
+    "status": "coming-soon",
+    "accent": "rose",
+    "content": {
+      "en": {
+        "name": "Bio-Spicule 03",
+        "eyebrow": "SPONGILLA BIO-SPICULES",
+        "tagline": "Micro-spicule renewal — natural channels for active delivery",
+        "description": "A Spongilla-derived micro-spicule treatment that creates a controlled network of micro-channels in the upper skin layers, enhancing the penetration of paired actives and stimulating natural cellular renewal. Designed for in-clinic protocols by trained aesthetic practitioners. Full product details will be published at launch.",
+        "shortDescription": "Spongilla micro-spicule treatment for skin renewal and active delivery.",
+        "keyFacts": [
+          "Natural micro-spicules harvested from freshwater Spongilla — clinical-grade biocompatible action.",
+          "Creates controlled micro-channels in the stratum corneum for deeper delivery of paired serums and peptides.",
+          "Stimulates the skin’s natural turnover and dermal density without external acids.",
+          "In-clinic protocol — to be performed by a trained aesthetic practitioner."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Natural source"
+          },
+          {
+            "value": "Micro",
+            "label": "Spicule technology"
+          },
+          {
+            "value": "Pro",
+            "label": "Professional use"
+          },
+          {
+            "value": "Soon",
+            "label": "Availability"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Skin renewal",
+            "text": "Micro-spicules stimulate the skin’s natural cellular turnover."
+          },
+          {
+            "title": "Active delivery",
+            "text": "Micro-channels enhance the penetration of paired actives and serums."
+          },
+          {
+            "title": "Natural origin",
+            "text": "Derived from freshwater Spongilla for a biocompatible, predictable action."
+          },
+          {
+            "title": "Professional protocol",
+            "text": "Designed for in-clinic use by trained aesthetic practitioners."
+          }
+        ],
+        "ingredientsIntro": "Full ingredient list and concentration will be published at launch.",
+        "ingredients": [
+          "Spongilla spicules",
+          "Supporting actives — to be announced"
+        ],
+        "chipsTitle": "Targets",
+        "chips": [
+          "Texture",
+          "Dullness",
+          "Skin renewal",
+          "Active delivery"
+        ],
+        "ctaTitle": "Bio-Spicule 03 — get notified",
+        "ctaText": "This product is launching soon. Contact us to be the first to know."
+      },
+      "ru": {
+        "name": "Bio-Spicule 03",
+        "eyebrow": "БИОСПИКУЛЫ SPONGILLA",
+        "tagline": "Обновление кожи микроспикулами — натуральные каналы для доставки активов",
+        "description": "Средство на основе микроспикул Spongilla формирует контролируемую сеть микроканалов в верхних слоях кожи, усиливая проникновение сопутствующих активов и стимулируя естественное обновление клеток. Разработано для протоколов в клинике обученными специалистами. Полные данные о продукте будут опубликованы к запуску.",
+        "shortDescription": "Средство с микроспикулами Spongilla для обновления кожи и доставки активов.",
+        "keyFacts": [
+          "Натуральные микроспикулы пресноводной Spongilla — клинически биосовместимое действие.",
+          "Формирует контролируемые микроканалы в роговом слое для глубокой доставки сопутствующих сывороток и пептидов.",
+          "Стимулирует естественное обновление кожи и плотность дермы без внешних кислот.",
+          "Кабинетный протокол — выполняется обученным эстетическим специалистом."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Натуральный источник"
+          },
+          {
+            "value": "Микро",
+            "label": "Технология спикул"
+          },
+          {
+            "value": "Pro",
+            "label": "Профессиональное"
+          },
+          {
+            "value": "Скоро",
+            "label": "Доступность"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Обновление кожи",
+            "text": "Микроспикулы стимулируют естественное обновление клеток."
+          },
+          {
+            "title": "Доставка активов",
+            "text": "Микроканалы усиливают проникновение сопутствующих активов и сывороток."
+          },
+          {
+            "title": "Натуральное происхождение",
+            "text": "Получено из пресноводной Spongilla — биосовместимое, предсказуемое действие."
+          },
+          {
+            "title": "Профессиональный протокол",
+            "text": "Для применения в клинике обученными эстетическими специалистами."
+          }
+        ],
+        "ingredientsIntro": "Полный состав и концентрация будут опубликованы к запуску.",
+        "ingredients": [
+          "Спикулы Spongilla",
+          "Сопутствующие активы — уточняется"
+        ],
+        "chipsTitle": "Воздействует на",
+        "chips": [
+          "Текстура",
+          "Тусклость",
+          "Обновление кожи",
+          "Доставка активов"
+        ],
+        "ctaTitle": "Bio-Spicule 03 — узнайте первыми",
+        "ctaText": "Продукт скоро выходит. Свяжитесь с нами, чтобы узнать первыми."
+      },
+      "he": {
+        "name": "Bio-Spicule 03",
+        "eyebrow": "ביו-ספיקולות SPONGILLA",
+        "tagline": "התחדשות עור באמצעות מיקרו-ספיקולות — תעלות טבעיות להעברת פעילים",
+        "description": "טיפול מבוסס מיקרו-ספיקולות Spongilla יוצר רשת מבוקרת של מיקרו-תעלות בשכבות העליונות של העור, משפר את החדירה של פעילים נלווים ומעורר התחדשות תאית טבעית. מיועד לפרוטוקולים במרפאה על ידי מטפלי אסתטיקה מוסמכים. הפרטים המלאים יפורסמו עם ההשקה.",
+        "shortDescription": "טיפול מיקרו-ספיקולות Spongilla להתחדשות העור והעברת פעילים.",
+        "keyFacts": [
+          "מיקרו-ספיקולות טבעיות מ-Spongilla של מים מתוקים — פעולה ביו-תואמת ברמה קלינית.",
+          "יוצרות מיקרו-תעלות מבוקרות בשכבת הקרנית להעברה עמוקה של סרומים ופפטידים נלווים.",
+          "מעוררות התחדשות עור טבעית וצפיפות עורית — ללא חומצות חיצוניות.",
+          "פרוטוקול במרפאה — לביצוע על ידי מטפל אסתטיקה מוסמך."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "מקור טבעי"
+          },
+          {
+            "value": "מיקרו",
+            "label": "טכנולוגיית ספיקולות"
+          },
+          {
+            "value": "Pro",
+            "label": "שימוש מקצועי"
+          },
+          {
+            "value": "בקרוב",
+            "label": "זמינות"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "התחדשות עור",
+            "text": "מיקרו-ספיקולות מעוררות התחדשות תאית טבעית."
+          },
+          {
+            "title": "העברת פעילים",
+            "text": "מיקרו-תעלות משפרות את חדירת הפעילים והסרומים הנלווים."
+          },
+          {
+            "title": "מקור טבעי",
+            "text": "מופק מ-Spongilla של מים מתוקים — פעולה ביו-תואמת וצפויה."
+          },
+          {
+            "title": "פרוטוקול מקצועי",
+            "text": "מיועד לשימוש במרפאה על ידי מטפלי אסתטיקה מוסמכים."
+          }
+        ],
+        "ingredientsIntro": "רשימת הרכיבים והריכוז המלאים יפורסמו עם ההשקה.",
+        "ingredients": [
+          "ספיקולות Spongilla",
+          "פעילים נלווים — יפורסם"
+        ],
+        "chipsTitle": "מטפל ב",
+        "chips": [
+          "מרקם",
+          "עמעום",
+          "התחדשות עור",
+          "העברת פעילים"
+        ],
+        "ctaTitle": "Bio-Spicule 03 — קבלו עדכון",
+        "ctaText": "המוצר יושק בקרוב. צרו קשר כדי להיות הראשונים לדעת."
+      }
+    }
+  },
+  {
+    "slug": "bio-spicule-04",
+    "category": "bio-spicules",
+    "status": "coming-soon",
+    "accent": "rose",
+    "content": {
+      "en": {
+        "name": "Bio-Spicule 04",
+        "eyebrow": "SPONGILLA BIO-SPICULES",
+        "tagline": "Micro-spicule renewal — natural channels for active delivery",
+        "description": "A Spongilla-derived micro-spicule treatment that creates a controlled network of micro-channels in the upper skin layers, enhancing the penetration of paired actives and stimulating natural cellular renewal. Designed for in-clinic protocols by trained aesthetic practitioners. Full product details will be published at launch.",
+        "shortDescription": "Spongilla micro-spicule treatment for skin renewal and active delivery.",
+        "keyFacts": [
+          "Natural micro-spicules harvested from freshwater Spongilla — clinical-grade biocompatible action.",
+          "Creates controlled micro-channels in the stratum corneum for deeper delivery of paired serums and peptides.",
+          "Stimulates the skin’s natural turnover and dermal density without external acids.",
+          "In-clinic protocol — to be performed by a trained aesthetic practitioner."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Natural source"
+          },
+          {
+            "value": "Micro",
+            "label": "Spicule technology"
+          },
+          {
+            "value": "Pro",
+            "label": "Professional use"
+          },
+          {
+            "value": "Soon",
+            "label": "Availability"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Skin renewal",
+            "text": "Micro-spicules stimulate the skin’s natural cellular turnover."
+          },
+          {
+            "title": "Active delivery",
+            "text": "Micro-channels enhance the penetration of paired actives and serums."
+          },
+          {
+            "title": "Natural origin",
+            "text": "Derived from freshwater Spongilla for a biocompatible, predictable action."
+          },
+          {
+            "title": "Professional protocol",
+            "text": "Designed for in-clinic use by trained aesthetic practitioners."
+          }
+        ],
+        "ingredientsIntro": "Full ingredient list and concentration will be published at launch.",
+        "ingredients": [
+          "Spongilla spicules",
+          "Supporting actives — to be announced"
+        ],
+        "chipsTitle": "Targets",
+        "chips": [
+          "Texture",
+          "Dullness",
+          "Skin renewal",
+          "Active delivery"
+        ],
+        "ctaTitle": "Bio-Spicule 04 — get notified",
+        "ctaText": "This product is launching soon. Contact us to be the first to know."
+      },
+      "ru": {
+        "name": "Bio-Spicule 04",
+        "eyebrow": "БИОСПИКУЛЫ SPONGILLA",
+        "tagline": "Обновление кожи микроспикулами — натуральные каналы для доставки активов",
+        "description": "Средство на основе микроспикул Spongilla формирует контролируемую сеть микроканалов в верхних слоях кожи, усиливая проникновение сопутствующих активов и стимулируя естественное обновление клеток. Разработано для протоколов в клинике обученными специалистами. Полные данные о продукте будут опубликованы к запуску.",
+        "shortDescription": "Средство с микроспикулами Spongilla для обновления кожи и доставки активов.",
+        "keyFacts": [
+          "Натуральные микроспикулы пресноводной Spongilla — клинически биосовместимое действие.",
+          "Формирует контролируемые микроканалы в роговом слое для глубокой доставки сопутствующих сывороток и пептидов.",
+          "Стимулирует естественное обновление кожи и плотность дермы без внешних кислот.",
+          "Кабинетный протокол — выполняется обученным эстетическим специалистом."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "Натуральный источник"
+          },
+          {
+            "value": "Микро",
+            "label": "Технология спикул"
+          },
+          {
+            "value": "Pro",
+            "label": "Профессиональное"
+          },
+          {
+            "value": "Скоро",
+            "label": "Доступность"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Обновление кожи",
+            "text": "Микроспикулы стимулируют естественное обновление клеток."
+          },
+          {
+            "title": "Доставка активов",
+            "text": "Микроканалы усиливают проникновение сопутствующих активов и сывороток."
+          },
+          {
+            "title": "Натуральное происхождение",
+            "text": "Получено из пресноводной Spongilla — биосовместимое, предсказуемое действие."
+          },
+          {
+            "title": "Профессиональный протокол",
+            "text": "Для применения в клинике обученными эстетическими специалистами."
+          }
+        ],
+        "ingredientsIntro": "Полный состав и концентрация будут опубликованы к запуску.",
+        "ingredients": [
+          "Спикулы Spongilla",
+          "Сопутствующие активы — уточняется"
+        ],
+        "chipsTitle": "Воздействует на",
+        "chips": [
+          "Текстура",
+          "Тусклость",
+          "Обновление кожи",
+          "Доставка активов"
+        ],
+        "ctaTitle": "Bio-Spicule 04 — узнайте первыми",
+        "ctaText": "Продукт скоро выходит. Свяжитесь с нами, чтобы узнать первыми."
+      },
+      "he": {
+        "name": "Bio-Spicule 04",
+        "eyebrow": "ביו-ספיקולות SPONGILLA",
+        "tagline": "התחדשות עור באמצעות מיקרו-ספיקולות — תעלות טבעיות להעברת פעילים",
+        "description": "טיפול מבוסס מיקרו-ספיקולות Spongilla יוצר רשת מבוקרת של מיקרו-תעלות בשכבות העליונות של העור, משפר את החדירה של פעילים נלווים ומעורר התחדשות תאית טבעית. מיועד לפרוטוקולים במרפאה על ידי מטפלי אסתטיקה מוסמכים. הפרטים המלאים יפורסמו עם ההשקה.",
+        "shortDescription": "טיפול מיקרו-ספיקולות Spongilla להתחדשות העור והעברת פעילים.",
+        "keyFacts": [
+          "מיקרו-ספיקולות טבעיות מ-Spongilla של מים מתוקים — פעולה ביו-תואמת ברמה קלינית.",
+          "יוצרות מיקרו-תעלות מבוקרות בשכבת הקרנית להעברה עמוקה של סרומים ופפטידים נלווים.",
+          "מעוררות התחדשות עור טבעית וצפיפות עורית — ללא חומצות חיצוניות.",
+          "פרוטוקול במרפאה — לביצוע על ידי מטפל אסתטיקה מוסמך."
+        ],
+        "stats": [
+          {
+            "value": "Spongilla",
+            "label": "מקור טבעי"
+          },
+          {
+            "value": "מיקרו",
+            "label": "טכנולוגיית ספיקולות"
+          },
+          {
+            "value": "Pro",
+            "label": "שימוש מקצועי"
+          },
+          {
+            "value": "בקרוב",
+            "label": "זמינות"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "התחדשות עור",
+            "text": "מיקרו-ספיקולות מעוררות התחדשות תאית טבעית."
+          },
+          {
+            "title": "העברת פעילים",
+            "text": "מיקרו-תעלות משפרות את חדירת הפעילים והסרומים הנלווים."
+          },
+          {
+            "title": "מקור טבעי",
+            "text": "מופק מ-Spongilla של מים מתוקים — פעולה ביו-תואמת וצפויה."
+          },
+          {
+            "title": "פרוטוקול מקצועי",
+            "text": "מיועד לשימוש במרפאה על ידי מטפלי אסתטיקה מוסמכים."
+          }
+        ],
+        "ingredientsIntro": "רשימת הרכיבים והריכוז המלאים יפורסמו עם ההשקה.",
+        "ingredients": [
+          "ספיקולות Spongilla",
+          "פעילים נלווים — יפורסם"
+        ],
+        "chipsTitle": "מטפל ב",
+        "chips": [
+          "מרקם",
+          "עמעום",
+          "התחדשות עור",
+          "העברת פעילים"
+        ],
+        "ctaTitle": "Bio-Spicule 04 — קבלו עדכון",
+        "ctaText": "המוצר יושק בקרוב. צרו קשר כדי להיות הראשונים לדעת."
+      }
+    }
+  }
+]

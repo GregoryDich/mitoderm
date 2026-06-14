@@ -1,0 +1,226 @@
+.page {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #1a1a1d;
+  color: #1a1a1d;
+  padding: 40px 20px 80px;
+}
+
+.toolbar {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.back {
+  color: #f5f2f0;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 242, 240, 0.25);
+}
+
+.back:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.print {
+  background: #dfba74;
+  color: #08080a;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.brief {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  color: #1a1a1d;
+  padding: 56px 60px;
+  border-radius: 10px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-Rubik), system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+.head {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e1dc;
+}
+
+.brandLine {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  color: #8a8579;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.brand {
+  font-weight: 700;
+  color: #1a1a1d;
+}
+
+.locale {
+  padding: 2px 8px;
+  border: 1px solid #d4cfc6;
+  border-radius: 4px;
+}
+
+.dateLine {
+  margin-inline-start: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+  color: #1a1a1d;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #4a463f;
+  margin: 0 0 12px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #4a463f;
+  margin: 0 0 14px;
+}
+
+.pro {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #f5f2f0;
+  color: #8a3a25;
+  font-weight: 600;
+}
+
+.section {
+  margin: 22px 0;
+  break-inside: avoid;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 10px;
+    color: #1a1a1d;
+    border-bottom: 1px solid #e5e1dc;
+    padding-bottom: 6px;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding-inline-start: 22px;
+    font-size: 13px;
+    color: #2a2820;
+  }
+
+  li {
+    margin: 4px 0;
+  }
+
+  p {
+    font-size: 13px;
+    color: #2a2820;
+    margin: 0;
+  }
+}
+
+.dl {
+  margin: 0;
+
+  > div {
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  dt {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1a1a1d;
+    margin-bottom: 2px;
+  }
+
+  dd {
+    font-size: 13px;
+    color: #4a463f;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.ol {
+  font-variant-numeric: tabular-nums;
+}
+
+.warn {
+  color: #8a3a25;
+}
+
+.foot {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e1dc;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #8a8579;
+  letter-spacing: 0.04em;
+}
+
+/* Print rules — what the user gets when they hit Cmd/Ctrl+P or click
+ * the toolbar button. Hide all chrome, drop boxing, fit one product
+ * brief per page-ish. */
+@media print {
+  .page {
+    background: #fff !important;
+    padding: 0;
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .brief {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 20mm 22mm;
+    max-width: none;
+  }
+
+  h2 {
+    page-break-after: avoid;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}

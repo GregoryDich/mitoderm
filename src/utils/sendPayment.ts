@@ -37,7 +37,7 @@ export async function sendPaymentDataToCRM(formData: EventFormDataType) {
     pay_url: true,
     client_idn: formData.idNumber.value,
     send_invoice: true,
-    pay_success_redirect_url: `https://mitoderm.com/${
+    pay_success_redirect_url: `https://exoskin.co.il/${
       formData.lang
     }/event/success?name=${formData.name.value.replace(' ', '_')}&phone=${
       formData.phone.value

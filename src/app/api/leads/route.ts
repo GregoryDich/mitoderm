@@ -1,0 +1,148 @@
+import { NextResponse } from 'next/server';
+import { appendLead } from '@/lib/leads-store';
+import { classifyLead } from '@/lib/lead-classifier';
+
+interface LeadBody {
+  name?: string;
+  email?: string;
+  phone?: string;
+  clinic?: string;
+  message?: string;
+}
+
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function clip(s: unknown, max: number): string {
+  return typeof s === 'string' ? s.trim().slice(0, max) : '';
+}
+
+export async function POST(req: Request) {
+  let body: LeadBody;
+  try {
+    body = (await req.json()) as LeadBody;
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+  }
+
+  const name = clip(body.name, 120);
+  const email = clip(body.email, 200);
+  const phone = clip(body.phone, 40);
+  const clinic = clip(body.clinic, 160);
+  const message = clip(body.message, 4000);
+
+  const errors: Record<string, string> = {};
+  if (!name) errors.name = 'required';
+  if (!email) errors.email = 'required';
+  else if (!emailRe.test(email)) errors.email = 'invalid';
+  if (!message) errors.message = 'required';
+
+  if (Object.keys(errors).length > 0) {
+    return NextResponse.json({ ok: false, errors }, { status: 400 });
+  }
+
+  const classification = classifyLead({ message, clinic, email });
+
+  // Best-effort local persistence for dev; safe to fail in serverless.
+  // Production: replace with a real sink — DB, CRM, or an email transport
+  // configured via env (SMTP/Resend/SendGrid).
+  let lead;
+  try {
+    lead = await appendLead({ name, email, phone, clinic, message, classification });
+  } catch {
+    // ignore — fall back to a transient record so email + log still fire
+    lead = {
+      ts: new Date().toISOString(),
+      name,
+      email,
+      phone,
+      clinic,
+      message,
+      classification,
+    };
+  }
+  // Always log so the operator sees the lead in dev/server logs.
+  // eslint-disable-next-line no-console
+  console.log('[lead]', lead);
+
+  // Optional email delivery via Resend (https://resend.com).
+  // Set RESEND_API_KEY + LEADS_TO_EMAIL (and optionally LEADS_FROM_EMAIL)
+  // to enable. The lead response never fails because of email errors.
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.LEADS_TO_EMAIL;
+  if (apiKey && to) {
+    try {
+      const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
+      const subject = `New Mitoderm lead — ${name}`;
+      const text = [
+        `Name:    ${name}`,
+        `Email:   ${email}`,
+        phone && `Phone:   ${phone}`,
+        clinic && `Clinic:  ${clinic}`,
+        '',
+        message,
+      ]
+        .filter(Boolean)
+        .join('\n');
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          from,
+          to: [to],
+          reply_to: email,
+          subject,
+          text,
+        }),
+      });
+      if (!res.ok) {
+        // eslint-disable-next-line no-console
+        console.warn('[lead] resend send failed', res.status, await res.text());
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.warn('[lead] resend send error', err);
+    }
+  }
+
+  // Optional CRM webhook fan-out. Set LEADS_WEBHOOK_URL to forward
+  // every successful lead (HubSpot, Pipedrive, Make, n8n, Zapier — any
+  // endpoint that accepts JSON). Failures are logged and swallowed so
+  // a downstream outage never blocks lead capture. Optionally signs
+  // the body with HMAC-SHA256 when LEADS_WEBHOOK_SECRET is set.
+  const webhookUrl = process.env.LEADS_WEBHOOK_URL;
+  if (webhookUrl) {
+    try {
+      const payload = JSON.stringify({
+        source: 'exoskin.co.il',
+        receivedAt: new Date().toISOString(),
+        lead,
+      });
+      const headers: Record<string, string> = {
+        'content-type': 'application/json',
+      };
+      const secret = process.env.LEADS_WEBHOOK_SECRET;
+      if (secret) {
+        const { createHmac } = await import('node:crypto');
+        const sig = createHmac('sha256', secret).update(payload).digest('hex');
+        headers['x-mitoderm-signature'] = `sha256=${sig}`;
+      }
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers,
+        body: payload,
+      });
+      if (!res.ok) {
+        // eslint-disable-next-line no-console
+        console.warn('[lead] webhook failed', res.status);
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.warn('[lead] webhook error', err);
+    }
+  }
+
+  return NextResponse.json({ ok: true });
+}

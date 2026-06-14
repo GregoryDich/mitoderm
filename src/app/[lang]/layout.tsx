@@ -8,6 +8,9 @@ import { Rubik } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Layout/Footer/Footer';
+import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
+import JsonLd from '@/components/Seo/JsonLd';
+import { orgJsonLd, siteJsonLd } from '@/lib/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
@@ -17,6 +20,21 @@ const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
 const Modal = dynamic(() => import('@/components/Layout/Modal/Modal'), {
   ssr: false,
 });
+
+const A11yWidget = dynamic(
+  () => import('@/components/Layout/A11yWidget/A11yWidget'),
+  { ssr: false }
+);
+
+const InterestDrawer = dynamic(
+  () => import('@/components/InterestList/InterestDrawer'),
+  { ssr: false }
+);
+
+import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
+import { RecentlyViewedProvider } from '@/components/RecentlyViewed/RecentlyViewedProvider';
+import PromoBar from '@/components/Layout/PromoBar/PromoBar';
+import { nextUpcomingSeminar } from '@/lib/promo';
 
 const rubik = Rubik({
   weight: ['300', '400', '500', '900'],
@@ -31,8 +49,29 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: 'MitoDerm',
-  description: 'Something will be here',
+  metadataBase: new URL('https://exoskin.co.il'),
+  title: {
+    default: 'Mitoderm — Professional Exosome Skincare',
+    template: '%s | Mitoderm',
+  },
+  description:
+    'Professional exosome-based solutions for clinics and aesthetic practitioners — advanced masks, longevity peels and bio-spicules. Where science meets beauty.',
+  keywords: [
+    'Mitoderm',
+    'exosomes',
+    'professional skincare',
+    'EXOCELL Mask',
+    'EXO-NAD',
+    'aesthetic medicine',
+  ],
+  openGraph: {
+    title: 'Mitoderm — Professional Exosome Skincare',
+    description:
+      'Professional exosome-based solutions for clinics and aesthetic practitioners. Where science meets beauty.',
+    url: 'https://exoskin.co.il',
+    siteName: 'Mitoderm',
+    type: 'website',
+  },
   icons: [
     {
       rel: 'icon',
@@ -88,6 +127,8 @@ export default async function RootLayout({
 
   unstable_setRequestLocale(params.lang);
 
+  const upcoming = await nextUpcomingSeminar();
+
   return (
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
@@ -95,10 +136,27 @@ export default async function RootLayout({
           className={rubik.className}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
-          <Header />
-          <Modal />
-          {children}
-          <Footer />
+          <InterestListProvider>
+          <RecentlyViewedProvider>
+            {upcoming && (
+              <PromoBar
+                id={`seminar-${upcoming.id}`}
+                text={upcoming.caption || 'Mitoderm seminar'}
+                date={upcoming.date}
+                href={`/${params.lang}/seminars`}
+              />
+            )}
+            <Header />
+            <Modal />
+            {children}
+            <Footer />
+            <ScrollToTop />
+            <A11yWidget />
+            <InterestDrawer />
+            <JsonLd id="ld-organization" data={orgJsonLd()} />
+            <JsonLd id="ld-website" data={siteJsonLd()} />
+          </RecentlyViewedProvider>
+          </InterestListProvider>
         </body>
       </NextIntlClientProvider>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID as string} />

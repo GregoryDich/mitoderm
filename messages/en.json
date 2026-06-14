@@ -6,7 +6,78 @@
     "info": "More info",
     "contact": "Contact us",
     "event": "Event",
-    "agenda": "Event program"
+    "agenda": "Event program",
+    "catalog": "Catalog",
+    "clinics": "Clinics",
+    "seminars": "Seminars"
+  },
+  "catalog": {
+    "eyebrow": "CATALOG",
+    "title": "Our Products",
+    "subtitle": "Professional exosome-based solutions for clinics and aesthetic practitioners — V-Tech serums and masks, Exotech gels, Exosignal hair treatments.",
+    "filterAll": "All",
+    "filterExosome": "Exosomes",
+    "filterMask": "Masks",
+    "filterPeel": "Peels",
+    "filterBioSpicules": "Bio-Spicules",
+    "available": "Available",
+    "comingSoon": "Coming soon",
+    "learnMore": "Learn more",
+    "ctaTitle": "Looking for the right solution?",
+    "ctaText": "Our specialist will help you choose products and protocols for your clinic.",
+    "ctaButton": "Contact us",
+    "filterSerum": "Serums",
+    "filterGel": "Gels",
+    "filterHair": "Hair",
+    "searchPlaceholder": "Search products",
+    "searchLabel": "Search the catalog",
+    "noResults": "No products match your search.",
+    "addToList": "Add to my list",
+    "removeFromList": "Remove from my list"
+  },
+  "product": {
+    "keyBenefits": "Key Benefits",
+    "activeIngredients": "Active Ingredients",
+    "backToCatalog": "Back to catalog",
+    "contactForPrice": "Contact for Price",
+    "learnMore": "Learn More",
+    "gallery": "Gallery",
+    "professionalBadge": "For professional use only",
+    "related": "Related products",
+    "keyFacts": "Key facts",
+    "contactViaWhatsApp": "Contact via WhatsApp",
+    "trustedBy": "TRUSTED BY",
+    "downloadBrief": "Download brief (PDF)",
+    "before": "Before",
+    "after": "After",
+    "chatTitle": "Ask about this product",
+    "chatPlaceholder": "Type your question…",
+    "chatAsk": "Ask",
+    "chatEscalateWhatsApp": "Continue on WhatsApp",
+    "chatEscalateForm": "Send via form",
+    "chatSuggestions": "POPULAR QUESTIONS",
+    "chatNoMatch": "I don't have that answer ready — let's continue on WhatsApp and a specialist will reply with the details.",
+    "chatThinking": "Thinking…",
+    "trainingPlay": "Play",
+    "trainingOpen": "Open",
+    "trainingDownload": "Download",
+    "trainingEnroll": "Enroll",
+    "addToList": "Add to my list",
+    "removeFromList": "In my list — remove",
+    "requestSample": "Request a sample"
+  },
+  "brief": {
+    "download": "Download as PDF",
+    "backToProduct": "Back to product",
+    "keyFacts": "Key facts",
+    "benefits": "Key benefits",
+    "ingredients": "Active ingredients",
+    "protocol": "Application protocol",
+    "aftercare": "Aftercare",
+    "safety": "Safety & contraindications",
+    "indications": "Indications",
+    "professionalOnly": "For professional use only",
+    "version": "Version"
   },
   "buttons": {
     "contact": "Contact us",
@@ -74,17 +145,32 @@
     "item4": "Facial Skin Rejuvenation"
   },
   "about": {
-    "titleP1": "What is ",
-    "titleP2": "Exosome",
-    "text1": "Exosomes have gained attention in the field of aesthetics due to their potential for ",
-    "text1Colored": "skin rejuvenation, anti-aging effects, and breakthroughs in treating acne scars and hair loss.",
-    "text2": "These exosomes are rich in growth factors, cytokines, and other bioactive molecules that have the potential to promote tissue regeneration, collagen synthesis, and provide a more radiant youthful appearance. Combined with ",
-    "text2Colored": "advanced technologies, exosomes offer innovative solutions for improving skin texture, reducing scarring, and revitalizing hair follicles.",
-    "itemExp1": "Milliard cells",
-    "itemExp2": "Inflammation Reduction",
-    "itemExp3": "Growth factors and cytokines",
-    "itemExp4": "Increase in intracellular collagen and hyaluronic acid.",
-    "itemExp5": "Nanometers"
+    "eyebrow": "ABOUT MITODERM",
+    "title": "Science is our craft. Beauty is the outcome.",
+    "tagline": "Mitoderm brings clinical-grade exosome technology to aesthetic practitioners — from Israel to the world.",
+    "missionLabel": "MISSION",
+    "missionTitle": "Built for the clinic, grounded in science",
+    "missionText": "We partner with researchers, formulators and clinicians to bring exosome-based treatments to professional practices — products, protocols and training designed around real clinical outcomes, not trends.",
+    "scienceLabel": "THE SCIENCE",
+    "scienceTitle": "What exosomes do, simply put",
+    "scienceText": "Exosomes are tiny vesicles loaded with growth factors, peptides and signaling molecules. Applied professionally, they instruct skin cells to repair, regenerate and produce more collagen — accelerating recovery, refining texture and visibly restoring radiance.",
+    "stats": [
+      {
+        "value": "Billions",
+        "label": "Active cells delivered per treatment"
+      },
+      {
+        "value": "40+",
+        "label": "Growth factors & cytokines"
+      },
+      {
+        "value": "~30 nm",
+        "label": "Vesicle scale"
+      }
+    ],
+    "ctaTitle": "Talk to a Mitoderm specialist",
+    "ctaText": "Get pricing, protocols and onboarding for your clinic.",
+    "ctaButton": "Contact us"
   },
   "solution": {
     "titleP1": "Our Solution - ",
@@ -120,11 +206,202 @@
     "title": "Real Reviews",
     "item1": {
       "name": "Victoria Aslanyan",
-      "text": "As a doctor and clinic owner, I integrate advanced exosome treatments into my practice. The results are outstanding! My patients see smoother, rejuvenated skin, and the products have become a cornerstone of my clinic's offerings. I'm definitely continuing with these treatments!\""
+      "text": "As a doctor and clinic owner, I integrate advanced exosome treatments into my practice. The results are outstanding! My patients see smoother, rejuvenated skin, and the products have become a cornerstone of my clinic's offerings. I'm definitely continuing with these treatments!\"",
+      "role": "Doctor, clinic owner"
     },
     "item2": {
       "name": "Gregory Dyachenko",
-      "text": "I had an amazing experience with the exosome treatment for hair thinning, and I want to thank Ilona especially. In just a few months, my hair has gone from thinning to fuller and healthier. I'm truly impressed with the transformation."
+      "text": "I had an amazing experience with the exosome treatment for hair thinning, and I want to thank Ilona especially. In just a few months, my hair has gone from thinning to fuller and healthier. I'm truly impressed with the transformation.",
+      "role": "Patient"
+    },
+    "eyebrow": "REVIEWS"
+  },
+  "press": {
+    "title": "AS SEEN AT"
+  },
+  "stories": {
+    "label": "Stories",
+    "open": "Open story",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "seeMore": "See more"
+  },
+  "apply": {
+    "eyebrow": "PARTNER APPLICATION",
+    "title": "Join the Mitoderm professional network",
+    "subtitle": "Apply for access to wholesale pricing, downloadable protocols and per-product marketing assets in the /pro portal.",
+    "name": "Your name",
+    "email": "Work email",
+    "phone": "Phone",
+    "clinic": "Clinic / brand",
+    "license": "License or business number",
+    "city": "City",
+    "instagram": "Instagram",
+    "message": "Anything we should know",
+    "messagePlaceholder": "Specialty, team size, current product lines, expected volume…",
+    "referralCode": "Referral code (optional)",
+    "referralCodePlaceholder": "Code shared by an existing Mitoderm partner",
+    "submit": "Apply",
+    "sending": "Sending…",
+    "disclaimer": "We typically review applications within one business day. Approved accounts get a one-click magic link to the /pro portal — keep it private; one device per account is fine.",
+    "successTitle": "Application received",
+    "successText": "We'll reach out shortly. Once approved you'll receive a magic-link to sign into /pro for 90 days.",
+    "errorDuplicate": "An application with this email already exists. Reach out to support if you don't have your magic link.",
+    "errorGeneric": "Something went wrong. Please try again or write us directly."
+  },
+  "pro": {
+    "title": "Mitoderm /pro portal",
+    "subtitle": "Wholesale resources, protocols and marketing assets for partner clinics.",
+    "badge": "Approved partner",
+    "greeting": "Welcome back, {name}",
+    "productAssets": "PRODUCT ASSETS",
+    "protocolPdf": "Protocol brief (PDF)",
+    "publicPage": "Public product page",
+    "accountInfo": "ACCOUNT",
+    "reorderTitle": "REORDER",
+    "reorderText": "Need to restock or order a new line? Reach out — we'll prepare a quote within one business day.",
+    "reorderCta": "Place an order",
+    "signOut": "Sign out",
+    "loginTitle": "Sign in to /pro",
+    "loginText": "/pro is invite-only for verified Mitoderm partner clinics. Click your magic link to sign in. If you don't have one, apply below or talk to your account manager.",
+    "loginErrorInvalid": "That magic link is no longer valid. Ask us to regenerate it.",
+    "loginErrorMissing": "Missing token. Open the latest magic link we sent you.",
+    "applyCta": "Apply for access",
+    "contactCta": "Contact a specialist"
+  },
+  "recentlyViewed": {
+    "title": "RECENTLY VIEWED"
+  },
+  "glossary": {
+    "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
+    "niacinamide": "Vitamin B3. Reinforces the skin barrier, evens tone, reduces sebum production and redness. Tolerated by most skin types.",
+    "hyaluronic acid": "A glycosaminoglycan that holds up to 1000× its weight in water. Plumps fine lines, restores bounce, and helps active ingredients spread evenly.",
+    "peptide": "Short chain of amino acids that signal skin cells. Different peptides stimulate collagen, elasticity, or barrier repair.",
+    "collagen": "Structural protein providing skin firmness. Production drops ~1% per year after age 25; many actives target its synthesis.",
+    "nad+": "Coenzyme central to cellular energy. Topical NAD+ supports mitochondrial recovery — relevant for longevity protocols.",
+    "retinol": "Vitamin A derivative. Accelerates cell turnover, smooths texture, reduces fine lines. Photosensitising — use in evening protocols.",
+    "ahas": "Alpha-hydroxy acids (glycolic, lactic, mandelic). Water-soluble exfoliants targeting tone and texture.",
+    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin."
+  },
+  "promo": {
+    "label": "Upcoming promotion",
+    "tag": "UPCOMING",
+    "cta": "Reserve a seat",
+    "dismiss": "Dismiss"
+  },
+  "interest": {
+    "open": "Open my interest list",
+    "title": "My interest list",
+    "subtitle": "{count} product(s) selected — send the list and our specialist will follow up with pricing and protocol.",
+    "subtitleEmpty": "Nothing here yet. Tap the heart on any product to add it.",
+    "emptyHint": "Browse the catalog, tap the heart icon on the products you'd like to evaluate, and the whole shortlist will come back here. Send it in one go — much faster than emailing back and forth.",
+    "removeOne": "Remove",
+    "sendWhatsApp": "Send list on WhatsApp",
+    "sendForm": "Send via form",
+    "clear": "Clear list",
+    "clearConfirm": "Clear the whole interest list?",
+    "close": "Close"
+  },
+  "social": {
+    "eyebrow": "LIVE FROM THE CLINIC",
+    "title": "Reels, posts and upcoming seminars",
+    "openInInstagram": "Open in Instagram",
+    "prev": "Previous",
+    "next": "Next",
+    "kind": {
+      "reel": "Reel",
+      "post": "Post",
+      "seminar": "Seminar"
+    }
+  },
+  "seminars": {
+    "eyebrow": "SEMINARS",
+    "title": "Upcoming Mitoderm seminars",
+    "subtitle": "Hands-on training sessions for clinics and aesthetic practitioners. Reserve your seat on Instagram or reach out directly.",
+    "viewOnInstagram": "View on Instagram",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "empty": "No seminars announced yet — follow us on Instagram for the next dates.",
+    "noUpcoming": "No upcoming seminars scheduled. Recent ones are below.",
+    "ctaTitle": "Want a private seminar at your clinic?",
+    "ctaText": "We host on-site training and certification across Israel and EU.",
+    "ctaButton": "Request a seminar"
+  },
+  "regimen": {
+    "eyebrow": "REGIMEN BUILDER",
+    "title": "Find the right Mitoderm protocol",
+    "subtitle": "Three quick questions — we'll suggest the products that match the indication, sensitivity and intensity you described.",
+    "progressLabel": "Quiz progress",
+    "back": "Back",
+    "resultEyebrow": "RECOMMENDED",
+    "resultTitle": "Your matched products",
+    "resultIntro": "Based on your answers. A Mitoderm specialist can fine-tune the bundle and protocol for your patient flow.",
+    "noMatch": "We couldn't match a product — let's chat about your case.",
+    "ctaWhatsApp": "Discuss on WhatsApp",
+    "ctaForm": "Request pricing",
+    "restart": "Start over",
+    "q": {
+      "concern": {
+        "title": "What's the primary concern?",
+        "aging": "Skin aging, texture, fine lines",
+        "hair": "Hair thinning or hair loss",
+        "acne": "Acne, post-acne or scarring",
+        "recovery": "Post-procedure recovery"
+      },
+      "sens": {
+        "title": "How does the skin react to actives?",
+        "normal": "Normal — tolerates most actives",
+        "sensitive": "Sensitive — reacts sometimes",
+        "very": "Very sensitive — needs gentle protocols"
+      },
+      "sess": {
+        "title": "What session intensity do you want?",
+        "gentle": "Gentle — minimal downtime",
+        "standard": "Standard — balanced result and recovery",
+        "intensive": "Intensive — strongest result, longer recovery"
+      }
+    }
+  },
+  "protocols": {
+    "eyebrow": "PROTOCOLS",
+    "title": "Shop the protocol",
+    "subtitle": "Each protocol pairs the anchor product with the partner SKUs that complete a session — the same combinations our practitioners ship in real clinics.",
+    "anchor": "Anchored on",
+    "viewAnchor": "View anchor product",
+    "emptyText": "Protocols will appear here once partner-product bundles are mapped from /admin/products.",
+    "browseCatalog": "Browse the catalog",
+    "ctaTitle": "Need help mapping a protocol?",
+    "ctaText": "Our specialists tailor bundles to your patient flow.",
+    "ctaButton": "Talk to a specialist"
+  },
+  "clinics": {
+    "eyebrow": "CERTIFIED CLINICS",
+    "title": "Find a Mitoderm-certified clinic near you",
+    "subtitle": "Doctors and aesthetic specialists across Israel trained on Mitoderm protocols. Filter by region, profession, or search by name and city.",
+    "areaLabel": "Region",
+    "professionLabel": "Profession",
+    "searchPlaceholder": "Search by name or city",
+    "searchLabel": "Search the directory",
+    "emptyDirectory": "We're building out the directory — check back soon.",
+    "noResults": "No specialists match your filters.",
+    "contact": "Contact",
+    "ctaTitle": "Are you a practitioner?",
+    "ctaText": "Get in touch to join the Mitoderm certified network.",
+    "ctaButton": "Apply to join",
+    "area": {
+      "all": "All regions",
+      "north": "North",
+      "center": "Center",
+      "jerusalem": "Jerusalem",
+      "south": "South",
+      "eilat": "Eilat"
+    },
+    "profession": {
+      "all": "All",
+      "doctor": "Doctor",
+      "cosmetologist": "Cosmetologist",
+      "clinic": "Clinic"
     }
   },
   "gallery": {
@@ -160,15 +437,15 @@
     "followUs": "Follow us on"
   },
   "footer": {
-    "copyright": "© 2024 Mitoderm. All Rights Reserved.",
+    "copyright": "© 2026 Mitoderm. All Rights Reserved.",
     "accessibility": "Accessibility Statement",
     "privacy": "Privacy Policy",
     "group": "SinoSciences Group"
   },
   "accessibility": {
-    "title": "Accessibility Declaration for mitoderm.com and mitoderm.co.il",
+    "title": "Accessibility Declaration for exoskin.co.il",
     "general": "General Information",
-    "websites": "The websites mitoderm.com and mitoderm.co.il are committed to providing equal access to all digital services for people with disabilities in accordance with international accessibility standards. We are continuously working to improve the usability of our websites to make them accessible to a wide audience.",
+    "websites": "The websites exoskin.co.il are committed to providing equal access to all digital services for people with disabilities in accordance with international accessibility standards. We are continuously working to improve the usability of our websites to make them accessible to a wide audience.",
     "interfaceTitle": "Interface Accessibility",
     "interfaceText": "The website is adapted following WCAG 2.1 guidelines (Levels A and AA), including:",
     "readers": "Support for screen readers.",
@@ -177,11 +454,90 @@
     "alt": "Image descriptions using the ALT attribute.",
     "scaling": "Easy font scaling and interface adjustments.",
     "feedbackTitle": "Feedback",
-    "difficulties": "If you encounter difficulties using the mitoderm.com or mitoderm.co.il websites, please let us know:",
-    "email": "Email: ",
-    "phone": "Phone: ",
+    "difficulties": "If you encounter difficulties using the exoskin.co.il websites, please let us know:",
     "feedbackHelp": "Your feedback helps us improve accessibility.",
-    "obligationsTitle": "Legal Obligations",
-    "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes."
+    "obligationsText": "This declaration is made in accordance with the legal requirements of Israel and international accessibility standards. It will be updated as website functionality changes.",
+    "widget": {
+      "open": "Accessibility options",
+      "title": "Accessibility",
+      "fontSize": "Text size",
+      "fontDecrease": "Smaller text",
+      "fontReset": "Default text size",
+      "fontIncrease": "Larger text",
+      "contrast": "Contrast",
+      "contrastNormal": "Default",
+      "contrastHigh": "High contrast",
+      "motion": "Motion",
+      "motionReduce": "Reduce animations",
+      "underlineLinks": "Underline links",
+      "reset": "Reset",
+      "close": "Close"
+    }
+  },
+  "home": {
+    "eyebrow": "MITODERM",
+    "title": "Where science meets beauty",
+    "tagline": "Professional exosome skincare for clinics and aesthetic practitioners.",
+    "description": "Advanced exosome-based masks, longevity peels and bio-spicules — engineered for visible regeneration and clinical-grade results.",
+    "ctaPrimary": "Explore the catalog",
+    "ctaSecondary": "Contact us",
+    "stats": [
+      {
+        "value": "3+",
+        "label": "Product lines"
+      },
+      {
+        "value": "3",
+        "label": "Locales served"
+      },
+      {
+        "value": "100%",
+        "label": "Professional use"
+      },
+      {
+        "value": "IL",
+        "label": "Mitoderm HQ"
+      }
+    ],
+    "featuredLabel": "FEATURED",
+    "featuredTitle": "Engineered for visible results",
+    "viewProduct": "View product",
+    "whyLabel": "WHY MITODERM",
+    "whyTitle": "Built for professionals",
+    "why": [
+      {
+        "title": "Clinical-grade actives",
+        "text": "Exosome technology paired with NAD+ and peptides for measurable cellular renewal."
+      },
+      {
+        "title": "Made for clinics",
+        "text": "Designed end-to-end for aesthetic practitioners — protocols, training and support."
+      },
+      {
+        "title": "Israeli R&D",
+        "text": "Developed and validated in Israel; trusted by clinics and partners across the region."
+      }
+    ],
+    "ctaBandTitle": "Bring Mitoderm to your clinic",
+    "ctaBandText": "Get in touch — our specialist will help with pricing, protocols and onboarding.",
+    "ctaBandButton": "Contact us"
+  },
+  "contactForm": {
+    "eyebrow": "CONTACT",
+    "title": "Talk to a specialist",
+    "subtitle": "Tell us about your clinic and what you are looking to add. We will reach out with pricing and protocol.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "clinic": "Clinic / Company",
+    "message": "How can we help?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Thank you — message received",
+    "successText": "Our specialist will contact you within one business day.",
+    "errorRequired": "This field is required",
+    "errorEmail": "Please enter a valid email",
+    "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request.",
+    "errorServer": "Something went wrong. Please try again or email us directly."
   }
 }

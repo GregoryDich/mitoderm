@@ -1,3 +1,5 @@
+@import '../styles/tokens.scss';
+
 :root {
   --font-Rubik: 'Rubik', sans-serif;
   --fontSizeH1: 88px;
@@ -16,6 +18,50 @@
   --colorDark: #222222;
   --contentWidthDesktop: 1200px;
   --buttonAccentColor: #940030;
+  --colorGold: #dfba74;
+  --colorTeal: #6ea8ab;
+  --colorBlack: #000;
+  --a11y-font-scale: 1;
+}
+
+/* Accessibility widget — user preference layer */
+html {
+  font-size: calc(16px * var(--a11y-font-scale, 1));
+}
+
+html.a11y-high-contrast {
+  filter: contrast(1.18);
+}
+
+html.a11y-high-contrast body,
+html.a11y-high-contrast .pageScroll {
+  background-color: #000 !important;
+}
+
+html.a11y-high-contrast :where(p, li, span, h1, h2, h3, h4, a, button) {
+  color: #fff !important;
+}
+
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+.pageScroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 html,
@@ -89,4 +135,27 @@ section {
     padding-top: 72px;
     height: calc(100vh - 284px);
   }
+}
+
+/* Visually hidden, but available to screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Promo bar — when active, shift the fixed header below it and add
+ * matching padding to every pageScroll container. */
+html.has-promo header[class*="header"] {
+  top: 36px;
+}
+
+html.has-promo .pageScroll {
+  padding-top: 124px;
 }

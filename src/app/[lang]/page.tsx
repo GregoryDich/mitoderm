@@ -1,46 +1,71 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
-import dynamic from 'next/dynamic';
-import Intro from '@/components/Intro/Intro';
-import HowCanBeUsed from '@/components/HowCanBeUsed/HowCanBeUsed';
-import Gallery from '@/components/Gallery/Gallery';
+import { Metadata } from 'next';
+import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
+import HomePage from '@/components/Home/HomePage';
+import { readSocial } from '@/lib/social-store';
+import { readPress } from '@/lib/press-store';
+import { readStories, isLive } from '@/lib/stories-store';
+import { LocaleType } from '@/types';
+import {
+  SITE_NAME,
+  absUrl,
+  alternatesFor,
+  openGraphLocaleFor,
+  ogImage,
+} from '@/lib/seo';
 
-const Solution = dynamic(() => import('@/components/Solution/Solution'), {
-  ssr: false,
-});
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: LocaleType };
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale: lang, namespace: 'home' });
+  const og = openGraphLocaleFor(lang);
+  const image = ogImage({
+    title: t('title'),
+    eyebrow: t('eyebrow'),
+    tagline: t('tagline'),
+    accent: 'gold',
+    locale: lang,
+  });
+  return {
+    title: `${t('title')} | ${SITE_NAME}`,
+    description: t('tagline'),
+    alternates: alternatesFor(lang, ''),
+    openGraph: {
+      title: `${t('title')} | ${SITE_NAME}`,
+      description: t('tagline'),
+      url: absUrl(lang, ''),
+      siteName: SITE_NAME,
+      type: 'website',
+      locale: og.locale,
+      alternateLocale: og.alternateLocale,
+      images: [{ url: image, width: 1200, height: 630, alt: t('title') }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('title')} | ${SITE_NAME}`,
+      description: t('tagline'),
+      images: [image],
+    },
+  };
+}
 
-const Reviews = dynamic(() => import('@/components/Reviews/Reviews'), {
-  ssr: false,
-});
-
-const About = dynamic(() => import('@/components/About/About'), {
-  ssr: false,
-});
-
-const Mission = dynamic(() => import('@/components/Mission/Mission'), {
-  ssr: false,
-});
-
-const Faq = dynamic(() => import('@/components/Faq/Faq'), {
-  ssr: false,
-});
-
-const Contact = dynamic(() => import('@/components/Contact/Contact'), {
-  ssr: false,
-});
-
-export default function HomePage({ params: { lang } }: any) {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: LocaleType };
+}) {
   unstable_setRequestLocale(lang);
+  const social = (await readSocial())
+    .filter((p) => p.isPublished)
+    .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
+  const press = (await readPress())
+    .filter((p) => p.isPublished)
+    .sort((a, b) => a.order - b.order);
+  const stories = (await readStories())
+    .filter((s) => isLive(s))
+    .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
   return (
-    <main>
-      <Intro />
-      <HowCanBeUsed />
-      <About />
-      <Solution />
-      <Reviews />
-      <Gallery />
-      <Mission />
-      <Faq />
-      <Contact />
-    </main>
+    <HomePage locale={lang} social={social} press={press} stories={stories} />
   );
 }

@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 140px;
+  background-color: rgba(8, 8, 10, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: clamp(30px, 4.4vw, 40px);
+  width: auto;
+  display: block;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navLink {
+  position: relative;
+  font-size: 15px;
+  color: rgba(245, 242, 240, 0.7);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #f5f2f0;
+  }
+}
+
+.navActive {
+  color: #f5f2f0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    width: 20px;
+    height: 1px;
+    background-color: var(--colorGold, #dfba74);
+  }
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.langLink {
+  font-size: 13px;
+  color: rgba(245, 242, 240, 0.55);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #f5f2f0;
+  }
+}
+
+.langActive {
+  color: #f5f2f0;
+  font-weight: 500;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  padding: 8px;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #f5f2f0;
+  }
+}
+
+@media screen and (max-width: 1224px) {
+  .header {
+    padding: 0 24px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .right {
+    position: fixed;
+    top: 88px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 24px 36px;
+    background-color: #08080a;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .rightOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,122 @@
+.section {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 5vw, 60px) 0;
+}
+
+.rail {
+  display: flex;
+  gap: clamp(14px, 2.4vw, 22px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 0 8px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tile {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: clamp(72px, 9vw, 96px);
+  text-align: center;
+  font-family: inherit;
+}
+
+.tile:focus-visible {
+  outline: 2px solid #dfba74;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.cover {
+  position: relative;
+  width: clamp(64px, 8.4vw, 88px);
+  height: clamp(64px, 8.4vw, 88px);
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px #08080a; /* gap between cover and ring */
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ring {
+  position: absolute;
+  inset: -5px;
+  width: calc(clamp(64px, 8.4vw, 88px) + 10px);
+  height: calc(clamp(64px, 8.4vw, 88px) + 10px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Wrap the ring outside the cover via positioning trick — we use the
+ * pseudo on the tile container instead so the gradient sits *outside*
+ * the cover circle. */
+.tile {
+  position: relative;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  /* match the cover horizontally — covers are centred under the tile,
+   * so we use a small absolute box centred on the tile top */
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  width: calc(clamp(64px, 8.4vw, 88px) + 10px);
+  height: calc(clamp(64px, 8.4vw, 88px) + 10px);
+  border-radius: 50%;
+  background: conic-gradient(
+    from 220deg,
+    #6fb7ba 0deg,
+    #dfba74 140deg,
+    #b4607e 260deg,
+    #6fb7ba 360deg
+  );
+  z-index: 0;
+}
+
+[dir='rtl'] .tile::before {
+  transform: translateX(50%);
+}
+
+.tile.seen::before {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.tile .cover {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 12px;
+  color: rgba(245, 242, 240, 0.85);
+  line-height: 1.3;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tile.unseen .title {
+  color: #f5f2f0;
+}

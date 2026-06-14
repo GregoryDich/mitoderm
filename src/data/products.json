@@ -1,0 +1,2077 @@
+[
+  {
+    "slug": "v-tech-serum",
+    "category": "serum",
+    "status": "available",
+    "accent": "teal",
+    "image": "/products/v-tech-serum/hero.png",
+    "gallery": [],
+    "content": {
+      "en": {
+        "name": "V-Tech Serum",
+        "eyebrow": "PROFESSIONAL EXOSOME SERUM",
+        "tagline": "Synthetic exosomes + 2% PDRN — clinical regeneration in a 5 ml ampoule",
+        "description": "V-Tech Serum is the flagship serum of the V-Tech system: synthetic exosomes pair with 2% PDRN polynucleotides, biomimetic peptides and plant stem cells. Engineered for in-clinic protocols that deliver visible texture, density and recovery from the first session.",
+        "shortDescription": "5 ml exosome serum: synthetic exosomes + 2% PDRN polynucleotides + biomimetic peptides for clinical regeneration.",
+        "keyFacts": [
+          "Synthetic exosomes pair with 2% PDRN to drive cellular renewal and dermal density.",
+          "Biomimetic peptides and plant stem cells reinforce repair and antioxidant defence.",
+          "5 ml single-use ampoule for in-clinic protocols.",
+          "Pairs with V-Tech Gel Mask for the “1+1=3” professional protocol."
+        ],
+        "stats": [
+          {
+            "value": "5 ml",
+            "label": "Ampoule"
+          },
+          {
+            "value": "2%",
+            "label": "PDRN content"
+          },
+          {
+            "value": "Pro",
+            "label": "In-clinic use"
+          },
+          {
+            "value": "+ Mask",
+            "label": "Protocol partner"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Cellular renewal",
+            "text": "Synthetic exosomes and PDRN accelerate fibroblast metabolism and visible skin renewal."
+          },
+          {
+            "title": "Density & firmness",
+            "text": "Biomimetic peptides drive collagen synthesis for restored density and tone."
+          },
+          {
+            "title": "Post-procedure recovery",
+            "text": "Speeds healing and soothes the skin after lasers, peels and microneedling."
+          },
+          {
+            "title": "Antioxidant defence",
+            "text": "Plant stem cells reinforce the skin against oxidative stress."
+          }
+        ],
+        "ingredientsIntro": "A clinical active stack engineered to work in synergy at the cellular level.",
+        "ingredients": [
+          "Synthetic exosomes — nano-vesicles that improve cell-to-cell communication and active delivery",
+          "2% PDRN (polydeoxyribonucleotides) — fibroblast activation and DNA-level support",
+          "Biomimetic peptides — repair and remodelling signals",
+          "Plant stem cells — antioxidant defence and skin resilience"
+        ],
+        "stepsTitle": "How to use",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Cleanse",
+            "text": "Apply to cleansed skin after the professional procedure."
+          },
+          {
+            "num": "02",
+            "title": "Apply",
+            "text": "1 ampoule per face / area; gentle outward strokes until absorbed."
+          },
+          {
+            "num": "03",
+            "title": "Pair",
+            "text": "Follow with V-Tech Gel Mask for the protocol synergy."
+          }
+        ],
+        "protocol": {
+          "title": "Application protocol",
+          "items": [
+            "Cleanse the skin and pat dry.",
+            "Apply 1 × 5 ml ampoule per face / treatment area, smoothing outward until absorbed.",
+            "Optional: layer V-Tech Gel Mask for 15–20 minutes.",
+            "Rinse the mask if applied; leave the serum on — do not rinse."
+          ]
+        },
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Avoid acidic and abrasive products for 24 hours.",
+            "Use SPF during the day across the protocol cycle.",
+            "Maintain gentle cleansing for the first 48 hours.",
+            "Repeat the protocol once every 1–2 weeks for a clinical cycle."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Active inflamed acne or open wounds on the treatment area",
+            "Active herpes",
+            "Pregnancy and lactation",
+            "Known sensitivity to any of the listed ingredients"
+          ]
+        },
+        "chipsTitle": "Targets",
+        "chips": [
+          "Post-procedure recovery",
+          "Loss of firmness",
+          "Texture irregularities",
+          "Dullness",
+          "Post-acne marks",
+          "Fine lines"
+        ],
+        "ctaTitle": "Bring V-Tech Serum to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "faq": {
+          "title": "Frequently asked questions",
+          "intro": "Common questions from clinics evaluating V-Tech Serum for the first time.",
+          "items": [
+            {
+              "q": "How many sessions in a standard course?",
+              "a": "4–6 sessions, spaced 2 weeks apart. Maintenance every 4–8 weeks depending on indication and skin condition."
+            },
+            {
+              "q": "Can it be combined with microneedling or fractional laser?",
+              "a": "Yes — V-Tech Serum is designed for post-procedure application on controlled microchannels. Apply immediately after the device pass for maximum penetration of the PDRN payload."
+            },
+            {
+              "q": "How is V-Tech Serum different from the V-Tech Gel Mask?",
+              "a": "Serum carries high-molecular-weight PDRN (2%, 20 mg/ml) plus biomimetic peptides as the active step. The Gel Mask carries low-MW PDRN (1%) for barrier restoration and is applied right after the serum to seal and soothe."
+            },
+            {
+              "q": "When can the patient return to makeup and active skincare?",
+              "a": "Mineral makeup the next day. Resume retinoids and acids after 5–7 days. Avoid direct sun and saunas for 48 hours."
+            },
+            {
+              "q": "Is it suitable for sensitive or rosacea-prone skin?",
+              "a": "Yes — the PDRN + peptide payload is non-inflammatory. Patch-test on rosacea cases and start with a single ampoule on a half-face protocol."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "Clinical observations",
+          "intro": "Reported by partner clinics in Israel and EU. Replace with your own internal numbers before publishing.",
+          "items": [
+            {
+              "value": "92%",
+              "label": "Patients reporting visible firming at session 4",
+              "source": "TODO: source / sample size"
+            },
+            {
+              "value": "4–6",
+              "label": "Sessions for a full course",
+              "source": "TODO: tighten by indication"
+            },
+            {
+              "value": "2 weeks",
+              "label": "Interval between sessions"
+            }
+          ]
+        },
+        "economics": {
+          "title": "Clinic economics",
+          "intro": "Illustrative numbers — replace with your wholesale price and recommended session charge.",
+          "items": [
+            {
+              "value": "₪ TODO",
+              "label": "Cost per session (wholesale ÷ amp/session)",
+              "sub": "TODO: your wholesale price"
+            },
+            {
+              "value": "₪ TODO",
+              "label": "Suggested patient charge per session"
+            },
+            {
+              "value": "~60–70%",
+              "label": "Typical gross margin",
+              "sub": "Replace with your figure"
+            }
+          ],
+          "disclaimer": "Numbers are placeholders for layout preview. Replace via /admin/products before publishing."
+        },
+        "bundle": {
+          "title": "V-Tech anti-aging facial protocol",
+          "intro": "The full V-Tech session — biostimulation, sealing and post-procedure recovery — in three steps.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Step 1 — Active"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Step 2 — Seal & soothe"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Step 3 — Recovery finish"
+            }
+          ]
+        }
+      },
+      "ru": {
+        "name": "V-Tech Serum",
+        "eyebrow": "ПРОФЕССИОНАЛЬНАЯ ЭКЗОСОМНАЯ СЫВОРОТКА",
+        "tagline": "Синтетические экзосомы + 2% PDRN — клиническая регенерация в ампуле 5 мл",
+        "description": "V-Tech Serum — флагманская сыворотка системы V-Tech: синтетические экзосомы в синергии с 2% PDRN-полинуклеотидами, биомиметическими пептидами и растительными стволовыми клетками. Создана для кабинетных протоколов с видимым результатом по текстуре, плотности и восстановлению уже после первой процедуры.",
+        "shortDescription": "Экзосомная сыворотка 5 мл: синтетические экзосомы + 2% PDRN + биомиметические пептиды для клинической регенерации.",
+        "keyFacts": [
+          "Синтетические экзосомы и 2% PDRN запускают клеточное обновление и плотность дермы.",
+          "Биомиметические пептиды и растительные стволовые клетки усиливают репарацию и антиоксидантную защиту.",
+          "Одноразовая ампула 5 мл для кабинетных протоколов.",
+          "В паре с V-Tech Gel Mask образует профессиональный протокол «1+1=3»."
+        ],
+        "stats": [
+          {
+            "value": "5 мл",
+            "label": "Ампула"
+          },
+          {
+            "value": "2%",
+            "label": "PDRN"
+          },
+          {
+            "value": "Pro",
+            "label": "Кабинетное применение"
+          },
+          {
+            "value": "+ Маска",
+            "label": "Партнёр протокола"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Клеточное обновление",
+            "text": "Синтетические экзосомы и PDRN ускоряют метаболизм фибробластов и видимое обновление кожи."
+          },
+          {
+            "title": "Плотность и упругость",
+            "text": "Биомиметические пептиды стимулируют синтез коллагена для восстановления плотности и тонуса."
+          },
+          {
+            "title": "Восстановление после процедур",
+            "text": "Ускоряет заживление и успокаивает кожу после лазера, пилингов и микронидлинга."
+          },
+          {
+            "title": "Антиоксидантная защита",
+            "text": "Растительные стволовые клетки поддерживают кожу против окислительного стресса."
+          }
+        ],
+        "ingredientsIntro": "Клинический стек активов, синергично работающих на клеточном уровне.",
+        "ingredients": [
+          "Синтетические экзосомы — нановезикулы, улучшающие межклеточную коммуникацию и доставку активов",
+          "2% PDRN (полидезоксирибонуклеотиды) — активация фибробластов и поддержка ДНК",
+          "Биомиметические пептиды — сигналы репарации и ремоделирования",
+          "Растительные стволовые клетки — антиоксидантная защита и устойчивость кожи"
+        ],
+        "stepsTitle": "Как применять",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Очищение",
+            "text": "Нанести на очищенную кожу после профессиональной процедуры."
+          },
+          {
+            "num": "02",
+            "title": "Нанесение",
+            "text": "1 ампула на лицо/зону; мягкие движения от центра до полного впитывания."
+          },
+          {
+            "num": "03",
+            "title": "Пара",
+            "text": "Завершить V-Tech Gel Mask для эффекта протокола."
+          }
+        ],
+        "protocol": {
+          "title": "Протокол применения",
+          "items": [
+            "Очистите кожу и промокните.",
+            "Нанесите 1 × 5 мл ампулу на лицо/зону, мягко распределяя до впитывания.",
+            "По желанию: V-Tech Gel Mask поверх на 15–20 минут.",
+            "Смыть маску (если использовалась); сыворотку — не смывать."
+          ]
+        },
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Исключить кислоты и абразивы на 24 часа.",
+            "SPF днём в течение цикла протокола.",
+            "Мягкий уход в первые 48 часов.",
+            "Повторять процедуру раз в 1–2 недели для клинического цикла."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активное воспалительное акне и открытые раны в зоне нанесения",
+            "Активный герпес",
+            "Беременность и лактация",
+            "Индивидуальная чувствительность к компонентам"
+          ]
+        },
+        "chipsTitle": "Цели",
+        "chips": [
+          "Восстановление после процедур",
+          "Потеря упругости",
+          "Неровности текстуры",
+          "Тусклость",
+          "Постакне",
+          "Мелкие морщины"
+        ],
+        "ctaTitle": "Добавьте V-Tech Serum в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "faq": {
+          "title": "Частые вопросы",
+          "intro": "Что чаще всего спрашивают клиники, оценивающие V-Tech Serum впервые.",
+          "items": [
+            {
+              "q": "Сколько сессий в стандартном курсе?",
+              "a": "4–6 сессий с интервалом 2 недели. Поддержка раз в 4–8 недель в зависимости от показаний и состояния кожи."
+            },
+            {
+              "q": "Можно ли совмещать с микронидлингом или фракционным лазером?",
+              "a": "Да — V-Tech Serum рассчитан на нанесение после процедуры на контролируемые микроканалы. Наносить сразу после прохода устройства для максимального проникновения PDRN."
+            },
+            {
+              "q": "Чем V-Tech Serum отличается от V-Tech Gel-Mask?",
+              "a": "Серум содержит высокомолекулярный PDRN (2%, 20 мг/мл) и биомиметические пептиды — это активная фаза. Маска содержит низкомолекулярный PDRN (1%) для восстановления барьера и наносится сразу после серума, чтобы запечатать и успокоить."
+            },
+            {
+              "q": "Когда пациент может вернуться к макияжу и активному уходу?",
+              "a": "Минеральный макияж — на следующий день. Ретиноиды и кислоты — через 5–7 дней. Избегать прямого солнца и сауны 48 часов."
+            },
+            {
+              "q": "Подходит ли чувствительной коже / при розацеа?",
+              "a": "Да — PDRN с пептидами не провоспалительный. На розацеа делайте patch-test и начинайте с одной ампулы по протоколу half-face."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "Клинические наблюдения",
+          "intro": "По данным клиник-партнёров в Израиле и ЕС. Замените на свои внутренние цифры перед публикацией.",
+          "items": [
+            {
+              "value": "92%",
+              "label": "Пациентов отмечают видимый лифтинг к 4-й сессии",
+              "source": "TODO: источник / выборка"
+            },
+            {
+              "value": "4–6",
+              "label": "Сессий в полном курсе",
+              "source": "TODO: уточнить по показаниям"
+            },
+            {
+              "value": "2 недели",
+              "label": "Интервал между сессиями"
+            }
+          ]
+        },
+        "economics": {
+          "title": "Экономика для клиники",
+          "intro": "Иллюстративные цифры — замените на вашу оптовую цену и рекомендованную стоимость сессии.",
+          "items": [
+            {
+              "value": "₪ TODO",
+              "label": "Себестоимость сессии (опт ÷ амп/сессия)",
+              "sub": "TODO: ваша оптовая цена"
+            },
+            {
+              "value": "₪ TODO",
+              "label": "Рекомендованная цена для пациента"
+            },
+            {
+              "value": "~60–70%",
+              "label": "Типичная валовая маржа",
+              "sub": "Замените своей цифрой"
+            }
+          ],
+          "disclaimer": "Цифры — заглушки для предпросмотра вёрстки. Замените через /admin/products перед публикацией."
+        },
+        "bundle": {
+          "title": "Антивозрастной протокол V-Tech",
+          "intro": "Полная сессия V-Tech — биостимуляция, запечатывание и постпроцедурное восстановление — в три шага.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Шаг 1 — Активная фаза"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Шаг 2 — Запечатывание"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Шаг 3 — Восстановление"
+            }
+          ]
+        }
+      },
+      "he": {
+        "name": "V-Tech Serum",
+        "eyebrow": "סרום אקסוזומים מקצועי",
+        "tagline": "אקסוזומים סינתטיים + 2% PDRN — התחדשות קלינית באמפולה של 5 מ\"ל",
+        "description": "V-Tech Serum הוא הסרום הדגל של מערכת V-Tech: אקסוזומים סינתטיים בשילוב 2% PDRN, פפטידים ביו-מימטיים ותאי גזע צמחיים. תוכנן לפרוטוקולים במרפאה עם תוצאות נראות במרקם, צפיפות והחלמה כבר מהמפגש הראשון.",
+        "shortDescription": "סרום אקסוזומים 5 מ\"ל: אקסוזומים סינתטיים + 2% PDRN + פפטידים ביו-מימטיים להתחדשות קלינית.",
+        "keyFacts": [
+          "אקסוזומים סינתטיים ו-2% PDRN מאיצים התחדשות תאית וצפיפות עורית.",
+          "פפטידים ביו-מימטיים ותאי גזע צמחיים מחזקים תיקון והגנה אנטי-אוקסידנטית.",
+          "אמפולה חד-פעמית של 5 מ\"ל לפרוטוקולים במרפאה.",
+          "בזיווג עם V-Tech Gel Mask מהווה את הפרוטוקול המקצועי \"1+1=3\"."
+        ],
+        "stats": [
+          {
+            "value": "5 מ\"ל",
+            "label": "אמפולה"
+          },
+          {
+            "value": "2%",
+            "label": "PDRN"
+          },
+          {
+            "value": "Pro",
+            "label": "שימוש במרפאה"
+          },
+          {
+            "value": "+ מסכה",
+            "label": "שותף הפרוטוקול"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "התחדשות תאית",
+            "text": "אקסוזומים סינתטיים ו-PDRN מאיצים מטבוליזם של פיברובלסטים והתחדשות עור נראית."
+          },
+          {
+            "title": "צפיפות ומוצקות",
+            "text": "פפטידים ביו-מימטיים מעודדים סינתזת קולגן לשיקום צפיפות וטון העור."
+          },
+          {
+            "title": "שיקום לאחר טיפולים",
+            "text": "מאיץ ריפוי ומרגיע לאחר לייזרים, פילינגים ומיקרונידלינג."
+          },
+          {
+            "title": "הגנה אנטי-אוקסידנטית",
+            "text": "תאי גזע צמחיים מחזקים את העור מול עקה חמצונית."
+          }
+        ],
+        "ingredientsIntro": "מערך פעילים קליני שעובד בסינרגיה ברמה התאית.",
+        "ingredients": [
+          "אקסוזומים סינתטיים — שלפוחיות ננו המשפרות תקשורת בין-תאית והעברת פעילים",
+          "2% PDRN (פולידאוקסיריבונוקליאוטידים) — הפעלת פיברובלסטים ותמיכת דנ\"א",
+          "פפטידים ביו-מימטיים — איתותי תיקון ועיצוב מחודש",
+          "תאי גזע צמחיים — הגנה אנטי-אוקסידנטית וחוסן עור"
+        ],
+        "stepsTitle": "אופן השימוש",
+        "steps": [
+          {
+            "num": "01",
+            "title": "ניקיון",
+            "text": "ליישם על עור נקי לאחר טיפול מקצועי."
+          },
+          {
+            "num": "02",
+            "title": "יישום",
+            "text": "אמפולה אחת לפנים/אזור; תנועות עדינות עד ספיגה מלאה."
+          },
+          {
+            "num": "03",
+            "title": "זיווג",
+            "text": "להמשיך עם V-Tech Gel Mask לקבלת סינרגיית הפרוטוקול."
+          }
+        ],
+        "protocol": {
+          "title": "פרוטוקול היישום",
+          "items": [
+            "לנקות את העור ולייבש בטפיחות.",
+            "ליישם אמפולה של 5 מ\"ל לאזור הטיפול; להחליק כלפי חוץ עד ספיגה.",
+            "אופציונלי: למרוח V-Tech Gel Mask למשך 15–20 דקות.",
+            "אם נמרחה המסכה — לשטוף; את הסרום אין לשטוף."
+          ]
+        },
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "להימנע מחומצות ומחומרים שוחקים למשך 24 שעות.",
+            "שימוש ב-SPF ביום במהלך מחזור הפרוטוקול.",
+            "ניקוי עדין ב-48 השעות הראשונות.",
+            "לחזור על הפרוטוקול אחת ל-1–2 שבועות במחזור קליני."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "אקנה פעיל דלקתי או פצעים פתוחים באזור הטיפול",
+            "הרפס פעיל",
+            "הריון והנקה",
+            "רגישות ידועה לאחד הרכיבים"
+          ]
+        },
+        "chipsTitle": "מטרות",
+        "chips": [
+          "שיקום לאחר טיפולים",
+          "אובדן מוצקות",
+          "אי-סדירות מרקם",
+          "עמעום",
+          "סימני פוסט-אקנה",
+          "קווים דקים"
+        ],
+        "ctaTitle": "הביאו את V-Tech Serum למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "faq": {
+          "title": "שאלות נפוצות",
+          "intro": "מה שואלים הכי הרבה מרפאות שמעריכות את V-Tech Serum בפעם הראשונה.",
+          "items": [
+            {
+              "q": "כמה טיפולים בקורס סטנדרטי?",
+              "a": "4–6 טיפולים בהפרשי שבועיים. תחזוקה כל 4–8 שבועות בהתאם להתוויה ולמצב העור."
+            },
+            {
+              "q": "אפשר לשלב עם מיקרונידלינג או לייזר פרקציונלי?",
+              "a": "כן — V-Tech Serum מתוכנן ליישום אחרי פרוצדורה על מיקרו-תעלות מבוקרות. למרוח מיד אחרי המעבר של המכשיר לחדירה מקסימלית של ה-PDRN."
+            },
+            {
+              "q": "מה ההבדל בין V-Tech Serum ל-V-Tech Gel-Mask?",
+              "a": "הסרום נושא PDRN במשקל מולקולרי גבוה (2%, 20 מ\"ג/מ\"ל) ופפטידים ביומימטיים — שלב פעיל. המסכה נושאת PDRN במשקל מולקולרי נמוך (1%) לשיקום מחסום ומוחלת מיד אחרי הסרום כדי לאטום ולהרגיע."
+            },
+            {
+              "q": "מתי המטופל יכול לחזור לאיפור ולטיפוח אקטיבי?",
+              "a": "איפור מינרלי — ביום שלמחרת. רטינואידים וחומצות — אחרי 5–7 ימים. להימנע משמש ישירה וסאונה למשך 48 שעות."
+            },
+            {
+              "q": "מתאים לעור רגיש / רוזציאה?",
+              "a": "כן — PDRN עם פפטידים אינו מעורר דלקת. ברוזציאה לבצע פאץ׳-טסט ולהתחיל מאמפולה אחת בפרוטוקול חצי-פנים."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "תצפיות קליניות",
+          "intro": "דווח על-ידי מרפאות שותפות בישראל ובאירופה. החליפו במספרים פנימיים לפני פרסום.",
+          "items": [
+            {
+              "value": "92%",
+              "label": "מטופלים מדווחים על מתיחות נראית לעין בטיפול הרביעי",
+              "source": "TODO: מקור / גודל מדגם"
+            },
+            {
+              "value": "4–6",
+              "label": "טיפולים בקורס מלא",
+              "source": "TODO: לעדן לפי התוויה"
+            },
+            {
+              "value": "שבועיים",
+              "label": "מרווח בין טיפולים"
+            }
+          ]
+        },
+        "economics": {
+          "title": "כלכלת המרפאה",
+          "intro": "מספרים להמחשה — החליפו במחיר הסיטונאי שלכם ובמחיר מומלץ לטיפול.",
+          "items": [
+            {
+              "value": "₪ TODO",
+              "label": "עלות לטיפול (סיטונאי ÷ אמפ׳/טיפול)",
+              "sub": "TODO: המחיר הסיטונאי שלכם"
+            },
+            {
+              "value": "₪ TODO",
+              "label": "מחיר מומלץ למטופל לטיפול"
+            },
+            {
+              "value": "~60–70%",
+              "label": "שולי רווח גולמי טיפוסיים",
+              "sub": "החליפו במספר שלכם"
+            }
+          ],
+          "disclaimer": "המספרים הם מציבים זמניים לתצוגה. החליפו ב-/admin/products לפני פרסום."
+        },
+        "bundle": {
+          "title": "פרוטוקול אנטי-אייג׳ינג של V-Tech",
+          "intro": "הסשן המלא של V-Tech — ביוסטימולציה, אטימה והתאוששות פוסט-פרוצדורה — בשלושה שלבים.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "שלב 1 — פעיל"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "שלב 2 — אטימה והרגעה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "שלב 3 — סיום והתאוששות"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "v-tech-gel-mask",
+    "category": "mask",
+    "status": "available",
+    "accent": "gold",
+    "image": "/products/v-tech-gel-mask/hero.png",
+    "gallery": [],
+    "content": {
+      "en": {
+        "name": "V-Tech Gel Mask",
+        "eyebrow": "PROFESSIONAL GEL MASK",
+        "tagline": "The protocol partner of V-Tech Serum — soothing, plumping, density-restoring",
+        "description": "V-Tech Gel Mask is the protocol partner of V-Tech Serum. Low-molecular polynucleotides, biomimetic peptides, snail mucin and low-molecular hyaluronic acids settle into the skin in 15–20 minutes — soothing the post-procedure barrier, locking in the serum and producing the brand’s signature “1+1=3” effect.",
+        "shortDescription": "Gel mask with low-MW polynucleotides + peptides + snail mucin + HA — the protocol partner of V-Tech Serum.",
+        "keyFacts": [
+          "Designed as the protocol partner of V-Tech Serum (the “1+1=3” synergy).",
+          "Low-molecular polynucleotides + biomimetic peptides + snail mucin + HA.",
+          "5 ml single-use sachet; 15–20 minutes application.",
+          "Soothes and seals after lasers, peels, microneedling and the V-Tech Serum step."
+        ],
+        "stats": [
+          {
+            "value": "5 ml",
+            "label": "Sachet"
+          },
+          {
+            "value": "15–20 min",
+            "label": "Application"
+          },
+          {
+            "value": "Pro",
+            "label": "In-clinic"
+          },
+          {
+            "value": "+ Serum",
+            "label": "Protocol partner"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Lock-in & boost",
+            "text": "Seals V-Tech Serum into the skin and extends its working window."
+          },
+          {
+            "title": "Plumping hydration",
+            "text": "Low-MW hyaluronic acids and snail mucin restore visible plumpness."
+          },
+          {
+            "title": "Post-procedure soothing",
+            "text": "Calms redness and rebuilds the barrier after invasive treatments."
+          },
+          {
+            "title": "Density support",
+            "text": "Low-MW polynucleotides and peptides reinforce dermal density."
+          }
+        ],
+        "ingredientsIntro": "A soothing-and-sealing complex engineered to amplify the serum step.",
+        "ingredients": [
+          "Low-molecular polynucleotides — fibroblast support and density",
+          "Biomimetic peptides — repair and remodelling signals",
+          "Snail mucin — soothing, regenerative, hydrating",
+          "Low-molecular hyaluronic acids — deep hydration and plumping"
+        ],
+        "protocol": {
+          "title": "Application protocol",
+          "items": [
+            "Apply directly after V-Tech Serum on cleansed skin.",
+            "Distribute 1 sachet across the face / area; leave for 15–20 minutes.",
+            "Remove gently with damp cotton; do not over-rub.",
+            "Optional: layer SPF if the session is during the day."
+          ]
+        },
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Avoid acidic and abrasive products for 24 hours.",
+            "Maintain a gentle cleansing routine for 48 hours.",
+            "Repeat the V-Tech protocol once every 1–2 weeks for a clinical cycle."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Open wounds, active inflamed acne or active dermatitis on the treatment area",
+            "Known sensitivity to any of the listed ingredients (incl. snail mucin)",
+            "Pregnancy and lactation",
+            "Active herpes"
+          ]
+        },
+        "chipsTitle": "Best after",
+        "chips": [
+          "V-Tech Serum",
+          "Peeling",
+          "Fractional laser",
+          "Microneedling",
+          "Mesotherapy",
+          "LED therapy"
+        ],
+        "ctaTitle": "Bring V-Tech Gel Mask to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "faq": {
+          "title": "Frequently asked questions",
+          "intro": "Practical questions about the V-Tech Gel Mask layer.",
+          "items": [
+            {
+              "q": "When is the Gel Mask applied in the protocol?",
+              "a": "Immediately after V-Tech Serum and any device pass. The mask seals the actives in, calms inflammation and tops up barrier function."
+            },
+            {
+              "q": "How long does the mask stay on?",
+              "a": "15–25 minutes per session, removed without rinse so the residual film continues to work on the skin."
+            },
+            {
+              "q": "Can patients use it as home care between sessions?",
+              "a": "It is a professional-use product, but a sealed ampoule can be sent home for one-off post-procedure recovery use under written aftercare guidance."
+            },
+            {
+              "q": "Any sensitivity to snail extract concerns?",
+              "a": "Snail mucin is well-tolerated but check patient history. Replace with V-Tech Serum alone for confirmed allergy cases."
+            },
+            {
+              "q": "How does the gold-carrier peptide (Acetyl Heptapeptide-9) deliver?",
+              "a": "The gold particle acts as a microcarrier — improves topical penetration and helps the peptide reach fibroblasts in the upper dermis without degradation."
+            }
+          ]
+        }
+      },
+      "ru": {
+        "name": "V-Tech Gel Mask",
+        "eyebrow": "ПРОФЕССИОНАЛЬНАЯ ГЕЛЕВАЯ МАСКА",
+        "tagline": "Партнёр V-Tech Serum по протоколу — успокаивает, наполняет, возвращает плотность",
+        "description": "V-Tech Gel Mask — партнёр V-Tech Serum по протоколу. Низкомолекулярные полинуклеотиды, биомиметические пептиды, муцин улитки и низкомолекулярные гиалуроновые кислоты впитываются за 15–20 минут, успокаивая барьер после процедуры, фиксируя сыворотку и создавая фирменный эффект бренда «1+1=3».",
+        "shortDescription": "Гелевая маска с низкомолекулярными полинуклеотидами + пептидами + муцином улитки + HA — партнёр V-Tech Serum по протоколу.",
+        "keyFacts": [
+          "Создана как партнёр V-Tech Serum (синергия «1+1=3»).",
+          "Низкомолекулярные полинуклеотиды + биомиметические пептиды + муцин улитки + HA.",
+          "Одноразовый саше 5 мл; аппликация 15–20 минут.",
+          "Успокаивает и фиксирует после лазеров, пилингов, микронидлинга и шага V-Tech Serum."
+        ],
+        "stats": [
+          {
+            "value": "5 мл",
+            "label": "Саше"
+          },
+          {
+            "value": "15–20 мин",
+            "label": "Аппликация"
+          },
+          {
+            "value": "Pro",
+            "label": "Кабинетное"
+          },
+          {
+            "value": "+ Сыворотка",
+            "label": "Партнёр протокола"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Запечатывание и усиление",
+            "text": "Фиксирует V-Tech Serum в коже и продлевает её работу."
+          },
+          {
+            "title": "Объём и увлажнение",
+            "text": "Низкомолекулярные HA и муцин улитки возвращают видимый плампинг."
+          },
+          {
+            "title": "Успокоение после процедур",
+            "text": "Снимает покраснение и восстанавливает барьер после инвазивных воздействий."
+          },
+          {
+            "title": "Поддержка плотности",
+            "text": "Низкомолекулярные полинуклеотиды и пептиды укрепляют плотность дермы."
+          }
+        ],
+        "ingredientsIntro": "Успокаивающий и фиксирующий комплекс — для усиления шага сыворотки.",
+        "ingredients": [
+          "Низкомолекулярные полинуклеотиды — поддержка фибробластов и плотности",
+          "Биомиметические пептиды — сигналы репарации и ремоделирования",
+          "Муцин улитки — успокоение, регенерация, увлажнение",
+          "Низкомолекулярные гиалуроновые кислоты — глубокое увлажнение и плампинг"
+        ],
+        "protocol": {
+          "title": "Протокол применения",
+          "items": [
+            "Наносить сразу после V-Tech Serum на очищенную кожу.",
+            "Распределите 1 саше по лицу/зоне; оставьте на 15–20 минут.",
+            "Снимите влажным ватным диском, без сильного трения.",
+            "По желанию: SPF, если процедура днём."
+          ]
+        },
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Исключить кислоты и абразивы на 24 часа.",
+            "Мягкий уход в первые 48 часов.",
+            "Повторять протокол V-Tech раз в 1–2 недели для клинического цикла."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Открытые раны, активное воспалительное акне или дерматит в зоне нанесения",
+            "Индивидуальная чувствительность к компонентам (включая муцин улитки)",
+            "Беременность и лактация",
+            "Активный герпес"
+          ]
+        },
+        "chipsTitle": "Лучше всего после",
+        "chips": [
+          "V-Tech Serum",
+          "Пилинг",
+          "Фракционный лазер",
+          "Микронидлинг",
+          "Мезотерапия",
+          "LED-терапия"
+        ],
+        "ctaTitle": "Добавьте V-Tech Gel Mask в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "faq": {
+          "title": "Частые вопросы",
+          "intro": "Практические вопросы по слою V-Tech Gel-Mask.",
+          "items": [
+            {
+              "q": "На каком этапе протокола наносится маска?",
+              "a": "Сразу после V-Tech Serum и работы устройством. Маска запечатывает активы, успокаивает воспаление и восстанавливает барьер."
+            },
+            {
+              "q": "Сколько маска находится на лице?",
+              "a": "15–25 минут за сессию. Снимается без смывания — остаточная плёнка продолжает работать."
+            },
+            {
+              "q": "Можно ли давать пациенту для домашнего использования между сессиями?",
+              "a": "Это профессиональный продукт, но запечатанную ампулу можно выдать на одно постпроцедурное восстановление дома с письменным регламентом ухода."
+            },
+            {
+              "q": "Что с реакциями на улиточный экстракт?",
+              "a": "Муцин улитки переносится хорошо, но проверьте анамнез. При подтверждённой аллергии замените только серумом."
+            },
+            {
+              "q": "Как работает пептид с золотым носителем (Acetyl Heptapeptide-9)?",
+              "a": "Частица золота выступает микроносителем — улучшает проникновение и помогает пептиду достичь фибробластов верхней дермы без деградации."
+            }
+          ]
+        }
+      },
+      "he": {
+        "name": "V-Tech Gel Mask",
+        "eyebrow": "מסכת ג'ל מקצועית",
+        "tagline": "שותפת הפרוטוקול של V-Tech Serum — מרגיעה, ממלאת ומחזירה צפיפות",
+        "description": "V-Tech Gel Mask היא שותפת הפרוטוקול של V-Tech Serum. פולינוקלאוטידים במשקל מולקולרי נמוך, פפטידים ביו-מימטיים, מוצין חלזון וחומצות היאלורוניות נספגים תוך 15–20 דקות — מרגיעים את המחסום שלאחר הטיפול, נועלים את הסרום ויוצרים את האפקט החתום של המותג \"1+1=3\".",
+        "shortDescription": "מסכת ג'ל עם פולינוקלאוטידים במשקל נמוך + פפטידים + מוצין חלזון + HA — שותפת הפרוטוקול של V-Tech Serum.",
+        "keyFacts": [
+          "תוכננה כשותפת הפרוטוקול של V-Tech Serum (סינרגיית \"1+1=3\").",
+          "פולינוקלאוטידים במשקל מולקולרי נמוך + פפטידים ביו-מימטיים + מוצין חלזון + HA.",
+          "שקית חד-פעמית של 5 מ\"ל; יישום 15–20 דקות.",
+          "מרגיעה ונועלת לאחר לייזרים, פילינגים, מיקרונידלינג ושלב V-Tech Serum."
+        ],
+        "stats": [
+          {
+            "value": "5 מ\"ל",
+            "label": "שקית"
+          },
+          {
+            "value": "15–20 דק׳",
+            "label": "יישום"
+          },
+          {
+            "value": "Pro",
+            "label": "במרפאה"
+          },
+          {
+            "value": "+ סרום",
+            "label": "שותף הפרוטוקול"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "נעילה והגברה",
+            "text": "נועלת את V-Tech Serum בעור ומאריכה את חלון הפעולה שלו."
+          },
+          {
+            "title": "לחות מלאות",
+            "text": "HA במשקל נמוך ומוצין חלזון מחזירים מלאות נראית לעין."
+          },
+          {
+            "title": "הרגעה לאחר טיפולים",
+            "text": "מרגיעה אדמומיות ומשקמת את המחסום אחרי טיפולים פולשניים."
+          },
+          {
+            "title": "תמיכת צפיפות",
+            "text": "פולינוקלאוטידים ופפטידים במשקל נמוך מחזקים את צפיפות הדרמיס."
+          }
+        ],
+        "ingredientsIntro": "קומפלקס מרגיע ונועל שתוכנן להעצים את שלב הסרום.",
+        "ingredients": [
+          "פולינוקלאוטידים במשקל מולקולרי נמוך — תמיכה בפיברובלסטים ובצפיפות",
+          "פפטידים ביו-מימטיים — איתותי תיקון ועיצוב מחודש",
+          "מוצין חלזון — הרגעה, התחדשות, לחות",
+          "חומצות היאלורוניות במשקל מולקולרי נמוך — לחות עמוקה ומלאות"
+        ],
+        "protocol": {
+          "title": "פרוטוקול היישום",
+          "items": [
+            "ליישם מיד לאחר V-Tech Serum על עור נקי.",
+            "לפזר שקית אחת על הפנים/אזור הטיפול; להשאיר 15–20 דקות.",
+            "להסיר בעדינות בפד צמר גפן לח, ללא שפשוף יתר.",
+            "אופציונלי: למרוח SPF אם הטיפול נעשה ביום."
+          ]
+        },
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "להימנע מחומצות וחומרים שוחקים למשך 24 שעות.",
+            "ניקוי עדין ב-48 השעות הראשונות.",
+            "לחזור על פרוטוקול V-Tech אחת ל-1–2 שבועות במחזור קליני."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "פצעים פתוחים, אקנה פעיל דלקתי או דרמטיטיס באזור הטיפול",
+            "רגישות ידועה לאחד הרכיבים (כולל מוצין חלזון)",
+            "הריון והנקה",
+            "הרפס פעיל"
+          ]
+        },
+        "chipsTitle": "מומלץ במיוחד לאחר",
+        "chips": [
+          "V-Tech Serum",
+          "פילינג",
+          "לייזר פרקציוני",
+          "מיקרונידלינג",
+          "מזותרפיה",
+          "טיפול LED"
+        ],
+        "ctaTitle": "הביאו את V-Tech Gel Mask למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "faq": {
+          "title": "שאלות נפוצות",
+          "intro": "שאלות מעשיות על שכבת V-Tech Gel-Mask.",
+          "items": [
+            {
+              "q": "מתי המסכה מוחלת בפרוטוקול?",
+              "a": "מיד אחרי V-Tech Serum ומעבר המכשיר. המסכה אוטמת את הרכיבים הפעילים, מרגיעה דלקת ומשיבה מחסום."
+            },
+            {
+              "q": "כמה זמן המסכה נשארת?",
+              "a": "15–25 דקות לטיפול. מוסרים בלי שטיפה — שכבת השאריות ממשיכה לעבוד."
+            },
+            {
+              "q": "אפשר לתת למטופל לשימוש ביתי בין טיפולים?",
+              "a": "זהו מוצר מקצועי, אך אמפולה אטומה ניתנת לשחרור לשימוש חד-פעמי בהתאוששות פוסט-פרוצדורה תחת הוראות בכתב."
+            },
+            {
+              "q": "מה עם רגישות לתמצית חילזון?",
+              "a": "מוצין חילזון נסבל היטב — בדקו את ההיסטוריה הרפואית. במקרה של אלרגיה מאומתת — להשתמש בסרום בלבד."
+            },
+            {
+              "q": "איך עובד הפפטיד עם נשא הזהב (Acetyl Heptapeptide-9)?",
+              "a": "חלקיק הזהב משמש כמיקרו-נשא — משפר חדירה ועוזר לפפטיד להגיע לפיברובלסטים בדרמיס העליון בלי דגרדציה."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "exotech-gel",
+    "category": "gel",
+    "status": "available",
+    "accent": "rose",
+    "image": "/products/exotech-gel/hero.png",
+    "gallery": [],
+    "content": {
+      "en": {
+        "name": "Exotech Gel",
+        "eyebrow": "EXOSOME-ENCAPSULATED GEL",
+        "tagline": "Active ingredients encapsulated inside synthetic exosome structures",
+        "description": "Exotech Gel is a synthetic-exosome-encapsulated gel engineered for daily clinical and home maintenance. Active ingredients sit inside exosome-mimetic vesicles for targeted, deeper delivery into the skin — sustaining the clinical result between in-clinic sessions.",
+        "shortDescription": "Exosome-encapsulated gel for daily maintenance between in-clinic V-Tech protocols.",
+        "keyFacts": [
+          "Actives encapsulated inside synthetic exosome structures for deeper, targeted delivery.",
+          "Sustains the V-Tech clinical result between in-clinic sessions.",
+          "Light, daily-use gel texture; no rinsing.",
+          "Designed alongside the V-Tech protocol for compounding effect."
+        ],
+        "stats": [
+          {
+            "value": "Daily",
+            "label": "Use"
+          },
+          {
+            "value": "Encapsulated",
+            "label": "Active delivery"
+          },
+          {
+            "value": "Pro / Home",
+            "label": "Surface"
+          },
+          {
+            "value": "+ V-Tech",
+            "label": "Protocol partner"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Targeted delivery",
+            "text": "Exosome-mimetic encapsulation drives actives past the surface layer."
+          },
+          {
+            "title": "Maintenance",
+            "text": "Holds the clinical result between V-Tech sessions."
+          },
+          {
+            "title": "Lightweight feel",
+            "text": "Daily-use gel texture, fast-absorbing, no rinsing."
+          },
+          {
+            "title": "Compatibility",
+            "text": "Layers cleanly with serums, moisturisers and SPF."
+          }
+        ],
+        "ingredientsIntro": "Exosome-encapsulated actives engineered for sustained delivery.",
+        "ingredients": [
+          "Exosome-mimetic vesicles — encapsulation carrier for the actives",
+          "Biomimetic peptides — ongoing repair signals",
+          "Hydrating polymers — surface comfort and pliability",
+          "Antioxidant complex — daily defence"
+        ],
+        "aftercare": {
+          "title": "Daily routine",
+          "items": [
+            "Apply to cleansed skin morning and / or night.",
+            "Follow with SPF in the morning routine.",
+            "Pairs well after V-Tech Serum on protocol days."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Open wounds or active dermatitis on the application area",
+            "Known sensitivity to any of the listed ingredients"
+          ]
+        },
+        "chipsTitle": "Targets",
+        "chips": [
+          "Maintenance",
+          "Loss of firmness",
+          "Dullness",
+          "Dehydration",
+          "Texture irregularities"
+        ],
+        "ctaTitle": "Bring Exotech Gel to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "faq": {
+          "title": "Frequently asked questions",
+          "intro": "Common questions about Exotech Gel.",
+          "items": [
+            {
+              "q": "What conditions does Exotech Gel address?",
+              "a": "Skin renewal, hydration restoration, post-procedure recovery on the face and body. Works well as a finisher after laser, RF or microneedling."
+            },
+            {
+              "q": "How is it different from V-Tech?",
+              "a": "V-Tech is the structured serum + mask system for treatment sessions. Exotech is a single-step gel optimised for hydration and post-procedure soothing — often used in tandem on the same patient."
+            },
+            {
+              "q": "Standard session length?",
+              "a": "10–15 minutes of contact time after the active step. Single-use only."
+            },
+            {
+              "q": "Can it be layered under makeup the next day?",
+              "a": "Yes — Exotech leaves no residue once absorbed and is compatible with mineral foundation."
+            }
+          ]
+        }
+      },
+      "ru": {
+        "name": "Exotech Gel",
+        "eyebrow": "ГЕЛЬ С ЭКЗОСОМНОЙ ИНКАПСУЛЯЦИЕЙ",
+        "tagline": "Активы внутри синтетических экзосомных структур",
+        "description": "Exotech Gel — гель с инкапсулированием активов внутри синтетических экзосом для ежедневной кабинетной и домашней поддержки. Активные вещества находятся внутри везикул, имитирующих экзосомы, обеспечивая прицельную и более глубокую доставку — поддерживая клинический результат между процедурами.",
+        "shortDescription": "Гель с экзосомной инкапсуляцией для ежедневной поддержки между кабинетными протоколами V-Tech.",
+        "keyFacts": [
+          "Активы инкапсулированы в синтетические экзосомные структуры для прицельной доставки в глубину.",
+          "Поддерживает клинический результат V-Tech между кабинетными процедурами.",
+          "Лёгкая ежедневная текстура; не требует смывания.",
+          "Создан под протокол V-Tech для усиления эффекта."
+        ],
+        "stats": [
+          {
+            "value": "Ежедневно",
+            "label": "Применение"
+          },
+          {
+            "value": "Инкапсуляция",
+            "label": "Доставка активов"
+          },
+          {
+            "value": "Pro / Home",
+            "label": "Поверхность"
+          },
+          {
+            "value": "+ V-Tech",
+            "label": "Партнёр протокола"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Прицельная доставка",
+            "text": "Экзосомо-миметическая инкапсуляция проводит активы за поверхностный слой."
+          },
+          {
+            "title": "Поддержка",
+            "text": "Удерживает клинический результат между процедурами V-Tech."
+          },
+          {
+            "title": "Лёгкое ощущение",
+            "text": "Гелевая текстура для ежедневного использования, быстро впитывается, не смывается."
+          },
+          {
+            "title": "Совместимость",
+            "text": "Совместим с сыворотками, кремами и SPF."
+          }
+        ],
+        "ingredientsIntro": "Активы в экзосомной инкапсуляции — для устойчивой доставки.",
+        "ingredients": [
+          "Экзосомо-миметические везикулы — носитель инкапсуляции активов",
+          "Биомиметические пептиды — продолжающиеся сигналы репарации",
+          "Увлажняющие полимеры — комфорт и пластичность поверхности",
+          "Антиоксидантный комплекс — ежедневная защита"
+        ],
+        "aftercare": {
+          "title": "Ежедневный уход",
+          "items": [
+            "Наносить на очищенную кожу утром и/или вечером.",
+            "Утром завершить SPF.",
+            "Хорошо сочетается после V-Tech Serum в дни процедур."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Открытые раны или активный дерматит в зоне нанесения",
+            "Индивидуальная чувствительность к компонентам"
+          ]
+        },
+        "chipsTitle": "Цели",
+        "chips": [
+          "Поддержка",
+          "Потеря упругости",
+          "Тусклость",
+          "Обезвоженность",
+          "Неровности текстуры"
+        ],
+        "ctaTitle": "Добавьте Exotech Gel в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "faq": {
+          "title": "Частые вопросы",
+          "intro": "Что чаще всего спрашивают по Exotech Gel.",
+          "items": [
+            {
+              "q": "Какие задачи решает Exotech Gel?",
+              "a": "Обновление кожи, восстановление гидратации, постпроцедурное восстановление на лице и теле. Хороший финиш после лазера, RF или микронидлинга."
+            },
+            {
+              "q": "Чем отличается от V-Tech?",
+              "a": "V-Tech — структурированная система серум + маска для процедурных сессий. Exotech — одношаговый гель, оптимизированный под гидратацию и постпроцедурное успокоение. Часто используются в связке на одном пациенте."
+            },
+            {
+              "q": "Стандартная длительность сессии?",
+              "a": "10–15 минут контактного времени после активной фазы. Однократное применение."
+            },
+            {
+              "q": "Можно ли наносить макияж на следующий день?",
+              "a": "Да — Exotech не оставляет следов после впитывания и совместим с минеральным тональным."
+            }
+          ]
+        }
+      },
+      "he": {
+        "name": "Exotech Gel",
+        "eyebrow": "ג'ל בקפסולת אקסוזומים",
+        "tagline": "רכיבים פעילים בתוך מבני אקסוזומים סינתטיים",
+        "description": "Exotech Gel הוא ג'ל בקפסולת אקסוזומים סינתטיים, מתוכנן לתחזוקה יומית במרפאה ובבית. הרכיבים הפעילים יושבים בתוך שלפוחיות מימטיות-אקסוזומיות להעברה ממוקדת ועמוקה לתוך העור — שומר על התוצאה הקלינית בין מפגשים במרפאה.",
+        "shortDescription": "ג'ל בקפסולת אקסוזומים לתחזוקה יומית בין פרוטוקולי V-Tech במרפאה.",
+        "keyFacts": [
+          "פעילים מקופסלים בתוך מבני אקסוזומים סינתטיים להעברה ממוקדת ועמוקה.",
+          "שומר על התוצאה הקלינית של V-Tech בין מפגשים במרפאה.",
+          "מרקם ג'ל קל לשימוש יומי; ללא צורך בשטיפה.",
+          "תוכנן לצד פרוטוקול V-Tech לאפקט מצטבר."
+        ],
+        "stats": [
+          {
+            "value": "יומי",
+            "label": "שימוש"
+          },
+          {
+            "value": "מקופסל",
+            "label": "העברת פעילים"
+          },
+          {
+            "value": "Pro / בית",
+            "label": "שטח"
+          },
+          {
+            "value": "+ V-Tech",
+            "label": "שותף הפרוטוקול"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "העברה ממוקדת",
+            "text": "קפסולה מימטית-אקסוזומית מובילה פעילים מעבר לשכבת השטח."
+          },
+          {
+            "title": "תחזוקה",
+            "text": "שומרת על התוצאה הקלינית בין מפגשי V-Tech."
+          },
+          {
+            "title": "תחושה קלילה",
+            "text": "מרקם ג'ל לשימוש יומי, נספג מהר, ללא שטיפה."
+          },
+          {
+            "title": "תאימות",
+            "text": "משתלב יפה עם סרומים, קרמים ו-SPF."
+          }
+        ],
+        "ingredientsIntro": "פעילים בקפסולת אקסוזומים — להעברה מתמשכת.",
+        "ingredients": [
+          "שלפוחיות מימטיות-אקסוזומיות — נשא הקפסולה לפעילים",
+          "פפטידים ביו-מימטיים — איתותי תיקון מתמשכים",
+          "פולימרים מלחיחים — נוחות וגמישות פני העור",
+          "קומפלקס אנטי-אוקסידנטי — הגנה יומית"
+        ],
+        "aftercare": {
+          "title": "שגרה יומית",
+          "items": [
+            "ליישם על עור נקי בבוקר ו/או בערב.",
+            "בבוקר להמשיך ב-SPF.",
+            "משתלב יפה אחרי V-Tech Serum בימי פרוטוקול."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "פצעים פתוחים או דרמטיטיס פעיל באזור היישום",
+            "רגישות ידועה לאחד הרכיבים"
+          ]
+        },
+        "chipsTitle": "מטרות",
+        "chips": [
+          "תחזוקה",
+          "אובדן מוצקות",
+          "עמעום",
+          "התייבשות",
+          "אי-סדירות מרקם"
+        ],
+        "ctaTitle": "הביאו את Exotech Gel למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "faq": {
+          "title": "שאלות נפוצות",
+          "intro": "שאלות נפוצות על Exotech Gel.",
+          "items": [
+            {
+              "q": "אילו מצבים Exotech Gel נותן להם מענה?",
+              "a": "התחדשות עור, שיקום הידרציה, התאוששות פוסט-פרוצדורה בפנים ובגוף. מצוין כשלב סיום אחרי לייזר, RF או מיקרונידלינג."
+            },
+            {
+              "q": "במה שונה מ-V-Tech?",
+              "a": "V-Tech היא מערכת מובנית של סרום + מסכה לטיפולי שולחן. Exotech הוא ג׳ל חד-שלבי שמותאם להידרציה והרגעה פוסט-פרוצדורה. לעיתים קרובות משלבים אותם על אותו מטופל."
+            },
+            {
+              "q": "אורך טיפול סטנדרטי?",
+              "a": "10–15 דקות זמן מגע אחרי השלב הפעיל. שימוש חד-פעמי."
+            },
+            {
+              "q": "אפשר להניח איפור ביום שלמחרת?",
+              "a": "כן — Exotech לא משאיר שאריות אחרי ספיגה ומסתדר עם מייקאפ מינרלי."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "exosignal-hair",
+    "category": "hair",
+    "status": "available",
+    "accent": "teal",
+    "image": "/products/exosignal-hair/hero.png",
+    "gallery": [],
+    "content": {
+      "en": {
+        "name": "Exosignal Hair",
+        "eyebrow": "PROFESSIONAL HAIR AMPOULE",
+        "tagline": "Exosome-driven hair restoration — for the clinic chair",
+        "description": "Exosignal Hair is a professional hair ampoule built on the same exosome platform as the V-Tech face system. Used by clinicians to address thinning, post-procedure scalp recovery and density loss — with a home-routine partner (Exosignal Hair Spray) to sustain the result.",
+        "shortDescription": "Professional exosome hair ampoule for thinning, post-procedure scalp recovery and density loss.",
+        "keyFacts": [
+          "Same synthetic-exosome platform as the V-Tech face system, adapted for the scalp.",
+          "Targets thinning, post-procedure recovery and density loss.",
+          "Professional ampoule format; pairs with Exosignal Hair Spray at home.",
+          "Designed for in-clinic protocols on cleansed scalp."
+        ],
+        "stats": [
+          {
+            "value": "5 ml",
+            "label": "Ampoule"
+          },
+          {
+            "value": "Pro",
+            "label": "In-clinic"
+          },
+          {
+            "value": "+ Spray",
+            "label": "Home partner"
+          },
+          {
+            "value": "Scalp",
+            "label": "Treatment area"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Density support",
+            "text": "Activates follicular metabolism and supports density restoration."
+          },
+          {
+            "title": "Thinning support",
+            "text": "Targets early thinning and post-stress hair loss patterns."
+          },
+          {
+            "title": "Post-procedure recovery",
+            "text": "Soothes and supports the scalp after PRP, mesotherapy or LED."
+          },
+          {
+            "title": "Compatibility",
+            "text": "Layers with the brand’s home maintenance Hair Spray for a sustained cycle."
+          }
+        ],
+        "ingredientsIntro": "A scalp-adapted active stack engineered on the V-Tech exosome platform.",
+        "ingredients": [
+          "Synthetic exosomes — nano-vesicles for follicular signalling",
+          "Biomimetic peptides — anchoring follicle metabolism",
+          "Growth-factor-mimetic complex — regenerative signalling",
+          "Calming complex — scalp comfort during the protocol"
+        ],
+        "stepsTitle": "How to use",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Prep",
+            "text": "Apply to a freshly cleansed scalp."
+          },
+          {
+            "num": "02",
+            "title": "Apply",
+            "text": "Distribute the ampoule onto target zones; gentle massage."
+          },
+          {
+            "num": "03",
+            "title": "Sustain",
+            "text": "Continue with Exosignal Hair Spray at home between sessions."
+          }
+        ],
+        "aftercare": {
+          "title": "After-care recommendations",
+          "items": [
+            "Avoid harsh shampoos for 24 hours.",
+            "Use the Exosignal Hair Spray on the daily home routine.",
+            "Repeat the in-clinic protocol on the cadence the practitioner advises."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Active scalp infection or open wounds",
+            "Known sensitivity to any of the listed ingredients",
+            "Pregnancy and lactation — at the clinician’s discretion"
+          ]
+        },
+        "chipsTitle": "Targets",
+        "chips": [
+          "Thinning",
+          "Density loss",
+          "Post-procedure recovery",
+          "Scalp comfort"
+        ],
+        "ctaTitle": "Bring Exosignal Hair to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "faq": {
+          "title": "Frequently asked questions",
+          "intro": "Hair-loss and scalp protocol questions.",
+          "items": [
+            {
+              "q": "How many sessions for a hair restoration course?",
+              "a": "4 sessions every 2–3 weeks, then maintenance every 6–8 weeks. Visible thickness improvement is typically reported from session 3."
+            },
+            {
+              "q": "What concerns does Exosignal Hair address?",
+              "a": "Androgenetic alopecia (early/moderate stages), telogen effluvium, post-PRP combination, and reactive shedding after stress / post-partum."
+            },
+            {
+              "q": "Application technique?",
+              "a": "Apply directly on the scalp on cleansed skin, work in with a stamp / dermaroller / mesotherapy device. Massage for 60 seconds and leave on. Patient washes hair 4 hours later."
+            },
+            {
+              "q": "Can it be combined with PRP / mesotherapy / oral finasteride?",
+              "a": "Yes — Exosignal Hair stacks well with all three. Many practitioners alternate PRP and Exosignal Hair on biweekly cadence for synergistic effect."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "Clinical observations",
+          "intro": "Field observations from partner clinics — replace with your own controlled numbers before publishing.",
+          "items": [
+            {
+              "value": "Session 3",
+              "label": "When density improvement is typically reported",
+              "source": "TODO: aggregate data"
+            },
+            {
+              "value": "4",
+              "label": "Sessions to baseline course"
+            },
+            {
+              "value": "6–8 weeks",
+              "label": "Maintenance cadence"
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Hair restoration protocol",
+          "intro": "In-clinic Exosignal Hair sessions backed by Exosignal Hair Spray at home — continuous regenerative signalling.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Step 1 — In-clinic ampoule"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Step 2 — Daily home care"
+            }
+          ]
+        }
+      },
+      "ru": {
+        "name": "Exosignal Hair",
+        "eyebrow": "ПРОФЕССИОНАЛЬНАЯ АМПУЛА ДЛЯ ВОЛОС",
+        "tagline": "Восстановление волос на базе экзосом — для кресла специалиста",
+        "description": "Exosignal Hair — профессиональная ампула для волос на той же экзосомной платформе, что и лицевая система V-Tech. Специалисты используют её для работы с истончением, восстановлением после процедур и потерей плотности — в паре с домашним спреем (Exosignal Hair Spray), сохраняющим результат.",
+        "shortDescription": "Профессиональная экзосомная ампула для волос: истончение, восстановление после процедур и потеря плотности.",
+        "keyFacts": [
+          "Та же синтетическо-экзосомная платформа, что и V-Tech, адаптирована для скальпа.",
+          "Работает с истончением, восстановлением после процедур и потерей плотности.",
+          "Формат — профессиональная ампула; в паре с домашним Exosignal Hair Spray.",
+          "Создан для кабинетных протоколов на очищенный скальп."
+        ],
+        "stats": [
+          {
+            "value": "5 мл",
+            "label": "Ампула"
+          },
+          {
+            "value": "Pro",
+            "label": "Кабинетное"
+          },
+          {
+            "value": "+ Спрей",
+            "label": "Домашний партнёр"
+          },
+          {
+            "value": "Скальп",
+            "label": "Зона"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Поддержка плотности",
+            "text": "Активирует фолликулярный метаболизм и поддерживает восстановление плотности."
+          },
+          {
+            "title": "Работа с истончением",
+            "text": "Направлен на раннее истончение и стрессовые формы выпадения."
+          },
+          {
+            "title": "Восстановление после процедур",
+            "text": "Успокаивает и поддерживает скальп после PRP, мезотерапии и LED."
+          },
+          {
+            "title": "Совместимость",
+            "text": "Сочетается с домашним Exosignal Hair Spray для устойчивого цикла."
+          }
+        ],
+        "ingredientsIntro": "Адаптированный для скальпа стек активов на платформе V-Tech.",
+        "ingredients": [
+          "Синтетические экзосомы — нановезикулы для сигналов фолликулу",
+          "Биомиметические пептиды — поддержка метаболизма фолликула",
+          "Имитирующий комплекс факторов роста — регенеративные сигналы",
+          "Успокаивающий комплекс — комфорт скальпа в протоколе"
+        ],
+        "stepsTitle": "Как применять",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Подготовка",
+            "text": "Применять на свежеочищенный скальп."
+          },
+          {
+            "num": "02",
+            "title": "Нанесение",
+            "text": "Распределить ампулу по целевым зонам; мягкий массаж."
+          },
+          {
+            "num": "03",
+            "title": "Поддержка",
+            "text": "Продолжить дома с Exosignal Hair Spray между сеансами."
+          }
+        ],
+        "aftercare": {
+          "title": "Рекомендации после процедуры",
+          "items": [
+            "Избегайте агрессивных шампуней 24 часа.",
+            "Используйте Exosignal Hair Spray в ежедневной домашней рутине.",
+            "Повторяйте кабинетный протокол с частотой, рекомендованной специалистом."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активная инфекция скальпа или открытые раны",
+            "Индивидуальная чувствительность к компонентам",
+            "Беременность и лактация — на усмотрение специалиста"
+          ]
+        },
+        "chipsTitle": "Цели",
+        "chips": [
+          "Истончение",
+          "Потеря плотности",
+          "Восстановление после процедур",
+          "Комфорт скальпа"
+        ],
+        "ctaTitle": "Добавьте Exosignal Hair в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "faq": {
+          "title": "Частые вопросы",
+          "intro": "Вопросы по протоколу для волос и кожи головы.",
+          "items": [
+            {
+              "q": "Сколько сессий для курса восстановления волос?",
+              "a": "4 сессии раз в 2–3 недели, затем поддержка раз в 6–8 недель. Заметное увеличение плотности обычно фиксируется с 3-й сессии."
+            },
+            {
+              "q": "Какие задачи решает Exosignal Hair?",
+              "a": "Андрогенная алопеция (ранние/умеренные стадии), телогеновое выпадение, комбинация с PRP, реактивное выпадение после стресса / послеродового периода."
+            },
+            {
+              "q": "Техника нанесения?",
+              "a": "Наносится на чистую кожу головы, прорабатывается стампом / дермароллером / мезоинжектором. Массаж 60 секунд, остаётся на коже. Мытьё головы — через 4 часа."
+            },
+            {
+              "q": "Можно ли комбинировать с PRP / мезотерапией / финастеридом?",
+              "a": "Да — Exosignal Hair хорошо стекируется со всеми тремя. Многие специалисты чередуют PRP и Exosignal Hair раз в 2 недели для синергии."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "Клинические наблюдения",
+          "intro": "Полевые наблюдения клиник-партнёров — замените внутренними контролируемыми данными перед публикацией.",
+          "items": [
+            {
+              "value": "Сессия 3",
+              "label": "С какой сессии обычно отмечают увеличение плотности",
+              "source": "TODO: агрегированные данные"
+            },
+            {
+              "value": "4",
+              "label": "Сессий в базовом курсе"
+            },
+            {
+              "value": "6–8 недель",
+              "label": "Цикл поддержки"
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Протокол восстановления волос",
+          "intro": "Клиническая сессия Exosignal Hair + домашний Exosignal Hair Spray — непрерывный регенеративный сигнал.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Шаг 1 — Сессия в клинике"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Шаг 2 — Домашний уход"
+            }
+          ]
+        }
+      },
+      "he": {
+        "name": "Exosignal Hair",
+        "eyebrow": "אמפולה מקצועית לשיער",
+        "tagline": "שיקום שיער מבוסס אקסוזומים — לכיסא הקליני",
+        "description": "Exosignal Hair היא אמפולת שיער מקצועית הבנויה על אותה פלטפורמת אקסוזומים סינתטיים של מערכת V-Tech לפנים. בשימוש קליני לטיפול בדלילות, שיקום קרקפת לאחר טיפולים ואובדן צפיפות — בזיווג עם שותף הבית (Exosignal Hair Spray) שמקיים את התוצאה.",
+        "shortDescription": "אמפולת אקסוזומים מקצועית לשיער: דלילות, שיקום קרקפת לאחר טיפולים ואובדן צפיפות.",
+        "keyFacts": [
+          "אותה פלטפורמת אקסוזומים סינתטיים של V-Tech, מותאמת לקרקפת.",
+          "מטפלת בדלילות, שיקום לאחר טיפולים ואובדן צפיפות.",
+          "פורמט אמפולה מקצועית; בזיווג עם Exosignal Hair Spray לבית.",
+          "מיועדת לפרוטוקולים במרפאה על קרקפת נקייה."
+        ],
+        "stats": [
+          {
+            "value": "5 מ\"ל",
+            "label": "אמפולה"
+          },
+          {
+            "value": "Pro",
+            "label": "במרפאה"
+          },
+          {
+            "value": "+ ספריי",
+            "label": "שותפת הבית"
+          },
+          {
+            "value": "קרקפת",
+            "label": "אזור הטיפול"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "תמיכת צפיפות",
+            "text": "מפעילה מטבוליזם זקיקי ותומכת בשיקום הצפיפות."
+          },
+          {
+            "title": "תמיכה בדלילות",
+            "text": "מטפלת בדלילות מוקדמת ובדפוסי נשירה הנובעים מסטרס."
+          },
+          {
+            "title": "שיקום לאחר טיפולים",
+            "text": "מרגיעה ותומכת בקרקפת לאחר PRP, מזותרפיה ו-LED."
+          },
+          {
+            "title": "תאימות",
+            "text": "משתלבת עם ספריי השיער לבית למחזור מתמשך."
+          }
+        ],
+        "ingredientsIntro": "מערך פעילים מותאם לקרקפת על פלטפורמת V-Tech.",
+        "ingredients": [
+          "אקסוזומים סינתטיים — שלפוחיות ננו לאיתות לזקיק",
+          "פפטידים ביו-מימטיים — תמיכה במטבוליזם הזקיק",
+          "קומפלקס מימטי לגורמי גדילה — איתות רגנרטיבי",
+          "קומפלקס מרגיע — נוחות הקרקפת בפרוטוקול"
+        ],
+        "stepsTitle": "אופן השימוש",
+        "steps": [
+          {
+            "num": "01",
+            "title": "הכנה",
+            "text": "ליישם על קרקפת שזה עתה נוקתה."
+          },
+          {
+            "num": "02",
+            "title": "יישום",
+            "text": "לפזר את האמפולה על אזורי המטרה; עיסוי עדין."
+          },
+          {
+            "num": "03",
+            "title": "קיום",
+            "text": "להמשיך עם Exosignal Hair Spray בבית בין המפגשים."
+          }
+        ],
+        "aftercare": {
+          "title": "המלצות לאחר הטיפול",
+          "items": [
+            "להימנע משמפו אגרסיבי למשך 24 שעות.",
+            "להשתמש ב-Exosignal Hair Spray בשגרת הבית היומית.",
+            "לחזור על הפרוטוקול בתדירות שיורה המטפל."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "זיהום קרקפת פעיל או פצעים פתוחים",
+            "רגישות ידועה לאחד הרכיבים",
+            "הריון והנקה — לשיקול דעת המטפל"
+          ]
+        },
+        "chipsTitle": "מטרות",
+        "chips": [
+          "דלילות",
+          "אובדן צפיפות",
+          "שיקום לאחר טיפולים",
+          "נוחות קרקפת"
+        ],
+        "ctaTitle": "הביאו את Exosignal Hair למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "faq": {
+          "title": "שאלות נפוצות",
+          "intro": "שאלות על פרוטוקול שיער וקרקפת.",
+          "items": [
+            {
+              "q": "כמה טיפולים בקורס שיקום שיער?",
+              "a": "4 טיפולים כל 2–3 שבועות, ולאחר מכן תחזוקה כל 6–8 שבועות. שיפור עובי השיער מורגש בדרך כלל מהטיפול השלישי."
+            },
+            {
+              "q": "אילו מצבים Exosignal Hair נותן להם מענה?",
+              "a": "אלופציה אנדרוגנטית (שלבים מוקדמים/בינוניים), טלוגן אפלוביום, שילוב עם PRP, נשירה ראקטיבית אחרי לחץ / לאחר לידה."
+            },
+            {
+              "q": "טכניקת יישום?",
+              "a": "מורחים על קרקפת נקייה, מעבדים עם סטמפ / דרמרולר / מזותרפיה. עיסוי 60 שניות, להשאיר על העור. חפיפה — אחרי 4 שעות."
+            },
+            {
+              "q": "אפשר לשלב עם PRP / מזותרפיה / פינסטריד?",
+              "a": "כן — Exosignal Hair משתלב היטב עם שלושתם. הרבה מטפלים מחליפים PRP ו-Exosignal Hair בתדירות דו-שבועית לסינרגיה."
+            }
+          ]
+        },
+        "clinicalResults": {
+          "title": "תצפיות קליניות",
+          "intro": "תצפיות שטח ממרפאות שותפות — להחליף במספרים מבוקרים פנימיים לפני פרסום.",
+          "items": [
+            {
+              "value": "טיפול 3",
+              "label": "מאיזה טיפול בדרך כלל מדווח על שיפור בעובי השיער",
+              "source": "TODO: נתונים מצטברים"
+            },
+            {
+              "value": "4",
+              "label": "טיפולים בקורס בסיסי"
+            },
+            {
+              "value": "6–8 שבועות",
+              "label": "מחזור תחזוקה"
+            }
+          ]
+        },
+        "bundle": {
+          "title": "פרוטוקול שיקום שיער",
+          "intro": "טיפול Exosignal Hair במרפאה עם Exosignal Hair Spray בבית — איתות רגנרטיבי רציף.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "שלב 1 — אמפולה במרפאה"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "שלב 2 — טיפוח יומי בבית"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "slug": "exosignal-hair-spray",
+    "category": "hair",
+    "status": "available",
+    "accent": "gold",
+    "image": "/products/exosignal-hair-spray/hero.png",
+    "gallery": [],
+    "content": {
+      "en": {
+        "name": "Exosignal Hair Spray",
+        "eyebrow": "DAILY EXOSOME HAIR SPRAY",
+        "tagline": "Sustain the clinic result — between sessions, every day",
+        "description": "Exosignal Hair Spray is the daily home-routine partner of the Exosignal Hair clinic ampoule. A light, leave-in scalp spray with exosome and biomimetic peptide actives — designed to sustain the clinical result between in-clinic sessions.",
+        "shortDescription": "Daily leave-in exosome scalp spray to sustain the result between in-clinic Exosignal Hair sessions.",
+        "keyFacts": [
+          "Exosome + biomimetic peptide actives in a daily leave-in scalp spray.",
+          "Designed as the home partner of the Exosignal Hair clinical ampoule.",
+          "Light, fast-drying — no rinsing; integrates with any styling routine.",
+          "Recommended cadence: daily, throughout the protocol cycle."
+        ],
+        "stats": [
+          {
+            "value": "Daily",
+            "label": "Use"
+          },
+          {
+            "value": "Leave-in",
+            "label": "Format"
+          },
+          {
+            "value": "Home",
+            "label": "Surface"
+          },
+          {
+            "value": "+ Ampoule",
+            "label": "Clinic partner"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Sustains the cycle",
+            "text": "Maintains the clinical signalling started by the in-clinic ampoule."
+          },
+          {
+            "title": "Comfortable scalp",
+            "text": "Calming complex supports daily comfort and resilience."
+          },
+          {
+            "title": "Lightweight feel",
+            "text": "Light leave-in finish, fast-drying, integrates with styling routines."
+          },
+          {
+            "title": "Brand-aligned",
+            "text": "Designed on the V-Tech exosome platform for consistent effect."
+          }
+        ],
+        "ingredientsIntro": "A daily-use stack engineered to sustain the in-clinic protocol.",
+        "ingredients": [
+          "Synthetic exosomes — daily signalling to follicles",
+          "Biomimetic peptides — ongoing follicle support",
+          "Hydrating polymers — daily comfort, no buildup",
+          "Calming complex — scalp resilience"
+        ],
+        "aftercare": {
+          "title": "Daily routine",
+          "items": [
+            "Spray onto dry or towel-dried scalp; do not rinse.",
+            "Massage in gently and style as usual.",
+            "Use daily throughout the protocol cycle."
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "items": [
+            "Active scalp infection or open wounds",
+            "Known sensitivity to any of the listed ingredients"
+          ]
+        },
+        "chipsTitle": "Targets",
+        "chips": [
+          "Daily maintenance",
+          "Density support",
+          "Thinning",
+          "Scalp comfort"
+        ],
+        "ctaTitle": "Bring Exosignal Hair Spray to your clinic",
+        "ctaText": "For professional use only. Our specialist will reach out with pricing and protocol.",
+        "faq": {
+          "title": "Frequently asked questions",
+          "intro": "Home-use questions for patients between professional sessions.",
+          "items": [
+            {
+              "q": "How often should patients use the spray at home?",
+              "a": "Twice daily — morning and evening — on the dry scalp. Massage in with the fingertips and leave on. No rinse."
+            },
+            {
+              "q": "How long until visible result?",
+              "a": "8–12 weeks for visible density improvement when paired with professional sessions. Continuous use is required to maintain the effect."
+            },
+            {
+              "q": "Can it be used between professional Exosignal Hair sessions?",
+              "a": "Yes — that is exactly the design. The spray bridges the gap between in-clinic protocols so the regenerative signalling is continuous."
+            },
+            {
+              "q": "Suitable for patients on finasteride or minoxidil?",
+              "a": "Yes — Exosignal Hair Spray works through a different mechanism and does not interfere with either. Many patients run them simultaneously."
+            }
+          ]
+        }
+      },
+      "ru": {
+        "name": "Exosignal Hair Spray",
+        "eyebrow": "ЕЖЕДНЕВНЫЙ ЭКЗОСОМНЫЙ СПРЕЙ ДЛЯ ВОЛОС",
+        "tagline": "Поддерживать результат клиники — каждый день, между процедурами",
+        "description": "Exosignal Hair Spray — ежедневный домашний партнёр кабинетной ампулы Exosignal Hair. Лёгкий несмываемый спрей для скальпа с экзосомными и биомиметическими активами — создан, чтобы поддерживать клинический результат между процедурами.",
+        "shortDescription": "Ежедневный несмываемый экзосомный спрей для скальпа, поддерживающий результат между кабинетными сеансами Exosignal Hair.",
+        "keyFacts": [
+          "Экзосомные и биомиметические активы в ежедневном несмываемом спрее для скальпа.",
+          "Создан как домашний партнёр кабинетной ампулы Exosignal Hair.",
+          "Лёгкий, быстро высыхает, не требует смывания; совместим с любой укладкой.",
+          "Рекомендованная частота — ежедневно в течение цикла протокола."
+        ],
+        "stats": [
+          {
+            "value": "Ежедневно",
+            "label": "Применение"
+          },
+          {
+            "value": "Несмываемый",
+            "label": "Формат"
+          },
+          {
+            "value": "Дом",
+            "label": "Поверхность"
+          },
+          {
+            "value": "+ Ампула",
+            "label": "Кабинетный партнёр"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Поддерживает цикл",
+            "text": "Сохраняет клинический сигнал, запущенный кабинетной ампулой."
+          },
+          {
+            "title": "Комфорт скальпа",
+            "text": "Успокаивающий комплекс поддерживает ежедневный комфорт и устойчивость."
+          },
+          {
+            "title": "Лёгкое ощущение",
+            "text": "Лёгкий финиш, быстро высыхает, не мешает укладке."
+          },
+          {
+            "title": "Бренд-консистентность",
+            "text": "Создан на платформе V-Tech для согласованного эффекта."
+          }
+        ],
+        "ingredientsIntro": "Ежедневный стек, поддерживающий кабинетный протокол.",
+        "ingredients": [
+          "Синтетические экзосомы — ежедневные сигналы фолликулу",
+          "Биомиметические пептиды — продолжающаяся поддержка фолликула",
+          "Увлажняющие полимеры — ежедневный комфорт без накопления",
+          "Успокаивающий комплекс — устойчивость скальпа"
+        ],
+        "aftercare": {
+          "title": "Ежедневный уход",
+          "items": [
+            "Распылять на сухой или подсушенный полотенцем скальп; не смывать.",
+            "Мягко вмассировать и уложиться как обычно.",
+            "Использовать ежедневно в течение цикла протокола."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активная инфекция скальпа или открытые раны",
+            "Индивидуальная чувствительность к компонентам"
+          ]
+        },
+        "chipsTitle": "Цели",
+        "chips": [
+          "Ежедневная поддержка",
+          "Поддержка плотности",
+          "Истончение",
+          "Комфорт скальпа"
+        ],
+        "ctaTitle": "Добавьте Exosignal Hair Spray в свою клинику",
+        "ctaText": "Только для профессионального использования. Наш специалист свяжется с вами по цене и протоколу.",
+        "faq": {
+          "title": "Частые вопросы",
+          "intro": "Вопросы по домашнему использованию между процедурами.",
+          "items": [
+            {
+              "q": "Как часто использовать спрей дома?",
+              "a": "Дважды в день — утром и вечером — на сухую кожу головы. Распределить кончиками пальцев, оставить. Не смывать."
+            },
+            {
+              "q": "Когда виден результат?",
+              "a": "8–12 недель при сочетании с профессиональными сессиями. Эффект поддерживается только при регулярном применении."
+            },
+            {
+              "q": "Можно ли использовать между сессиями Exosignal Hair?",
+              "a": "Да — именно для этого спрей и создан. Закрывает промежутки между процедурами в клинике, чтобы регенеративный сигнал был непрерывным."
+            },
+            {
+              "q": "Совместим ли с финастеридом / миноксидилом?",
+              "a": "Да — Exosignal Hair Spray работает через другой механизм и не мешает им. Многие пациенты применяют параллельно."
+            }
+          ]
+        }
+      },
+      "he": {
+        "name": "Exosignal Hair Spray",
+        "eyebrow": "ספריי שיער יומי עם אקסוזומים",
+        "tagline": "לקיים את תוצאת המרפאה — בין מפגשים, מדי יום",
+        "description": "Exosignal Hair Spray הוא שותף שגרת הבית היומית של אמפולת המרפאה Exosignal Hair. ספריי קרקפת קל ללא שטיפה עם פעילי אקסוזומים ופפטידים ביו-מימטיים — מתוכנן לקיים את התוצאה הקלינית בין מפגשים במרפאה.",
+        "shortDescription": "ספריי קרקפת יומי ללא שטיפה לקיום התוצאה בין מפגשי Exosignal Hair במרפאה.",
+        "keyFacts": [
+          "פעילי אקסוזומים ופפטידים ביו-מימטיים בספריי קרקפת יומי ללא שטיפה.",
+          "תוכנן כשותף הבית של אמפולת Exosignal Hair הקלינית.",
+          "קל, מתייבש מהר — ללא שטיפה; משתלב בכל שגרת עיצוב.",
+          "תדירות מומלצת: יומיומית, לאורך מחזור הפרוטוקול."
+        ],
+        "stats": [
+          {
+            "value": "יומי",
+            "label": "שימוש"
+          },
+          {
+            "value": "ללא שטיפה",
+            "label": "פורמט"
+          },
+          {
+            "value": "בית",
+            "label": "שטח"
+          },
+          {
+            "value": "+ אמפולה",
+            "label": "שותפת המרפאה"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "מקיים את המחזור",
+            "text": "שומר על האיתות הקליני שיזמה אמפולת המרפאה."
+          },
+          {
+            "title": "קרקפת נוחה",
+            "text": "קומפלקס מרגיע תומך בנוחות יומית ובחוסן."
+          },
+          {
+            "title": "תחושה קלילה",
+            "text": "גימור קל, התייבשות מהירה, משתלב עם שגרות עיצוב."
+          },
+          {
+            "title": "בריאת-מותג",
+            "text": "תוכנן על פלטפורמת אקסוזומים V-Tech לאפקט עקבי."
+          }
+        ],
+        "ingredientsIntro": "מערך לשימוש יומי שתוכנן לקיים את הפרוטוקול במרפאה.",
+        "ingredients": [
+          "אקסוזומים סינתטיים — איתות יומי לזקיקים",
+          "פפטידים ביו-מימטיים — תמיכה מתמשכת בזקיק",
+          "פולימרים מלחיחים — נוחות יומית ללא שאריות",
+          "קומפלקס מרגיע — חוסן קרקפת"
+        ],
+        "aftercare": {
+          "title": "שגרה יומית",
+          "items": [
+            "לרסס על קרקפת יבשה או מיובשת במגבת; אין לשטוף.",
+            "לעסות בעדינות ולעצב כרגיל.",
+            "להשתמש יומיומית לאורך מחזור הפרוטוקול."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "זיהום קרקפת פעיל או פצעים פתוחים",
+            "רגישות ידועה לאחד הרכיבים"
+          ]
+        },
+        "chipsTitle": "מטרות",
+        "chips": [
+          "תחזוקה יומית",
+          "תמיכת צפיפות",
+          "דלילות",
+          "נוחות קרקפת"
+        ],
+        "ctaTitle": "הביאו את Exosignal Hair Spray למרפאה שלכם",
+        "ctaText": "לשימוש מקצועי בלבד. המומחה שלנו יחזור אליכם עם מחיר ופרוטוקול.",
+        "faq": {
+          "title": "שאלות נפוצות",
+          "intro": "שאלות לשימוש ביתי בין טיפולים מקצועיים.",
+          "items": [
+            {
+              "q": "באיזו תדירות מטופלים ישתמשו בתרסיס בבית?",
+              "a": "פעמיים ביום — בוקר וערב — על קרקפת יבשה. לעסות עם קצות האצבעות ולהשאיר. ללא שטיפה."
+            },
+            {
+              "q": "מתי רואים תוצאה?",
+              "a": "8–12 שבועות לשיפור עובי גלוי בשילוב עם טיפולים מקצועיים. שימוש קבוע נדרש לשמירה על האפקט."
+            },
+            {
+              "q": "אפשר להשתמש בין סשנים של Exosignal Hair?",
+              "a": "כן — בדיוק לזה התרסיס נועד. סוגר את הפערים בין הטיפולים במרפאה כדי שהאיתות הרגנרטיבי יהיה רציף."
+            },
+            {
+              "q": "מתאים למטופלים על פינסטריד או מינוקסידיל?",
+              "a": "כן — Exosignal Hair Spray פועל במנגנון שונה ואינו מפריע. הרבה מטופלים מפעילים את שניהם במקביל."
+            }
+          ]
+        }
+      }
+    }
+  }
+]
