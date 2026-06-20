@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { applyClinic } from '@/lib/clinics-store';
+import { clientIp, rateLimited } from '@/lib/rate-limit';
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -8,6 +9,16 @@ function clip(s: unknown, max: number): string {
 }
 
 export async function POST(req: Request) {
+  // Stricter than /api/leads — a clinic application is a deliberate
+  // action; 3/IP/min is plenty for any human.
+  const rl = rateLimited('apply', clientIp(req));
+  if (!rl.ok) {
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited', retryInMs: rl.retryInMs },
+      { status: 429 }
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = (await req.json()) as Record<string, unknown>;

@@ -3,6 +3,7 @@ import { timingSafeEqual, createHmac } from 'node:crypto';
 import { createSocial, isInstagramUrl, readSocial, type SocialKind } from '@/lib/social-store';
 import { writeAsset } from '@/lib/admin-store';
 import { logAudit, requestMeta } from '@/lib/audit-log';
+import { clientIp, rateLimited } from '@/lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -100,9 +101,40 @@ function inferExt(contentType: string | null, url: string): string {
   return '.jpg';
 }
 
-async function downloadPoster(url: string, id: string): Promise<string | undefined> {
+/** SSRF defense: only allow https poster URLs on known IG/FB CDN hosts.
+ *  The Bearer token already gates this endpoint, but the URL is attacker-
+ *  controlled and we don't want a stolen token to translate into a
+ *  fetch primitive against internal network ranges. Whitelist > deny-
+ *  list because the hostname space is small (IG content lives on a
+ *  handful of cdninstagram / fbcdn hostnames). */
+const POSTER_HOST_RE = /^([a-z0-9-]+\.)*(cdninstagram\.com|fbcdn\.net|instagram\.com)$/i;
+
+function isSafePosterUrl(raw: string): boolean {
+  let u: URL;
   try {
-    const res = await fetch(url, { cache: 'no-store' });
+    u = new URL(raw);
+  } catch {
+    return false;
+  }
+  if (u.protocol !== 'https:') return false;
+  if (!POSTER_HOST_RE.test(u.hostname)) return false;
+  // Block literal private IPs (defence in depth — DNS could still resolve
+  // an allowed host to a private IP, but Vercel Functions don't have
+  // intranet access anyway).
+  if (/^(10\.|127\.|169\.254\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.)/.test(u.hostname)) {
+    return false;
+  }
+  return true;
+}
+
+async function downloadPoster(url: string, id: string): Promise<string | undefined> {
+  if (!isSafePosterUrl(url)) return undefined;
+  try {
+    // Hard 8s timeout — IG CDN replies in < 1s normally.
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8_000);
+    const res = await fetch(url, { cache: 'no-store', signal: ctrl.signal });
+    clearTimeout(timer);
     if (!res.ok) return undefined;
     const buf = Buffer.from(await res.arrayBuffer());
     // Cap at 6 MB — IG thumbnails are well under this.
@@ -121,6 +153,16 @@ async function downloadPoster(url: string, id: string): Promise<string | undefin
 }
 
 export async function POST(req: Request) {
+  // Per-IP rate limit even though endpoint is Bearer-auth'd — stops
+  // a leaked token from being weaponised for unlimited writes.
+  const rl = rateLimited('socialIngest', clientIp(req));
+  if (!rl.ok) {
+    return NextResponse.json(
+      { error: 'rate_limited', retryInMs: rl.retryInMs },
+      { status: 429 }
+    );
+  }
+
   const raw = await req.text();
   if (!authorized(req, raw)) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });

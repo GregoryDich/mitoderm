@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getProduct } from '@/products';
 import type { LocaleType } from '@/types';
-import { rateLimited } from '@/lib/chat-rate-limit';
+import { clientIp, rateLimited } from '@/lib/rate-limit';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -121,12 +121,7 @@ export async function POST(req: Request) {
 
   // Per-IP rate limit — 10 requests / minute. Tight enough to make cost
   // abuse expensive, loose enough for a real conversation.
-  const fwd = req.headers.get('x-forwarded-for') || '';
-  const ip =
-    fwd.split(',')[0]?.trim() ||
-    req.headers.get('x-real-ip') ||
-    'unknown';
-  const rl = rateLimited(ip);
+  const rl = rateLimited('chat', clientIp(req));
   if (!rl.ok) {
     return NextResponse.json(
       { error: 'rate_limited', retryInMs: rl.retryInMs },
