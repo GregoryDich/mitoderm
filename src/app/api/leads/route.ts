@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { appendLead } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
+import { clientIp, rateLimited } from '@/lib/rate-limit';
 
 interface LeadBody {
   name?: string;
@@ -17,6 +18,16 @@ function clip(s: unknown, max: number): string {
 }
 
 export async function POST(req: Request) {
+  // Per-IP rate limit — 5 leads/IP/min. Spam-bots and accidentally-spammy
+  // form scripts get a 429; legitimate users won't notice.
+  const rl = rateLimited('leads', clientIp(req));
+  if (!rl.ok) {
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited', retryInMs: rl.retryInMs },
+      { status: 429 }
+    );
+  }
+
   let body: LeadBody;
   try {
     body = (await req.json()) as LeadBody;

@@ -1,8 +1,25 @@
 import { NextResponse } from 'next/server';
 import { createSession, SESSION_COOKIE, verifyPassword } from '@/lib/admin-auth';
 import { logAudit, requestMeta } from '@/lib/audit-log';
+import { clientIp, rateLimited } from '@/lib/rate-limit';
 
 export async function POST(req: Request) {
+  // Brute-force defense: 5 attempts per IP per 5 minutes. Combined with
+  // a long random ADMIN_PASSWORD this puts online guessing out of reach.
+  const rl = rateLimited('adminLogin', clientIp(req));
+  if (!rl.ok) {
+    await logAudit({
+      at: new Date().toISOString(),
+      action: 'auth.login',
+      ...requestMeta(req),
+      meta: { ok: false, throttled: true },
+    });
+    return NextResponse.json(
+      { error: 'rate_limited', retryInMs: rl.retryInMs },
+      { status: 429 }
+    );
+  }
+
   let body: { password?: string };
   try {
     body = (await req.json()) as { password?: string };
