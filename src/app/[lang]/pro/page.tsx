@@ -12,10 +12,6 @@ import { absUrl, alternatesFor, SITE_NAME } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  robots: { index: false, follow: false },
-};
-
 export async function generateMetadata({
   params: { lang },
 }: {
