@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { products, lines } from '@/products';
+import { posts } from '@/posts';
 import { LOCALES, DEFAULT_LOCALE, absUrl } from '@/lib/seo';
 
-const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply'] as const;
+const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply', '/blog'] as const;
 
 function alternates(path: string): Record<string, string> {
   const map: Record<string, string> = {};
@@ -21,12 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...STATIC_PATHS,
     ...lines.map((l) => `/lines/${l.slug}`),
     ...products.map((p) => `/products/${p.slug}`),
+    ...posts.map((p) => `/blog/${p.slug}`),
   ];
 
   for (const path of allPaths) {
     for (const locale of LOCALES) {
       const isHome = path === '';
       const isProduct = path.startsWith('/products/');
+      const isPost = path.startsWith('/blog/');
       entries.push({
         url: absUrl(locale, path),
         lastModified: now,
@@ -34,8 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 'weekly'
           : isProduct
           ? 'monthly'
+          : isPost
+          ? 'monthly'
           : 'monthly',
-        priority: isHome ? 1 : isProduct ? 0.8 : 0.7,
+        priority: isHome ? 1 : isProduct ? 0.8 : isPost ? 0.6 : 0.7,
         alternates: { languages: alternates(path) },
       });
     }

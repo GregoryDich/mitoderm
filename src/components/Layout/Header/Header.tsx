@@ -35,6 +35,7 @@ const Header: FC = () => {
     { label: t('catalog'), href: '/catalog' },
     { label: t('seminars'), href: '/seminars' },
     { label: t('clinics'), href: '/clinics' },
+    { label: t('blog'), href: '/blog' },
     { label: t('about'), href: '/about' },
     { label: t('contact'), href: '/form' },
   ];

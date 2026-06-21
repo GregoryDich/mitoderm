@@ -10,7 +10,18 @@
     "catalog": "Catalog",
     "clinics": "Clinics",
     "seminars": "Seminars",
-    "lines": "Lines"
+    "lines": "Lines",
+    "blog": "Blog"
+  },
+  "blog": {
+    "eyebrow": "EDUCATION · EXOSOMES · PROTOCOLS",
+    "title": "The Mitoderm journal",
+    "subtitle": "Practitioner-grade notes on exosomes, NAD+ longevity peelings, microneedling protocols and what the science means at the chair.",
+    "empty": "First posts are on the way.",
+    "back": "All posts",
+    "ctaTitle": "Bring this protocol into your clinic",
+    "ctaText": "Pricing, training and protocol support — get in touch.",
+    "ctaButton": "Contact us"
   },
   "catalog": {
     "eyebrow": "CATALOG",

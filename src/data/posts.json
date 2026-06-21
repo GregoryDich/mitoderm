@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "what-are-exosomes-in-skin-care",
+    "date": "2026-06-01",
+    "accent": "gold",
+    "image": "/products/v-tech-system/hero.webp",
+    "tags": ["exosomes", "v-tech", "education"],
+    "content": {
+      "en": {
+        "title": "What are exosomes in skincare, and why clinics ask about them",
+        "eyebrow": "EDUCATION · EXOSOMES",
+        "excerpt": "Exosomes are extracellular vesicles secreted by living cells. In a clinic, they're the payload — and the question is delivery, dose and protocol. Here's the short, practitioner-grade primer.",
+        "readTime": "6 min read",
+        "body": [
+          { "type": "p", "text": "Exosomes are nanometre-scale extracellular vesicles secreted by living cells. They carry proteins, lipids, mRNA and microRNA between cells — a signalling layer of the body that researchers and clinicians have spent the last decade learning to use intentionally." },
+          { "type": "p", "text": "For a clinical practice, the relevant question is not \"do exosomes work\" in the abstract — it is which payload, in which carrier, delivered how, on which skin, and to which endpoint. This post answers that practical version." },
+          { "type": "h2", "text": "Why the conversation moved from growth factors to exosomes" },
+          { "type": "p", "text": "Topical growth factors have been on the market for over a decade. They are real molecules and they work — within the limits of a single signalling protein hitting a barrier. Exosomes move the conversation forward in three ways: they package multiple signals together, they survive the trip into the skin better than free protein, and they participate in a more complete \"conversation\" with the recipient cells." },
+          { "type": "h2", "text": "What is actually inside a clinical exosome serum" },
+          { "type": "p", "text": "A good clinical exosome product publishes three things: the source (plant, MSC, lyophilised, etc.), the particle count per dose, and the carrier matrix that protects the cargo until application. The V-Tech serum, for example, leads with the carrier — the goal of the protocol is that the exosome cargo reaches the upper dermis intact." },
+          { "type": "ul", "items": [
+            "Source — plant-derived, mesenchymal-stem-cell-derived, etc.",
+            "Particle count per dose — a measurable number, not a marketing word",
+            "Carrier — what holds the exosomes between manufacture and skin",
+            "Protocol — at what depth, with what frequency, for how many sessions"
+          ] },
+          { "type": "h2", "text": "Delivery is the protocol" },
+          { "type": "p", "text": "Topical alone is a small fraction of the conversation. The clinical answer is microneedling-assisted delivery — a motorised pen at a calibrated depth, immediately followed by the serum. The MitoPen E30-Ultima is the delivery instrument that the V-Tech protocol is written for: five speeds, locked depth, sterile single-use cartridges." },
+          { "type": "h2", "text": "What to tell the patient" },
+          { "type": "p", "text": "Set expectations on three axes: a single session shows freshening; a course of 3–4 sessions, two weeks apart, is where you measure density and texture change; maintenance is once per quarter. Photograph at baseline with Mitoscan or your imaging device — comparison without baseline is opinion." },
+          { "type": "quote", "text": "The product is a signalling cargo. The protocol is the product.", "author": "V-Tech training note" }
+        ]
+      },
+      "ru": {
+        "title": "Что такое экзосомы в эстетике и почему клиники о них спрашивают",
+        "eyebrow": "ОБРАЗОВАНИЕ · ЭКЗОСОМЫ",
+        "excerpt": "Экзосомы — внеклеточные везикулы, секретируемые живыми клетками. В клинике это груз — а вопрос в доставке, дозе и протоколе. Короткий праймер для практикующих специалистов.",
+        "readTime": "6 мин чтения",
+        "body": [
+          { "type": "p", "text": "Экзосомы — это нанометрового размера внеклеточные везикулы, секретируемые живыми клетками. Они переносят белки, липиды, мРНК и микроРНК между клетками — это сигнальный слой организма, которому за последние десять лет научились применять целенаправленно." },
+          { "type": "p", "text": "Для клинической практики важен не абстрактный вопрос «работают ли экзосомы», а практический: какой груз, в каком носителе, как доставлен, на какую кожу и до какого результата. Этот пост отвечает именно так." },
+          { "type": "h2", "text": "Почему разговор сместился с факторов роста на экзосомы" },
+          { "type": "p", "text": "Топические факторы роста на рынке уже больше десяти лет. Это реальные молекулы, и они работают — в пределах одного сигнального белка, бьющегося в барьер. Экзосомы двигают разговор дальше в трёх направлениях: они упаковывают несколько сигналов вместе, лучше переживают доставку в кожу, чем свободный белок, и участвуют в более полном «диалоге» с клетками-получателями." },
+          { "type": "h2", "text": "Что на самом деле внутри клинической экзосомной сыворотки" },
+          { "type": "p", "text": "Хорошая клиническая экзосомная формула публикует три вещи: источник (растительный, МСК, лиофилизированный и т. д.), число частиц на дозу и матрицу-носитель, защищающую груз до момента нанесения. Сыворотка V-Tech, например, начинает с носителя — цель протокола в том, чтобы экзосомный груз доходил до верхней дермы целым." },
+          { "type": "ul", "items": [
+            "Источник — растительный, мезенхимальный, лиофилизированный и т. д.",
+            "Число частиц на дозу — измеряемое значение, а не маркетинг",
+            "Носитель — что удерживает экзосомы от производства до кожи",
+            "Протокол — на какой глубине, с какой частотой, на сколько сессий"
+          ] },
+          { "type": "h2", "text": "Доставка — это и есть протокол" },
+          { "type": "p", "text": "Только топическое нанесение — это маленькая часть разговора. Клинический ответ — доставка через микронидлинг: моторизованная ручка на откалиброванной глубине и сразу после неё — сыворотка. MitoPen E30-Ultima — инструмент, под который написан протокол V-Tech: пять скоростей, фиксированная глубина, стерильные одноразовые картриджи." },
+          { "type": "h2", "text": "Что сказать пациенту" },
+          { "type": "p", "text": "Выставьте ожидания по трём осям: одна сессия даёт свежесть; курс из 3–4 сессий с интервалом две недели — это где меряется плотность и текстура; поддержка — раз в квартал. Базовое фото — Mitoscan или ваш сканер. Сравнение без базы — это мнение, а не результат." },
+          { "type": "quote", "text": "Продукт — это сигнальный груз. Протокол — это и есть продукт.", "author": "Обучающая заметка V-Tech" }
+        ]
+      },
+      "he": {
+        "title": "מה זה אקסוזומים בטיפוח, ולמה קליניקות שואלות עליהם",
+        "eyebrow": "ידע מקצועי · אקסוזומים",
+        "excerpt": "אקסוזומים הם בועיות חוץ-תאיות שמופרשות מתאים חיים. בקליניקה הם המטען — והשאלה היא ההובלה, המינון והפרוטוקול. פריימר קצר ברמה מקצועית.",
+        "readTime": "6 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "אקסוזומים הם בועיות חוץ-תאיות בגודל נאנו, שמופרשות מתאים חיים. הן נושאות חלבונים, ליפידים, mRNA ו-microRNA בין תאים — שכבת איתות של הגוף שחוקרים וקלינאים למדו לאחרונה להשתמש בה במכוון." },
+          { "type": "p", "text": "מבחינת קליניקה, השאלה הרלוונטית היא לא \"האם אקסוזומים עובדים\" באוויר — אלא איזה מטען, באיזה נשא, איך מוחדר, על איזה עור ולאיזו תוצאה. הפוסט הזה עונה בגרסה הזו." },
+          { "type": "h2", "text": "למה השיח עבר מ-Growth Factors לאקסוזומים" },
+          { "type": "p", "text": "Growth Factors טופיקליים נמצאים בשוק יותר מעשור. אלה מולקולות אמיתיות והן עובדות — בגבולות של חלבון איתות יחיד שמנסה לעבור את המחסום. אקסוזומים מקדמים את השיחה בשלושה כיוונים: הם אורזים כמה סיגנלים יחד, שורדים את הדרך לתוך העור טוב יותר מחלבון חופשי, ומשתתפים ב\"דיאלוג\" עשיר יותר עם תאי המטרה." },
+          { "type": "h2", "text": "מה באמת נמצא בתוך סרום אקסוזומים קליני" },
+          { "type": "p", "text": "מוצר אקסוזומים קליני טוב מפרסם שלושה דברים: המקור (צמחי, MSC, ליאופיליזציה וכו׳), מספר החלקיקים למנה, ומטריצת הנשא ששומרת על המטען עד היישום. סרום V-Tech, למשל, מתחיל מהנשא — מטרת הפרוטוקול היא שמטען האקסוזומים יגיע לדרמיס העליון שלם." },
+          { "type": "ul", "items": [
+            "מקור — צמחי, מסנכימלי, ליאופיליזציה וכו׳",
+            "מספר חלקיקים למנה — ערך נמדד, לא מילה שיווקית",
+            "נשא — מה מחזיק את האקסוזומים בין הייצור לעור",
+            "פרוטוקול — באיזה עומק, באיזו תדירות, לכמה סשנים"
+          ] },
+          { "type": "h2", "text": "ההחדרה היא הפרוטוקול" },
+          { "type": "p", "text": "טופיקלי לבד הוא חלק קטן מהשיחה. התשובה הקלינית היא החדרה דרך מיקרו-נידלינג — עט ממונע בעומק מכויל, ומיד אחריו הסרום. MitoPen E30-Ultima הוא מכשיר ההחדרה שעבורו נכתב פרוטוקול V-Tech: חמש מהירויות, עומק נעול ומחסניות חד-פעמיות סטריליות." },
+          { "type": "h2", "text": "מה לומר ללקוח" },
+          { "type": "p", "text": "להציב ציפיות בשלושה צירים: סשן בודד נותן רעננות; קורס של 3–4 סשנים בהפרשי שבועיים זה איפה מודדים שינוי בצפיפות ובמרקם; תחזוקה — פעם ברבעון. תמיד תצלמו את הבסיס ב-Mitoscan או במכשיר הדימות שלכם. השוואה בלי בסיס היא דעה, לא תוצאה." },
+          { "type": "quote", "text": "המוצר הוא מטען איתות. הפרוטוקול — הוא המוצר.", "author": "הערת הדרכה של V-Tech" }
+        ]
+      }
+    }
+  }
+]
