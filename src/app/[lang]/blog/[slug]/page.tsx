@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { LocaleType } from '@/types';
-import { getPost, getRelatedPosts, posts } from '@/posts';
+import { getPost, getRelatedPosts, getProductsForPost, posts } from '@/posts';
+import { getCatalogItems } from '@/products';
 import {
   SITE_NAME,
   SITE_URL,
@@ -85,10 +86,21 @@ export default async function BlogPostRoute({
   };
 
   const related = getRelatedPosts(slug, lang, 2);
+  const catalog = getCatalogItems(lang);
+  const productSlugs = getProductsForPost(slug);
+  const products = productSlugs
+    .map((s) => catalog.find((c) => c.slug === s))
+    .filter((x): x is NonNullable<typeof x> => !!x)
+    .slice(0, 3);
 
   return (
     <>
-      <BlogPost post={post} locale={lang} related={related} />
+      <BlogPost
+        post={post}
+        locale={lang}
+        related={related}
+        products={products}
+      />
       <JsonLd id={`ld-article-${slug}`} data={articleLd} />
     </>
   );

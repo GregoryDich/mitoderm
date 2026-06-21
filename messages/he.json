@@ -99,7 +99,8 @@
     "ctaTitle": "להכניס את הפרוטוקול לקליניקה",
     "ctaText": "מחיר, הדרכה ותמיכת פרוטוקול — דברו איתנו.",
     "ctaButton": "צרו קשר",
-    "relatedTitle": "להמשיך לקרוא"
+    "relatedTitle": "להמשיך לקרוא",
+    "featuredProductsTitle": "מוצרי הפרוטוקול"
   },
   "catalog": {
     "eyebrow": "קטלוג",
@@ -136,6 +137,12 @@
     "gallery": "גלריה",
     "professionalBadge": "לשימוש מקצועי בלבד",
     "related": "מוצרים נוספים",
+    "continueTitle": "להמשיך לחקור",
+    "continueScienceEyebrow": "המדע",
+    "continueScienceTitle": "ארבעה עמודים, פרוטוקול אחד",
+    "continueScienceText": "המקום של המוצר הזה במבנה המדע של מיטודרם — איתות אקסוזומים, פיגום פולינוקלאוטידים, שיקום NAD+ והחדרה מבוקרת.",
+    "continueScienceCta": "לפתוח את המדע",
+    "continueReadCta": "לקרוא את הפוסט",
     "keyFacts": "עובדות מרכזיות",
     "contactViaWhatsApp": "שיחה ב-WhatsApp",
     "trustedBy": "עובדים איתנו",

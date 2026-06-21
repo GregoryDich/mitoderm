@@ -92,3 +92,71 @@ export const getRelatedPosts = (
     readTime: p.content[locale].readTime,
   }));
 };
+
+/** Tag → relevant product slugs. Edits stay local: add a tag here and
+ *  every post carrying it will surface those products in the
+ *  "Featured products" strip. Likewise, every product whose slug
+ *  appears here can find the related posts via getPostsForProduct. */
+const TAG_PRODUCTS: Record<string, string[]> = {
+  exosomes: ['v-tech-serum', 'v-tech-gel-mask', 'exotech-gel'],
+  'v-tech': ['v-tech-serum', 'v-tech-gel-mask', 'exotech-gel'],
+  nad: ['exo-nad'],
+  peeling: ['exo-nad'],
+  hair: ['exosignal-hair', 'exosignal-hair-spray'],
+  microneedling: ['mitopen'],
+  mitopen: ['mitopen'],
+  mitoscan: ['mitoscan'],
+  diagnostic: ['mitoscan'],
+};
+
+export const getProductsForPost = (slug: string): string[] => {
+  const post = getPost(slug);
+  if (!post) return [];
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const tag of post.tags) {
+    const slugs = TAG_PRODUCTS[tag];
+    if (!slugs) continue;
+    for (const s of slugs) {
+      if (seen.has(s)) continue;
+      seen.add(s);
+      out.push(s);
+    }
+  }
+  return out;
+};
+
+export const getPostsForProduct = (
+  productSlug: string,
+  locale: LocaleType,
+  limit = 2
+): PostSummary[] => {
+  const matchingTags = new Set<string>();
+  for (const [tag, slugs] of Object.entries(TAG_PRODUCTS)) {
+    if (slugs.includes(productSlug)) matchingTags.add(tag);
+  }
+  if (matchingTags.size === 0) return [];
+  const scored = posts.map((p) => ({
+    p,
+    score: p.tags.reduce((n, t) => (matchingTags.has(t) ? n + 1 : n), 0),
+  }));
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return a.p.date < b.p.date ? 1 : -1;
+  });
+  return scored
+    .filter((s) => s.score > 0)
+    .slice(0, limit)
+    .map(({ p }) => ({
+      slug: p.slug,
+      href: `/blog/${p.slug}`,
+      date: p.date,
+      accent: p.accent,
+      image: p.image,
+      tags: p.tags,
+      title: p.content[locale].title,
+      eyebrow: p.content[locale].eyebrow,
+      excerpt: p.content[locale].excerpt,
+      readTime: p.content[locale].readTime,
+    }));
+};

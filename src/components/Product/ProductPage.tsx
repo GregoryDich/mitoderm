@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Product, ProductAccent, getCatalogItems } from '@/products';
+import type { PostSummary } from '@/posts';
 import { LocaleType } from '@/types';
 import Button from '@/components/Shared/Button/Button';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -29,6 +30,7 @@ interface Props {
   product: Product;
   locale: LocaleType;
   trustedBy?: Doctor[];
+  relatedPosts?: PostSummary[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -59,7 +61,12 @@ const Section: FC<{
   </section>
 );
 
-const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
+const ProductPage: FC<Props> = ({
+  product,
+  locale,
+  trustedBy = [],
+  relatedPosts = [],
+}) => {
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
@@ -659,6 +666,47 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                       <span className={styles.arrow}>→</span>
                     </span>
                   </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(relatedPosts.length > 0) && (
+          <section className={styles.block} aria-labelledby="continue-title">
+            <SectionLabel num={next()} label="EXPLORE" />
+            <h2 id="continue-title" className={styles.h2}>
+              {t('continueTitle')}
+            </h2>
+            <div className={styles.continueGrid}>
+              <Link href="/science" className={styles.continueCard}>
+                <span className={styles.continueEyebrow}>
+                  {t('continueScienceEyebrow')}
+                </span>
+                <span className={styles.continueHead}>
+                  {t('continueScienceTitle')}
+                </span>
+                <span className={styles.continueText}>
+                  {t('continueScienceText')}
+                </span>
+                <span className={styles.continueLink}>
+                  {t('continueScienceCta')}{' '}
+                  <span className={styles.arrow}>→</span>
+                </span>
+              </Link>
+              {relatedPosts.slice(0, 2).map((p) => (
+                <Link
+                  key={p.slug}
+                  href={p.href}
+                  className={styles.continueCard}
+                >
+                  <span className={styles.continueEyebrow}>{p.eyebrow}</span>
+                  <span className={styles.continueHead}>{p.title}</span>
+                  <span className={styles.continueText}>{p.excerpt}</span>
+                  <span className={styles.continueLink}>
+                    {t('continueReadCta')}{' '}
+                    <span className={styles.arrow}>→</span>
+                  </span>
                 </Link>
               ))}
             </div>

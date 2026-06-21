@@ -4,6 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import ProductPage from '@/components/Product/ProductPage';
 import JsonLd from '@/components/Seo/JsonLd';
 import { getProduct, products } from '@/products';
+import { getPostsForProduct } from '@/posts';
 import { LocaleType } from '@/types';
 import { readDoctors } from '@/lib/doctors-store';
 import {
@@ -167,9 +168,16 @@ export default async function Page({
     provider: { '@id': `${SITE_URL}#medicalbusiness` },
   } as const;
 
+  const relatedPosts = getPostsForProduct(slug, lang, 2);
+
   return (
     <main>
-      <ProductPage product={product} locale={lang} trustedBy={doctors} />
+      <ProductPage
+        product={product}
+        locale={lang}
+        trustedBy={doctors}
+        relatedPosts={relatedPosts}
+      />
       <JsonLd id="ld-product" data={productLd} />
       <JsonLd id="ld-breadcrumb" data={breadcrumbsLd} />
       <JsonLd id="ld-medical-procedure" data={medicalProcedureLd} />

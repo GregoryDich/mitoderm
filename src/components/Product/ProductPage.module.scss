@@ -647,6 +647,66 @@
   color: var(--accent);
 }
 
+/* Continue exploring */
+
+.continueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.continueCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.continueCard:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent, #dfba74) 35%, transparent);
+}
+
+.continueEyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #dfba74);
+  font-weight: 700;
+}
+
+.continueHead {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #f5f2f0;
+}
+
+.continueText {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.65);
+  flex: 1 1 auto;
+}
+
+.continueLink {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent, #dfba74);
+}
+
 /* CTA */
 .ctaBand {
   position: relative;

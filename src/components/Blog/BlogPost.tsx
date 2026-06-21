@@ -3,6 +3,7 @@ import { useTranslations, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import type { Post, PostSummary } from '@/posts';
+import type { CatalogItem } from '@/products';
 import type { LocaleType } from '@/types';
 import styles from './BlogPost.module.scss';
 
@@ -10,6 +11,7 @@ interface Props {
   post: Post;
   locale: LocaleType;
   related?: PostSummary[];
+  products?: CatalogItem[];
 }
 
 const accentVar: Record<'teal' | 'gold' | 'rose', string> = {
@@ -18,7 +20,7 @@ const accentVar: Record<'teal' | 'gold' | 'rose', string> = {
   rose: '#b4607e',
 };
 
-const BlogPost: FC<Props> = ({ post, locale, related = [] }) => {
+const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
   const t = useTranslations('blog');
   const format = useFormatter();
   const c = post.content[locale];
@@ -92,6 +94,37 @@ const BlogPost: FC<Props> = ({ post, locale, related = [] }) => {
             return null;
           })}
         </div>
+
+        {products.length > 0 && (
+          <section className={styles.featured} aria-labelledby="featured-title">
+            <h2 id="featured-title" className={styles.relatedTitle}>
+              {t('featuredProductsTitle')}
+            </h2>
+            <ul className={styles.featuredList}>
+              {products.map((p) => (
+                <li key={p.slug} className={styles.featuredCard}>
+                  <Link href={p.href} className={styles.featuredLink}>
+                    {p.image && (
+                      <span className={styles.featuredMedia} aria-hidden="true">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={p.image} alt="" loading="lazy" />
+                      </span>
+                    )}
+                    <span className={styles.featuredBody}>
+                      <span className={styles.featuredCat}>
+                        {p.category.replace('-', ' ').toUpperCase()}
+                      </span>
+                      <span className={styles.featuredName}>{p.name}</span>
+                      <span className={styles.featuredDesc}>
+                        {p.shortDescription}
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {related.length > 0 && (
           <section className={styles.related} aria-labelledby="related-title">

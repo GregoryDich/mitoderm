@@ -99,7 +99,8 @@
     "ctaTitle": "Bring this protocol into your clinic",
     "ctaText": "Pricing, training and protocol support — get in touch.",
     "ctaButton": "Contact us",
-    "relatedTitle": "Continue reading"
+    "relatedTitle": "Continue reading",
+    "featuredProductsTitle": "Featured in this protocol"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -136,6 +137,12 @@
     "gallery": "Gallery",
     "professionalBadge": "For professional use only",
     "related": "Related products",
+    "continueTitle": "Continue exploring",
+    "continueScienceEyebrow": "THE SCIENCE",
+    "continueScienceTitle": "Four pillars, one protocol",
+    "continueScienceText": "Where this product sits inside the Mitoderm stack — exosome signalling, polynucleotide scaffolding, NAD+ recovery and controlled delivery.",
+    "continueScienceCta": "Read the science",
+    "continueReadCta": "Read the post",
     "keyFacts": "Key facts",
     "contactViaWhatsApp": "Contact via WhatsApp",
     "trustedBy": "TRUSTED BY",

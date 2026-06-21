@@ -99,7 +99,8 @@
     "ctaTitle": "Внедрить протокол в клинике",
     "ctaText": "Цена, обучение и поддержка протокола — свяжитесь с нами.",
     "ctaButton": "Связаться",
-    "relatedTitle": "Дальше по теме"
+    "relatedTitle": "Дальше по теме",
+    "featuredProductsTitle": "Продукты этого протокола"
   },
   "catalog": {
     "eyebrow": "КАТАЛОГ",
@@ -136,6 +137,12 @@
     "gallery": "Галерея",
     "professionalBadge": "Только для профессионального использования",
     "related": "Похожие продукты",
+    "continueTitle": "Дальше",
+    "continueScienceEyebrow": "НАУКА",
+    "continueScienceTitle": "Четыре опоры, один протокол",
+    "continueScienceText": "Место этого продукта в научном стеке Mitoderm — сигналинг экзосом, каркас из полинуклеотидов, NAD+ восстановление и контролируемая доставка.",
+    "continueScienceCta": "Открыть науку",
+    "continueReadCta": "Открыть пост",
     "keyFacts": "Ключевые факты",
     "contactViaWhatsApp": "Написать в WhatsApp",
     "trustedBy": "С НАМИ РАБОТАЮТ",
