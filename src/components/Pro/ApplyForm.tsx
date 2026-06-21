@@ -16,6 +16,8 @@ const ApplyForm: FC = () => {
   const [instagram, setInstagram] = useState('');
   const [message, setMessage] = useState('');
   const [referralCode, setReferralCode] = useState('');
+  // Honeypot — real users never fill this. Hidden via inline style.
+  const [website, setWebsite] = useState('');
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -37,6 +39,7 @@ const ApplyForm: FC = () => {
         instagram,
         message,
         referralCode,
+        website,
       }),
     });
     if (!res.ok) {
@@ -72,6 +75,22 @@ const ApplyForm: FC = () => {
           </section>
         ) : (
           <form onSubmit={onSubmit} className={styles.form}>
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0,
+              }}
+            />
             <div className={styles.grid}>
               <label className={styles.field}>
                 <span className={styles.label}>{t('name')} *</span>

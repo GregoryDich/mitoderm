@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { appendLead } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
+import { spamGuard } from '@/lib/spam-guard';
 
 interface LeadBody {
   name?: string;
@@ -9,6 +10,8 @@ interface LeadBody {
   phone?: string;
   clinic?: string;
   message?: string;
+  /** Honeypot field — must be empty for the body to be accepted. */
+  website?: string;
 }
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -33,6 +36,16 @@ export async function POST(req: Request) {
     body = (await req.json()) as LeadBody;
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+  }
+
+  // Origin check + honeypot. We respond with a generic 200 so bots
+  // can't probe which layer caught them, but we still drop the
+  // request and never persist or fan out. Real users never trip this.
+  const guard = spamGuard(req, body);
+  if (!guard.ok) {
+    // eslint-disable-next-line no-console
+    console.warn('[lead] dropped by spam guard', guard.reason);
+    return NextResponse.json({ ok: true });
   }
 
   const name = clip(body.name, 120);

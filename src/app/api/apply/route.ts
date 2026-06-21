@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { applyClinic } from '@/lib/clinics-store';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
+import { spamGuard } from '@/lib/spam-guard';
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -24,6 +25,15 @@ export async function POST(req: Request) {
     body = (await req.json()) as Record<string, unknown>;
   } catch {
     return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
+  }
+
+  // Origin + honeypot. Same silent-200 pattern as /api/leads — a real
+  // applicant never sees this; a script gets a no-op.
+  const guard = spamGuard(req, body as { website?: unknown });
+  if (!guard.ok) {
+    // eslint-disable-next-line no-console
+    console.warn('[apply] dropped by spam guard', guard.reason);
+    return NextResponse.json({ ok: true, dropped: true });
   }
 
   const name = clip(body.name, 120);

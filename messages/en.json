@@ -271,21 +271,6 @@
     "ctaText": "Get pricing, protocols and onboarding for your clinic.",
     "ctaButton": "Contact us"
   },
-  "solution": {
-    "titleP1": "Our Solution - ",
-    "titleP2": "Exoxe",
-    "titleP3": " Exosome",
-    "subtitle": "Only for professional usage",
-    "item1title": "Pure exo - lyophilized powder 50mg",
-    "item1textP1": "Hydrolyzed Collagen - 886,000PPM",
-    "item1textP2": "Collagen - 100,000PPM",
-    "item1textP3": "Sodium Hyaluronate",
-    "item1textP4": "Trehalose",
-    "item2title": "Sterilized solution 5ml",
-    "item2textP1": "Aqua",
-    "item2textP2": "Sodium Hyaluronate",
-    "usage": "Only for professional usage."
-  },
   "faq": {
     "title": "FAQs",
     "item1": {
@@ -507,38 +492,6 @@
       "cosmetologist": "Cosmetologist",
       "clinic": "Clinic"
     }
-  },
-  "gallery": {
-    "title": "Gallery",
-    "before": "Before",
-    "after": "After"
-  },
-  "dream": {
-    "titleP1": "Where Science",
-    "titleP2": "meets beauty",
-    "textP1": "Mitoderm fulfills its vision by focusing on the ",
-    "textP2": "integration of beauty and technology. ",
-    "textP3": "The company leads the field of science and beauty by providing innovative and effective solutions for professionals in the aesthetics field, taking them one step above the rest.",
-    "textP4": "Upgrade your clinic and offer your clients the most advanced treatments. ",
-    "textP5": "Our commitment to quality and professionalism in a supportive environment empowers you, promotes your personal growth, and  ",
-    "textP6": "helps you excel at the professional level. ",
-    "textP7": "At Mitoderm, we provide advanced solutions for skin rejuvenation, anti-aging, hair thinning, and other skin concerns, tailored to your unique needs. Be part of our family today!"
-  },
-  "contactUs": {
-    "item1title": "Contact Us",
-    "phone": "Phone",
-    "phoneText": "For all details: ",
-    "address": "Address",
-    "addressText": "רפאל איתן 38, Ramat Gan, 5590500",
-    "email": "Email",
-    "emailText": "info@mitoderm.com",
-    "item2title": "Office Hours",
-    "workWeek": "Sunday - Thursday",
-    "friday": "Friday",
-    "fridayText": "By appointment only",
-    "saturday": "Saturday",
-    "closed": "Closed",
-    "followUs": "Follow us on"
   },
   "footer": {
     "copyright": "© 2026 Mitoderm. All Rights Reserved.",

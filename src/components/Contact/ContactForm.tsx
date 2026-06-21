@@ -12,6 +12,9 @@ interface FormState {
   phone: string;
   clinic: string;
   message: string;
+  /** Honeypot — hidden field that real users never fill. The /api/leads
+   *  handler silently drops any submission with a non-empty value. */
+  website: string;
 }
 
 const initial: FormState = {
@@ -20,6 +23,7 @@ const initial: FormState = {
   phone: '',
   clinic: '',
   message: '',
+  website: '',
 };
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -111,6 +115,22 @@ const ContactForm: FC = () => {
           </div>
         ) : (
           <form className={styles.form} onSubmit={onSubmit} noValidate>
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={v.website}
+              onChange={set('website')}
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0,
+              }}
+            />
             <div className={styles.row2}>
               <label className={styles.field}>
                 <span className={styles.label}>{t('name')}</span>

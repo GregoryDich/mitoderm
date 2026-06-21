@@ -8,10 +8,20 @@ import { clientIp, rateLimited } from '@/lib/rate-limit';
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
+/** Maximum age of a signed ingest request, in milliseconds. n8n sends
+ *  the timestamp from its own clock so we keep this wide enough for
+ *  modest skew between the runner and Vercel, narrow enough to defeat
+ *  a stolen signature being replayed days later. */
+const SIGNATURE_MAX_AGE_MS = 5 * 60 * 1000;
+
 /** Bearer auth — strict, constant-time.
  *  Set SOCIAL_INGEST_TOKEN in env; n8n sends Authorization: Bearer <token>.
- *  Optionally set SOCIAL_INGEST_SECRET for an HMAC-SHA256 body signature
- *  in the X-Mitoderm-Signature header (format "sha256=<hex>"). */
+ *  Optionally set SOCIAL_INGEST_SECRET to require an HMAC-SHA256 body
+ *  signature in X-Mitoderm-Signature (format "sha256=<hex>"). When the
+ *  secret is set, the request must also include X-Mitoderm-Timestamp
+ *  (unix millis) and the signed string is `<ts>\n<raw_body>`. Requests
+ *  older than SIGNATURE_MAX_AGE_MS or missing the timestamp are
+ *  rejected — this is the replay defence. */
 function authorized(req: Request, raw: string, opts?: { skipHmac?: boolean }): boolean {
   const token = process.env.SOCIAL_INGEST_TOKEN;
   if (!token) return false;
@@ -26,9 +36,15 @@ function authorized(req: Request, raw: string, opts?: { skipHmac?: boolean }): b
   if (opts?.skipHmac) return true;
   const secret = process.env.SOCIAL_INGEST_SECRET;
   if (secret) {
+    const tsHeader = req.headers.get('x-mitoderm-timestamp');
+    const ts = Number(tsHeader);
+    if (!tsHeader || !Number.isFinite(ts)) return false;
+    if (Math.abs(Date.now() - ts) > SIGNATURE_MAX_AGE_MS) return false;
+
     const sig = req.headers.get('x-mitoderm-signature') ?? '';
+    const signedString = `${tsHeader}\n${raw}`;
     const expectedSig =
-      'sha256=' + createHmac('sha256', secret).update(raw).digest('hex');
+      'sha256=' + createHmac('sha256', secret).update(signedString).digest('hex');
     const a = Buffer.from(sig);
     const b = Buffer.from(expectedSig);
     if (a.length !== b.length) return false;
