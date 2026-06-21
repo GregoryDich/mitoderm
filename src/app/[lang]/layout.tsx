@@ -12,6 +12,7 @@ import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
 import JsonLd from '@/components/Seo/JsonLd';
 import { orgJsonLd, siteJsonLd } from '@/lib/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import WebVitals from '@/components/Analytics/WebVitals';
 
 const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
   ssr: false,
@@ -160,7 +161,10 @@ export default async function RootLayout({
         </body>
       </NextIntlClientProvider>
       {process.env.NEXT_PUBLIC_GOOGLE_ID ? (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
+        <>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
+          <WebVitals />
+        </>
       ) : null}
     </html>
   );

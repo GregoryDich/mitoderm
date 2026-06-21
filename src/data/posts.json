@@ -84,6 +84,87 @@
     }
   },
   {
+    "slug": "scope-of-practice-md-vs-cosmetologist",
+    "date": "2026-06-20",
+    "accent": "teal",
+    "image": "/products/mitopen/hero.webp",
+    "tags": ["education", "microneedling"],
+    "content": {
+      "en": {
+        "title": "Who can do what — scope of practice for exosome and microneedling protocols",
+        "eyebrow": "EDUCATION · SCOPE",
+        "excerpt": "MD, nurse, cosmetologist — the line between who may run which protocol is jurisdiction-specific and easy to get wrong. A practical framing for building a menu that stays inside your licence, with Israel as the worked example.",
+        "readTime": "6 min read",
+        "body": [
+          { "type": "p", "text": "Before a single device is bought, the question that decides a clinic's menu isn't 'does it work' — it's 'am I licensed to do it here'. Scope of practice for injectables, microneedling depth and exosome application varies by country, by professional title and sometimes by region within a country. Get it wrong and the best protocol in the world becomes a liability. This is a framing, not legal advice — verify against your local regulator." },
+          { "type": "h2", "text": "The three tiers that show up almost everywhere" },
+          { "type": "ul", "items": [
+            "Physician (MD / dermatologist / plastic surgeon): broadest scope. Typically the only tier cleared for deep microneedling, anything approaching injectable depth, and physician-supervised novel actives.",
+            "Nurse / advanced practitioner: often permitted to perform under physician delegation or supervision, with depth and indication limits.",
+            "Cosmetologist / aesthetician: superficial work. In most jurisdictions this means shallow microneedling (commonly capped well under 1 mm), topical and barrier-supporting protocols, and post-care — not deep penetration or anything classed as a medical act."
+          ] },
+          { "type": "h2", "text": "Why depth is the dividing line" },
+          { "type": "p", "text": "Microneedling regulation almost always keys on needle depth, because depth is what turns a cosmetic procedure into a medical one. A device like MitoPen with a dial-locked depth ring is an asset here precisely because the limit is mechanical and demonstrable: you can show that the handle was set to a compliant depth for the scope you operate under. The same device serves a physician at 1.5 mm and a cosmetologist at 0.25–0.5 mm — the licence sets the number, the dial enforces it." },
+          { "type": "h2", "text": "Where exosomes sit" },
+          { "type": "p", "text": "Exosome products occupy a moving regulatory space and the classification differs sharply between markets — cosmetic in some, restricted or physician-only in others. The safe operating principle: treat the topical/barrier and superficial-delivery applications as the broadly available tier, and reserve anything resembling deep introduction or injection for the physician scope. When in doubt, the lower-depth, topical-plus-superficial protocol is both the safer clinical choice and the safer regulatory one." },
+          { "type": "h2", "text": "Building a menu that fits your licence" },
+          { "type": "p", "text": "Design the menu around your scope, not around the device's maximum. A cosmetologist-led clinic can run a complete, compelling protocol — superficial Exosignal and V-Tech delivery, barrier-supporting masks, Mitoscan diagnostics, structured home care — without ever touching physician-only depths. A physician-led clinic layers the deeper work on top. The device line is built to serve both tiers; the licence decides which settings you use." },
+          { "type": "h2", "text": "The documentation that protects you" },
+          { "type": "p", "text": "Record the depth setting, the practitioner and their qualification, the consent, and the contraindication check for every session. If a regulator ever asks, 'who did this and at what depth', the answer should be in the chart before the question is asked. The same Mitoscan baseline that sells the next course also timestamps the standard of care you delivered." },
+          { "type": "quote", "text": "Design the menu around your scope, not around the device's maximum.", "author": "Mitoderm practitioner note" }
+        ]
+      },
+      "ru": {
+        "title": "Кто что может — границы компетенций для протоколов с экзосомами и микронидлингом",
+        "eyebrow": "ОБРАЗОВАНИЕ · КОМПЕТЕНЦИИ",
+        "excerpt": "Врач, медсестра, косметолог — граница того, кто какой протокол может вести, зависит от юрисдикции и легко ошибиться. Практичная рамка для меню, которое остаётся в пределах вашей лицензии, на примере Израиля.",
+        "readTime": "6 мин чтения",
+        "body": [
+          { "type": "p", "text": "До покупки любого девайса меню клиники определяет не вопрос «работает ли», а «имею ли я право это делать здесь». Границы компетенций для инъекций, глубины микронидлинга и применения экзосом различаются по странам, по профессиональным титулам, иногда по регионам внутри страны. Ошибка — и лучший протокол в мире становится риском. Это рамка, а не юридическая консультация — сверяйтесь с местным регулятором." },
+          { "type": "h2", "text": "Три уровня, которые встречаются почти везде" },
+          { "type": "ul", "items": [
+            "Врач (MD / дерматолог / пластический хирург): самый широкий объём. Обычно единственный уровень, допущенный к глубокому микронидлингу, ко всему, что приближается к инъекционной глубине, и к новым активам под наблюдением врача.",
+            "Медсестра / продвинутый специалист: часто допускается под делегированием или наблюдением врача, с ограничениями по глубине и показаниям.",
+            "Косметолог / эстетист: поверхностная работа. В большинстве юрисдикций это неглубокий микронидлинг (обычно заметно меньше 1 мм), топические и барьер-поддерживающие протоколы и постуход — но не глубокое проникновение и не то, что классифицируется как медицинское действие."
+          ] },
+          { "type": "h2", "text": "Почему глубина — это граница" },
+          { "type": "p", "text": "Регулирование микронидлинга почти всегда завязано на глубину иглы, потому что именно глубина превращает косметическую процедуру в медицинскую. Девайс вроде MitoPen с кольцевой фиксацией глубины здесь — преимущество, именно потому что предел механический и доказуемый: вы можете показать, что ручка была выставлена на допустимую глубину для вашего объёма прав. Тот же девайс служит врачу на 1.5 мм и косметологу на 0.25–0.5 мм — лицензия задаёт число, кольцо его удерживает." },
+          { "type": "h2", "text": "Где находятся экзосомы" },
+          { "type": "p", "text": "Экзосомные продукты занимают подвижное регуляторное поле, и классификация резко различается между рынками — где-то косметика, где-то ограничено или только для врачей. Безопасный принцип работы: считайте топические/барьерные и поверхностные применения широко доступным уровнем, а всё, что напоминает глубокое введение или инъекцию, оставьте врачебному объёму. В сомнении протокол меньшей глубины (топика плюс поверхность) — и более безопасный клинически, и более безопасный регуляторно." },
+          { "type": "h2", "text": "Меню под вашу лицензию" },
+          { "type": "p", "text": "Стройте меню вокруг своего объёма прав, а не вокруг максимума девайса. Клиника под руководством косметолога может вести полный, убедительный протокол — поверхностная доставка Exosignal и V-Tech, барьер-поддерживающие маски, диагностика Mitoscan, структурированный домашний уход — ни разу не касаясь врачебных глубин. Клиника под руководством врача наслаивает более глубокую работу сверху. Линейка девайсов рассчитана на оба уровня; лицензия решает, какие настройки вы используете." },
+          { "type": "h2", "text": "Документация, которая вас защищает" },
+          { "type": "p", "text": "Фиксируйте настройку глубины, специалиста и его квалификацию, согласие и проверку противопоказаний для каждой сессии. Если регулятор спросит «кто это делал и на какой глубине», ответ должен быть в карте раньше вопроса. Та же база Mitoscan, что продаёт следующий курс, фиксирует и стандарт оказанной помощи." },
+          { "type": "quote", "text": "Стройте меню вокруг своего объёма прав, а не вокруг максимума девайса.", "author": "Заметка для специалистов Mitoderm" }
+        ]
+      },
+      "he": {
+        "title": "מי רשאי לעשות מה — תחום העיסוק לפרוטוקולי אקסוזומים ומיקרו-נידלינג",
+        "eyebrow": "ידע מקצועי · תחום עיסוק",
+        "excerpt": "רופא, אח/ות, קוסמטיקאי/ת — הגבול בין מי רשאי להפעיל איזה פרוטוקול תלוי-רגולציה וקל לטעות בו. מסגרת מעשית לבניית תפריט שנשאר בתוך הרישיון שלכם, עם ישראל כדוגמה.",
+        "readTime": "6 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "לפני שקונים מכשיר אחד, השאלה שמחליטה את התפריט של הקליניקה אינה 'האם זה עובד' — אלא 'האם אני מורשה לעשות את זה כאן'. תחום העיסוק להזרקות, לעומק מיקרו-נידלינג וליישום אקסוזומים משתנה בין מדינות, בין תארים מקצועיים ולעיתים בין אזורים בתוך מדינה. טעות — והפרוטוקול הכי טוב בעולם הופך לסיכון. זו מסגרת, לא ייעוץ משפטי — בדקו מול הרגולטור המקומי שלכם." },
+          { "type": "h2", "text": "שלוש הרמות שמופיעות כמעט בכל מקום" },
+          { "type": "ul", "items": [
+            "רופא (MD / דרמטולוג / מנתח פלסטי): התחום הרחב ביותר. בדרך כלל הרמה היחידה המורשית למיקרו-נידלינג עמוק, לכל מה שמתקרב לעומק הזרקה ולפעילים חדשים בפיקוח רופא.",
+            "אח/ות / מטפל/ת מתקדם/ת: לעיתים קרובות מורשה תחת האצלה או פיקוח של רופא, עם מגבלות עומק והתוויה.",
+            "קוסמטיקאי/ת: עבודה שטחית. ברוב התחומים זה מיקרו-נידלינג רדוד (בדרך כלל הרבה מתחת ל-1 מ\"מ), פרוטוקולים טופיקליים ותומכי-מחסום וטיפול-המשך — לא חדירה עמוקה ולא דבר שמסווג כפעולה רפואית."
+          ] },
+          { "type": "h2", "text": "למה העומק הוא קו ההפרדה" },
+          { "type": "p", "text": "רגולציית מיקרו-נידלינג כמעט תמיד מבוססת על עומק המחט, כי העומק הוא מה שהופך פרוצדורה קוסמטית לרפואית. מכשיר כמו MitoPen עם טבעת עומק נעולה הוא יתרון כאן בדיוק כי הגבול מכני וניתן להוכחה: אפשר להראות שהידית הוגדרה לעומק תואם לתחום העיסוק שלכם. אותו מכשיר משרת רופא ב-1.5 מ\"מ וקוסמטיקאית ב-0.25–0.5 מ\"מ — הרישיון קובע את המספר, הטבעת אוכפת אותו." },
+          { "type": "h2", "text": "איפה האקסוזומים יושבים" },
+          { "type": "p", "text": "מוצרי אקסוזומים תופסים מרחב רגולטורי נע, והסיווג שונה מאוד בין שווקים — קוסמטי במקומות מסוימים, מוגבל או לרופאים בלבד באחרים. עקרון הפעולה הבטוח: התייחסו ליישום הטופיקלי/מחסומי והשטחי כרמה הזמינה בהרחבה, ושמרו כל דבר שמזכיר החדרה עמוקה או הזרקה לתחום הרופא. בספק, הפרוטוקול הרדוד יותר (טופיקלי פלוס שטחי) הוא גם הבחירה הקלינית הבטוחה יותר וגם הרגולטורית." },
+          { "type": "h2", "text": "לבנות תפריט שמתאים לרישיון" },
+          { "type": "p", "text": "תכננו את התפריט סביב תחום העיסוק שלכם, לא סביב המקסימום של המכשיר. קליניקה בהובלת קוסמטיקאית יכולה להריץ פרוטוקול שלם ומשכנע — החדרה שטחית של Exosignal ו-V-Tech, מסכות תומכות-מחסום, אבחון Mitoscan, טיפול-בית מובנה — בלי לגעת אף פעם בעומקי-רופא. קליניקה בהובלת רופא מוסיפה את העבודה העמוקה מעל. סדרת המכשירים בנויה לשתי הרמות; הרישיון מחליט באילו הגדרות תשתמשו." },
+          { "type": "h2", "text": "התיעוד שמגן עליכם" },
+          { "type": "p", "text": "תעדו את הגדרת העומק, את המטפל/ת ואת ההסמכה, את ההסכמה ואת בדיקת ההתוויות-נגד לכל סשן. אם רגולטור אי פעם ישאל 'מי עשה את זה ובאיזה עומק', התשובה צריכה להיות בכרטיס לפני שהשאלה נשאלת. אותו בסיס Mitoscan שמוכר את הקורס הבא גם מתעד את סטנדרט הטיפול שסיפקתם." },
+          { "type": "quote", "text": "תכננו את התפריט סביב תחום העיסוק שלכם, לא סביב המקסימום של המכשיר.", "author": "הערת מטפלים של מיטודרם" }
+        ]
+      }
+    }
+  },
+  {
     "slug": "post-procedure-recovery-window",
     "date": "2026-06-19",
     "accent": "gold",
