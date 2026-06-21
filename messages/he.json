@@ -98,7 +98,8 @@
     "back": "כל הפוסטים",
     "ctaTitle": "להכניס את הפרוטוקול לקליניקה",
     "ctaText": "מחיר, הדרכה ותמיכת פרוטוקול — דברו איתנו.",
-    "ctaButton": "צרו קשר"
+    "ctaButton": "צרו קשר",
+    "relatedTitle": "להמשיך לקרוא"
   },
   "catalog": {
     "eyebrow": "קטלוג",
@@ -239,7 +240,21 @@
     "copyright": "© 2026 Mitoderm. כל הזכויות שמורות.",
     "accessibility": "הצהרת נגישות",
     "privacy": "מדיניות פרטיות",
-    "group": "SinoSciences Group"
+    "group": "SinoSciences Group",
+    "brandText": "טיפוח אקסוזומים מקצועי, פילינגי NAD+ של אריכות ימים והחדרת מיקרו-נידלינג ברמת קליניקה — מורכבים כפרוטוקול שכבתי אחד.",
+    "colDiscoverTitle": "לגלות",
+    "colCatalogTitle": "קטלוג",
+    "colProTitle": "למקצוענים",
+    "linkScience": "המדע",
+    "linkBlog": "יומן",
+    "linkProtocols": "פרוטוקולים",
+    "linkRegimen": "התאמת שגרה",
+    "linkLines": "סדרות",
+    "linkCatalog": "כל המוצרים",
+    "linkClinics": "קליניקות שותפות",
+    "linkSeminars": "סמינרים",
+    "linkApply": "הרשמה לשותפות",
+    "linkContact": "צרו קשר"
   },
   "accessibility": {
     "title": "הצהרת נגישות עבור exoskin.co.il",

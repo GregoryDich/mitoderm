@@ -98,7 +98,8 @@
     "back": "Все посты",
     "ctaTitle": "Внедрить протокол в клинике",
     "ctaText": "Цена, обучение и поддержка протокола — свяжитесь с нами.",
-    "ctaButton": "Связаться"
+    "ctaButton": "Связаться",
+    "relatedTitle": "Дальше по теме"
   },
   "catalog": {
     "eyebrow": "КАТАЛОГ",
@@ -239,7 +240,21 @@
     "copyright": "© 2026 Mitoderm. Все права защищены.",
     "accessibility": "Заявление о доступности",
     "privacy": "Политика конфиденциальности",
-    "group": "SinoSciences Group"
+    "group": "SinoSciences Group",
+    "brandText": "Профессиональная экзосомная косметология, NAD+ пилинги долголетия и клиническая микронидлинг-доставка — собранные как один слоистый протокол.",
+    "colDiscoverTitle": "Узнать",
+    "colCatalogTitle": "Каталог",
+    "colProTitle": "Для специалистов",
+    "linkScience": "Наука",
+    "linkBlog": "Журнал",
+    "linkProtocols": "Протоколы",
+    "linkRegimen": "Подбор схемы",
+    "linkLines": "Линейки",
+    "linkCatalog": "Все продукты",
+    "linkClinics": "Клиники-партнёры",
+    "linkSeminars": "Семинары",
+    "linkApply": "Стать партнёром",
+    "linkContact": "Связаться"
   },
   "accessibility": {
     "title": "Декларация о доступности для exoskin.co.il",

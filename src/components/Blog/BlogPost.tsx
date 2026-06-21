@@ -2,13 +2,14 @@ import { FC } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
-import type { Post } from '@/posts';
+import type { Post, PostSummary } from '@/posts';
 import type { LocaleType } from '@/types';
 import styles from './BlogPost.module.scss';
 
 interface Props {
   post: Post;
   locale: LocaleType;
+  related?: PostSummary[];
 }
 
 const accentVar: Record<'teal' | 'gold' | 'rose', string> = {
@@ -17,7 +18,7 @@ const accentVar: Record<'teal' | 'gold' | 'rose', string> = {
   rose: '#b4607e',
 };
 
-const BlogPost: FC<Props> = ({ post, locale }) => {
+const BlogPost: FC<Props> = ({ post, locale, related = [] }) => {
   const t = useTranslations('blog');
   const format = useFormatter();
   const c = post.content[locale];
@@ -91,6 +92,25 @@ const BlogPost: FC<Props> = ({ post, locale }) => {
             return null;
           })}
         </div>
+
+        {related.length > 0 && (
+          <section className={styles.related} aria-labelledby="related-title">
+            <h2 id="related-title" className={styles.relatedTitle}>
+              {t('relatedTitle')}
+            </h2>
+            <ul className={styles.relatedList}>
+              {related.map((r) => (
+                <li key={r.slug} className={styles.relatedCard}>
+                  <Link href={r.href} className={styles.relatedLink}>
+                    <span className={styles.relatedEyebrow}>{r.eyebrow}</span>
+                    <span className={styles.relatedHeadline}>{r.title}</span>
+                    <span className={styles.relatedMeta}>{r.readTime}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <section className={styles.cta}>
           <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>

@@ -58,3 +58,37 @@ export const getPostSummaries = (locale: LocaleType): PostSummary[] =>
     excerpt: p.content[locale].excerpt,
     readTime: p.content[locale].readTime,
   }));
+
+/** Find up to `limit` related posts for a given slug, ranked by tag
+ *  overlap. Falls back to the most recent other posts if there are no
+ *  tag hits. Excludes the current post. */
+export const getRelatedPosts = (
+  slug: string,
+  locale: LocaleType,
+  limit = 2
+): PostSummary[] => {
+  const current = getPost(slug);
+  if (!current) return [];
+  const tagSet = new Set(current.tags);
+  const candidates = posts.filter((p) => p.slug !== slug);
+  const scored = candidates.map((p) => ({
+    p,
+    score: p.tags.reduce((n, t) => (tagSet.has(t) ? n + 1 : n), 0),
+  }));
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return a.p.date < b.p.date ? 1 : -1;
+  });
+  return scored.slice(0, limit).map(({ p }) => ({
+    slug: p.slug,
+    href: `/blog/${p.slug}`,
+    date: p.date,
+    accent: p.accent,
+    image: p.image,
+    tags: p.tags,
+    title: p.content[locale].title,
+    eyebrow: p.content[locale].eyebrow,
+    excerpt: p.content[locale].excerpt,
+    readTime: p.content[locale].readTime,
+  }));
+};

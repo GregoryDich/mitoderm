@@ -141,8 +141,77 @@
   font-style: normal;
 }
 
-.cta {
+.related {
   margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.relatedTitle {
+  margin: 0 0 18px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.5);
+  font-weight: 600;
+}
+
+.relatedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.relatedCard {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.relatedCard:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.relatedLink {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.relatedEyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.relatedHeadline {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.32;
+  color: #f5f2f0;
+  flex: 1 1 auto;
+}
+
+.relatedMeta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(245, 242, 240, 0.5);
+}
+
+.cta {
+  margin-top: 40px;
   padding: 36px clamp(20px, 4vw, 40px);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.035);

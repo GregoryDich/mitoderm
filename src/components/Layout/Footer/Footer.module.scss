@@ -1,36 +1,116 @@
 .footer {
   position: relative;
+  background-color: #08080a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(40px, 5vw, 60px) clamp(24px, 6vw, 140px) 24px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 40px);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) 3fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: start;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 320px;
+}
+
+.logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.brandText {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.55);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.colTitle {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.5);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.colLink {
+  font-size: 14px;
+  color: rgba(245, 242, 240, 0.78);
+  text-decoration: none;
+  padding: 4px 0;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #f5f2f0;
+  }
+}
+
+.bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  height: 140px;
-  padding: 0 140px;
-  background-color: #08080a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-  display: block;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .copyright {
-  font-size: 13px;
-  color: rgba(245, 242, 240, 0.55);
+  font-size: 12.5px;
+  color: rgba(245, 242, 240, 0.4);
 }
 
-.links {
+.legal {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
 
   button {
     background: transparent;
-    font-size: 13px;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 12.5px;
     color: rgba(245, 242, 240, 0.55);
+    transition: color 0.15s ease;
+    padding: 0;
+
+    &:hover {
+      color: #f5f2f0;
+    }
+  }
+
+  a {
+    font-size: 12.5px;
+    color: rgba(245, 242, 240, 0.55);
+    text-decoration: none;
     transition: color 0.15s ease;
 
     &:hover {
@@ -39,10 +119,23 @@
   }
 }
 
-@media screen and (max-width: 1224px) {
-  .footer {
-    height: auto;
-    padding: 32px 24px;
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cols {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .bottom {
     justify-content: center;
     text-align: center;
   }

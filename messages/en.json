@@ -98,7 +98,8 @@
     "back": "All posts",
     "ctaTitle": "Bring this protocol into your clinic",
     "ctaText": "Pricing, training and protocol support — get in touch.",
-    "ctaButton": "Contact us"
+    "ctaButton": "Contact us",
+    "relatedTitle": "Continue reading"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -536,7 +537,21 @@
     "copyright": "© 2026 Mitoderm. All Rights Reserved.",
     "accessibility": "Accessibility Statement",
     "privacy": "Privacy Policy",
-    "group": "SinoSciences Group"
+    "group": "SinoSciences Group",
+    "brandText": "Professional exosome skincare, NAD+ longevity peelings and clinic-grade microneedling delivery — engineered as one layered protocol.",
+    "colDiscoverTitle": "Discover",
+    "colCatalogTitle": "Catalog",
+    "colProTitle": "For professionals",
+    "linkScience": "The science",
+    "linkBlog": "Journal",
+    "linkProtocols": "Protocols",
+    "linkRegimen": "Regimen finder",
+    "linkLines": "Lines",
+    "linkCatalog": "All products",
+    "linkClinics": "Partner clinics",
+    "linkSeminars": "Seminars",
+    "linkApply": "Apply to partner",
+    "linkContact": "Contact"
   },
   "accessibility": {
     "title": "Accessibility Declaration for exoskin.co.il",

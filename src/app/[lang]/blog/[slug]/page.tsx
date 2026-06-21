@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { LocaleType } from '@/types';
-import { getPost, posts } from '@/posts';
+import { getPost, getRelatedPosts, posts } from '@/posts';
 import {
   SITE_NAME,
   SITE_URL,
@@ -84,9 +84,11 @@ export default async function BlogPostRoute({
     publisher: { '@type': 'Organization', name: SITE_NAME },
   };
 
+  const related = getRelatedPosts(slug, lang, 2);
+
   return (
     <>
-      <BlogPost post={post} locale={lang} />
+      <BlogPost post={post} locale={lang} related={related} />
       <JsonLd id={`ld-article-${slug}`} data={articleLd} />
     </>
   );
