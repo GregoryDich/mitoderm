@@ -296,7 +296,12 @@
     "nad+": "Coenzyme central to cellular energy. Topical NAD+ supports mitochondrial recovery — relevant for longevity protocols.",
     "retinol": "Vitamin A derivative. Accelerates cell turnover, smooths texture, reduces fine lines. Photosensitising — use in evening protocols.",
     "ahas": "Alpha-hydroxy acids (glycolic, lactic, mandelic). Water-soluble exfoliants targeting tone and texture.",
-    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin."
+    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin.",
+    "polynucleotide": "Long chains of nucleotides that bind water and signal fibroblasts to rebuild dermal scaffolding. Particularly relevant for post-procedure barrier soothing and density.",
+    "snail mucin": "Filtered secretion rich in glycoproteins, hyaluronic acid and copper peptides. Calms, hydrates and supports barrier recovery.",
+    "biomimetic peptide": "Lab-designed peptide that mimics a signal the skin already understands — instructs fibroblasts to repair, restructure or quiet inflammation.",
+    "microneedling": "Controlled micro-channels created with a motorised needle pen. Triggers a wound-healing cascade and, more importantly, delivers actives past the stratum corneum.",
+    "lyophilised": "Freeze-dried — water removed at low temperature to keep delicate cargo stable until activation at the chair."
   },
   "promo": {
     "label": "Upcoming promotion",

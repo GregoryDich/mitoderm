@@ -1,5 +1,197 @@
 [
   {
+    "slug": "nad-peeling-when-to-use-it",
+    "date": "2026-06-10",
+    "accent": "gold",
+    "image": "/products/exo-nad/hero.png",
+    "tags": ["nad", "peeling", "longevity"],
+    "content": {
+      "en": {
+        "title": "NAD+ peeling — when to put it on the menu, and when to skip it",
+        "eyebrow": "PROTOCOL · LONGEVITY",
+        "excerpt": "NAD+ peeling is a longevity tool, not a resurfacing one. Here's the practical brief: who it's for, where it sits next to V-Tech, and the contraindication list every receptionist should know.",
+        "readTime": "5 min read",
+        "body": [
+          { "type": "p", "text": "NAD+ (nicotinamide adenine dinucleotide) is the coenzyme your patients have been reading about in their longevity podcasts. In the clinic, it's the substrate for mitochondrial energy and DNA repair — the two things that quietly decline with age and that quietly drive the fatigued-looking skin you see at consultation." },
+          { "type": "p", "text": "EXO-NAD is a three-step longevity peeling built around that mechanism: pH normalizer, peptide-priming Longevity Serum, and the NAD+ peeling itself. The question is not whether NAD+ is interesting — it's whether the patient in front of you is the right patient." },
+          { "type": "h2", "text": "Who it's for" },
+          { "type": "ul", "items": [
+            "Patients whose chief complaint is dullness, fatigue and \"flat\" skin — not deep wrinkles",
+            "30–55 with no active resurfacing course in the previous 6 weeks",
+            "Combining patients who already run a V-Tech series and want a second tool on alternating weeks",
+            "Pre-event freshening — visible glow at 7–10 days, with minimal social downtime"
+          ] },
+          { "type": "h2", "text": "Who it's not for" },
+          { "type": "ul", "items": [
+            "Active inflammatory skin disease at the treatment zone",
+            "Pregnancy and lactation",
+            "Hypersensitivity to any component of the kit",
+            "Recent isotretinoin therapy (within 6 months)"
+          ] },
+          { "type": "h2", "text": "Where it sits next to V-Tech" },
+          { "type": "p", "text": "On alternating weeks. The V-Tech facial system is the structural / density tool — exosomes plus the polynucleotide gel mask plus the sealing Exotech gel. EXO-NAD is the longevity tool — mitochondrial recovery and visible glow. Running them in alternation gives the practitioner a six-week story to tell at consultation, with two different mechanisms that complement rather than compete." },
+          { "type": "h2", "text": "Course structure" },
+          { "type": "p", "text": "3–4 sessions, two weeks apart. Maintenance once per quarter. Photograph at baseline — Mitoscan or your imaging device — and at the end of the course. Comparison without baseline is opinion." },
+          { "type": "quote", "text": "Peelings used to compete on depth. Longevity peelings compete on substrate.", "author": "EXO-NAD training note" }
+        ]
+      },
+      "ru": {
+        "title": "Пилинг NAD+ — когда ставить в меню, а когда пропускать",
+        "eyebrow": "ПРОТОКОЛ · ДОЛГОЛЕТИЕ",
+        "excerpt": "Пилинг NAD+ — инструмент долголетия, а не ресурфейсинга. Практическое резюме: кому подходит, как сочетается с V-Tech, и противопоказания, которые должна знать каждая ресепшн.",
+        "readTime": "5 мин чтения",
+        "body": [
+          { "type": "p", "text": "NAD+ (никотинамид аденин динуклеотид) — кофермент, о котором пациенты услышали в подкастах о долголетии. В клинике это субстрат для митохондриальной энергетики и репарации ДНК — две вещи, которые тихо снижаются с возрастом и тихо двигают «уставшее» лицо, которое вы видите на консультации." },
+          { "type": "p", "text": "EXO-NAD — трёхшаговый пилинг долголетия именно с этим механизмом: pH-нормализатор, Longevity Serum с пептидным праймингом и сам NAD+ пилинг. Вопрос не в том, интересен ли NAD+ — а в том, тот ли перед вами пациент." },
+          { "type": "h2", "text": "Кому подходит" },
+          { "type": "ul", "items": [
+            "Жалоба — тусклость, усталость, «плоская» кожа, а не глубокие морщины",
+            "30–55 лет, без активного ресурфейсинг-курса в последние 6 недель",
+            "Пациенты на курсе V-Tech, которым нужен второй инструмент на чередующиеся недели",
+            "Подготовка к событию — видимое сияние на 7–10 день, минимальный социальный downtime"
+          ] },
+          { "type": "h2", "text": "Кому не подходит" },
+          { "type": "ul", "items": [
+            "Активные воспалительные процессы в зоне",
+            "Беременность и лактация",
+            "Чувствительность к компонентам набора",
+            "Изотретиноин в последние 6 месяцев"
+          ] },
+          { "type": "h2", "text": "Связка с V-Tech" },
+          { "type": "p", "text": "По чередующимся неделям. Лицевая система V-Tech — структурный/плотностный инструмент: экзосомы + полинуклеотидный гель-маска + запечатывающий Exotech-гель. EXO-NAD — инструмент долголетия: митохондриальное восстановление и видимое сияние. Чередование даёт практикующему шестинедельную историю на консультации — два разных механизма, которые дополняют, а не конкурируют." },
+          { "type": "h2", "text": "Структура курса" },
+          { "type": "p", "text": "3–4 сессии с интервалом 2 недели. Поддержка раз в квартал. Базовое фото — Mitoscan или ваш сканер — и финал курса. Сравнение без базы — это мнение, а не результат." },
+          { "type": "quote", "text": "Пилинги раньше соревновались в глубине. Пилинги долголетия — в субстрате.", "author": "Обучающая заметка EXO-NAD" }
+        ]
+      },
+      "he": {
+        "title": "פילינג NAD+ — מתי לשים בתפריט ומתי לדלג",
+        "eyebrow": "פרוטוקול · אריכות ימים",
+        "excerpt": "פילינג NAD+ הוא כלי של אריכות ימים, לא של resurfacing. תקציר מעשי: למי הוא מתאים, איפה הוא יושב ליד V-Tech, ורשימת ההתוויות-נגד שכל פקיד קבלה צריך לדעת.",
+        "readTime": "5 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "NAD+ (ניקוטינאמיד אדנין דינוקלאוטיד) הוא הקואנזים שעליו הלקוחות שלכם שמעו בפודקאסטים של אריכות ימים. בקליניקה — זה הסובסטרט לאנרגיה מיטוכונדריאלית ולתיקון DNA: שני דברים שיורדים בשקט עם הגיל וגורמים בשקט לעור עייף שאתם רואים בייעוץ." },
+          { "type": "p", "text": "EXO-NAD הוא פילינג אריכות ימים בן שלושה שלבים בדיוק סביב המנגנון הזה: pH Normalizer, Longevity Serum עם פפטידים ראשוניים, והפילינג NAD+ עצמו. השאלה היא לא אם NAD+ מעניין — אלא האם הלקוח שמולכם הוא הלקוח הנכון." },
+          { "type": "h2", "text": "למי זה מתאים" },
+          { "type": "ul", "items": [
+            "תלונה ראשית של עמימות, עייפות ועור \"שטוח\" — לא קמטים עמוקים",
+            "30–55, ללא קורס resurfacing פעיל בשישה השבועות האחרונים",
+            "לקוחות שכבר רצים בקורס V-Tech ורוצים כלי שני בשבועות מתחלפים",
+            "ריענון לקראת אירוע — זוהר נראה ב-7–10 ימים עם downtime חברתי מינימלי"
+          ] },
+          { "type": "h2", "text": "למי זה לא מתאים" },
+          { "type": "ul", "items": [
+            "מחלות עור דלקתיות פעילות באזור",
+            "הריון והנקה",
+            "רגישות לאחד מרכיבי הערכה",
+            "טיפול איזוטרטינואין בששת החודשים האחרונים"
+          ] },
+          { "type": "h2", "text": "השילוב עם V-Tech" },
+          { "type": "p", "text": "בשבועות מתחלפים. מערכת הפנים V-Tech היא הכלי המבני/צפיפותי — אקסוזומים פלוס מסכת ג׳ל פולינוקלאוטידים פלוס ג׳ל Exotech לאיטום. EXO-NAD הוא כלי אריכות הימים — שיקום מיטוכונדריאלי וזוהר נראה. הפעלה לסירוגין נותנת לקלינאי סיפור של שישה שבועות לייעוץ — שני מנגנונים שונים שמשלימים ולא מתחרים." },
+          { "type": "h2", "text": "מבנה הקורס" },
+          { "type": "p", "text": "3–4 סשנים בהפרשי שבועיים. תחזוקה פעם ברבעון. צילום בסיס ב-Mitoscan או במכשיר הדימות שלכם, וצילום סוף קורס. השוואה בלי בסיס היא דעה, לא תוצאה." },
+          { "type": "quote", "text": "פילינגים פעם התחרו על עומק. פילינגי אריכות ימים — על סובסטרט.", "author": "הערת הדרכה של EXO-NAD" }
+        ]
+      }
+    }
+  },
+  {
+    "slug": "microneedling-depth-guide",
+    "date": "2026-06-15",
+    "accent": "rose",
+    "image": "/products/mitopen/hero.webp",
+    "tags": ["microneedling", "mitopen", "protocol"],
+    "content": {
+      "en": {
+        "title": "Microneedling depth — the chair-side guide",
+        "eyebrow": "PROTOCOL · MICRONEEDLING",
+        "excerpt": "How deep, how fast, on which zone — the part of microneedling protocols that gets fudged with experience and lost with new operators. A short, practical reference for the chair.",
+        "readTime": "4 min read",
+        "body": [
+          { "type": "p", "text": "Microneedling depth is the single variable that decides whether a session is delivery-only or a full structural treatment. Too shallow and the active never reaches its target tissue. Too deep and you turn an aesthetic session into a wound-healing one, with a downtime your patient didn't sign up for." },
+          { "type": "p", "text": "MitoPen E30-Ultima locks depth via a dial ring on the handle — clockwise shortens, counter-clockwise lengthens. The locked depth is the contract you make with the patient at the start of the session." },
+          { "type": "h2", "text": "Depth by zone (face)" },
+          { "type": "ul", "items": [
+            "Forehead, temples — 0.25–0.5 mm. Thin skin, dense vasculature, low tolerance.",
+            "Cheeks — 0.5–1.0 mm for V-Tech serum delivery; up to 1.5 mm for textural / scar work.",
+            "Jawline — 1.0–1.5 mm for structural sessions.",
+            "Nasolabial — 0.5–1.0 mm; reduce on the upper lip border."
+          ] },
+          { "type": "h2", "text": "Speed by indication" },
+          { "type": "p", "text": "Five speeds. Slower on bony or thin areas (temples, forehead, upper lip). Faster on dense zones and on textural/scar protocols where coverage matters more than dwell time. Step up from the lowest speed at the start of the session so the patient acclimatises." },
+          { "type": "h2", "text": "Scalp protocols" },
+          { "type": "p", "text": "For Exosignal Hair sessions, the depth on the scalp is typically 0.5–0.8 mm — enough to open channels for the exosome serum, shallow enough to avoid follicle disturbance. Open the consultation with Mitoscan for baseline imaging; the same imaging at week 6 and week 12 turns subjective \"feels denser\" into a real chart entry." },
+          { "type": "h2", "text": "Safety rituals" },
+          { "type": "ul", "items": [
+            "Always open a fresh sterile cartridge per patient.",
+            "Hold the handle upright so fluids don't flow back into the body of the device.",
+            "Disinfect the handle between patients per the brand SOP.",
+            "Refuse the session on fevers above 38 °C, active infection in zone, recent isotretinoin or relevant allergies."
+          ] },
+          { "type": "quote", "text": "Depth is a contract. The dial ring is where you sign it.", "author": "MitoPen operator training" }
+        ]
+      },
+      "ru": {
+        "title": "Глубина микронидлинга — гид у кресла",
+        "eyebrow": "ПРОТОКОЛ · МИКРОНИДЛИНГ",
+        "excerpt": "Какая глубина, какая скорость, какая зона — часть протокола, которая «уходит на чутьё» с опытом и теряется у новых операторов. Короткий рабочий справочник.",
+        "readTime": "4 мин чтения",
+        "body": [
+          { "type": "p", "text": "Глубина — единственная переменная, решающая, будет ли сессия только доставкой или полноценной структурной работой. Слишком мелко — актив не доходит до целевой ткани. Слишком глубоко — эстетическая сессия превращается в заживляющую, с downtime, на который пациент не подписывался." },
+          { "type": "p", "text": "MitoPen E30-Ultima фиксирует глубину кольцом на ручке: по часовой — короче, против часовой — длиннее. Зафиксированная глубина — это контракт, который вы заключаете с пациентом в начале сессии." },
+          { "type": "h2", "text": "Глубина по зонам (лицо)" },
+          { "type": "ul", "items": [
+            "Лоб, виски — 0.25–0.5 мм. Тонкая кожа, плотная сосудистая сеть, низкая переносимость.",
+            "Щёки — 0.5–1.0 мм для доставки сыворотки V-Tech; до 1.5 мм для текстуры/рубцов.",
+            "Линия челюсти — 1.0–1.5 мм для структурных сессий.",
+            "Носогубные — 0.5–1.0 мм; уменьшать на красной кайме."
+          ] },
+          { "type": "h2", "text": "Скорость под задачу" },
+          { "type": "p", "text": "Пять скоростей. Медленнее — на костных и тонких зонах (виски, лоб, верхняя губа). Быстрее — на плотных зонах и в текстурных/рубцовых протоколах, где покрытие важнее времени контакта. Начинайте с минимальной скорости, чтобы пациент адаптировался." },
+          { "type": "h2", "text": "Протоколы по коже головы" },
+          { "type": "p", "text": "Для сессий Exosignal Hair глубина на коже головы обычно 0.5–0.8 мм — достаточно, чтобы открыть каналы для сыворотки, и не достаточно, чтобы потревожить фолликул. Открывайте консультацию Mitoscan для базового кадра; те же кадры на 6-й и 12-й неделе превращают субъективное «стало плотнее» в реальную запись в карте." },
+          { "type": "h2", "text": "Ритуалы безопасности" },
+          { "type": "ul", "items": [
+            "Свежий стерильный картридж — на каждого пациента.",
+            "Ручка вертикально, чтобы жидкости не затекали в корпус.",
+            "Дезинфекция корпуса между пациентами по SOP бренда.",
+            "Отказ от сессии при температуре выше 38 °C, активной инфекции в зоне, недавнем изотретиноине или релевантных аллергиях."
+          ] },
+          { "type": "quote", "text": "Глубина — это контракт. Кольцо на ручке — это место его подписи.", "author": "Обучение оператора MitoPen" }
+        ]
+      },
+      "he": {
+        "title": "עומק מיקרו-נידלינג — מדריך ליד הלקוח",
+        "eyebrow": "פרוטוקול · מיקרו-נידלינג",
+        "excerpt": "כמה עמוק, באיזו מהירות, באיזה אזור — החלק שבפרוטוקול שהולך לאינטואיציה אצל מנוסים ואובד אצל מפעילים חדשים. עזר מעשי קצר לליד-הכיסא.",
+        "readTime": "4 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "עומק הוא המשתנה היחיד שמחליט אם הסשן הוא רק החדרה או טיפול מבני שלם. רדוד מדי — הפעיל לא מגיע לרקמת המטרה. עמוק מדי — הסשן האסתטי הופך לסשן ריפוי פצע עם downtime שהלקוח לא הסכים אליו." },
+          { "type": "p", "text": "MitoPen E30-Ultima נועל את העומק בטבעת על הידית: סיבוב עם השעון מקצר, נגד השעון מאריך. העומק הנעול הוא החוזה שאתם חותמים מול הלקוח בתחילת הסשן." },
+          { "type": "h2", "text": "עומק לפי אזור (פנים)" },
+          { "type": "ul", "items": [
+            "מצח, רקות — 0.25–0.5 מ\"מ. עור דק, רשת כלי דם צפופה, סבילות נמוכה.",
+            "לחיים — 0.5–1.0 מ\"מ להחדרת סרום V-Tech; עד 1.5 מ\"מ לעבודת מרקם/צלקות.",
+            "קו הלסת — 1.0–1.5 מ\"מ לסשנים מבניים.",
+            "קווי שפתון-אף — 0.5–1.0 מ\"מ; להפחית בקו השפה העליונה."
+          ] },
+          { "type": "h2", "text": "מהירות לפי ההתוויה" },
+          { "type": "p", "text": "חמש מהירויות. איטי באזורים גרמיים או דקים (רקות, מצח, שפה עליונה). מהיר באזורים צפופים ובפרוטוקולי מרקם/צלקות שבהם הכיסוי חשוב מזמן השהייה. תתחילו מהמהירות הנמוכה ביותר כדי שהלקוח יתאקלם." },
+          { "type": "h2", "text": "פרוטוקולי קרקפת" },
+          { "type": "p", "text": "בסשנים של Exosignal Hair, העומק על הקרקפת הוא בדרך כלל 0.5–0.8 מ\"מ — מספיק כדי לפתוח תעלות לסרום ולא מספיק כדי להפריע לזקיק. תפתחו את הייעוץ עם Mitoscan לצילום בסיס; אותו דימות בשבוע 6 ובשבוע 12 הופך את \"מרגיש יותר צפוף\" לרישום אמיתי בכרטיס." },
+          { "type": "h2", "text": "טקסי בטיחות" },
+          { "type": "ul", "items": [
+            "מחסנית סטרילית טריה לכל לקוח.",
+            "הידית זקופה כדי שנוזלים לא יזרמו חזרה לתוך הגוף של המכשיר.",
+            "חיטוי הידית בין לקוחות לפי ה-SOP של המותג.",
+            "סירוב לסשן בחום מעל 38°C, זיהום פעיל באזור, איזוטרטינואין לאחרונה או אלרגיות רלוונטיות."
+          ] },
+          { "type": "quote", "text": "עומק הוא חוזה. טבעת הסיבוב היא איפה חותמים עליו.", "author": "הדרכת מפעיל MitoPen" }
+        ]
+      }
+    }
+  },
+  {
     "slug": "what-are-exosomes-in-skin-care",
     "date": "2026-06-01",
     "accent": "gold",
