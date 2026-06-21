@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { products, lines } from '@/products';
 import { posts } from '@/posts';
+import { concerns } from '@/concerns';
 import { LOCALES, DEFAULT_LOCALE, absUrl } from '@/lib/seo';
 
 const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply', '/blog', '/science', '/glossary'] as const;
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...lines.map((l) => `/lines/${l.slug}`),
     ...products.map((p) => `/products/${p.slug}`),
     ...posts.map((p) => `/blog/${p.slug}`),
+    ...concerns.map((c) => `/concerns/${c.slug}`),
   ];
 
   for (const path of allPaths) {

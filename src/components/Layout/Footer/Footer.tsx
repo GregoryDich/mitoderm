@@ -47,6 +47,9 @@ const Footer: FC = () => {
             <Link href="/glossary" className={styles.colLink}>
               {t('linkGlossary')}
             </Link>
+            <Link href="/concerns/density" className={styles.colLink}>
+              {t('linkConcerns')}
+            </Link>
             <Link href="/regimen" className={styles.colLink}>
               {t('linkRegimen')}
             </Link>

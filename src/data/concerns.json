@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "density",
+    "accent": "gold",
+    "lines": ["exosomes"],
+    "productSlugs": ["v-tech-serum", "v-tech-gel-mask", "exotech-gel"],
+    "postTags": ["exosomes", "v-tech", "recovery"]
+  },
+  {
+    "slug": "hair",
+    "accent": "teal",
+    "lines": ["exosignal-hair"],
+    "productSlugs": ["exosignal-hair", "exosignal-hair-spray"],
+    "postTags": ["hair", "exosignal", "protocol"]
+  },
+  {
+    "slug": "longevity",
+    "accent": "gold",
+    "lines": ["peeling"],
+    "productSlugs": ["exo-nad"],
+    "postTags": ["nad", "peeling", "longevity"]
+  },
+  {
+    "slug": "devices",
+    "accent": "teal",
+    "lines": ["devices"],
+    "productSlugs": ["mitoscan", "mitopen"],
+    "postTags": ["microneedling", "mitopen", "mitoscan", "diagnostic"]
+  }
+]

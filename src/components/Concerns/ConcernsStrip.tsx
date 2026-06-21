@@ -13,10 +13,10 @@ interface Concern {
 }
 
 const concerns: Concern[] = [
-  { key: 'density', href: '/lines/exosomes', accent: 'gold' },
-  { key: 'hair', href: '/lines/exosignal-hair', accent: 'teal' },
-  { key: 'longevity', href: '/lines/peeling', accent: 'gold' },
-  { key: 'devices', href: '/lines/devices', accent: 'teal' },
+  { key: 'density', href: '/concerns/density', accent: 'gold' },
+  { key: 'hair', href: '/concerns/hair', accent: 'teal' },
+  { key: 'longevity', href: '/concerns/longevity', accent: 'gold' },
+  { key: 'devices', href: '/concerns/devices', accent: 'teal' },
 ];
 
 const accentVar: Record<Concern['accent'], string> = {
