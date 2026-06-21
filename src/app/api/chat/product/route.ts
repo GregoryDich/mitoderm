@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getProduct } from '@/products';
 import type { LocaleType } from '@/types';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
+import { reportError } from '@/lib/report-error';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -159,6 +160,7 @@ export async function POST(req: Request) {
       }),
     });
   } catch (err) {
+    reportError(err, { where: 'chat.llm' });
     return NextResponse.json(
       { error: 'upstream_error', detail: (err as Error).message },
       { status: 502 }
@@ -167,8 +169,10 @@ export async function POST(req: Request) {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '');
-    // eslint-disable-next-line no-console
-    console.warn('[chat] anthropic error', res.status, detail);
+    reportError(new Error(`anthropic HTTP ${res.status}`), {
+      where: 'chat.llm',
+      meta: { status: res.status, detail: detail.slice(0, 200) },
+    });
     return NextResponse.json(
       { error: 'upstream_error', status: res.status },
       { status: 502 }

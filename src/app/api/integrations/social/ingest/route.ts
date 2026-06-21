@@ -4,6 +4,7 @@ import { createSocial, isInstagramUrl, readSocial, type SocialKind } from '@/lib
 import { writeAsset } from '@/lib/admin-store';
 import { logAudit, requestMeta } from '@/lib/audit-log';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
+import { reportError } from '@/lib/report-error';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -163,7 +164,8 @@ async function downloadPoster(url: string, id: string): Promise<string | undefin
       `chore(ingest): social poster ${id}`
     );
     return stored;
-  } catch {
+  } catch (err) {
+    reportError(err, { where: 'social.poster', meta: { id } });
     return undefined;
   }
 }

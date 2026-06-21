@@ -3,6 +3,7 @@ import { appendLead } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
 import { spamGuard } from '@/lib/spam-guard';
+import { reportError } from '@/lib/report-error';
 
 interface LeadBody {
   name?: string;
@@ -122,12 +123,13 @@ export async function POST(req: Request) {
         }),
       });
       if (!res.ok) {
-        // eslint-disable-next-line no-console
-        console.warn('[lead] resend send failed', res.status, await res.text());
+        reportError(new Error(`resend HTTP ${res.status}`), {
+          where: 'leads.email',
+          meta: { status: res.status },
+        });
       }
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.warn('[lead] resend send error', err);
+      reportError(err, { where: 'leads.email' });
     }
   }
 
@@ -159,12 +161,13 @@ export async function POST(req: Request) {
         body: payload,
       });
       if (!res.ok) {
-        // eslint-disable-next-line no-console
-        console.warn('[lead] webhook failed', res.status);
+        reportError(new Error(`webhook HTTP ${res.status}`), {
+          where: 'leads.webhook',
+          meta: { status: res.status },
+        });
       }
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.warn('[lead] webhook error', err);
+      reportError(err, { where: 'leads.webhook' });
     }
   }
 
