@@ -9,7 +9,8 @@
     "agenda": "תוכנית האירוע",
     "catalog": "קטלוג",
     "clinics": "מרפאות",
-    "seminars": "סמינרים"
+    "seminars": "סמינרים",
+    "lines": "סדרות"
   },
   "catalog": {
     "eyebrow": "קטלוג",
@@ -492,5 +493,20 @@
       "cosmetologist": "קוסמטיקאי/ת",
       "clinic": "מרפאה"
     }
+  },
+  "lines": {
+    "eyebrow": "סדרות מוצרים",
+    "title": "מערכות, לא רק מוצרים בודדים",
+    "subtitle": "כל סדרה של מיטודרם בנויה כפרוטוקול קליני שלם — מוצרים, רכיבים פעילים ושלבי יישום שתוכננו לעבוד יחד במרפאה.",
+    "explore": "לסדרה המלאה",
+    "comingSoon": "בקרוב"
+  },
+  "linePage": {
+    "productsTitle": "מוצרים בסדרה",
+    "ingredientsTitle": "רכיבים פעילים",
+    "protocolFallback": "הפרוטוקול המלא יופיע עם השקת הסדרה.",
+    "indicationsTitle": "התוויות",
+    "backToHome": "לדף הבית",
+    "contactCta": "דברו עם מומחה"
   }
 }

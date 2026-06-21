@@ -1,4 +1,5 @@
 import productsData from '@/data/products.json';
+import linesData from '@/data/lines.json';
 import { LocaleType } from './types';
 
 export type ProductCategory =
@@ -8,9 +9,16 @@ export type ProductCategory =
   | 'gel'
   | 'peel'
   | 'hair'
-  | 'bio-spicules';
+  | 'bio-spicules'
+  | 'device';
 export type ProductStatus = 'available' | 'coming-soon';
 export type ProductAccent = 'teal' | 'gold' | 'rose';
+export type ProductLineSlug =
+  | 'exosomes'
+  | 'exosignal-hair'
+  | 'peeling'
+  | 'bio-spicules'
+  | 'devices';
 
 export interface BenefitItem {
   title: string;
@@ -194,3 +202,73 @@ export const getCatalogItems = (locale: LocaleType): CatalogItem[] =>
     name: p.content[locale].name,
     shortDescription: p.content[locale].shortDescription,
   }));
+
+/** Product line — the "by-system" view of the catalog. A line groups
+ *  several products (e.g. V-Tech Serum + Gel Mask + Exotech Gel make up
+ *  the Exosomes face system) and carries its own brand story, clinical
+ *  protocol and indications. Rendered on the homepage as a row of large
+ *  cards, with one dedicated landing page per line at /lines/<slug>. */
+export interface LineContent {
+  name: string;
+  eyebrow: string;
+  tagline: string;
+  shortDescription: string;
+  story: string;
+  indications: string[];
+  ingredientsLead: string;
+  protocolTitle: string;
+  protocolItems: string[];
+  ctaTitle: string;
+  ctaText: string;
+}
+
+export interface ProductLine {
+  slug: ProductLineSlug;
+  accent: ProductAccent;
+  image: string;
+  /** Product slugs that belong to this line, in display order. May be
+   *  empty when the line is coming-soon. */
+  products: string[];
+  status: ProductStatus;
+  order: number;
+  content: Record<LocaleType, LineContent>;
+}
+
+export const lines: ProductLine[] = (linesData as unknown as ProductLine[])
+  .slice()
+  .sort((a, b) => a.order - b.order);
+
+export const getLine = (slug: string): ProductLine | undefined =>
+  lines.find((l) => l.slug === slug);
+
+export interface LineSummary {
+  slug: ProductLineSlug;
+  href: string;
+  accent: ProductAccent;
+  image: string;
+  status: ProductStatus;
+  /** Resolved product CatalogItems for this line in the requested locale. */
+  items: CatalogItem[];
+  name: string;
+  eyebrow: string;
+  tagline: string;
+  shortDescription: string;
+}
+
+export const getLineSummaries = (locale: LocaleType): LineSummary[] => {
+  const catalog = getCatalogItems(locale);
+  return lines.map((l) => ({
+    slug: l.slug,
+    href: `/lines/${l.slug}`,
+    accent: l.accent,
+    image: l.image,
+    status: l.status,
+    items: l.products
+      .map((s) => catalog.find((c) => c.slug === s))
+      .filter((x): x is CatalogItem => !!x),
+    name: l.content[locale].name,
+    eyebrow: l.content[locale].eyebrow,
+    tagline: l.content[locale].tagline,
+    shortDescription: l.content[locale].shortDescription,
+  }));
+};

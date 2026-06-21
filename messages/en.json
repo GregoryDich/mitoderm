@@ -9,7 +9,8 @@
     "agenda": "Event program",
     "catalog": "Catalog",
     "clinics": "Clinics",
-    "seminars": "Seminars"
+    "seminars": "Seminars",
+    "lines": "Lines"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -539,5 +540,20 @@
     "errorEmail": "Please enter a valid email",
     "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request.",
     "errorServer": "Something went wrong. Please try again or email us directly."
+  },
+  "lines": {
+    "eyebrow": "PRODUCT LINES",
+    "title": "Built as systems, not single SKUs",
+    "subtitle": "Each Mitoderm line is engineered as a complete protocol — products, ingredients and application steps designed to work together in the clinic.",
+    "explore": "Explore the line",
+    "comingSoon": "Coming soon"
+  },
+  "linePage": {
+    "productsTitle": "PRODUCTS IN THIS LINE",
+    "ingredientsTitle": "ACTIVE INGREDIENTS",
+    "protocolFallback": "Detailed protocol coming with the line launch.",
+    "indicationsTitle": "INDICATIONS",
+    "backToHome": "Back to homepage",
+    "contactCta": "Talk to a specialist"
   }
 }

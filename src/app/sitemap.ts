@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { products } from '@/products';
+import { products, lines } from '@/products';
 import { LOCALES, DEFAULT_LOCALE, absUrl } from '@/lib/seo';
 
 const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply'] as const;
@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
   const allPaths = [
     ...STATIC_PATHS,
+    ...lines.map((l) => `/lines/${l.slug}`),
     ...products.map((p) => `/products/${p.slug}`),
   ];
 

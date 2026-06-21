@@ -4,7 +4,7 @@
     "category": "serum",
     "status": "available",
     "accent": "teal",
-    "image": "/products/v-tech-serum/hero.png",
+    "image": "/products/v-tech-system/hero.webp",
     "gallery": [],
     "content": {
       "en": {
@@ -605,7 +605,7 @@
     "category": "mask",
     "status": "available",
     "accent": "gold",
-    "image": "/products/v-tech-gel-mask/hero.png",
+    "image": "/products/v-tech-system/hero.webp",
     "gallery": [],
     "content": {
       "en": {
@@ -972,7 +972,7 @@
     "category": "gel",
     "status": "available",
     "accent": "rose",
-    "image": "/products/exotech-gel/hero.png",
+    "image": "/products/exotech-gel/hero.webp",
     "gallery": [],
     "content": {
       "en": {
@@ -1291,7 +1291,7 @@
     "category": "hair",
     "status": "available",
     "accent": "teal",
-    "image": "/products/exosignal-hair/hero.png",
+    "image": "/products/exosignal-hair/hero.webp",
     "gallery": [],
     "content": {
       "en": {
@@ -2071,6 +2071,291 @@
             }
           ]
         }
+      }
+    }
+  },
+  {
+    "slug": "exo-nad",
+    "category": "peel",
+    "status": "available",
+    "accent": "gold",
+    "image": "/products/exo-nad/hero.png",
+    "content": {
+      "en": {
+        "name": "EXO-NAD Skin Longevity Peeling",
+        "eyebrow": "PEELING",
+        "tagline": "Three-step NAD+ peeling for mitochondrial recovery",
+        "description": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum, and the NAD+ peeling itself. Designed to support mitochondrial energy production and visible skin renewal — for clinics that already run V-Tech sessions and want to add a longevity-focused chemical peel to the menu.",
+        "shortDescription": "NAD+ longevity peeling — three-step in-clinic protocol with pH normalizer, Longevity Serum and the NAD+ peel itself.",
+        "keyFacts": [
+          "NAD+ payload — central coenzyme for mitochondrial energy and DNA repair",
+          "Three-step kit: pH Normalizer + Longevity Serum + EXO-NAD Peeling",
+          "Minimal downtime, safe for combination with V-Tech sessions on a different week",
+          "Professional use only — in-clinic application by a trained practitioner"
+        ],
+        "stats": [
+          {
+            "value": "3",
+            "label": "Steps per session"
+          },
+          {
+            "value": "3–4",
+            "label": "Sessions in a full course"
+          },
+          {
+            "value": "2 weeks",
+            "label": "Interval between sessions"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Mitochondrial recovery",
+            "text": "NAD+ supports cellular energy production — the substrate for visible skin renewal."
+          },
+          {
+            "title": "Longevity-focused",
+            "text": "Designed around the science of cellular aging rather than surface exfoliation alone."
+          },
+          {
+            "title": "Layered protocol",
+            "text": "Three steps work as a system — pH stabilisation, peptide priming, then the NAD+ peel itself."
+          },
+          {
+            "title": "Combinable with V-Tech",
+            "text": "Run on alternating weeks alongside the Exosomes facial system for a complete longevity menu."
+          }
+        ],
+        "ingredientsIntro": "Inside the EXO-NAD kit",
+        "ingredients": [
+          "NAD+ (nicotinamide adenine dinucleotide)",
+          "Peptide complex for cellular priming",
+          "Gentle AHA acids",
+          "Barrier lipids and humectants",
+          "pH-stabilising buffer system"
+        ],
+        "protocol": {
+          "title": "Three-step longevity protocol",
+          "items": [
+            "Cleanse and lightly degrease the skin.",
+            "Apply the pH Normalizer to standardise the substrate (~60 seconds).",
+            "Apply the Longevity Serum — peptide priming layer, 2–3 minutes.",
+            "Apply EXO-NAD peeling in a thin layer; leave per tolerance (5–10 minutes).",
+            "Neutralise / wipe per kit instructions; soothing post-care mask.",
+            "Course: 3–4 sessions, 2 weeks apart. Maintenance once per quarter."
+          ]
+        },
+        "aftercare": {
+          "title": "Aftercare for the patient",
+          "items": [
+            "SPF 50 daily for 14 days post-session.",
+            "Avoid retinoids and acids for 5–7 days.",
+            "Skip sauna and intense exercise for 48 hours.",
+            "Mineral makeup allowed from day 2."
+          ]
+        },
+        "contraindications": {
+          "title": "Do not use when",
+          "items": [
+            "Active inflammatory skin disease at the treatment zone.",
+            "Pregnancy and lactation.",
+            "Hypersensitivity to any component of the kit.",
+            "Recent isotretinoin therapy (within 6 months)."
+          ]
+        },
+        "chipsTitle": "Indications",
+        "chips": [
+          "Skin longevity / anti-aging",
+          "Dull, fatigued skin",
+          "Texture irregularities",
+          "Mild hyperpigmentation",
+          "Pre-resurfacing preparation"
+        ],
+        "ctaTitle": "Add the NAD+ longevity peeling to your menu",
+        "ctaText": "Contact us for pricing, training and protocol support."
+      },
+      "ru": {
+        "name": "EXO-NAD пилинг долголетия",
+        "eyebrow": "ПИЛИНГ",
+        "tagline": "Трёхшаговый NAD+ пилинг — митохондриальное восстановление",
+        "description": "EXO-NAD — трёхшаговый пилинг долголетия: pH-нормализатор, Longevity Serum с пептидным праймингом и сам NAD+ пилинг. Поддерживает митохондриальную энергетику и видимое обновление кожи — для клиник которые уже работают на V-Tech и хотят добавить longevity-направление в меню.",
+        "shortDescription": "NAD+ пилинг долголетия — трёхшаговый клинический протокол: pH-нормализатор, Longevity Serum и сам NAD+ пилинг.",
+        "keyFacts": [
+          "NAD+ — центральный кофермент клеточной энергетики и репарации ДНК",
+          "Набор из трёх шагов: pH Normalizer + Longevity Serum + EXO-NAD Peeling",
+          "Минимальный downtime; совместим с V-Tech на другой неделе",
+          "Только профессиональное использование"
+        ],
+        "stats": [
+          {
+            "value": "3",
+            "label": "Шага за сессию"
+          },
+          {
+            "value": "3–4",
+            "label": "Сессии в курсе"
+          },
+          {
+            "value": "2 недели",
+            "label": "Интервал между сессиями"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "Митохондриальное восстановление",
+            "text": "NAD+ поддерживает клеточную энергетику — субстрат для видимого обновления."
+          },
+          {
+            "title": "Фокус на долголетии",
+            "text": "Построен вокруг науки клеточного старения, а не только поверхностного эксфолирования."
+          },
+          {
+            "title": "Слоистый протокол",
+            "text": "Три шага работают системой — стабилизация pH, пептидный прайминг и сам NAD+ пилинг."
+          },
+          {
+            "title": "Совместим с V-Tech",
+            "text": "Чередовать недели с системой V-Tech для полного longevity-меню."
+          }
+        ],
+        "ingredientsIntro": "В наборе EXO-NAD",
+        "ingredients": [
+          "NAD+ (никотинамид аденин динуклеотид)",
+          "Пептидный комплекс для клеточного прайминга",
+          "Мягкие AHA-кислоты",
+          "Барьерные липиды и увлажнители",
+          "Буферная система стабилизации pH"
+        ],
+        "protocol": {
+          "title": "Трёхшаговый протокол долголетия",
+          "items": [
+            "Очищение, лёгкое обезжиривание.",
+            "pH-нормализатор для стандартизации субстрата (~60 секунд).",
+            "Longevity Serum — пептидный прайминг, выдержать 2–3 минуты.",
+            "EXO-NAD пилинг тонким слоем; выдержать по переносимости (5–10 минут).",
+            "Нейтрализация/снятие по инструкции; успокаивающая маска.",
+            "Курс: 3–4 сессии с интервалом 2 недели. Поддержка раз в квартал."
+          ]
+        },
+        "aftercare": {
+          "title": "Уход после процедуры",
+          "items": [
+            "SPF 50 ежедневно 14 дней.",
+            "Избегать ретиноидов и кислот 5–7 дней.",
+            "Без сауны и интенсивной нагрузки 48 часов.",
+            "Минеральный макияж — со 2-го дня."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Активные воспалительные процессы в зоне.",
+            "Беременность и лактация.",
+            "Гиперчувствительность к компонентам.",
+            "Недавняя изотретиноин-терапия (последние 6 месяцев)."
+          ]
+        },
+        "chipsTitle": "Показания",
+        "chips": [
+          "Долголетие / антиэйдж",
+          "Тусклая, уставшая кожа",
+          "Неровности текстуры",
+          "Лёгкая гиперпигментация",
+          "Подготовка к шлифовкам"
+        ],
+        "ctaTitle": "Добавить NAD+ пилинг в меню",
+        "ctaText": "Свяжитесь с нами для условий, обучения и поддержки протокола."
+      },
+      "he": {
+        "name": "פילינג EXO-NAD ללונג׳ביטי",
+        "eyebrow": "פילינג",
+        "tagline": "פילינג NAD+ בשלושה שלבים — שיקום מיטוכונדריאלי",
+        "description": "EXO-NAD הוא פילינג לונג׳ביטי בשלושה שלבים: pH Normalizer, Longevity Serum עם פריימינג פפטידים, והפילינג NAD+ עצמו. תומך באנרגיה מיטוכונדריאלית ובהתחדשות עור — למרפאות שכבר עובדות עם V-Tech ורוצות להוסיף כיוון לונג׳ביטי לתפריט.",
+        "shortDescription": "פילינג NAD+ ללונג׳ביטי — פרוטוקול קליני בשלושה שלבים: pH Normalizer, Longevity Serum והפילינג NAD+ עצמו.",
+        "keyFacts": [
+          "NAD+ — קואנזים מרכזי לאנרגיה תאית ולתיקון DNA",
+          "ערכה בשלושה שלבים: pH Normalizer + Longevity Serum + EXO-NAD Peeling",
+          "Downtime מינימלי; משולב עם V-Tech בשבוע אחר",
+          "לשימוש מקצועי בלבד"
+        ],
+        "stats": [
+          {
+            "value": "3",
+            "label": "שלבים בטיפול"
+          },
+          {
+            "value": "3–4",
+            "label": "טיפולים בקורס"
+          },
+          {
+            "value": "שבועיים",
+            "label": "מרווח בין טיפולים"
+          }
+        ],
+        "benefits": [
+          {
+            "title": "שיקום מיטוכונדריאלי",
+            "text": "NAD+ תומך באנרגיה תאית — תשתית להתחדשות עור נראית."
+          },
+          {
+            "title": "פוקוס לונג׳ביטי",
+            "text": "מבוסס על מדע ההזדקנות התאית, לא רק אקספוליאציה משטחית."
+          },
+          {
+            "title": "פרוטוקול שכבתי",
+            "text": "שלושה שלבים פועלים יחד — ייצוב pH, פריימינג פפטידים, ואז הפילינג NAD+."
+          },
+          {
+            "title": "משולב עם V-Tech",
+            "text": "להחליף שבועות עם מערכת V-Tech לתפריט לונג׳ביטי שלם."
+          }
+        ],
+        "ingredientsIntro": "בערכת EXO-NAD",
+        "ingredients": [
+          "NAD+ (ניקוטינאמיד אדנין דינוקלאוטיד)",
+          "קומפלקס פפטידים לפריימינג תאי",
+          "חומצות AHA עדינות",
+          "ליפידי מחסום והומקטנטים",
+          "מערכת בופר לייצוב pH"
+        ],
+        "protocol": {
+          "title": "פרוטוקול לונג׳ביטי בשלושה שלבים",
+          "items": [
+            "ניקוי והסרת שומן קלה.",
+            "מריחת pH Normalizer לסטנדרטיזציה (~60 שניות).",
+            "Longevity Serum — פריימינג פפטידים, השארה 2–3 דקות.",
+            "EXO-NAD פילינג בשכבה דקה; השארה לפי סבילות (5–10 דקות).",
+            "ניטרול/הסרה לפי הוראות; מסכת הרגעה.",
+            "קורס: 3–4 טיפולים כל שבועיים. תחזוקה פעם ברבעון."
+          ]
+        },
+        "aftercare": {
+          "title": "טיפוח לאחר הטיפול",
+          "items": [
+            "SPF 50 יומי למשך 14 ימים.",
+            "להימנע מרטינואידים וחומצות 5–7 ימים.",
+            "ללא סאונה ופעילות אינטנסיבית 48 שעות.",
+            "איפור מינרלי — מהיום השני."
+          ]
+        },
+        "contraindications": {
+          "title": "התוויות נגד",
+          "items": [
+            "מחלות עור דלקתיות באזור הטיפול.",
+            "הריון והנקה.",
+            "רגישות יתר לרכיב מהרכיבים.",
+            "טיפול איזוטרטינואין בששת החודשים האחרונים."
+          ]
+        },
+        "chipsTitle": "התוויות",
+        "chips": [
+          "לונג׳ביטי / אנטי-אייג׳ינג",
+          "עור עייף ועמום",
+          "אי-סדירויות מרקם",
+          "פיגמנטציה קלה",
+          "הכנה ל-resurfacing"
+        ],
+        "ctaTitle": "להוסיף את הפילינג NAD+ לתפריט",
+        "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול."
       }
     }
   }

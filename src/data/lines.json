@@ -1,0 +1,364 @@
+[
+  {
+    "slug": "exosomes",
+    "accent": "gold",
+    "image": "/products/v-tech-system/hero.webp",
+    "products": ["v-tech-serum", "v-tech-gel-mask", "exotech-gel"],
+    "status": "available",
+    "order": 1,
+    "content": {
+      "en": {
+        "name": "Exosomes — Face System",
+        "eyebrow": "FACE",
+        "tagline": "Synthetic exosomes engineered for visible regeneration",
+        "shortDescription": "The V-Tech serum + gel mask + Exotech finishing gel — biostimulation, sealing and recovery in one session.",
+        "story": "The Exosomes line is our flagship face system: biomimetic vesicles loaded with high-MW PDRN polynucleotides and signalling peptides, paired with a recovery gel that locks the actives in. Designed for in-clinic application after device passes (laser, RF, microneedling) for bio-stimulation, post-acne scar correction, post-surgical recovery and post-inflammatory pigmentation.",
+        "indications": [
+          "Skin biostimulation and firming",
+          "Post-acne scars",
+          "Post-surgical scars",
+          "Post-inflammatory pigmentation",
+          "Stretch marks"
+        ],
+        "ingredientsLead": "PDRN polynucleotides · Oligopeptide-20 · Acetyl Decapeptide-3 · Copper Tripeptide-1 · Acetyl Heptapeptide-9 (gold carrier) · plant stem cells · hyaluronic acid",
+        "protocolTitle": "Standard V-Tech facial protocol",
+        "protocolItems": [
+          "Cleanse and degrease the skin; tolerance test new patients with a single ampoule.",
+          "Optional device pass — fractional laser, RF microneedling, mesotherapy.",
+          "Apply 1 ampoule of V-Tech Serum (5 ml) — fan the actives across the area, massage gently.",
+          "Layer V-Tech Gel Mask on top to seal the actives. Leave 15–25 minutes.",
+          "Finish with Exotech Gel for hydration + recovery.",
+          "4–6 sessions, 2 weeks apart. Maintenance every 4–8 weeks."
+        ],
+        "ctaTitle": "Add the V-Tech system to your clinic",
+        "ctaText": "Contact us for wholesale pricing and partner onboarding."
+      },
+      "ru": {
+        "name": "Экзосомы — система для лица",
+        "eyebrow": "ЛИЦО",
+        "tagline": "Синтетические экзосомы для видимой регенерации",
+        "shortDescription": "V-Tech серум + гель-маска + финишный Exotech Gel — биостимуляция, запечатывание и восстановление в одной сессии.",
+        "story": "Линия Экзосомы — наш флагман для лица: биомиметические везикулы с высокомолекулярным PDRN и сигнальными пептидами + восстанавливающий гель который запечатывает активы. Создана для применения после аппаратных процедур (лазер, RF, микронидлинг): биостимуляция, постакне-рубцы, постхирургическое восстановление, постинфламматорная пигментация.",
+        "indications": [
+          "Биостимуляция и лифтинг",
+          "Постакне-рубцы",
+          "Постхирургические рубцы",
+          "Постинфламматорная пигментация",
+          "Растяжки"
+        ],
+        "ingredientsLead": "Полинуклеотиды PDRN · Oligopeptide-20 · Acetyl Decapeptide-3 · Copper Tripeptide-1 · Acetyl Heptapeptide-9 (золотой носитель) · растительные стволовые клетки · гиалуроновая кислота",
+        "protocolTitle": "Стандартный V-Tech протокол для лица",
+        "protocolItems": [
+          "Очищение, обезжиривание; новых пациентов протестировать одной ампулой.",
+          "Опционально — аппаратный проход: фракционный лазер, RF-нидлинг, мезотерапия.",
+          "Нанести 1 ампулу V-Tech Serum (5 мл), распределить, лёгкий массаж.",
+          "Наложить V-Tech Gel-Mask поверх для запечатывания. Выдержать 15–25 минут.",
+          "Финиш Exotech Gel — гидратация и восстановление.",
+          "4–6 сессий с интервалом 2 недели. Поддержка каждые 4–8 недель."
+        ],
+        "ctaTitle": "Добавить систему V-Tech в клинику",
+        "ctaText": "Свяжитесь для оптовых цен и партнёрского онбординга."
+      },
+      "he": {
+        "name": "אקסוזומים — מערכת לפנים",
+        "eyebrow": "פנים",
+        "tagline": "אקסוזומים סינתטיים להתחדשות נראית לעין",
+        "shortDescription": "סרום V-Tech + מסכת ג׳ל + Exotech Gel מסיים — ביוסטימולציה, אטימה והתאוששות בטיפול אחד.",
+        "story": "סדרת האקסוזומים היא מערכת הדגל שלנו לפנים: שלפוחיות ביומימטיות עם PDRN במשקל מולקולרי גבוה ופפטידים מסמנים, יחד עם ג׳ל התאוששות שאוטם את הרכיבים הפעילים. מתוכננת ליישום במרפאה אחרי מעבר מכשיר (לייזר, RF, מיקרונידלינג): ביוסטימולציה, תיקון צלקות פוסט-אקנה, התאוששות אחרי ניתוח, פיגמנטציה.",
+        "indications": [
+          "ביוסטימולציה והידוק",
+          "צלקות פוסט-אקנה",
+          "צלקות פוסט-ניתוחיות",
+          "פיגמנטציה דלקתית",
+          "סימני מתיחה"
+        ],
+        "ingredientsLead": "פולינוקלאוטידים PDRN · Oligopeptide-20 · Acetyl Decapeptide-3 · Copper Tripeptide-1 · Acetyl Heptapeptide-9 (נשא זהב) · תאי גזע צמחיים · חומצה היאלורונית",
+        "protocolTitle": "פרוטוקול V-Tech סטנדרטי לפנים",
+        "protocolItems": [
+          "ניקוי, הסרת שומן; למטופלים חדשים — בדיקת סבילות אמפולה אחת.",
+          "אופציונלית — מעבר מכשיר: לייזר פרקציונלי, RF-נידלינג, מזותרפיה.",
+          "מריחת אמפולה אחת של V-Tech Serum (5 מ\"ל), פיזור, עיסוי קל.",
+          "הנחת V-Tech Gel-Mask מעל לאטימה. השארה 15–25 דקות.",
+          "סיום עם Exotech Gel — הידרציה והתאוששות.",
+          "4–6 טיפולים בהפרשי שבועיים. תחזוקה כל 4–8 שבועות."
+        ],
+        "ctaTitle": "להוסיף את מערכת V-Tech למרפאה",
+        "ctaText": "צרו קשר לתמחור סיטונאי ולהצטרפות לרשת השותפים."
+      }
+    }
+  },
+  {
+    "slug": "exosignal-hair",
+    "accent": "teal",
+    "image": "/products/exosignal-hair/hero.webp",
+    "products": ["exosignal-hair", "exosignal-hair-spray"],
+    "status": "available",
+    "order": 2,
+    "content": {
+      "en": {
+        "name": "ExoSignal — Hair System",
+        "eyebrow": "HAIR & SCALP",
+        "tagline": "In-clinic ampoules + daily home spray for continuous regenerative signalling",
+        "shortDescription": "Professional Exosignal Hair ampoules backed by the daily Exosignal Spray Home — biological regeneration from root to length.",
+        "story": "ExoSignal pairs a professional in-clinic ampoule with a daily home spray so the regenerative signal never stops. Indicated for androgenetic alopecia (early/moderate), telogen effluvium, post-PRP combination, and reactive shedding after stress or postpartum. Stacks well with PRP, mesotherapy and oral finasteride.",
+        "indications": [
+          "Androgenetic alopecia (early/moderate)",
+          "Telogen effluvium",
+          "Reactive shedding (stress / postpartum)",
+          "Post-PRP combination",
+          "Density and thickness restoration"
+        ],
+        "ingredientsLead": "PDRN polynucleotides · biomimetic peptide complex · scalp-conditioning lipids · hyaluronic acid",
+        "protocolTitle": "Standard hair restoration protocol",
+        "protocolItems": [
+          "Clinical assessment — pattern, Norwood/Ludwig scale, exclude contraindications.",
+          "Cleanse scalp with neutral shampoo, dry to damp.",
+          "Apply 1 Exosignal Hair ampoule (5 ml) directly to scalp; work in with stamp / dermaroller / mesoinjector.",
+          "Massage 60 seconds; leave on. Patient washes hair 4 hours later.",
+          "Prescribe Exosignal Spray Home twice daily on dry scalp between sessions.",
+          "4 sessions every 2–3 weeks, then maintenance every 6–8 weeks."
+        ],
+        "ctaTitle": "Add ExoSignal to your hair-restoration menu",
+        "ctaText": "Pricing, training and protocol support — speak to a specialist."
+      },
+      "ru": {
+        "name": "ExoSignal — система для волос",
+        "eyebrow": "ВОЛОСЫ И КОЖА ГОЛОВЫ",
+        "tagline": "Клинические ампулы + домашний спрей для непрерывного регенеративного сигнала",
+        "shortDescription": "Профессиональные ампулы Exosignal Hair в связке с домашним Exosignal Spray Home — биологическая регенерация от корня до длины.",
+        "story": "ExoSignal — связка клинической ампулы с домашним спреем чтобы регенеративный сигнал не прерывался. Показания: андрогенная алопеция (ранняя/умеренная), телогеновое выпадение, постPRP-связки, реактивное выпадение после стресса/послеродового. Хорошо стекируется с PRP, мезотерапией и финастеридом.",
+        "indications": [
+          "Андрогенная алопеция (ранняя/умеренная)",
+          "Телогеновое выпадение",
+          "Реактивное выпадение (стресс/послеродовое)",
+          "Сочетание с PRP",
+          "Восстановление плотности и толщины"
+        ],
+        "ingredientsLead": "Полинуклеотиды PDRN · биомиметический пептидный комплекс · кондиционирующие липиды кожи головы · гиалуроновая кислота",
+        "protocolTitle": "Стандартный протокол восстановления волос",
+        "protocolItems": [
+          "Клиническая оценка: тип/стадия, шкала Норвуда/Людвига, противопоказания.",
+          "Очищение кожи головы нейтральным шампунем, подсушить.",
+          "Нанесение 1 ампулы Exosignal Hair (5 мл) непосредственно на кожу головы; проработать стампом/дермароллером/мезоинжектором.",
+          "Массаж 60 секунд; оставить. Мытьё — через 4 часа.",
+          "Назначить Exosignal Spray Home дважды в день между сессиями.",
+          "4 сессии каждые 2–3 недели, поддержка раз в 6–8 недель."
+        ],
+        "ctaTitle": "Подключите ExoSignal в трихологическое меню",
+        "ctaText": "Цены, обучение и поддержка протоколов — поговорите со специалистом."
+      },
+      "he": {
+        "name": "ExoSignal — מערכת לשיער",
+        "eyebrow": "שיער וקרקפת",
+        "tagline": "אמפולות במרפאה + תרסיס יומי בבית לאיתות התחדשות רציף",
+        "shortDescription": "אמפולות מקצועיות Exosignal Hair בשילוב עם Exosignal Spray Home — התחדשות ביולוגית מהשורש לאורך.",
+        "story": "ExoSignal משלב אמפולה מקצועית עם תרסיס יומי לבית כך שהאיתות הרגנרטיבי לא נעצר. התוויות: אלופציה אנדרוגנטית (מוקדמת/בינונית), טלוגן אפלוביום, שילוב פוסט-PRP, נשירה ראקטיבית אחרי לחץ או לידה. משתלב עם PRP, מזותרפיה ופינסטריד.",
+        "indications": [
+          "אלופציה אנדרוגנטית (מוקדמת/בינונית)",
+          "טלוגן אפלוביום",
+          "נשירה ראקטיבית (לחץ/לאחר לידה)",
+          "שילוב עם PRP",
+          "שיקום צפיפות ועובי"
+        ],
+        "ingredientsLead": "פולינוקלאוטידים PDRN · קומפלקס פפטידים ביומימטי · ליפידים מסככי קרקפת · חומצה היאלורונית",
+        "protocolTitle": "פרוטוקול שיקום שיער סטנדרטי",
+        "protocolItems": [
+          "הערכה קלינית — דפוס, סולם נורווד/לודוויג, התוויות-נגד.",
+          "ניקוי קרקפת בשמפו ניטרלי, ייבוש לרטוב.",
+          "מריחת אמפולה אחת של Exosignal Hair (5 מ\"ל) ישירות על הקרקפת; עבודה עם סטמפ/דרמרולר/מזותרפיה.",
+          "עיסוי 60 שניות; להשאיר. חפיפה אחרי 4 שעות.",
+          "מרשם Exosignal Spray Home פעמיים ביום על קרקפת יבשה בין הטיפולים.",
+          "4 טיפולים כל 2–3 שבועות, אחר כך תחזוקה כל 6–8 שבועות."
+        ],
+        "ctaTitle": "להוסיף את ExoSignal לתפריט שיקום השיער",
+        "ctaText": "תמחור, הדרכה ותמיכת פרוטוקול — דברו עם מומחה."
+      }
+    }
+  },
+  {
+    "slug": "peeling",
+    "accent": "gold",
+    "image": "/products/exo-nad/hero.png",
+    "products": ["exo-nad"],
+    "status": "available",
+    "order": 3,
+    "content": {
+      "en": {
+        "name": "Peeling — Skin Longevity",
+        "eyebrow": "PEELING",
+        "tagline": "NAD+ longevity peeling — mitochondrial recovery in a single session",
+        "shortDescription": "EXO-NAD: pH normalizer, Longevity Serum and the NAD+ peeling — a precision protocol for cellular longevity and skin renewal.",
+        "story": "The Peeling line centres on NAD+ — a coenzyme critical to mitochondrial energy and DNA repair. Our three-step longevity peeling pairs a pH normalizer (uniform substrate), a Longevity Serum (peptide priming) and the NAD+ Skin Longevity Peeling itself. Delivers mitochondrial recovery and visible renewal with minimal downtime; safe to combine with V-Tech sessions on a different week.",
+        "indications": [
+          "Skin longevity / anti-aging",
+          "Dull, fatigued skin",
+          "Texture irregularities",
+          "Mild hyperpigmentation",
+          "Preparation for resurfacing"
+        ],
+        "ingredientsLead": "NAD+ (nicotinamide adenine dinucleotide) · peptide complex · gentle AHA acids · barrier lipids",
+        "protocolTitle": "Three-step NAD+ longevity protocol",
+        "protocolItems": [
+          "Cleanse the skin; degrease lightly.",
+          "Apply the pH Normalizer to standardize the substrate (~60 seconds).",
+          "Layer the Longevity Serum — peptide priming, leave 2–3 minutes.",
+          "Apply EXO-NAD peeling in a thin layer; leave per skin tolerance (typical 5–10 minutes).",
+          "Neutralize or wipe per the kit instructions; soothing post-care mask.",
+          "3–4 sessions, 2 weeks apart. Maintenance once per quarter."
+        ],
+        "ctaTitle": "Add the NAD+ longevity peeling to your menu",
+        "ctaText": "Talk to a Mitoderm specialist about training and onboarding."
+      },
+      "ru": {
+        "name": "Пилинг — долголетие кожи",
+        "eyebrow": "ПИЛИНГ",
+        "tagline": "NAD+ пилинг долголетия — митохондриальное восстановление за одну сессию",
+        "shortDescription": "EXO-NAD: pH-нормализатор, Longevity Serum и сам NAD+ пилинг — прецизионный протокол клеточного долголетия и обновления.",
+        "story": "Линия Пилинга центрируется на NAD+ — кофермент критический для митохондриальной энергетики и репарации ДНК. Трёхшаговый протокол: pH-нормализатор (выравнивание субстрата), Longevity Serum (пептидный прайминг) и сам NAD+ Skin Longevity Peeling. Митохондриальное восстановление + видимое обновление с минимальным downtime; совместим с V-Tech сессиями на другой неделе.",
+        "indications": [
+          "Долголетие / антиэйдж",
+          "Тусклая, уставшая кожа",
+          "Неровности текстуры",
+          "Лёгкая гиперпигментация",
+          "Подготовка к шлифовкам"
+        ],
+        "ingredientsLead": "NAD+ (никотинамид аденин динуклеотид) · пептидный комплекс · мягкие AHA-кислоты · барьерные липиды",
+        "protocolTitle": "Трёхшаговый NAD+ протокол долголетия",
+        "protocolItems": [
+          "Очищение кожи; лёгкое обезжиривание.",
+          "Нанесение pH-нормализатора для стандартизации субстрата (~60 секунд).",
+          "Longevity Serum — пептидный прайминг, выдержать 2–3 минуты.",
+          "EXO-NAD пилинг тонким слоем; выдерживать по переносимости (типично 5–10 минут).",
+          "Нейтрализация/снятие по инструкции; успокаивающая маска.",
+          "3–4 сессии с интервалом 2 недели. Поддержка раз в квартал."
+        ],
+        "ctaTitle": "Добавить NAD+ пилинг в меню",
+        "ctaText": "Поговорите со специалистом Mitoderm об обучении и подключении."
+      },
+      "he": {
+        "name": "פילינג — לונג׳ביטי לעור",
+        "eyebrow": "פילינג",
+        "tagline": "פילינג NAD+ ללונג׳ביטי — שיקום מיטוכונדריאלי בטיפול אחד",
+        "shortDescription": "EXO-NAD: pH Normalizer, Longevity Serum והפילינג NAD+ עצמו — פרוטוקול מדויק ללונג׳ביטי תאי ולהתחדשות עור.",
+        "story": "סדרת הפילינג מתמקדת ב-NAD+ — קואנזים קריטי לאנרגיה מיטוכונדריאלית ולתיקון DNA. פרוטוקול שלושה שלבים: pH Normalizer (סטנדרטיזציה), Longevity Serum (פריימינג פפטידים) והפילינג NAD+ עצמו. משלב שיקום מיטוכונדריאלי עם התחדשות נראית לעין, עם downtime מינימלי; משולב עם V-Tech בשבוע אחר.",
+        "indications": [
+          "לונג׳ביטי / אנטי-אייג׳ינג",
+          "עור עייף ועמום",
+          "אי-סדירויות מרקם",
+          "פיגמנטציה קלה",
+          "הכנה לטיפולי resurfacing"
+        ],
+        "ingredientsLead": "NAD+ (ניקוטינאמיד אדנין דינוקלאוטיד) · קומפלקס פפטידים · חומצות AHA עדינות · ליפידי מחסום",
+        "protocolTitle": "פרוטוקול NAD+ בשלושה שלבים",
+        "protocolItems": [
+          "ניקוי העור; הסרת שומן קלה.",
+          "מריחת pH Normalizer לסטנדרטיזציה (~60 שניות).",
+          "Longevity Serum — פריימינג פפטידים, השארה 2–3 דקות.",
+          "EXO-NAD פילינג בשכבה דקה; השארה לפי סבילות (5–10 דקות).",
+          "ניטרול/הסרה לפי הוראות; מסכת הרגעה.",
+          "3–4 טיפולים כל שבועיים. תחזוקה פעם בכל רבעון."
+        ],
+        "ctaTitle": "להוסיף את הפילינג NAD+ לתפריט",
+        "ctaText": "דברו עם מומחה מיטודרם להדרכה והצטרפות."
+      }
+    }
+  },
+  {
+    "slug": "bio-spicules",
+    "accent": "rose",
+    "image": "",
+    "products": [],
+    "status": "coming-soon",
+    "order": 4,
+    "content": {
+      "en": {
+        "name": "Bio-Spicules — Marine biotechnology",
+        "eyebrow": "BIO-SPICULES",
+        "tagline": "Marine micro-spicules for trans-epidermal active delivery",
+        "shortDescription": "Four products to come — a marine sponge spicule platform for active-ingredient delivery without device dependency.",
+        "story": "Bio-Spicules harness natural marine sponge spicules — microscopic biosilica needles — to create thousands of microscopic delivery channels at the moment of application. The skin receives PDRN, peptides and signalling molecules directly into the upper dermis without a laser pass. Four SKUs are coming in this line: detail follows.",
+        "indications": [],
+        "ingredientsLead": "Marine biosilica spicules · PDRN · biomimetic peptides · plant stem cell extracts",
+        "protocolTitle": "Coming soon",
+        "protocolItems": [],
+        "ctaTitle": "Be first to know when the line launches",
+        "ctaText": "Get notified — leave your contact below."
+      },
+      "ru": {
+        "name": "Bio-Spicules — морская биотехнология",
+        "eyebrow": "БИОСПИКУЛЫ",
+        "tagline": "Морские микроспикулы для трансэпидермальной доставки активов",
+        "shortDescription": "Четыре продукта на подходе — платформа спикул морских губок для доставки активных ингредиентов без аппарата.",
+        "story": "Bio-Spicules используют природные спикулы морских губок — микроскопические иглы биосиликата — формируя тысячи каналов доставки в момент нанесения. Кожа получает PDRN, пептиды и сигнальные молекулы напрямую в верхний дермис, без лазерного прохода. В линии будет 4 SKU — детали уточняются.",
+        "indications": [],
+        "ingredientsLead": "Морские биосиликатные спикулы · PDRN · биомиметические пептиды · экстракты растительных стволовых клеток",
+        "protocolTitle": "Скоро",
+        "protocolItems": [],
+        "ctaTitle": "Узнать первыми о запуске",
+        "ctaText": "Подпишитесь — оставьте контакт ниже."
+      },
+      "he": {
+        "name": "Bio-Spicules — ביוטכנולוגיה ימית",
+        "eyebrow": "ביו-ספיקולס",
+        "tagline": "מיקרו-ספיקולות ימיות להחדרה טרנס-אפידרמלית של רכיבים פעילים",
+        "shortDescription": "ארבעה מוצרים בדרך — פלטפורמת ספיקולות מספוגי ים להחדרת רכיבים פעילים ללא תלות במכשיר.",
+        "story": "Bio-Spicules משתמש בספיקולות טבעיות של ספוגי ים — מחטים מיקרוסקופיות של ביוסיליקה — היוצרות אלפי תעלות החדרה ברגע היישום. העור מקבל PDRN, פפטידים ומולקולות סיגנל ישירות לדרמיס העליון ללא מעבר לייזר. הסדרה תכלול 4 SKU — פרטים בהמשך.",
+        "indications": [],
+        "ingredientsLead": "ספיקולות ביוסיליקה ימיות · PDRN · פפטידים ביומימטיים · תמציות תאי גזע צמחיים",
+        "protocolTitle": "בקרוב",
+        "protocolItems": [],
+        "ctaTitle": "להיות הראשונים לדעת על ההשקה",
+        "ctaText": "השאירו פרטים למטה."
+      }
+    }
+  },
+  {
+    "slug": "devices",
+    "accent": "teal",
+    "image": "",
+    "products": [],
+    "status": "coming-soon",
+    "order": 5,
+    "content": {
+      "en": {
+        "name": "Devices — MitoScan & MitoPen",
+        "eyebrow": "PROFESSIONAL DEVICES",
+        "tagline": "Diagnosis + delivery devices designed for the Mitoderm protocol",
+        "shortDescription": "MitoScan for skin / scalp diagnostic imaging and MitoPen for precision micro-channel delivery. Details soon.",
+        "story": "Two professional devices designed specifically for the Mitoderm protocol family. MitoScan handles diagnostic imaging — high-resolution skin and scalp analysis to map indication zones before a session. MitoPen is the delivery instrument optimised for V-Tech and ExoSignal payloads — calibrated needle depth, single-use cartridges, ergonomic for long treatment days.",
+        "indications": [],
+        "ingredientsLead": "",
+        "protocolTitle": "Coming soon",
+        "protocolItems": [],
+        "ctaTitle": "Reserve early access to MitoScan & MitoPen",
+        "ctaText": "Leave your contact — we'll reach out when training slots open."
+      },
+      "ru": {
+        "name": "Девайсы — MitoScan и MitoPen",
+        "eyebrow": "ПРОФЕССИОНАЛЬНЫЕ ДЕВАЙСЫ",
+        "tagline": "Диагностика + доставка под протокол Mitoderm",
+        "shortDescription": "MitoScan для диагностической визуализации кожи/кожи головы и MitoPen для точечной доставки. Детали скоро.",
+        "story": "Два профессиональных девайса разработанных специально под протоколы Mitoderm. MitoScan — диагностическая визуализация: анализ кожи и кожи головы для разметки зон перед процедурой. MitoPen — инструмент доставки под V-Tech и ExoSignal: калиброванная глубина игл, одноразовые картриджи, эргономика для длинных смен.",
+        "indications": [],
+        "ingredientsLead": "",
+        "protocolTitle": "Скоро",
+        "protocolItems": [],
+        "ctaTitle": "Зарезервировать ранний доступ к MitoScan и MitoPen",
+        "ctaText": "Оставьте контакт — сообщим когда откроются слоты обучения."
+      },
+      "he": {
+        "name": "מכשירים — MitoScan ו-MitoPen",
+        "eyebrow": "מכשירים מקצועיים",
+        "tagline": "אבחון + החדרה מתוכננים לפרוטוקול מיטודרם",
+        "shortDescription": "MitoScan לאבחון תמונתי של עור/קרקפת ו-MitoPen להחדרה מדויקת. פרטים בקרוב.",
+        "story": "שני מכשירים מקצועיים שתוכננו במיוחד למשפחת הפרוטוקולים של מיטודרם. MitoScan — אבחון תמונתי של עור וקרקפת לזיהוי אזורי התוויה. MitoPen — מכשיר ההחדרה ל-V-Tech ו-ExoSignal: עומק מחט מכויל, מחסניות חד-פעמיות, ארגונומיה ליום עבודה ארוך.",
+        "indications": [],
+        "ingredientsLead": "",
+        "protocolTitle": "בקרוב",
+        "protocolItems": [],
+        "ctaTitle": "שמירת גישה מוקדמת ל-MitoScan ו-MitoPen",
+        "ctaText": "השאירו פרטים — נחזור כשייפתחו מקומות להדרכה."
+      }
+    }
+  }
+]

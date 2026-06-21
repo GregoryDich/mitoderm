@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { getCatalogItems, ProductAccent } from '@/products';
+import {
+  getCatalogItems,
+  ProductAccent,
+  LineSummary,
+} from '@/products';
 import { LocaleType } from '@/types';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -9,6 +13,7 @@ import Reveal from '@/components/Shared/Reveal/Reveal';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
+import LinesShowcase from '@/components/Lines/LinesShowcase';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
 import type { Story } from '@/lib/stories-store';
@@ -19,6 +24,7 @@ interface Props {
   social?: SocialPost[];
   press?: PressItem[];
   stories?: Story[];
+  lines?: LineSummary[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -27,7 +33,13 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) => {
+const HomePage: FC<Props> = ({
+  locale,
+  social = [],
+  press = [],
+  stories = [],
+  lines = [],
+}) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
     .filter((i) => i.status === 'available')
@@ -72,6 +84,12 @@ const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) 
 
       <main className={styles.content}>
         {stories.length > 0 && <StoriesStrip stories={stories} />}
+
+        {lines.length > 0 && (
+          <Reveal>
+            <LinesShowcase lines={lines} />
+          </Reveal>
+        )}
 
         <Reveal>
         <section className={styles.block}>

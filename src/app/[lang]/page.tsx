@@ -4,6 +4,7 @@ import HomePage from '@/components/Home/HomePage';
 import { readSocial } from '@/lib/social-store';
 import { readPress } from '@/lib/press-store';
 import { readStories, isLive } from '@/lib/stories-store';
+import { getLineSummaries } from '@/products';
 import { LocaleType } from '@/types';
 import {
   SITE_NAME,
@@ -65,7 +66,14 @@ export default async function Home({
   const stories = (await readStories())
     .filter((s) => isLive(s))
     .sort((a, b) => a.order - b.order || b.createdAt.localeCompare(a.createdAt));
+  const lineSummaries = getLineSummaries(lang);
   return (
-    <HomePage locale={lang} social={social} press={press} stories={stories} />
+    <HomePage
+      locale={lang}
+      social={social}
+      press={press}
+      stories={stories}
+      lines={lineSummaries}
+    />
   );
 }
