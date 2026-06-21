@@ -16,6 +16,7 @@ import TrainingHub from './TrainingHub';
 import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import IngredientChip from './IngredientChip';
+import KeyActives from './KeyActives';
 import type { Doctor } from '@/lib/doctors-store';
 import {
   productInquiryMessage,
@@ -296,6 +297,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
         <section className={styles.block} id="formula">
           <SectionLabel num={next()} label="FORMULA" />
           <h2 className={styles.h2}>{t('activeIngredients')}</h2>
+          <KeyActives ingredients={c.ingredients} />
           <div className={styles.ingWrap}>
             <ul className={styles.ingList}>
               {c.ingredients.map((ing, i) => (

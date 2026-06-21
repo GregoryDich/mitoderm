@@ -13,6 +13,11 @@
     "lines": "Lines",
     "blog": "Blog"
   },
+  "keyActives": {
+    "eyebrow": "KEY ACTIVES",
+    "intro": "The ingredients doing the structural work in this formula — tap any chip below for the full list.",
+    "cardEyebrow": "ACTIVE"
+  },
   "blog": {
     "eyebrow": "EDUCATION · EXOSOMES · PROTOCOLS",
     "title": "The Mitoderm journal",
@@ -500,6 +505,7 @@
     "description": "Advanced exosome-based masks, longevity peels and bio-spicules — engineered for visible regeneration and clinical-grade results.",
     "ctaPrimary": "Explore the catalog",
     "ctaSecondary": "Contact us",
+    "trustedBy": "TRUSTED BY CLINICIANS",
     "stats": [
       {
         "value": "3+",

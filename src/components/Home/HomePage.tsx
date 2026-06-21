@@ -14,9 +14,11 @@ import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
 import LinesShowcase from '@/components/Lines/LinesShowcase';
+import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
 import type { Story } from '@/lib/stories-store';
+import type { Doctor } from '@/lib/doctors-store';
 import styles from './HomePage.module.scss';
 
 interface Props {
@@ -25,6 +27,7 @@ interface Props {
   press?: PressItem[];
   stories?: Story[];
   lines?: LineSummary[];
+  doctors?: Doctor[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -39,6 +42,7 @@ const HomePage: FC<Props> = ({
   press = [],
   stories = [],
   lines = [],
+  doctors = [],
 }) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
@@ -83,6 +87,10 @@ const HomePage: FC<Props> = ({
       </div>
 
       <main className={styles.content}>
+        {doctors.length > 0 && (
+          <TrustedByStrip doctors={doctors} label={t('trustedBy')} />
+        )}
+
         {stories.length > 0 && <StoriesStrip stories={stories} />}
 
         {lines.length > 0 && (
