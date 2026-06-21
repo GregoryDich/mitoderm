@@ -30,6 +30,8 @@
     "filterSerum": "Serums",
     "filterGel": "Gels",
     "filterHair": "Hair",
+    "filterPeel": "Peelings",
+    "filterDevice": "Devices",
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
     "noResults": "No products match your search.",

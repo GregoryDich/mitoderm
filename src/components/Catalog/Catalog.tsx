@@ -22,6 +22,8 @@ const filters: { key: Filter; labelKey: string }[] = [
   { key: 'mask', labelKey: 'filterMask' },
   { key: 'gel', labelKey: 'filterGel' },
   { key: 'hair', labelKey: 'filterHair' },
+  { key: 'peel', labelKey: 'filterPeel' },
+  { key: 'device', labelKey: 'filterDevice' },
 ];
 
 const accentVar: Record<ProductAccent, string> = {

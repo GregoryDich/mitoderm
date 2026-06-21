@@ -2358,5 +2358,401 @@
         "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול."
       }
     }
+  },
+  {
+    "slug": "mitoscan",
+    "category": "device",
+    "status": "available",
+    "accent": "teal",
+    "image": "/products/mitoscan/hero.webp",
+    "content": {
+      "en": {
+        "name": "Mitoscan",
+        "eyebrow": "DIAGNOSTIC DEVICE",
+        "tagline": "HD scalp and hair follicle diagnostic system",
+        "description": "Mitoscan is a chair-side HD scalp and hair follicle diagnostic system. A 10 MP head with three lighting modes streams to an 8.5\" display, with one-touch freeze-frame for patient consultation, before/after records and protocol planning around the Exosignal Hair line.",
+        "shortDescription": "HD scalp and hair follicle scanner — 10 MP head, 8.5\" display, 3 lighting modes, freeze-frame for chair-side consultation.",
+        "keyFacts": [
+          "10 MP HD camera with three switchable lighting modes",
+          "8.5\" display with one-touch freeze-frame for chair-side review",
+          "Designed as the diagnostic counterpart to the Exosignal Hair protocol",
+          "Compact tabletop footprint — handle 200 × 50 × 50 mm, 1.9 kg total"
+        ],
+        "stats": [
+          { "value": "10 MP", "label": "Camera resolution" },
+          { "value": "8.5\"", "label": "Display" },
+          { "value": "3", "label": "Lighting modes" }
+        ],
+        "benefits": [
+          { "title": "Chair-side consultation", "text": "Freeze the live feed mid-exam and walk the patient through what you see — density, follicle health, scalp condition." },
+          { "title": "Three lighting modes", "text": "Switch between standard, polarised and UV-style lighting to surface different layers of the scalp and hair shaft." },
+          { "title": "Protocol planning", "text": "Pairs with the Exosignal Hair line — pre-treatment baseline, mid-course check, end-of-course comparison." },
+          { "title": "Records and follow-up", "text": "Capture freeze-frame stills for the patient chart and side-by-side reviews at follow-up sessions." }
+        ],
+        "ingredientsIntro": "What's in the box",
+        "ingredients": [
+          "Mitoscan handle with 10 MP HD head",
+          "8.5\" display with stand",
+          "12 V / 600 mA power adapter",
+          "Connection cable (305 mm)",
+          "Operator quick-start guide"
+        ],
+        "protocol": {
+          "title": "Chair-side use",
+          "items": [
+            "Power on the display, connect the handle and turn on its lighting.",
+            "Glide the head across the scalp; press the lighting button to switch modes for the area being examined.",
+            "Press the freeze button to lock the current frame for patient review.",
+            "Bring the head close to the scalp for the highest-resolution view of a follicle of interest.",
+            "Save the freeze-frame to the patient record for baseline / mid-course / post-course comparison."
+          ]
+        },
+        "contraindications": {
+          "title": "Safety notes",
+          "items": [
+            "Operator use only — do not let unauthorised personnel handle the device.",
+            "Do not use in environments with high heat, dust or humidity.",
+            "Do not disassemble or attempt to repair the controller or body.",
+            "Do not operate with wet hands or with a damaged power cable.",
+            "Disconnect from the outlet when not in use for an extended period."
+          ]
+        },
+        "chipsTitle": "Use cases",
+        "chips": [
+          "Hair loss consultation",
+          "Scalp condition assessment",
+          "Course planning around Exosignal Hair",
+          "Before / after documentation",
+          "Patient education"
+        ],
+        "ctaTitle": "Add Mitoscan to your clinic",
+        "ctaText": "Contact us for pricing, lead time and operator training."
+      },
+      "ru": {
+        "name": "Mitoscan",
+        "eyebrow": "ДИАГНОСТИЧЕСКОЕ УСТРОЙСТВО",
+        "tagline": "HD-система диагностики кожи головы и волосяных фолликулов",
+        "description": "Mitoscan — настольная HD-система диагностики кожи головы и волосяных фолликулов. 10 Мп головка с тремя режимами подсветки выводит изображение на 8.5\" экран; одна кнопка фиксирует кадр для разбора с пациентом, фото-документации до/после и планирования курса вокруг линии Exosignal Hair.",
+        "shortDescription": "HD-сканер кожи головы и фолликулов — 10 Мп головка, 8.5\" экран, 3 режима подсветки, кнопка фиксации кадра.",
+        "keyFacts": [
+          "Камера 10 Мп с тремя переключаемыми режимами подсветки",
+          "Экран 8.5\" с моментальной фиксацией кадра",
+          "Диагностический партнёр линии Exosignal Hair",
+          "Компактный форм-фактор — ручка 200 × 50 × 50 мм, общий вес 1.9 кг"
+        ],
+        "stats": [
+          { "value": "10 Мп", "label": "Разрешение камеры" },
+          { "value": "8.5\"", "label": "Экран" },
+          { "value": "3", "label": "Режима подсветки" }
+        ],
+        "benefits": [
+          { "title": "Консультация рядом с креслом", "text": "Зафиксировать живой кадр прямо во время осмотра и обсудить плотность, состояние фолликула и кожи головы с пациентом." },
+          { "title": "Три режима подсветки", "text": "Стандартная, поляризованная и UV-подсветка вытягивают разные слои кожи и волосяного стержня." },
+          { "title": "Планирование курса", "text": "Связка с линией Exosignal Hair — базовый кадр, контроль в середине курса, итоговое сравнение." },
+          { "title": "Документация и контроль", "text": "Сохранённые кадры идут в карту пациента и в сравнения на последующих визитах." }
+        ],
+        "ingredientsIntro": "В комплекте",
+        "ingredients": [
+          "Ручка Mitoscan с HD-головкой 10 Мп",
+          "Экран 8.5\" с подставкой",
+          "Адаптер питания 12 В / 600 мА",
+          "Кабель подключения (305 мм)",
+          "Краткая инструкция оператора"
+        ],
+        "protocol": {
+          "title": "Использование у кресла",
+          "items": [
+            "Включить экран, подключить ручку и активировать подсветку.",
+            "Вести головкой по коже головы; кнопкой смены подсветки переключать режим под зону.",
+            "Кнопкой стоп зафиксировать текущий кадр для разбора с пациентом.",
+            "Прижать головку ближе к зоне интереса для максимальной детализации фолликула.",
+            "Сохранить кадр в карту: базовый / середина курса / финал."
+          ]
+        },
+        "contraindications": {
+          "title": "Предупреждения",
+          "items": [
+            "Использование — только обученным оператором.",
+            "Не использовать при высокой температуре, пыли или повышенной влажности.",
+            "Не разбирать и не пытаться ремонтировать корпус и контроллер самостоятельно.",
+            "Не работать мокрыми руками и с повреждённым кабелем питания.",
+            "При длительном простое — отключать от сети."
+          ]
+        },
+        "chipsTitle": "Сценарии",
+        "chips": [
+          "Консультация по выпадению волос",
+          "Оценка состояния кожи головы",
+          "Планирование курса Exosignal Hair",
+          "Документация до / после",
+          "Объяснение пациенту"
+        ],
+        "ctaTitle": "Добавить Mitoscan в клинику",
+        "ctaText": "Свяжитесь с нами по цене, срокам поставки и обучению оператора."
+      },
+      "he": {
+        "name": "Mitoscan",
+        "eyebrow": "מכשיר אבחון",
+        "tagline": "מערכת אבחון HD לקרקפת ולזקיקי שיער",
+        "description": "Mitoscan היא מערכת HD שולחנית לאבחון קרקפת וזקיקי שיער. ראש 10MP בעל שלושה מצבי תאורה משדר למסך 8.5\", עם כפתור הקפאה לבחינה ליד הלקוח, תיעוד לפני/אחרי ותכנון פרוטוקול סביב סדרת Exosignal Hair.",
+        "shortDescription": "סורק HD לקרקפת וזקיקי שיער — ראש 10MP, מסך 8.5\", שלושה מצבי תאורה וכפתור הקפאה לבחינה ליד הלקוח.",
+        "keyFacts": [
+          "מצלמת HD 10MP עם שלושה מצבי תאורה",
+          "מסך 8.5\" עם הקפאת תמונה במגע אחד",
+          "המכשיר האבחוני שעובד יחד עם פרוטוקול Exosignal Hair",
+          "מידות הידית 200 × 50 × 50 מ\"מ, משקל כולל 1.9 ק\"ג"
+        ],
+        "stats": [
+          { "value": "10MP", "label": "רזולוציית מצלמה" },
+          { "value": "8.5\"", "label": "מסך" },
+          { "value": "3", "label": "מצבי תאורה" }
+        ],
+        "benefits": [
+          { "title": "אבחון ליד הלקוח", "text": "הקפאת תמונה חיה תוך כדי בדיקה — להסביר ללקוח על צפיפות, מצב הזקיק ומצב הקרקפת." },
+          { "title": "שלושה מצבי תאורה", "text": "מעבר בין תאורה רגילה, מקטבת ו-UV חושף שכבות שונות של הקרקפת ושל גוף השערה." },
+          { "title": "תכנון פרוטוקול", "text": "משתלב עם סדרת Exosignal Hair — תמונה בסיסית, בדיקת אמצע קורס וסיכום." },
+          { "title": "תיעוד ומעקב", "text": "תמונות מוקפאות נשמרות בכרטיס הלקוח להשוואה במפגשי המשך." }
+        ],
+        "ingredientsIntro": "תכולת האריזה",
+        "ingredients": [
+          "ידית Mitoscan עם ראש HD 10MP",
+          "מסך 8.5\" עם מעמד",
+          "מתאם כוח 12V / 600mA",
+          "כבל חיבור (305 מ\"מ)",
+          "מדריך הפעלה למפעיל"
+        ],
+        "protocol": {
+          "title": "שימוש ליד הלקוח",
+          "items": [
+            "להפעיל את התצוגה, לחבר את הידית ולהדליק את תאורת הראש.",
+            "להעביר את הראש על הקרקפת; ללחוץ על כפתור התאורה כדי לעבור בין המצבים.",
+            "ללחוץ על כפתור ההקפאה כדי לנעול את הפריים הנוכחי לבחינה.",
+            "להצמיד את הראש קרוב לאזור הנבדק להגדרה המיטבית של הזקיק.",
+            "לשמור את הפריים לכרטיס הלקוח: בסיס / אמצע / סוף קורס."
+          ]
+        },
+        "contraindications": {
+          "title": "אזהרות",
+          "items": [
+            "שימוש למפעיל מוסמך בלבד.",
+            "אין להפעיל בסביבה עם חום גבוה, אבק או לחות גבוהה.",
+            "אין לפרק או לתקן את הבקר או הגוף.",
+            "אין לגעת בידיים רטובות או להשתמש בכבל פגום.",
+            "לנתק מהשקע כאשר אינו בשימוש זמן ממושך."
+          ]
+        },
+        "chipsTitle": "תרחישים",
+        "chips": [
+          "ייעוץ נשירת שיער",
+          "הערכת מצב קרקפת",
+          "תכנון קורס Exosignal Hair",
+          "תיעוד לפני / אחרי",
+          "הסבר ללקוח"
+        ],
+        "ctaTitle": "להוסיף את Mitoscan לקליניקה",
+        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכת מפעיל."
+      }
+    }
+  },
+  {
+    "slug": "mitopen",
+    "category": "device",
+    "status": "available",
+    "accent": "gold",
+    "image": "/products/mitopen/hero.webp",
+    "content": {
+      "en": {
+        "name": "MitoPen E30-Ultima",
+        "eyebrow": "MICRONEEDLING DEVICE",
+        "tagline": "Motorised auto-stamp meso pen — 5 speeds, adjustable depth",
+        "description": "MitoPen E30-Ultima is a motorised auto-stamp meso pen: five speed settings, an adjustable-depth ring and click-in sterile needle cartridges. Available in a wireless variant with a built-in battery for chair-side mobility and a wired variant for high-volume rooms. Designed as the in-clinic delivery partner for the V-Tech serum and the Exosomes face system.",
+        "shortDescription": "Motorised auto-stamp microneedling pen — 5 speeds, adjustable depth, sterile click-in cartridges, wired or wireless.",
+        "keyFacts": [
+          "5 motorised speed settings, single-button switching",
+          "Adjustable needle depth via the dial ring on the handle",
+          "Sterile single-use click-in needle cartridges",
+          "Wired and wireless (built-in battery) variants — 318 g handle"
+        ],
+        "stats": [
+          { "value": "5", "label": "Speed settings" },
+          { "value": "318 g", "label": "Handle weight" },
+          { "value": "5 V / 1 A", "label": "Power" }
+        ],
+        "benefits": [
+          { "title": "Repeatable depth control", "text": "The dial ring locks needle depth so the practitioner can move across zones without drifting off-protocol." },
+          { "title": "Auto-stamp motor", "text": "Five speeds let you tune cadence to the indication — slower on bony areas, faster on dense zones." },
+          { "title": "Sterile click-in cartridges", "text": "Sealed sterile cartridges click in and lock with a counter-clockwise twist; safer changeover between patients." },
+          { "title": "Two variants", "text": "Wireless model for chair-side mobility, wired model for back-to-back sessions in a busy room." }
+        ],
+        "ingredientsIntro": "What's in the box",
+        "ingredients": [
+          "MitoPen E30-Ultima handle (318 g)",
+          "5 V / 1 A power adapter",
+          "Power cable",
+          "2 sterile single-use needle cartridges",
+          "User manual"
+        ],
+        "protocol": {
+          "title": "Operating protocol",
+          "items": [
+            "Open a sterile cartridge from its packaging.",
+            "Align the round slot to the 1–2 mark on the handle and slide horizontally to the stop.",
+            "Lock the cartridge with a counter-clockwise twist; to remove, twist clockwise and pull straight out.",
+            "Hold the power button 2–3 seconds to switch on. Press to step through the 5 speeds.",
+            "Set needle depth: rotate the dial clockwise for shorter, counter-clockwise for longer.",
+            "Treat one zone at a time; keep the handle upright so fluids do not flow back into the body of the device."
+          ]
+        },
+        "contraindications": {
+          "title": "Do not treat",
+          "items": [
+            "Patients with acute illness or a temperature above 38 °C.",
+            "Patients with relevant allergies or haemophilia.",
+            "Patients with facial melanosis.",
+            "Patients with high internal body temperature or under regular hospital care.",
+            "Patients on incompatible medication and patients under 12.",
+            "Use only on a stable mains voltage (≠ 220 V AC); do not operate in extreme heat, dust or humidity."
+          ]
+        },
+        "chipsTitle": "Use cases",
+        "chips": [
+          "V-Tech serum delivery",
+          "Post-procedure skin renewal",
+          "Scar and texture protocols",
+          "Pre-laser priming",
+          "Hair-loss scalp sessions with Exosignal Hair"
+        ],
+        "ctaTitle": "Add MitoPen to your clinic",
+        "ctaText": "Contact us for pricing, cartridge supply and operator training."
+      },
+      "ru": {
+        "name": "MitoPen E30-Ultima",
+        "eyebrow": "МИКРОНИДЛИНГ-УСТРОЙСТВО",
+        "tagline": "Моторизованная мезо-ручка — 5 скоростей, регулируемая глубина",
+        "description": "MitoPen E30-Ultima — моторизованная мезо-ручка с авто-штампом: пять скоростей, кольцо регулировки глубины и стерильные одноразовые сменные картриджи. Доступна в беспроводной версии со встроенной батареей для мобильности у кресла и в проводной версии для интенсивной работы. Спроектирована как инструмент доставки сыворотки V-Tech и системы Exosomes для лица.",
+        "shortDescription": "Моторизованная микронидлинг-ручка — 5 скоростей, регулируемая глубина, стерильные сменные картриджи, проводная или беспроводная.",
+        "keyFacts": [
+          "5 моторизованных скоростей, переключение одной кнопкой",
+          "Регулировка глубины иглы кольцом на ручке",
+          "Стерильные одноразовые сменные картриджи с фиксацией",
+          "Проводная и беспроводная версии — ручка 318 г"
+        ],
+        "stats": [
+          { "value": "5", "label": "Скоростей" },
+          { "value": "318 г", "label": "Вес ручки" },
+          { "value": "5 В / 1 А", "label": "Питание" }
+        ],
+        "benefits": [
+          { "title": "Повторяемая глубина", "text": "Кольцо фиксирует глубину иглы — оператор работает по зонам без ухода от протокола." },
+          { "title": "Мотор авто-штамп", "text": "Пять скоростей: медленнее на костных зонах, быстрее на плотных участках." },
+          { "title": "Стерильные сменные картриджи", "text": "Запечатанные стерильные картриджи фиксируются поворотом против часовой; безопасная смена между пациентами." },
+          { "title": "Две версии", "text": "Беспроводная — мобильность у кресла, проводная — для интенсивной работы." }
+        ],
+        "ingredientsIntro": "Комплект поставки",
+        "ingredients": [
+          "Ручка MitoPen E30-Ultima (318 г)",
+          "Адаптер питания 5 В / 1 А",
+          "Кабель питания",
+          "2 стерильных одноразовых картриджа",
+          "Инструкция пользователя"
+        ],
+        "protocol": {
+          "title": "Рабочий протокол",
+          "items": [
+            "Вскрыть стерильную упаковку картриджа.",
+            "Совместить круглый паз с меткой 1–2 на корпусе и горизонтально дослать до упора.",
+            "Зафиксировать картридж поворотом против часовой стрелки; снятие — по часовой и вытянуть горизонтально.",
+            "Удержать кнопку питания 2–3 секунды для включения. Нажатия — переключение 5 скоростей.",
+            "Глубина иглы: вращение кольца по часовой — короче, против часовой — длиннее.",
+            "Работа по зонам; держать ручку вертикально, чтобы жидкости не затекали в корпус."
+          ]
+        },
+        "contraindications": {
+          "title": "Противопоказания",
+          "items": [
+            "Острые заболевания или температура выше 38 °C.",
+            "Аллергии и гемофилия.",
+            "Меланоз лица.",
+            "Высокая внутренняя температура или регулярное стационарное лечение.",
+            "Несовместимые препараты, дети до 12 лет.",
+            "Использовать только при стабильном напряжении сети (не 220 В переменного тока), не работать при экстремальной жаре, пыли или влажности."
+          ]
+        },
+        "chipsTitle": "Сценарии",
+        "chips": [
+          "Доставка сыворотки V-Tech",
+          "Реабилитация после процедур",
+          "Работа по рубцам и текстуре",
+          "Прайминг перед лазером",
+          "Сессии по выпадению волос с Exosignal Hair"
+        ],
+        "ctaTitle": "Добавить MitoPen в клинику",
+        "ctaText": "Свяжитесь с нами по цене, поставке картриджей и обучению."
+      },
+      "he": {
+        "name": "MitoPen E30-Ultima",
+        "eyebrow": "מכשיר מיקרו-נידלינג",
+        "tagline": "עט מזו ממונע — 5 מהירויות ועומק מתכוונן",
+        "description": "MitoPen E30-Ultima הוא עט מזו ממונע מסוג Auto-stamp: חמש מהירויות, טבעת כיוון עומק וראש מחטים סטרילי לשימוש חד-פעמי. זמין בגרסה אלחוטית עם סוללה מובנית לניידות ליד הלקוח, ובגרסה חוטית לסשנים אינטנסיביים. תוכנן כשותף הקליני להחדרת סרום V-Tech ולמערכת Exosomes לפנים.",
+        "shortDescription": "עט מזו ממונע — 5 מהירויות, עומק מתכוונן, מחסניות מחטים סטריליות, חוטי או אלחוטי.",
+        "keyFacts": [
+          "5 מהירויות ממונעות, מעבר בלחיצת כפתור",
+          "כיוון עומק המחט באמצעות טבעת על הידית",
+          "מחסניות מחטים סטריליות חד-פעמיות",
+          "גרסה חוטית ואלחוטית — משקל ידית 318 גרם"
+        ],
+        "stats": [
+          { "value": "5", "label": "מהירויות" },
+          { "value": "318 ג׳", "label": "משקל ידית" },
+          { "value": "5V / 1A", "label": "הספק" }
+        ],
+        "benefits": [
+          { "title": "עומק עקבי", "text": "טבעת הכיוון נועלת את עומק המחט — המפעיל עובר בין אזורים בלי לסטות מהפרוטוקול." },
+          { "title": "מנוע Auto-stamp", "text": "חמש מהירויות מאפשרות להתאים את הקצב לאזור — איטי על אזורים גרמיים, מהיר על אזורים צפופים." },
+          { "title": "מחסניות סטריליות", "text": "מחסניות אטומות לשימוש חד-פעמי ננעלות בסיבוב נגד כיוון השעון — החלפה בטוחה בין לקוחות." },
+          { "title": "שתי גרסאות", "text": "אלחוטית — לניידות; חוטית — לסשנים אינטנסיביים בקליניקה עמוסה." }
+        ],
+        "ingredientsIntro": "תכולת האריזה",
+        "ingredients": [
+          "ידית MitoPen E30-Ultima (318 גרם)",
+          "מתאם 5V / 1A",
+          "כבל חשמל",
+          "2 מחסניות מחטים סטריליות חד-פעמיות",
+          "מדריך משתמש"
+        ],
+        "protocol": {
+          "title": "פרוטוקול הפעלה",
+          "items": [
+            "להוציא את מחסנית המחטים מהאריזה הסטרילית.",
+            "להתאים את החריץ העגול לסימון 1–2 על הידית ולדחוף אופקית עד הסוף.",
+            "לנעול את המחסנית בסיבוב נגד כיוון השעון; להוצאה — לסובב עם כיוון השעון ולמשוך אופקית.",
+            "להחזיק את כפתור ההפעלה 2–3 שניות. לחיצות נוספות מחליפות בין 5 המהירויות.",
+            "כיוון עומק: סיבוב טבעת עם כיוון השעון — קצר יותר; נגד כיוון השעון — ארוך יותר.",
+            "עבודה אזור-אחר-אזור; להחזיק את הידית זקופה כדי שנוזלים לא יחזרו לתוך המכשיר."
+          ]
+        },
+        "contraindications": {
+          "title": "אין לטפל",
+          "items": [
+            "מטופלים עם מחלה חריפה או חום מעל 38°C.",
+            "מטופלים עם אלרגיה רלוונטית או המופיליה.",
+            "מטופלים עם מלנוזיס של הפנים.",
+            "מטופלים עם חום פנימי גבוה או טיפול בית-חולים סדיר.",
+            "מטופלים על תרופות לא תואמות וילדים מתחת לגיל 12.",
+            "להשתמש במתח רשת יציב (לא 220V AC); אין להפעיל בטמפרטורה גבוהה, אבק או לחות."
+          ]
+        },
+        "chipsTitle": "תרחישים",
+        "chips": [
+          "החדרת סרום V-Tech",
+          "שיקום עור לאחר טיפול",
+          "פרוטוקולי צלקות ומרקם",
+          "הכנה לטיפולי לייזר",
+          "סשנים נגד נשירת שיער עם Exosignal Hair"
+        ],
+        "ctaTitle": "להוסיף את MitoPen לקליניקה",
+        "ctaText": "צרו קשר למחיר, אספקת מחסניות והדרכה."
+      }
+    }
   }
 ]

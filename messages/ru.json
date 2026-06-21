@@ -30,6 +30,8 @@
     "filterSerum": "Сыворотки",
     "filterGel": "Гели",
     "filterHair": "Для волос",
+    "filterPeel": "Пилинги",
+    "filterDevice": "Девайсы",
     "searchPlaceholder": "Поиск по каталогу",
     "searchLabel": "Поиск по каталогу",
     "noResults": "По вашему запросу ничего не найдено.",

@@ -315,49 +315,85 @@
   {
     "slug": "devices",
     "accent": "teal",
-    "image": "",
-    "products": [],
-    "status": "coming-soon",
+    "image": "/products/mitoscan/hero.webp",
+    "products": ["mitoscan", "mitopen"],
+    "status": "available",
     "order": 5,
     "content": {
       "en": {
-        "name": "Devices — MitoScan & MitoPen",
+        "name": "Devices — Mitoscan & MitoPen",
         "eyebrow": "PROFESSIONAL DEVICES",
-        "tagline": "Diagnosis + delivery devices designed for the Mitoderm protocol",
-        "shortDescription": "MitoScan for skin / scalp diagnostic imaging and MitoPen for precision micro-channel delivery. Details soon.",
-        "story": "Two professional devices designed specifically for the Mitoderm protocol family. MitoScan handles diagnostic imaging — high-resolution skin and scalp analysis to map indication zones before a session. MitoPen is the delivery instrument optimised for V-Tech and ExoSignal payloads — calibrated needle depth, single-use cartridges, ergonomic for long treatment days.",
-        "indications": [],
-        "ingredientsLead": "",
-        "protocolTitle": "Coming soon",
-        "protocolItems": [],
-        "ctaTitle": "Reserve early access to MitoScan & MitoPen",
-        "ctaText": "Leave your contact — we'll reach out when training slots open."
+        "tagline": "Diagnosis and delivery — engineered for the Mitoderm protocol",
+        "shortDescription": "Mitoscan is the HD scalp and follicle diagnostic; MitoPen is the motorised auto-stamp delivery pen. Built to work as one workflow with V-Tech and Exosignal.",
+        "story": "Two professional devices that close the loop on the Mitoderm protocol. Mitoscan runs the diagnostic side: 10 MP HD imaging of the scalp and follicle with three lighting modes, freeze-frame for chair-side review and easy before/after comparisons across a course. MitoPen is the delivery instrument — a motorised auto-stamp pen with five speeds, a dial-locked depth ring and click-in sterile needle cartridges, calibrated for V-Tech serum and the Exosignal Hair payload. Both run on one bench: diagnose, plan, deliver, follow up.",
+        "indications": [
+          "Hair loss and scalp consultation",
+          "V-Tech and Exosignal Hair sessions",
+          "Post-procedure skin renewal",
+          "Texture, scar and pigmentation protocols",
+          "Before / after documentation"
+        ],
+        "ingredientsLead": "Key specifications",
+        "protocolTitle": "How they pair",
+        "protocolItems": [
+          "Open every consultation on Mitoscan — baseline 10 MP capture of the indication zones.",
+          "Select the cartridge and depth on MitoPen per the indication; start at low speed and step up.",
+          "Treat one zone at a time, hold the pen upright, keep within the locked depth.",
+          "Close each course on Mitoscan — freeze-frame side-by-side with the baseline for the patient.",
+          "Archive the freeze-frames in the patient chart for the follow-up visit."
+        ],
+        "ctaTitle": "Add Mitoscan & MitoPen to your clinic",
+        "ctaText": "Contact us for pricing, lead time and operator training."
       },
       "ru": {
-        "name": "Девайсы — MitoScan и MitoPen",
+        "name": "Девайсы — Mitoscan и MitoPen",
         "eyebrow": "ПРОФЕССИОНАЛЬНЫЕ ДЕВАЙСЫ",
-        "tagline": "Диагностика + доставка под протокол Mitoderm",
-        "shortDescription": "MitoScan для диагностической визуализации кожи/кожи головы и MitoPen для точечной доставки. Детали скоро.",
-        "story": "Два профессиональных девайса разработанных специально под протоколы Mitoderm. MitoScan — диагностическая визуализация: анализ кожи и кожи головы для разметки зон перед процедурой. MitoPen — инструмент доставки под V-Tech и ExoSignal: калиброванная глубина игл, одноразовые картриджи, эргономика для длинных смен.",
-        "indications": [],
-        "ingredientsLead": "",
-        "protocolTitle": "Скоро",
-        "protocolItems": [],
-        "ctaTitle": "Зарезервировать ранний доступ к MitoScan и MitoPen",
-        "ctaText": "Оставьте контакт — сообщим когда откроются слоты обучения."
+        "tagline": "Диагностика и доставка — под протоколы Mitoderm",
+        "shortDescription": "Mitoscan — HD-диагностика кожи головы и фолликулов; MitoPen — моторизованная мезо-ручка авто-штамп. Один рабочий процесс с V-Tech и Exosignal.",
+        "story": "Два профессиональных девайса, замыкающих протоколы Mitoderm. Mitoscan — диагностическая часть: HD-изображение кожи головы и фолликула 10 Мп, три режима подсветки, фиксация кадра для разбора у кресла и удобные сравнения до/после на курсе. MitoPen — инструмент доставки: моторизованная авто-штамп ручка, пять скоростей, кольцевая фиксация глубины и стерильные сменные картриджи, откалибрована под сыворотку V-Tech и Exosignal Hair. Один стол: диагностика, план, доставка, контроль.",
+        "indications": [
+          "Консультация по выпадению волос и состоянию кожи головы",
+          "Сессии V-Tech и Exosignal Hair",
+          "Реабилитация кожи после процедур",
+          "Протоколы по текстуре, рубцам и пигментации",
+          "Документация до / после"
+        ],
+        "ingredientsLead": "Ключевые характеристики",
+        "protocolTitle": "Связка в работе",
+        "protocolItems": [
+          "Начало консультации — Mitoscan: базовый кадр 10 Мп по зонам.",
+          "На MitoPen — выбрать картридж и глубину под показание; начать с низкой скорости, повышать.",
+          "Работа по зонам, ручка вертикально, в пределах зафиксированной глубины.",
+          "Финал курса — Mitoscan: фиксация кадра рядом с базовой для пациента.",
+          "Сохранить кадры в карту — для следующего визита."
+        ],
+        "ctaTitle": "Добавить Mitoscan и MitoPen в клинику",
+        "ctaText": "Свяжитесь с нами по цене, срокам и обучению."
       },
       "he": {
-        "name": "מכשירים — MitoScan ו-MitoPen",
+        "name": "מכשירים — Mitoscan ו-MitoPen",
         "eyebrow": "מכשירים מקצועיים",
-        "tagline": "אבחון + החדרה מתוכננים לפרוטוקול מיטודרם",
-        "shortDescription": "MitoScan לאבחון תמונתי של עור/קרקפת ו-MitoPen להחדרה מדויקת. פרטים בקרוב.",
-        "story": "שני מכשירים מקצועיים שתוכננו במיוחד למשפחת הפרוטוקולים של מיטודרם. MitoScan — אבחון תמונתי של עור וקרקפת לזיהוי אזורי התוויה. MitoPen — מכשיר ההחדרה ל-V-Tech ו-ExoSignal: עומק מחט מכויל, מחסניות חד-פעמיות, ארגונומיה ליום עבודה ארוך.",
-        "indications": [],
-        "ingredientsLead": "",
-        "protocolTitle": "בקרוב",
-        "protocolItems": [],
-        "ctaTitle": "שמירת גישה מוקדמת ל-MitoScan ו-MitoPen",
-        "ctaText": "השאירו פרטים — נחזור כשייפתחו מקומות להדרכה."
+        "tagline": "אבחון והחדרה — תוכננו לפרוטוקול מיטודרם",
+        "shortDescription": "Mitoscan לאבחון HD של קרקפת וזקיק; MitoPen עט מזו ממונע Auto-stamp. תהליך עבודה אחד עם V-Tech ו-Exosignal.",
+        "story": "שני מכשירים מקצועיים שסוגרים את הפרוטוקול של מיטודרם. Mitoscan עושה את האבחון: ראש HD 10MP לקרקפת ולזקיק, שלושה מצבי תאורה, הקפאת תמונה לבחינה ליד הלקוח והשוואות לפני/אחרי על פני הקורס. MitoPen הוא מכשיר ההחדרה — עט מזו ממונע Auto-stamp בחמש מהירויות, טבעת כיוון עומק נעולה ומחסניות מחטים סטריליות, מכוילים לסרום V-Tech ולתשלובת Exosignal Hair. שולחן עבודה אחד: לאבחן, לתכנן, להחדיר, לעקוב.",
+        "indications": [
+          "ייעוץ נשירת שיער ומצב קרקפת",
+          "סשנים של V-Tech ושל Exosignal Hair",
+          "שיקום עור לאחר טיפול",
+          "פרוטוקולי מרקם, צלקות ופיגמנטציה",
+          "תיעוד לפני / אחרי"
+        ],
+        "ingredientsLead": "מפרט עיקרי",
+        "protocolTitle": "איך הם עובדים יחד",
+        "protocolItems": [
+          "פותחים כל ייעוץ עם Mitoscan — צילום בסיס HD 10MP של אזורי ההתוויה.",
+          "ב-MitoPen בוחרים מחסנית ועומק לפי ההתוויה; מתחילים במהירות נמוכה ועולים.",
+          "עבודה אזור-אחר-אזור, ידית זקופה, בתוך העומק הנעול.",
+          "סוגרים כל קורס עם Mitoscan — הקפאת תמונה ליד התמונה הבסיסית להצגה ללקוח.",
+          "שומרים את הפריימים בכרטיס הלקוח לקראת ביקור המעקב."
+        ],
+        "ctaTitle": "להוסיף את Mitoscan ו-MitoPen לקליניקה",
+        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכה."
       }
     }
   }
