@@ -125,6 +125,8 @@
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
     "noResults": "No products match your search.",
+    "resultCount": "Showing {shown} of {total}",
+    "clearFilters": "Clear filters",
     "addToList": "Add to my list",
     "removeFromList": "Remove from my list"
   },

@@ -125,6 +125,8 @@
     "searchPlaceholder": "חיפוש בקטלוג",
     "searchLabel": "חיפוש בקטלוג",
     "noResults": "לא נמצאו מוצרים מתאימים.",
+    "resultCount": "מציג {shown} מתוך {total}",
+    "clearFilters": "ניקוי סינון",
     "addToList": "הוספה לרשימה",
     "removeFromList": "הסרה מהרשימה"
   },

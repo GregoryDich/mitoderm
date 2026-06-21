@@ -1,13 +1,15 @@
 'use client';
 
-import { FC, useMemo, useState } from 'react';
+import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
+import { track } from '@/lib/track';
 import styles from './Catalog.module.scss';
 
 interface Props {
@@ -26,16 +28,57 @@ const filters: { key: Filter; labelKey: string }[] = [
   { key: 'device', labelKey: 'filterDevice' },
 ];
 
+const FILTER_KEYS = new Set<string>(filters.map((f) => f.key));
+
 const accentVar: Record<ProductAccent, string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
 };
 
+/** Reflect filter + query into the URL without a Next navigation —
+ *  shallow replaceState keeps the scroll position and avoids a server
+ *  round-trip, while still making the view shareable / back-button
+ *  friendly. */
+function syncUrl(active: Filter, query: string): void {
+  if (typeof window === 'undefined') return;
+  const params = new URLSearchParams(window.location.search);
+  if (active === 'all') params.delete('category');
+  else params.set('category', active);
+  if (query.trim()) params.set('q', query.trim());
+  else params.delete('q');
+  const qs = params.toString();
+  const url = `${window.location.pathname}${qs ? `?${qs}` : ''}`;
+  window.history.replaceState(null, '', url);
+}
+
 const Catalog: FC<Props> = ({ items }) => {
   const t = useTranslations('catalog');
-  const [active, setActive] = useState<Filter>('all');
-  const [query, setQuery] = useState('');
+  const searchParams = useSearchParams();
+
+  // Seed initial state from the URL so a shared /catalog?category=serum
+  // link lands pre-filtered.
+  const initialCategory = searchParams.get('category');
+  const [active, setActive] = useState<Filter>(
+    initialCategory && FILTER_KEYS.has(initialCategory)
+      ? (initialCategory as Filter)
+      : 'all'
+  );
+  const [query, setQuery] = useState(searchParams.get('q') ?? '');
+
+  useEffect(() => {
+    syncUrl(active, query);
+  }, [active, query]);
+
+  const onFilter = useCallback((key: Filter) => {
+    setActive(key);
+    track('catalog_filter', { category: key });
+  }, []);
+
+  const reset = useCallback(() => {
+    setActive('all');
+    setQuery('');
+  }, []);
 
   const visible = useMemo(() => {
     const byCategory =
@@ -47,6 +90,8 @@ const Catalog: FC<Props> = ({ items }) => {
       return haystack.includes(q);
     });
   }, [active, items, query]);
+
+  const isFiltered = active !== 'all' || query.trim().length > 0;
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -76,7 +121,7 @@ const Catalog: FC<Props> = ({ items }) => {
                 className={`${styles.filter} ${
                   active === f.key ? styles.filterActive : ''
                 }`}
-                onClick={() => setActive(f.key)}
+                onClick={() => onFilter(f.key)}
               >
                 {t(f.labelKey)}
               </button>
@@ -116,8 +161,24 @@ const Catalog: FC<Props> = ({ items }) => {
             />
           </label>
         </div>
+        <div className={styles.resultRow} aria-live="polite">
+          <span className={styles.resultCount}>
+            {t('resultCount', { shown: visible.length, total: items.length })}
+          </span>
+          {isFiltered && (
+            <button type="button" className={styles.resetBtn} onClick={reset}>
+              {t('clearFilters')}
+            </button>
+          )}
+        </div>
+
         {visible.length === 0 && (
-          <p className={styles.empty}>{t('noResults')}</p>
+          <div className={styles.empty}>
+            <p className={styles.emptyText}>{t('noResults')}</p>
+            <button type="button" className={styles.emptyReset} onClick={reset}>
+              {t('clearFilters')}
+            </button>
+          </div>
         )}
 
         <div className={styles.grid}>
