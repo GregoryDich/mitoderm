@@ -14,6 +14,7 @@ import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
 import LinesShowcase from '@/components/Lines/LinesShowcase';
+import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -98,6 +99,10 @@ const HomePage: FC<Props> = ({
             <LinesShowcase lines={lines} />
           </Reveal>
         )}
+
+        <Reveal>
+          <ConcernsStrip />
+        </Reveal>
 
         <Reveal>
         <section className={styles.block}>

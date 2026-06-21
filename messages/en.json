@@ -13,6 +13,32 @@
     "lines": "Lines",
     "blog": "Blog"
   },
+  "concerns": {
+    "eyebrow": "BY CONCERN",
+    "title": "Start with the patient's complaint",
+    "subtitle": "Four entry points that match how a consultation actually opens — pick the concern, land on the line and protocol that addresses it.",
+    "explore": "Open the line",
+    "density": {
+      "eyebrow": "FACE · DENSITY",
+      "title": "Loss of density & structural aging",
+      "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery."
+    },
+    "hair": {
+      "eyebrow": "SCALP · HAIR LOSS",
+      "title": "Hair loss & scalp thinning",
+      "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage."
+    },
+    "longevity": {
+      "eyebrow": "FACE · LONGEVITY",
+      "title": "Dullness, fatigue, longevity",
+      "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime."
+    },
+    "devices": {
+      "eyebrow": "CLINIC · DIAGNOSTIC + DELIVERY",
+      "title": "Diagnose, deliver, document",
+      "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery."
+    }
+  },
   "keyActives": {
     "eyebrow": "KEY ACTIVES",
     "intro": "The ingredients doing the structural work in this formula — tap any chip below for the full list.",
