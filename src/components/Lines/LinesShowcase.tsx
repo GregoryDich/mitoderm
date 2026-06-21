@@ -1,7 +1,10 @@
+'use client';
+
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import type { LineSummary } from '@/products';
+import { track } from '@/lib/track';
 import styles from './LinesShowcase.module.scss';
 
 interface Props {
@@ -72,7 +75,11 @@ const LinesShowcase: FC<Props> = ({ lines }) => {
 
               <div className={styles.ctaRow}>
                 {line.status === 'available' ? (
-                  <Link href={line.href} className={styles.cta}>
+                  <Link
+                    href={line.href}
+                    className={styles.cta}
+                    onClick={() => track('line_cta', { slug: line.slug, source: 'home' })}
+                  >
                     {t('explore')} <span className={styles.arrow}>→</span>
                   </Link>
                 ) : (

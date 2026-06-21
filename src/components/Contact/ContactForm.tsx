@@ -3,6 +3,7 @@
 import { FC, FormEvent, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
+import { track } from '@/lib/track';
 import styles from './ContactForm.module.scss';
 
 interface FormState {
@@ -52,6 +53,7 @@ const ContactForm: FC = () => {
     if (!validate()) return;
     setSending(true);
     setServerError(null);
+    track('lead_submit', { has_phone: !!v.phone, has_clinic: !!v.clinic });
     try {
       const res = await fetch('/api/leads', {
         method: 'POST',
@@ -77,6 +79,7 @@ const ContactForm: FC = () => {
         return;
       }
       setSubmitted(true);
+      track('lead_success');
     } catch {
       setServerError(t('errorServer'));
     } finally {

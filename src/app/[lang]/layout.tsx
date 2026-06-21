@@ -159,7 +159,9 @@ export default async function RootLayout({
           </InterestListProvider>
         </body>
       </NextIntlClientProvider>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID as string} />
+      {process.env.NEXT_PUBLIC_GOOGLE_ID ? (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
+      ) : null}
     </html>
   );
 }
