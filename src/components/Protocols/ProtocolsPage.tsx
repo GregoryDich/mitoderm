@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
-import { Product, ProductAccent, getCatalogItems } from '@/products';
-import { LocaleType } from '@/types';
+import type { Product, ProductAccent } from '@/products';
+import { useCatalogIndex } from '@/components/Catalog/CatalogIndexProvider';
 import styles from './ProtocolsPage.module.scss';
 
 interface ProtocolEntry {
@@ -16,7 +16,6 @@ interface ProtocolEntry {
 }
 
 interface Props {
-  locale: LocaleType;
   protocols: ProtocolEntry[];
 }
 
@@ -26,9 +25,9 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const ProtocolsPage: FC<Props> = ({ locale, protocols }) => {
+const ProtocolsPage: FC<Props> = ({ protocols }) => {
   const t = useTranslations('protocols');
-  const catalog = getCatalogItems(locale);
+  const catalog = useCatalogIndex();
 
   return (
     <div className={`pageScroll ${styles.page}`}>

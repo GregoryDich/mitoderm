@@ -34,6 +34,9 @@ const InterestDrawer = dynamic(
 
 import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
 import { RecentlyViewedProvider } from '@/components/RecentlyViewed/RecentlyViewedProvider';
+import { CatalogIndexProvider } from '@/components/Catalog/CatalogIndexProvider';
+import { getCatalogItems } from '@/products';
+import type { LocaleType } from '@/types';
 import PromoBar from '@/components/Layout/PromoBar/PromoBar';
 import { nextUpcomingSeminar } from '@/lib/promo';
 
@@ -129,6 +132,10 @@ export default async function RootLayout({
   unstable_setRequestLocale(params.lang);
 
   const upcoming = await nextUpcomingSeminar();
+  // Slim catalog index computed server-side and passed to client
+  // components via context — keeps the full products.json out of the
+  // client bundle (see CatalogIndexProvider).
+  const catalogIndex = getCatalogItems(params.lang as LocaleType);
 
   return (
     <html lang={params.lang}>
@@ -137,6 +144,7 @@ export default async function RootLayout({
           className={rubik.className}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
+          <CatalogIndexProvider items={catalogIndex}>
           <InterestListProvider>
           <RecentlyViewedProvider>
             {upcoming && (
@@ -158,6 +166,7 @@ export default async function RootLayout({
             <JsonLd id="ld-website" data={siteJsonLd()} />
           </RecentlyViewedProvider>
           </InterestListProvider>
+          </CatalogIndexProvider>
         </body>
       </NextIntlClientProvider>
       {process.env.NEXT_PUBLIC_GOOGLE_ID ? (
