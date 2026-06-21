@@ -89,6 +89,28 @@
   border-radius: 24px;
 }
 
+.pillarHasArt {
+  grid-template-columns: 96px 1fr clamp(120px, 16vw, 190px);
+}
+
+.pillarArt {
+  grid-row: 1;
+  grid-column: 3;
+  align-self: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pillarArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .pillar::before {
   content: '';
   position: absolute;
@@ -304,9 +326,16 @@
 }
 
 @media (max-width: 720px) {
-  .pillar {
+  .pillar,
+  .pillarHasArt {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .pillarArt {
+    grid-row: auto;
+    grid-column: 1;
+    max-width: 160px;
+    order: -1;
   }
   .pillarNumber {
     flex-direction: row;

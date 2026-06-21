@@ -96,8 +96,10 @@ export const getRelatedPosts = (
 /** Tag → relevant product slugs. Edits stay local: add a tag here and
  *  every post carrying it will surface those products in the
  *  "Featured products" strip. Likewise, every product whose slug
- *  appears here can find the related posts via getPostsForProduct. */
-const TAG_PRODUCTS: Record<string, string[]> = {
+ *  appears here can find the related posts via getPostsForProduct.
+ *  Exported so a unit test can assert every slug resolves to a real
+ *  product — this is the cross-link integrity guard. */
+export const TAG_PRODUCTS: Record<string, string[]> = {
   exosomes: ['v-tech-serum', 'v-tech-gel-mask', 'exotech-gel'],
   'v-tech': ['v-tech-serum', 'v-tech-gel-mask', 'exotech-gel'],
   nad: ['exo-nad'],

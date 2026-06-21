@@ -5,7 +5,9 @@ import {
   getPostsForProduct,
   posts,
   getPost,
+  TAG_PRODUCTS,
 } from './posts';
+import { getProduct } from './products';
 
 describe('posts data', () => {
   it('exposes a non-empty sorted post list', () => {
@@ -84,5 +86,23 @@ describe('getPost', () => {
 
   it('returns undefined for an unknown slug', () => {
     expect(getPost('does-not-exist')).toBeUndefined();
+  });
+});
+
+describe('TAG_PRODUCTS integrity', () => {
+  it('every mapped product slug resolves to a real product', () => {
+    const bad: string[] = [];
+    for (const slugs of Object.values(TAG_PRODUCTS)) {
+      for (const slug of slugs) {
+        if (!getProduct(slug)) bad.push(slug);
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it('every post tag that maps to products has a non-empty list', () => {
+    for (const [tag, slugs] of Object.entries(TAG_PRODUCTS)) {
+      expect(slugs.length, `tag "${tag}"`).toBeGreaterThan(0);
+    }
   });
 });

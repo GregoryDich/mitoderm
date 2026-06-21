@@ -359,6 +359,12 @@
   "recentlyViewed": {
     "title": "RECENTLY VIEWED"
   },
+  "glossaryPage": {
+    "eyebrow": "REFERENCE",
+    "title": "Ingredient & science glossary",
+    "subtitle": "Plain-language definitions of the actives and mechanisms behind the Mitoderm protocol — the same terms that surface as tooltips across the product pages.",
+    "jumpLabel": "Jump to a term"
+  },
   "glossary": {
     "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
     "niacinamide": "Vitamin B3. Reinforces the skin barrier, evens tone, reduces sebum production and redness. Tolerated by most skin types.",
@@ -507,6 +513,7 @@
     "linkScience": "The science",
     "linkBlog": "Journal",
     "linkProtocols": "Protocols",
+    "linkGlossary": "Glossary",
     "linkRegimen": "Regimen finder",
     "linkLines": "Lines",
     "linkCatalog": "All products",

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import { publicAsset } from '@/lib/public-asset';
 import styles from './SciencePage.module.scss';
 
 interface Pillar {
@@ -44,16 +45,26 @@ const SciencePage: FC = () => {
         </section>
 
         <ol className={styles.pillars}>
-          {pillars.map((p, i) => (
+          {pillars.map((p, i) => {
+            const art = publicAsset(`/science/${p.key}.webp`);
+            return (
             <li
               key={p.key}
-              className={`${styles.pillar} ${i % 2 === 1 ? styles.pillarFlipped : ''}`}
+              className={`${styles.pillar} ${i % 2 === 1 ? styles.pillarFlipped : ''} ${
+                art ? styles.pillarHasArt : ''
+              }`}
               style={{ ['--accent' as string]: accentVar[p.accent] }}
             >
               <div className={styles.pillarNumber}>
                 <span className={styles.pillarNum}>{String(i + 1).padStart(2, '0')}</span>
                 <span className={styles.pillarLine} />
               </div>
+              {art && (
+                <div className={styles.pillarArt} aria-hidden="true">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={art} alt="" loading="lazy" />
+                </div>
+              )}
               <div className={styles.pillarBody}>
                 <span className={styles.pillarEyebrow}>{t(`pillars.${p.key}.eyebrow`)}</span>
                 <h2 className={styles.pillarTitle}>{t(`pillars.${p.key}.title`)}</h2>
@@ -66,7 +77,8 @@ const SciencePage: FC = () => {
                 )}
               </div>
             </li>
-          ))}
+            );
+          })}
         </ol>
 
         <section className={styles.protocol}>

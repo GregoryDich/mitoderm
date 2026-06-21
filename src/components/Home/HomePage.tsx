@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
@@ -7,6 +8,7 @@ import {
   LineSummary,
 } from '@/products';
 import { LocaleType } from '@/types';
+import { publicAsset } from '@/lib/public-asset';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
@@ -52,9 +54,23 @@ const HomePage: FC<Props> = ({
 
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
+  const heroArt = publicAsset('/home/hero.webp');
 
   return (
     <div className={`pageScroll ${styles.page}`}>
+      {heroArt && (
+        <div className={styles.heroArt} aria-hidden="true">
+          <Image
+            src={heroArt}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroArtImg}
+          />
+          <span className={styles.heroArtScrim} />
+        </div>
+      )}
       <div className={styles.glows} aria-hidden="true">
         <span className={styles.glowA} />
         <span className={styles.glowB} />
