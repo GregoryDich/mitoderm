@@ -1,5 +1,167 @@
 [
   {
+    "slug": "exosignal-hair-protocol",
+    "date": "2026-06-21",
+    "accent": "teal",
+    "image": "/products/exosignal-hair/hero.webp",
+    "tags": ["hair", "exosignal", "protocol"],
+    "content": {
+      "en": {
+        "title": "The Exosignal Hair protocol — a 12-week scalp course that holds up at consultation",
+        "eyebrow": "PROTOCOL · HAIR",
+        "excerpt": "Hair-loss patients want a number and a timeline. Here's the Exosignal Hair course structured the way you'll actually present it: baseline, cadence, what changes when, and how to document it so 'feels denser' becomes a chart entry.",
+        "readTime": "6 min read",
+        "body": [
+          { "type": "p", "text": "Hair-loss consultations live or die on expectation-setting. The patient has read about exosomes, seen before/afters that may or may not be honest, and arrives wanting one thing: a number and a timeline. The Exosignal Hair line gives you both — a serum and a scalp spray designed to run as a single 12-week course — but only if you present it as a protocol, not a product." },
+          { "type": "h2", "text": "Open on Mitoscan, every time" },
+          { "type": "p", "text": "Before the first application, capture a baseline with Mitoscan: HD imaging of the thinning zones, three lighting modes, freeze-frame saved to the chart. This is non-negotiable. A hair course without a week-0 image is a course you can only argue about subjectively at week 12. With it, you have a side-by-side that sells the next course on its own." },
+          { "type": "h2", "text": "The 12-week cadence" },
+          { "type": "ul", "items": [
+            "Weeks 1–4: in-clinic application weekly. Microneedling-assisted delivery of the Exosignal serum at 0.5–0.8 mm on the scalp, immediately followed by the spray as the leave-on layer.",
+            "Weeks 5–8: every other week in-clinic; patient uses the take-home spray daily between visits.",
+            "Weeks 9–12: monthly in-clinic check; daily home spray continues.",
+            "Week 12: re-image on Mitoscan, compare to baseline, decide on a maintenance cadence (typically one session every 4–6 weeks)."
+          ] },
+          { "type": "h2", "text": "What changes, and when" },
+          { "type": "p", "text": "Tell the patient the truth about the timeline: weeks 1–4 are about reducing shedding, not regrowth — they may notice fewer hairs in the brush before they notice anything in the mirror. Visible density change is a weeks 8–12 story, and it photographs better than it feels. This is exactly why the baseline image matters: it converts a slow, hard-to-feel change into something undeniable." },
+          { "type": "h2", "text": "Depth discipline on the scalp" },
+          { "type": "p", "text": "Scalp delivery is shallower than facial work — 0.5–0.8 mm with MitoPen, enough to open channels for the serum without disturbing the follicle. Lock the depth on the dial ring at the start of the session and keep the handle moving in even passes. The spray is the seal: applied immediately after, it keeps the payload working between visits." },
+          { "type": "h2", "text": "Who to turn away" },
+          { "type": "p", "text": "Active scalp inflammation or infection, recent transplant within the healing window, and any of the standard microneedling contraindications. Exosignal is a density and scalp-health protocol, not a treatment for scarring alopecia — set that boundary at consultation." },
+          { "type": "quote", "text": "A hair course without a baseline image isn't a protocol. It's a hope.", "author": "Exosignal Hair training note" }
+        ]
+      },
+      "ru": {
+        "title": "Протокол Exosignal Hair — 12-недельный курс для кожи головы, который держится на консультации",
+        "eyebrow": "ПРОТОКОЛ · ВОЛОСЫ",
+        "excerpt": "Пациенту с выпадением нужны цифра и срок. Вот курс Exosignal Hair в том виде, в каком вы реально его презентуете: база, частота, что меняется и когда, и как это задокументировать, чтобы «стало гуще» превратилось в запись в карте.",
+        "readTime": "6 мин чтения",
+        "body": [
+          { "type": "p", "text": "Консультации по выпадению держатся на управлении ожиданиями. Пациент читал про экзосомы, видел до/после — честные или нет — и приходит за одним: цифра и срок. Линия Exosignal Hair даёт и то, и другое — сыворотка и спрей для кожи головы, рассчитанные на единый 12-недельный курс — но только если вы подаёте это как протокол, а не как продукт." },
+          { "type": "h2", "text": "Каждый раз начинайте с Mitoscan" },
+          { "type": "p", "text": "До первого нанесения снимите базу на Mitoscan: HD-изображение зон истончения, три режима подсветки, зафиксированный кадр в карту. Это не обсуждается. Курс по волосам без кадра на нулевой неделе — это курс, о котором на 12-й неделе можно только субъективно спорить. С ним у вас есть сравнение, которое само продаёт следующий курс." },
+          { "type": "h2", "text": "Ритм 12 недель" },
+          { "type": "ul", "items": [
+            "Недели 1–4: применение в клинике еженедельно. Доставка сыворотки Exosignal через микронидлинг на 0.5–0.8 мм по коже головы, сразу за ней спрей как leave-on слой.",
+            "Недели 5–8: в клинике через неделю; пациент использует домашний спрей ежедневно между визитами.",
+            "Недели 9–12: ежемесячный контроль в клинике; домашний спрей продолжается.",
+            "Неделя 12: повторная съёмка на Mitoscan, сравнение с базой, выбор частоты поддержки (обычно одна сессия раз в 4–6 недель)."
+          ] },
+          { "type": "h2", "text": "Что меняется и когда" },
+          { "type": "p", "text": "Скажите пациенту правду о сроках: недели 1–4 — это про снижение выпадения, а не про рост; он заметит меньше волос на щётке раньше, чем что-то в зеркале. Видимое изменение плотности — история недель 8–12, и она фотографируется лучше, чем ощущается. Именно поэтому важен базовый кадр: он превращает медленное, трудноощутимое изменение в неоспоримое." },
+          { "type": "h2", "text": "Дисциплина глубины на коже головы" },
+          { "type": "p", "text": "Доставка на коже головы мельче, чем на лице — 0.5–0.8 мм на MitoPen, достаточно чтобы открыть каналы для сыворотки, не тревожа фолликул. Зафиксируйте глубину кольцом в начале сессии и ведите ручку ровными проходами. Спрей — это запечатывание: нанесённый сразу, он держит работу между визитами." },
+          { "type": "h2", "text": "Кому отказать" },
+          { "type": "p", "text": "Активное воспаление или инфекция кожи головы, недавняя трансплантация в окне заживления и любые стандартные противопоказания к микронидлингу. Exosignal — протокол плотности и здоровья кожи головы, а не лечение рубцовой алопеции; обозначьте эту границу на консультации." },
+          { "type": "quote", "text": "Курс по волосам без базового кадра — это не протокол. Это надежда.", "author": "Обучающая заметка Exosignal Hair" }
+        ]
+      },
+      "he": {
+        "title": "פרוטוקול Exosignal Hair — קורס קרקפת של 12 שבועות שמחזיק בייעוץ",
+        "eyebrow": "פרוטוקול · שיער",
+        "excerpt": "מטופלי נשירה רוצים מספר ולוח זמנים. הנה קורס Exosignal Hair כמו שבאמת תציגו אותו: בסיס, תדירות, מה משתנה ומתי, ואיך לתעד כדי ש'מרגיש צפוף יותר' יהפוך לרישום בכרטיס.",
+        "readTime": "6 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "ייעוצי נשירה חיים או מתים על ניהול ציפיות. הלקוח קרא על אקסוזומים, ראה לפני/אחרי — כנים או לא — ומגיע בשביל דבר אחד: מספר ולוח זמנים. סדרת Exosignal Hair נותנת את שניהם — סרום וספריי קרקפת שתוכננו לרוץ כקורס אחד של 12 שבועות — אבל רק אם מציגים את זה כפרוטוקול, לא כמוצר." },
+          { "type": "h2", "text": "לפתוח עם Mitoscan, בכל פעם" },
+          { "type": "p", "text": "לפני היישום הראשון, צלמו בסיס ב-Mitoscan: דימות HD של אזורי ההידלדלות, שלושה מצבי תאורה, פריים מוקפא בכרטיס. זה לא נתון למשא ומתן. קורס שיער בלי תמונת שבוע-0 הוא קורס שאפשר רק להתווכח עליו סובייקטיבית בשבוע 12. איתו יש לכם השוואה שמוכרת את הקורס הבא בעצמה." },
+          { "type": "h2", "text": "המקצב של 12 שבועות" },
+          { "type": "ul", "items": [
+            "שבועות 1–4: יישום בקליניקה שבועי. החדרת סרום Exosignal במיקרו-נידלינג ב-0.5–0.8 מ\"מ על הקרקפת, ומיד אחריו הספריי כשכבת leave-on.",
+            "שבועות 5–8: בקליניקה כל שבועיים; הלקוח משתמש בספריי הביתי מדי יום בין הביקורים.",
+            "שבועות 9–12: בדיקה חודשית בקליניקה; הספריי הביתי ממשיך.",
+            "שבוע 12: צילום חוזר ב-Mitoscan, השוואה לבסיס, החלטה על תדירות תחזוקה (בדרך כלל סשן אחד כל 4–6 שבועות)."
+          ] },
+          { "type": "h2", "text": "מה משתנה, ומתי" },
+          { "type": "p", "text": "תגידו ללקוח את האמת על לוח הזמנים: שבועות 1–4 הם על הפחתת נשירה, לא צמיחה — הוא יבחין בפחות שערות במברשת לפני שיבחין במשהו במראה. שינוי צפיפות נראה הוא סיפור של שבועות 8–12, והוא מצטלם טוב יותר משהוא מורגש. בדיוק לכן תמונת הבסיס חשובה: היא הופכת שינוי איטי וקשה-לתחושה למשהו שאי אפשר להכחיש." },
+          { "type": "h2", "text": "משמעת עומק על הקרקפת" },
+          { "type": "p", "text": "החדרה בקרקפת רדודה יותר מעבודת פנים — 0.5–0.8 מ\"מ ב-MitoPen, מספיק כדי לפתוח תעלות לסרום בלי להפריע לזקיק. נעלו את העומק בטבעת בתחילת הסשן והניעו את הידית במעברים אחידים. הספריי הוא האיטום: מיושם מיד, הוא שומר על העבודה בין הביקורים." },
+          { "type": "h2", "text": "את מי להחזיר" },
+          { "type": "p", "text": "דלקת או זיהום פעיל בקרקפת, השתלה לאחרונה בחלון הריפוי, וכל אחת מהתוויות-הנגד הסטנדרטיות למיקרו-נידלינג. Exosignal הוא פרוטוקול צפיפות ובריאות קרקפת, לא טיפול באלופציה צלקתית — הציבו את הגבול הזה בייעוץ." },
+          { "type": "quote", "text": "קורס שיער בלי תמונת בסיס אינו פרוטוקול. הוא תקווה.", "author": "הערת הדרכה של Exosignal Hair" }
+        ]
+      }
+    }
+  },
+  {
+    "slug": "post-procedure-recovery-window",
+    "date": "2026-06-19",
+    "accent": "gold",
+    "image": "/products/v-tech-system/hero.webp",
+    "tags": ["exosomes", "v-tech", "recovery"],
+    "content": {
+      "en": {
+        "title": "The post-procedure recovery window — turning downtime into a selling point",
+        "eyebrow": "PROTOCOL · RECOVERY",
+        "excerpt": "The 72 hours after a session decide how the patient remembers it. Here's how the V-Tech system shortens the visible recovery window — and how to brief the patient so they experience it as care, not damage.",
+        "readTime": "5 min read",
+        "body": [
+          { "type": "p", "text": "Patients don't judge a treatment by the science. They judge it by how they looked at dinner three days later. The post-procedure window — roughly 72 hours — is where a clinic earns the rebooking or loses it, and it's almost entirely about expectation-setting and barrier support." },
+          { "type": "h2", "text": "Why the barrier matters more than the active" },
+          { "type": "p", "text": "Any microneedling-assisted session leaves the skin barrier transiently open. That's the point — it's how the V-Tech exosome payload gets where it needs to go. But an open barrier is also a barrier that loses water and reacts to everything for the next two to three days. The V-Tech Gel Mask is built for exactly this moment: low-molecular polynucleotides, biomimetic peptides and snail mucin that calm the post-procedure barrier and lock the serum in. The '1+1=3' the brand talks about is mostly this — serum delivers, mask seals." },
+          { "type": "h2", "text": "The 72-hour brief for the patient" },
+          { "type": "ul", "items": [
+            "Hours 0–24: redness and a tight, warm feeling are expected. Mineral nothing-else. No actives, no makeup beyond mineral from hour 24.",
+            "Hours 24–48: barrier creams and the take-home mask if prescribed. SPF 50 the moment they step outside.",
+            "Days 2–5: avoid retinoids, acids, sauna, and intense exercise. Sweat and friction are the enemy of a healing barrier.",
+            "Day 5 onward: back to normal routine. The glow they were promised shows up here, not on day one."
+          ] },
+          { "type": "h2", "text": "Frame it as care, not damage" },
+          { "type": "p", "text": "The single biggest mistake is letting the patient discover the redness in the car mirror. Brief it before the needle touches skin: 'You'll be a little pink tonight and tomorrow — that's the treatment working, and here's exactly what we do about it.' A patient who was warned feels cared for. A patient who wasn't feels damaged. Same skin, opposite review." },
+          { "type": "h2", "text": "Document the arc" },
+          { "type": "p", "text": "Photograph at baseline and at the week-2 follow-up — not on day 3 when everyone looks their worst. The story you're selling is the arc from baseline to week 2, and the recovery window is just the part you coach them through so they stay on the journey." },
+          { "type": "quote", "text": "A patient who was warned feels cared for. A patient who wasn't feels damaged. Same skin, opposite review.", "author": "V-Tech aftercare note" }
+        ]
+      },
+      "ru": {
+        "title": "Окно восстановления после процедуры — превращаем downtime в аргумент продажи",
+        "eyebrow": "ПРОТОКОЛ · ВОССТАНОВЛЕНИЕ",
+        "excerpt": "72 часа после сессии решают, как пациент её запомнит. Вот как система V-Tech сокращает видимое окно восстановления — и как проинструктировать пациента, чтобы он воспринял это как заботу, а не как повреждение.",
+        "readTime": "5 мин чтения",
+        "body": [
+          { "type": "p", "text": "Пациенты судят о процедуре не по науке. Они судят по тому, как выглядели на ужине через три дня. Окно после процедуры — примерно 72 часа — это где клиника зарабатывает повторную запись или теряет её, и это почти полностью про управление ожиданиями и поддержку барьера." },
+          { "type": "h2", "text": "Почему барьер важнее актива" },
+          { "type": "p", "text": "Любая сессия с микронидлингом временно оставляет барьер кожи открытым. В этом и смысл — так экзосомный груз V-Tech попадает туда, куда нужно. Но открытый барьер ещё и теряет воду и реагирует на всё следующие два-три дня. Гель-маска V-Tech создана именно для этого момента: низкомолекулярные полинуклеотиды, биомиметические пептиды и муцин улитки успокаивают пост-процедурный барьер и запечатывают сыворотку. «1+1=3», о котором говорит бренд, в основном про это — сыворотка доставляет, маска запечатывает." },
+          { "type": "h2", "text": "Инструктаж пациента на 72 часа" },
+          { "type": "ul", "items": [
+            "Часы 0–24: краснота и ощущение стянутости и тепла ожидаемы. Только минеральное. Никаких активов, макияж только минеральный с 24-го часа.",
+            "Часы 24–48: барьерные кремы и домашняя маска, если назначена. SPF 50 как только выходят на улицу.",
+            "Дни 2–5: избегать ретиноидов, кислот, сауны и интенсивной нагрузки. Пот и трение — враги заживающего барьера.",
+            "С 5-го дня: обычный уход. Сияние, которое обещали, появляется здесь, а не в первый день."
+          ] },
+          { "type": "h2", "text": "Подавайте это как заботу, а не повреждение" },
+          { "type": "p", "text": "Главная ошибка — позволить пациенту обнаружить красноту в зеркале машины. Проговорите это до того, как игла коснётся кожи: «Сегодня и завтра вы будете слегка розовой — это работает процедура, и вот что мы с этим делаем». Предупреждённый пациент чувствует заботу. Непредупреждённый — повреждение. Та же кожа, противоположный отзыв." },
+          { "type": "h2", "text": "Документируйте дугу" },
+          { "type": "p", "text": "Снимайте на базе и на контроле на 2-й неделе — не на 3-й день, когда все выглядят хуже всего. История, которую вы продаёте, — это дуга от базы до 2-й недели, а окно восстановления — лишь та часть, через которую вы их проводите, чтобы они остались в пути." },
+          { "type": "quote", "text": "Предупреждённый пациент чувствует заботу. Непредупреждённый — повреждение. Та же кожа, противоположный отзыв.", "author": "Заметка по уходу V-Tech" }
+        ]
+      },
+      "he": {
+        "title": "חלון ההתאוששות שאחרי הטיפול — להפוך downtime לנקודת מכירה",
+        "eyebrow": "פרוטוקול · התאוששות",
+        "excerpt": "72 השעות שאחרי הסשן מחליטות איך הלקוח יזכור אותו. הנה איך מערכת V-Tech מקצרת את חלון ההתאוששות הנראה — ואיך לתדרך את הלקוח כך שיחווה את זה כטיפול, לא כנזק.",
+        "readTime": "5 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "לקוחות לא שופטים טיפול לפי המדע. הם שופטים לפי איך נראו בארוחת ערב שלושה ימים אחר כך. החלון שאחרי הטיפול — בערך 72 שעות — הוא איפה שקליניקה מרוויחה את ההזמנה החוזרת או מאבדת אותה, וזה כמעט לגמרי על ניהול ציפיות ותמיכת מחסום." },
+          { "type": "h2", "text": "למה המחסום חשוב יותר מהפעיל" },
+          { "type": "p", "text": "כל סשן מיקרו-נידלינג משאיר את מחסום העור פתוח זמנית. זאת המטרה — כך מטען האקסוזומים של V-Tech מגיע לאן שצריך. אבל מחסום פתוח גם מאבד מים ומגיב להכל בימיים-שלושה הקרובים. מסכת הג׳ל V-Tech בנויה בדיוק לרגע הזה: פולינוקלאוטידים במשקל מולקולרי נמוך, פפטידים ביומימטיים ומוצין חילזון שמרגיעים את המחסום שאחרי הטיפול ואוטמים את הסרום. ה'1+1=3' שהמותג מדבר עליו הוא בעיקר זה — הסרום מחדיר, המסכה אוטמת." },
+          { "type": "h2", "text": "התדריך ל-72 שעות ללקוח" },
+          { "type": "ul", "items": [
+            "שעות 0–24: אדמומיות ותחושת מתיחות וחום צפויות. רק מינרלי. בלי פעילים, איפור מינרלי בלבד משעה 24.",
+            "שעות 24–48: קרמי מחסום והמסכה הביתית אם נרשמה. SPF 50 ברגע שיוצאים החוצה.",
+            "ימים 2–5: להימנע מרטינואידים, חומצות, סאונה ומאמץ אינטנסיבי. זיעה וחיכוך הם אויבי המחסום המחלים.",
+            "מיום 5 והלאה: חזרה לשגרה. הזוהר שהובטח מופיע כאן, לא ביום הראשון."
+          ] },
+          { "type": "h2", "text": "למסגר את זה כטיפול, לא כנזק" },
+          { "type": "p", "text": "הטעות הכי גדולה היא לתת ללקוח לגלות את האדמומיות במראה של האוטו. תתדרכו את זה לפני שהמחט נוגעת בעור: 'תהיו קצת ורודים הערב ומחר — זה הטיפול עובד, והנה בדיוק מה שאנחנו עושים עם זה'. לקוח שהוזהר מרגיש שמטופלים בו. לקוח שלא — מרגיש פגוע. אותו עור, ביקורת הפוכה." },
+          { "type": "h2", "text": "לתעד את הקשת" },
+          { "type": "p", "text": "צלמו בבסיס ובמעקב של שבוע 2 — לא ביום 3 כשכולם נראים הכי גרוע. הסיפור שאתם מוכרים הוא הקשת מהבסיס לשבוע 2, וחלון ההתאוששות הוא רק החלק שאתם מלווים אותם דרכו כדי שיישארו במסע." },
+          { "type": "quote", "text": "לקוח שהוזהר מרגיש שמטופלים בו. לקוח שלא — מרגיש פגוע. אותו עור, ביקורת הפוכה.", "author": "הערת טיפוח-המשך V-Tech" }
+        ]
+      }
+    }
+  },
+  {
     "slug": "nad-peeling-when-to-use-it",
     "date": "2026-06-10",
     "accent": "gold",
