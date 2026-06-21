@@ -13,6 +13,52 @@
     "lines": "Lines",
     "blog": "Blog"
   },
+  "science": {
+    "eyebrow": "THE MITODERM SCIENCE STACK",
+    "title": "Four pillars, one protocol",
+    "subtitle": "We work on four mechanisms that compound: cell signalling, dermal scaffolding, mitochondrial energy and controlled delivery. The product line is built around that order.",
+    "leadParagraph": "Mitoderm is not a single hero molecule with a brand name on top. It's a layered protocol — exosomes do the signalling, polynucleotides rebuild the scaffold, NAD+ powers the recovery, and microneedling delivery makes sure all three land where they're supposed to land. Each pillar has a home in the product line.",
+    "pillarToLine": "Open the line",
+    "pillarToProduct": "Open the product",
+    "pillars": {
+      "exosomes": {
+        "eyebrow": "PILLAR 01 · CELL SIGNALLING",
+        "title": "Exosomes — the signalling layer",
+        "lead": "Nanometre-scale extracellular vesicles that carry a multi-protein, multi-RNA payload between cells.",
+        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact."
+      },
+      "polynucleotides": {
+        "eyebrow": "PILLAR 02 · DERMAL SCAFFOLD",
+        "title": "Polynucleotides — rebuilding the scaffold",
+        "lead": "Long nucleotide chains that bind water and instruct fibroblasts to rebuild dermal scaffolding.",
+        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier."
+      },
+      "nad": {
+        "eyebrow": "PILLAR 03 · MITOCHONDRIAL RECOVERY",
+        "title": "NAD+ — powering the recovery",
+        "lead": "The coenzyme central to mitochondrial energy production and DNA repair — the substrate of visible glow.",
+        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols."
+      },
+      "delivery": {
+        "eyebrow": "PILLAR 04 · CONTROLLED DELIVERY",
+        "title": "Microneedling delivery — the protocol's exit step",
+        "lead": "All three pillars are only as good as the channels they travel through.",
+        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course."
+      }
+    },
+    "protocol": {
+      "eyebrow": "HOW IT COMES TOGETHER",
+      "title": "The four pillars in one workflow",
+      "text": "Diagnose with Mitoscan. Plan a course around the indication. Deliver via MitoPen at the locked depth. Follow up with a freeze-frame at the next visit. The same four mechanisms, every time.",
+      "ctaProtocols": "See the protocols",
+      "ctaBlog": "Read the journal"
+    },
+    "cta": {
+      "title": "Bring the protocol into your clinic",
+      "text": "Pricing, training and protocol support — we work with your existing menu rather than against it.",
+      "button": "Contact us"
+    }
+  },
   "concerns": {
     "eyebrow": "BY CONCERN",
     "title": "Start with the patient's complaint",
