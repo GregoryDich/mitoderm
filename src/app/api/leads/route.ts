@@ -13,7 +13,20 @@ interface LeadBody {
   message?: string;
   /** Honeypot field — must be empty for the body to be accepted. */
   website?: string;
+  /** Origin tag, e.g. "contact-form", "bio-spicules-waitlist". The route
+   *  whitelists the values it accepts; unknown sources fall back to the
+   *  full contact-form validation (name + email + message required). */
+  source?: string;
 }
+
+/** Sources whose default validation is relaxed (e.g. waitlists where
+ *  email alone is enough). Add a new entry here to enable a fresh
+ *  waitlist origin without a full route refactor. */
+const RELAXED_SOURCES: Record<string, { defaultMessage: string }> = {
+  'bio-spicules-waitlist': {
+    defaultMessage: 'Notify me when the Bio-Spicules line launches.',
+  },
+};
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -49,14 +62,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
+  const source = clip(body.source, 80);
+  const relaxed = source ? RELAXED_SOURCES[source] : undefined;
+
   const name = clip(body.name, 120);
   const email = clip(body.email, 200);
   const phone = clip(body.phone, 40);
   const clinic = clip(body.clinic, 160);
-  const message = clip(body.message, 4000);
+  // For waitlist sources we accept an empty message and substitute the
+  // default — the visitor opted in by clicking, not by writing copy.
+  const message = clip(body.message, 4000) || (relaxed?.defaultMessage ?? '');
 
   const errors: Record<string, string> = {};
-  if (!name) errors.name = 'required';
+  if (!relaxed && !name) errors.name = 'required';
   if (!email) errors.email = 'required';
   else if (!emailRe.test(email)) errors.email = 'invalid';
   if (!message) errors.message = 'required';
@@ -72,7 +90,7 @@ export async function POST(req: Request) {
   // configured via env (SMTP/Resend/SendGrid).
   let lead;
   try {
-    lead = await appendLead({ name, email, phone, clinic, message, classification });
+    lead = await appendLead({ name, email, phone, clinic, message, classification, source: source || undefined });
   } catch {
     // ignore — fall back to a transient record so email + log still fire
     lead = {
@@ -171,5 +189,5 @@ export async function POST(req: Request) {
     }
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, source: source || undefined });
 }

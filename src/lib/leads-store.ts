@@ -32,6 +32,10 @@ export interface Lead {
   note?: string;
   updatedAt?: string;
   classification?: LeadClassification;
+  /** Origin of the lead — e.g. "contact-form", "bio-spicules-waitlist".
+   *  Backward-compatible: undefined for older leads, set by newer routes
+   *  so admin can filter waitlist signups separately from sales enquiries. */
+  source?: string;
 }
 
 function abs(p: string) {
@@ -119,6 +123,7 @@ export async function appendLead(
     message: input.message,
     status: input.status ?? 'new',
     classification: input.classification,
+    source: input.source,
   };
   const all = await readLeads();
   all.push(lead);

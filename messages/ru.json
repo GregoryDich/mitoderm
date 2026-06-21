@@ -634,6 +634,17 @@
     "protocolFallback": "Детальный протокол появится с запуском линейки.",
     "indicationsTitle": "ПОКАЗАНИЯ",
     "backToHome": "На главную",
-    "contactCta": "Поговорить со специалистом"
+    "contactCta": "Поговорить со специалистом",
+    "waitlistTitle": "Узнайте первыми",
+    "waitlistText": "Оставьте email — напишем в момент, когда линейка откроется для клиник.",
+    "waitlistCta": "Добавить меня в список",
+    "waitlistEmailPlaceholder": "Ваш рабочий email",
+    "waitlistSuccessTitle": "Вы в списке",
+    "waitlistSuccessText": "Напишем только когда линейка будет готова — никаких других писем и передачи базы.",
+    "waitlistError": "Не получилось добавить. Попробуйте ещё раз."
+  },
+  "waitlist": {
+    "emailLabel": "Email",
+    "sending": "Добавляем…"
   }
 }

@@ -634,6 +634,17 @@
     "protocolFallback": "הפרוטוקול המלא יופיע עם השקת הסדרה.",
     "indicationsTitle": "התוויות",
     "backToHome": "לדף הבית",
-    "contactCta": "דברו עם מומחה"
+    "contactCta": "דברו עם מומחה",
+    "waitlistTitle": "היו הראשונים לדעת",
+    "waitlistText": "השאירו אימייל ונכתוב לכם ברגע שהסדרה נפתחת לקליניקות.",
+    "waitlistCta": "הוסיפו אותי לרשימה",
+    "waitlistEmailPlaceholder": "האימייל המקצועי שלכם",
+    "waitlistSuccessTitle": "אתם ברשימה",
+    "waitlistSuccessText": "נכתוב רק כשהסדרה מוכנה — ללא מיילים אחרים, ללא העברת רשימה.",
+    "waitlistError": "לא הצלחנו להוסיף כרגע. נסו שוב."
+  },
+  "waitlist": {
+    "emailLabel": "כתובת אימייל",
+    "sending": "מוסיפים…"
   }
 }

@@ -634,6 +634,17 @@
     "protocolFallback": "Detailed protocol coming with the line launch.",
     "indicationsTitle": "INDICATIONS",
     "backToHome": "Back to homepage",
-    "contactCta": "Talk to a specialist"
+    "contactCta": "Talk to a specialist",
+    "waitlistTitle": "Be first to know",
+    "waitlistText": "Leave your email and we'll write to you the moment this line opens for clinics.",
+    "waitlistCta": "Add me to the list",
+    "waitlistEmailPlaceholder": "Your work email",
+    "waitlistSuccessTitle": "You're on the list",
+    "waitlistSuccessText": "We'll only write when the line is ready — no other emails, no list rentals.",
+    "waitlistError": "Couldn't add you just now. Please try again."
+  },
+  "waitlist": {
+    "emailLabel": "Email address",
+    "sending": "Adding…"
   }
 }

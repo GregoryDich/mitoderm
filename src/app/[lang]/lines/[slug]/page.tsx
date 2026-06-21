@@ -72,6 +72,23 @@ export default async function LineRoute({
     .filter((x): x is NonNullable<typeof x> => !!x);
   const t = await getTranslations({ locale: lang, namespace: 'linePage' });
 
+  // Coming-soon lines render an inline email waitlist instead of the
+  // contact CTA. The `source` value is whitelisted on the /api/leads
+  // route (RELAXED_SOURCES) so name + message aren't required.
+  const waitlist =
+    line.status === 'coming-soon'
+      ? {
+          source: `${line.slug}-waitlist`,
+          title: t('waitlistTitle'),
+          text: t('waitlistText'),
+          ctaLabel: t('waitlistCta'),
+          emailPlaceholder: t('waitlistEmailPlaceholder'),
+          successTitle: t('waitlistSuccessTitle'),
+          successText: t('waitlistSuccessText'),
+          errorText: t('waitlistError'),
+        }
+      : undefined;
+
   return (
     <LinePage
       line={line}
@@ -85,6 +102,7 @@ export default async function LineRoute({
         backToHome: t('backToHome'),
         contactCta: t('contactCta'),
       }}
+      waitlist={waitlist}
     />
   );
 }

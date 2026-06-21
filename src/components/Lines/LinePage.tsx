@@ -8,6 +8,7 @@ import type {
 import type { LocaleType } from '@/types';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
+import WaitlistForm from '@/components/Waitlist/WaitlistForm';
 import styles from './LinePage.module.scss';
 
 const accentVar: Record<ProductAccent, string> = {
@@ -28,9 +29,22 @@ interface Props {
     backToHome: string;
     contactCta: string;
   };
+  /** Waitlist copy is opt-in: only sent for `coming-soon` lines that
+   *  have a waitlist source configured upstream. Undefined → render the
+   *  default contact CTA band. */
+  waitlist?: {
+    source: string;
+    title: string;
+    text: string;
+    ctaLabel: string;
+    emailPlaceholder: string;
+    successTitle: string;
+    successText: string;
+    errorText: string;
+  };
 }
 
-const LinePage: FC<Props> = ({ line, items, locale, strings }) => {
+const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
   const c = line.content[locale];
 
   return (
@@ -155,15 +169,28 @@ const LinePage: FC<Props> = ({ line, items, locale, strings }) => {
           </section>
         )}
 
-        {/* CTA */}
-        <section className={styles.ctaBand}>
-          <span className={styles.ctaGlow} aria-hidden="true" />
-          <h2 className={styles.ctaTitle}>{c.ctaTitle}</h2>
-          <p className={styles.ctaText}>{c.ctaText}</p>
-          <Link href="/form" className={styles.ctaButton}>
-            {strings.contactCta}
-          </Link>
-        </section>
+        {/* CTA — waitlist form for coming-soon lines, contact CTA otherwise. */}
+        {waitlist ? (
+          <WaitlistForm
+            source={waitlist.source}
+            title={waitlist.title}
+            text={waitlist.text}
+            ctaLabel={waitlist.ctaLabel}
+            emailPlaceholder={waitlist.emailPlaceholder}
+            successTitle={waitlist.successTitle}
+            successText={waitlist.successText}
+            errorText={waitlist.errorText}
+          />
+        ) : (
+          <section className={styles.ctaBand}>
+            <span className={styles.ctaGlow} aria-hidden="true" />
+            <h2 className={styles.ctaTitle}>{c.ctaTitle}</h2>
+            <p className={styles.ctaText}>{c.ctaText}</p>
+            <Link href="/form" className={styles.ctaButton}>
+              {strings.contactCta}
+            </Link>
+          </section>
+        )}
       </main>
 
       <Footer />
