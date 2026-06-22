@@ -1,5 +1,194 @@
 [
   {
+    "slug": "exosomes-skincare-patient-guide",
+    "date": "2026-06-22",
+    "accent": "gold",
+    "image": "/products/v-tech-system/hero.webp",
+    "tags": ["exosomes", "patient-education", "v-tech"],
+    "content": {
+      "en": {
+        "title": "Exosomes in skincare — what to expect, told plainly",
+        "eyebrow": "PATIENT GUIDE · EXOSOMES",
+        "excerpt": "A plain-language guide for patients considering an exosome treatment for the first time — what the cells are doing, what the session feels like, and how to choose a clinic that actually delivers what the brochure promises.",
+        "readTime": "5 min read",
+        "body": [
+          { "type": "p", "text": "If you've been reading about exosomes in the last year you've probably seen them framed as miraculous, magical, or marketing. The reality is more interesting, and more useful to know before you book your first session." },
+          { "type": "h2", "text": "What an exosome actually is" },
+          { "type": "p", "text": "Your cells talk to each other constantly, and one of the ways they do it is by sending out tiny packages — exosomes — filled with growth factors, proteins and signalling molecules. Think of them as text messages between cells, except the messages can actually rebuild things. In aesthetics, we use exosome preparations to tell skin cells (or hair follicles) to repair, regenerate and produce more collagen." },
+          { "type": "h2", "text": "What a session feels like" },
+          { "type": "ul", "items": [
+            "Most exosome facial protocols start with a gentle cleanse, then a delivery step (microneedling at a depth your clinician chooses based on what you're addressing).",
+            "The serum + mask are applied; the mask is the one doing the calming work — it's not optional.",
+            "You'll leave the clinic a little pink. By morning, more relaxed. By day three, looking like yourself, just brighter.",
+            "Visible density and texture change is a 2–8 week story. The first session sets the stage; you photograph the arc, not the snapshot."
+          ] },
+          { "type": "h2", "text": "What it doesn't do" },
+          { "type": "p", "text": "Exosomes are not a substitute for filler if you've lost volume, not a substitute for laser if you have specific pigment or vascular issues, and not a substitute for a hair transplant in late-stage hair loss. They're a signalling and recovery treatment that works beautifully alongside other modalities and on their own for the right indications — density, glow, post-procedure recovery, early hair thinning." },
+          { "type": "h2", "text": "How to choose a clinic" },
+          { "type": "ul", "items": [
+            "Ask whether they image you on day 0 with a tool like Mitoscan. If they don't, you'll have nothing to compare against at week 8.",
+            "Ask what brand of exosome preparation they use and why. A clinic that can articulate the choice has thought about the science.",
+            "Ask about their microneedling depth and post-care plan. The before-and-after photos are made in those two windows.",
+            "Trust your gut on the consult: a clinic that overpromises (\"you'll see it tomorrow\") is one that under-delivers (\"you didn't follow the aftercare\")."
+          ] },
+          { "type": "h2", "text": "Bottom line" },
+          { "type": "p", "text": "Exosome treatments are a real, useful tool — neither magic nor marketing. The patients who get the best outcomes are the ones who arrive with the right expectation: a course of work whose arc shows up in two months, not two hours." }
+        ]
+      },
+      "ru": {
+        "title": "Экзосомы в уходе за кожей — что ожидать, простым языком",
+        "eyebrow": "ГИД ДЛЯ ПАЦИЕНТА · ЭКЗОСОМЫ",
+        "excerpt": "Простой гид для пациентов, кто впервые думает об экзосомной процедуре — что делают клетки, как ощущается сессия и как выбрать клинику, которая выдаёт результат, а не маркетинг.",
+        "readTime": "5 мин чтения",
+        "body": [
+          { "type": "p", "text": "Если за последний год вы читали об экзосомах, скорее всего, они были поданы как чудо, магия или маркетинг. Реальность интереснее — и полезнее знать её до первой записи." },
+          { "type": "h2", "text": "Что такое экзосома на самом деле" },
+          { "type": "p", "text": "Ваши клетки постоянно общаются друг с другом, и один из способов — отправлять крошечные пакеты, экзосомы, наполненные факторами роста, белками и сигнальными молекулами. Это как SMS между клетками, только эти сообщения умеют что-то восстанавливать. В эстетике мы используем экзосомные препараты, чтобы дать клеткам кожи (или волосяным фолликулам) команду: восстановиться, регенерировать и произвести больше коллагена." },
+          { "type": "h2", "text": "Как ощущается сессия" },
+          { "type": "ul", "items": [
+            "Большинство экзосомных протоколов для лица начинаются с мягкого очищения, затем шаг доставки (микронидлинг на глубине, которую специалист выбирает под вашу задачу).",
+            "Наносится сыворотка и маска; маска делает успокаивающую работу — она не опциональна.",
+            "Из клиники вы выйдете чуть розовой. К утру — спокойнее. К третьему дню — собой, только светлее.",
+            "Видимое изменение плотности и текстуры — это история 2–8 недель. Первая сессия задаёт сцену; вы снимаете дугу, а не моментальный снимок."
+          ] },
+          { "type": "h2", "text": "Чего она не делает" },
+          { "type": "p", "text": "Экзосомы — не замена филлерам, если потерян объём; не замена лазеру, если есть конкретные пигментные или сосудистые задачи; и не замена трансплантации волос на поздних стадиях выпадения. Это сигнальное и восстанавливающее лечение, прекрасно работающее в паре с другими модальностями и самостоятельно — для правильных показаний: плотность, сияние, восстановление после процедур, ранние стадии истончения волос." },
+          { "type": "h2", "text": "Как выбрать клинику" },
+          { "type": "ul", "items": [
+            "Спросите, снимают ли вас в день 0 на устройство вроде Mitoscan. Если нет — на 8-й неделе вам не с чем будет сравнивать.",
+            "Спросите, какой бренд экзосомного препарата они используют и почему. Клиника, способная объяснить выбор, думала о науке.",
+            "Спросите про глубину микронидлинга и план постухода. Фотографии до/после делаются в этих двух окнах.",
+            "Доверяйте чуйке на консультации: клиника, которая обещает слишком много («увидите завтра»), потом не доставит («вы не соблюдали постуход»)."
+          ] },
+          { "type": "h2", "text": "Итог" },
+          { "type": "p", "text": "Экзосомные процедуры — реальный, полезный инструмент: не магия и не маркетинг. Лучшие результаты у пациентов, которые приходят с правильными ожиданиями: курс работы, дуга которого видна за два месяца, а не за два часа." }
+        ]
+      },
+      "he": {
+        "title": "אקסוזומים בטיפוח העור — מה לצפות, בשפה פשוטה",
+        "eyebrow": "מדריך למטופל · אקסוזומים",
+        "excerpt": "מדריך פשוט למטופלים ששוקלים טיפול אקסוזומים בפעם הראשונה — מה התאים עושים, איך מרגיש הסשן, ואיך לבחור קליניקה שמספקת בפועל את מה שמובטח.",
+        "readTime": "5 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "אם בשנה האחרונה קראתם על אקסוזומים, סביר שראיתם אותם מוצגים כקסם, פלא או שיווק. המציאות מעניינת יותר — וכדאי להכיר אותה לפני שמזמינים סשן." },
+          { "type": "h2", "text": "מה זה אקסוזום, באמת" },
+          { "type": "p", "text": "התאים שלכם משוחחים זה עם זה כל הזמן, ואחת הדרכים שלהם היא לשלוח חבילות זעירות — אקסוזומים — מלאות בפקטורי גדילה, חלבונים ומולקולות סיגנל. תחשבו עליהם כעל הודעות SMS בין תאים, רק שההודעות יכולות לבנות דברים מחדש. באסתטיקה אנחנו משתמשים בתכשירי אקסוזומים כדי לתת לתאי העור (או לזקיקי השיער) הוראה: להתאושש, להתחדש, ולייצר יותר קולגן." },
+          { "type": "h2", "text": "איך מרגיש הסשן" },
+          { "type": "ul", "items": [
+            "רוב הפרוטוקולים לפנים מתחילים בניקוי עדין, ואחריו שלב החדרה (מיקרו-נידלינג בעומק שהמטפל בוחר לפי המטרה שלכם).",
+            "מורחים סרום ומסכה; המסכה היא זו שעושה את העבודה המרגיעה — היא לא אופציונלית.",
+            "תצאו מהקליניקה ורודים מעט. עד הבוקר — רגועים יותר. עד היום השלישי — שוב אתם, רק זוהרים יותר.",
+            "שינוי נראה בצפיפות ובמרקם הוא סיפור של 2–8 שבועות. הסשן הראשון מציב את הבמה; אתם מצלמים את הקשת, לא את הרגע."
+          ] },
+          { "type": "h2", "text": "מה זה לא עושה" },
+          { "type": "p", "text": "אקסוזומים אינם תחליף לפילר אם איבדתם נפח, אינם תחליף לליזר אם יש בעיות פיגמנט או כלי דם ספציפיות, ואינם תחליף להשתלת שיער בנשירה בשלב מאוחר. זה טיפול סיגנל והתאוששות שעובד יפה לצד שיטות אחרות ובכוחות עצמו להתוויות הנכונות — צפיפות, זוהר, התאוששות שלאחר טיפול, הידלדלות שיער מוקדמת." },
+          { "type": "h2", "text": "איך לבחור קליניקה" },
+          { "type": "ul", "items": [
+            "שאלו אם מצלמים אתכם ביום 0 במכשיר כמו Mitoscan. אם לא — בשבוע 8 לא יהיה לכם עם מה להשוות.",
+            "שאלו באיזה מותג של תכשיר אקסוזומים הם משתמשים ולמה. קליניקה שיודעת להסביר את הבחירה — חשבה על המדע.",
+            "שאלו על עומק המיקרו-נידלינג ועל תוכנית הטיפוח שאחרי. תמונות לפני/אחרי נוצרות בשני החלונות האלה.",
+            "סמכו על האינטואיציה בייעוץ: קליניקה שמבטיחה יותר מדי (\"תראו כבר מחר\") היא קליניקה שמספקת פחות (\"לא עקבתם אחרי ההמשך\")."
+          ] },
+          { "type": "h2", "text": "בשורה התחתונה" },
+          { "type": "p", "text": "טיפולי אקסוזומים הם כלי אמיתי ושימושי — לא קסם ולא שיווק. המטופלים שמקבלים את התוצאות הטובות ביותר הם אלו שמגיעים עם הציפייה הנכונה: קורס עבודה שהקשת שלו מופיעה בחודשיים, לא בשעתיים." }
+        ]
+      }
+    }
+  },
+  {
+    "slug": "when-will-i-see-results",
+    "date": "2026-06-22",
+    "accent": "teal",
+    "image": "/products/exosignal-hair/hero.webp",
+    "tags": ["patient-education", "results", "exosomes", "hair"],
+    "content": {
+      "en": {
+        "title": "When will I see results? An honest timeline for exosome treatments",
+        "eyebrow": "PATIENT GUIDE · TIMELINE",
+        "excerpt": "The first question every patient asks. Here's the honest answer for face, hair and post-procedure protocols — what changes when, what doesn't, and what to do if week 8 doesn't look like the brochure.",
+        "readTime": "5 min read",
+        "body": [
+          { "type": "p", "text": "There is one question every patient asks, ten minutes into the consult: when am I going to see it. The honest answer depends on what we're treating, but it's never \"tomorrow\" and it's almost always \"by week 8 we have a real conversation\". Here's the full map." },
+          { "type": "h2", "text": "Facial density and glow" },
+          { "type": "ul", "items": [
+            "Day 0–3: a little pink, then quiet. Don't judge the result; this is the recovery window.",
+            "Week 1–2: skin feels more hydrated, less reactive. Friends notice before you do.",
+            "Week 4–6: visible glow + texture refinement starts to show in photographs taken in even daylight.",
+            "Week 8: the comparison versus your baseline image is the real reveal — density and bounce."
+          ] },
+          { "type": "h2", "text": "Hair (Exosignal protocol)" },
+          { "type": "ul", "items": [
+            "Week 1–4: shedding reduces first. You may notice fewer hairs in the brush before anything in the mirror — that's the right order.",
+            "Week 5–8: density at the parting starts to show in photographs under direct overhead light.",
+            "Week 9–12: the mirror catches up to the photograph. A maintenance cadence (one session every 4–6 weeks) keeps the curve going."
+          ] },
+          { "type": "h2", "text": "Post-procedure recovery" },
+          { "type": "p", "text": "When exosomes are layered onto another modality (laser, microneedling, mesotherapy), their job is to compress the downtime. You should look less pink at 48 hours and less reactive at day 5 compared with the same procedure without them." },
+          { "type": "h2", "text": "What if week 8 doesn't look like the brochure?" },
+          { "type": "p", "text": "First, look at the photographs, not the mirror — the mirror is unforgiving and your brain edits out improvements. Then have an honest conversation with your clinician about three things: was the baseline image taken under matching lighting; did the aftercare get followed; and is the protocol the right one for what you actually need. Sometimes the answer is one more session. Sometimes it's a different protocol. Rarely is it \"nothing happened\"." },
+          { "type": "h2", "text": "What never happens" },
+          { "type": "p", "text": "Visible change overnight; \"miraculous\" rejuvenation in one session; a permanent fix that needs no maintenance. The clinics that promise these things are setting you up to feel that the science failed — when in reality the expectation did." }
+        ]
+      },
+      "ru": {
+        "title": "Когда я увижу результат? Честный таймлайн экзосомных процедур",
+        "eyebrow": "ГИД ДЛЯ ПАЦИЕНТА · СРОКИ",
+        "excerpt": "Первый вопрос любого пациента. Вот честный ответ для лица, волос и протоколов восстановления — что меняется и когда, чего не происходит, и что делать, если 8-я неделя не похожа на буклет.",
+        "readTime": "5 мин чтения",
+        "body": [
+          { "type": "p", "text": "Через десять минут после начала консультации каждый пациент задаёт один вопрос: когда я это увижу. Честный ответ зависит от того, что лечим, но никогда «завтра» и почти всегда «к 8-й неделе у нас настоящий разговор». Вот полная карта." },
+          { "type": "h2", "text": "Плотность лица и сияние" },
+          { "type": "ul", "items": [
+            "День 0–3: чуть розово, потом тихо. Не судите по этому окну — это восстановление.",
+            "Неделя 1–2: кожа ощущается более увлажнённой, менее реактивной. Подруги замечают раньше вас.",
+            "Неделя 4–6: видимое сияние и улучшение текстуры начинают проявляться на фотографиях при равномерном дневном свете.",
+            "Неделя 8: сравнение с базовым кадром — это и есть откровение. Плотность и упругость."
+          ] },
+          { "type": "h2", "text": "Волосы (протокол Exosignal)" },
+          { "type": "ul", "items": [
+            "Неделя 1–4: сначала падает выпадение. Меньше волос на щётке — раньше, чем что-то в зеркале. Это правильный порядок.",
+            "Неделя 5–8: плотность по пробору начинает проявляться на фото при прямом верхнем свете.",
+            "Неделя 9–12: зеркало догоняет фото. Поддержка (одна сессия раз в 4–6 недель) удерживает кривую."
+          ] },
+          { "type": "h2", "text": "Восстановление после процедур" },
+          { "type": "p", "text": "Когда экзосомы наслаиваются на другую модальность (лазер, микронидлинг, мезотерапия), их задача — сжать downtime. Вы должны выглядеть менее розовой на 48 часах и менее реактивной на 5-й день, чем та же процедура без них." },
+          { "type": "h2", "text": "А если 8-я неделя не похожа на буклет?" },
+          { "type": "p", "text": "Сначала смотрите на фото, а не в зеркало — зеркало беспощадно, мозг стирает улучшения. Затем — честный разговор со специалистом по трём пунктам: при каком свете снимали базу; соблюдался ли постуход; правильный ли это протокол для вашей задачи. Иногда ответ — ещё одна сессия. Иногда — другой протокол. Редко — «ничего не произошло»." },
+          { "type": "h2", "text": "Чего не бывает" },
+          { "type": "p", "text": "Видимого изменения за ночь; «чудесного» омоложения за одну сессию; постоянного результата без поддержки. Клиники, обещающие это, готовят вам ощущение, что наука подвела — хотя в реальности подвели ожидания." }
+        ]
+      },
+      "he": {
+        "title": "מתי אראה תוצאות? לוח זמנים כן לטיפולי אקסוזומים",
+        "eyebrow": "מדריך למטופל · לוח זמנים",
+        "excerpt": "השאלה הראשונה של כל מטופל. הנה התשובה הכנה לפרוטוקולים לפנים, לשיער ולשיקום שאחרי פרוצדורה — מה משתנה ומתי, מה לא קורה, ומה לעשות אם שבוע 8 לא נראה כמו הבושור.",
+        "readTime": "5 דק׳ קריאה",
+        "body": [
+          { "type": "p", "text": "עשר דקות לתוך הייעוץ, כל מטופל שואל שאלה אחת: מתי אראה את זה. התשובה הכנה תלויה במה אנחנו מטפלים, אבל היא לעולם לא \"מחר\" וכמעט תמיד \"בשבוע 8 יש לנו שיחה אמיתית\". הנה המפה המלאה." },
+          { "type": "h2", "text": "צפיפות וזוהר פנים" },
+          { "type": "ul", "items": [
+            "ימים 0–3: קצת ורוד, אחר כך שקט. אל תשפטו לפי החלון הזה — זו ההתאוששות.",
+            "שבועות 1–2: העור מורגש לחות יותר ופחות תגובתי. החברים שמים לב לפניכם.",
+            "שבועות 4–6: זוהר נראה ושיפור מרקם מתחילים להופיע בצילומים תחת אור יום אחיד.",
+            "שבוע 8: ההשוואה לתמונת הבסיס היא ההתגלות האמיתית — צפיפות וגמישות."
+          ] },
+          { "type": "h2", "text": "שיער (פרוטוקול Exosignal)" },
+          { "type": "ul", "items": [
+            "שבועות 1–4: קודם נופלת הנשירה. תבחינו בפחות שערות במברשת לפני שמשהו במראה — זה הסדר הנכון.",
+            "שבועות 5–8: צפיפות בפסיקה מתחילה להופיע בצילומים תחת אור עליון ישיר.",
+            "שבועות 9–12: המראה משלים את הצילום. תחזוקה (סשן אחד כל 4–6 שבועות) שומרת על העקומה."
+          ] },
+          { "type": "h2", "text": "התאוששות שאחרי פרוצדורה" },
+          { "type": "p", "text": "כשאקסוזומים מונחים על שיטה אחרת (לייזר, מיקרו-נידלינג, מזותרפיה), התפקיד שלהם הוא לקצר את ה-downtime. אתם אמורים להראות פחות ורודים ב-48 שעות ופחות תגובתיים ביום 5 לעומת אותה פרוצדורה בלעדיהם." },
+          { "type": "h2", "text": "ומה אם שבוע 8 לא נראה כמו הבושור?" },
+          { "type": "p", "text": "קודם — תסתכלו על הצילומים, לא במראה. המראה חסרת רחמים והמוח מוחק שיפורים. אחר כך — שיחה כנה עם המטפל על שלושה דברים: באיזה אור צולמה תמונת הבסיס; האם הטיפוח-המשך נשמר; והאם זה הפרוטוקול הנכון לצורך האמיתי שלכם. לפעמים התשובה היא עוד סשן. לפעמים פרוטוקול אחר. נדיר ש-\"לא קרה כלום\"." },
+          { "type": "h2", "text": "מה לא קורה" },
+          { "type": "p", "text": "שינוי נראה תוך לילה; \"התחדשות פלאית\" בסשן אחד; תיקון קבוע ללא תחזוקה. קליניקות שמבטיחות את זה גורמות לכם להרגיש שהמדע נכשל — בעוד שבאמת הציפייה נכשלה." }
+        ]
+      }
+    }
+  },
+  {
     "slug": "exosignal-hair-protocol",
     "date": "2026-06-21",
     "accent": "teal",
