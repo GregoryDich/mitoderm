@@ -150,6 +150,15 @@ export default async function RootLayout({
           <CatalogIndexProvider items={catalogIndex}>
           <InterestListProvider>
           <RecentlyViewedProvider>
+            {/* Skip-to-content for keyboard users — first focusable
+                element in the body, only visible when focused. */}
+            <a href="#main" className="skipLink">
+              {params.lang === 'ru'
+                ? 'Перейти к содержанию'
+                : params.lang === 'he'
+                ? 'דילוג לתוכן'
+                : 'Skip to content'}
+            </a>
             {upcoming && (
               <PromoBar
                 id={`seminar-${upcoming.id}`}
@@ -160,7 +169,7 @@ export default async function RootLayout({
             )}
             <Header />
             <Modal />
-            {children}
+            <div id="main">{children}</div>
             <Footer />
             <ScrollToTop />
             <A11yWidget />

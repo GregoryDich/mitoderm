@@ -150,6 +150,59 @@ section {
   border: 0;
 }
 
+/* Honour the OS-level reduced-motion preference globally, in addition
+ * to the user-toggled .a11y-reduce-motion class above. Anyone with
+ * `prefers-reduced-motion: reduce` set in their OS will see no
+ * animations and near-instant transitions without having to touch
+ * our accessibility widget — required for WCAG 2.3.3 and IS 5568.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global keyboard-focus ring. Browsers strip the default outline on
+ * buttons/anchors above; this puts a visible ring back for keyboard
+ * users only (mouse clicks don't trigger :focus-visible in modern
+ * browsers). Accent-tinted, 2 px, with a small offset so it doesn't
+ * collide with the element edge. */
+:focus-visible {
+  outline: 2px solid #dfba74;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link. Rendered first in the body; visually hidden
+ * until focused via Tab, then revealed top-left with a glass surface.
+ * Anchors to <main id="main"> which lives in the per-locale layout. */
+.skipLink {
+  position: absolute;
+  top: -100px;
+  inset-inline-start: 12px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #08080a;
+  color: #f5f2f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  text-decoration: none;
+  transition: top 0.18s ease;
+}
+
+.skipLink:focus,
+.skipLink:focus-visible {
+  top: 12px;
+  outline: 2px solid #dfba74;
+  outline-offset: 2px;
+}
+
 /* Promo bar — when active, shift the fixed header below it and add
  * matching padding to every pageScroll container. */
 html.has-promo header[class*="header"] {
