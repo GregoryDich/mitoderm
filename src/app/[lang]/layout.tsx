@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../globals.scss';
-import { Rubik } from 'next/font/google';
+import { Rubik, Fraunces } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -49,6 +49,21 @@ const rubik = Rubik({
   variable: '--font-Rubik',
   subsets: ['latin', 'cyrillic', 'hebrew'],
 });
+
+/** Display serif applied behind NEXT_PUBLIC_DISPLAY_SERIF=1.
+ *  next/font requires every font loader to be called unconditionally
+ *  at module scope, so Fraunces is always *declared* here. The flag
+ *  only controls whether its variable is *applied* to <body> — when
+ *  off, no CSS rule references it and the browser never requests it.
+ */
+const fraunces = Fraunces({
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+  subsets: ['latin'],
+});
+const FLAG_DISPLAY_SERIF = process.env.NEXT_PUBLIC_DISPLAY_SERIF === '1';
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'he' }, { lang: 'ru' }];
@@ -143,7 +158,10 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
         <body
-          className={rubik.className}
+          className={`${rubik.className} ${
+            FLAG_DISPLAY_SERIF ? fraunces.variable : ''
+          }`}
+          data-display-serif={FLAG_DISPLAY_SERIF ? '1' : undefined}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
           <ConsentProvider>

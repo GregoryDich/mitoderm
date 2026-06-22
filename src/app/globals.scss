@@ -150,6 +150,18 @@ section {
   border: 0;
 }
 
+/* Display serif opt-in. When `data-display-serif="1"` is set on
+ * <body> (driven by NEXT_PUBLIC_DISPLAY_SERIF=1 in the layout), every
+ * <h1> on the site uses Fraunces via the --font-display variable.
+ * Body copy, buttons and labels keep Rubik. Easy to A/B against the
+ * Rubik-only baseline by toggling the env var.
+ */
+body[data-display-serif='1'] h1 {
+  font-family: var(--font-display), 'Fraunces', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
+
 /* Honour the OS-level reduced-motion preference globally, in addition
  * to the user-toggled .a11y-reduce-motion class above. Anyone with
  * `prefers-reduced-motion: reduce` set in their OS will see no
