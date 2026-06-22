@@ -373,6 +373,143 @@
     "contactCta": "Talk to a specialist",
     "openLine": "Open the line"
   },
+  "consent": {
+    "title": "Cookies & analytics",
+    "text": "We use a small set of cookies to keep the site working and — only if you agree — to measure which pages help clinicians the most.",
+    "accept": "Accept",
+    "deny": "Decline",
+    "learnMore": "Read the privacy notice"
+  },
+  "privacy": {
+    "eyebrow": "PRIVACY NOTICE",
+    "title": "Privacy notice",
+    "updated": "Last updated June 22, 2026.",
+    "draftNotice": "DRAFT — this notice is awaiting final review by Mitoderm's legal counsel. It describes the actual data flows of the site today and will be replaced with a counsel-approved version before launch.",
+    "intro": "This notice explains what personal data Mitoderm (operator of exoskin.co.il) collects when you visit the site or contact us, why we collect it, and the choices you have about it.",
+    "sections": [
+      {
+        "heading": "Who we are",
+        "paragraphs": [
+          "Mitoderm is an Israeli company supplying professional exosome-based skincare, peelings and devices to clinics and aesthetic practitioners. We operate the website at exoskin.co.il (the \"Site\"). Contact details are at the bottom of this notice."
+        ]
+      },
+      {
+        "heading": "What we collect",
+        "paragraphs": [
+          "We collect the minimum necessary to answer your enquiries and keep the Site functional."
+        ],
+        "bullets": [
+          "Contact form data: name, email, phone (optional), clinic name (optional) and the message you write.",
+          "Clinic application data: the same plus city, professional licence number and an optional referral code.",
+          "Waitlist signups for upcoming product lines: email address.",
+          "Technical logs created by our hosting provider (Vercel) — IP address, user agent, request path — retained briefly for abuse prevention.",
+          "Cookies and analytics (only if you opt in): we set a small cookie remembering your consent choice, and may load Google Analytics 4 to measure aggregated traffic. We never sell this data."
+        ]
+      },
+      {
+        "heading": "Why we collect it",
+        "paragraphs": [
+          "Contact and application data are used to reply to you and, where appropriate, to onboard your clinic. Aggregated analytics help us understand which content is useful and where the site is confusing."
+        ]
+      },
+      {
+        "heading": "Legal basis",
+        "paragraphs": [
+          "We process your contact data on the basis of your consent (you sent the form). Analytics is loaded only after you click Accept on the cookie banner. You can withdraw consent at any time."
+        ]
+      },
+      {
+        "heading": "Sharing",
+        "paragraphs": [
+          "We do not sell personal data. Limited disclosure happens with our hosting and email delivery providers (Vercel, Resend) acting as processors under standard contractual terms, and — if you ask us to — with our partner clinics for the explicit purpose of routing your enquiry."
+        ]
+      },
+      {
+        "heading": "Retention",
+        "paragraphs": [
+          "Lead records are kept for as long as the commercial relationship is open, and for up to 24 months after the last contact for follow-up. Hosting logs roll off within 30 days."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "paragraphs": [
+          "Under Israeli Privacy Protection Law and applicable EU GDPR provisions you may request access to, correction of, or deletion of your data, or object to a specific processing. To exercise any right write to the contact address below — we will respond within 30 days."
+        ]
+      },
+      {
+        "heading": "Cookies",
+        "paragraphs": [
+          "We set one strictly necessary cookie to remember your consent choice. If you accept, Google Analytics 4 may add its own cookies. You can decline at the banner or clear the consent cookie at any time and you will be asked again."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactText": "Privacy questions or requests: write to hello@exoskin.co.il and we will route the request internally. We will reply within 30 days."
+  },
+  "terms": {
+    "eyebrow": "TERMS OF USE",
+    "title": "Terms of use",
+    "updated": "Last updated June 22, 2026.",
+    "draftNotice": "DRAFT — this document is awaiting final review by Mitoderm's legal counsel and will be replaced before launch with a counsel-approved version.",
+    "intro": "These terms govern your use of exoskin.co.il (the \"Site\"), operated by Mitoderm. By using the Site you accept these terms.",
+    "sections": [
+      {
+        "heading": "Eligibility",
+        "paragraphs": [
+          "The Site presents professional aesthetic-medicine products intended for use by licensed clinicians. Information about specific products, protocols and devices is addressed to professionals; it is not medical advice for the general public."
+        ]
+      },
+      {
+        "heading": "Acceptable use",
+        "paragraphs": [
+          "You agree not to misuse the Site or attempt to disrupt it."
+        ],
+        "bullets": [
+          "Do not attempt to gain unauthorised access to any non-public area, including admin endpoints.",
+          "Do not scrape the Site for commercial competitive purposes.",
+          "Do not submit content that infringes others' rights or violates law."
+        ]
+      },
+      {
+        "heading": "Intellectual property",
+        "paragraphs": [
+          "All text, imagery, design, source code and trademarks on the Site are owned by Mitoderm or its licensors. You may share links and short quotations for editorial purposes with attribution; broader reuse requires written permission."
+        ]
+      },
+      {
+        "heading": "No medical advice",
+        "paragraphs": [
+          "Content on the Site is informational and reflects clinical experience and product-level documentation. It is not a substitute for an individualised consultation with a qualified practitioner. Patients should consult a licensed clinician before any procedure."
+        ]
+      },
+      {
+        "heading": "Third-party services",
+        "paragraphs": [
+          "Forms route through Resend for email delivery; the Site is hosted on Vercel; optional analytics is Google Analytics 4 (loaded only after consent). Each provider has its own terms; we select reputable processors with appropriate safeguards."
+        ]
+      },
+      {
+        "heading": "Limitation of liability",
+        "paragraphs": [
+          "To the maximum extent allowed by Israeli law, the Site is provided on an \"as is\" basis. Mitoderm is not liable for indirect or consequential damages arising from use of the Site or reliance on its content."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "paragraphs": [
+          "We may update these terms. Material changes will be reflected in the \"Last updated\" date at the top. Continued use after a change implies acceptance of the revised terms."
+        ]
+      },
+      {
+        "heading": "Governing law",
+        "paragraphs": [
+          "These terms are governed by the laws of the State of Israel. Disputes that cannot be resolved informally are subject to the exclusive jurisdiction of the competent courts in Tel Aviv-Yafo."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactText": "For any question about these terms write to hello@exoskin.co.il."
+  },
   "glossary": {
     "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
     "niacinamide": "Vitamin B3. Reinforces the skin barrier, evens tone, reduces sebum production and redness. Tolerated by most skin types.",
@@ -524,6 +661,8 @@
     "linkGlossary": "Glossary",
     "linkConcerns": "Concerns",
     "linkRegimen": "Regimen finder",
+    "linkPrivacy": "Privacy notice",
+    "linkTerms": "Terms of use",
     "linkLines": "Lines",
     "linkCatalog": "All products",
     "linkClinics": "Partner clinics",

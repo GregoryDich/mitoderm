@@ -11,8 +11,9 @@ import Footer from '@/components/Layout/Footer/Footer';
 import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
 import JsonLd from '@/components/Seo/JsonLd';
 import { orgJsonLd, siteJsonLd } from '@/lib/seo';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import WebVitals from '@/components/Analytics/WebVitals';
+import ConsentedAnalytics from '@/components/Analytics/ConsentedAnalytics';
+import { ConsentProvider } from '@/components/Consent/ConsentProvider';
+import CookieConsent from '@/components/Consent/CookieConsent';
 
 const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
   ssr: false,
@@ -144,6 +145,7 @@ export default async function RootLayout({
           className={rubik.className}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
+          <ConsentProvider>
           <CatalogIndexProvider items={catalogIndex}>
           <InterestListProvider>
           <RecentlyViewedProvider>
@@ -162,19 +164,16 @@ export default async function RootLayout({
             <ScrollToTop />
             <A11yWidget />
             <InterestDrawer />
+            <CookieConsent />
             <JsonLd id="ld-organization" data={orgJsonLd()} />
             <JsonLd id="ld-website" data={siteJsonLd()} />
           </RecentlyViewedProvider>
           </InterestListProvider>
           </CatalogIndexProvider>
+          <ConsentedAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
+          </ConsentProvider>
         </body>
       </NextIntlClientProvider>
-      {process.env.NEXT_PUBLIC_GOOGLE_ID ? (
-        <>
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
-          <WebVitals />
-        </>
-      ) : null}
     </html>
   );
 }
