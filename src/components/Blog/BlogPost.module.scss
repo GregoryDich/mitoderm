@@ -58,9 +58,22 @@
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   font-size: 13px;
+  color: rgba(245, 242, 240, 0.55);
+}
+
+.byline {
+  color: rgba(245, 242, 240, 0.78);
+}
+
+.bylineSep {
+  color: rgba(245, 242, 240, 0.35);
+}
+
+.bylineRole {
   color: rgba(245, 242, 240, 0.55);
 }
 

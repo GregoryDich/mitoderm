@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import MountTracker from '@/components/Analytics/MountTracker';
 import type { Post, PostSummary } from '@/posts';
+import { DEFAULT_AUTHOR } from '@/posts';
 import type { CatalogItem } from '@/products';
 import type { LocaleType } from '@/types';
 import styles from './BlogPost.module.scss';
@@ -53,6 +54,18 @@ const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
             </time>
             <span aria-hidden="true">·</span>
             <span>{c.readTime}</span>
+            <span aria-hidden="true">·</span>
+            <span className={styles.byline}>
+              {(post.author ?? DEFAULT_AUTHOR).name}
+              {(post.author ?? DEFAULT_AUTHOR).role && (
+                <>
+                  <span className={styles.bylineSep}> · </span>
+                  <span className={styles.bylineRole}>
+                    {(post.author ?? DEFAULT_AUTHOR).role}
+                  </span>
+                </>
+              )}
+            </span>
           </div>
         </header>
 

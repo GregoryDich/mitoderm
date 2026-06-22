@@ -16,12 +16,29 @@ export interface PostContent {
   body: PostSection[];
 }
 
+/** Optional byline for the post — when present, the BlogPost component
+ *  renders "By <name> · <role>" under the title. When absent the post
+ *  falls back to the default editorial attribution defined in
+ *  `DEFAULT_AUTHOR` below. */
+export interface PostAuthor {
+  name: string;
+  role?: string;
+}
+
+/** Sensible default until the owner attributes individual posts. */
+export const DEFAULT_AUTHOR: PostAuthor = {
+  name: 'Mitoderm Editorial',
+  role: 'Mitoderm clinical team',
+};
+
 export interface Post {
   slug: string;
   date: string;
   accent: ProductAccent;
   image?: string;
   tags: string[];
+  /** Optional per-post override of the default editorial byline. */
+  author?: PostAuthor;
   content: Record<LocaleType, PostContent>;
 }
 

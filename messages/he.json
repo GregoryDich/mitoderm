@@ -1,6 +1,7 @@
 {
   "navigation": {
     "product": "מוצרים",
+    "products": "מוצרים",
     "results": "תוצאות",
     "about": "אודותינו",
     "info": "מידע נוסף",
@@ -11,6 +12,7 @@
     "clinics": "מרפאות",
     "seminars": "סמינרים",
     "lines": "סדרות",
+    "concerns": "בעיות עור",
     "blog": "בלוג"
   },
   "science": {

@@ -1,6 +1,7 @@
 {
   "navigation": {
     "product": "Продукция",
+    "products": "Продукция",
     "results": "Результаты",
     "about": "О нас",
     "info": "Доп. информация",
@@ -11,6 +12,7 @@
     "clinics": "Клиники",
     "seminars": "Семинары",
     "lines": "Линейки",
+    "concerns": "Задачи",
     "blog": "Журнал"
   },
   "science": {

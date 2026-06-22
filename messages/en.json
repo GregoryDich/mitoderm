@@ -1,6 +1,7 @@
 {
   "navigation": {
     "product": "Products",
+    "products": "Products",
     "results": "Results",
     "about": "About us",
     "info": "More info",
@@ -11,6 +12,7 @@
     "clinics": "Clinics",
     "seminars": "Seminars",
     "lines": "Lines",
+    "concerns": "Concerns",
     "blog": "Blog"
   },
   "science": {

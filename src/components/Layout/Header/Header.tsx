@@ -29,10 +29,24 @@ const Header: FC = () => {
     };
   }, [open]);
 
-  const navItems = [
-    { label: t('product'), href: '/' },
-    { label: t('lines'), href: '/lines/exosomes' },
-    { label: t('catalog'), href: '/catalog' },
+  // Top-level nav. The Products entry is a disclosure containing
+  // Catalog / Lines / Concerns instead of three competing siblings —
+  // simpler IA, fewer hot keys, same destinations.
+  interface NavItem {
+    label: string;
+    href: string;
+    children?: { label: string; href: string }[];
+  }
+  const navItems: NavItem[] = [
+    {
+      label: t('products'),
+      href: '/catalog',
+      children: [
+        { label: t('catalog'), href: '/catalog' },
+        { label: t('lines'), href: '/lines/exosomes' },
+        { label: t('concerns'), href: '/concerns/density' },
+      ],
+    },
     { label: t('seminars'), href: '/seminars' },
     { label: t('clinics'), href: '/clinics' },
     { label: t('blog'), href: '/blog' },
@@ -72,7 +86,50 @@ const Header: FC = () => {
               item.href === '/'
                 ? pathname === '/'
                 : pathname === item.href ||
-                  pathname.startsWith(item.href + '/');
+                  pathname.startsWith(item.href + '/') ||
+                  (item.children?.some(
+                    (c) =>
+                      pathname === c.href || pathname.startsWith(c.href + '/')
+                  ) ??
+                    false);
+
+            if (item.children && item.children.length > 0) {
+              return (
+                <details key={item.href} className={styles.navGroup}>
+                  <summary
+                    className={`${styles.navLink} ${
+                      active ? styles.navActive : ''
+                    }`}
+                  >
+                    {item.label}
+                    <span aria-hidden="true" className={styles.chevron}>
+                      ▾
+                    </span>
+                  </summary>
+                  <div className={styles.navSubmenu}>
+                    {item.children.map((c) => {
+                      const subActive =
+                        pathname === c.href ||
+                        pathname.startsWith(c.href + '/');
+                      return (
+                        <Link
+                          key={c.href}
+                          href={c.href}
+                          aria-current={subActive ? 'page' : undefined}
+                          className={`${styles.navSubLink} ${
+                            subActive ? styles.navActive : ''
+                          }`}
+                          onClick={() => setOpen(false)}
+                        >
+                          {c.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </details>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
