@@ -12,6 +12,7 @@ import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
 import JsonLd from '@/components/Seo/JsonLd';
 import { orgJsonLd, siteJsonLd } from '@/lib/seo';
 import ConsentedAnalytics from '@/components/Analytics/ConsentedAnalytics';
+import UtmCapture from '@/components/Analytics/UtmCapture';
 import { ConsentProvider } from '@/components/Consent/ConsentProvider';
 import CookieConsent from '@/components/Consent/CookieConsent';
 
@@ -165,6 +166,7 @@ export default async function RootLayout({
             <A11yWidget />
             <InterestDrawer />
             <CookieConsent />
+            <UtmCapture />
             <JsonLd id="ld-organization" data={orgJsonLd()} />
             <JsonLd id="ld-website" data={siteJsonLd()} />
           </RecentlyViewedProvider>

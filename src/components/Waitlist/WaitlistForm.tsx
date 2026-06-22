@@ -1,8 +1,9 @@
 'use client';
 
 import { FC, FormEvent, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { track } from '@/lib/track';
+import { readStoredUtm } from '@/components/Analytics/UtmCapture';
 import styles from './WaitlistForm.module.scss';
 
 interface Props {
@@ -39,6 +40,7 @@ const WaitlistForm: FC<Props> = ({
   errorText,
 }) => {
   const t = useTranslations('waitlist');
+  const locale = useLocale() as 'en' | 'ru' | 'he';
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState('');
   const [pending, setPending] = useState(false);
@@ -51,10 +53,11 @@ const WaitlistForm: FC<Props> = ({
     setPending(true);
     setErr(null);
     try {
+      const utm = readStoredUtm();
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email, source, website }),
+        body: JSON.stringify({ email, source, website, locale, utm }),
       });
       if (!res.ok) {
         setErr(errorText);

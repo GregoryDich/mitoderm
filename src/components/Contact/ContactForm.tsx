@@ -1,9 +1,10 @@
 'use client';
 
 import { FC, FormEvent, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
 import { track } from '@/lib/track';
+import { readStoredUtm } from '@/components/Analytics/UtmCapture';
 import styles from './ContactForm.module.scss';
 
 interface FormState {
@@ -30,6 +31,7 @@ const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactForm: FC = () => {
   const t = useTranslations('contactForm');
+  const locale = useLocale() as 'en' | 'ru' | 'he';
   const [v, setV] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
     {}
@@ -59,10 +61,11 @@ const ContactForm: FC = () => {
     setServerError(null);
     track('lead_submit', { has_phone: !!v.phone, has_clinic: !!v.clinic });
     try {
+      const utm = readStoredUtm();
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(v),
+        body: JSON.stringify({ ...v, locale, utm }),
       });
       if (!res.ok) {
         const data = (await res.json().catch(() => ({}))) as {

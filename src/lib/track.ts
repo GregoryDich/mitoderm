@@ -18,7 +18,12 @@ type EventName =
   | 'phone_click'
   | 'pro_login_request'
   | 'chat_open'
-  | 'chat_message';
+  | 'chat_message'
+  // Funnel events that bridge the gap between "page view" and "lead":
+  // small commits that signal real interest before a form submission.
+  | 'add_to_interest'
+  | 'view_protocol'
+  | 'read_post';
 
 export function track(name: EventName, params?: Record<string, unknown>): void {
   if (typeof window === 'undefined') return;

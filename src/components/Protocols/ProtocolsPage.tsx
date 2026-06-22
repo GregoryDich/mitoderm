@@ -1,12 +1,13 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
 import type { Product, ProductAccent } from '@/products';
 import { useCatalogIndex } from '@/components/Catalog/CatalogIndexProvider';
+import { track } from '@/lib/track';
 import styles from './ProtocolsPage.module.scss';
 
 interface ProtocolEntry {
@@ -28,6 +29,12 @@ const accentVar: Record<ProductAccent, string> = {
 const ProtocolsPage: FC<Props> = ({ protocols }) => {
   const t = useTranslations('protocols');
   const catalog = useCatalogIndex();
+
+  // Funnel signal: visitor reached the protocols hub. One event per
+  // mount; the GA `gtag` instance dedupes on the GA side if needed.
+  useEffect(() => {
+    track('view_protocol', { hub: true, count: protocols.length });
+  }, [protocols.length]);
 
   return (
     <div className={`pageScroll ${styles.page}`}>

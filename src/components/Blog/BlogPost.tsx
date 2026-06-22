@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import MountTracker from '@/components/Analytics/MountTracker';
 import type { Post, PostSummary } from '@/posts';
 import type { CatalogItem } from '@/products';
 import type { LocaleType } from '@/types';
@@ -30,6 +31,10 @@ const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
       className={`pageScroll ${styles.page}`}
       style={{ ['--accent' as string]: accentVar[post.accent] }}
     >
+      <MountTracker
+        event="read_post"
+        params={{ slug: post.slug, tags: post.tags.join(','), locale }}
+      />
       <article className={styles.article}>
         <Link href="/blog" className={styles.back}>
           ← {t('back')}

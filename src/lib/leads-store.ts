@@ -20,6 +20,23 @@ export interface LeadClassification {
   tags: string[];
 }
 
+/** UTM-style attribution captured at first landing and forwarded with
+ *  the lead. All fields optional; populated from query string on the
+ *  client by `UtmCapture` and included in the submission body. */
+export interface LeadUtm {
+  source?: string;
+  medium?: string;
+  campaign?: string;
+  term?: string;
+  content?: string;
+  /** Landing URL (path) recorded when UTM was first seen. Useful when
+   *  there's no UTM but you still want the entry page. */
+  landing?: string;
+  /** Referer header value seen on first /api/leads POST. Server fills
+   *  this in if the client didn't provide a landing. */
+  referrer?: string;
+}
+
 export interface Lead {
   id: string;
   ts: string;
@@ -36,6 +53,8 @@ export interface Lead {
    *  Backward-compatible: undefined for older leads, set by newer routes
    *  so admin can filter waitlist signups separately from sales enquiries. */
   source?: string;
+  /** UTM + landing attribution captured at submission time. */
+  utm?: LeadUtm;
 }
 
 function abs(p: string) {
@@ -124,6 +143,7 @@ export async function appendLead(
     status: input.status ?? 'new',
     classification: input.classification,
     source: input.source,
+    utm: input.utm,
   };
   const all = await readLeads();
   all.push(lead);

@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
-import { appendLead } from '@/lib/leads-store';
+import { appendLead, type LeadUtm } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
 import { spamGuard } from '@/lib/spam-guard';
 import { reportError } from '@/lib/report-error';
+import { sendAutoReply } from '@/lib/leads-mailer';
 
 interface LeadBody {
   name?: string;
@@ -17,6 +18,11 @@ interface LeadBody {
    *  whitelists the values it accepts; unknown sources fall back to the
    *  full contact-form validation (name + email + message required). */
   source?: string;
+  /** Optional UTM attribution captured client-side at first visit. */
+  utm?: Partial<LeadUtm>;
+  /** Locale of the page where the form was submitted (`en` / `ru` / `he`).
+   *  Used to pick the auto-reply template language. */
+  locale?: 'en' | 'ru' | 'he';
 }
 
 /** Sources whose default validation is relaxed (e.g. waitlists where
@@ -85,12 +91,40 @@ export async function POST(req: Request) {
 
   const classification = classifyLead({ message, clinic, email });
 
+  // Capture UTM + landing attribution from the client body, falling
+  // back to the Referer header for landing when the client didn't
+  // stash one. All fields are clipped to keep stray bytes out of the
+  // store.
+  const clientUtm = (body.utm ?? {}) as Partial<LeadUtm>;
+  const utm: LeadUtm = {
+    source: clip(clientUtm.source, 200) || undefined,
+    medium: clip(clientUtm.medium, 200) || undefined,
+    campaign: clip(clientUtm.campaign, 200) || undefined,
+    term: clip(clientUtm.term, 200) || undefined,
+    content: clip(clientUtm.content, 200) || undefined,
+    landing: clip(clientUtm.landing, 200) || undefined,
+    referrer: clip(req.headers.get('referer'), 200) || undefined,
+  };
+  const hasUtm = Object.values(utm).some(Boolean);
+
+  const locale: 'en' | 'ru' | 'he' =
+    body.locale === 'ru' || body.locale === 'he' ? body.locale : 'en';
+
   // Best-effort local persistence for dev; safe to fail in serverless.
   // Production: replace with a real sink — DB, CRM, or an email transport
   // configured via env (SMTP/Resend/SendGrid).
   let lead;
   try {
-    lead = await appendLead({ name, email, phone, clinic, message, classification, source: source || undefined });
+    lead = await appendLead({
+      name,
+      email,
+      phone,
+      clinic,
+      message,
+      classification,
+      source: source || undefined,
+      utm: hasUtm ? utm : undefined,
+    });
   } catch {
     // ignore — fall back to a transient record so email + log still fire
     lead = {
@@ -106,6 +140,11 @@ export async function POST(req: Request) {
   // Always log so the operator sees the lead in dev/server logs.
   // eslint-disable-next-line no-console
   console.log('[lead]', lead);
+
+  // Auto-reply to the visitor — confirms receipt + sets expectations.
+  // Locale picks the template; fires only when Resend is configured.
+  // Never blocks the response.
+  void sendAutoReply({ to: email, name, locale });
 
   // Optional email delivery via Resend (https://resend.com).
   // Set RESEND_API_KEY + LEADS_TO_EMAIL (and optionally LEADS_FROM_EMAIL)
