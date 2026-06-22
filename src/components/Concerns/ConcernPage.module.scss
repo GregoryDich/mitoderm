@@ -105,6 +105,27 @@
   margin-top: 48px;
 }
 
+/* "Why this happens" explainer — sits between the hero lead and the
+ * lines grid. A left accent rule keys it as editorial context, not a
+ * product block. */
+.explainer {
+  max-width: 720px;
+  margin-top: 8px;
+  padding-inline-start: clamp(16px, 2vw, 24px);
+  border-inline-start: 2px solid var(--accent, #dfba74);
+}
+
+.explainerText {
+  font-size: clamp(15px, 1.7vw, 18px);
+  line-height: 1.7;
+  color: rgba(245, 242, 240, 0.82);
+  margin: 0 0 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .h2 {
   font-size: 12px;
   letter-spacing: 0.18em;

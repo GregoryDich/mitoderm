@@ -31,6 +31,7 @@ interface Props {
     eyebrow: string;
     title: string;
     lead: string;
+    explainer: string;
     linesTitle: string;
     productsTitle: string;
     postsTitle: string;
@@ -47,6 +48,11 @@ const ConcernPage: FC<Props> = ({
   posts,
   strings,
 }) => {
+  const explainerParas = strings.explainer
+    .split('\n')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
   return (
     <div
       className={`pageScroll ${styles.page}`}
@@ -70,6 +76,16 @@ const ConcernPage: FC<Props> = ({
       </header>
 
       <main className={styles.content}>
+        {explainerParas.length > 0 && (
+          <section className={styles.explainer}>
+            {explainerParas.map((p, i) => (
+              <p key={i} className={styles.explainerText}>
+                {p}
+              </p>
+            ))}
+          </section>
+        )}
+
         {lineSummaries.length > 0 && (
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.linesTitle}</h2>

@@ -69,28 +69,33 @@
     "density": {
       "eyebrow": "FACE · DENSITY",
       "title": "Loss of density & structural aging",
-      "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery."
+      "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery.",
+      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface."
     },
     "hair": {
       "eyebrow": "SCALP · HAIR LOSS",
       "title": "Hair loss & scalp thinning",
-      "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage."
+      "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage.",
+      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective."
     },
     "longevity": {
       "eyebrow": "FACE · LONGEVITY",
       "title": "Dullness, fatigue, longevity",
-      "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime."
+      "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime.",
+      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin."
     },
     "devices": {
       "eyebrow": "CLINIC · DIAGNOSTIC + DELIVERY",
       "title": "Diagnose, deliver, document",
-      "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery."
+      "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery.",
+      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients."
     }
   },
   "keyActives": {
     "eyebrow": "KEY ACTIVES",
     "intro": "The ingredients doing the structural work in this formula — tap any chip below for the full list.",
-    "cardEyebrow": "ACTIVE"
+    "cardEyebrow": "ACTIVE",
+    "learnMore": "In the glossary →"
   },
   "blog": {
     "eyebrow": "EDUCATION · EXOSOMES · PROTOCOLS",
@@ -365,7 +370,8 @@
     "eyebrow": "REFERENCE",
     "title": "Ingredient & science glossary",
     "subtitle": "Plain-language definitions of the actives and mechanisms behind the Mitoderm protocol — the same terms that surface as tooltips across the product pages.",
-    "jumpLabel": "Jump to a term"
+    "jumpLabel": "Jump to a term",
+    "usedIn": "Used in"
   },
   "concernPage": {
     "linesTitle": "LINES THAT ADDRESS THIS",

@@ -110,15 +110,18 @@ const HomePage: FC<Props> = ({
 
         {stories.length > 0 && <StoriesStrip stories={stories} />}
 
+        {/* Concerns first: a task-based entry ("hair thinning") is a
+            stronger hook than the product-led line showcase, so it
+            precedes LinesShowcase. */}
+        <Reveal>
+          <ConcernsStrip />
+        </Reveal>
+
         {lines.length > 0 && (
           <Reveal>
             <LinesShowcase lines={lines} />
           </Reveal>
         )}
-
-        <Reveal>
-          <ConcernsStrip />
-        </Reveal>
 
         <Reveal>
         <section className={styles.block}>

@@ -2,7 +2,12 @@
 
 import { FC, useMemo } from 'react';
 import { useMessages, useTranslations } from 'next-intl';
-import { dictFromMessages, lookupGlossary } from '@/lib/glossary';
+import { Link } from '@/i18n/routing';
+import {
+  dictFromMessages,
+  glossaryAnchorId,
+  lookupGlossary,
+} from '@/lib/glossary';
 import styles from './KeyActives.module.scss';
 
 interface Props {
@@ -52,6 +57,12 @@ const KeyActives: FC<Props> = ({ ingredients, limit = 4 }) => {
             <span className={styles.cardEyebrow}>{t('cardEyebrow')}</span>
             <h3 className={styles.cardName}>{a.name}</h3>
             <p className={styles.cardDef}>{a.def}</p>
+            <Link
+              href={`/glossary#${glossaryAnchorId(a.term)}`}
+              className={styles.cardLink}
+            >
+              {t('learnMore')}
+            </Link>
           </li>
         ))}
       </ul>

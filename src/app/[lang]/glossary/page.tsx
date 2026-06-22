@@ -5,7 +5,8 @@ import {
   getMessages,
 } from 'next-intl/server';
 import { LocaleType } from '@/types';
-import { dictFromMessages } from '@/lib/glossary';
+import { dictFromMessages, glossaryAnchorId } from '@/lib/glossary';
+import { getProductsForTerm } from '@/products';
 import {
   SITE_NAME,
   absUrl,
@@ -22,22 +23,20 @@ export function generateStaticParams() {
   return langs.map((lang) => ({ lang }));
 }
 
-const slugify = (s: string): string =>
-  s
-    .toLowerCase()
-    // Keep ASCII alphanumerics; collapse everything else (incl. Cyrillic /
-    // Hebrew) to a single dash. Non-Latin terms fall back to term-<i>.
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-
 async function entriesFor(lang: LocaleType): Promise<GlossaryEntry[]> {
   const messages = await getMessages({ locale: lang });
   const dict = dictFromMessages(messages as Record<string, unknown>);
   return Object.entries(dict)
-    .map(([term, def], i) => ({
+    .map(([term, def]) => ({
       term,
       def,
-      id: slugify(term) || `term-${i}`,
+      // Shared id helper so the PDP KeyActives can deep-link to the
+      // exact anchor in any locale.
+      id: glossaryAnchorId(term),
+      // Reverse-map the term to products that list it as an ingredient.
+      // Computed server-side so the products dataset stays out of the
+      // client bundle; empty for terms with no product (downtime, AHA…).
+      products: getProductsForTerm(term, lang),
     }))
     .sort((a, b) => a.term.localeCompare(b.term, lang));
 }

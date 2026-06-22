@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import type { ProductChip } from '@/products';
 import styles from './GlossaryPage.module.scss';
 
 export interface GlossaryEntry {
@@ -8,7 +10,16 @@ export interface GlossaryEntry {
   def: string;
   /** URL-safe anchor id. */
   id: string;
+  /** Products that list this term as an ingredient — rendered as
+   *  linked chips so a definition becomes an entry point. May be empty. */
+  products?: ProductChip[];
 }
+
+const accentVar: Record<ProductChip['accent'], string> = {
+  teal: '#6fb7ba',
+  gold: '#dfba74',
+  rose: '#b4607e',
+};
 
 interface Props {
   entries: GlossaryEntry[];
@@ -43,7 +54,28 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
           {entries.map((e) => (
             <div key={e.id} id={e.id} className={styles.entry}>
               <dt className={styles.term}>{e.term}</dt>
-              <dd className={styles.def}>{e.def}</dd>
+              <dd className={styles.def}>
+                {e.def}
+                {e.products && e.products.length > 0 && (
+                  <span className={styles.usedIn}>
+                    <span className={styles.usedInLabel}>{t('usedIn')}</span>
+                    <span className={styles.chips}>
+                      {e.products.map((p) => (
+                        <Link
+                          key={p.slug}
+                          href={p.href}
+                          className={styles.chip}
+                          style={{
+                            ['--accent' as string]: accentVar[p.accent],
+                          }}
+                        >
+                          {p.name}
+                        </Link>
+                      ))}
+                    </span>
+                  </span>
+                )}
+              </dd>
             </div>
           ))}
         </dl>

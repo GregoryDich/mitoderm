@@ -203,6 +203,43 @@ export const getCatalogItems = (locale: LocaleType): CatalogItem[] =>
     shortDescription: p.content[locale].shortDescription,
   }));
 
+/** Slim product reference used by the glossary funnel — just enough to
+ *  render a linked chip. */
+export interface ProductChip {
+  slug: string;
+  href: string;
+  name: string;
+  accent: ProductAccent;
+}
+
+/** Reverse of `lookupGlossary`: given a glossary term, find the products
+ *  whose ingredient list mentions it (case-insensitive substring, the
+ *  same matching rule the tooltip uses). Returns slim chips so the full
+ *  products dataset never has to cross into a client bundle — call this
+ *  on the server (e.g. in the glossary route) and pass the result down.
+ *
+ *  Coming-soon products are skipped — there's nothing to link to yet. */
+export const getProductsForTerm = (
+  term: string,
+  locale: LocaleType
+): ProductChip[] => {
+  const needle = term.trim().toLowerCase();
+  if (!needle) return [];
+  return products
+    .filter((p) => p.status !== 'coming-soon')
+    .filter((p) =>
+      p.content[locale].ingredients.some((ing) =>
+        ing.toLowerCase().includes(needle)
+      )
+    )
+    .map((p) => ({
+      slug: p.slug,
+      href: `/products/${p.slug}`,
+      name: p.content[locale].name,
+      accent: p.accent,
+    }));
+};
+
 /** Product line — the "by-system" view of the catalog. A line groups
  *  several products (e.g. V-Tech Serum + Gel Mask + Exotech Gel make up
  *  the Exosomes face system) and carries its own brand story, clinical

@@ -61,6 +61,32 @@ const Section: FC<{
   </section>
 );
 
+/** Same visual header as `Section`, but the body is collapsed behind a
+ *  native <details>. Used for the secondary cluster (logistics / compare
+ *  / economics / training) so the PDP's first paint is roughly half the
+ *  scroll height. Works without JS; the section-nav opens it on a jump.
+ *  `id` lives on the <details> so ProductSectionNav can `.open` it. */
+const CollapsibleSection: FC<{
+  num: string;
+  label: string;
+  title: string;
+  id: string;
+  children: ReactNode;
+}> = ({ num, label, title, id, children }) => (
+  <details className={styles.collapsible} id={id}>
+    <summary className={styles.collapsibleSummary}>
+      <span className={styles.collapsibleHead}>
+        <SectionLabel num={num} label={label} />
+        <h2 className={styles.h2}>{title}</h2>
+      </span>
+      <span className={styles.collapsibleChevron} aria-hidden="true">
+        ▾
+      </span>
+    </summary>
+    <div className={styles.collapsibleBody}>{children}</div>
+  </details>
+);
+
 const ProductPage: FC<Props> = ({
   product,
   locale,
@@ -472,7 +498,7 @@ const ProductPage: FC<Props> = ({
         )}
 
         {c.logistics && c.logistics.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="logistics"
             num={next()}
             label="LOGISTICS"
@@ -490,11 +516,11 @@ const ProductPage: FC<Props> = ({
                 </article>
               ))}
             </div>
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.comparison && c.comparison.rows.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="compare"
             num={next()}
             label="COMPARE"
@@ -537,11 +563,11 @@ const ProductPage: FC<Props> = ({
                 </tbody>
               </table>
             </div>
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.economics && c.economics.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="economics"
             num={next()}
             label="ECONOMICS"
@@ -562,11 +588,11 @@ const ProductPage: FC<Props> = ({
             {c.economics.disclaimer && (
               <p className={styles.disclaimer}>{c.economics.disclaimer}</p>
             )}
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.training && c.training.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="training"
             num={next()}
             label="TRAINING"
@@ -584,7 +610,7 @@ const ProductPage: FC<Props> = ({
                 enroll: t('trainingEnroll'),
               }}
             />
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.faq && c.faq.items.length > 0 && (

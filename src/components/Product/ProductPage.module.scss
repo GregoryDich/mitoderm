@@ -284,6 +284,64 @@
   scroll-margin-top: 160px;
 }
 
+/* Collapsible secondary section — native <details>. Header mirrors a
+ * normal .block header; the body stays hidden until the user (or the
+ * section-nav) opens it. */
+.collapsible {
+  display: block;
+  scroll-margin-top: 160px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: clamp(28px, 4vw, 44px);
+}
+
+.collapsibleSummary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Tighten the big section heading when it acts as a clickable summary. */
+  .secLabel {
+    margin-bottom: 18px;
+  }
+  .h2 {
+    margin-bottom: 0;
+  }
+}
+
+.collapsibleHead {
+  display: block;
+  min-width: 0;
+}
+
+.collapsibleChevron {
+  flex-shrink: 0;
+  margin-top: 6px;
+  font-size: 16px;
+  color: rgba(245, 242, 240, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.collapsible[open] .collapsibleChevron {
+  transform: rotate(180deg);
+}
+
+.collapsibleBody {
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsibleChevron {
+    transition: none;
+  }
+}
+
 .secLabel {
   display: flex;
   align-items: center;

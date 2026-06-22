@@ -21,6 +21,23 @@ export function lookupGlossary(
   return null;
 }
 
+/** Deterministic, URL-safe anchor id for a glossary term. Latin terms
+ *  become a clean slug ("niacinamide"); Cyrillic / Hebrew terms — which
+ *  have no ASCII slug — fall back to a stable encoded token so the same
+ *  id can be computed independently on the PDP side to deep-link into
+ *  `/glossary#<id>`. The token is never shown to users. */
+export function glossaryAnchorId(term: string): string {
+  const ascii = term
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  if (ascii) return ascii;
+  return `term-${encodeURIComponent(term.trim().toLowerCase()).replace(
+    /%/g,
+    ''
+  )}`;
+}
+
 /** Get a flat dictionary of glossary entries from next-intl messages. */
 export function dictFromMessages(
   messages: Record<string, unknown> | undefined

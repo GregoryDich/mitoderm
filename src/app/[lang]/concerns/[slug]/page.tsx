@@ -107,6 +107,7 @@ export default async function ConcernRoute({
         eyebrow: t(`${slug}.eyebrow`),
         title: t(`${slug}.title`),
         lead: t(`${slug}.text`),
+        explainer: t(`${slug}.explainer`),
         linesTitle: tp('linesTitle'),
         productsTitle: tp('productsTitle'),
         postsTitle: tp('postsTitle'),
