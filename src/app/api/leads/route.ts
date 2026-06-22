@@ -3,8 +3,8 @@ import { appendLead, type LeadUtm } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
 import { spamGuard } from '@/lib/spam-guard';
-import { reportError } from '@/lib/report-error';
 import { sendAutoReply } from '@/lib/leads-mailer';
+import { notifyLead, forwardLeadWebhook } from '@/lib/leads-pipeline';
 
 interface LeadBody {
   name?: string;
@@ -141,92 +141,11 @@ export async function POST(req: Request) {
   // eslint-disable-next-line no-console
   console.log('[lead]', lead);
 
-  // Auto-reply to the visitor — confirms receipt + sets expectations.
-  // Locale picks the template; fires only when Resend is configured.
-  // Never blocks the response.
+  // Post-persistence side effects. Each is best-effort: a failure in
+  // one never affects the response or the other steps.
   void sendAutoReply({ to: email, name, locale });
-
-  // Optional email delivery via Resend (https://resend.com).
-  // Set RESEND_API_KEY + LEADS_TO_EMAIL (and optionally LEADS_FROM_EMAIL)
-  // to enable. The lead response never fails because of email errors.
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEADS_TO_EMAIL;
-  if (apiKey && to) {
-    try {
-      const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
-      const subject = `New Mitoderm lead — ${name}`;
-      const text = [
-        `Name:    ${name}`,
-        `Email:   ${email}`,
-        phone && `Phone:   ${phone}`,
-        clinic && `Clinic:  ${clinic}`,
-        '',
-        message,
-      ]
-        .filter(Boolean)
-        .join('\n');
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          from,
-          to: [to],
-          reply_to: email,
-          subject,
-          text,
-        }),
-      });
-      if (!res.ok) {
-        reportError(new Error(`resend HTTP ${res.status}`), {
-          where: 'leads.email',
-          meta: { status: res.status },
-        });
-      }
-    } catch (err) {
-      reportError(err, { where: 'leads.email' });
-    }
-  }
-
-  // Optional CRM webhook fan-out. Set LEADS_WEBHOOK_URL to forward
-  // every successful lead (HubSpot, Pipedrive, Make, n8n, Zapier — any
-  // endpoint that accepts JSON). Failures are logged and swallowed so
-  // a downstream outage never blocks lead capture. Optionally signs
-  // the body with HMAC-SHA256 when LEADS_WEBHOOK_SECRET is set.
-  const webhookUrl = process.env.LEADS_WEBHOOK_URL;
-  if (webhookUrl) {
-    try {
-      const payload = JSON.stringify({
-        source: 'exoskin.co.il',
-        receivedAt: new Date().toISOString(),
-        lead,
-      });
-      const headers: Record<string, string> = {
-        'content-type': 'application/json',
-      };
-      const secret = process.env.LEADS_WEBHOOK_SECRET;
-      if (secret) {
-        const { createHmac } = await import('node:crypto');
-        const sig = createHmac('sha256', secret).update(payload).digest('hex');
-        headers['x-mitoderm-signature'] = `sha256=${sig}`;
-      }
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers,
-        body: payload,
-      });
-      if (!res.ok) {
-        reportError(new Error(`webhook HTTP ${res.status}`), {
-          where: 'leads.webhook',
-          meta: { status: res.status },
-        });
-      }
-    } catch (err) {
-      reportError(err, { where: 'leads.webhook' });
-    }
-  }
+  await notifyLead({ lead });
+  await forwardLeadWebhook({ lead });
 
   return NextResponse.json({ ok: true, source: source || undefined });
 }
