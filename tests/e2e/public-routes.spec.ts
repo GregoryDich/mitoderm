@@ -24,6 +24,13 @@ const PATHS = [
   '/products/mitoscan',
   '/form',
   '/apply',
+  '/glossary',
+  '/concerns/density',
+  '/concerns/hair',
+  '/concerns/longevity',
+  '/concerns/devices',
+  '/privacy',
+  '/terms',
 ];
 
 for (const locale of LOCALES) {

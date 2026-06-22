@@ -27,13 +27,15 @@ export default defineConfig({
     },
   ],
   // Reuse an already-running dev / start server if PLAYWRIGHT_BASE_URL
-  // is overridden; otherwise spin up `next dev` ourselves.
+  // is overridden; otherwise spin up Next ourselves. In CI we run
+  // `next start` against the prebuilt artifact for speed and
+  // production-parity; locally `next dev` keeps the iteration loop fast.
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command: 'npm run dev',
+        command: process.env.CI ? 'npm run start' : 'npm run dev',
         url: baseURL,
-        timeout: 90_000,
+        timeout: 120_000,
         reuseExistingServer: !process.env.CI,
         env: {
           ADMIN_PASSWORD: 'playwright-test-password',
