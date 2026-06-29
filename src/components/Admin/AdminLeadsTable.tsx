@@ -22,17 +22,20 @@ const STATUS_COLOR: Record<LeadStatus, string> = {
   archived: 'rgba(245,242,240,0.4)',
 };
 
+type SortMode = 'date' | 'intent';
+
 const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
   const [leads, setLeads] = useState<Lead[]>(initialLeads);
   const [filter, setFilter] = useState<LeadStatus | 'all'>('all');
   const [onlyHot, setOnlyHot] = useState(false);
+  const [sortMode, setSortMode] = useState<SortMode>('date');
   const [q, setQ] = useState('');
   const [openId, setOpenId] = useState<string | null>(null);
   const [pendingId, setPendingId] = useState<string | null>(null);
 
   const visible = useMemo(() => {
     const term = q.trim().toLowerCase();
-    return leads.filter((l) => {
+    const filtered = leads.filter((l) => {
       if (filter !== 'all' && l.status !== filter) return false;
       if (onlyHot && (l.classification?.score ?? 0) < 70) return false;
       if (!term) return true;
@@ -44,7 +47,18 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
         l.message.toLowerCase().includes(term)
       );
     });
-  }, [leads, filter, onlyHot, q]);
+    if (sortMode === 'intent') {
+      // High-intent first; ties broken by newest. Pure non-mutating sort
+      // so the underlying state stays in source order.
+      return [...filtered].sort((a, b) => {
+        const sa = a.classification?.score ?? 0;
+        const sb = b.classification?.score ?? 0;
+        if (sb !== sa) return sb - sa;
+        return a.ts < b.ts ? 1 : -1;
+      });
+    }
+    return filtered;
+  }, [leads, filter, onlyHot, q, sortMode]);
 
   const hotCount = useMemo(
     () => leads.filter((l) => (l.classification?.score ?? 0) >= 70).length,
@@ -156,6 +170,32 @@ const AdminLeadsTable: FC<Props> = ({ initialLeads }) => {
           }}
         >
           🔥 Hot {hotCount > 0 ? `(${hotCount})` : ''}
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setSortMode((m) => (m === 'date' ? 'intent' : 'date'))
+          }
+          aria-pressed={sortMode === 'intent'}
+          title="Toggle sort by intent score vs. by date"
+          style={{
+            padding: '8px 14px',
+            borderRadius: 20,
+            border: `1px solid ${
+              sortMode === 'intent'
+                ? '#6fb7ba'
+                : 'rgba(255,255,255,0.14)'
+            }`,
+            background:
+              sortMode === 'intent' ? '#6fb7ba' : 'transparent',
+            color:
+              sortMode === 'intent' ? '#08080a' : 'rgba(245,242,240,0.78)',
+            fontSize: 12,
+            fontWeight: 500,
+            cursor: 'pointer',
+          }}
+        >
+          {sortMode === 'intent' ? '⬇ By intent' : '⬇ By date'}
         </button>
         <input
           type="search"

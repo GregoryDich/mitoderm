@@ -4,14 +4,17 @@ import dynamic from 'next/dynamic';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../globals.scss';
-import { Rubik } from 'next/font/google';
+import { Rubik, Fraunces } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Layout/Footer/Footer';
 import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
 import JsonLd from '@/components/Seo/JsonLd';
 import { orgJsonLd, siteJsonLd } from '@/lib/seo';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import ConsentedAnalytics from '@/components/Analytics/ConsentedAnalytics';
+import UtmCapture from '@/components/Analytics/UtmCapture';
+import { ConsentProvider } from '@/components/Consent/ConsentProvider';
+import CookieConsent from '@/components/Consent/CookieConsent';
 
 const Header = dynamic(() => import('@/components/Layout/Header/Header'), {
   ssr: false,
@@ -33,6 +36,9 @@ const InterestDrawer = dynamic(
 
 import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
 import { RecentlyViewedProvider } from '@/components/RecentlyViewed/RecentlyViewedProvider';
+import { CatalogIndexProvider } from '@/components/Catalog/CatalogIndexProvider';
+import { getCatalogItems } from '@/products';
+import type { LocaleType } from '@/types';
 import PromoBar from '@/components/Layout/PromoBar/PromoBar';
 import { nextUpcomingSeminar } from '@/lib/promo';
 
@@ -43,6 +49,21 @@ const rubik = Rubik({
   variable: '--font-Rubik',
   subsets: ['latin', 'cyrillic', 'hebrew'],
 });
+
+/** Display serif applied behind NEXT_PUBLIC_DISPLAY_SERIF=1.
+ *  next/font requires every font loader to be called unconditionally
+ *  at module scope, so Fraunces is always *declared* here. The flag
+ *  only controls whether its variable is *applied* to <body> — when
+ *  off, no CSS rule references it and the browser never requests it.
+ */
+const fraunces = Fraunces({
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+  subsets: ['latin'],
+});
+const FLAG_DISPLAY_SERIF = process.env.NEXT_PUBLIC_DISPLAY_SERIF === '1';
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'he' }, { lang: 'ru' }];
@@ -128,16 +149,34 @@ export default async function RootLayout({
   unstable_setRequestLocale(params.lang);
 
   const upcoming = await nextUpcomingSeminar();
+  // Slim catalog index computed server-side and passed to client
+  // components via context — keeps the full products.json out of the
+  // client bundle (see CatalogIndexProvider).
+  const catalogIndex = getCatalogItems(params.lang as LocaleType);
 
   return (
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
         <body
-          className={rubik.className}
+          className={`${rubik.className} ${
+            FLAG_DISPLAY_SERIF ? fraunces.variable : ''
+          }`}
+          data-display-serif={FLAG_DISPLAY_SERIF ? '1' : undefined}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >
+          <ConsentProvider>
+          <CatalogIndexProvider items={catalogIndex}>
           <InterestListProvider>
           <RecentlyViewedProvider>
+            {/* Skip-to-content for keyboard users — first focusable
+                element in the body, only visible when focused. */}
+            <a href="#main" className="skipLink">
+              {params.lang === 'ru'
+                ? 'Перейти к содержанию'
+                : params.lang === 'he'
+                ? 'דילוג לתוכן'
+                : 'Skip to content'}
+            </a>
             {upcoming && (
               <PromoBar
                 id={`seminar-${upcoming.id}`}
@@ -148,18 +187,22 @@ export default async function RootLayout({
             )}
             <Header />
             <Modal />
-            {children}
+            <div id="main">{children}</div>
             <Footer />
             <ScrollToTop />
             <A11yWidget />
             <InterestDrawer />
+            <CookieConsent />
+            <UtmCapture />
             <JsonLd id="ld-organization" data={orgJsonLd()} />
             <JsonLd id="ld-website" data={siteJsonLd()} />
           </RecentlyViewedProvider>
           </InterestListProvider>
+          </CatalogIndexProvider>
+          <ConsentedAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID} />
+          </ConsentProvider>
         </body>
       </NextIntlClientProvider>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID as string} />
     </html>
   );
 }

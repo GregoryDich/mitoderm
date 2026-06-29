@@ -1,17 +1,27 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { getCatalogItems, ProductAccent } from '@/products';
+import {
+  getCatalogItems,
+  ProductAccent,
+  LineSummary,
+} from '@/products';
 import { LocaleType } from '@/types';
+import { publicAsset } from '@/lib/public-asset';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
+import LinesShowcase from '@/components/Lines/LinesShowcase';
+import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
+import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
 import type { Story } from '@/lib/stories-store';
+import type { Doctor } from '@/lib/doctors-store';
 import styles from './HomePage.module.scss';
 
 interface Props {
@@ -19,6 +29,8 @@ interface Props {
   social?: SocialPost[];
   press?: PressItem[];
   stories?: Story[];
+  lines?: LineSummary[];
+  doctors?: Doctor[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -27,7 +39,14 @@ const accentVar: Record<ProductAccent, string> = {
   rose: '#b4607e',
 };
 
-const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) => {
+const HomePage: FC<Props> = ({
+  locale,
+  social = [],
+  press = [],
+  stories = [],
+  lines = [],
+  doctors = [],
+}) => {
   const t = useTranslations('home');
   const featured = getCatalogItems(locale)
     .filter((i) => i.status === 'available')
@@ -35,9 +54,23 @@ const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) 
 
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
+  const heroArt = publicAsset('/home/hero.webp');
 
   return (
     <div className={`pageScroll ${styles.page}`}>
+      {heroArt && (
+        <div className={styles.heroArt} aria-hidden="true">
+          <Image
+            src={heroArt}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroArtImg}
+          />
+          <span className={styles.heroArtScrim} />
+        </div>
+      )}
       <div className={styles.glows} aria-hidden="true">
         <span className={styles.glowA} />
         <span className={styles.glowB} />
@@ -71,7 +104,24 @@ const HomePage: FC<Props> = ({ locale, social = [], press = [], stories = [] }) 
       </div>
 
       <main className={styles.content}>
+        {doctors.length > 0 && (
+          <TrustedByStrip doctors={doctors} label={t('trustedBy')} />
+        )}
+
         {stories.length > 0 && <StoriesStrip stories={stories} />}
+
+        {/* Concerns first: a task-based entry ("hair thinning") is a
+            stronger hook than the product-led line showcase, so it
+            precedes LinesShowcase. */}
+        <Reveal>
+          <ConcernsStrip />
+        </Reveal>
+
+        {lines.length > 0 && (
+          <Reveal>
+            <LinesShowcase lines={lines} />
+          </Reveal>
+        )}
 
         <Reveal>
         <section className={styles.block}>

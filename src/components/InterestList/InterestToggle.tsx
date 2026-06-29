@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import { useInterestList } from './InterestListProvider';
+import { track } from '@/lib/track';
 import styles from './InterestToggle.module.scss';
 
 interface Props {
@@ -29,6 +30,8 @@ const InterestToggle: FC<Props> = ({
         e.preventDefault();
         e.stopPropagation();
         toggle(slug);
+        // Fire only on add — removes aren't interesting for the funnel.
+        if (!added) track('add_to_interest', { slug, variant });
       }}
       aria-pressed={added}
       aria-label={added ? removeLabel : addLabel}

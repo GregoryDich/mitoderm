@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import Catalog from '@/components/Catalog/Catalog';
 import { getCatalogItems } from '@/products';
@@ -61,7 +62,9 @@ export default function CatalogPage({
   const items = getCatalogItems(lang);
   return (
     <main>
-      <Catalog items={items} />
+      <Suspense fallback={null}>
+        <Catalog items={items} />
+      </Suspense>
     </main>
   );
 }

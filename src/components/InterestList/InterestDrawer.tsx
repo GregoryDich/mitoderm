@@ -3,9 +3,10 @@
 import { FC, useEffect, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { CatalogItem, getCatalogItems, ProductAccent } from '@/products';
+import type { CatalogItem, ProductAccent } from '@/products';
 import { LocaleType } from '@/types';
 import { useInterestList } from './InterestListProvider';
+import { useCatalogIndex } from '@/components/Catalog/CatalogIndexProvider';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './InterestDrawer.module.scss';
 
@@ -24,7 +25,7 @@ const InterestDrawer: FC = () => {
 
   useEffect(() => setMounted(true), []);
 
-  const catalog = mounted ? getCatalogItems(locale) : [];
+  const catalog = useCatalogIndex();
   const list: CatalogItem[] = mounted
     ? items
         .map((slug) => catalog.find((c) => c.slug === slug))

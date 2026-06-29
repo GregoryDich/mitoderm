@@ -141,8 +141,16 @@ Add an **HTTP Request** node:
 - Body: JSON, `={{ $json }}`
 
 (Optional — if you set `SOCIAL_INGEST_SECRET`, add a **Function** node
-before this one that computes the HMAC and adds the `X-Mitoderm-Signature`
-header.)
+before this one that computes the HMAC and adds two headers:
+
+- `X-Mitoderm-Timestamp` — unix millis (`Date.now()`)
+- `X-Mitoderm-Signature` — `sha256=` + HMAC-SHA256 over the string
+  `<timestamp>\n<raw-json-body>`, using `SOCIAL_INGEST_SECRET` as the key.
+
+The server rejects requests with a signature whose timestamp is more
+than five minutes off Vercel's clock — this prevents a stolen
+signature from being replayed later. The same secret rotates by
+changing the env var; redeploy and update the n8n credential.)
 
 ### 3.7 Notify (optional but useful)
 

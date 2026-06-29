@@ -42,9 +42,24 @@ const ProductSectionNav: FC<Props> = ({ sections }) => {
     e.preventDefault();
     const target = document.getElementById(id);
     if (!target) return;
+    // If the section is a collapsed <details> (the secondary cluster),
+    // open it first so the jump reveals content, not a closed summary.
+    const det = target.closest('details') as HTMLDetailsElement | null;
+    if (det && !det.open) det.open = true;
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setActive(id);
   };
+
+  // Deep-link support: if the page loads with a hash pointing at a
+  // collapsed section, open it on mount so the browser's own scroll
+  // lands on visible content.
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    const det = target?.closest('details') as HTMLDetailsElement | null;
+    if (det && !det.open) det.open = true;
+  }, []);
 
   // Keep the active pill in view (horizontal scroll on mobile)
   useEffect(() => {

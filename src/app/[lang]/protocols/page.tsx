@@ -69,5 +69,5 @@ export default async function ProtocolsRoute({
       headline: p.content[lang].name,
     }));
 
-  return <ProtocolsPage locale={lang} protocols={protocols} />;
+  return <ProtocolsPage protocols={protocols} />;
 }

@@ -58,7 +58,7 @@
   flex-direction: column;
   gap: 18px;
   margin-bottom: 28px;
-  padding: 22px;
+  padding: clamp(14px, 3vw, 22px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.025);
@@ -84,7 +84,8 @@
 }
 
 .pill {
-  padding: 8px 16px;
+  padding: 10px 16px;
+  min-height: 38px;
   border-radius: 30px;
   background: transparent;
   border: 1px solid rgba(245, 242, 240, 0.16);
@@ -92,6 +93,7 @@
   font-size: 13px;
   font-family: inherit;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
@@ -150,7 +152,7 @@
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  padding: 22px;
+  padding: clamp(16px, 3vw, 22px);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -225,7 +227,10 @@
 }
 
 .cardLink {
-  padding: 7px 14px;
+  padding: 10px 14px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -268,4 +273,23 @@
   font-weight: 500;
   font-size: 14px;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .controls {
+    margin-bottom: 20px;
+  }
+  .avatar {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+  }
+  .ctaBand {
+    margin-top: 36px;
+    padding: 28px 18px;
+  }
 }

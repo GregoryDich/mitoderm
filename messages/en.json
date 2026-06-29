@@ -1,6 +1,7 @@
 {
   "navigation": {
     "product": "Products",
+    "products": "Products",
     "results": "Results",
     "about": "About us",
     "info": "More info",
@@ -9,7 +10,104 @@
     "agenda": "Event program",
     "catalog": "Catalog",
     "clinics": "Clinics",
-    "seminars": "Seminars"
+    "seminars": "Seminars",
+    "lines": "Lines",
+    "concerns": "Concerns",
+    "blog": "Blog"
+  },
+  "science": {
+    "eyebrow": "THE MITODERM SCIENCE STACK",
+    "title": "Four pillars, one protocol",
+    "subtitle": "We work on four mechanisms that compound: cell signalling, dermal scaffolding, mitochondrial energy and controlled delivery. The product line is built around that order.",
+    "leadParagraph": "Mitoderm is not a single hero molecule with a brand name on top. It's a layered protocol — exosomes do the signalling, polynucleotides rebuild the scaffold, NAD+ powers the recovery, and microneedling delivery makes sure all three land where they're supposed to land. Each pillar has a home in the product line.",
+    "pillarToLine": "Open the line",
+    "pillarToProduct": "Open the product",
+    "pillars": {
+      "exosomes": {
+        "eyebrow": "PILLAR 01 · CELL SIGNALLING",
+        "title": "Exosomes — the signalling layer",
+        "lead": "Nanometre-scale extracellular vesicles that carry a multi-protein, multi-RNA payload between cells.",
+        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact."
+      },
+      "polynucleotides": {
+        "eyebrow": "PILLAR 02 · DERMAL SCAFFOLD",
+        "title": "Polynucleotides — rebuilding the scaffold",
+        "lead": "Long nucleotide chains that bind water and instruct fibroblasts to rebuild dermal scaffolding.",
+        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier."
+      },
+      "nad": {
+        "eyebrow": "PILLAR 03 · MITOCHONDRIAL RECOVERY",
+        "title": "NAD+ — powering the recovery",
+        "lead": "The coenzyme central to mitochondrial energy production and DNA repair — the substrate of visible glow.",
+        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols."
+      },
+      "delivery": {
+        "eyebrow": "PILLAR 04 · CONTROLLED DELIVERY",
+        "title": "Microneedling delivery — the protocol's exit step",
+        "lead": "All three pillars are only as good as the channels they travel through.",
+        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course."
+      }
+    },
+    "protocol": {
+      "eyebrow": "HOW IT COMES TOGETHER",
+      "title": "The four pillars in one workflow",
+      "text": "Diagnose with Mitoscan. Plan a course around the indication. Deliver via MitoPen at the locked depth. Follow up with a freeze-frame at the next visit. The same four mechanisms, every time.",
+      "ctaProtocols": "See the protocols",
+      "ctaBlog": "Read the journal"
+    },
+    "cta": {
+      "title": "Bring the protocol into your clinic",
+      "text": "Pricing, training and protocol support — we work with your existing menu rather than against it.",
+      "button": "Contact us"
+    }
+  },
+  "concerns": {
+    "eyebrow": "BY CONCERN",
+    "title": "Start with the patient's complaint",
+    "subtitle": "Four entry points that match how a consultation actually opens — pick the concern, land on the line and protocol that addresses it.",
+    "explore": "Open the line",
+    "density": {
+      "eyebrow": "FACE · DENSITY",
+      "title": "Loss of density & structural aging",
+      "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery.",
+      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface."
+    },
+    "hair": {
+      "eyebrow": "SCALP · HAIR LOSS",
+      "title": "Hair loss & scalp thinning",
+      "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage.",
+      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective."
+    },
+    "longevity": {
+      "eyebrow": "FACE · LONGEVITY",
+      "title": "Dullness, fatigue, longevity",
+      "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime.",
+      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin."
+    },
+    "devices": {
+      "eyebrow": "CLINIC · DIAGNOSTIC + DELIVERY",
+      "title": "Diagnose, deliver, document",
+      "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery.",
+      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients."
+    }
+  },
+  "keyActives": {
+    "eyebrow": "KEY ACTIVES",
+    "intro": "The ingredients doing the structural work in this formula — tap any chip below for the full list.",
+    "cardEyebrow": "ACTIVE",
+    "learnMore": "In the glossary →"
+  },
+  "blog": {
+    "eyebrow": "EDUCATION · EXOSOMES · PROTOCOLS",
+    "title": "The Mitoderm journal",
+    "subtitle": "Practitioner-grade notes on exosomes, NAD+ longevity peelings, microneedling protocols and what the science means at the chair.",
+    "empty": "First posts are on the way.",
+    "back": "All posts",
+    "ctaTitle": "Bring this protocol into your clinic",
+    "ctaText": "Pricing, training and protocol support — get in touch.",
+    "ctaButton": "Contact us",
+    "relatedTitle": "Continue reading",
+    "featuredProductsTitle": "Featured in this protocol"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -29,9 +127,13 @@
     "filterSerum": "Serums",
     "filterGel": "Gels",
     "filterHair": "Hair",
+    "filterPeel": "Peelings",
+    "filterDevice": "Devices",
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
     "noResults": "No products match your search.",
+    "resultCount": "Showing {shown} of {total}",
+    "clearFilters": "Clear filters",
     "addToList": "Add to my list",
     "removeFromList": "Remove from my list"
   },
@@ -44,6 +146,12 @@
     "gallery": "Gallery",
     "professionalBadge": "For professional use only",
     "related": "Related products",
+    "continueTitle": "Continue exploring",
+    "continueScienceEyebrow": "THE SCIENCE",
+    "continueScienceTitle": "Four pillars, one protocol",
+    "continueScienceText": "Where this product sits inside the Mitoderm stack — exosome signalling, polynucleotide scaffolding, NAD+ recovery and controlled delivery.",
+    "continueScienceCta": "Read the science",
+    "continueReadCta": "Read the post",
     "keyFacts": "Key facts",
     "contactViaWhatsApp": "Contact via WhatsApp",
     "trustedBy": "TRUSTED BY",
@@ -168,24 +276,13 @@
         "label": "Vesicle scale"
       }
     ],
+    "founderLabel": "FOUNDER",
+    "founderName": "Ilona Shpektor",
+    "founderRole": "Founder, Mitoderm",
+    "founderText": "Ilona founded Mitoderm to bring clinical-grade exosome technology to aesthetic practitioners across Israel — pairing hands-on professional training with a protocol-led product line built on science.",
     "ctaTitle": "Talk to a Mitoderm specialist",
     "ctaText": "Get pricing, protocols and onboarding for your clinic.",
     "ctaButton": "Contact us"
-  },
-  "solution": {
-    "titleP1": "Our Solution - ",
-    "titleP2": "Exoxe",
-    "titleP3": " Exosome",
-    "subtitle": "Only for professional usage",
-    "item1title": "Pure exo - lyophilized powder 50mg",
-    "item1textP1": "Hydrolyzed Collagen - 886,000PPM",
-    "item1textP2": "Collagen - 100,000PPM",
-    "item1textP3": "Sodium Hyaluronate",
-    "item1textP4": "Trehalose",
-    "item2title": "Sterilized solution 5ml",
-    "item2textP1": "Aqua",
-    "item2textP2": "Sodium Hyaluronate",
-    "usage": "Only for professional usage."
   },
   "faq": {
     "title": "FAQs",
@@ -273,6 +370,286 @@
   "recentlyViewed": {
     "title": "RECENTLY VIEWED"
   },
+  "glossaryPage": {
+    "eyebrow": "REFERENCE",
+    "title": "Ingredient & science glossary",
+    "subtitle": "Plain-language definitions of the actives and mechanisms behind the Mitoderm protocol — the same terms that surface as tooltips across the product pages.",
+    "jumpLabel": "Jump to a term",
+    "usedIn": "Used in"
+  },
+  "concernPage": {
+    "linesTitle": "LINES THAT ADDRESS THIS",
+    "productsTitle": "FEATURED PRODUCTS",
+    "postsTitle": "FROM THE JOURNAL",
+    "backToHome": "Back to homepage",
+    "contactCta": "Talk to a specialist",
+    "openLine": "Open the line"
+  },
+  "consent": {
+    "title": "Cookies & analytics",
+    "text": "We use a small set of cookies to keep the site working and — only if you agree — to measure which pages help clinicians the most.",
+    "accept": "Accept",
+    "deny": "Decline",
+    "learnMore": "Read the privacy notice"
+  },
+  "privacy": {
+    "eyebrow": "PRIVACY NOTICE",
+    "title": "Privacy notice",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "This notice explains what personal data Mitoderm collects when you visit the Site (mitoderm.com) or contact us, why we collect it, how we protect and share it, and the rights you have under Israeli law. It is written to align with Israel's Protection of Privacy Law, 5741-1981 as amended by Amendment 13 (in force August 2025), and — for visitors in the EU/EEA — with the GDPR.",
+    "sections": [
+      {
+        "heading": "Who we are — the database holder",
+        "paragraphs": [
+          "The Site is operated by Mitoderm Academy (company no. HP-______), of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\", \"we\", \"us\").",
+          "For the purposes of the Protection of Privacy Law, Mitoderm is the Owner and the Manager of the customer-enquiries database that this Site feeds. Our hosting and email providers act as Holders / processors on our behalf. Questions about the database may be directed to our privacy contact below."
+        ]
+      },
+      {
+        "heading": "What we collect",
+        "paragraphs": [
+          "We collect the minimum necessary to answer your enquiries and keep the Site functional. We do not collect special-category data and ask that you not send clinical or patient information through the Site."
+        ],
+        "bullets": [
+          "Contact-form data: name, email, phone (optional), clinic name (optional) and the message you write.",
+          "Clinic-application data: the above plus city, professional licence number and an optional referral code.",
+          "Waitlist sign-ups for upcoming product lines: email address.",
+          "Marketing-attribution data, only when present: UTM parameters and the page you arrived on.",
+          "Technical logs created by our hosting provider — IP address, user agent, request path — retained briefly for security and abuse prevention.",
+          "Cookies and analytics, only if you opt in at the banner: a consent cookie plus, on consent, Google Analytics 4. We never sell your data."
+        ]
+      },
+      {
+        "heading": "Why we collect it (purposes)",
+        "paragraphs": [
+          "Each category is used only for the purpose it was given for:"
+        ],
+        "bullets": [
+          "To answer your enquiry and provide the information you requested.",
+          "To onboard your clinic and manage our commercial relationship.",
+          "To send product, training and protocol information you have asked for.",
+          "To send marketing communications — only where you have given separate, specific consent (see below).",
+          "To secure the Site, prevent abuse, and meet our legal and accounting obligations.",
+          "To understand, in aggregate, which content is useful — analytics only, and only after consent."
+        ]
+      },
+      {
+        "heading": "Legal basis",
+        "paragraphs": [
+          "We process your contact data on the basis of your consent — you chose to send the form. Security logging rests on our legitimate interest in protecting the Site. Analytics and any marketing run only on the separate consent you give. You can withdraw any consent at any time, without affecting processing already carried out."
+        ]
+      },
+      {
+        "heading": "Marketing communications",
+        "paragraphs": [
+          "We send marketing messages (email, SMS or WhatsApp) only where you have actively opted in, in line with section 30A of the Communications Law (Telecommunications and Broadcasting), 5742-1982. Every marketing message carries a one-click way to unsubscribe, and you can also opt out at any time by writing to the contact below. Operational replies to your own enquiry are not marketing and are sent regardless."
+        ]
+      },
+      {
+        "heading": "Who we share it with",
+        "paragraphs": [
+          "We do not sell personal data. We disclose the minimum necessary to:"
+        ],
+        "bullets": [
+          "Our service providers acting as processors under contract — website hosting (Vercel Inc.) and transactional email (Resend, Inc.).",
+          "Our partner clinics — only where you ask us to route your enquiry to a specific clinic.",
+          "Authorities or advisers where we are legally required to, or to establish or defend legal claims."
+        ]
+      },
+      {
+        "heading": "International transfers",
+        "paragraphs": [
+          "Some of our processors (Vercel, Resend) store data on servers located outside Israel, including in the United States. We transfer data abroad only in accordance with the Protection of Privacy (Transfer of Data to Databases Abroad) Regulations, 5761-2001 and, for EU/EEA data, on the basis of appropriate safeguards. Recipients are bound by contract to protect the data to a standard comparable to Israeli law and not to transfer it onward without a lawful basis."
+        ]
+      },
+      {
+        "heading": "How long we keep it (retention)",
+        "paragraphs": [
+          "We keep data only as long as the purpose requires:"
+        ],
+        "bullets": [
+          "Enquiry / lead records: up to 24 months after the last contact, then deleted or anonymised.",
+          "Clinic-partner accounts: for the life of the relationship plus the period required by accounting and tax law (currently 7 years).",
+          "Waitlist emails: until the line launches plus 12 months, then deleted.",
+          "Security logs: rolled off within 30 days."
+        ]
+      },
+      {
+        "heading": "How we protect it",
+        "paragraphs": [
+          "We apply technical and organisational measures appropriate to the sensitivity of the data: encryption in transit (HTTPS/HSTS), strict access controls, rate limiting, signed administrative sessions and audit logging. No system is perfectly secure, but we work to industry-standard safeguards."
+        ]
+      },
+      {
+        "heading": "Data-breach notification",
+        "paragraphs": [
+          "In line with Amendment 13 to the Protection of Privacy Law, if a serious security incident affecting your personal data occurs, we will notify the Israeli Privacy Protection Authority and, where required, the affected individuals, within the statutory timeframes."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "paragraphs": [
+          "Under Israeli law (and the GDPR where it applies) you may:"
+        ],
+        "bullets": [
+          "Access the data we hold about you (s.13 of the Law).",
+          "Have inaccurate data corrected or completed (s.14).",
+          "Request deletion of your data, subject to our legal retention duties.",
+          "Object to direct-marketing use of your data at any time.",
+          "Withdraw consent, and — for EU/EEA visitors — request portability or restriction.",
+          "Lodge a complaint with the Privacy Protection Authority (see below)."
+        ]
+      },
+      {
+        "heading": "Cookies",
+        "paragraphs": [
+          "We use three cookie categories — strictly necessary, analytics and marketing. Only strictly-necessary cookies run without your consent. You control the rest at the banner, and can change your choice at any time. Full details are on our Cookies page."
+        ]
+      },
+      {
+        "heading": "Children",
+        "paragraphs": [
+          "The Site addresses healthcare professionals and is not directed at children. We do not knowingly collect personal data from anyone under the age of 16. If you believe a minor has provided us data, contact us and we will delete it."
+        ]
+      },
+      {
+        "heading": "Supervisory authority",
+        "paragraphs": [
+          "You may contact or complain to the Israeli Privacy Protection Authority (\"the Authority\") — https://www.gov.il/en/departments/the_privacy_protection_authority. EU/EEA visitors may also contact their local data-protection authority."
+        ]
+      },
+      {
+        "heading": "Changes & governing language",
+        "paragraphs": [
+          "We may update this notice; material changes are reflected in the \"Last updated\" date above. This notice is published in English, Russian and Hebrew. In the event of any discrepancy, the Hebrew version prevails."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactText": "Privacy questions, requests or to exercise a right: write to privacy@mitoderm.com. We will respond within 30 days."
+  },
+  "terms": {
+    "eyebrow": "TERMS OF USE",
+    "title": "Terms of use",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "These terms govern your use of the Site (mitoderm.com), operated by Mitoderm Academy (company no. HP-______) of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
+    "sections": [
+      {
+        "heading": "Who we are",
+        "paragraphs": [
+          "The Site is owned and operated by Mitoderm Academy, company no. HP-______, Rafael Eitan 38, Ramat Gan 5590500, Israel. You can reach us at the contact address at the foot of these terms."
+        ]
+      },
+      {
+        "heading": "Eligibility",
+        "paragraphs": [
+          "The Site presents professional aesthetic-medicine products intended for use by licensed clinicians. Information about specific products, protocols and devices is addressed to professionals; it is not medical advice for the general public."
+        ]
+      },
+      {
+        "heading": "No online sales",
+        "paragraphs": [
+          "The Site is informational. It does not sell products or take payment online. Orders, pricing and supply are arranged separately and offline (for example via WhatsApp or direct contact), under terms agreed at that time. Accordingly, the distance-selling provisions of the Consumer Protection Law do not apply to use of the Site itself."
+        ]
+      },
+      {
+        "heading": "Acceptable use",
+        "paragraphs": [
+          "You agree not to misuse the Site or attempt to disrupt it."
+        ],
+        "bullets": [
+          "Do not attempt to gain unauthorised access to any non-public area, including admin endpoints.",
+          "Do not scrape the Site for commercial competitive purposes.",
+          "Do not submit content that infringes others' rights or violates law."
+        ]
+      },
+      {
+        "heading": "Submissions",
+        "paragraphs": [
+          "When you send us a message or application through the Site, you confirm the information is accurate and that you are entitled to share it. You grant Mitoderm a limited licence to store and use that submission for the purpose of responding to you and managing the relationship, in accordance with our Privacy notice."
+        ]
+      },
+      {
+        "heading": "Intellectual property",
+        "paragraphs": [
+          "All text, imagery, design, source code and trademarks on the Site are owned by Mitoderm or its licensors. You may share links and short quotations for editorial purposes with attribution; broader reuse requires our written permission."
+        ]
+      },
+      {
+        "heading": "No medical advice; no guaranteed outcome",
+        "paragraphs": [
+          "Content on the Site is informational and reflects clinical experience and product-level documentation. It is not a substitute for an individualised consultation with a qualified practitioner, and nothing on the Site is medical advice to the public. Treatment outcomes are individual and are not guaranteed. Patients should consult a licensed clinician before any procedure."
+        ]
+      },
+      {
+        "heading": "Third-party services",
+        "paragraphs": [
+          "Forms route through Resend for email delivery; the Site is hosted on Vercel; optional analytics is Google Analytics 4 (loaded only after consent). Each provider has its own terms; we select reputable processors with appropriate safeguards."
+        ]
+      },
+      {
+        "heading": "Limitation of liability",
+        "paragraphs": [
+          "The Site is provided on an \"as is\" and \"as available\" basis. To the maximum extent permitted by law, Mitoderm is not liable for indirect, incidental or consequential damages arising from use of the Site or reliance on its content. Where liability cannot be excluded, our total aggregate liability is limited to ILS 5,000. Nothing in these terms limits liability for gross negligence, wilful misconduct, or any liability that cannot be limited under mandatory law."
+        ]
+      },
+      {
+        "heading": "Force majeure",
+        "paragraphs": [
+          "We are not responsible for any failure or delay caused by events beyond our reasonable control, including outages of hosting or communications providers, security incidents, strikes, or acts of government or nature."
+        ]
+      },
+      {
+        "heading": "Severability",
+        "paragraphs": [
+          "If any provision of these terms is held invalid or unenforceable, the remaining provisions continue in full force, and the invalid provision is replaced by a valid one that most closely reflects its intent."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "paragraphs": [
+          "We may update these terms. Material changes will be reflected in the \"Last updated\" date above and, where significant, flagged on the Site for a reasonable period. Continued use after a change takes effect implies acceptance of the revised terms."
+        ]
+      },
+      {
+        "heading": "Governing law & language",
+        "paragraphs": [
+          "These terms are governed by the laws of the State of Israel, and disputes are subject to the exclusive jurisdiction of the competent courts of the Tel Aviv-Yafo district. These terms are published in English, Russian and Hebrew; in the event of any discrepancy, the Hebrew version prevails."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactText": "Questions about these terms: write to legal@mitoderm.com."
+  },
+  "cookies": {
+    "eyebrow": "COOKIES",
+    "title": "Cookie policy",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "This page explains the cookies and similar local-storage technologies the Site uses, what each is for, and how to control them. Only strictly-necessary technologies run before you choose at the cookie banner; analytics and marketing run only with your consent.",
+    "sections": [
+      {
+        "heading": "Your choice",
+        "paragraphs": [
+          "When you first visit, a banner lets you accept or decline non-essential cookies. We remember that choice and do not load analytics or marketing technologies unless you accept. You can change your mind at any time by clearing the consent value in your browser — the banner will appear again."
+        ]
+      },
+      {
+        "heading": "Categories",
+        "paragraphs": [
+          "Strictly necessary — required for the Site to function and to remember your consent; always on. Analytics — aggregate, non-identifying usage measurement; only on consent. Marketing — used to measure and target advertising; only on consent, and only if such tools are configured."
+        ]
+      }
+    ],
+    "tableTitle": "What we use",
+    "tableColumns": ["Name", "Purpose", "Category", "Lifetime", "Provider"],
+    "tableRows": [
+      ["mitoderm_consent_v1", "Remembers your cookie choice", "Strictly necessary", "Persistent (local storage)", "Mitoderm"],
+      ["mitoderm_utm_v1", "Remembers how you reached us (campaign attribution)", "Strictly necessary", "Session (local storage)", "Mitoderm"],
+      ["_ga, _ga_*", "Aggregate analytics — which pages are used", "Analytics (consent)", "Up to 24 months", "Google Analytics 4"]
+    ],
+    "contactHeading": "Contact",
+    "contactText": "Questions about cookies: write to privacy@mitoderm.com."
+  },
   "glossary": {
     "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
     "niacinamide": "Vitamin B3. Reinforces the skin barrier, evens tone, reduces sebum production and redness. Tolerated by most skin types.",
@@ -282,7 +659,12 @@
     "nad+": "Coenzyme central to cellular energy. Topical NAD+ supports mitochondrial recovery — relevant for longevity protocols.",
     "retinol": "Vitamin A derivative. Accelerates cell turnover, smooths texture, reduces fine lines. Photosensitising — use in evening protocols.",
     "ahas": "Alpha-hydroxy acids (glycolic, lactic, mandelic). Water-soluble exfoliants targeting tone and texture.",
-    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin."
+    "bhas": "Beta-hydroxy acids (salicylic). Oil-soluble — penetrate sebum to clear pores. Best for acne-prone skin.",
+    "polynucleotide": "Long chains of nucleotides that bind water and signal fibroblasts to rebuild dermal scaffolding. Particularly relevant for post-procedure barrier soothing and density.",
+    "snail mucin": "Filtered secretion rich in glycoproteins, hyaluronic acid and copper peptides. Calms, hydrates and supports barrier recovery.",
+    "biomimetic peptide": "Lab-designed peptide that mimics a signal the skin already understands — instructs fibroblasts to repair, restructure or quiet inflammation.",
+    "microneedling": "Controlled micro-channels created with a motorised needle pen. Triggers a wound-healing cascade and, more importantly, delivers actives past the stratum corneum.",
+    "lyophilised": "Freeze-dried — water removed at low temperature to keep delicate cargo stable until activation at the chair."
   },
   "promo": {
     "label": "Upcoming promotion",
@@ -404,43 +786,30 @@
       "clinic": "Clinic"
     }
   },
-  "gallery": {
-    "title": "Gallery",
-    "before": "Before",
-    "after": "After"
-  },
-  "dream": {
-    "titleP1": "Where Science",
-    "titleP2": "meets beauty",
-    "textP1": "Mitoderm fulfills its vision by focusing on the ",
-    "textP2": "integration of beauty and technology. ",
-    "textP3": "The company leads the field of science and beauty by providing innovative and effective solutions for professionals in the aesthetics field, taking them one step above the rest.",
-    "textP4": "Upgrade your clinic and offer your clients the most advanced treatments. ",
-    "textP5": "Our commitment to quality and professionalism in a supportive environment empowers you, promotes your personal growth, and  ",
-    "textP6": "helps you excel at the professional level. ",
-    "textP7": "At Mitoderm, we provide advanced solutions for skin rejuvenation, anti-aging, hair thinning, and other skin concerns, tailored to your unique needs. Be part of our family today!"
-  },
-  "contactUs": {
-    "item1title": "Contact Us",
-    "phone": "Phone",
-    "phoneText": "For all details: ",
-    "address": "Address",
-    "addressText": "רפאל איתן 38, Ramat Gan, 5590500",
-    "email": "Email",
-    "emailText": "info@mitoderm.com",
-    "item2title": "Office Hours",
-    "workWeek": "Sunday - Thursday",
-    "friday": "Friday",
-    "fridayText": "By appointment only",
-    "saturday": "Saturday",
-    "closed": "Closed",
-    "followUs": "Follow us on"
-  },
   "footer": {
     "copyright": "© 2026 Mitoderm. All Rights Reserved.",
     "accessibility": "Accessibility Statement",
     "privacy": "Privacy Policy",
-    "group": "SinoSciences Group"
+    "group": "SinoSciences Group",
+    "brandText": "Professional exosome skincare, NAD+ longevity peelings and clinic-grade microneedling delivery — engineered as one layered protocol.",
+    "colDiscoverTitle": "Discover",
+    "colCatalogTitle": "Catalog",
+    "colProTitle": "For professionals",
+    "linkScience": "The science",
+    "linkBlog": "Journal",
+    "linkProtocols": "Protocols",
+    "linkGlossary": "Glossary",
+    "linkConcerns": "Concerns",
+    "linkRegimen": "Regimen finder",
+    "linkPrivacy": "Privacy notice",
+    "linkTerms": "Terms of use",
+    "linkCookies": "Cookie policy",
+    "linkLines": "Lines",
+    "linkCatalog": "All products",
+    "linkClinics": "Partner clinics",
+    "linkSeminars": "Seminars",
+    "linkApply": "Apply to partner",
+    "linkContact": "Contact"
   },
   "accessibility": {
     "title": "Accessibility Declaration for exoskin.co.il",
@@ -481,6 +850,7 @@
     "description": "Advanced exosome-based masks, longevity peels and bio-spicules — engineered for visible regeneration and clinical-grade results.",
     "ctaPrimary": "Explore the catalog",
     "ctaSecondary": "Contact us",
+    "trustedBy": "TRUSTED BY CLINICIANS",
     "stats": [
       {
         "value": "3+",
@@ -539,5 +909,31 @@
     "errorEmail": "Please enter a valid email",
     "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request.",
     "errorServer": "Something went wrong. Please try again or email us directly."
+  },
+  "lines": {
+    "eyebrow": "PRODUCT LINES",
+    "title": "Built as systems, not single SKUs",
+    "subtitle": "Each Mitoderm line is engineered as a complete protocol — products, ingredients and application steps designed to work together in the clinic.",
+    "explore": "Explore the line",
+    "comingSoon": "Coming soon"
+  },
+  "linePage": {
+    "productsTitle": "PRODUCTS IN THIS LINE",
+    "ingredientsTitle": "ACTIVE INGREDIENTS",
+    "protocolFallback": "Detailed protocol coming with the line launch.",
+    "indicationsTitle": "INDICATIONS",
+    "backToHome": "Back to homepage",
+    "contactCta": "Talk to a specialist",
+    "waitlistTitle": "Be first to know",
+    "waitlistText": "Leave your email and we'll write to you the moment this line opens for clinics.",
+    "waitlistCta": "Add me to the list",
+    "waitlistEmailPlaceholder": "Your work email",
+    "waitlistSuccessTitle": "You're on the list",
+    "waitlistSuccessText": "We'll only write when the line is ready — no other emails, no list rentals.",
+    "waitlistError": "Couldn't add you just now. Please try again."
+  },
+  "waitlist": {
+    "emailLabel": "Email address",
+    "sending": "Adding…"
   }
 }

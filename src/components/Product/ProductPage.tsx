@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Product, ProductAccent, getCatalogItems } from '@/products';
+import type { PostSummary } from '@/posts';
 import { LocaleType } from '@/types';
 import Button from '@/components/Shared/Button/Button';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -16,6 +17,7 @@ import TrainingHub from './TrainingHub';
 import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import IngredientChip from './IngredientChip';
+import KeyActives from './KeyActives';
 import type { Doctor } from '@/lib/doctors-store';
 import {
   productInquiryMessage,
@@ -28,6 +30,7 @@ interface Props {
   product: Product;
   locale: LocaleType;
   trustedBy?: Doctor[];
+  relatedPosts?: PostSummary[];
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -58,7 +61,38 @@ const Section: FC<{
   </section>
 );
 
-const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
+/** Same visual header as `Section`, but the body is collapsed behind a
+ *  native <details>. Used for the secondary cluster (logistics / compare
+ *  / economics / training) so the PDP's first paint is roughly half the
+ *  scroll height. Works without JS; the section-nav opens it on a jump.
+ *  `id` lives on the <details> so ProductSectionNav can `.open` it. */
+const CollapsibleSection: FC<{
+  num: string;
+  label: string;
+  title: string;
+  id: string;
+  children: ReactNode;
+}> = ({ num, label, title, id, children }) => (
+  <details className={styles.collapsible} id={id}>
+    <summary className={styles.collapsibleSummary}>
+      <span className={styles.collapsibleHead}>
+        <SectionLabel num={num} label={label} />
+        <h2 className={styles.h2}>{title}</h2>
+      </span>
+      <span className={styles.collapsibleChevron} aria-hidden="true">
+        ▾
+      </span>
+    </summary>
+    <div className={styles.collapsibleBody}>{children}</div>
+  </details>
+);
+
+const ProductPage: FC<Props> = ({
+  product,
+  locale,
+  trustedBy = [],
+  relatedPosts = [],
+}) => {
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
@@ -296,6 +330,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
         <section className={styles.block} id="formula">
           <SectionLabel num={next()} label="FORMULA" />
           <h2 className={styles.h2}>{t('activeIngredients')}</h2>
+          <KeyActives ingredients={c.ingredients} />
           <div className={styles.ingWrap}>
             <ul className={styles.ingList}>
               {c.ingredients.map((ing, i) => (
@@ -463,7 +498,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
         )}
 
         {c.logistics && c.logistics.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="logistics"
             num={next()}
             label="LOGISTICS"
@@ -481,11 +516,11 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 </article>
               ))}
             </div>
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.comparison && c.comparison.rows.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="compare"
             num={next()}
             label="COMPARE"
@@ -528,11 +563,11 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 </tbody>
               </table>
             </div>
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.economics && c.economics.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="economics"
             num={next()}
             label="ECONOMICS"
@@ -553,11 +588,11 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
             {c.economics.disclaimer && (
               <p className={styles.disclaimer}>{c.economics.disclaimer}</p>
             )}
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.training && c.training.items.length > 0 && (
-          <Section
+          <CollapsibleSection
             id="training"
             num={next()}
             label="TRAINING"
@@ -575,7 +610,7 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                 enroll: t('trainingEnroll'),
               }}
             />
-          </Section>
+          </CollapsibleSection>
         )}
 
         {c.faq && c.faq.items.length > 0 && (
@@ -657,6 +692,47 @@ const ProductPage: FC<Props> = ({ product, locale, trustedBy = [] }) => {
                       <span className={styles.arrow}>→</span>
                     </span>
                   </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(relatedPosts.length > 0) && (
+          <section className={styles.block} aria-labelledby="continue-title">
+            <SectionLabel num={next()} label="EXPLORE" />
+            <h2 id="continue-title" className={styles.h2}>
+              {t('continueTitle')}
+            </h2>
+            <div className={styles.continueGrid}>
+              <Link href="/science" className={styles.continueCard}>
+                <span className={styles.continueEyebrow}>
+                  {t('continueScienceEyebrow')}
+                </span>
+                <span className={styles.continueHead}>
+                  {t('continueScienceTitle')}
+                </span>
+                <span className={styles.continueText}>
+                  {t('continueScienceText')}
+                </span>
+                <span className={styles.continueLink}>
+                  {t('continueScienceCta')}{' '}
+                  <span className={styles.arrow}>→</span>
+                </span>
+              </Link>
+              {relatedPosts.slice(0, 2).map((p) => (
+                <Link
+                  key={p.slug}
+                  href={p.href}
+                  className={styles.continueCard}
+                >
+                  <span className={styles.continueEyebrow}>{p.eyebrow}</span>
+                  <span className={styles.continueHead}>{p.title}</span>
+                  <span className={styles.continueText}>{p.excerpt}</span>
+                  <span className={styles.continueLink}>
+                    {t('continueReadCta')}{' '}
+                    <span className={styles.arrow}>→</span>
+                  </span>
                 </Link>
               ))}
             </div>

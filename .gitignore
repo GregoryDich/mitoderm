@@ -10,3 +10,9 @@ tsconfig.tsbuildinfo
 # Local-only sinks (api/leads writes here in dev). Root-only so it doesn't
 # accidentally swallow src/data/, which is committed source-of-truth data.
 /data/
+
+# Test artefacts
+/coverage/
+/playwright-report/
+/test-results/
+/.playwright/

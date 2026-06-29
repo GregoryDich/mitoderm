@@ -68,6 +68,19 @@ const AboutPage: FC = () => {
             <div className={styles.secLabel}>
               <span className={styles.secNum}>03</span>
               <span className={styles.secLine} />
+              <span className={styles.secName}>{t('founderLabel')}</span>
+            </div>
+            <h2 className={styles.h2}>{t('founderName')}</h2>
+            <p className={styles.founderRole}>{t('founderRole')}</p>
+            <p className={styles.lead}>{t('founderText')}</p>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section className={styles.block}>
+            <div className={styles.secLabel}>
+              <span className={styles.secNum}>04</span>
+              <span className={styles.secLine} />
               <span className={styles.secName}>FAQ</span>
             </div>
             <h2 className={styles.h2}>{tFaq('title')}</h2>

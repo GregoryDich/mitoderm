@@ -5,7 +5,7 @@ import { logAudit, requestMeta } from '@/lib/audit-log';
 import type { Product } from '@/products';
 
 const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$/;
-const CATEGORIES = ['exosome', 'serum', 'mask', 'gel', 'peel', 'hair', 'bio-spicules'] as const;
+const CATEGORIES = ['exosome', 'serum', 'mask', 'gel', 'peel', 'hair', 'bio-spicules', 'device'] as const;
 
 function bad(reason: string, status = 400) {
   return NextResponse.json({ error: reason }, { status });

@@ -24,6 +24,34 @@
   transform: scaleX(-1);
 }
 
+.heroArt {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: clamp(560px, 86vh, 900px);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroArtImg {
+  object-fit: cover;
+  /* Keep the ambient field muted so overlaid copy stays readable. */
+  opacity: 0.55;
+}
+
+.heroArtScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 10, 0.55) 0%,
+    rgba(8, 8, 10, 0.35) 40%,
+    rgba(8, 8, 10, 0.85) 80%,
+    #08080a 100%
+  );
+}
+
 .glows {
   position: absolute;
   inset: 0;
@@ -56,6 +84,7 @@
 
 .hero {
   position: relative;
+  z-index: 1;
   width: min(var(--cw), 100% - 2 * var(--gutter));
   margin-inline: auto;
   padding: clamp(80px, 12vw, 160px) 0 clamp(56px, 8vw, 100px);

@@ -1,11 +1,11 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { getCatalogItems, ProductAccent } from '@/products';
-import { LocaleType } from '@/types';
+import type { ProductAccent } from '@/products';
 import ProductMedia from '@/components/Product/ProductMedia';
+import { useCatalogIndex } from '@/components/Catalog/CatalogIndexProvider';
 import { useRecentlyViewed } from './RecentlyViewedProvider';
 import styles from './RecentlyViewedStrip.module.scss';
 
@@ -24,8 +24,8 @@ const accentVar: Record<ProductAccent, string> = {
 
 const RecentlyViewedStrip: FC<Props> = ({ excludeSlug, trackSlug }) => {
   const t = useTranslations('recentlyViewed');
-  const locale = useLocale() as LocaleType;
   const { items, track } = useRecentlyViewed();
+  const catalogIndex = useCatalogIndex();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -38,7 +38,7 @@ const RecentlyViewedStrip: FC<Props> = ({ excludeSlug, trackSlug }) => {
   }, [trackSlug, track]);
 
   if (!mounted) return null;
-  const catalog = getCatalogItems(locale);
+  const catalog = catalogIndex;
   const list = items
     .filter((slug) => slug !== excludeSlug)
     .map((slug) => catalog.find((c) => c.slug === slug))

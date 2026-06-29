@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server';
-import { appendLead } from '@/lib/leads-store';
+import { appendLead, type LeadUtm } from '@/lib/leads-store';
 import { classifyLead } from '@/lib/lead-classifier';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
+import { spamGuard } from '@/lib/spam-guard';
+import { sendAutoReply } from '@/lib/leads-mailer';
+import { notifyLead, forwardLeadWebhook } from '@/lib/leads-pipeline';
 
 interface LeadBody {
   name?: string;
@@ -9,7 +12,27 @@ interface LeadBody {
   phone?: string;
   clinic?: string;
   message?: string;
+  /** Honeypot field — must be empty for the body to be accepted. */
+  website?: string;
+  /** Origin tag, e.g. "contact-form", "bio-spicules-waitlist". The route
+   *  whitelists the values it accepts; unknown sources fall back to the
+   *  full contact-form validation (name + email + message required). */
+  source?: string;
+  /** Optional UTM attribution captured client-side at first visit. */
+  utm?: Partial<LeadUtm>;
+  /** Locale of the page where the form was submitted (`en` / `ru` / `he`).
+   *  Used to pick the auto-reply template language. */
+  locale?: 'en' | 'ru' | 'he';
 }
+
+/** Sources whose default validation is relaxed (e.g. waitlists where
+ *  email alone is enough). Add a new entry here to enable a fresh
+ *  waitlist origin without a full route refactor. */
+const RELAXED_SOURCES: Record<string, { defaultMessage: string }> = {
+  'bio-spicules-waitlist': {
+    defaultMessage: 'Notify me when the Bio-Spicules line launches.',
+  },
+};
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -35,14 +58,29 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
+  // Origin check + honeypot. We respond with a generic 200 so bots
+  // can't probe which layer caught them, but we still drop the
+  // request and never persist or fan out. Real users never trip this.
+  const guard = spamGuard(req, body);
+  if (!guard.ok) {
+    // eslint-disable-next-line no-console
+    console.warn('[lead] dropped by spam guard', guard.reason);
+    return NextResponse.json({ ok: true });
+  }
+
+  const source = clip(body.source, 80);
+  const relaxed = source ? RELAXED_SOURCES[source] : undefined;
+
   const name = clip(body.name, 120);
   const email = clip(body.email, 200);
   const phone = clip(body.phone, 40);
   const clinic = clip(body.clinic, 160);
-  const message = clip(body.message, 4000);
+  // For waitlist sources we accept an empty message and substitute the
+  // default — the visitor opted in by clicking, not by writing copy.
+  const message = clip(body.message, 4000) || (relaxed?.defaultMessage ?? '');
 
   const errors: Record<string, string> = {};
-  if (!name) errors.name = 'required';
+  if (!relaxed && !name) errors.name = 'required';
   if (!email) errors.email = 'required';
   else if (!emailRe.test(email)) errors.email = 'invalid';
   if (!message) errors.message = 'required';
@@ -53,12 +91,40 @@ export async function POST(req: Request) {
 
   const classification = classifyLead({ message, clinic, email });
 
+  // Capture UTM + landing attribution from the client body, falling
+  // back to the Referer header for landing when the client didn't
+  // stash one. All fields are clipped to keep stray bytes out of the
+  // store.
+  const clientUtm = (body.utm ?? {}) as Partial<LeadUtm>;
+  const utm: LeadUtm = {
+    source: clip(clientUtm.source, 200) || undefined,
+    medium: clip(clientUtm.medium, 200) || undefined,
+    campaign: clip(clientUtm.campaign, 200) || undefined,
+    term: clip(clientUtm.term, 200) || undefined,
+    content: clip(clientUtm.content, 200) || undefined,
+    landing: clip(clientUtm.landing, 200) || undefined,
+    referrer: clip(req.headers.get('referer'), 200) || undefined,
+  };
+  const hasUtm = Object.values(utm).some(Boolean);
+
+  const locale: 'en' | 'ru' | 'he' =
+    body.locale === 'ru' || body.locale === 'he' ? body.locale : 'en';
+
   // Best-effort local persistence for dev; safe to fail in serverless.
   // Production: replace with a real sink — DB, CRM, or an email transport
   // configured via env (SMTP/Resend/SendGrid).
   let lead;
   try {
-    lead = await appendLead({ name, email, phone, clinic, message, classification });
+    lead = await appendLead({
+      name,
+      email,
+      phone,
+      clinic,
+      message,
+      classification,
+      source: source || undefined,
+      utm: hasUtm ? utm : undefined,
+    });
   } catch {
     // ignore — fall back to a transient record so email + log still fire
     lead = {
@@ -75,85 +141,11 @@ export async function POST(req: Request) {
   // eslint-disable-next-line no-console
   console.log('[lead]', lead);
 
-  // Optional email delivery via Resend (https://resend.com).
-  // Set RESEND_API_KEY + LEADS_TO_EMAIL (and optionally LEADS_FROM_EMAIL)
-  // to enable. The lead response never fails because of email errors.
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEADS_TO_EMAIL;
-  if (apiKey && to) {
-    try {
-      const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
-      const subject = `New Mitoderm lead — ${name}`;
-      const text = [
-        `Name:    ${name}`,
-        `Email:   ${email}`,
-        phone && `Phone:   ${phone}`,
-        clinic && `Clinic:  ${clinic}`,
-        '',
-        message,
-      ]
-        .filter(Boolean)
-        .join('\n');
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          from,
-          to: [to],
-          reply_to: email,
-          subject,
-          text,
-        }),
-      });
-      if (!res.ok) {
-        // eslint-disable-next-line no-console
-        console.warn('[lead] resend send failed', res.status, await res.text());
-      }
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.warn('[lead] resend send error', err);
-    }
-  }
+  // Post-persistence side effects. Each is best-effort: a failure in
+  // one never affects the response or the other steps.
+  void sendAutoReply({ to: email, name, locale });
+  await notifyLead({ lead });
+  await forwardLeadWebhook({ lead });
 
-  // Optional CRM webhook fan-out. Set LEADS_WEBHOOK_URL to forward
-  // every successful lead (HubSpot, Pipedrive, Make, n8n, Zapier — any
-  // endpoint that accepts JSON). Failures are logged and swallowed so
-  // a downstream outage never blocks lead capture. Optionally signs
-  // the body with HMAC-SHA256 when LEADS_WEBHOOK_SECRET is set.
-  const webhookUrl = process.env.LEADS_WEBHOOK_URL;
-  if (webhookUrl) {
-    try {
-      const payload = JSON.stringify({
-        source: 'exoskin.co.il',
-        receivedAt: new Date().toISOString(),
-        lead,
-      });
-      const headers: Record<string, string> = {
-        'content-type': 'application/json',
-      };
-      const secret = process.env.LEADS_WEBHOOK_SECRET;
-      if (secret) {
-        const { createHmac } = await import('node:crypto');
-        const sig = createHmac('sha256', secret).update(payload).digest('hex');
-        headers['x-mitoderm-signature'] = `sha256=${sig}`;
-      }
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers,
-        body: payload,
-      });
-      if (!res.ok) {
-        // eslint-disable-next-line no-console
-        console.warn('[lead] webhook failed', res.status);
-      }
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.warn('[lead] webhook error', err);
-    }
-  }
-
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, source: source || undefined });
 }

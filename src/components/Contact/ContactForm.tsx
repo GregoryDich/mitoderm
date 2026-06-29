@@ -1,8 +1,10 @@
 'use client';
 
 import { FC, FormEvent, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
+import { track } from '@/lib/track';
+import { readStoredUtm } from '@/components/Analytics/UtmCapture';
 import styles from './ContactForm.module.scss';
 
 interface FormState {
@@ -11,6 +13,9 @@ interface FormState {
   phone: string;
   clinic: string;
   message: string;
+  /** Honeypot — hidden field that real users never fill. The /api/leads
+   *  handler silently drops any submission with a non-empty value. */
+  website: string;
 }
 
 const initial: FormState = {
@@ -19,12 +24,14 @@ const initial: FormState = {
   phone: '',
   clinic: '',
   message: '',
+  website: '',
 };
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactForm: FC = () => {
   const t = useTranslations('contactForm');
+  const locale = useLocale() as 'en' | 'ru' | 'he';
   const [v, setV] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
     {}
@@ -52,11 +59,13 @@ const ContactForm: FC = () => {
     if (!validate()) return;
     setSending(true);
     setServerError(null);
+    track('lead_submit', { has_phone: !!v.phone, has_clinic: !!v.clinic });
     try {
+      const utm = readStoredUtm();
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(v),
+        body: JSON.stringify({ ...v, locale, utm }),
       });
       if (!res.ok) {
         const data = (await res.json().catch(() => ({}))) as {
@@ -77,6 +86,7 @@ const ContactForm: FC = () => {
         return;
       }
       setSubmitted(true);
+      track('lead_success');
     } catch {
       setServerError(t('errorServer'));
     } finally {
@@ -108,6 +118,22 @@ const ContactForm: FC = () => {
           </div>
         ) : (
           <form className={styles.form} onSubmit={onSubmit} noValidate>
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={v.website}
+              onChange={set('website')}
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0,
+              }}
+            />
             <div className={styles.row2}>
               <label className={styles.field}>
                 <span className={styles.label}>{t('name')}</span>
