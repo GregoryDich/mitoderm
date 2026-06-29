@@ -145,6 +145,14 @@
   max-width: 780px;
 }
 
+.founderRole {
+  margin: 6px 0 18px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--colorGold, #dfba74);
+}
+
 .statGrid {
   margin-top: 14px;
   display: grid;

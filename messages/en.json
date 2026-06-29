@@ -276,6 +276,10 @@
         "label": "Vesicle scale"
       }
     ],
+    "founderLabel": "FOUNDER",
+    "founderName": "Ilona Shpektor",
+    "founderRole": "Founder, Mitoderm",
+    "founderText": "Ilona founded Mitoderm to bring clinical-grade exosome technology to aesthetic practitioners across Israel — pairing hands-on professional training with a protocol-led product line built on science.",
     "ctaTitle": "Talk to a Mitoderm specialist",
     "ctaText": "Get pricing, protocols and onboarding for your clinic.",
     "ctaButton": "Contact us"
@@ -397,7 +401,7 @@
       {
         "heading": "Who we are — the database holder",
         "paragraphs": [
-          "The Site is operated by [COMPANY_NAME] (company no. HP-[COMPANY_NUMBER]), of [COMPANY_ADDRESS], Israel (\"Mitoderm\", \"we\", \"us\").",
+          "The Site is operated by Mitoderm Academy (company no. HP-______), of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\", \"we\", \"us\").",
           "For the purposes of the Protection of Privacy Law, Mitoderm is the Owner and the Manager of the customer-enquiries database that this Site feeds. Our hosting and email providers act as Holders / processors on our behalf. Questions about the database may be directed to our privacy contact below."
         ]
       },
@@ -528,12 +532,12 @@
     "eyebrow": "TERMS OF USE",
     "title": "Terms of use",
     "updated": "Last updated June 29, 2026.",
-    "intro": "These terms govern your use of the Site (mitoderm.com), operated by [COMPANY_NAME] (company no. HP-[COMPANY_NUMBER]) of [COMPANY_ADDRESS], Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
+    "intro": "These terms govern your use of the Site (mitoderm.com), operated by Mitoderm Academy (company no. HP-______) of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
     "sections": [
       {
         "heading": "Who we are",
         "paragraphs": [
-          "The Site is owned and operated by [COMPANY_NAME], company no. HP-[COMPANY_NUMBER], [COMPANY_ADDRESS], Israel. You can reach us at the contact address at the foot of these terms."
+          "The Site is owned and operated by Mitoderm Academy, company no. HP-______, Rafael Eitan 38, Ramat Gan 5590500, Israel. You can reach us at the contact address at the foot of these terms."
         ]
       },
       {
