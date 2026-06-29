@@ -38,7 +38,6 @@ export async function generateMetadata({
       locale: og.locale,
       alternateLocale: og.alternateLocale,
     },
-    robots: { index: false, follow: true },
   };
 }
 
@@ -63,7 +62,6 @@ export default async function TermsRoute({
       eyebrow={t('eyebrow')}
       title={t('title')}
       updated={t('updated')}
-      draftNotice={t('draftNotice')}
       intro={t('intro')}
       sections={sections}
       contactHeading={t('contactHeading')}

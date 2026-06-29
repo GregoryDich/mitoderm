@@ -4,7 +4,7 @@ import { posts } from '@/posts';
 import { concerns } from '@/concerns';
 import { LOCALES, DEFAULT_LOCALE, absUrl } from '@/lib/seo';
 
-const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply', '/blog', '/science', '/glossary', '/privacy', '/terms'] as const;
+const STATIC_PATHS = ['', '/catalog', '/about', '/form', '/accessibility', '/clinics', '/protocols', '/regimen', '/seminars', '/apply', '/blog', '/science', '/glossary', '/privacy', '/terms', '/cookies'] as const;
 
 function alternates(path: string): Record<string, string> {
   const map: Record<string, string> = {};

@@ -391,80 +391,161 @@
   "privacy": {
     "eyebrow": "PRIVACY NOTICE",
     "title": "Privacy notice",
-    "updated": "Last updated June 22, 2026.",
-    "draftNotice": "DRAFT — this notice is awaiting final review by Mitoderm's legal counsel. It describes the actual data flows of the site today and will be replaced with a counsel-approved version before launch.",
-    "intro": "This notice explains what personal data Mitoderm (operator of exoskin.co.il) collects when you visit the site or contact us, why we collect it, and the choices you have about it.",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "This notice explains what personal data Mitoderm collects when you visit the Site (mitoderm.com) or contact us, why we collect it, how we protect and share it, and the rights you have under Israeli law. It is written to align with Israel's Protection of Privacy Law, 5741-1981 as amended by Amendment 13 (in force August 2025), and — for visitors in the EU/EEA — with the GDPR.",
     "sections": [
       {
-        "heading": "Who we are",
+        "heading": "Who we are — the database holder",
         "paragraphs": [
-          "Mitoderm is an Israeli company supplying professional exosome-based skincare, peelings and devices to clinics and aesthetic practitioners. We operate the website at exoskin.co.il (the \"Site\"). Contact details are at the bottom of this notice."
+          "The Site is operated by [COMPANY_NAME] (company no. HP-[COMPANY_NUMBER]), of [COMPANY_ADDRESS], Israel (\"Mitoderm\", \"we\", \"us\").",
+          "For the purposes of the Protection of Privacy Law, Mitoderm is the Owner and the Manager of the customer-enquiries database that this Site feeds. Our hosting and email providers act as Holders / processors on our behalf. Questions about the database may be directed to our privacy contact below."
         ]
       },
       {
         "heading": "What we collect",
         "paragraphs": [
-          "We collect the minimum necessary to answer your enquiries and keep the Site functional."
+          "We collect the minimum necessary to answer your enquiries and keep the Site functional. We do not collect special-category data and ask that you not send clinical or patient information through the Site."
         ],
         "bullets": [
-          "Contact form data: name, email, phone (optional), clinic name (optional) and the message you write.",
-          "Clinic application data: the same plus city, professional licence number and an optional referral code.",
-          "Waitlist signups for upcoming product lines: email address.",
-          "Technical logs created by our hosting provider (Vercel) — IP address, user agent, request path — retained briefly for abuse prevention.",
-          "Cookies and analytics (only if you opt in): we set a small cookie remembering your consent choice, and may load Google Analytics 4 to measure aggregated traffic. We never sell this data."
+          "Contact-form data: name, email, phone (optional), clinic name (optional) and the message you write.",
+          "Clinic-application data: the above plus city, professional licence number and an optional referral code.",
+          "Waitlist sign-ups for upcoming product lines: email address.",
+          "Marketing-attribution data, only when present: UTM parameters and the page you arrived on.",
+          "Technical logs created by our hosting provider — IP address, user agent, request path — retained briefly for security and abuse prevention.",
+          "Cookies and analytics, only if you opt in at the banner: a consent cookie plus, on consent, Google Analytics 4. We never sell your data."
         ]
       },
       {
-        "heading": "Why we collect it",
+        "heading": "Why we collect it (purposes)",
         "paragraphs": [
-          "Contact and application data are used to reply to you and, where appropriate, to onboard your clinic. Aggregated analytics help us understand which content is useful and where the site is confusing."
+          "Each category is used only for the purpose it was given for:"
+        ],
+        "bullets": [
+          "To answer your enquiry and provide the information you requested.",
+          "To onboard your clinic and manage our commercial relationship.",
+          "To send product, training and protocol information you have asked for.",
+          "To send marketing communications — only where you have given separate, specific consent (see below).",
+          "To secure the Site, prevent abuse, and meet our legal and accounting obligations.",
+          "To understand, in aggregate, which content is useful — analytics only, and only after consent."
         ]
       },
       {
         "heading": "Legal basis",
         "paragraphs": [
-          "We process your contact data on the basis of your consent (you sent the form). Analytics is loaded only after you click Accept on the cookie banner. You can withdraw consent at any time."
+          "We process your contact data on the basis of your consent — you chose to send the form. Security logging rests on our legitimate interest in protecting the Site. Analytics and any marketing run only on the separate consent you give. You can withdraw any consent at any time, without affecting processing already carried out."
         ]
       },
       {
-        "heading": "Sharing",
+        "heading": "Marketing communications",
         "paragraphs": [
-          "We do not sell personal data. Limited disclosure happens with our hosting and email delivery providers (Vercel, Resend) acting as processors under standard contractual terms, and — if you ask us to — with our partner clinics for the explicit purpose of routing your enquiry."
+          "We send marketing messages (email, SMS or WhatsApp) only where you have actively opted in, in line with section 30A of the Communications Law (Telecommunications and Broadcasting), 5742-1982. Every marketing message carries a one-click way to unsubscribe, and you can also opt out at any time by writing to the contact below. Operational replies to your own enquiry are not marketing and are sent regardless."
         ]
       },
       {
-        "heading": "Retention",
+        "heading": "Who we share it with",
         "paragraphs": [
-          "Lead records are kept for as long as the commercial relationship is open, and for up to 24 months after the last contact for follow-up. Hosting logs roll off within 30 days."
+          "We do not sell personal data. We disclose the minimum necessary to:"
+        ],
+        "bullets": [
+          "Our service providers acting as processors under contract — website hosting (Vercel Inc.) and transactional email (Resend, Inc.).",
+          "Our partner clinics — only where you ask us to route your enquiry to a specific clinic.",
+          "Authorities or advisers where we are legally required to, or to establish or defend legal claims."
+        ]
+      },
+      {
+        "heading": "International transfers",
+        "paragraphs": [
+          "Some of our processors (Vercel, Resend) store data on servers located outside Israel, including in the United States. We transfer data abroad only in accordance with the Protection of Privacy (Transfer of Data to Databases Abroad) Regulations, 5761-2001 and, for EU/EEA data, on the basis of appropriate safeguards. Recipients are bound by contract to protect the data to a standard comparable to Israeli law and not to transfer it onward without a lawful basis."
+        ]
+      },
+      {
+        "heading": "How long we keep it (retention)",
+        "paragraphs": [
+          "We keep data only as long as the purpose requires:"
+        ],
+        "bullets": [
+          "Enquiry / lead records: up to 24 months after the last contact, then deleted or anonymised.",
+          "Clinic-partner accounts: for the life of the relationship plus the period required by accounting and tax law (currently 7 years).",
+          "Waitlist emails: until the line launches plus 12 months, then deleted.",
+          "Security logs: rolled off within 30 days."
+        ]
+      },
+      {
+        "heading": "How we protect it",
+        "paragraphs": [
+          "We apply technical and organisational measures appropriate to the sensitivity of the data: encryption in transit (HTTPS/HSTS), strict access controls, rate limiting, signed administrative sessions and audit logging. No system is perfectly secure, but we work to industry-standard safeguards."
+        ]
+      },
+      {
+        "heading": "Data-breach notification",
+        "paragraphs": [
+          "In line with Amendment 13 to the Protection of Privacy Law, if a serious security incident affecting your personal data occurs, we will notify the Israeli Privacy Protection Authority and, where required, the affected individuals, within the statutory timeframes."
         ]
       },
       {
         "heading": "Your rights",
         "paragraphs": [
-          "Under Israeli Privacy Protection Law and applicable EU GDPR provisions you may request access to, correction of, or deletion of your data, or object to a specific processing. To exercise any right write to the contact address below — we will respond within 30 days."
+          "Under Israeli law (and the GDPR where it applies) you may:"
+        ],
+        "bullets": [
+          "Access the data we hold about you (s.13 of the Law).",
+          "Have inaccurate data corrected or completed (s.14).",
+          "Request deletion of your data, subject to our legal retention duties.",
+          "Object to direct-marketing use of your data at any time.",
+          "Withdraw consent, and — for EU/EEA visitors — request portability or restriction.",
+          "Lodge a complaint with the Privacy Protection Authority (see below)."
         ]
       },
       {
         "heading": "Cookies",
         "paragraphs": [
-          "We set one strictly necessary cookie to remember your consent choice. If you accept, Google Analytics 4 may add its own cookies. You can decline at the banner or clear the consent cookie at any time and you will be asked again."
+          "We use three cookie categories — strictly necessary, analytics and marketing. Only strictly-necessary cookies run without your consent. You control the rest at the banner, and can change your choice at any time. Full details are on our Cookies page."
+        ]
+      },
+      {
+        "heading": "Children",
+        "paragraphs": [
+          "The Site addresses healthcare professionals and is not directed at children. We do not knowingly collect personal data from anyone under the age of 16. If you believe a minor has provided us data, contact us and we will delete it."
+        ]
+      },
+      {
+        "heading": "Supervisory authority",
+        "paragraphs": [
+          "You may contact or complain to the Israeli Privacy Protection Authority (\"the Authority\") — https://www.gov.il/en/departments/the_privacy_protection_authority. EU/EEA visitors may also contact their local data-protection authority."
+        ]
+      },
+      {
+        "heading": "Changes & governing language",
+        "paragraphs": [
+          "We may update this notice; material changes are reflected in the \"Last updated\" date above. This notice is published in English, Russian and Hebrew. In the event of any discrepancy, the Hebrew version prevails."
         ]
       }
     ],
     "contactHeading": "Contact",
-    "contactText": "Privacy questions or requests: write to hello@exoskin.co.il and we will route the request internally. We will reply within 30 days."
+    "contactText": "Privacy questions, requests or to exercise a right: write to privacy@mitoderm.com. We will respond within 30 days."
   },
   "terms": {
     "eyebrow": "TERMS OF USE",
     "title": "Terms of use",
-    "updated": "Last updated June 22, 2026.",
-    "draftNotice": "DRAFT — this document is awaiting final review by Mitoderm's legal counsel and will be replaced before launch with a counsel-approved version.",
-    "intro": "These terms govern your use of exoskin.co.il (the \"Site\"), operated by Mitoderm. By using the Site you accept these terms.",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "These terms govern your use of the Site (mitoderm.com), operated by [COMPANY_NAME] (company no. HP-[COMPANY_NUMBER]) of [COMPANY_ADDRESS], Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
     "sections": [
+      {
+        "heading": "Who we are",
+        "paragraphs": [
+          "The Site is owned and operated by [COMPANY_NAME], company no. HP-[COMPANY_NUMBER], [COMPANY_ADDRESS], Israel. You can reach us at the contact address at the foot of these terms."
+        ]
+      },
       {
         "heading": "Eligibility",
         "paragraphs": [
           "The Site presents professional aesthetic-medicine products intended for use by licensed clinicians. Information about specific products, protocols and devices is addressed to professionals; it is not medical advice for the general public."
+        ]
+      },
+      {
+        "heading": "No online sales",
+        "paragraphs": [
+          "The Site is informational. It does not sell products or take payment online. Orders, pricing and supply are arranged separately and offline (for example via WhatsApp or direct contact), under terms agreed at that time. Accordingly, the distance-selling provisions of the Consumer Protection Law do not apply to use of the Site itself."
         ]
       },
       {
@@ -479,15 +560,21 @@
         ]
       },
       {
-        "heading": "Intellectual property",
+        "heading": "Submissions",
         "paragraphs": [
-          "All text, imagery, design, source code and trademarks on the Site are owned by Mitoderm or its licensors. You may share links and short quotations for editorial purposes with attribution; broader reuse requires written permission."
+          "When you send us a message or application through the Site, you confirm the information is accurate and that you are entitled to share it. You grant Mitoderm a limited licence to store and use that submission for the purpose of responding to you and managing the relationship, in accordance with our Privacy notice."
         ]
       },
       {
-        "heading": "No medical advice",
+        "heading": "Intellectual property",
         "paragraphs": [
-          "Content on the Site is informational and reflects clinical experience and product-level documentation. It is not a substitute for an individualised consultation with a qualified practitioner. Patients should consult a licensed clinician before any procedure."
+          "All text, imagery, design, source code and trademarks on the Site are owned by Mitoderm or its licensors. You may share links and short quotations for editorial purposes with attribution; broader reuse requires our written permission."
+        ]
+      },
+      {
+        "heading": "No medical advice; no guaranteed outcome",
+        "paragraphs": [
+          "Content on the Site is informational and reflects clinical experience and product-level documentation. It is not a substitute for an individualised consultation with a qualified practitioner, and nothing on the Site is medical advice to the public. Treatment outcomes are individual and are not guaranteed. Patients should consult a licensed clinician before any procedure."
         ]
       },
       {
@@ -499,24 +586,65 @@
       {
         "heading": "Limitation of liability",
         "paragraphs": [
-          "To the maximum extent allowed by Israeli law, the Site is provided on an \"as is\" basis. Mitoderm is not liable for indirect or consequential damages arising from use of the Site or reliance on its content."
+          "The Site is provided on an \"as is\" and \"as available\" basis. To the maximum extent permitted by law, Mitoderm is not liable for indirect, incidental or consequential damages arising from use of the Site or reliance on its content. Where liability cannot be excluded, our total aggregate liability is limited to ILS 5,000. Nothing in these terms limits liability for gross negligence, wilful misconduct, or any liability that cannot be limited under mandatory law."
+        ]
+      },
+      {
+        "heading": "Force majeure",
+        "paragraphs": [
+          "We are not responsible for any failure or delay caused by events beyond our reasonable control, including outages of hosting or communications providers, security incidents, strikes, or acts of government or nature."
+        ]
+      },
+      {
+        "heading": "Severability",
+        "paragraphs": [
+          "If any provision of these terms is held invalid or unenforceable, the remaining provisions continue in full force, and the invalid provision is replaced by a valid one that most closely reflects its intent."
         ]
       },
       {
         "heading": "Changes",
         "paragraphs": [
-          "We may update these terms. Material changes will be reflected in the \"Last updated\" date at the top. Continued use after a change implies acceptance of the revised terms."
+          "We may update these terms. Material changes will be reflected in the \"Last updated\" date above and, where significant, flagged on the Site for a reasonable period. Continued use after a change takes effect implies acceptance of the revised terms."
         ]
       },
       {
-        "heading": "Governing law",
+        "heading": "Governing law & language",
         "paragraphs": [
-          "These terms are governed by the laws of the State of Israel. Disputes that cannot be resolved informally are subject to the exclusive jurisdiction of the competent courts in Tel Aviv-Yafo."
+          "These terms are governed by the laws of the State of Israel, and disputes are subject to the exclusive jurisdiction of the competent courts of the Tel Aviv-Yafo district. These terms are published in English, Russian and Hebrew; in the event of any discrepancy, the Hebrew version prevails."
         ]
       }
     ],
     "contactHeading": "Contact",
-    "contactText": "For any question about these terms write to hello@exoskin.co.il."
+    "contactText": "Questions about these terms: write to legal@mitoderm.com."
+  },
+  "cookies": {
+    "eyebrow": "COOKIES",
+    "title": "Cookie policy",
+    "updated": "Last updated June 29, 2026.",
+    "intro": "This page explains the cookies and similar local-storage technologies the Site uses, what each is for, and how to control them. Only strictly-necessary technologies run before you choose at the cookie banner; analytics and marketing run only with your consent.",
+    "sections": [
+      {
+        "heading": "Your choice",
+        "paragraphs": [
+          "When you first visit, a banner lets you accept or decline non-essential cookies. We remember that choice and do not load analytics or marketing technologies unless you accept. You can change your mind at any time by clearing the consent value in your browser — the banner will appear again."
+        ]
+      },
+      {
+        "heading": "Categories",
+        "paragraphs": [
+          "Strictly necessary — required for the Site to function and to remember your consent; always on. Analytics — aggregate, non-identifying usage measurement; only on consent. Marketing — used to measure and target advertising; only on consent, and only if such tools are configured."
+        ]
+      }
+    ],
+    "tableTitle": "What we use",
+    "tableColumns": ["Name", "Purpose", "Category", "Lifetime", "Provider"],
+    "tableRows": [
+      ["mitoderm_consent_v1", "Remembers your cookie choice", "Strictly necessary", "Persistent (local storage)", "Mitoderm"],
+      ["mitoderm_utm_v1", "Remembers how you reached us (campaign attribution)", "Strictly necessary", "Session (local storage)", "Mitoderm"],
+      ["_ga, _ga_*", "Aggregate analytics — which pages are used", "Analytics (consent)", "Up to 24 months", "Google Analytics 4"]
+    ],
+    "contactHeading": "Contact",
+    "contactText": "Questions about cookies: write to privacy@mitoderm.com."
   },
   "glossary": {
     "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
@@ -671,6 +799,7 @@
     "linkRegimen": "Regimen finder",
     "linkPrivacy": "Privacy notice",
     "linkTerms": "Terms of use",
+    "linkCookies": "Cookie policy",
     "linkLines": "Lines",
     "linkCatalog": "All products",
     "linkClinics": "Partner clinics",

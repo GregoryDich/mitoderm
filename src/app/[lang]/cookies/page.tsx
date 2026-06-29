@@ -23,16 +23,16 @@ export async function generateMetadata({
 }: {
   params: { lang: LocaleType };
 }): Promise<Metadata> {
-  const t = await getTranslations({ locale: lang, namespace: 'privacy' });
+  const t = await getTranslations({ locale: lang, namespace: 'cookies' });
   const og = openGraphLocaleFor(lang);
   return {
     title: `${t('title')} | ${SITE_NAME}`,
     description: t('intro'),
-    alternates: alternatesFor(lang, '/privacy'),
+    alternates: alternatesFor(lang, '/cookies'),
     openGraph: {
       title: `${t('title')} | ${SITE_NAME}`,
       description: t('intro'),
-      url: absUrl(lang, '/privacy'),
+      url: absUrl(lang, '/cookies'),
       siteName: SITE_NAME,
       type: 'article',
       locale: og.locale,
@@ -41,22 +41,25 @@ export async function generateMetadata({
   };
 }
 
-export default async function PrivacyRoute({
+export default async function CookiesRoute({
   params: { lang },
 }: {
   params: { lang: LocaleType };
 }) {
   unstable_setRequestLocale(lang);
-  const t = await getTranslations({ locale: lang, namespace: 'privacy' });
+  const t = await getTranslations({ locale: lang, namespace: 'cookies' });
   const messages = (await getMessages({ locale: lang })) as Record<
     string,
     unknown
   >;
-  const sectionsRaw = (messages.privacy as { sections?: LegalSection[] })
-    .sections;
-  const sections: LegalSection[] = Array.isArray(sectionsRaw)
-    ? sectionsRaw
-    : [];
+  const ns = messages.cookies as {
+    sections?: LegalSection[];
+    tableColumns?: string[];
+    tableRows?: string[][];
+  };
+  const sections: LegalSection[] = Array.isArray(ns.sections) ? ns.sections : [];
+  const tableColumns = Array.isArray(ns.tableColumns) ? ns.tableColumns : [];
+  const tableRows = Array.isArray(ns.tableRows) ? ns.tableRows : [];
 
   return (
     <LegalPage
@@ -65,6 +68,9 @@ export default async function PrivacyRoute({
       updated={t('updated')}
       intro={t('intro')}
       sections={sections}
+      tableTitle={t('tableTitle')}
+      tableColumns={tableColumns}
+      tableRows={tableRows}
       contactHeading={t('contactHeading')}
       contactText={t('contactText')}
     />

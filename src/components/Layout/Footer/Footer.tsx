@@ -79,6 +79,7 @@ const Footer: FC = () => {
         <div className={styles.legal}>
           <Link href="/privacy">{t('linkPrivacy')}</Link>
           <Link href="/terms">{t('linkTerms')}</Link>
+          <Link href="/cookies">{t('linkCookies')}</Link>
           <Link href="/accessibility">{t('accessibility')}</Link>
         </div>
       </div>

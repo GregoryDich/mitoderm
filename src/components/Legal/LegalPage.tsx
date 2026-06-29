@@ -20,6 +20,11 @@ interface Props {
   draftNotice?: string;
   intro: string;
   sections: LegalSection[];
+  /** Optional data table rendered after the sections — used by the
+   *  cookies page to list each cookie / purpose / category / lifetime. */
+  tableTitle?: string;
+  tableColumns?: string[];
+  tableRows?: string[][];
   contactHeading: string;
   contactText: string;
 }
@@ -31,9 +36,14 @@ const LegalPage: FC<Props> = ({
   draftNotice,
   intro,
   sections,
+  tableTitle,
+  tableColumns,
+  tableRows,
   contactHeading,
   contactText,
 }) => {
+  const hasTable =
+    !!tableColumns && !!tableRows && tableColumns.length > 0 && tableRows.length > 0;
   return (
     <div className={`pageScroll ${styles.page}`}>
       <header className={styles.intro}>
@@ -73,6 +83,34 @@ const LegalPage: FC<Props> = ({
             )}
           </section>
         ))}
+
+        {hasTable && (
+          <section className={styles.section}>
+            {tableTitle && <h2 className={styles.h2}>{tableTitle}</h2>}
+            <div className={styles.tableWrap}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    {tableColumns!.map((col) => (
+                      <th key={col} scope="col">
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableRows!.map((row, i) => (
+                    <tr key={i}>
+                      {row.map((cell, j) => (
+                        <td key={j}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
 
         <section className={styles.section}>
           <h2 className={styles.h2}>{contactHeading}</h2>

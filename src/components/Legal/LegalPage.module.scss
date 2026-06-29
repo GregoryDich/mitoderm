@@ -100,3 +100,43 @@
   color: rgba(245, 242, 240, 0.75);
   margin-bottom: 6px;
 }
+
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 560px;
+
+  th,
+  td {
+    text-align: start;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: 500;
+    color: rgba(245, 242, 240, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  td {
+    color: rgba(245, 242, 240, 0.8);
+    line-height: 1.5;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
