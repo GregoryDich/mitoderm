@@ -401,7 +401,7 @@
       {
         "heading": "Who we are — the database holder",
         "paragraphs": [
-          "The Site is operated by Mitoderm Academy (company no. HP-______), of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\", \"we\", \"us\").",
+          "The Site is operated by Mitoderm Academy, of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\", \"we\", \"us\").",
           "For the purposes of the Protection of Privacy Law, Mitoderm is the Owner and the Manager of the customer-enquiries database that this Site feeds. Our hosting and email providers act as Holders / processors on our behalf. Questions about the database may be directed to our privacy contact below."
         ]
       },
@@ -526,18 +526,18 @@
       }
     ],
     "contactHeading": "Contact",
-    "contactText": "Privacy questions, requests or to exercise a right: write to privacy@mitoderm.com. We will respond within 30 days."
+    "contactText": "Privacy questions, requests or to exercise a right: write to info@mitoderm.com. We will respond within 30 days."
   },
   "terms": {
     "eyebrow": "TERMS OF USE",
     "title": "Terms of use",
     "updated": "Last updated June 29, 2026.",
-    "intro": "These terms govern your use of the Site (mitoderm.com), operated by Mitoderm Academy (company no. HP-______) of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
+    "intro": "These terms govern your use of the Site (mitoderm.com), operated by Mitoderm Academy of Rafael Eitan 38, Ramat Gan 5590500, Israel (\"Mitoderm\"). By using the Site you accept these terms. If you do not agree, please do not use the Site.",
     "sections": [
       {
         "heading": "Who we are",
         "paragraphs": [
-          "The Site is owned and operated by Mitoderm Academy, company no. HP-______, Rafael Eitan 38, Ramat Gan 5590500, Israel. You can reach us at the contact address at the foot of these terms."
+          "The Site is owned and operated by Mitoderm Academy, Rafael Eitan 38, Ramat Gan 5590500, Israel. You can reach us at the contact address at the foot of these terms."
         ]
       },
       {
@@ -619,7 +619,7 @@
       }
     ],
     "contactHeading": "Contact",
-    "contactText": "Questions about these terms: write to legal@mitoderm.com."
+    "contactText": "Questions about these terms: write to info@mitoderm.com."
   },
   "cookies": {
     "eyebrow": "COOKIES",
@@ -648,7 +648,7 @@
       ["_ga, _ga_*", "Aggregate analytics — which pages are used", "Analytics (consent)", "Up to 24 months", "Google Analytics 4"]
     ],
     "contactHeading": "Contact",
-    "contactText": "Questions about cookies: write to privacy@mitoderm.com."
+    "contactText": "Questions about cookies: write to info@mitoderm.com."
   },
   "glossary": {
     "exosomes": "Nano-sized vesicles (~30–150 nm) released by cells, carrying growth factors, peptides and signalling molecules. In aesthetics they instruct skin cells to repair, regenerate and produce more collagen.",
