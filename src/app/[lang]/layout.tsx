@@ -7,7 +7,6 @@ import '../globals.scss';
 import { Rubik, Fraunces } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import Footer from '@/components/Layout/Footer/Footer';
 import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
 import JsonLd from '@/components/Seo/JsonLd';
 import { orgJsonLd, siteJsonLd } from '@/lib/seo';
@@ -187,8 +186,12 @@ export default async function RootLayout({
             )}
             <Header />
             <Modal />
+            {/* Each page renders its own <Footer/> inside its
+                .pageScroll container. A layout-level footer here paints
+                at the top of the viewport because .pageScroll is
+                position:absolute (so #main collapses to 0 height) —
+                which caused the footer-over-hero overlap. */}
             <div id="main">{children}</div>
-            <Footer />
             <ScrollToTop />
             <A11yWidget />
             <InterestDrawer />
