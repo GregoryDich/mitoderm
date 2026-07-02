@@ -19,11 +19,7 @@ import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip
 import IngredientChip from './IngredientChip';
 import KeyActives from './KeyActives';
 import type { Doctor } from '@/lib/doctors-store';
-import {
-  productInquiryMessage,
-  sampleRequestMessage,
-  whatsappHref,
-} from '@/lib/whatsapp';
+import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
 
 interface Props {
@@ -96,7 +92,6 @@ const ProductPage: FC<Props> = ({
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
-  const sampleHref = whatsappHref(sampleRequestMessage(c.name, locale));
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
@@ -189,27 +184,6 @@ const ProductPage: FC<Props> = ({
               </a>
             ) : (
               <Button text={t('contactForPrice')} colored href="/form" />
-            )}
-            <Link href={`/products/${product.slug}/brief`} className={styles.ghost}>
-              {t('downloadBrief')}
-            </Link>
-            {sampleHref ? (
-              <a
-                href={sampleHref}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.ghost}
-                aria-label={t('requestSample')}
-              >
-                {t('requestSample')}
-              </a>
-            ) : (
-              <Link
-                href={`/form?intent=sample&product=${encodeURIComponent(product.slug)}`}
-                className={styles.ghost}
-              >
-                {t('requestSample')}
-              </Link>
             )}
             <InterestToggle
               slug={product.slug}
