@@ -40,6 +40,9 @@ interface Props {
     backToHome: string;
     contactCta: string;
     openLine: string;
+    /** "Is this your client?" recognition checklist. */
+    checklistTitle: string;
+    checklist: string[];
   };
 }
 
@@ -85,6 +88,24 @@ const ConcernPage: FC<Props> = ({
                 {p}
               </p>
             ))}
+          </section>
+        )}
+
+        {/* "Is this your client?" — recognition checklist that turns the
+            explainer into a concrete buying decision. */}
+        {strings.checklist.length > 0 && (
+          <section className={styles.checkBlock}>
+            <h2 className={styles.checkTitle}>{strings.checklistTitle}</h2>
+            <ul className={styles.checkList}>
+              {strings.checklist.map((c) => (
+                <li key={c} className={styles.checkItem}>
+                  <span className={styles.checkTick} aria-hidden="true">
+                    ✓
+                  </span>
+                  {c}
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 

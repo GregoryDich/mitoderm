@@ -76,25 +76,49 @@
       "eyebrow": "FACE · DENSITY",
       "title": "Loss of density & structural aging",
       "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery.",
-      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface."
+      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface.",
+      "checklist": [
+        "Cheeks and jawline read flat or slack rather than lined",
+        "Skin looks tired despite consistent homecare",
+        "Asks for firmness without injectables",
+        "Needs faster, calmer recovery after lasers, peels or microneedling"
+      ]
     },
     "hair": {
       "eyebrow": "SCALP · HAIR LOSS",
       "title": "Hair loss & scalp thinning",
       "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage.",
-      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective."
+      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective.",
+      "checklist": [
+        "A widening parting or thinning crown and temples",
+        "More hair in the brush or the drain than before",
+        "Shedding after stress, illness or postpartum",
+        "Wants to act early, before transplant-level loss"
+      ]
     },
     "longevity": {
       "eyebrow": "FACE · LONGEVITY",
       "title": "Dullness, fatigue, longevity",
       "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime.",
-      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin."
+      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin.",
+      "checklist": [
+        "Dull, uneven tone and lost glow",
+        "“I look tired” without a specific wrinkle complaint",
+        "Wants visible radiance before an event, without downtime",
+        "Interested in longevity and prevention, not correction alone"
+      ]
     },
     "devices": {
       "eyebrow": "CLINIC · DIAGNOSTIC + DELIVERY",
       "title": "Diagnose, deliver, document",
       "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery.",
-      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients."
+      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients.",
+      "checklist": [
+        "You want documented before/after evidence for every course",
+        "Results vary between staff members or visits",
+        "You need a baseline photo to sell a course honestly",
+        "Protocol consistency matters more than one hero product"
+      ]
     }
   },
   "keyActives": {
@@ -424,7 +448,8 @@
     "postsTitle": "FROM THE JOURNAL",
     "backToHome": "Back to homepage",
     "contactCta": "Talk to a specialist",
-    "openLine": "Open the line"
+    "openLine": "Open the line",
+    "checklistTitle": "Is this your client?"
   },
   "consent": {
     "title": "Cookies & analytics",
