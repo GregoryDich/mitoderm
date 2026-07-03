@@ -2,7 +2,7 @@
   {
     "slug": "exosomes",
     "accent": "gold",
-    "image": "/lines/exosomes.webp",
+    "image": "/products/v-tech-system/hero.webp",
     "products": [
       "v-tech-serum",
       "v-tech-gel-mask",
@@ -94,7 +94,7 @@
   {
     "slug": "exosignal-hair",
     "accent": "teal",
-    "image": "/lines/exosignal-hair.webp",
+    "image": "/products/exosignal-hair/hero.webp",
     "products": [
       "exosignal-hair",
       "exosignal-hair-spray"
@@ -185,7 +185,7 @@
   {
     "slug": "peeling",
     "accent": "amber",
-    "image": "/lines/peeling.webp",
+    "image": "/products/exo-nad/hero.png",
     "products": [
       "exo-nad"
     ],
@@ -275,7 +275,7 @@
   {
     "slug": "bio-spicules",
     "accent": "rose",
-    "image": "/lines/bio-spicules.webp",
+    "image": "",
     "products": [],
     "status": "coming-soon",
     "order": 4,
@@ -324,7 +324,7 @@
   {
     "slug": "devices",
     "accent": "steel",
-    "image": "/lines/devices.webp",
+    "image": "/products/mitoscan/hero.webp",
     "products": [
       "mitoscan",
       "mitopen"
