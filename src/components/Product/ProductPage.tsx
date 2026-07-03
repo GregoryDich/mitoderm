@@ -18,6 +18,8 @@ import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import IngredientChip from './IngredientChip';
 import KeyActives from './KeyActives';
+import Reveal from '@/components/Shared/Reveal/Reveal';
+import CountUp from '@/components/Shared/CountUp/CountUp';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -214,26 +216,26 @@ const ProductPage: FC<Props> = ({
 
       {c.keyFacts && c.keyFacts.length > 0 && (
         <aside className={styles.keyFacts} aria-label={t('keyFacts')}>
-          <h2 className={styles.kfTitle}>{t('keyFacts')}</h2>
-          <ul className={styles.kfList}>
+          <span className={styles.kfTitle}>{t('keyFacts')}</span>
+          <Reveal variant="rise" stagger={90} className={styles.kfList}>
             {c.keyFacts.map((f) => (
-              <li key={f} className={styles.kfItem}>
+              <span key={f} className={styles.kfItem}>
                 <span className={styles.kfBullet} aria-hidden="true" />
                 <span>{f}</span>
-              </li>
+              </span>
             ))}
-          </ul>
+          </Reveal>
         </aside>
       )}
 
-      <div className={styles.statStrip}>
+      <Reveal variant="rise" stagger={110} className={styles.statStrip}>
         {c.stats.map((s) => (
           <div key={s.label} className={styles.stat}>
-            <span className={styles.statValue}>{s.value}</span>
+            <CountUp value={s.value} className={styles.statValue} />
             <span className={styles.statLabel}>{s.label}</span>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <main className={styles.content}>
         <ProductSectionNav sections={sectionNav} />
@@ -243,18 +245,27 @@ const ProductPage: FC<Props> = ({
           label="BENEFITS"
           title={t('keyBenefits')}
         >
-          <div className={styles.benefits}>
+          {/* Advantages as an airy editorial list — big title + one
+              supporting line per row, hairline-separated, cascading in.
+              Replaces the old 280px glass card grid. */}
+          <Reveal
+            variant="rise"
+            stagger={110}
+            className={styles.advantages}
+            // role list for a11y since Reveal renders a <div>
+          >
             {c.benefits.map((b, i) => (
-              <article key={b.title} className={styles.card}>
-                <span className={styles.ring} />
-                <span className={styles.cardIndex}>
+              <div key={b.title} className={styles.advRow}>
+                <span className={styles.advNum} aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className={styles.cardTitle}>{b.title}</h3>
-                <p className={styles.cardText}>{b.text}</p>
-              </article>
+                <div className={styles.advBody}>
+                  <h3 className={styles.advTitle}>{b.title}</h3>
+                  <p className={styles.advText}>{b.text}</p>
+                </div>
+              </div>
             ))}
-          </div>
+          </Reveal>
         </Section>
 
         {c.steps && (
