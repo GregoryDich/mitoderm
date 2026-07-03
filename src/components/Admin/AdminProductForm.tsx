@@ -231,9 +231,11 @@ const AdminProductForm: FC<Props> = ({ mode, initial }) => {
               onChange={(e) => setAccent(e.target.value as Product['accent'])}
               className={styles.input}
             >
-              <option value="teal">Teal</option>
-              <option value="gold">Gold</option>
-              <option value="rose">Rose</option>
+              <option value="gold">Gold (V-Tech / Exotech)</option>
+              <option value="teal">Teal (Exosignal)</option>
+              <option value="amber">Amber (EXO-NAD)</option>
+              <option value="steel">Steel (Devices)</option>
+              <option value="rose">Rose (Bio-Spicules)</option>
             </select>
           </label>
           <div className={`${styles.field} ${styles.wide}`}>

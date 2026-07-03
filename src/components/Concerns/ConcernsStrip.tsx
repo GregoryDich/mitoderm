@@ -9,7 +9,7 @@ import styles from './ConcernsStrip.module.scss';
 interface Concern {
   key: string;
   href: string;
-  accent: 'teal' | 'gold' | 'rose';
+  accent: 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
 }
 
 const concerns: Concern[] = [
@@ -23,6 +23,8 @@ const accentVar: Record<Concern['accent'], string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 const ConcernsStrip: FC = () => {

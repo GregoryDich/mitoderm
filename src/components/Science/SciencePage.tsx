@@ -7,7 +7,7 @@ import styles from './SciencePage.module.scss';
 
 interface Pillar {
   key: string;
-  accent: 'teal' | 'gold' | 'rose';
+  accent: 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
   href?: string;
   hrefLabelKey?: string;
 }
@@ -23,6 +23,8 @@ const accentVar: Record<Pillar['accent'], string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 const SciencePage: FC = () => {
