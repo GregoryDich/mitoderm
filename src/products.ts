@@ -12,7 +12,7 @@ export type ProductCategory =
   | 'bio-spicules'
   | 'device';
 export type ProductStatus = 'available' | 'coming-soon';
-export type ProductAccent = 'teal' | 'gold' | 'rose';
+export type ProductAccent = 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
 export type ProductLineSlug =
   | 'exosomes'
   | 'exosignal-hair'

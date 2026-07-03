@@ -9,10 +9,12 @@ interface Props {
   posts: PostSummary[];
 }
 
-const accentVar: Record<'teal' | 'gold' | 'rose', string> = {
+const accentVar: Record<'teal' | 'gold' | 'rose' | 'amber' | 'steel', string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 const BlogIndex: FC<Props> = ({ posts }) => {

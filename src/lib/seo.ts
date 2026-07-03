@@ -81,7 +81,7 @@ export interface OgOpts {
   title: string;
   eyebrow?: string;
   tagline?: string;
-  accent?: 'teal' | 'gold' | 'rose';
+  accent?: 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
   locale?: LocaleType;
 }
 

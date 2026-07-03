@@ -3,7 +3,11 @@
     "slug": "exosomes",
     "accent": "gold",
     "image": "/products/v-tech-system/hero.webp",
-    "products": ["v-tech-serum", "v-tech-gel-mask", "exotech-gel"],
+    "products": [
+      "v-tech-serum",
+      "v-tech-gel-mask",
+      "exotech-gel"
+    ],
     "status": "available",
     "order": 1,
     "content": {
@@ -91,7 +95,10 @@
     "slug": "exosignal-hair",
     "accent": "teal",
     "image": "/products/exosignal-hair/hero.webp",
-    "products": ["exosignal-hair", "exosignal-hair-spray"],
+    "products": [
+      "exosignal-hair",
+      "exosignal-hair-spray"
+    ],
     "status": "available",
     "order": 2,
     "content": {
@@ -177,9 +184,11 @@
   },
   {
     "slug": "peeling",
-    "accent": "gold",
+    "accent": "amber",
     "image": "/products/exo-nad/hero.png",
-    "products": ["exo-nad"],
+    "products": [
+      "exo-nad"
+    ],
     "status": "available",
     "order": 3,
     "content": {
@@ -314,9 +323,12 @@
   },
   {
     "slug": "devices",
-    "accent": "teal",
+    "accent": "steel",
     "image": "/products/mitoscan/hero.webp",
-    "products": ["mitoscan", "mitopen"],
+    "products": [
+      "mitoscan",
+      "mitopen"
+    ],
     "status": "available",
     "order": 5,
     "content": {

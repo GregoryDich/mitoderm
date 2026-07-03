@@ -3,7 +3,7 @@
     "slug": "v-tech-serum",
     "category": "serum",
     "status": "available",
-    "accent": "teal",
+    "accent": "gold",
     "image": "/products/v-tech-system/hero.webp",
     "gallery": [],
     "content": {
@@ -971,7 +971,7 @@
     "slug": "exotech-gel",
     "category": "gel",
     "status": "available",
-    "accent": "rose",
+    "accent": "gold",
     "image": "/products/exotech-gel/hero.webp",
     "gallery": [],
     "content": {
@@ -1762,7 +1762,7 @@
     "slug": "exosignal-hair-spray",
     "category": "hair",
     "status": "available",
-    "accent": "gold",
+    "accent": "teal",
     "image": "/products/exosignal-hair-spray/hero.png",
     "gallery": [],
     "content": {
@@ -2078,7 +2078,7 @@
     "slug": "exo-nad",
     "category": "peel",
     "status": "available",
-    "accent": "gold",
+    "accent": "amber",
     "image": "/products/exo-nad/hero.png",
     "content": {
       "en": {
@@ -2363,7 +2363,7 @@
     "slug": "mitoscan",
     "category": "device",
     "status": "available",
-    "accent": "teal",
+    "accent": "steel",
     "image": "/products/mitoscan/hero.webp",
     "content": {
       "en": {
@@ -2379,15 +2379,36 @@
           "Compact tabletop footprint — handle 200 × 50 × 50 mm, 1.9 kg total"
         ],
         "stats": [
-          { "value": "10 MP", "label": "Camera resolution" },
-          { "value": "8.5\"", "label": "Display" },
-          { "value": "3", "label": "Lighting modes" }
+          {
+            "value": "10 MP",
+            "label": "Camera resolution"
+          },
+          {
+            "value": "8.5\"",
+            "label": "Display"
+          },
+          {
+            "value": "3",
+            "label": "Lighting modes"
+          }
         ],
         "benefits": [
-          { "title": "Chair-side consultation", "text": "Freeze the live feed mid-exam and walk the patient through what you see — density, follicle health, scalp condition." },
-          { "title": "Three lighting modes", "text": "Switch between standard, polarised and UV-style lighting to surface different layers of the scalp and hair shaft." },
-          { "title": "Protocol planning", "text": "Pairs with the Exosignal Hair line — pre-treatment baseline, mid-course check, end-of-course comparison." },
-          { "title": "Records and follow-up", "text": "Capture freeze-frame stills for the patient chart and side-by-side reviews at follow-up sessions." }
+          {
+            "title": "Chair-side consultation",
+            "text": "Freeze the live feed mid-exam and walk the patient through what you see — density, follicle health, scalp condition."
+          },
+          {
+            "title": "Three lighting modes",
+            "text": "Switch between standard, polarised and UV-style lighting to surface different layers of the scalp and hair shaft."
+          },
+          {
+            "title": "Protocol planning",
+            "text": "Pairs with the Exosignal Hair line — pre-treatment baseline, mid-course check, end-of-course comparison."
+          },
+          {
+            "title": "Records and follow-up",
+            "text": "Capture freeze-frame stills for the patient chart and side-by-side reviews at follow-up sessions."
+          }
         ],
         "ingredientsIntro": "What's in the box",
         "ingredients": [
@@ -2441,15 +2462,36 @@
           "Компактный форм-фактор — ручка 200 × 50 × 50 мм, общий вес 1.9 кг"
         ],
         "stats": [
-          { "value": "10 Мп", "label": "Разрешение камеры" },
-          { "value": "8.5\"", "label": "Экран" },
-          { "value": "3", "label": "Режима подсветки" }
+          {
+            "value": "10 Мп",
+            "label": "Разрешение камеры"
+          },
+          {
+            "value": "8.5\"",
+            "label": "Экран"
+          },
+          {
+            "value": "3",
+            "label": "Режима подсветки"
+          }
         ],
         "benefits": [
-          { "title": "Консультация рядом с креслом", "text": "Зафиксировать живой кадр прямо во время осмотра и обсудить плотность, состояние фолликула и кожи головы с пациентом." },
-          { "title": "Три режима подсветки", "text": "Стандартная, поляризованная и UV-подсветка вытягивают разные слои кожи и волосяного стержня." },
-          { "title": "Планирование курса", "text": "Связка с линией Exosignal Hair — базовый кадр, контроль в середине курса, итоговое сравнение." },
-          { "title": "Документация и контроль", "text": "Сохранённые кадры идут в карту пациента и в сравнения на последующих визитах." }
+          {
+            "title": "Консультация рядом с креслом",
+            "text": "Зафиксировать живой кадр прямо во время осмотра и обсудить плотность, состояние фолликула и кожи головы с пациентом."
+          },
+          {
+            "title": "Три режима подсветки",
+            "text": "Стандартная, поляризованная и UV-подсветка вытягивают разные слои кожи и волосяного стержня."
+          },
+          {
+            "title": "Планирование курса",
+            "text": "Связка с линией Exosignal Hair — базовый кадр, контроль в середине курса, итоговое сравнение."
+          },
+          {
+            "title": "Документация и контроль",
+            "text": "Сохранённые кадры идут в карту пациента и в сравнения на последующих визитах."
+          }
         ],
         "ingredientsIntro": "В комплекте",
         "ingredients": [
@@ -2503,15 +2545,36 @@
           "מידות הידית 200 × 50 × 50 מ\"מ, משקל כולל 1.9 ק\"ג"
         ],
         "stats": [
-          { "value": "10MP", "label": "רזולוציית מצלמה" },
-          { "value": "8.5\"", "label": "מסך" },
-          { "value": "3", "label": "מצבי תאורה" }
+          {
+            "value": "10MP",
+            "label": "רזולוציית מצלמה"
+          },
+          {
+            "value": "8.5\"",
+            "label": "מסך"
+          },
+          {
+            "value": "3",
+            "label": "מצבי תאורה"
+          }
         ],
         "benefits": [
-          { "title": "אבחון ליד הלקוח", "text": "הקפאת תמונה חיה תוך כדי בדיקה — להסביר ללקוח על צפיפות, מצב הזקיק ומצב הקרקפת." },
-          { "title": "שלושה מצבי תאורה", "text": "מעבר בין תאורה רגילה, מקטבת ו-UV חושף שכבות שונות של הקרקפת ושל גוף השערה." },
-          { "title": "תכנון פרוטוקול", "text": "משתלב עם סדרת Exosignal Hair — תמונה בסיסית, בדיקת אמצע קורס וסיכום." },
-          { "title": "תיעוד ומעקב", "text": "תמונות מוקפאות נשמרות בכרטיס הלקוח להשוואה במפגשי המשך." }
+          {
+            "title": "אבחון ליד הלקוח",
+            "text": "הקפאת תמונה חיה תוך כדי בדיקה — להסביר ללקוח על צפיפות, מצב הזקיק ומצב הקרקפת."
+          },
+          {
+            "title": "שלושה מצבי תאורה",
+            "text": "מעבר בין תאורה רגילה, מקטבת ו-UV חושף שכבות שונות של הקרקפת ושל גוף השערה."
+          },
+          {
+            "title": "תכנון פרוטוקול",
+            "text": "משתלב עם סדרת Exosignal Hair — תמונה בסיסית, בדיקת אמצע קורס וסיכום."
+          },
+          {
+            "title": "תיעוד ומעקב",
+            "text": "תמונות מוקפאות נשמרות בכרטיס הלקוח להשוואה במפגשי המשך."
+          }
         ],
         "ingredientsIntro": "תכולת האריזה",
         "ingredients": [
@@ -2558,7 +2621,7 @@
     "slug": "mitopen",
     "category": "device",
     "status": "available",
-    "accent": "gold",
+    "accent": "steel",
     "image": "/products/mitopen/hero.webp",
     "content": {
       "en": {
@@ -2574,15 +2637,36 @@
           "Wired and wireless (built-in battery) variants — 318 g handle"
         ],
         "stats": [
-          { "value": "5", "label": "Speed settings" },
-          { "value": "318 g", "label": "Handle weight" },
-          { "value": "5 V / 1 A", "label": "Power" }
+          {
+            "value": "5",
+            "label": "Speed settings"
+          },
+          {
+            "value": "318 g",
+            "label": "Handle weight"
+          },
+          {
+            "value": "5 V / 1 A",
+            "label": "Power"
+          }
         ],
         "benefits": [
-          { "title": "Repeatable depth control", "text": "The dial ring locks needle depth so the practitioner can move across zones without drifting off-protocol." },
-          { "title": "Auto-stamp motor", "text": "Five speeds let you tune cadence to the indication — slower on bony areas, faster on dense zones." },
-          { "title": "Sterile click-in cartridges", "text": "Sealed sterile cartridges click in and lock with a counter-clockwise twist; safer changeover between patients." },
-          { "title": "Two variants", "text": "Wireless model for chair-side mobility, wired model for back-to-back sessions in a busy room." }
+          {
+            "title": "Repeatable depth control",
+            "text": "The dial ring locks needle depth so the practitioner can move across zones without drifting off-protocol."
+          },
+          {
+            "title": "Auto-stamp motor",
+            "text": "Five speeds let you tune cadence to the indication — slower on bony areas, faster on dense zones."
+          },
+          {
+            "title": "Sterile click-in cartridges",
+            "text": "Sealed sterile cartridges click in and lock with a counter-clockwise twist; safer changeover between patients."
+          },
+          {
+            "title": "Two variants",
+            "text": "Wireless model for chair-side mobility, wired model for back-to-back sessions in a busy room."
+          }
         ],
         "ingredientsIntro": "What's in the box",
         "ingredients": [
@@ -2638,15 +2722,36 @@
           "Проводная и беспроводная версии — ручка 318 г"
         ],
         "stats": [
-          { "value": "5", "label": "Скоростей" },
-          { "value": "318 г", "label": "Вес ручки" },
-          { "value": "5 В / 1 А", "label": "Питание" }
+          {
+            "value": "5",
+            "label": "Скоростей"
+          },
+          {
+            "value": "318 г",
+            "label": "Вес ручки"
+          },
+          {
+            "value": "5 В / 1 А",
+            "label": "Питание"
+          }
         ],
         "benefits": [
-          { "title": "Повторяемая глубина", "text": "Кольцо фиксирует глубину иглы — оператор работает по зонам без ухода от протокола." },
-          { "title": "Мотор авто-штамп", "text": "Пять скоростей: медленнее на костных зонах, быстрее на плотных участках." },
-          { "title": "Стерильные сменные картриджи", "text": "Запечатанные стерильные картриджи фиксируются поворотом против часовой; безопасная смена между пациентами." },
-          { "title": "Две версии", "text": "Беспроводная — мобильность у кресла, проводная — для интенсивной работы." }
+          {
+            "title": "Повторяемая глубина",
+            "text": "Кольцо фиксирует глубину иглы — оператор работает по зонам без ухода от протокола."
+          },
+          {
+            "title": "Мотор авто-штамп",
+            "text": "Пять скоростей: медленнее на костных зонах, быстрее на плотных участках."
+          },
+          {
+            "title": "Стерильные сменные картриджи",
+            "text": "Запечатанные стерильные картриджи фиксируются поворотом против часовой; безопасная смена между пациентами."
+          },
+          {
+            "title": "Две версии",
+            "text": "Беспроводная — мобильность у кресла, проводная — для интенсивной работы."
+          }
         ],
         "ingredientsIntro": "Комплект поставки",
         "ingredients": [
@@ -2702,15 +2807,36 @@
           "גרסה חוטית ואלחוטית — משקל ידית 318 גרם"
         ],
         "stats": [
-          { "value": "5", "label": "מהירויות" },
-          { "value": "318 ג׳", "label": "משקל ידית" },
-          { "value": "5V / 1A", "label": "הספק" }
+          {
+            "value": "5",
+            "label": "מהירויות"
+          },
+          {
+            "value": "318 ג׳",
+            "label": "משקל ידית"
+          },
+          {
+            "value": "5V / 1A",
+            "label": "הספק"
+          }
         ],
         "benefits": [
-          { "title": "עומק עקבי", "text": "טבעת הכיוון נועלת את עומק המחט — המפעיל עובר בין אזורים בלי לסטות מהפרוטוקול." },
-          { "title": "מנוע Auto-stamp", "text": "חמש מהירויות מאפשרות להתאים את הקצב לאזור — איטי על אזורים גרמיים, מהיר על אזורים צפופים." },
-          { "title": "מחסניות סטריליות", "text": "מחסניות אטומות לשימוש חד-פעמי ננעלות בסיבוב נגד כיוון השעון — החלפה בטוחה בין לקוחות." },
-          { "title": "שתי גרסאות", "text": "אלחוטית — לניידות; חוטית — לסשנים אינטנסיביים בקליניקה עמוסה." }
+          {
+            "title": "עומק עקבי",
+            "text": "טבעת הכיוון נועלת את עומק המחט — המפעיל עובר בין אזורים בלי לסטות מהפרוטוקול."
+          },
+          {
+            "title": "מנוע Auto-stamp",
+            "text": "חמש מהירויות מאפשרות להתאים את הקצב לאזור — איטי על אזורים גרמיים, מהיר על אזורים צפופים."
+          },
+          {
+            "title": "מחסניות סטריליות",
+            "text": "מחסניות אטומות לשימוש חד-פעמי ננעלות בסיבוב נגד כיוון השעון — החלפה בטוחה בין לקוחות."
+          },
+          {
+            "title": "שתי גרסאות",
+            "text": "אלחוטית — לניידות; חוטית — לסשנים אינטנסיביים בקליניקה עמוסה."
+          }
         ],
         "ingredientsIntro": "תכולת האריזה",
         "ingredients": [

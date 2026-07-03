@@ -7,7 +7,7 @@ import styles from './HoverVideoMedia.module.scss';
 interface Props {
   image?: string;
   video?: string;
-  accent: 'teal' | 'gold' | 'rose';
+  accent: 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
   alt: string;
   className?: string;
   sizes?: string;
