@@ -31,6 +31,14 @@ const AboutPage: FC = () => {
       </section>
 
       <main className={styles.content}>
+        {/* Brand creed — the original site's own positioning line,
+            centred and oversized. */}
+        <Reveal variant="blur">
+          <blockquote className={styles.manifesto}>
+            <p className={styles.manifestoText}>{t('manifesto')}</p>
+          </blockquote>
+        </Reveal>
+
         <Reveal>
           <section className={styles.block}>
             <div className={styles.secLabel}>
@@ -107,10 +115,11 @@ const AboutPage: FC = () => {
         <Reveal>
           <section className={styles.ctaBand}>
             <span className={styles.ctaGlow} aria-hidden="true" />
-            <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>
-            <p className={styles.ctaText}>{t('ctaText')}</p>
-            <Link href="/form" className={styles.btnPrimary}>
-              {t('ctaButton')}
+            <h2 className={styles.ctaTitle}>{t('circleTitle')}</h2>
+            <p className={styles.ctaText}>{t('circleText')}</p>
+            {/* Belonging CTA → the partner application, not generic contact. */}
+            <Link href="/apply" className={styles.btnPrimary}>
+              {t('circleButton')}
             </Link>
           </section>
         </Reveal>
