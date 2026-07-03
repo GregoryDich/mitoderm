@@ -108,7 +108,15 @@
     "ctaText": "מחיר, הדרכה ותמיכת פרוטוקול — דברו איתנו.",
     "ctaButton": "צרו קשר",
     "relatedTitle": "להמשיך לקרוא",
-    "featuredProductsTitle": "מוצרי הפרוטוקול"
+    "featuredProductsTitle": "מוצרי הפרוטוקול",
+    "filterLabel": "סינון מאמרים",
+    "featured": "מומלץ",
+    "cat_all": "הכל",
+    "cat_exosomes": "אקסוזומים",
+    "cat_hair": "שיער",
+    "cat_protocols": "פרוטוקולים",
+    "cat_education": "הדרכה",
+    "cat_longevity": "אריכות ימים"
   },
   "catalog": {
     "eyebrow": "קטלוג",
