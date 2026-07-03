@@ -82,6 +82,49 @@
   background: rgba(223, 186, 116, 0.07);
 }
 
+/* ---- scroll-driven parallax (progressive enhancement) ----
+ * Browsers with CSS scroll-driven animations get gentle depth: the
+ * ambient glows drift as the page scrolls and the hero art recedes
+ * slightly slower than the content. Others (and reduced-motion users)
+ * see the static composition — nothing breaks. `scroll(nearest)` binds
+ * to the .page scroll container. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .glowA {
+      animation: glowDriftA linear both;
+      animation-timeline: scroll(nearest);
+    }
+    .glowB {
+      animation: glowDriftB linear both;
+      animation-timeline: scroll(nearest);
+    }
+    .heroArt {
+      animation: heroRecede linear both;
+      animation-timeline: scroll(nearest);
+      animation-range: 0 120vh;
+    }
+  }
+}
+
+@keyframes glowDriftA {
+  to {
+    transform: translateY(320px) scale(1.08);
+  }
+}
+
+@keyframes glowDriftB {
+  to {
+    transform: translateY(-260px);
+  }
+}
+
+@keyframes heroRecede {
+  to {
+    transform: translateY(14vh);
+    opacity: 0.4;
+  }
+}
+
 .hero {
   position: relative;
   z-index: 1;
@@ -93,6 +136,38 @@
   align-items: flex-start;
   gap: 24px;
   text-align: start;
+}
+
+/* Load-in cascade: eyebrow → title → tagline → desc → CTAs rise in
+ * sequence on first paint. Pure CSS, disabled under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroEnter 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  .hero > :nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .hero > :nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .hero > :nth-child(3) {
+    animation-delay: 0.28s;
+  }
+  .hero > :nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .hero > :nth-child(5) {
+    animation-delay: 0.52s;
+  }
+}
+
+@keyframes heroEnter {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .eyebrow {
