@@ -120,3 +120,108 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- results carousel ---- */
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(10px, 2vw, 26px);
+
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 6px;
+    border-radius: 20px;
+  }
+}
+
+.frame {
+  min-width: 0;
+  max-width: 860px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.nav {
+  flex-shrink: 0;
+  width: clamp(44px, 5vw, 58px);
+  height: clamp(44px, 5vw, 58px);
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.5);
+  background: rgba(10, 10, 11, 0.5);
+  color: #dfba74;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: #dfba74;
+    color: #08080a;
+  }
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 2px;
+  }
+}
+
+/* mirror the chevrons in RTL so ‹ / › always point the travelled way */
+[dir='rtl'] .navPrev span,
+[dir='rtl'] .navNext span {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+.counter {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(245, 242, 240, 0.7);
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(245, 242, 240, 0.22);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    background: rgba(245, 242, 240, 0.5);
+  }
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 2px;
+  }
+}
+
+.dotActive {
+  width: 22px;
+  border-radius: 5px;
+  background: #dfba74;
+}
+
+@media (max-width: 560px) {
+  .nav {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}
