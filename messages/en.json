@@ -28,25 +28,29 @@
         "eyebrow": "PILLAR 01 · CELL SIGNALLING",
         "title": "Exosomes — the signalling layer",
         "lead": "Nanometre-scale extracellular vesicles that carry a multi-protein, multi-RNA payload between cells.",
-        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact."
+        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact.",
+        "chairside": "“We apply cellular messengers that tell your skin to repair itself — the result builds from the very first session.”"
       },
       "polynucleotides": {
         "eyebrow": "PILLAR 02 · DERMAL SCAFFOLD",
         "title": "Polynucleotides — rebuilding the scaffold",
         "lead": "Long nucleotide chains that bind water and instruct fibroblasts to rebuild dermal scaffolding.",
-        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier."
+        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier.",
+        "chairside": "“The mask seals the treatment in and rebuilds the skin’s supportive scaffold — that’s the density you’ll feel.”"
       },
       "nad": {
         "eyebrow": "PILLAR 03 · MITOCHONDRIAL RECOVERY",
         "title": "NAD+ — powering the recovery",
         "lead": "The coenzyme central to mitochondrial energy production and DNA repair — the substrate of visible glow.",
-        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols."
+        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols.",
+        "chairside": "“This peel recharges the skin’s own energy metabolism — glow without downtime.”"
       },
       "delivery": {
         "eyebrow": "PILLAR 04 · CONTROLLED DELIVERY",
         "title": "Microneedling delivery — the protocol's exit step",
         "lead": "All three pillars are only as good as the channels they travel through.",
-        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course."
+        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course.",
+        "chairside": "“The device places the actives at a precise, controlled depth — the same result, visit after visit.”"
       }
     },
     "protocol": {
@@ -60,7 +64,8 @@
       "title": "Bring the protocol into your clinic",
       "text": "Pricing, training and protocol support — we work with your existing menu rather than against it.",
       "button": "Contact us"
-    }
+    },
+    "chairsideLabel": "What to tell your client"
   },
   "concerns": {
     "eyebrow": "BY CONCERN",

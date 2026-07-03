@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import { publicAsset } from '@/lib/public-asset';
 import styles from './SciencePage.module.scss';
 
@@ -72,6 +73,16 @@ const SciencePage: FC = () => {
                 <h2 className={styles.pillarTitle}>{t(`pillars.${p.key}.title`)}</h2>
                 <p className={styles.pillarLead}>{t(`pillars.${p.key}.lead`)}</p>
                 <p className={styles.pillarBodyText}>{t(`pillars.${p.key}.body`)}</p>
+                {/* Chairside script — the one line a practitioner can
+                    say to their client, verbatim. */}
+                <blockquote className={styles.chairside}>
+                  <span className={styles.chairsideLabel}>
+                    {t('chairsideLabel')}
+                  </span>
+                  <p className={styles.chairsideText}>
+                    {t(`pillars.${p.key}.chairside`)}
+                  </p>
+                </blockquote>
                 {p.href && p.hrefLabelKey && (
                   <Link href={p.href} className={styles.pillarLink}>
                     {t(p.hrefLabelKey)} <span className={styles.arrow}>→</span>
