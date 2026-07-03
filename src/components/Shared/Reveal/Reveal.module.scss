@@ -1,20 +1,96 @@
+/* Reveal v2 — scroll-entry animation with variants + optional stagger.
+ *
+ * Variant classes set the HIDDEN state on the wrapper (or, in staggered
+ * mode, on its direct children); .revealed clears it. All motion is
+ * disabled under prefers-reduced-motion.
+ */
+
 .reveal {
+  will-change: opacity, transform;
+}
+
+/* ---------- variants: hidden state ---------- */
+
+.vRise {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
     transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
-  will-change: opacity, transform;
 }
 
-.revealed {
+.vFade {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.vScale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.vBlur {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, filter 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* ---------- staggered mode: children animate, wrapper doesn't ---------- */
+
+.staggered {
+  /* the wrapper stays visible; its children carry the hidden state */
   opacity: 1;
   transform: none;
+  filter: none;
 }
 
+.staggered.vRise > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.staggered.vFade > * {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.staggered.vScale > * {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.staggered.vBlur > * {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, filter 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* ---------- revealed state ---------- */
+
+.revealed:not(.staggered),
+.revealed.staggered > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* ---------- reduced motion ---------- */
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .reveal,
+  .reveal > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }

@@ -12,6 +12,7 @@ import { publicAsset } from '@/lib/public-asset';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
+import CountUp from '@/components/Shared/CountUp/CountUp';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
@@ -94,14 +95,16 @@ const HomePage: FC<Props> = ({
         </div>
       </section>
 
-      <div className={styles.statStrip}>
+      {/* Reveal-as-strip: the stats are direct children so the stagger
+          cascades across them; numbers count up on entry. */}
+      <Reveal variant="rise" stagger={120} className={styles.statStrip}>
         {stats.map((s) => (
           <div key={s.label} className={styles.stat}>
-            <span className={styles.statValue}>{s.value}</span>
+            <CountUp value={s.value} className={styles.statValue} />
             <span className={styles.statLabel}>{s.label}</span>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <main className={styles.content}>
         {doctors.length > 0 && (
@@ -131,7 +134,8 @@ const HomePage: FC<Props> = ({
             <span className={styles.secName}>{t('featuredLabel')}</span>
           </div>
           <h2 className={styles.h2}>{t('featuredTitle')}</h2>
-          <div className={styles.grid}>
+          {/* Reveal-as-grid: cards cascade in with a 140ms stagger. */}
+          <Reveal variant="rise" stagger={140} className={styles.grid}>
             {featured.map((item) => (
               <Link
                 key={item.slug}
@@ -162,7 +166,7 @@ const HomePage: FC<Props> = ({
                 </div>
               </Link>
             ))}
-          </div>
+          </Reveal>
         </section>
         </Reveal>
 
