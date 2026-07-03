@@ -45,6 +45,23 @@
   margin: 0;
 }
 
+.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.45);
+
+  &::before {
+    content: '↔';
+    font-size: 14px;
+    color: #dfba74;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
