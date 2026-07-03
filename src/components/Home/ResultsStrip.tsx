@@ -1,19 +1,34 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, KeyboardEvent, useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import Reveal from '@/components/Shared/Reveal/Reveal';
 import BeforeAfterSlider from '@/components/Shared/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './ResultsStrip.module.scss';
 
-/** Curated real before/after composites (each image is a single
- *  before | after frame) downloaded from mitoderm.com. */
-const SHOTS = ['1', '4', '5', '7', '12', '18'];
+/** All 18 real before/after composites downloaded from mitoderm.com. */
+const SHOTS = Array.from({ length: 18 }, (_, i) => String(i + 1));
 
-/** "Proven on real skin" — the audit's #1 proof block. Each result is a
- *  draggable before/after comparison slider. Reduced-motion safe. */
+/** "Real results, on real skin" — a carousel of drag-to-compare
+ *  before/after sliders (arrows + dots + counter), matching the
+ *  original site's results presentation. Reduced-motion safe. */
 const ResultsStrip: FC = () => {
   const t = useTranslations('home.results');
+  const [i, setI] = useState(0);
+
+  const go = useCallback(
+    (delta: number) => setI((v) => (v + delta + SHOTS.length) % SHOTS.length),
+    []
+  );
+
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'ArrowLeft') {
+      go(-1);
+      e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+      go(1);
+      e.preventDefault();
+    }
+  };
 
   return (
     <section className={styles.results} aria-label={t('title')}>
@@ -27,17 +42,60 @@ const ResultsStrip: FC = () => {
         <p className={styles.hint}>{t('dragHint')}</p>
       </div>
 
-      <Reveal variant="rise" stagger={110} className={styles.grid}>
-        {SHOTS.map((n) => (
+      <div
+        className={styles.stage}
+        role="group"
+        aria-roledescription="carousel"
+        aria-label={t('title')}
+        tabIndex={0}
+        onKeyDown={onKeyDown}
+      >
+        <button
+          type="button"
+          className={`${styles.nav} ${styles.navPrev}`}
+          onClick={() => go(-1)}
+          aria-label={t('prev')}
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <div className={styles.frame}>
           <BeforeAfterSlider
-            key={n}
-            src={`/proof/before-after/${n}.webp`}
+            key={SHOTS[i]}
+            src={`/proof/before-after/${SHOTS[i]}.webp`}
             beforeLabel={t('before')}
             afterLabel={t('after')}
             alt={t('alt')}
           />
+        </div>
+
+        <button
+          type="button"
+          className={`${styles.nav} ${styles.navNext}`}
+          onClick={() => go(1)}
+          aria-label={t('next')}
+        >
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+
+      <div className={styles.counter} aria-live="polite">
+        {i + 1} / {SHOTS.length}
+      </div>
+
+      <div className={styles.dots} role="tablist" aria-label={t('title')}>
+        {SHOTS.map((n, idx) => (
+          <button
+            key={n}
+            type="button"
+            role="tab"
+            aria-label={`${idx + 1}`}
+            aria-selected={idx === i}
+            className={`${styles.dot} ${idx === i ? styles.dotActive : ''}`}
+            onClick={() => setI(idx)}
+          />
         ))}
-      </Reveal>
+      </div>
 
       <p className={styles.disclaimer}>{t('disclaimer')}</p>
     </section>

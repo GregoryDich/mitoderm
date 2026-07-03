@@ -962,7 +962,9 @@
       "after": "After",
       "dragHint": "Drag to compare",
       "alt": "Before and after a professional Mitoderm treatment",
-      "disclaimer": "Individual results vary. Photographs are from professional treatments and are intended for professional use."
+      "disclaimer": "Individual results vary. Photographs are from professional treatments and are intended for professional use.",
+      "prev": "Previous",
+      "next": "Next"
     },
     "eyebrow": "MITODERM",
     "title": "Where science meets beauty",
