@@ -64,6 +64,30 @@
   }
 }
 
+/* The Mitoderm Circle recruitment entry — a standing gold pill. */
+.navAccent {
+  padding: 8px 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(223, 186, 116, 0.55);
+  color: #dfba74;
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: #08080a;
+    background-color: #dfba74;
+  }
+
+  &.navActive {
+    color: #08080a;
+    background-color: #dfba74;
+
+    /* the underline indicator doesn't fit a pill */
+    &::after {
+      display: none;
+    }
+  }
+}
+
 /* Disclosure group — <details> wrapping a <summary> with sub-links.
  * On desktop hover-opens; on mobile click-opens (default <details>). */
 .navGroup {

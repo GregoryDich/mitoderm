@@ -13,7 +13,8 @@
     "seminars": "Seminars",
     "lines": "Lines",
     "concerns": "Concerns",
-    "blog": "Blog"
+    "blog": "Blog",
+    "partner": "Become a Partner"
   },
   "science": {
     "eyebrow": "THE MITODERM SCIENCE STACK",
@@ -116,7 +117,7 @@
     "filterAll": "All",
     "filterExosome": "Exosomes",
     "filterMask": "Masks",
-    "filterPeel": "Peels",
+    "filterPeel": "Peelings",
     "filterBioSpicules": "Bio-Spicules",
     "available": "Available",
     "comingSoon": "Coming soon",
@@ -127,7 +128,6 @@
     "filterSerum": "Serums",
     "filterGel": "Gels",
     "filterHair": "Hair",
-    "filterPeel": "Peelings",
     "filterDevice": "Devices",
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
@@ -140,9 +140,18 @@
   "product": {
     "keyBenefits": "Key Benefits",
     "triad": [
-      { "word": "Unique", "note": "A one-of-a-kind Italian technology developed by VM Corporation." },
-      { "word": "Effective", "note": "Firming, renewal and biological rejuvenation from the first session." },
-      { "word": "Safe", "note": "Professional, sterile and single-dose — engineered for the clinic." }
+      {
+        "word": "Unique",
+        "note": "A one-of-a-kind Italian technology developed by VM Corporation."
+      },
+      {
+        "word": "Effective",
+        "note": "Firming, renewal and biological rejuvenation from the first session."
+      },
+      {
+        "word": "Safe",
+        "note": "Professional, sterile and single-dose — engineered for the clinic."
+      }
     ],
     "activeIngredients": "Active Ingredients",
     "backToCatalog": "Back to catalog",
@@ -350,7 +359,16 @@
     "successTitle": "Application received",
     "successText": "We'll reach out shortly. Once approved you'll receive a magic-link to sign into /pro for 90 days.",
     "errorDuplicate": "An application with this email already exists. Reach out to support if you don't have your magic link.",
-    "errorGeneric": "Something went wrong. Please try again or write us directly."
+    "errorGeneric": "Something went wrong. Please try again or write us directly.",
+    "perksTitle": "Partner benefits",
+    "perks": [
+      "Wholesale pricing for clinics",
+      "Ready-to-run treatment protocols",
+      "Hands-on training & certification",
+      "Listing in the specialist directory",
+      "Marketing materials for your clients",
+      "Priority support on WhatsApp"
+    ]
   },
   "pro": {
     "title": "Mitoderm /pro portal",
@@ -646,11 +664,35 @@
       }
     ],
     "tableTitle": "What we use",
-    "tableColumns": ["Name", "Purpose", "Category", "Lifetime", "Provider"],
+    "tableColumns": [
+      "Name",
+      "Purpose",
+      "Category",
+      "Lifetime",
+      "Provider"
+    ],
     "tableRows": [
-      ["mitoderm_consent_v1", "Remembers your cookie choice", "Strictly necessary", "Persistent (local storage)", "Mitoderm"],
-      ["mitoderm_utm_v1", "Remembers how you reached us (campaign attribution)", "Strictly necessary", "Session (local storage)", "Mitoderm"],
-      ["_ga, _ga_*", "Aggregate analytics — which pages are used", "Analytics (consent)", "Up to 24 months", "Google Analytics 4"]
+      [
+        "mitoderm_consent_v1",
+        "Remembers your cookie choice",
+        "Strictly necessary",
+        "Persistent (local storage)",
+        "Mitoderm"
+      ],
+      [
+        "mitoderm_utm_v1",
+        "Remembers how you reached us (campaign attribution)",
+        "Strictly necessary",
+        "Session (local storage)",
+        "Mitoderm"
+      ],
+      [
+        "_ga, _ga_*",
+        "Aggregate analytics — which pages are used",
+        "Analytics (consent)",
+        "Up to 24 months",
+        "Google Analytics 4"
+      ]
     ],
     "contactHeading": "Contact",
     "contactText": "Questions about cookies: write to info@mitoderm.com."
@@ -710,10 +752,22 @@
     "door": "It opens the door to the world of innovative treatments — where you'll discover this breakthrough technology first-hand.",
     "programTitle": "Event program",
     "agenda": [
-      { "time": "19:00", "title": "Welcome & Networking" },
-      { "time": "19:30", "title": "Behind-the-Scenes Story" },
-      { "time": "20:30", "title": "Exclusive Product Reveal" },
-      { "time": "21:15", "title": "How to Grow Your Business with Mitoderm" }
+      {
+        "time": "19:00",
+        "title": "Welcome & Networking"
+      },
+      {
+        "time": "19:30",
+        "title": "Behind-the-Scenes Story"
+      },
+      {
+        "time": "20:30",
+        "title": "Exclusive Product Reveal"
+      },
+      {
+        "time": "21:15",
+        "title": "How to Grow Your Business with Mitoderm"
+      }
     ],
     "byArrangement": "By prior arrangement only.",
     "reserveCta": "Reserve your seat",
@@ -911,9 +965,9 @@
         "text": "Developed and validated in Israel; trusted by clinics and partners across the region."
       }
     ],
-    "ctaBandTitle": "Bring Mitoderm to your clinic",
-    "ctaBandText": "Get in touch — our specialist will help with pricing, protocols and onboarding.",
-    "ctaBandButton": "Contact us"
+    "ctaBandTitle": "Join the Mitoderm Circle",
+    "ctaBandText": "Partner clinics across Israel get wholesale pricing, protocols, training and a place in our specialist directory.",
+    "ctaBandButton": "Request access"
   },
   "contactForm": {
     "eyebrow": "CONTACT",

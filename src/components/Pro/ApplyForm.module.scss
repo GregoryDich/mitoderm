@@ -161,3 +161,42 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Membership perks — the WIIFM stack above the application fields. */
+.perks {
+  list-style: none;
+  margin: 0 0 clamp(28px, 4vw, 40px);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+
+.perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(14px, 1.5vw, 15.5px);
+  line-height: 1.5;
+  color: rgba(245, 242, 240, 0.78);
+}
+
+.perkTick {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.5);
+  color: #dfba74;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .perks {
+    grid-template-columns: 1fr;
+  }
+}
