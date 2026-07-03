@@ -499,3 +499,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- trust badges under the stat strip ---- */
+.badgeRow {
+  position: relative;
+  z-index: 1;
+  width: min(var(--cw), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  padding: 18px 0 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: rgba(245, 242, 240, 0.6);
+}
+
+.badgeTick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.45);
+  color: #dfba74;
+  font-size: 9.5px;
+}

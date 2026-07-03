@@ -57,6 +57,7 @@ const HomePage: FC<Props> = ({
     .slice(0, 3);
 
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
+  const badges = (t.raw('badges') as string[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
   const heroArt = publicAsset('/home/hero.webp');
 
@@ -106,6 +107,18 @@ const HomePage: FC<Props> = ({
             <CountUp value={s.value} className={styles.statValue} />
             <span className={styles.statLabel}>{s.label}</span>
           </div>
+        ))}
+      </Reveal>
+
+      {/* Trust badges — safety / exclusivity reassurance at a glance. */}
+      <Reveal variant="fade" stagger={90} className={styles.badgeRow}>
+        {badges.map((b) => (
+          <span key={b} className={styles.badge}>
+            <span className={styles.badgeTick} aria-hidden="true">
+              ✓
+            </span>
+            {b}
+          </span>
         ))}
       </Reveal>
 
