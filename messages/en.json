@@ -139,6 +139,11 @@
   },
   "product": {
     "keyBenefits": "Key Benefits",
+    "triad": [
+      { "word": "Unique", "note": "A one-of-a-kind Italian technology developed by VM Corporation." },
+      { "word": "Effective", "note": "Firming, renewal and biological rejuvenation from the first session." },
+      { "word": "Safe", "note": "Professional, sterile and single-dose — engineered for the clinic." }
+    ],
     "activeIngredients": "Active Ingredients",
     "backToCatalog": "Back to catalog",
     "contactForPrice": "Contact for Price",

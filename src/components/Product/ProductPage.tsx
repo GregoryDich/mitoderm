@@ -18,6 +18,8 @@ import InterestToggle from '@/components/InterestList/InterestToggle';
 import RecentlyViewedStrip from '@/components/RecentlyViewed/RecentlyViewedStrip';
 import IngredientChip from './IngredientChip';
 import KeyActives from './KeyActives';
+import Reveal from '@/components/Shared/Reveal/Reveal';
+import CountUp from '@/components/Shared/CountUp/CountUp';
 import type { Doctor } from '@/lib/doctors-store';
 import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import styles from './ProductPage.module.scss';
@@ -92,6 +94,7 @@ const ProductPage: FC<Props> = ({
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
+  const triad = (t.raw('triad') as { word: string; note: string }[]) ?? [];
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
@@ -212,9 +215,24 @@ const ProductPage: FC<Props> = ({
         <TrustedByStrip doctors={trustedBy} label={t('trustedBy')} />
       )}
 
+      {/* Value triad — the brand's own "Unique · Effective · Safe"
+          positioning as a big-word statement: what this is, in one
+          glance, before any detail. */}
+      {triad.length > 0 && (
+        <Reveal variant="rise" stagger={130} className={styles.triad}>
+          {triad.map((tr) => (
+            <div key={tr.word} className={styles.triadItem}>
+              <span className={styles.triadRule} aria-hidden="true" />
+              <span className={styles.triadWord}>{tr.word}</span>
+              <span className={styles.triadNote}>{tr.note}</span>
+            </div>
+          ))}
+        </Reveal>
+      )}
+
       {c.keyFacts && c.keyFacts.length > 0 && (
         <aside className={styles.keyFacts} aria-label={t('keyFacts')}>
-          <h2 className={styles.kfTitle}>{t('keyFacts')}</h2>
+          <span className={styles.kfTitle}>{t('keyFacts')}</span>
           <ul className={styles.kfList}>
             {c.keyFacts.map((f) => (
               <li key={f} className={styles.kfItem}>
@@ -226,14 +244,14 @@ const ProductPage: FC<Props> = ({
         </aside>
       )}
 
-      <div className={styles.statStrip}>
+      <Reveal variant="rise" stagger={110} className={styles.statStrip}>
         {c.stats.map((s) => (
           <div key={s.label} className={styles.stat}>
-            <span className={styles.statValue}>{s.value}</span>
+            <CountUp value={s.value} className={styles.statValue} />
             <span className={styles.statLabel}>{s.label}</span>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <main className={styles.content}>
         <ProductSectionNav sections={sectionNav} />
@@ -243,18 +261,20 @@ const ProductPage: FC<Props> = ({
           label="BENEFITS"
           title={t('keyBenefits')}
         >
-          <div className={styles.benefits}>
+          {/* Compact 2×2 benefit grid — scannable, not a long scroll. */}
+          <Reveal variant="rise" stagger={90} className={styles.adv2}>
             {c.benefits.map((b, i) => (
-              <article key={b.title} className={styles.card}>
-                <span className={styles.ring} />
-                <span className={styles.cardIndex}>
+              <div key={b.title} className={styles.adv2Item}>
+                <span className={styles.adv2Num} aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className={styles.cardTitle}>{b.title}</h3>
-                <p className={styles.cardText}>{b.text}</p>
-              </article>
+                <div>
+                  <h3 className={styles.adv2Title}>{b.title}</h3>
+                  <p className={styles.adv2Text}>{b.text}</p>
+                </div>
+              </div>
             ))}
-          </div>
+          </Reveal>
         </Section>
 
         {c.steps && (
