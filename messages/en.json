@@ -698,16 +698,24 @@
     }
   },
   "seminars": {
-    "eyebrow": "SEMINARS",
-    "title": "Upcoming Mitoderm seminars",
-    "subtitle": "Hands-on training sessions for clinics and aesthetic practitioners. Reserve your seat on Instagram or reach out directly.",
+    "eyebrow": "EVENT",
+    "title": "Mitoderm invites you to an intimate and inspiring conference",
+    "lead": "A boutique conference for leaders in the field of aesthetics in Israel.",
+    "forYou": "This conference is exactly for you.",
+    "door": "It opens the door to the world of innovative treatments — where you'll discover this breakthrough technology first-hand.",
+    "programTitle": "Event program",
+    "agenda": [
+      { "time": "19:00", "title": "Welcome & Networking" },
+      { "time": "19:30", "title": "Behind-the-Scenes Story" },
+      { "time": "20:30", "title": "Exclusive Product Reveal" },
+      { "time": "21:15", "title": "How to Grow Your Business with Mitoderm" }
+    ],
+    "byArrangement": "By prior arrangement only.",
+    "reserveCta": "Reserve your seat",
+    "latestTitle": "From our recent seminars",
     "viewOnInstagram": "View on Instagram",
-    "upcoming": "Upcoming",
-    "past": "Past",
-    "empty": "No seminars announced yet — follow us on Instagram for the next dates.",
-    "noUpcoming": "No upcoming seminars scheduled. Recent ones are below.",
     "ctaTitle": "Want a private seminar at your clinic?",
-    "ctaText": "We host on-site training and certification across Israel and EU.",
+    "ctaText": "We host on-site training and certification across Israel and the EU.",
     "ctaButton": "Request a seminar"
   },
   "regimen": {
