@@ -108,7 +108,15 @@
     "ctaText": "Pricing, training and protocol support — get in touch.",
     "ctaButton": "Contact us",
     "relatedTitle": "Continue reading",
-    "featuredProductsTitle": "Featured in this protocol"
+    "featuredProductsTitle": "Featured in this protocol",
+    "filterLabel": "Filter articles",
+    "featured": "Featured",
+    "cat_all": "All",
+    "cat_exosomes": "Exosomes",
+    "cat_hair": "Hair",
+    "cat_protocols": "Protocols",
+    "cat_education": "Education",
+    "cat_longevity": "Longevity"
   },
   "catalog": {
     "eyebrow": "CATALOG",

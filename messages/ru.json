@@ -108,7 +108,15 @@
     "ctaText": "Цена, обучение и поддержка протокола — свяжитесь с нами.",
     "ctaButton": "Связаться",
     "relatedTitle": "Дальше по теме",
-    "featuredProductsTitle": "Продукты этого протокола"
+    "featuredProductsTitle": "Продукты этого протокола",
+    "filterLabel": "Фильтр статей",
+    "featured": "Главное",
+    "cat_all": "Все",
+    "cat_exosomes": "Экзосомы",
+    "cat_hair": "Волосы",
+    "cat_protocols": "Протоколы",
+    "cat_education": "Образование",
+    "cat_longevity": "Долголетие"
   },
   "catalog": {
     "eyebrow": "КАТАЛОГ",
