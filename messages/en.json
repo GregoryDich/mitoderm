@@ -856,7 +856,9 @@
       "eyebrow": "Proven results",
       "title": "Real results, on real skin",
       "subtitle": "Outcomes from professional in-clinic Mitoderm protocols — texture, density and recovery you can show a patient.",
-      "beforeAfter": "Before → After",
+      "before": "Before",
+      "after": "After",
+      "dragHint": "Drag to compare",
       "alt": "Before and after a professional Mitoderm treatment",
       "disclaimer": "Individual results vary. Photographs are from professional treatments and are intended for professional use."
     },
