@@ -36,6 +36,8 @@ const Header: FC = () => {
     label: string;
     href: string;
     children?: { label: string; href: string }[];
+    /** Gold pill treatment — the standing Mitoderm Circle recruitment entry. */
+    accent?: boolean;
   }
   const navItems: NavItem[] = [
     {
@@ -52,6 +54,8 @@ const Header: FC = () => {
     { label: t('blog'), href: '/blog' },
     { label: t('about'), href: '/about' },
     { label: t('contact'), href: '/form' },
+    // The belonging hook must be discoverable from every page.
+    { label: t('partner'), href: '/apply', accent: true },
   ];
 
   return (
@@ -136,8 +140,8 @@ const Header: FC = () => {
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
                 className={`${styles.navLink} ${
-                  active ? styles.navActive : ''
-                }`}
+                  item.accent ? styles.navAccent : ''
+                } ${active ? styles.navActive : ''}`}
                 onClick={() => setOpen(false)}
               >
                 {item.label}

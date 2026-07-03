@@ -215,7 +215,9 @@ const HomePage: FC<Props> = ({
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{t('ctaBandTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaBandText')}</p>
-          <Link href="/form" className={styles.btnPrimary}>
+          {/* Recruitment, not generic contact: the warmest intent goes
+              to the partner application, not the 9-field contact form. */}
+          <Link href="/apply" className={styles.btnPrimary}>
             {t('ctaBandButton')}
           </Link>
         </section>

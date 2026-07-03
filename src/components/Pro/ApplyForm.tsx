@@ -68,6 +68,18 @@ const ApplyForm: FC = () => {
           <p className={styles.subtitle}>{t('subtitle')}</p>
         </header>
 
+        {/* Membership perks — WIIFM before any form field. */}
+        <ul className={styles.perks} aria-label={t('perksTitle')}>
+          {(t.raw('perks') as string[]).map((p) => (
+            <li key={p} className={styles.perk}>
+              <span className={styles.perkTick} aria-hidden="true">
+                ✓
+              </span>
+              {p}
+            </li>
+          ))}
+        </ul>
+
         {done ? (
           <section className={styles.success}>
             <h2 className={styles.successTitle}>{t('successTitle')}</h2>
