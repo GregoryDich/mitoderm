@@ -4,7 +4,12 @@ import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/routing';
-import { CatalogItem, ProductCategory, ProductAccent } from '@/products';
+import {
+  CatalogItem,
+  LineSummary,
+  ProductCategory,
+  ProductAccent,
+} from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import InterestToggle from '@/components/InterestList/InterestToggle';
@@ -14,6 +19,8 @@ import styles from './Catalog.module.scss';
 
 interface Props {
   items: CatalogItem[];
+  /** Line summaries for the default (unfiltered) system-grouped view. */
+  lines?: LineSummary[];
 }
 
 type Filter = 'all' | ProductCategory;
@@ -54,7 +61,7 @@ function syncUrl(active: Filter, query: string): void {
   window.history.replaceState(null, '', url);
 }
 
-const Catalog: FC<Props> = ({ items }) => {
+const Catalog: FC<Props> = ({ items, lines = [] }) => {
   const t = useTranslations('catalog');
   const searchParams = useSearchParams();
 
@@ -94,6 +101,53 @@ const Catalog: FC<Props> = ({ items }) => {
   }, [active, items, query]);
 
   const isFiltered = active !== 'all' || query.trim().length > 0;
+
+  const renderCard = (item: CatalogItem) => (
+    <Link
+      key={item.slug}
+      href={item.href}
+      className={styles.card}
+      style={{ ['--accent' as string]: accentVar[item.accent] }}
+    >
+      <div className={styles.cardMedia}>
+        <HoverVideoMedia
+          image={item.image}
+          video={item.cardVideo}
+          accent={item.accent}
+          alt={item.name}
+          className={styles.media}
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        <span className={styles.cardFav}>
+          <InterestToggle
+            slug={item.slug}
+            addLabel={t('addToList')}
+            removeLabel={t('removeFromList')}
+          />
+        </span>
+      </div>
+      <div className={styles.cardBody}>
+        <div className={styles.tags}>
+          <span className={styles.tag}>
+            {item.category.replace('-', ' ').toUpperCase()}
+          </span>
+          <span className={styles.status}>
+            <span
+              className={`${styles.dot} ${
+                item.status === 'available' ? styles.dotOk : styles.dotSoon
+              }`}
+            />
+            {item.status === 'available' ? t('available') : t('comingSoon')}
+          </span>
+        </div>
+        <h3 className={styles.cardName}>{item.name}</h3>
+        <p className={styles.cardDesc}>{item.shortDescription}</p>
+        <span className={styles.cardLink}>
+          {t('learnMore')} <span className={styles.arrow}>→</span>
+        </span>
+      </div>
+    </Link>
+  );
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -183,58 +237,41 @@ const Catalog: FC<Props> = ({ items }) => {
           </div>
         )}
 
-        <div className={styles.grid}>
-          {visible.map((item) => (
-            <Link
-              key={item.slug}
-              href={item.href}
-              className={styles.card}
-              style={{ ['--accent' as string]: accentVar[item.accent] }}
-            >
-              <div className={styles.cardMedia}>
-                <HoverVideoMedia
-                  image={item.image}
-                  video={item.cardVideo}
-                  accent={item.accent}
-                  alt={item.name}
-                  className={styles.media}
-                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <span className={styles.cardFav}>
-                  <InterestToggle
-                    slug={item.slug}
-                    addLabel={t('addToList')}
-                    removeLabel={t('removeFromList')}
-                  />
-                </span>
-              </div>
-              <div className={styles.cardBody}>
-                <div className={styles.tags}>
-                  <span className={styles.tag}>
-                    {item.category.replace('-', ' ').toUpperCase()}
-                  </span>
-                  <span className={styles.status}>
-                    <span
-                      className={`${styles.dot} ${
-                        item.status === 'available'
-                          ? styles.dotOk
-                          : styles.dotSoon
-                      }`}
-                    />
-                    {item.status === 'available'
-                      ? t('available')
-                      : t('comingSoon')}
-                  </span>
-                </div>
-                <h3 className={styles.cardName}>{item.name}</h3>
-                <p className={styles.cardDesc}>{item.shortDescription}</p>
-                <span className={styles.cardLink}>
-                  {t('learnMore')} <span className={styles.arrow}>→</span>
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {isFiltered || lines.length === 0 ? (
+          /* Filter / search active → flat result grid. */
+          <div className={styles.grid}>{visible.map(renderCard)}</div>
+        ) : (
+          /* Default view — grouped by system: cosmetologists buy
+             protocols (serum+mask+gel), not loose SKUs. */
+          <div className={styles.systems}>
+            {lines
+              .filter((l) => l.items.length > 0)
+              .map((line) => (
+                <section
+                  key={line.slug}
+                  className={styles.system}
+                  style={{ ['--accent' as string]: accentVar[line.accent] }}
+                >
+                  <div className={styles.systemHead}>
+                    <div className={styles.systemMeta}>
+                      <span className={styles.systemEyebrow}>
+                        {line.eyebrow}
+                      </span>
+                      <h2 className={styles.systemName}>{line.name}</h2>
+                      <p className={styles.systemTagline}>{line.tagline}</p>
+                    </div>
+                    <Link href={line.href} className={styles.systemLink}>
+                      {t('openLine')}{' '}
+                      <span className={styles.arrow}>→</span>
+                    </Link>
+                  </div>
+                  <div className={styles.grid}>
+                    {line.items.map(renderCard)}
+                  </div>
+                </section>
+              ))}
+          </div>
+        )}
 
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
