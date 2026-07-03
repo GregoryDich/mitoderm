@@ -18,6 +18,7 @@ import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
 import LinesShowcase from '@/components/Lines/LinesShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
+import ResultsStrip from '@/components/Home/ResultsStrip';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -107,6 +108,9 @@ const HomePage: FC<Props> = ({
       </Reveal>
 
       <main className={styles.content}>
+        {/* Proof leads: real before/after before any brand copy. */}
+        <ResultsStrip />
+
         {doctors.length > 0 && (
           <TrustedByStrip doctors={doctors} label={t('trustedBy')} />
         )}

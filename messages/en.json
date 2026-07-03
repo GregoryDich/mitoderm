@@ -852,6 +852,14 @@
     }
   },
   "home": {
+    "results": {
+      "eyebrow": "Proven results",
+      "title": "Real results, on real skin",
+      "subtitle": "Outcomes from professional in-clinic Mitoderm protocols — texture, density and recovery you can show a patient.",
+      "beforeAfter": "Before → After",
+      "alt": "Before and after a professional Mitoderm treatment",
+      "disclaimer": "Individual results vary. Photographs are from professional treatments and are intended for professional use."
+    },
     "eyebrow": "MITODERM",
     "title": "Where science meets beauty",
     "tagline": "Professional exosome skincare for clinics and aesthetic practitioners.",
