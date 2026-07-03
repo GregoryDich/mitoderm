@@ -135,7 +135,8 @@
     "resultCount": "Показано {shown} из {total}",
     "clearFilters": "Сбросить фильтры",
     "addToList": "Добавить в мой список",
-    "removeFromList": "Удалить из списка"
+    "removeFromList": "Удалить из списка",
+    "openLine": "Открыть линейку"
   },
   "product": {
     "keyBenefits": "Ключевые преимущества",

@@ -135,7 +135,8 @@
     "resultCount": "מציג {shown} מתוך {total}",
     "clearFilters": "ניקוי סינון",
     "addToList": "הוספה לרשימה",
-    "removeFromList": "הסרה מהרשימה"
+    "removeFromList": "הסרה מהרשימה",
+    "openLine": "לצפייה בקו"
   },
   "product": {
     "keyBenefits": "יתרונות מרכזיים",

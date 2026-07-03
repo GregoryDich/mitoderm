@@ -135,7 +135,8 @@
     "resultCount": "Showing {shown} of {total}",
     "clearFilters": "Clear filters",
     "addToList": "Add to my list",
-    "removeFromList": "Remove from my list"
+    "removeFromList": "Remove from my list",
+    "openLine": "Open the line"
   },
   "product": {
     "keyBenefits": "Key Benefits",
