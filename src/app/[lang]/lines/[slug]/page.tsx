@@ -101,6 +101,8 @@ export default async function LineRoute({
         indicationsTitle: t('indicationsTitle'),
         backToHome: t('backToHome'),
         contactCta: t('contactCta'),
+        synergyHeading: t('synergyHeading'),
+        synergyBody: t('synergyBody'),
       }}
       waitlist={waitlist}
     />

@@ -30,6 +30,9 @@ interface Props {
     indicationsTitle: string;
     backToHome: string;
     contactCta: string;
+    /** The original site's "1+1=3" synergy copy (verbatim). */
+    synergyHeading: string;
+    synergyBody: string;
   };
   /** Waitlist copy is opt-in: only sent for `coming-soon` lines that
    *  have a waitlist source configured upstream. Undefined → render the
@@ -131,6 +134,17 @@ const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
                 </Link>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* 1+1=3 — the original site's synergy claim, shown for real
+            systems (2+ products working together). */}
+        {items.length >= 2 && (
+          <section className={styles.synergy}>
+            <span className={styles.synergyHeading} aria-hidden="true">
+              {strings.synergyHeading}
+            </span>
+            <p className={styles.synergyBody}>{strings.synergyBody}</p>
           </section>
         )}
 
