@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": "md-001",
+    "name": "אביטל סודרי",
+    "profession": "cosmetologist",
+    "city": "רבי עקיבא 1, לוד",
+    "area": "center",
+    "contact": "0525496416",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-002",
+    "name": "אביטן לילי",
+    "profession": "cosmetologist",
+    "city": "מרכז שביט, קרית אתא",
+    "area": "north",
+    "contact": "0525260466",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-003",
+    "name": "אדים אסעד — מדיקל קליניק",
+    "profession": "clinic",
+    "city": "כרמיאל",
+    "area": "north",
+    "contact": "0526489788",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-004",
+    "name": "אולגה שולמן",
+    "profession": "cosmetologist",
+    "city": "רחובות",
+    "area": "center",
+    "contact": "0503069761",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-005",
+    "name": "אוסנת סויסה",
+    "profession": "cosmetologist",
+    "city": "נתיבות",
+    "area": "south",
+    "contact": "0524703476",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-006",
+    "name": "אופירה ספיר",
+    "profession": "cosmetologist",
+    "city": "העלייה 55, נהריה",
+    "area": "north",
+    "contact": "0523076307",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-007",
+    "name": "אור מדיקל קוסמטיקס — אורלי",
+    "profession": "clinic",
+    "city": "",
+    "area": "center",
+    "contact": "0549451444",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-008",
+    "name": "אורה יעקב",
+    "profession": "cosmetologist",
+    "city": "בית אריה — עופרים",
+    "area": "center",
+    "contact": "0525628858",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-009",
+    "name": "אורטל אוחיון",
+    "profession": "cosmetologist",
+    "city": "נתניה",
+    "area": "center",
+    "contact": "0529559155",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  },
+  {
+    "id": "md-010",
+    "name": "אורלי ליאור",
+    "profession": "cosmetologist",
+    "city": "ניצני עוז",
+    "area": "center",
+    "contact": "0522567100",
+    "isPublished": true,
+    "createdAt": "2026-07-03T00:00:00.000Z",
+    "updatedAt": "2026-07-03T00:00:00.000Z"
+  }
+]
