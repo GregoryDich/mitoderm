@@ -1113,7 +1113,8 @@
         }
       ]
     },
-    "certTitle": "Standards & certifications"
+    "certTitle": "Standards & certifications",
+    "emailPlaceholder": "Your professional email"
   },
   "contactForm": {
     "eyebrow": "CONTACT",

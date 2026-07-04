@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
 import styles from './ApplyForm.module.scss';
@@ -9,6 +9,12 @@ const ApplyForm: FC = () => {
   const t = useTranslations('apply');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  // Pre-fill from the homepage email-capture (?email=…). Read on the
+  // client to avoid a useSearchParams Suspense boundary.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('email');
+    if (q) setEmail(q);
+  }, []);
   const [phone, setPhone] = useState('');
   const [clinic, setClinic] = useState('');
   const [license, setLicense] = useState('');

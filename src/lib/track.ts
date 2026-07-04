@@ -23,7 +23,8 @@ type EventName =
   // small commits that signal real interest before a form submission.
   | 'add_to_interest'
   | 'view_protocol'
-  | 'read_post';
+  | 'read_post'
+  | 'partner_email_capture';
 
 export function track(name: EventName, params?: Record<string, unknown>): void {
   if (typeof window === 'undefined') return;
