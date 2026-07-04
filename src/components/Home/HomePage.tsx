@@ -131,14 +131,16 @@ const HomePage: FC<Props> = ({
           products themselves. */}
       <MethodStrip />
 
+      {/* Proof-first: real before/after sits between "why it works" and
+          "what to buy", so a skeptical buyer sees evidence before the
+          product sell. */}
+      <ResultsStrip />
+
       {/* The collection — every product as its own editorial banner
           (Figma centerpiece): big glowing shot + one-line USP + proof. */}
       <ProductShowcase />
 
       <main className={styles.content}>
-        {/* Proof leads: real before/after before any brand copy. */}
-        <ResultsStrip />
-
         {doctors.length > 0 && (
           <TrustedByStrip doctors={doctors} label={t('trustedBy')} />
         )}
