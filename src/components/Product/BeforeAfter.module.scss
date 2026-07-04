@@ -67,11 +67,9 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  /* `left` is physical (set inline) to match the physical-left clip;
+     centering stays the same in LTR and RTL. */
   transform: translateX(-50%);
-}
-
-[dir='rtl'] .handle {
-  transform: translateX(50%);
 }
 
 .handleBar {

@@ -99,7 +99,10 @@ const Pair: FC<{ pair: Pair; beforeLabel: string; afterLabel: string }> = ({
         <span className={styles.labelAfter}>{afterLabel}</span>
         <div
           className={styles.handle}
-          style={{ insetInlineStart: `${pct}%` }}
+          // Physical `left` (not logical): the drag math and the clip
+          // are both physical-left-based, so the handle must track the
+          // same axis or it detaches from the reveal line in RTL.
+          style={{ left: `${pct}%` }}
           aria-hidden="true"
         >
           <span className={styles.handleBar} />
