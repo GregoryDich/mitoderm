@@ -62,6 +62,11 @@ const SeminarsPage: FC<Props> = ({ upcoming, past }) => {
   const t = useTranslations('seminars');
   const locale = useLocale();
   const agenda = (t.raw('agenda') as AgendaItem[]) ?? [];
+  const programs =
+    (t.raw('programs') as { title: string; topics: string[] }[]) ?? [];
+  const takeaways =
+    (t.raw('takeaways') as { title: string; text: string }[]) ?? [];
+  const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
   const posts = [...upcoming, ...past];
 
   return (
@@ -108,6 +113,70 @@ const SeminarsPage: FC<Props> = ({ upcoming, past }) => {
               ))}
             </ol>
           </Reveal>
+        )}
+
+        {/* Training programs (from the Mitoderm academy) */}
+        {programs.length > 0 && (
+          <section className={styles.section}>
+            <div className={styles.secLabel}>
+              <span className={styles.secNum}>02</span>
+              <span className={styles.secLine} />
+              <span className={styles.secName}>{t('programsTitle')}</span>
+            </div>
+            <Reveal variant="rise" stagger={120} className={styles.programGrid}>
+              {programs.map((p) => (
+                <article key={p.title} className={styles.progCard}>
+                  <h3 className={styles.progTitle}>{p.title}</h3>
+                  <ul className={styles.progTopics}>
+                    {p.topics.map((tp) => (
+                      <li key={tp} className={styles.progTopic}>
+                        <span className={styles.progDot} aria-hidden="true" />
+                        <span>{tp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </Reveal>
+          </section>
+        )}
+
+        {/* What you take away */}
+        {takeaways.length > 0 && (
+          <section className={styles.section}>
+            <div className={styles.secLabel}>
+              <span className={styles.secNum}>03</span>
+              <span className={styles.secLine} />
+              <span className={styles.secName}>{t('takeawaysTitle')}</span>
+            </div>
+            <Reveal variant="rise" stagger={100} className={styles.valueGrid}>
+              {takeaways.map((g) => (
+                <div key={g.title} className={styles.valueCard}>
+                  <h4 className={styles.valueTitle}>{g.title}</h4>
+                  <p className={styles.valueText}>{g.text}</p>
+                </div>
+              ))}
+            </Reveal>
+          </section>
+        )}
+
+        {/* Why train with us */}
+        {why.length > 0 && (
+          <section className={styles.section}>
+            <div className={styles.secLabel}>
+              <span className={styles.secNum}>04</span>
+              <span className={styles.secLine} />
+              <span className={styles.secName}>{t('whyTitle')}</span>
+            </div>
+            <Reveal variant="rise" stagger={100} className={styles.valueGrid}>
+              {why.map((g) => (
+                <div key={g.title} className={styles.valueCard}>
+                  <h4 className={styles.valueTitle}>{g.title}</h4>
+                  <p className={styles.valueText}>{g.text}</p>
+                </div>
+              ))}
+            </Reveal>
+          </section>
         )}
 
         {/* Optional: recent seminars from Instagram, only if present */}

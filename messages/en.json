@@ -818,7 +818,77 @@
     "viewOnInstagram": "View on Instagram",
     "ctaTitle": "Want a private seminar at your clinic?",
     "ctaText": "We host on-site training and certification across Israel and the EU.",
-    "ctaButton": "Request a seminar"
+    "ctaButton": "Request a seminar",
+    "programsTitle": "Training programs",
+    "takeawaysTitle": "What you take away",
+    "whyTitle": "Why train with us",
+    "programs": [
+      {
+        "title": "Training Day — Cosmeticians · Facial",
+        "topics": [
+          "Introduction to exosomes and skin biology",
+          "How exosomes communicate with and renew cells",
+          "The clinical advantages of synthetic, stable exosomes",
+          "Protocols tailored for maximum effectiveness",
+          "Integrating treatments for clinic differentiation"
+        ]
+      },
+      {
+        "title": "Training Day — Cosmeticians · Scalp",
+        "topics": [
+          "The biological processes behind hair loss",
+          "Using exosomes for scalp restoration and faster growth",
+          "Diagnosing scalp conditions and tailoring protocols",
+          "Microneedling: precise, correct work with the scalp",
+          "Integrating treatments to generate results and sales"
+        ]
+      },
+      {
+        "title": "Training Day — Hair Stylists · Scalp",
+        "topics": [
+          "Understanding hair-loss and hair-growth processes",
+          "Fundamentals of microneedling and correct scalp work",
+          "Exosomes: innovative solutions for scalp restoration",
+          "Turning knowledge into differentiation and added value"
+        ]
+      }
+    ],
+    "takeaways": [
+      {
+        "title": "Certificate of participation",
+        "text": "Professional certification recognised across the field."
+      },
+      {
+        "title": "Clinical practice",
+        "text": "Hands-on experience and protocol customisation."
+      },
+      {
+        "title": "Expert lectures",
+        "text": "Professional leadership and knowledge expansion."
+      },
+      {
+        "title": "Advanced aesthetics",
+        "text": "Up-to-date, science-based techniques."
+      }
+    ],
+    "why": [
+      {
+        "title": "Innovative products",
+        "text": "The only company in Israel working with connective exosomes."
+      },
+      {
+        "title": "Professional network",
+        "text": "Meet and grow alongside leaders in aesthetics."
+      },
+      {
+        "title": "Personal growth",
+        "text": "Skills and expertise that elevate your practice."
+      },
+      {
+        "title": "Official Italian distributor",
+        "text": "Direct access to VM Corporation technology in Israel."
+      }
+    ]
   },
   "regimen": {
     "eyebrow": "REGIMEN BUILDER",

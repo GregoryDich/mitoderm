@@ -382,3 +382,90 @@
   );
   pointer-events: none;
 }
+
+/* ---- training programs ---- */
+.programGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.progCard {
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.028);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.progTitle {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(18px, 2.1vw, 23px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 18px;
+  color: #f5f2f0;
+}
+
+.progTopics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.progTopic {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(245, 242, 240, 0.72);
+}
+
+.progDot {
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: #dfba74;
+}
+
+/* ---- value grid (takeaways / why) ---- */
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.valueCard {
+  padding: clamp(20px, 2.4vw, 28px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.valueTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  color: #f5f2f0;
+}
+
+.valueText {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .programGrid {
+    grid-template-columns: 1fr;
+  }
+  .valueGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
