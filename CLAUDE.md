@@ -58,6 +58,35 @@ All new UI must be:
    `src/data/products.legacy.json` and at the branch / tag
    `cycle-0-snapshot`.
 
+## USP / messaging — LOCKED (do not re-invent)
+
+Audience is **cosmetologists** — women of various ages; the register
+moves **anti-age → longevity**. Owner is copy-sensitive: do NOT invent
+taglines. Use the brand's real copy; if a slot has none, propose 2–3
+and get explicit approval before committing.
+
+- **Per-product USPs live in `src/data/showcase.json`** (tri-locale).
+  They are the brand's own Figma copy, pro-oriented, and follow the 7
+  strong-USP principles (Reeves/Ogilvy/Hopkins: concrete · one idea ·
+  benefit not feature · proof · differentiation · simplicity · truth):
+  V-Tech "The flagship of skin renewal" · Exocell "Recovery,
+  reimagined" · Exotech "The medium of every result" · Exosignal Hair
+  "Signal the roots to thrive" · Exo-NAD "Longevity at the cellular
+  level" · Mitoscan "See beneath the surface" · MitoPen "Precision, in
+  your hand".
+- **Main partner USP (owner's north star, keep verbatim):** kicker
+  "Become a Partner" → **"Bring Mitoderm to your clinic"** →
+  "Join the professionals redefining skin longevity. Request access to
+  the full catalog, pricing and training." (homepage `home.ctaBand*`).
+- **Philosophy line (from mitoderm/Figma):** "beautiful skin is not
+  applied — it is regenerated" / "an ecosystem of regeneration".
+- The Figma homepage is built around **per-product showcase banners**
+  (alternating dark/light/gold, `ProductShowcase`) — that is the
+  centerpiece; don't let grouped-line views displace it.
+- Reference design lives on branch `reference/figma-make` (Figma Make
+  app; NEVER merge to main). Read `src/app/components/*` +
+  `src/app/data/products.ts` there for canonical copy/animation.
+
 ## SKILL: extract images from the conversation (do this automatically)
 
 When the user pastes images in chat and they're needed as files
