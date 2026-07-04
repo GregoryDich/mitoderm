@@ -148,8 +148,8 @@
     "cat_longevity": "אריכות ימים"
   },
   "catalog": {
-    "eyebrow": "קטלוג",
-    "title": "המוצרים שלנו",
+    "eyebrow": "קטלוג מוצרים",
+    "title": "עיון לפי קו מוצרים",
     "subtitle": "פתרונות מקצועיים מבוססי אקסוזומים למרפאות ולמטפלי אסתטיקה — סרומים ומסכות V-Tech, ג'לים Exotech, מוצרי שיער Exosignal.",
     "filterAll": "הכל",
     "filterExosome": "אקסוזומים",
@@ -173,7 +173,11 @@
     "clearFilters": "ניקוי סינון",
     "addToList": "הוספה לרשימה",
     "removeFromList": "הסרה מהרשימה",
-    "openLine": "לצפייה בקו"
+    "openLine": "לצפייה בקו",
+    "allLines": "כל הקווים",
+    "inDevelopment": "בפיתוח",
+    "comingSoonText": "הקו נמצא בפיתוח במעבדות שלנו. הצטרפו לרשימת השותפים כדי להיות הראשונים לקבל גישה בהשקה.",
+    "notifyMe": "עדכנו אותי"
   },
   "product": {
     "keyBenefits": "יתרונות מרכזיים",

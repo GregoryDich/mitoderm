@@ -4,12 +4,7 @@ import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/routing';
-import {
-  CatalogItem,
-  LineSummary,
-  ProductCategory,
-  ProductAccent,
-} from '@/products';
+import { CatalogItem, LineSummary, ProductAccent } from '@/products';
 import Footer from '@/components/Layout/Footer/Footer';
 import HoverVideoMedia from '@/components/Product/HoverVideoMedia';
 import InterestToggle from '@/components/InterestList/InterestToggle';
@@ -19,23 +14,11 @@ import styles from './Catalog.module.scss';
 
 interface Props {
   items: CatalogItem[];
-  /** Line summaries for the default (unfiltered) system-grouped view. */
+  /** Line summaries — the catalog is explored by product line (Figma). */
   lines?: LineSummary[];
 }
 
-type Filter = 'all' | ProductCategory;
-
-const filters: { key: Filter; labelKey: string }[] = [
-  { key: 'all', labelKey: 'filterAll' },
-  { key: 'serum', labelKey: 'filterSerum' },
-  { key: 'mask', labelKey: 'filterMask' },
-  { key: 'gel', labelKey: 'filterGel' },
-  { key: 'hair', labelKey: 'filterHair' },
-  { key: 'peel', labelKey: 'filterPeel' },
-  { key: 'device', labelKey: 'filterDevice' },
-];
-
-const FILTER_KEYS = new Set<string>(filters.map((f) => f.key));
+type Filter = 'all' | string;
 
 const accentVar: Record<ProductAccent, string> = {
   teal: '#6fb7ba',
@@ -52,8 +35,8 @@ const accentVar: Record<ProductAccent, string> = {
 function syncUrl(active: Filter, query: string): void {
   if (typeof window === 'undefined') return;
   const params = new URLSearchParams(window.location.search);
-  if (active === 'all') params.delete('category');
-  else params.set('category', active);
+  if (active === 'all') params.delete('line');
+  else params.set('line', active);
   if (query.trim()) params.set('q', query.trim());
   else params.delete('q');
   const qs = params.toString();
@@ -65,13 +48,13 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
   const t = useTranslations('catalog');
   const searchParams = useSearchParams();
 
-  // Seed initial state from the URL so a shared /catalog?category=serum
-  // link lands pre-filtered.
-  const initialCategory = searchParams.get('category');
+  const lineSlugs = useMemo(() => new Set(lines.map((l) => l.slug)), [lines]);
+
+  // Seed initial state from the URL so a shared /catalog?line=hair link
+  // lands pre-filtered.
+  const initialLine = searchParams.get('line');
   const [active, setActive] = useState<Filter>(
-    initialCategory && FILTER_KEYS.has(initialCategory)
-      ? (initialCategory as Filter)
-      : 'all'
+    initialLine && lineSlugs.has(initialLine as never) ? initialLine : 'all'
   );
   const [query, setQuery] = useState(searchParams.get('q') ?? '');
 
@@ -81,7 +64,7 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
 
   const onFilter = useCallback((key: Filter) => {
     setActive(key);
-    track('catalog_filter', { category: key });
+    track('catalog_filter', { line: key });
   }, []);
 
   const reset = useCallback(() => {
@@ -89,18 +72,30 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
     setQuery('');
   }, []);
 
-  const visible = useMemo(() => {
-    const byCategory =
-      active === 'all' ? items : items.filter((i) => i.category === active);
-    const q = query.trim().toLowerCase();
-    if (!q) return byCategory;
-    return byCategory.filter((i) => {
-      const haystack = `${i.name} ${i.shortDescription} ${i.category}`.toLowerCase();
-      return haystack.includes(q);
-    });
-  }, [active, items, query]);
+  const q = query.trim().toLowerCase();
 
-  const isFiltered = active !== 'all' || query.trim().length > 0;
+  // Explore by line: pick the active line(s), then narrow each line's
+  // items by the search query. A line drops out only when a search
+  // empties it (coming-soon lines stay unless a search is active).
+  const visibleLines = useMemo(() => {
+    const base =
+      active === 'all' ? lines : lines.filter((l) => l.slug === active);
+    if (!q) return base;
+    return base
+      .map((l) => ({
+        ...l,
+        items: l.items.filter((i) =>
+          `${i.name} ${i.shortDescription} ${i.category}`
+            .toLowerCase()
+            .includes(q)
+        ),
+      }))
+      .filter((l) => l.items.length > 0);
+  }, [active, lines, q]);
+
+  const shownCount = visibleLines.reduce((n, l) => n + l.items.length, 0);
+  const totalCount = items.length;
+  const isFiltered = active !== 'all' || q.length > 0;
 
   const renderCard = (item: CatalogItem) => (
     <Link
@@ -169,17 +164,27 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
       <main className={styles.content}>
         <div className={styles.controls}>
           <div className={styles.filters}>
-            {filters.map((f) => (
+            <button
+              type="button"
+              aria-pressed={active === 'all'}
+              className={`${styles.filter} ${
+                active === 'all' ? styles.filterActive : ''
+              }`}
+              onClick={() => onFilter('all')}
+            >
+              {t('allLines')}
+            </button>
+            {lines.map((l) => (
               <button
-                key={f.key}
+                key={l.slug}
                 type="button"
-                aria-pressed={active === f.key}
+                aria-pressed={active === l.slug}
                 className={`${styles.filter} ${
-                  active === f.key ? styles.filterActive : ''
+                  active === l.slug ? styles.filterActive : ''
                 }`}
-                onClick={() => onFilter(f.key)}
+                onClick={() => onFilter(l.slug)}
               >
-                {t(f.labelKey)}
+                {l.name}
               </button>
             ))}
           </div>
@@ -219,7 +224,7 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
         </div>
         <div className={styles.resultRow} aria-live="polite">
           <span className={styles.resultCount}>
-            {t('resultCount', { shown: visible.length, total: items.length })}
+            {t('resultCount', { shown: shownCount, total: totalCount })}
           </span>
           {isFiltered && (
             <button type="button" className={styles.resetBtn} onClick={reset}>
@@ -228,7 +233,7 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
           )}
         </div>
 
-        {visible.length === 0 && (
+        {visibleLines.length === 0 && (
           <div className={styles.empty}>
             <p className={styles.emptyText}>{t('noResults')}</p>
             <button type="button" className={styles.emptyReset} onClick={reset}>
@@ -237,41 +242,59 @@ const Catalog: FC<Props> = ({ items, lines = [] }) => {
           </div>
         )}
 
-        {isFiltered || lines.length === 0 ? (
-          /* Filter / search active → flat result grid. */
-          <div className={styles.grid}>{visible.map(renderCard)}</div>
-        ) : (
-          /* Default view — grouped by system: cosmetologists buy
-             protocols (serum+mask+gel), not loose SKUs. */
-          <div className={styles.systems}>
-            {lines
-              .filter((l) => l.items.length > 0)
-              .map((line) => (
-                <section
-                  key={line.slug}
-                  className={styles.system}
-                  style={{ ['--accent' as string]: accentVar[line.accent] }}
-                >
-                  <div className={styles.systemHead}>
-                    <div className={styles.systemMeta}>
-                      <span className={styles.systemEyebrow}>
-                        {line.eyebrow}
-                      </span>
-                      <h2 className={styles.systemName}>{line.name}</h2>
-                      <p className={styles.systemTagline}>{line.tagline}</p>
-                    </div>
+        {/* Explore by product line — each line is one block (Figma).
+            Cosmetologists compare by line/system, not loose SKUs. */}
+        <div className={styles.systems}>
+          {visibleLines.map((line) => {
+            const soon = line.status === 'coming-soon' || line.items.length === 0;
+            return (
+              <section
+                key={line.slug}
+                className={styles.system}
+                style={{ ['--accent' as string]: accentVar[line.accent] }}
+              >
+                <div className={styles.systemHead}>
+                  <div className={styles.systemMeta}>
+                    <span className={styles.systemEyebrow}>{line.eyebrow}</span>
+                    <h2 className={styles.systemName}>
+                      {line.name}
+                      {soon && (
+                        <span className={styles.soonPill}>
+                          {t('comingSoon')}
+                        </span>
+                      )}
+                    </h2>
+                    <p className={styles.systemTagline}>
+                      {line.shortDescription || line.tagline}
+                    </p>
+                  </div>
+                  {!soon && (
                     <Link href={line.href} className={styles.systemLink}>
-                      {t('openLine')}{' '}
-                      <span className={styles.arrow}>→</span>
+                      {t('openLine')} <span className={styles.arrow}>→</span>
+                    </Link>
+                  )}
+                </div>
+
+                {soon ? (
+                  <div className={styles.comingSoonCard}>
+                    <span className={styles.csIcon} aria-hidden="true">
+                      ✦
+                    </span>
+                    <h3 className={styles.csTitle}>
+                      {line.name} — {t('inDevelopment')}
+                    </h3>
+                    <p className={styles.csText}>{t('comingSoonText')}</p>
+                    <Link href="/form" className={styles.csBtn}>
+                      {t('notifyMe')}
                     </Link>
                   </div>
-                  <div className={styles.grid}>
-                    {line.items.map(renderCard)}
-                  </div>
-                </section>
-              ))}
-          </div>
-        )}
+                ) : (
+                  <div className={styles.grid}>{line.items.map(renderCard)}</div>
+                )}
+              </section>
+            );
+          })}
+        </div>
 
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />

@@ -148,8 +148,8 @@
     "cat_longevity": "Longevity"
   },
   "catalog": {
-    "eyebrow": "CATALOG",
-    "title": "Our Products",
+    "eyebrow": "Product Catalog",
+    "title": "Explore by product line",
     "subtitle": "Professional exosome-based solutions for clinics and aesthetic practitioners — V-Tech serums and masks, Exotech gels, Exosignal hair treatments.",
     "filterAll": "All",
     "filterExosome": "Exosomes",
@@ -173,7 +173,11 @@
     "clearFilters": "Clear filters",
     "addToList": "Add to my list",
     "removeFromList": "Remove from my list",
-    "openLine": "Open the line"
+    "openLine": "Open the line",
+    "allLines": "All lines",
+    "inDevelopment": "in development",
+    "comingSoonText": "This line is being perfected in our labs. Join the partner list to be first to access it at launch.",
+    "notifyMe": "Notify me"
   },
   "product": {
     "keyBenefits": "Key Benefits",
