@@ -1063,11 +1063,12 @@
     "errorServer": "Something went wrong. Please try again or email us directly."
   },
   "lines": {
-    "eyebrow": "PRODUCT LINES",
-    "title": "Built as systems, not single SKUs",
-    "subtitle": "Each Mitoderm line is engineered as a complete protocol — products, ingredients and application steps designed to work together in the clinic.",
+    "eyebrow": "The Collection",
+    "title": "A complete ecosystem of regeneration",
+    "subtitle": "Each line is a protocol — its products are designed to work together, not alone.",
     "explore": "Explore the line",
-    "comingSoon": "Coming soon"
+    "comingSoon": "Coming soon",
+    "details": "Details"
   },
   "linePage": {
     "productsTitle": "PRODUCTS IN THIS LINE",
