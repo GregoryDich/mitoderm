@@ -34,14 +34,25 @@ describe('rateLimited', () => {
 });
 
 describe('clientIp', () => {
-  it('prefers the left-most x-forwarded-for entry', () => {
+  it('prefers platform-controlled x-vercel-forwarded-for over spoofable XFF', () => {
     expect(
-      clientIp(fakeReq({ 'x-forwarded-for': '1.2.3.4, 5.6.7.8' }))
-    ).toBe('1.2.3.4');
+      clientIp(
+        fakeReq({
+          'x-vercel-forwarded-for': '9.9.9.9',
+          'x-forwarded-for': '1.2.3.4, 5.6.7.8',
+        })
+      )
+    ).toBe('9.9.9.9');
   });
 
-  it('falls back to x-real-ip when x-forwarded-for is missing', () => {
-    expect(clientIp(fakeReq({ 'x-real-ip': '9.9.9.9' }))).toBe('9.9.9.9');
+  it('uses x-real-ip when present', () => {
+    expect(clientIp(fakeReq({ 'x-real-ip': '8.8.8.8' }))).toBe('8.8.8.8');
+  });
+
+  it('falls back to the RIGHT-most x-forwarded-for hop, not the spoofable left', () => {
+    expect(clientIp(fakeReq({ 'x-forwarded-for': '1.2.3.4, 5.6.7.8' }))).toBe(
+      '5.6.7.8'
+    );
   });
 
   it('falls back to "unknown" when nothing identifies the client', () => {

@@ -43,7 +43,14 @@ function readGh(): GhConfig | null {
  *  overwritten on each run. */
 export async function POST(req: Request) {
   const url = new URL(req.url);
-  const token = url.searchParams.get('token');
+  // Prefer an Authorization: Bearer header — tokens in the query string
+  // leak into access/proxy logs and Referer. Query stays as a fallback
+  // for existing cron configs.
+  const auth = req.headers.get('authorization') || '';
+  const bearer = auth.toLowerCase().startsWith('bearer ')
+    ? auth.slice(7).trim()
+    : null;
+  const token = bearer || url.searchParams.get('token');
   if (!ok(token)) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   }
