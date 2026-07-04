@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import type { LineSummary } from '@/products';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import { track } from '@/lib/track';
 import styles from './LinesShowcase.module.scss';
 
@@ -19,9 +20,13 @@ const accentVar: Record<'teal' | 'gold' | 'rose' | 'amber' | 'steel', string> = 
   steel: '#8ba0ab',
 };
 
+/** The ecosystem — each product LINE as one editorial offer block with
+ *  its products shown together (synergy), matching the Figma. All lines
+ *  visible at once so a clinic owner can compare and self-select. */
 const LinesShowcase: FC<Props> = ({ lines }) => {
   const t = useTranslations('lines');
-  if (lines.length === 0) return null;
+  const withProducts = lines.filter((l) => l.items.length > 0);
+  if (withProducts.length === 0) return null;
 
   return (
     <section className={styles.section} aria-labelledby="lines-section-title">
@@ -37,58 +42,62 @@ const LinesShowcase: FC<Props> = ({ lines }) => {
       </header>
 
       <div className={styles.list}>
-        {lines.map((line, i) => (
+        {withProducts.map((line) => (
           <article
             key={line.slug}
-            className={`${styles.line} ${
-              i % 2 === 1 ? styles.lineFlipped : ''
-            } ${line.status === 'coming-soon' ? styles.soon : ''}`}
+            className={styles.line}
             style={{ ['--accent' as string]: accentVar[line.accent] }}
           >
-            <div className={styles.media} aria-hidden="true">
-              {line.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={line.image} alt="" loading="lazy" />
-              ) : (
-                <span className={styles.mediaPlaceholder}>
-                  <span>{line.eyebrow}</span>
-                </span>
-              )}
-              <span className={styles.glow} />
-            </div>
-
-            <div className={styles.body}>
-              <span className={styles.lineEyebrow}>{line.eyebrow}</span>
-              <h3 className={styles.lineName}>{line.name}</h3>
-              <p className={styles.lineTagline}>{line.tagline}</p>
-              <p className={styles.lineDesc}>{line.shortDescription}</p>
-
-              {line.items.length > 0 && (
-                <ul className={styles.skuList}>
-                  {line.items.map((item) => (
-                    <li key={item.slug}>
-                      <Link href={item.href} className={styles.skuLink}>
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className={styles.ctaRow}>
-                {line.status === 'available' ? (
-                  <Link
-                    href={line.href}
-                    className={styles.cta}
-                    onClick={() => track('line_cta', { slug: line.slug, source: 'home' })}
-                  >
-                    {t('explore')} <span className={styles.arrow}>→</span>
-                  </Link>
-                ) : (
-                  <span className={styles.soonBadge}>{t('comingSoon')}</span>
-                )}
+            <div className={styles.lineHead}>
+              <span className={styles.accentBar} aria-hidden="true" />
+              <div className={styles.lineMeta}>
+                <span className={styles.lineEyebrow}>{line.eyebrow}</span>
+                <h3 className={styles.lineName}>{line.name}</h3>
+                <p className={styles.lineTagline}>{line.tagline}</p>
               </div>
+              <Link
+                href={line.href}
+                className={styles.exploreLink}
+                onClick={() =>
+                  track('line_cta', { slug: line.slug, source: 'home' })
+                }
+              >
+                {t('explore')} <span className={styles.arrow}>→</span>
+              </Link>
             </div>
+
+            {/* Products of the line, together — the "1+1=3" synergy. */}
+            <Reveal
+              variant="rise"
+              stagger={110}
+              className={`${styles.products} ${
+                line.items.length === 2 ? styles.productsTwo : ''
+              }`}
+            >
+              {line.items.map((item) => (
+                <Link key={item.slug} href={item.href} className={styles.pcard}>
+                  <div className={styles.pmedia}>
+                    {item.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={item.image} alt="" loading="lazy" />
+                    ) : (
+                      <span className={styles.pmediaEmpty} aria-hidden="true" />
+                    )}
+                  </div>
+                  <div className={styles.pbody}>
+                    <span className={styles.pcat}>
+                      {item.category.replace('-', ' ').toUpperCase()}
+                    </span>
+                    <h4 className={styles.pname}>{item.name}</h4>
+                    <p className={styles.pdesc}>{item.shortDescription}</p>
+                    <span className={styles.pdetails}>
+                      {t('details')}{' '}
+                      <span className={styles.arrow}>↗</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </Reveal>
           </article>
         ))}
       </div>
