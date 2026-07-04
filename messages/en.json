@@ -1024,7 +1024,25 @@
     "heroTitle2": "regeneration.",
     "heroDesc": "Mitoderm unites advanced exosome technology with precision devices to renew skin and hair at the cellular level — a complete professional ecosystem for visible, lasting longevity.",
     "heroCta1": "Discover the collection",
-    "heroCta2": "View catalog"
+    "heroCta2": "View catalog",
+    "philosophy": {
+      "kicker": "The Mitoderm Philosophy",
+      "quote": "We believe beautiful skin is not applied — it is regenerated. Every formula and device is engineered to work with your biology, not against it.",
+      "stats": [
+        {
+          "value": "8",
+          "label": "Signature products"
+        },
+        {
+          "value": "100%",
+          "label": "Professional grade"
+        },
+        {
+          "value": "1",
+          "label": "Unified ecosystem"
+        }
+      ]
+    }
   },
   "contactForm": {
     "eyebrow": "CONTACT",
