@@ -1,12 +1,25 @@
 {
   "meta": {
-    "kicker": { "en": "The Collection", "ru": "Коллекция", "he": "הקולקציה" },
+    "kicker": {
+      "en": "The Collection",
+      "ru": "Коллекция",
+      "he": "הקולקציה"
+    },
     "title": {
       "en": "A complete ecosystem of regeneration",
       "ru": "Целостная экосистема регенерации",
       "he": "אקוסיסטם שלם של התחדשות"
     },
-    "learnMore": { "en": "Learn more", "ru": "Подробнее", "he": "מידע נוסף" }
+    "learnMore": {
+      "en": "Learn more",
+      "ru": "Подробнее",
+      "he": "מידע נוסף"
+    },
+    "pairsLabel": {
+      "en": "Pairs with",
+      "ru": "Работает в паре с",
+      "he": "משתלב עם"
+    }
   },
   "items": [
     {
@@ -14,18 +27,46 @@
       "name": "V-Tech System",
       "image": "/products/v-tech-system/hero.webp",
       "surface": "dark",
-      "badge": { "en": "Flagship", "ru": "Флагман", "he": "דגל" },
-      "line": { "en": "Facial Regeneration", "ru": "Регенерация лица", "he": "התחדשות הפנים" },
-      "tagline": { "en": "The flagship of skin renewal.", "ru": "Флагман обновления кожи.", "he": "הדגל של חידוש העור." },
+      "badge": {
+        "en": "Flagship",
+        "ru": "Флагман",
+        "he": "דגל"
+      },
+      "line": {
+        "en": "Facial Regeneration",
+        "ru": "Регенерация лица",
+        "he": "התחדשות הפנים"
+      },
+      "tagline": {
+        "en": "The flagship of skin renewal.",
+        "ru": "Флагман обновления кожи.",
+        "he": "הדגל של חידוש העור."
+      },
       "description": {
         "en": "A professional in-clinic protocol combining concentrated exosome ampoules with the V-Tech delivery method to accelerate cellular regeneration, restore density, and reveal luminous, resilient skin.",
         "ru": "Профессиональный протокол для клиники: концентрированные экзосомные ампулы и метод доставки V-Tech ускоряют клеточную регенерацию, восстанавливают плотность и дарят сияющую, упругую кожу.",
         "he": "פרוטוקול מקצועי למרפאה המשלב אמפולות אקסוזומים מרוכזות עם שיטת ההחדרה V-Tech להאצת ההתחדשות התאית, השבת צפיפות ועור זוהר ואיתן."
       },
       "highlights": [
-        { "en": "Concentrated exosome ampoules", "ru": "Концентрированные экзосомные ампулы", "he": "אמפולות אקסוזומים מרוכזות" },
-        { "en": "Clinically guided 4-step protocol", "ru": "Клинический протокол из 4 шагов", "he": "פרוטוקול קליני בן 4 שלבים" },
-        { "en": "Visible firmness & luminosity", "ru": "Заметная упругость и сияние", "he": "מוצקות וזוהר נראים לעין" }
+        {
+          "en": "Concentrated exosome ampoules",
+          "ru": "Концентрированные экзосомные ампулы",
+          "he": "אמפולות אקסוזומים מרוכזות"
+        },
+        {
+          "en": "Clinically guided 4-step protocol",
+          "ru": "Клинический протокол из 4 шагов",
+          "he": "פרוטוקול קליני בן 4 שלבים"
+        },
+        {
+          "en": "Visible firmness & luminosity",
+          "ru": "Заметная упругость и сияние",
+          "he": "מוצקות וזוהר נראים לעין"
+        }
+      ],
+      "pairsWith": [
+        "v-tech-gel-mask",
+        "exotech-gel"
       ]
     },
     {
@@ -33,17 +74,41 @@
       "name": "Exocell Mask",
       "image": "/products/exocell-mask/hero.png",
       "surface": "light",
-      "line": { "en": "Facial Regeneration", "ru": "Регенерация лица", "he": "התחדשות הפנים" },
-      "tagline": { "en": "Recovery, reimagined.", "ru": "Восстановление по-новому.", "he": "התאוששות מחדש." },
+      "line": {
+        "en": "Facial Regeneration",
+        "ru": "Регенерация лица",
+        "he": "התחדשות הפנים"
+      },
+      "tagline": {
+        "en": "Recovery, reimagined.",
+        "ru": "Восстановление по-новому.",
+        "he": "התאוששות מחדש."
+      },
       "description": {
         "en": "A second-skin biocellulose mask engineered to soothe, hydrate and support skin recovery after advanced treatments. Infused with regenerative actives for immediate comfort and lasting glow.",
         "ru": "Биоцеллюлозная маска «вторая кожа», созданная успокаивать, увлажнять и поддерживать восстановление кожи после интенсивных процедур. Регенерирующие активы дарят мгновенный комфорт и стойкое сияние.",
         "he": "מסכת ביו-תאית במרקם 'עור שני' שתוכננה להרגיע, ללחלח ולתמוך בהתאוששות העור לאחר טיפולים מתקדמים. מועשרת בחומרים מתחדשים לנוחות מיידית וזוהר מתמשך."
       },
       "highlights": [
-        { "en": "Biocellulose second-skin fit", "ru": "«Вторая кожа» из биоцеллюлозы", "he": "התאמת 'עור שני' ביו-תאית" },
-        { "en": "Soothing post-procedure relief", "ru": "Успокоение после процедур", "he": "הקלה מרגיעה אחרי טיפול" },
-        { "en": "Deep regenerative hydration", "ru": "Глубокое регенерирующее увлажнение", "he": "לחות מתחדשת עמוקה" }
+        {
+          "en": "Biocellulose second-skin fit",
+          "ru": "«Вторая кожа» из биоцеллюлозы",
+          "he": "התאמת 'עור שני' ביו-תאית"
+        },
+        {
+          "en": "Soothing post-procedure relief",
+          "ru": "Успокоение после процедур",
+          "he": "הקלה מרגיעה אחרי טיפול"
+        },
+        {
+          "en": "Deep regenerative hydration",
+          "ru": "Глубокое регенерирующее увлажнение",
+          "he": "לחות מתחדשת עמוקה"
+        }
+      ],
+      "pairsWith": [
+        "v-tech-serum",
+        "exotech-gel"
       ]
     },
     {
@@ -51,17 +116,41 @@
       "name": "Exotech Gel",
       "image": "/products/exotech-gel/hero.webp",
       "surface": "light",
-      "line": { "en": "Facial Regeneration", "ru": "Регенерация лица", "he": "התחדשות הפנים" },
-      "tagline": { "en": "The medium of every result.", "ru": "Среда каждого результата.", "he": "המדיום של כל תוצאה." },
+      "line": {
+        "en": "Facial Regeneration",
+        "ru": "Регенерация лица",
+        "he": "התחדשות הפנים"
+      },
+      "tagline": {
+        "en": "The medium of every result.",
+        "ru": "Среда каждого результата.",
+        "he": "המדיום של כל תוצאה."
+      },
       "description": {
         "en": "A premium conductive gel formulated to optimize the delivery of devices and actives, gliding effortlessly while enhancing absorption and treatment comfort.",
         "ru": "Премиальный проводящий гель, оптимизирующий доставку устройств и активов: легко скользит, усиливает впитывание и комфорт процедуры.",
         "he": "ג'ל מוליך פרימיום שתוכנן למטב את החדרת המכשירים והחומרים הפעילים, מחליק בקלות ומשפר ספיגה ונוחות טיפול."
       },
       "highlights": [
-        { "en": "Optimized active delivery", "ru": "Оптимальная доставка активов", "he": "החדרת חומרים פעילים ממוטבת" },
-        { "en": "Effortless, frictionless glide", "ru": "Лёгкое скольжение без трения", "he": "החלקה חלקה וללא חיכוך" },
-        { "en": "Device-ready conductivity", "ru": "Проводимость для устройств", "he": "מוליכות מותאמת למכשירים" }
+        {
+          "en": "Optimized active delivery",
+          "ru": "Оптимальная доставка активов",
+          "he": "החדרת חומרים פעילים ממוטבת"
+        },
+        {
+          "en": "Effortless, frictionless glide",
+          "ru": "Лёгкое скольжение без трения",
+          "he": "החלקה חלקה וללא חיכוך"
+        },
+        {
+          "en": "Device-ready conductivity",
+          "ru": "Проводимость для устройств",
+          "he": "מוליכות מותאמת למכשירים"
+        }
+      ],
+      "pairsWith": [
+        "v-tech-serum",
+        "mitopen"
       ]
     },
     {
@@ -69,17 +158,41 @@
       "name": "Exosignal Hair",
       "image": "/products/exosignal-hair/hero.webp",
       "surface": "dark",
-      "line": { "en": "Hair & Scalp", "ru": "Волосы и кожа головы", "he": "שיער וקרקפת" },
-      "tagline": { "en": "Signal the roots to thrive.", "ru": "Сигнал корням — расти.", "he": "אות לשורשים לפרוח." },
+      "line": {
+        "en": "Hair & Scalp",
+        "ru": "Волосы и кожа головы",
+        "he": "שיער וקרקפת"
+      },
+      "tagline": {
+        "en": "Signal the roots to thrive.",
+        "ru": "Сигнал корням — расти.",
+        "he": "אות לשורשים לפרוח."
+      },
       "description": {
         "en": "A precision ampoule treatment that nourishes the scalp and follicles with bioactive signals, supporting stronger, denser and healthier hair from the root.",
         "ru": "Прецизионное ампульное средство питает кожу головы и фолликулы биоактивными сигналами, поддерживая более крепкие, густые и здоровые волосы от корня.",
         "he": "טיפול אמפולות מדויק שמזין את הקרקפת והזקיקים באותות ביו-אקטיביים, ותומך בשיער חזק, צפוף ובריא יותר מהשורש."
       },
       "highlights": [
-        { "en": "Bioactive follicle signaling", "ru": "Биоактивный сигналинг фолликулов", "he": "איתות ביו-אקטיבי לזקיקים" },
-        { "en": "Single-dose sterile ampoules", "ru": "Стерильные ампулы на одну дозу", "he": "אמפולות סטריליות למנה בודדת" },
-        { "en": "Denser, healthier hair", "ru": "Более густые и здоровые волосы", "he": "שיער צפוף ובריא יותר" }
+        {
+          "en": "Bioactive follicle signaling",
+          "ru": "Биоактивный сигналинг фолликулов",
+          "he": "איתות ביו-אקטיבי לזקיקים"
+        },
+        {
+          "en": "Single-dose sterile ampoules",
+          "ru": "Стерильные ампулы на одну дозу",
+          "he": "אמפולות סטריליות למנה בודדת"
+        },
+        {
+          "en": "Denser, healthier hair",
+          "ru": "Более густые и здоровые волосы",
+          "he": "שיער צפוף ובריא יותר"
+        }
+      ],
+      "pairsWith": [
+        "exosignal-hair-spray",
+        "mitopen"
       ]
     },
     {
@@ -87,17 +200,40 @@
       "name": "Exosignal Spray Home",
       "image": "/products/exosignal-hair-spray/hero.png",
       "surface": "dark",
-      "line": { "en": "Hair & Scalp", "ru": "Волосы и кожа головы", "he": "שיער וקרקפת" },
-      "tagline": { "en": "Continue the ritual at home.", "ru": "Продолжите ритуал дома.", "he": "המשיכו את הטקס בבית." },
+      "line": {
+        "en": "Hair & Scalp",
+        "ru": "Волосы и кожа головы",
+        "he": "שיער וקרקפת"
+      },
+      "tagline": {
+        "en": "Continue the ritual at home.",
+        "ru": "Продолжите ритуал дома.",
+        "he": "המשיכו את הטקס בבית."
+      },
       "description": {
         "en": "A daily home-use scalp serum that extends professional results between sessions — delivering deep nourishment to maintain a balanced, revitalized scalp environment.",
         "ru": "Ежедневная домашняя сыворотка для кожи головы продлевает профессиональный результат между сеансами, обеспечивая глубокое питание и сбалансированную, оздоровлённую кожу головы.",
         "he": "סרום קרקפת לשימוש ביתי יומי שמאריך את התוצאות המקצועיות בין מפגשים — מספק הזנה עמוקה לשמירה על קרקפת מאוזנת ומחודשת."
       },
       "highlights": [
-        { "en": "Daily home-use serum", "ru": "Ежедневная домашняя сыворотка", "he": "סרום ביתי יומי" },
-        { "en": "Deep scalp nourishment", "ru": "Глубокое питание кожи головы", "he": "הזנה עמוקה לקרקפת" },
-        { "en": "Maintains clinical results", "ru": "Сохраняет клинический результат", "he": "שומר על תוצאות קליניות" }
+        {
+          "en": "Daily home-use serum",
+          "ru": "Ежедневная домашняя сыворотка",
+          "he": "סרום ביתי יומי"
+        },
+        {
+          "en": "Deep scalp nourishment",
+          "ru": "Глубокое питание кожи головы",
+          "he": "הזנה עמוקה לקרקפת"
+        },
+        {
+          "en": "Maintains clinical results",
+          "ru": "Сохраняет клинический результат",
+          "he": "שומר על תוצאות קליניות"
+        }
+      ],
+      "pairsWith": [
+        "exosignal-hair"
       ]
     },
     {
@@ -105,18 +241,45 @@
       "name": "Exo-NAD",
       "image": "/products/exo-nad/hero.png",
       "surface": "gold",
-      "badge": { "en": "Longevity", "ru": "Долголетие", "he": "אריכות ימים" },
-      "line": { "en": "NAD Longevity Peeling", "ru": "NAD-пилинг долголетия", "he": "פילינג NAD לאריכות ימים" },
-      "tagline": { "en": "Longevity at the cellular level.", "ru": "Долголетие на клеточном уровне.", "he": "אריכות ימים ברמה התאית." },
+      "badge": {
+        "en": "Longevity",
+        "ru": "Долголетие",
+        "he": "אריכות ימים"
+      },
+      "line": {
+        "en": "NAD Longevity Peeling",
+        "ru": "NAD-пилинг долголетия",
+        "he": "פילינג NAD לאריכות ימים"
+      },
+      "tagline": {
+        "en": "Longevity at the cellular level.",
+        "ru": "Долголетие на клеточном уровне.",
+        "he": "אריכות ימים ברמה התאית."
+      },
       "description": {
         "en": "A NAD+ powered longevity peeling system pairing a normalizer and longevity serum to renew skin from within — targeting energy, tone and the visible signs of cellular aging.",
         "ru": "Система пилинга долголетия на основе NAD+ объединяет нормализатор и сыворотку долголетия, обновляя кожу изнутри — энергия, тонус и видимые признаки клеточного старения.",
         "he": "מערכת פילינג לאריכות ימים מבוססת NAD+ המשלבת נורמלייזר וסרום אריכות ימים לחידוש העור מבפנים — אנרגיה, גוון וסימני ההזדקנות התאית."
       },
       "highlights": [
-        { "en": "NAD+ longevity complex", "ru": "Комплекс долголетия NAD+", "he": "קומפלקס אריכות ימים NAD+" },
-        { "en": "Normalizer + longevity serum", "ru": "Нормализатор + сыворотка долголетия", "he": "נורמלייזר + סרום אריכות ימים" },
-        { "en": "Renews tone & vitality", "ru": "Обновляет тонус и жизненную силу", "he": "מחדש גוון וחיוניות" }
+        {
+          "en": "NAD+ longevity complex",
+          "ru": "Комплекс долголетия NAD+",
+          "he": "קומפלקס אריכות ימים NAD+"
+        },
+        {
+          "en": "Normalizer + longevity serum",
+          "ru": "Нормализатор + сыворотка долголетия",
+          "he": "נורמלייזר + סרום אריכות ימים"
+        },
+        {
+          "en": "Renews tone & vitality",
+          "ru": "Обновляет тонус и жизненную силу",
+          "he": "מחדש גוון וחיוניות"
+        }
+      ],
+      "pairsWith": [
+        "exotech-gel"
       ]
     },
     {
@@ -124,18 +287,45 @@
       "name": "Mitoscan",
       "image": "/products/mitoscan/hero.webp",
       "surface": "dark",
-      "badge": { "en": "Technology", "ru": "Технология", "he": "טכנולוגיה" },
-      "line": { "en": "Devices", "ru": "Устройства", "he": "מכשירים" },
-      "tagline": { "en": "See beneath the surface.", "ru": "Загляните под поверхность.", "he": "ראו מתחת לפני השטח." },
+      "badge": {
+        "en": "Technology",
+        "ru": "Технология",
+        "he": "טכנולוגיה"
+      },
+      "line": {
+        "en": "Devices",
+        "ru": "Устройства",
+        "he": "מכשירים"
+      },
+      "tagline": {
+        "en": "See beneath the surface.",
+        "ru": "Загляните под поверхность.",
+        "he": "ראו מתחת לפני השטח."
+      },
       "description": {
         "en": "An advanced diagnostic device that scans and analyzes skin condition in depth, transforming data into a precise, personalized treatment roadmap for every client.",
         "ru": "Передовое диагностическое устройство сканирует и глубоко анализирует состояние кожи, превращая данные в точную персональную карту лечения для каждого клиента.",
         "he": "מכשיר אבחון מתקדם שסורק ומנתח לעומק את מצב העור, והופך נתונים למפת טיפול מדויקת ואישית לכל לקוח."
       },
       "highlights": [
-        { "en": "In-depth skin analysis", "ru": "Глубокий анализ кожи", "he": "ניתוח עור מעמיק" },
-        { "en": "Personalized treatment mapping", "ru": "Персональная карта лечения", "he": "מיפוי טיפול אישי" },
-        { "en": "Intuitive clinical dashboard", "ru": "Интуитивная клиническая панель", "he": "לוח בקרה קליני אינטואיטיבי" }
+        {
+          "en": "In-depth skin analysis",
+          "ru": "Глубокий анализ кожи",
+          "he": "ניתוח עור מעמיק"
+        },
+        {
+          "en": "Personalized treatment mapping",
+          "ru": "Персональная карта лечения",
+          "he": "מיפוי טיפול אישי"
+        },
+        {
+          "en": "Intuitive clinical dashboard",
+          "ru": "Интуитивная клиническая панель",
+          "he": "לוח בקרה קליני אינטואיטיבי"
+        }
+      ],
+      "pairsWith": [
+        "v-tech-serum"
       ]
     },
     {
@@ -143,17 +333,41 @@
       "name": "MitoPen",
       "image": "/products/mitopen/hero.webp",
       "surface": "gold",
-      "line": { "en": "Devices", "ru": "Устройства", "he": "מכשירים" },
-      "tagline": { "en": "Precision, in your hand.", "ru": "Точность в вашей руке.", "he": "דיוק, בכף ידכם." },
+      "line": {
+        "en": "Devices",
+        "ru": "Устройства",
+        "he": "מכשירים"
+      },
+      "tagline": {
+        "en": "Precision, in your hand.",
+        "ru": "Точность в вашей руке.",
+        "he": "דיוק, בכף ידכם."
+      },
       "description": {
         "en": "An ergonomic microchanneling pen engineered for controlled, comfortable treatments — creating optimal micro-pathways to maximize the absorption of Mitoderm actives.",
         "ru": "Эргономичная ручка для микроканалинга обеспечивает контролируемые и комфортные процедуры, создавая оптимальные микроканалы для максимального впитывания активов Mitoderm.",
         "he": "עט מיקרו-תיעול ארגונומי שתוכנן לטיפולים מבוקרים ונוחים — יוצר מיקרו-נתיבים אופטימליים למיצוי ספיגת החומרים הפעילים של Mitoderm."
       },
       "highlights": [
-        { "en": "Ergonomic precision control", "ru": "Эргономичный точный контроль", "he": "שליטה ארגונומית מדויקת" },
-        { "en": "Adjustable depth settings", "ru": "Регулируемая глубина", "he": "הגדרות עומק מתכווננות" },
-        { "en": "Maximized active uptake", "ru": "Максимальное усвоение активов", "he": "מיצוי מרבי של חומרים פעילים" }
+        {
+          "en": "Ergonomic precision control",
+          "ru": "Эргономичный точный контроль",
+          "he": "שליטה ארגונומית מדויקת"
+        },
+        {
+          "en": "Adjustable depth settings",
+          "ru": "Регулируемая глубина",
+          "he": "הגדרות עומק מתכווננות"
+        },
+        {
+          "en": "Maximized active uptake",
+          "ru": "Максимальное усвоение активов",
+          "he": "מיצוי מרבי של חומרים פעילים"
+        }
+      ],
+      "pairsWith": [
+        "exotech-gel",
+        "v-tech-serum"
       ]
     }
   ]

@@ -21,12 +21,20 @@ interface Item {
   tagline: L;
   description: L;
   highlights: L[];
+  /** Curated product/device slugs this one is designed to work with
+   *  (the 1+1=3 system story). */
+  pairsWith?: string[];
 }
 
 const DATA = showcase as unknown as {
-  meta: { kicker: L; title: L; learnMore: L };
+  meta: { kicker: L; title: L; learnMore: L; pairsLabel: L };
   items: Item[];
 };
+
+/** slug → display name, so pairs-with chips can label their targets. */
+const NAME_BY_SLUG: Record<string, string> = Object.fromEntries(
+  DATA.items.map((i) => [i.slug, i.name])
+);
 
 const surfaceClass: Record<Item['surface'], string> = {
   dark: styles.dark,
@@ -107,6 +115,33 @@ const ProductShowcase: FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {p.pairsWith && p.pairsWith.length > 0 && (
+                  <div className={styles.pairs}>
+                    <span className={styles.pairsLabel}>
+                      {pick(DATA.meta.pairsLabel)}
+                    </span>
+                    <span className={styles.pairsChips}>
+                      {p.pairsWith
+                        .filter((s) => NAME_BY_SLUG[s])
+                        .map((s) => (
+                          <Link
+                            key={s}
+                            href={`/products/${s}`}
+                            className={styles.pairChip}
+                            onClick={() =>
+                              track('catalog_card_click', {
+                                slug: s,
+                                from: 'pairs',
+                              })
+                            }
+                          >
+                            {NAME_BY_SLUG[s]}
+                          </Link>
+                        ))}
+                    </span>
+                  </div>
+                )}
 
                 <Link
                   href={`/products/${p.slug}`}

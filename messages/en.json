@@ -1115,7 +1115,35 @@
     },
     "certTitle": "Standards & certifications",
     "emailPlaceholder": "Your professional email",
-    "ctaBandKicker": "Become a Partner"
+    "ctaBandKicker": "Become a Partner",
+    "method": {
+      "kicker": "The Method",
+      "title": "Regeneration, not just treatment",
+      "lead": "Most professional skincare works on the surface. The Mitoderm protocol works with the skin’s own biology — signalling cells to repair, powering that repair with cellular energy, and delivering it exactly where it’s needed.",
+      "rows": [
+        {
+          "from": "Resurfacing",
+          "to": "Regeneration",
+          "note": "Renew the skin from within with NAD+ cellular energy, not only by removing the surface."
+        },
+        {
+          "from": "Adding volume",
+          "to": "Rebuilding tissue",
+          "note": "Concentrated exosome signals support the skin’s own repair — density and resilience, not just fill."
+        },
+        {
+          "from": "A single active",
+          "to": "A layered protocol",
+          "note": "Signal, scaffold, energy and delivery work as one system — the 1+1=3 effect."
+        },
+        {
+          "from": "Guesswork",
+          "to": "Diagnostics",
+          "note": "Mitoscan reads the skin in HD, so every protocol is measured to the client, not assumed."
+        }
+      ],
+      "scienceCta": "Explore the science"
+    }
   },
   "contactForm": {
     "eyebrow": "CONTACT",

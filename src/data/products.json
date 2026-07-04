@@ -725,6 +725,24 @@
               "a": "The gold particle acts as a microcarrier — improves topical penetration and helps the peptide reach fibroblasts in the upper dermis without degradation."
             }
           ]
+        },
+        "bundle": {
+          "title": "Complete the V-Tech facial protocol",
+          "intro": "The gel mask seals and soothes — pair it with the serum and finishing gel for the full session.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Step 1 — Active"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Step 2 — Seal & soothe"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Step 3 — Recovery finish"
+            }
+          ]
         }
       },
       "ru": {
@@ -842,6 +860,24 @@
             {
               "q": "Как работает пептид с золотым носителем (Acetyl Heptapeptide-9)?",
               "a": "Частица золота выступает микроносителем — улучшает проникновение и помогает пептиду достичь фибробластов верхней дермы без деградации."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Полный лицевой протокол V-Tech",
+          "intro": "Гель-маска запечатывает и успокаивает — сочетайте её с сывороткой и финишным гелем для полной процедуры.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Шаг 1 — Актив"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Шаг 2 — Запечатать и успокоить"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Шаг 3 — Финиш-восстановление"
             }
           ]
         }
@@ -963,6 +999,24 @@
               "a": "חלקיק הזהב משמש כמיקרו-נשא — משפר חדירה ועוזר לפפטיד להגיע לפיברובלסטים בדרמיס העליון בלי דגרדציה."
             }
           ]
+        },
+        "bundle": {
+          "title": "השלימו את פרוטוקול הפנים V-Tech",
+          "intro": "מסכת הג׳ל אוטמת ומרגיעה — שלבו אותה עם הסרום וג׳ל הגימור לטיפול מלא.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "שלב 1 — חומר פעיל"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "שלב 2 — איטום והרגעה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "שלב 3 — גימור התאוששות"
+            }
+          ]
         }
       }
     }
@@ -1076,6 +1130,24 @@
               "a": "Yes — Exotech leaves no residue once absorbed and is compatible with mineral foundation."
             }
           ]
+        },
+        "bundle": {
+          "title": "Pairs across the protocol",
+          "intro": "The conductive medium that carries every treatment — from the V-Tech serum to device work with MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "Conductive medium"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Facial active"
+            },
+            {
+              "slug": "mitopen",
+              "role": "Device delivery"
+            }
+          ]
         }
       },
       "ru": {
@@ -1179,6 +1251,24 @@
               "a": "Да — Exotech не оставляет следов после впитывания и совместим с минеральным тональным."
             }
           ]
+        },
+        "bundle": {
+          "title": "Работает по всему протоколу",
+          "intro": "Проводящая среда, которая несёт каждый актив — от сыворотки V-Tech до работы устройством MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "Проводящая среда"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Лицевой актив"
+            },
+            {
+              "slug": "mitopen",
+              "role": "Доставка устройством"
+            }
+          ]
         }
       },
       "he": {
@@ -1280,6 +1370,24 @@
             {
               "q": "אפשר להניח איפור ביום שלמחרת?",
               "a": "כן — Exotech לא משאיר שאריות אחרי ספיגה ומסתדר עם מייקאפ מינרלי."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "משתלב לאורך כל הפרוטוקול",
+          "intro": "המדיום המוליך שנושא כל טיפול — מהסרום V-Tech ועד עבודה עם מכשיר MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "מדיום מוליך"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "חומר פעיל לפנים"
+            },
+            {
+              "slug": "mitopen",
+              "role": "החדרה במכשיר"
             }
           ]
         }
@@ -1866,6 +1974,20 @@
               "a": "Yes — Exosignal Hair Spray works through a different mechanism and does not interfere with either. Many patients run them simultaneously."
             }
           ]
+        },
+        "bundle": {
+          "title": "The complete Exosignal hair system",
+          "intro": "In-clinic ampoules plus the daily home spray — professional results maintained between sessions.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "In-clinic ampoules"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Daily home care"
+            }
+          ]
         }
       },
       "ru": {
@@ -1966,6 +2088,20 @@
             {
               "q": "Совместим ли с финастеридом / миноксидилом?",
               "a": "Да — Exosignal Hair Spray работает через другой механизм и не мешает им. Многие пациенты применяют параллельно."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Полная система для волос Exosignal",
+          "intro": "Ампулы в клинике плюс ежедневный домашний спрей — профессиональный результат сохраняется между сеансами.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Ампулы в клинике"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Ежедневный домашний уход"
             }
           ]
         }
@@ -2070,6 +2206,20 @@
               "a": "כן — Exosignal Hair Spray פועל במנגנון שונה ואינו מפריע. הרבה מטופלים מפעילים את שניהם במקביל."
             }
           ]
+        },
+        "bundle": {
+          "title": "מערכת השיער המלאה של Exosignal",
+          "intro": "אמפולות במרפאה יחד עם ספריי ביתי יומי — תוצאות מקצועיות נשמרות בין המפגשים.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "אמפולות במרפאה"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "טיפוח ביתי יומי"
+            }
+          ]
         }
       }
     }
@@ -2171,7 +2321,21 @@
           "Pre-resurfacing preparation"
         ],
         "ctaTitle": "Add the NAD+ longevity peeling to your menu",
-        "ctaText": "Contact us for pricing, training and protocol support."
+        "ctaText": "Contact us for pricing, training and protocol support.",
+        "bundle": {
+          "title": "Finish the longevity peel",
+          "intro": "Support the NAD+ peel with the conductive recovery gel for comfort and even delivery.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "Longevity peel"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Recovery finish"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "EXO-NAD пилинг долголетия",
@@ -2263,7 +2427,21 @@
           "Подготовка к шлифовкам"
         ],
         "ctaTitle": "Добавить NAD+ пилинг в меню",
-        "ctaText": "Свяжитесь с нами для условий, обучения и поддержки протокола."
+        "ctaText": "Свяжитесь с нами для условий, обучения и поддержки протокола.",
+        "bundle": {
+          "title": "Завершите пилинг долголетия",
+          "intro": "Поддержите NAD+-пилинг проводящим восстанавливающим гелем — для комфорта и равномерной доставки.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "Пилинг долголетия"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Финиш-восстановление"
+            }
+          ]
+        }
       },
       "he": {
         "name": "פילינג EXO-NAD ללונג׳ביטי",
@@ -2355,7 +2533,21 @@
           "הכנה ל-resurfacing"
         ],
         "ctaTitle": "להוסיף את הפילינג NAD+ לתפריט",
-        "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול."
+        "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול.",
+        "bundle": {
+          "title": "סיימו את פילינג אריכות הימים",
+          "intro": "תמכו בפילינג NAD+ בעזרת ג׳ל ההתאוששות המוליך — לנוחות ולהחדרה אחידה.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "פילינג אריכות ימים"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "גימור התאוששות"
+            }
+          ]
+        }
       }
     }
   },
@@ -2447,7 +2639,21 @@
           "Patient education"
         ],
         "ctaTitle": "Add Mitoscan to your clinic",
-        "ctaText": "Contact us for pricing, lead time and operator training."
+        "ctaText": "Contact us for pricing, lead time and operator training.",
+        "bundle": {
+          "title": "From diagnosis to protocol",
+          "intro": "Mitoscan reads the skin in HD, then guides the right in-clinic protocol — starting with the V-Tech system.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "HD diagnostic"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Recommended protocol"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "Mitoscan",
@@ -2530,7 +2736,21 @@
           "Объяснение пациенту"
         ],
         "ctaTitle": "Добавить Mitoscan в клинику",
-        "ctaText": "Свяжитесь с нами по цене, срокам поставки и обучению оператора."
+        "ctaText": "Свяжитесь с нами по цене, срокам поставки и обучению оператора.",
+        "bundle": {
+          "title": "От диагностики к протоколу",
+          "intro": "Mitoscan считывает кожу в HD и направляет к нужному протоколу в клинике — начиная с системы V-Tech.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "HD-диагностика"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Рекомендуемый протокол"
+            }
+          ]
+        }
       },
       "he": {
         "name": "Mitoscan",
@@ -2613,7 +2833,21 @@
           "הסבר ללקוח"
         ],
         "ctaTitle": "להוסיף את Mitoscan לקליניקה",
-        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכת מפעיל."
+        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכת מפעיל.",
+        "bundle": {
+          "title": "מאבחון לפרוטוקול",
+          "intro": "Mitoscan סורק את העור ב-HD ומכוון לפרוטוקול הנכון במרפאה — החל ממערכת V-Tech.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "אבחון HD"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "פרוטוקול מומלץ"
+            }
+          ]
+        }
       }
     }
   },
@@ -2707,7 +2941,25 @@
           "Hair-loss scalp sessions with Exosignal Hair"
         ],
         "ctaTitle": "Add MitoPen to your clinic",
-        "ctaText": "Contact us for pricing, cartridge supply and operator training."
+        "ctaText": "Contact us for pricing, cartridge supply and operator training.",
+        "bundle": {
+          "title": "Precision delivery, paired",
+          "intro": "The microchanneling pen works with the conductive gel and the V-Tech actives to maximise absorption.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "Delivery device"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Conductive medium"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Facial active"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "MitoPen E30-Ultima",
@@ -2792,7 +3044,25 @@
           "Сессии по выпадению волос с Exosignal Hair"
         ],
         "ctaTitle": "Добавить MitoPen в клинику",
-        "ctaText": "Свяжитесь с нами по цене, поставке картриджей и обучению."
+        "ctaText": "Свяжитесь с нами по цене, поставке картриджей и обучению.",
+        "bundle": {
+          "title": "Точная доставка в паре",
+          "intro": "Ручка для микроканалинга работает с проводящим гелем и активами V-Tech для максимального впитывания.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "Устройство доставки"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Проводящая среда"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Лицевой актив"
+            }
+          ]
+        }
       },
       "he": {
         "name": "MitoPen E30-Ultima",
@@ -2877,7 +3147,25 @@
           "סשנים נגד נשירת שיער עם Exosignal Hair"
         ],
         "ctaTitle": "להוסיף את MitoPen לקליניקה",
-        "ctaText": "צרו קשר למחיר, אספקת מחסניות והדרכה."
+        "ctaText": "צרו קשר למחיר, אספקת מחסניות והדרכה.",
+        "bundle": {
+          "title": "החדרה מדויקת, בשילוב",
+          "intro": "עט המיקרו-תיעול פועל עם הג׳ל המוליך והחומרים הפעילים של V-Tech למיצוי ספיגה מרבי.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "מכשיר החדרה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "מדיום מוליך"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "חומר פעיל לפנים"
+            }
+          ]
+        }
       }
     }
   }

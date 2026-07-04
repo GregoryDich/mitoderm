@@ -20,6 +20,7 @@ import ProductShowcase from '@/components/Home/ProductShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
 import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
+import MethodStrip from '@/components/Home/MethodStrip';
 import CertStrip from '@/components/Home/CertStrip';
 import EmailCapture from '@/components/Home/EmailCapture';
 import HeroProduct from '@/components/Home/HeroProduct';
@@ -125,6 +126,10 @@ const HomePage: FC<Props> = ({
 
       {/* Philosophy — light paper section breaking the dark rhythm. */}
       <PhilosophyStrip />
+
+      {/* The method — solution-aware rung: why regeneration, before the
+          products themselves. */}
+      <MethodStrip />
 
       {/* The collection — every product as its own editorial banner
           (Figma centerpiece): big glowing shot + one-line USP + proof. */}

@@ -1,0 +1,140 @@
+.section {
+  position: relative;
+  background: #08080a;
+  color: #f5f2f0;
+  padding: clamp(72px, 10vw, 132px) clamp(20px, 5vw, 48px);
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.head {
+  max-width: 720px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #dfba74;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+.lead {
+  margin: 0;
+  max-width: 620px;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(245, 242, 240, 0.62);
+}
+
+.rows {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 48px);
+  padding: clamp(24px, 3.4vw, 38px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.shift {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+  min-width: 0;
+}
+
+.from {
+  font-size: clamp(14px, 1.5vw, 16px);
+  letter-spacing: 0.02em;
+  color: rgba(245, 242, 240, 0.4);
+}
+
+.arrow {
+  display: inline-block;
+  color: #dfba74;
+  font-size: 1.1em;
+}
+
+:global([dir='rtl']) .arrow {
+  transform: scaleX(-1);
+}
+
+.to {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #f5f2f0;
+}
+
+.note {
+  margin: 0;
+  font-size: clamp(13.5px, 1.3vw, 15px);
+  line-height: 1.6;
+  font-weight: 300;
+  color: rgba(245, 242, 240, 0.6);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(36px, 5vw, 56px);
+  padding-bottom: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #dfba74;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(223, 186, 116, 0.34);
+  transition: opacity 0.18s ease;
+
+  &:hover {
+    opacity: 0.72;
+  }
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+:global([dir='rtl']) .ctaArrow {
+  transform: scaleX(-1);
+}
+
+:global([dir='rtl']) .cta:hover .ctaArrow {
+  transform: scaleX(-1) translateX(3px);
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
