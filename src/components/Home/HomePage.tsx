@@ -60,6 +60,7 @@ const HomePage: FC<Props> = ({
   const badges = (t.raw('badges') as string[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
   const heroArt = publicAsset('/home/hero.webp');
+  const heroProduct = publicAsset('/products/v-tech-system/hero.webp');
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -82,21 +83,39 @@ const HomePage: FC<Props> = ({
       </div>
 
       <section className={styles.hero}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
+        <div className={styles.heroText}>
+          <span className={styles.badge}>
+            <span className={styles.badgeDot} aria-hidden="true" />
+            {t('heroBadge')}
+          </span>
+          <h1 className={styles.title}>
+            {t('heroTitle1')}
+            <br />
+            <span className={styles.titleAccent}>{t('heroTitle2')}</span>
+          </h1>
+          <p className={styles.desc}>{t('heroDesc')}</p>
+          <div className={styles.ctaRow}>
+            <Link href="/catalog" className={styles.btnPrimary}>
+              {t('heroCta1')}
+            </Link>
+            <Link href="/catalog" className={styles.btnText}>
+              {t('heroCta2')} <span className={styles.arrow}>→</span>
+            </Link>
+          </div>
         </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.tagline}>{t('tagline')}</p>
-        <p className={styles.desc}>{t('description')}</p>
-        <div className={styles.ctaRow}>
-          <Link href="/catalog" className={styles.btnPrimary}>
-            {t('ctaPrimary')}
-          </Link>
-          <Link href="/form" className={styles.btnGhost}>
-            {t('ctaSecondary')}
-          </Link>
-        </div>
+        {heroProduct && (
+          <div className={styles.heroProduct} aria-hidden="true">
+            <span className={styles.heroProductGlow} />
+            <Image
+              src={heroProduct}
+              alt=""
+              width={640}
+              height={760}
+              priority
+              className={styles.heroProductImg}
+            />
+          </div>
+        )}
       </section>
 
       {/* Reveal-as-strip: the stats are direct children so the stagger
