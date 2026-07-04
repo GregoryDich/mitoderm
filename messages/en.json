@@ -1080,8 +1080,8 @@
         "text": "Developed and validated in Israel; trusted by clinics and partners across the region."
       }
     ],
-    "ctaBandTitle": "Join the Mitoderm Circle",
-    "ctaBandText": "Partner clinics across Israel get wholesale pricing, protocols, training and a place in our specialist directory.",
+    "ctaBandTitle": "Bring Mitoderm to your clinic",
+    "ctaBandText": "Join the professionals redefining skin longevity. Request access to the full catalog, pricing and training.",
     "ctaBandButton": "Request access",
     "badges": [
       "Clinical-grade formulas",
@@ -1114,7 +1114,8 @@
       ]
     },
     "certTitle": "Standards & certifications",
-    "emailPlaceholder": "Your professional email"
+    "emailPlaceholder": "Your professional email",
+    "ctaBandKicker": "Become a Partner"
   },
   "contactForm": {
     "eyebrow": "CONTACT",

@@ -16,7 +16,7 @@ import CountUp from '@/components/Shared/CountUp/CountUp';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
-import LinesShowcase from '@/components/Lines/LinesShowcase';
+import ProductShowcase from '@/components/Home/ProductShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
 import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
@@ -126,6 +126,10 @@ const HomePage: FC<Props> = ({
       {/* Philosophy — light paper section breaking the dark rhythm. */}
       <PhilosophyStrip />
 
+      {/* The collection — every product as its own editorial banner
+          (Figma centerpiece): big glowing shot + one-line USP + proof. */}
+      <ProductShowcase />
+
       <main className={styles.content}>
         {/* Proof leads: real before/after before any brand copy. */}
         <ResultsStrip />
@@ -142,12 +146,6 @@ const HomePage: FC<Props> = ({
         <Reveal>
           <ConcernsStrip />
         </Reveal>
-
-        {lines.length > 0 && (
-          <Reveal>
-            <LinesShowcase lines={lines} />
-          </Reveal>
-        )}
 
         <Reveal>
         <section className={styles.block}>
@@ -230,6 +228,7 @@ const HomePage: FC<Props> = ({
         <Reveal>
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
+          <span className={styles.ctaKicker}>{t('ctaBandKicker')}</span>
           <h2 className={styles.ctaTitle}>{t('ctaBandTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaBandText')}</p>
           {/* Single-field capture — the warmest intent goes to the partner
