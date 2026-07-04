@@ -20,6 +20,7 @@ import LinesShowcase from '@/components/Lines/LinesShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
 import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
+import HeroProduct from '@/components/Home/HeroProduct';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -104,19 +105,7 @@ const HomePage: FC<Props> = ({
             </Link>
           </div>
         </div>
-        {heroProduct && (
-          <div className={styles.heroProduct} aria-hidden="true">
-            <span className={styles.heroProductGlow} />
-            <Image
-              src={heroProduct}
-              alt=""
-              width={640}
-              height={760}
-              priority
-              className={styles.heroProductImg}
-            />
-          </div>
-        )}
+        {heroProduct && <HeroProduct src={heroProduct} />}
       </section>
 
       {/* Reveal-as-strip: the stats are direct children so the stagger

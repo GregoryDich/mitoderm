@@ -1,0 +1,91 @@
+.stage {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 560px);
+  aspect-ratio: 5 / 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.glow {
+  position: absolute;
+  inset: 8% 12%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(223, 186, 116, 0.22),
+    transparent 68%
+  );
+  filter: blur(50px);
+}
+
+/* pointer-driven tilt (CSS vars set in JS) */
+.tilt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+    translate3d(var(--tx, 0), var(--ty, 0), 0);
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+  animation: heroFloat 7s ease-in-out infinite;
+}
+
+/* light sheen following the cursor */
+.sheen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--lx, 50%) var(--ly, 50%),
+    rgba(255, 255, 255, 0.16),
+    transparent 46%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stage:hover .sheen {
+  opacity: 1;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    animation: none;
+  }
+  .tilt {
+    transform: none !important;
+    transition: none;
+  }
+  .sheen {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .stage {
+    order: -1;
+    width: min(100%, 380px);
+  }
+}
