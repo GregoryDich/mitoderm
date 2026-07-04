@@ -1,0 +1,79 @@
+/* Light "paper" section — the deliberate break from the dark rhythm. */
+.philosophy {
+  --paper: #f4f1ea;
+  --ink: #14130f;
+  position: relative;
+  z-index: 1;
+  background-color: var(--paper);
+  padding: clamp(72px, 12vw, 150px) clamp(20px, 5vw, 60px);
+  /* full-bleed against the dark page around it */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.inner {
+  max-width: 1080px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #9c7a34;
+}
+
+.quote {
+  margin: clamp(24px, 3.5vw, 40px) auto 0;
+  max-width: 920px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(24px, 4.2vw, 52px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.stats {
+  margin-top: clamp(44px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid rgba(10, 10, 11, 0.1);
+  background-color: rgba(10, 10, 11, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.stat {
+  background-color: var(--paper);
+  padding: clamp(28px, 4vw, 48px) 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statValue {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.statLabel {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 11, 0.5);
+}
+
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

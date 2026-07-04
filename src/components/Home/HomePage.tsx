@@ -19,6 +19,7 @@ import StoriesStrip from '@/components/Stories/StoriesStrip';
 import LinesShowcase from '@/components/Lines/LinesShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
+import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -140,6 +141,9 @@ const HomePage: FC<Props> = ({
           </span>
         ))}
       </Reveal>
+
+      {/* Philosophy — light paper section breaking the dark rhythm. */}
+      <PhilosophyStrip />
 
       <main className={styles.content}>
         {/* Proof leads: real before/after before any brand copy. */}
