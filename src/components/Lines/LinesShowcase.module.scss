@@ -137,7 +137,12 @@
 
 .productsTwo {
   grid-template-columns: repeat(2, 1fr);
-  max-width: 820px;
+  max-width: 860px;
+}
+
+.productsOne {
+  grid-template-columns: minmax(0, 420px);
+  justify-content: start;
 }
 
 .pcard {
@@ -157,23 +162,30 @@
   }
 }
 
+/* Uniform product "stage": every product is centred and CONTAINED in an
+ * identical frame with equal padding, so cards line up evenly regardless
+ * of the source photo's crop, scale or resolution. */
 .pmedia {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  padding: clamp(18px, 2.6vw, 30px);
   background: radial-gradient(
-    circle at 50% 45%,
-    color-mix(in srgb, var(--accent) 10%, transparent),
-    transparent 70%
+    circle at 50% 44%,
+    color-mix(in srgb, var(--accent) 12%, transparent),
+    transparent 72%
   );
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.5));
   }
 }
 
@@ -238,4 +250,36 @@
     justify-self: start;
     margin-top: 6px;
   }
+}
+
+/* ---- line highlights (check bullets) ---- */
+.highlights {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(245, 242, 240, 0.72);
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--accent);
+  font-size: 9px;
+  flex: 0 0 auto;
 }

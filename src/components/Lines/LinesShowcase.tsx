@@ -25,6 +25,8 @@ const accentVar: Record<'teal' | 'gold' | 'rose' | 'amber' | 'steel', string> = 
  *  visible at once so a clinic owner can compare and self-select. */
 const LinesShowcase: FC<Props> = ({ lines }) => {
   const t = useTranslations('lines');
+  const highlightsMap =
+    (t.raw('highlights') as Record<string, string[]>) ?? {};
   const withProducts = lines.filter((l) => l.items.length > 0);
   if (withProducts.length === 0) return null;
 
@@ -54,6 +56,18 @@ const LinesShowcase: FC<Props> = ({ lines }) => {
                 <span className={styles.lineEyebrow}>{line.eyebrow}</span>
                 <h3 className={styles.lineName}>{line.name}</h3>
                 <p className={styles.lineTagline}>{line.tagline}</p>
+                {(highlightsMap[line.slug] ?? []).length > 0 && (
+                  <ul className={styles.highlights}>
+                    {highlightsMap[line.slug].map((h) => (
+                      <li key={h} className={styles.highlight}>
+                        <span className={styles.check} aria-hidden="true">
+                          ✓
+                        </span>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <Link
                 href={line.href}
@@ -71,7 +85,11 @@ const LinesShowcase: FC<Props> = ({ lines }) => {
               variant="rise"
               stagger={110}
               className={`${styles.products} ${
-                line.items.length === 2 ? styles.productsTwo : ''
+                line.items.length === 1
+                  ? styles.productsOne
+                  : line.items.length === 2
+                  ? styles.productsTwo
+                  : ''
               }`}
             >
               {line.items.map((item) => (

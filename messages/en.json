@@ -1068,7 +1068,29 @@
     "subtitle": "Each line is a protocol — its products are designed to work together, not alone.",
     "explore": "Explore the line",
     "comingSoon": "Coming soon",
-    "details": "Details"
+    "details": "Details",
+    "highlights": {
+      "exosomes": [
+        "Density, firmness & post-procedure recovery",
+        "Serum + mask + gel — the 1+1=3 protocol",
+        "Visible from the very first session"
+      ],
+      "exosignal-hair": [
+        "Clinic ampoules + daily home spray",
+        "Follicle health & visible scalp coverage",
+        "A continuous regenerative signal"
+      ],
+      "peeling": [
+        "Three-step longevity peel",
+        "Mitochondrial recovery & visible glow",
+        "No resurfacing downtime"
+      ],
+      "devices": [
+        "Diagnose with Mitoscan, deliver with MitoPen",
+        "HD baseline → measurable results",
+        "Reproducible outcomes across patients"
+      ]
+    }
   },
   "linePage": {
     "productsTitle": "PRODUCTS IN THIS LINE",
