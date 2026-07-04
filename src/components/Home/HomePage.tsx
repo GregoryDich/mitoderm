@@ -20,6 +20,7 @@ import LinesShowcase from '@/components/Lines/LinesShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
 import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
+import CertStrip from '@/components/Home/CertStrip';
 import HeroProduct from '@/components/Home/HeroProduct';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
@@ -59,7 +60,6 @@ const HomePage: FC<Props> = ({
     .slice(0, 3);
 
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
-  const badges = (t.raw('badges') as string[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
   const heroArt = publicAsset('/home/hero.webp');
   const heroProduct = publicAsset('/products/v-tech-system/hero.webp');
@@ -119,17 +119,8 @@ const HomePage: FC<Props> = ({
         ))}
       </Reveal>
 
-      {/* Trust badges — safety / exclusivity reassurance at a glance. */}
-      <Reveal variant="fade" stagger={90} className={styles.badgeRow}>
-        {badges.map((b) => (
-          <span key={b} className={styles.badge}>
-            <span className={styles.badgeTick} aria-hidden="true">
-              ✓
-            </span>
-            {b}
-          </span>
-        ))}
-      </Reveal>
+      {/* Standards & certifications — 4-icon trust grid (Figma). */}
+      <CertStrip />
 
       {/* Philosophy — light paper section breaking the dark rhythm. */}
       <PhilosophyStrip />
