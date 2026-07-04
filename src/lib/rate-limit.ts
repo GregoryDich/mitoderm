@@ -53,10 +53,18 @@ export function rateLimited(
  *  then falls back to the literal string "unknown" so we still rate-limit
  *  the aggregate. */
 export function clientIp(req: Request): string {
-  const fwd = req.headers.get('x-forwarded-for') || '';
-  return (
-    fwd.split(',')[0]?.trim() ||
-    req.headers.get('x-real-ip') ||
-    'unknown'
-  );
+  // Prefer platform-controlled headers over the raw client-supplied
+  // X-Forwarded-For, whose left-most entry a caller can forge to land in
+  // a fresh rate-limit bucket every request. Vercel sets
+  // x-vercel-forwarded-for / x-real-ip from the true edge connection.
+  const trusted =
+    req.headers.get('x-vercel-forwarded-for') || req.headers.get('x-real-ip');
+  if (trusted) return trusted.split(',')[0]?.trim() || 'unknown';
+  // Fallback (non-Vercel / local): use the RIGHT-most XFF entry — the hop
+  // the nearest proxy appended, not the spoofable left-most one.
+  const parts = (req.headers.get('x-forwarded-for') || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return parts[parts.length - 1] || 'unknown';
 }

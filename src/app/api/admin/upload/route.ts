@@ -4,13 +4,10 @@ import { isAdmin } from '@/lib/admin-auth';
 import { writeAsset } from '@/lib/admin-store';
 import { logAudit, requestMeta } from '@/lib/audit-log';
 
-const IMAGE_TYPES = [
-  'image/jpeg',
-  'image/png',
-  'image/webp',
-  'image/avif',
-  'image/svg+xml',
-];
+// No SVG: an uploaded SVG is served same-origin as a top-level document
+// and can carry inline <script> (stored XSS under the current CSP).
+// Raster formats cover all product media.
+const IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
 const VIDEO_TYPES = ['video/mp4', 'video/webm'];
 const ALLOWED_TYPES = [...IMAGE_TYPES, ...VIDEO_TYPES];
 

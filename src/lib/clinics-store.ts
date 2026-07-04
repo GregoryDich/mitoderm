@@ -1,8 +1,16 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { randomBytes } from 'node:crypto';
+import { randomBytes, timingSafeEqual } from 'node:crypto';
 
 const FILE_PATH = 'data/clinics.json';
+
+/** Constant-time compare (length-guarded) for the magic-link token. */
+function safeEqual(a: string, b: string): boolean {
+  const A = Buffer.from(a);
+  const B = Buffer.from(b);
+  if (A.length !== B.length) return false;
+  return timingSafeEqual(A, B);
+}
 
 export type ClinicStatus = 'pending' | 'approved' | 'rejected';
 
@@ -220,7 +228,11 @@ export async function getClinic(id: string): Promise<ClinicAccount | null> {
 export async function findByToken(token: string): Promise<ClinicAccount | null> {
   if (!token) return null;
   const all = await readClinics();
-  return all.find((c) => c.status === 'approved' && c.token === token) ?? null;
+  return (
+    all.find(
+      (c) => c.status === 'approved' && !!c.token && safeEqual(c.token, token)
+    ) ?? null
+  );
 }
 
 export async function touchLastLogin(id: string): Promise<void> {
