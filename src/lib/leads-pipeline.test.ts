@@ -25,12 +25,18 @@ describe('notifyLead', () => {
     expect(fetchSpy).not.toHaveBeenCalled();
   });
 
-  it('does nothing when LEADS_TO_EMAIL is missing', async () => {
+  it('falls back to the business inbox when LEADS_TO_EMAIL is missing', async () => {
     vi.stubEnv('RESEND_API_KEY', 're_abc');
     vi.stubEnv('LEADS_TO_EMAIL', '');
-    const fetchSpy = vi.spyOn(globalThis, 'fetch');
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue(new Response('{}', { status: 200 }));
     await notifyLead({ lead: baseLead });
-    expect(fetchSpy).not.toHaveBeenCalled();
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+    const body = JSON.parse(
+      String((fetchSpy.mock.calls[0][1] as RequestInit).body)
+    ) as { to: string[] };
+    expect(body.to).toContain('mitoderm@gmail.com');
   });
 
   it('POSTs to Resend when both env vars are set', async () => {

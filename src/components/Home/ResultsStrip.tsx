@@ -5,8 +5,37 @@ import { useTranslations } from 'next-intl';
 import BeforeAfterSlider from '@/components/Shared/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './ResultsStrip.module.scss';
 
-/** All 18 real before/after composites downloaded from mitoderm.com. */
-const SHOTS = Array.from({ length: 18 }, (_, i) => String(i + 1));
+/** The 18 real before/after composites from mitoderm.com.
+ *  Their layout is NOT uniform — each was inspected by eye:
+ *  - most are side-by-side pairs with *before* on the left half;
+ *  - a few put *before* on the right (`beforeSide: 'right'`);
+ *  - three aren't a clean left|right pair at all (#4 is stacked with
+ *    its own AFTER/BEFORE labels, #8 is a 3-stage progression, #15 is
+ *    ambiguous), so they render as static frames, not drag-sliders. */
+type Shot =
+  | { n: number; kind: 'slider'; beforeSide: 'left' | 'right' }
+  | { n: number; kind: 'static' };
+
+const SHOTS: Shot[] = [
+  { n: 1, kind: 'slider', beforeSide: 'left' },
+  { n: 2, kind: 'slider', beforeSide: 'left' },
+  { n: 3, kind: 'slider', beforeSide: 'right' },
+  { n: 4, kind: 'static' },
+  { n: 5, kind: 'slider', beforeSide: 'right' },
+  { n: 6, kind: 'slider', beforeSide: 'left' },
+  { n: 7, kind: 'slider', beforeSide: 'left' },
+  { n: 8, kind: 'static' },
+  { n: 9, kind: 'slider', beforeSide: 'right' },
+  { n: 10, kind: 'slider', beforeSide: 'left' },
+  { n: 11, kind: 'slider', beforeSide: 'right' },
+  { n: 12, kind: 'slider', beforeSide: 'left' },
+  { n: 13, kind: 'slider', beforeSide: 'left' },
+  { n: 14, kind: 'slider', beforeSide: 'left' },
+  { n: 15, kind: 'static' },
+  { n: 16, kind: 'slider', beforeSide: 'left' },
+  { n: 17, kind: 'slider', beforeSide: 'left' },
+  { n: 18, kind: 'slider', beforeSide: 'left' },
+];
 
 /** "Real results, on real skin" — a carousel of drag-to-compare
  *  before/after sliders (arrows + dots + counter), matching the
@@ -52,7 +81,7 @@ const ResultsStrip: FC = () => {
       >
         <button
           type="button"
-          className={`${styles.nav} ${styles.navPrev}`}
+          className={styles.nav}
           onClick={() => go(-1)}
           aria-label={t('prev')}
         >
@@ -60,18 +89,31 @@ const ResultsStrip: FC = () => {
         </button>
 
         <div className={styles.frame}>
-          <BeforeAfterSlider
-            key={SHOTS[i]}
-            src={`/proof/before-after/${SHOTS[i]}.webp`}
-            beforeLabel={t('before')}
-            afterLabel={t('after')}
-            alt={t('alt')}
-          />
+          {SHOTS[i].kind === 'slider' ? (
+            <BeforeAfterSlider
+              key={SHOTS[i].n}
+              src={`/proof/before-after/${SHOTS[i].n}.webp`}
+              beforeLabel={t('before')}
+              afterLabel={t('after')}
+              alt={t('alt')}
+              beforeSide={SHOTS[i].beforeSide}
+            />
+          ) : (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              key={SHOTS[i].n}
+              src={`/proof/before-after/${SHOTS[i].n}.webp`}
+              alt={t('alt')}
+              className={styles.staticShot}
+              loading="lazy"
+              draggable={false}
+            />
+          )}
         </div>
 
         <button
           type="button"
-          className={`${styles.nav} ${styles.navNext}`}
+          className={styles.nav}
           onClick={() => go(1)}
           aria-label={t('next')}
         >
@@ -84,9 +126,9 @@ const ResultsStrip: FC = () => {
       </div>
 
       <div className={styles.dots} role="tablist" aria-label={t('title')}>
-        {SHOTS.map((n, idx) => (
+        {SHOTS.map((s, idx) => (
           <button
-            key={n}
+            key={s.n}
             type="button"
             role="tab"
             aria-label={`${idx + 1}`}

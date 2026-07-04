@@ -10,7 +10,9 @@
   user-select: none;
 }
 
-/* Physical halves of the composite (left = before, right = after). */
+/* Physical halves of the composite. Which half is before vs after is
+   set inline per image (background-position), because the source files
+   are not consistent about it. */
 .before,
 .after {
   position: absolute;
@@ -19,12 +21,7 @@
   background-repeat: no-repeat;
 }
 
-.before {
-  background-position: left center;
-}
-
 .after {
-  background-position: right center;
   will-change: clip-path;
 }
 

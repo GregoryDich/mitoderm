@@ -4,19 +4,37 @@ import { FC, useCallback, useRef, useState, PointerEvent, KeyboardEvent } from '
 import styles from './BeforeAfterSlider.module.scss';
 
 interface Props {
-  /** A single "before | after" composite image (left half = before,
-   *  right half = after). The component reveals each half via CSS, so
-   *  no pre-split assets are needed. */
+  /** A single side-by-side composite image. One half is the "before"
+   *  photo, the other the "after"; `beforeSide` says which. The
+   *  component reveals each half via CSS, so no pre-split assets are
+   *  needed. */
   src: string;
   beforeLabel: string;
   afterLabel: string;
   alt: string;
+  /** Which physical half of the composite is the *before* photo.
+   *  Not every source file puts before on the left — verified per
+   *  image. Defaults to 'left'. */
+  beforeSide?: 'left' | 'right';
 }
 
 /** Draggable before/after comparison. Physical (LTR) by design — the
- *  image halves are physically left=before / right=after regardless of
- *  page direction. Pointer + keyboard accessible (role="slider"). */
-const BeforeAfterSlider: FC<Props> = ({ src, beforeLabel, afterLabel, alt }) => {
+ *  reveal is anchored to the composite's physical halves regardless of
+ *  page direction, so it reads identically in LTR and RTL. The frame
+ *  always shows BEFORE on the left (under the before tag) and AFTER on
+ *  the right. Pointer + keyboard accessible (role="slider"). */
+const BeforeAfterSlider: FC<Props> = ({
+  src,
+  beforeLabel,
+  afterLabel,
+  alt,
+  beforeSide = 'left',
+}) => {
+  // The before layer shows the composite's before-half; the after
+  // layer the opposite half. Positions flip when before is on the
+  // right of the source file.
+  const beforePos = beforeSide === 'left' ? 'left center' : 'right center';
+  const afterPos = beforeSide === 'left' ? 'right center' : 'left center';
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
 
@@ -55,12 +73,18 @@ const BeforeAfterSlider: FC<Props> = ({ src, beforeLabel, afterLabel, alt }) => 
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
     >
-      <div className={styles.before} style={{ backgroundImage: `url(${src})` }} />
+      <div
+        className={styles.before}
+        style={{ backgroundImage: `url(${src})`, backgroundPosition: beforePos }}
+      />
       <div
         className={styles.after}
         style={{
           backgroundImage: `url(${src})`,
-          clipPath: `inset(0 ${100 - pos}% 0 0)`,
+          backgroundPosition: afterPos,
+          // Reveal the after-half on the RIGHT of the handle so it sits
+          // under the after tag; before stays on the left.
+          clipPath: `inset(0 0 0 ${pos}%)`,
         }}
       />
       <span className={`${styles.tag} ${styles.tagBefore}`}>{beforeLabel}</span>

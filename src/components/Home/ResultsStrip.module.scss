@@ -147,6 +147,19 @@
   width: 100%;
 }
 
+/* Non-slider proof shots (stacked / multi-panel / ambiguous). Framed
+   like the slider but shown whole via `contain` so nothing is cropped
+   or distorted regardless of the source aspect ratio. */
+.staticShot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1232 / 700;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .nav {
   flex-shrink: 0;
   width: clamp(44px, 5vw, 58px);

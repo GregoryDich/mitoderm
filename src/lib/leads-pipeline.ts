@@ -38,8 +38,11 @@ interface NotifyInput {
  *  functional. */
 export async function notifyLead({ lead }: NotifyInput): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEADS_TO_EMAIL;
-  if (!apiKey || !to) return;
+  // Team inbox for new leads. Defaults to the business address so the
+  // recipient is correct out of the box; override with LEADS_TO_EMAIL.
+  // Delivery still requires RESEND_API_KEY (+ a verified LEADS_FROM_EMAIL).
+  const to = process.env.LEADS_TO_EMAIL || 'mitoderm@gmail.com';
+  if (!apiKey) return;
 
   const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
   const subject = lead.source

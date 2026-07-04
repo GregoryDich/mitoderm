@@ -74,10 +74,11 @@ export async function POST(req: Request) {
     );
   }
 
-  // Optional notification email to the owner via Resend
+  // Notification email to the team via Resend. Recipient defaults to
+  // the business inbox; delivery still needs RESEND_API_KEY set.
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEADS_TO_EMAIL;
-  if (apiKey && to) {
+  const to = process.env.LEADS_TO_EMAIL || 'mitoderm@gmail.com';
+  if (apiKey) {
     try {
       const from = process.env.LEADS_FROM_EMAIL || '[email protected]';
       await fetch('https://api.resend.com/emails', {
