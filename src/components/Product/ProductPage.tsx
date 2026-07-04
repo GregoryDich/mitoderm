@@ -97,6 +97,11 @@ const ProductPage: FC<Props> = ({
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
   const triad = (t.raw('triad') as { word: string; note: string }[]) ?? [];
+  // Layout-preview slots still carrying "TODO"/"₪ TODO" placeholders must
+  // not render on live PDPs — hide them until real data is filled in
+  // /admin/products.
+  const hasReal = (obj: unknown): boolean =>
+    !!obj && !JSON.stringify(obj).includes('TODO');
 
   let n = 0;
   const next = () => String(++n).padStart(2, '0');
@@ -121,7 +126,9 @@ const ProductPage: FC<Props> = ({
   const sectionNav: { id: string; label: string }[] = [
     { id: 'benefits', label: 'Benefits' },
     ...(c.steps ? [{ id: 'system', label: 'System' }] : []),
-    ...(c.clinicalResults && c.clinicalResults.items.length > 0
+    ...(c.clinicalResults &&
+    c.clinicalResults.items.length > 0 &&
+    hasReal(c.clinicalResults)
       ? [{ id: 'results', label: 'Results' }]
       : []),
     { id: 'formula', label: 'Formula' },
@@ -142,7 +149,7 @@ const ProductPage: FC<Props> = ({
     ...(c.comparison && c.comparison.rows.length > 0
       ? [{ id: 'compare', label: 'Compare' }]
       : []),
-    ...(c.economics && c.economics.items.length > 0
+    ...(c.economics && c.economics.items.length > 0 && hasReal(c.economics)
       ? [{ id: 'economics', label: 'Economics' }]
       : []),
     ...(c.training && c.training.items.length > 0
@@ -299,7 +306,9 @@ const ProductPage: FC<Props> = ({
           </Section>
         )}
 
-        {c.clinicalResults && c.clinicalResults.items.length > 0 && (
+        {c.clinicalResults &&
+          c.clinicalResults.items.length > 0 &&
+          hasReal(c.clinicalResults) && (
           <Section
             id="results"
             num={next()}
@@ -562,7 +571,7 @@ const ProductPage: FC<Props> = ({
           </CollapsibleSection>
         )}
 
-        {c.economics && c.economics.items.length > 0 && (
+        {c.economics && c.economics.items.length > 0 && hasReal(c.economics) && (
           <CollapsibleSection
             id="economics"
             num={next()}

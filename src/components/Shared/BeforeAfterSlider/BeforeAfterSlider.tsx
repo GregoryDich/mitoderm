@@ -41,6 +41,9 @@ const BeforeAfterSlider: FC<Props> = ({ src, beforeLabel, afterLabel, alt }) => 
     else if (e.key === 'End') setPos(100);
     else return;
     e.preventDefault();
+    // Keep the arrow keys on the slider handle — don't let the parent
+    // carousel also page when the handle is focused.
+    e.stopPropagation();
   };
 
   return (
