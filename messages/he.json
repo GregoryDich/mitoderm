@@ -451,7 +451,8 @@
         }
       ]
     },
-    "certTitle": "תקנים והסמכות"
+    "certTitle": "תקנים והסמכות",
+    "emailPlaceholder": "האימייל המקצועי שלכם"
   },
   "contactForm": {
     "eyebrow": "צרו קשר",

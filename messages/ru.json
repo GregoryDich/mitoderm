@@ -451,7 +451,8 @@
         }
       ]
     },
-    "certTitle": "Стандарты и сертификации"
+    "certTitle": "Стандарты и сертификации",
+    "emailPlaceholder": "Ваш рабочий email"
   },
   "contactForm": {
     "eyebrow": "КОНТАКТ",

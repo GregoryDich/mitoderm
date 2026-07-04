@@ -21,6 +21,7 @@ import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
 import ResultsStrip from '@/components/Home/ResultsStrip';
 import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
 import CertStrip from '@/components/Home/CertStrip';
+import EmailCapture from '@/components/Home/EmailCapture';
 import HeroProduct from '@/components/Home/HeroProduct';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
@@ -231,11 +232,12 @@ const HomePage: FC<Props> = ({
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{t('ctaBandTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaBandText')}</p>
-          {/* Recruitment, not generic contact: the warmest intent goes
-              to the partner application, not the 9-field contact form. */}
-          <Link href="/apply" className={styles.btnPrimary}>
-            {t('ctaBandButton')}
-          </Link>
+          {/* Single-field capture — the warmest intent goes to the partner
+              application (pre-filled), not the 9-field contact form. */}
+          <EmailCapture
+            placeholder={t('emailPlaceholder')}
+            cta={t('ctaBandButton')}
+          />
         </section>
         </Reveal>
       </main>
