@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { applyClinic } from '@/lib/clinics-store';
+import { applyClinic, type ClinicAccount } from '@/lib/clinics-store';
 import { clientIp, rateLimited } from '@/lib/rate-limit';
 import { spamGuard } from '@/lib/spam-guard';
 
@@ -55,17 +55,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
-  const result = await applyClinic({
-    name,
-    email,
-    phone,
-    clinic,
-    license,
-    city,
-    instagram,
-    message,
-    referralCode: referralCode || undefined,
-  });
+  // Persist the application. On serverless hosts the data dir can be
+  // read-only, which makes the store write throw — mirror /api/leads:
+  // never lose the application to a persistence failure. A *returned*
+  // duplicate_email is a real rejection; only a thrown error falls back
+  // to email-only so the team still gets the lead.
+  let result: Awaited<ReturnType<typeof applyClinic>>;
+  try {
+    result = await applyClinic({
+      name,
+      email,
+      phone,
+      clinic,
+      license,
+      city,
+      instagram,
+      message,
+      referralCode: referralCode || undefined,
+    });
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.warn('[apply] persist failed — emailing only', err);
+    const transient = { id: 'transient', email } as ClinicAccount;
+    result = { ok: true, clinic: transient };
+  }
 
   if (!result.ok) {
     return NextResponse.json(
