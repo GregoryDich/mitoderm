@@ -157,9 +157,10 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
         <body
-          className={`${rubik.className} ${
-            FLAG_DISPLAY_SERIF ? fraunces.variable : ''
-          }`}
+          // --font-display (Fraunces) is always declared so components can
+          // opt into the serif per-element (hero, line names). The global
+          // "every h1 serif" rule stays behind data-display-serif.
+          className={`${rubik.className} ${fraunces.variable}`}
           data-display-serif={FLAG_DISPLAY_SERIF ? '1' : undefined}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
         >

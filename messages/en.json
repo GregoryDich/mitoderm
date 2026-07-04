@@ -1018,7 +1018,13 @@
       "Sterile & single-dose",
       "Professional-only",
       "Italian technology"
-    ]
+    ],
+    "heroBadge": "Exosome Science · Skin Longevity",
+    "heroTitle1": "The future of",
+    "heroTitle2": "regeneration.",
+    "heroDesc": "Mitoderm unites advanced exosome technology with precision devices to renew skin and hair at the cellular level — a complete professional ecosystem for visible, lasting longevity.",
+    "heroCta1": "Discover the collection",
+    "heroCta2": "View catalog"
   },
   "contactForm": {
     "eyebrow": "CONTACT",
