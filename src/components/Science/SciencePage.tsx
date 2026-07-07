@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import { publicAsset } from '@/lib/public-asset';
 import styles from './SciencePage.module.scss';
 
@@ -33,20 +34,18 @@ const SciencePage: FC = () => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
-        <section className={styles.lead}>
+        <Reveal className={styles.lead}>
           <p className={styles.leadText}>{t('leadParagraph')}</p>
-        </section>
+        </Reveal>
 
+        <Reveal>
         <ol className={styles.pillars}>
           {pillars.map((p, i) => {
             const art = publicAsset(`/science/${p.key}.webp`);
@@ -93,7 +92,9 @@ const SciencePage: FC = () => {
             );
           })}
         </ol>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.protocol}>
           <span className={styles.protocolEyebrow}>{t('protocol.eyebrow')}</span>
           <h2 className={styles.protocolTitle}>{t('protocol.title')}</h2>
@@ -107,7 +108,9 @@ const SciencePage: FC = () => {
             </Link>
           </div>
         </section>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.cta}>
           <h2 className={styles.ctaTitle}>{t('cta.title')}</h2>
           <p className={styles.ctaText}>{t('cta.text')}</p>
@@ -115,6 +118,7 @@ const SciencePage: FC = () => {
             {t('cta.button')}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />
