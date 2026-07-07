@@ -9,6 +9,7 @@ import type { LocaleType } from '@/types';
 import type { PostSummary } from '@/posts';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import styles from './ConcernPage.module.scss';
 
 const accentVar: Record<ProductAccent, string> = {
@@ -68,17 +69,13 @@ const ConcernPage: FC<Props> = ({
         <span className={styles.glowB} />
       </div>
 
-      <header className={styles.intro}>
-        <Link href="/" className={styles.back}>
-          <span className={styles.arrow}>←</span> {strings.backToHome}
-        </Link>
-        <span className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {strings.eyebrow}
-        </span>
-        <h1 className={styles.title}>{strings.title}</h1>
-        <p className={styles.lead}>{strings.lead}</p>
-      </header>
+      <PageHeader
+        backHref="/"
+        backLabel={strings.backToHome}
+        kicker={strings.eyebrow}
+        title={strings.title}
+        lead={strings.lead}
+      />
 
       <main className={styles.content}>
         {explainerParas.length > 0 && (

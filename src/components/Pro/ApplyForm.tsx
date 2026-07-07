@@ -3,6 +3,7 @@
 import { FC, FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import styles from './ApplyForm.module.scss';
 
 const ApplyForm: FC = () => {
@@ -64,16 +65,12 @@ const ApplyForm: FC = () => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
       <main className={styles.container}>
-        <header className={styles.head}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowLine} />
-            {t('eyebrow')}
-          </div>
-          <h1 className={styles.title}>{t('title')}</h1>
-          <p className={styles.subtitle}>{t('subtitle')}</p>
-        </header>
-
         {/* Membership perks — WIIFM before any form field. */}
         <ul className={styles.perks} aria-label={t('perksTitle')}>
           {(t.raw('perks') as string[]).map((p) => (

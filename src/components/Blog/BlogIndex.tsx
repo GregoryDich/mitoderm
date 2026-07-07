@@ -5,6 +5,7 @@ import { useTranslations, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import type { PostSummary } from '@/posts';
 import styles from './BlogIndex.module.scss';
 
@@ -65,14 +66,11 @@ const BlogIndex: FC<Props> = ({ posts }) => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
         {/* Category chips */}

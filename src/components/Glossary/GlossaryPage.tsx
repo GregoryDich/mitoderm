@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import type { ProductChip } from '@/products';
 import styles from './GlossaryPage.module.scss';
 
@@ -32,14 +33,11 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
         {entries.length > 0 && (

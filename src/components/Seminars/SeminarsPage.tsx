@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import Reveal from '@/components/Shared/Reveal/Reveal';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import type { SocialPost } from '@/lib/social-store';
 import styles from './SeminarsPage.module.scss';
 
@@ -77,13 +78,7 @@ const SeminarsPage: FC<Props> = ({ upcoming, past }) => {
       </div>
 
       {/* Invitation */}
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.titleH1}>{t('title')}</h1>
-        <p className={styles.lead}>{t('lead')}</p>
+      <PageHeader kicker={t('eyebrow')} title={t('title')} lead={t('lead')}>
         <p className={styles.forYou}>{t('forYou')}</p>
         <p className={styles.door}>{t('door')}</p>
         <div className={styles.ctaRow}>
@@ -92,7 +87,7 @@ const SeminarsPage: FC<Props> = ({ upcoming, past }) => {
           </Link>
           <span className={styles.byArrangement}>{t('byArrangement')}</span>
         </div>
-      </header>
+      </PageHeader>
 
       <main className={styles.content}>
         {/* Program timeline */}
