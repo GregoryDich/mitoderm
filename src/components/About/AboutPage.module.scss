@@ -131,6 +131,7 @@
 }
 
 .h2 {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(28px, 4.4vw, 48px);
   font-weight: 300;
   letter-spacing: -0.5px;
@@ -267,6 +268,7 @@
 }
 
 .ctaTitle {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   position: relative;
   font-size: clamp(26px, 3.8vw, 40px);
   font-weight: 300;

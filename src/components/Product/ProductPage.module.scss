@@ -104,8 +104,9 @@
 }
 
 .title {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(40px, 6.4vw, 84px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.04;
   letter-spacing: -1px;
   overflow-wrap: anywhere;
@@ -414,8 +415,9 @@
 }
 
 .h2 {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(28px, 4.4vw, 52px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.5px;
   margin-bottom: clamp(36px, 5vw, 56px);
   overflow-wrap: anywhere;
