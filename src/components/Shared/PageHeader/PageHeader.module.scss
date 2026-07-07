@@ -1,7 +1,10 @@
 .header {
   position: relative;
   overflow: hidden;
-  padding: clamp(96px, 12vw, 150px) clamp(20px, 5vw, 48px) clamp(28px, 4vw, 44px);
+  /* Nav clearance (88px) is provided by the .page wrapper's padding-top,
+   *  consistently with every other page; this is just the hero's own
+   *  breathing room below the nav. */
+  padding: clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px) clamp(28px, 4vw, 44px);
   isolation: isolate;
 }
 

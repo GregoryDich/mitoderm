@@ -212,6 +212,13 @@
   color: transparent;
 }
 
+/* The Hebrew display serif (Frank Ruhl Libre) has no true italic, so a
+ *  synthetic slant looks broken. Keep the gold gradient, drop the slant
+ *  in RTL. Russian (Playfair) keeps its real italic. */
+:global([dir='rtl']) .titleAccent {
+  font-style: normal;
+}
+
 .desc {
   max-width: 480px;
   font-size: clamp(15px, 1.6vw, 17px);
