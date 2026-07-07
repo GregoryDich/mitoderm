@@ -314,7 +314,8 @@
 
 .ctaTitle {
   margin: 0 0 8px;
-  font-size: clamp(20px, 2.4vw, 24px);
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(21px, 2.5vw, 26px);
   font-weight: 400;
 }
 

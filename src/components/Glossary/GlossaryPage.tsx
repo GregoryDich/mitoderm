@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import type { ProductChip } from '@/products';
 import styles from './GlossaryPage.module.scss';
 
@@ -50,6 +51,7 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
           </nav>
         )}
 
+        <Reveal>
         <dl className={styles.list}>
           {entries.map((e) => (
             <div key={e.id} id={e.id} className={styles.entry}>
@@ -79,6 +81,7 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
             </div>
           ))}
         </dl>
+        </Reveal>
       </main>
 
       <Footer />

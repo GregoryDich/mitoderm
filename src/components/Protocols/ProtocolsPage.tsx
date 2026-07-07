@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
 import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import ProductMedia from '@/components/Product/ProductMedia';
 import type { Product, ProductAccent } from '@/products';
 import { useCatalogIndex } from '@/components/Catalog/CatalogIndexProvider';
@@ -66,8 +67,8 @@ const ProtocolsPage: FC<Props> = ({ protocols }) => {
                 .filter((x): x is NonNullable<typeof x> => x !== null);
 
               return (
+                <Reveal key={entry.anchor.slug}>
                 <section
-                  key={entry.anchor.slug}
                   className={styles.protocol}
                   style={{
                     ['--accent' as string]: accentVar[entry.anchor.accent],
@@ -116,11 +117,13 @@ const ProtocolsPage: FC<Props> = ({ protocols }) => {
                     {t('viewAnchor')} →
                   </Link>
                 </section>
+                </Reveal>
               );
             })}
           </div>
         )}
 
+        <Reveal>
         <section className={styles.ctaBand}>
           <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaText')}</p>
@@ -128,6 +131,7 @@ const ProtocolsPage: FC<Props> = ({ protocols }) => {
             {t('ctaButton')}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />

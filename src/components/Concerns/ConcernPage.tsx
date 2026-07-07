@@ -10,6 +10,7 @@ import type { PostSummary } from '@/posts';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
 import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import styles from './ConcernPage.module.scss';
 
 const accentVar: Record<ProductAccent, string> = {
@@ -79,6 +80,7 @@ const ConcernPage: FC<Props> = ({
 
       <main className={styles.content}>
         {explainerParas.length > 0 && (
+          <Reveal>
           <section className={styles.explainer}>
             {explainerParas.map((p, i) => (
               <p key={i} className={styles.explainerText}>
@@ -86,11 +88,13 @@ const ConcernPage: FC<Props> = ({
               </p>
             ))}
           </section>
+          </Reveal>
         )}
 
         {/* "Is this your client?" — recognition checklist that turns the
             explainer into a concrete buying decision. */}
         {strings.checklist.length > 0 && (
+          <Reveal>
           <section className={styles.checkBlock}>
             <h2 className={styles.checkTitle}>{strings.checklistTitle}</h2>
             <ul className={styles.checkList}>
@@ -104,9 +108,11 @@ const ConcernPage: FC<Props> = ({
               ))}
             </ul>
           </section>
+          </Reveal>
         )}
 
         {lineSummaries.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.linesTitle}</h2>
             <div className={styles.lineGrid}>
@@ -130,9 +136,11 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
         {products.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.productsTitle}</h2>
             <div className={styles.productGrid}>
@@ -166,9 +174,11 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
         {posts.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.postsTitle}</h2>
             <div className={styles.postGrid}>
@@ -181,8 +191,10 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
+        <Reveal>
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{strings.title}</h2>
@@ -191,6 +203,7 @@ const ConcernPage: FC<Props> = ({
             {strings.contactCta}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />

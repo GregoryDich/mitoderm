@@ -9,6 +9,7 @@ import type { LocaleType } from '@/types';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
 import WaitlistForm from '@/components/Waitlist/WaitlistForm';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import styles from './LinePage.module.scss';
 
 const accentVar: Record<ProductAccent, string> = {
@@ -102,6 +103,7 @@ const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
 
         {/* Products grid */}
         {items.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.productsTitle}</h2>
             <div className={styles.products}>
@@ -135,17 +137,20 @@ const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
         {/* 1+1=3 — the original site's synergy claim, shown for real
             systems (2+ products working together). */}
         {items.length >= 2 && (
+          <Reveal variant="scale">
           <section className={styles.synergy}>
             <span className={styles.synergyHeading} aria-hidden="true">
               {strings.synergyHeading}
             </span>
             <p className={styles.synergyBody}>{strings.synergyBody}</p>
           </section>
+          </Reveal>
         )}
 
         {/* Protocol */}
@@ -198,6 +203,7 @@ const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
             errorText={waitlist.errorText}
           />
         ) : (
+          <Reveal>
           <section className={styles.ctaBand}>
             <span className={styles.ctaGlow} aria-hidden="true" />
             <h2 className={styles.ctaTitle}>{c.ctaTitle}</h2>
@@ -206,6 +212,7 @@ const LinePage: FC<Props> = ({ line, items, locale, strings, waitlist }) => {
               {strings.contactCta}
             </Link>
           </section>
+          </Reveal>
         )}
       </main>
 

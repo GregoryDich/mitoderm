@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import MountTracker from '@/components/Analytics/MountTracker';
 import type { Post, PostSummary } from '@/posts';
 import { DEFAULT_AUTHOR } from '@/posts';
@@ -147,6 +148,7 @@ const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
         )}
 
         {related.length > 0 && (
+          <Reveal>
           <section className={styles.related} aria-labelledby="related-title">
             <h2 id="related-title" className={styles.relatedTitle}>
               {t('relatedTitle')}
@@ -163,8 +165,10 @@ const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
               ))}
             </ul>
           </section>
+          </Reveal>
         )}
 
+        <Reveal>
         <section className={styles.cta}>
           <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaText')}</p>
@@ -172,6 +176,7 @@ const BlogPost: FC<Props> = ({ post, locale, related = [], products = [] }) => {
             {t('ctaButton')}
           </Link>
         </section>
+        </Reveal>
       </article>
 
       <Footer />
