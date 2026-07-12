@@ -9,12 +9,16 @@ import type { LocaleType } from '@/types';
 import type { PostSummary } from '@/posts';
 import Footer from '@/components/Layout/Footer/Footer';
 import ProductMedia from '@/components/Product/ProductMedia';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import styles from './ConcernPage.module.scss';
 
 const accentVar: Record<ProductAccent, string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 interface Props {
@@ -38,6 +42,9 @@ interface Props {
     backToHome: string;
     contactCta: string;
     openLine: string;
+    /** "Is this your client?" recognition checklist. */
+    checklistTitle: string;
+    checklist: string[];
   };
 }
 
@@ -63,20 +70,17 @@ const ConcernPage: FC<Props> = ({
         <span className={styles.glowB} />
       </div>
 
-      <header className={styles.intro}>
-        <Link href="/" className={styles.back}>
-          <span className={styles.arrow}>←</span> {strings.backToHome}
-        </Link>
-        <span className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {strings.eyebrow}
-        </span>
-        <h1 className={styles.title}>{strings.title}</h1>
-        <p className={styles.lead}>{strings.lead}</p>
-      </header>
+      <PageHeader
+        backHref="/"
+        backLabel={strings.backToHome}
+        kicker={strings.eyebrow}
+        title={strings.title}
+        lead={strings.lead}
+      />
 
       <main className={styles.content}>
         {explainerParas.length > 0 && (
+          <Reveal>
           <section className={styles.explainer}>
             {explainerParas.map((p, i) => (
               <p key={i} className={styles.explainerText}>
@@ -84,9 +88,31 @@ const ConcernPage: FC<Props> = ({
               </p>
             ))}
           </section>
+          </Reveal>
+        )}
+
+        {/* "Is this your client?" — recognition checklist that turns the
+            explainer into a concrete buying decision. */}
+        {strings.checklist.length > 0 && (
+          <Reveal>
+          <section className={styles.checkBlock}>
+            <h2 className={styles.checkTitle}>{strings.checklistTitle}</h2>
+            <ul className={styles.checkList}>
+              {strings.checklist.map((c) => (
+                <li key={c} className={styles.checkItem}>
+                  <span className={styles.checkTick} aria-hidden="true">
+                    ✓
+                  </span>
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </section>
+          </Reveal>
         )}
 
         {lineSummaries.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.linesTitle}</h2>
             <div className={styles.lineGrid}>
@@ -110,9 +136,11 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
         {products.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.productsTitle}</h2>
             <div className={styles.productGrid}>
@@ -146,9 +174,11 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
         {posts.length > 0 && (
+          <Reveal>
           <section className={styles.block}>
             <h2 className={styles.h2}>{strings.postsTitle}</h2>
             <div className={styles.postGrid}>
@@ -161,8 +191,10 @@ const ConcernPage: FC<Props> = ({
               ))}
             </div>
           </section>
+          </Reveal>
         )}
 
+        <Reveal>
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
           <h2 className={styles.ctaTitle}>{strings.title}</h2>
@@ -171,6 +203,7 @@ const ConcernPage: FC<Props> = ({
             {strings.contactCta}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />

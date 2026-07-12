@@ -4,6 +4,8 @@ import { FC, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import type { Doctor, DoctorArea, DoctorProfession } from '@/lib/doctors-store';
 import styles from './ClinicsPage.module.scss';
 
@@ -36,14 +38,11 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
         <div className={styles.controls}>
@@ -97,6 +96,7 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
             {doctors.length === 0 ? t('emptyDirectory') : t('noResults')}
           </p>
         ) : (
+          <Reveal>
           <ul className={styles.grid}>
             {visible.map((d) => (
               <li key={d.id} className={styles.card}>
@@ -143,8 +143,10 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
               </li>
             ))}
           </ul>
+          </Reveal>
         )}
 
+        <Reveal>
         <section className={styles.ctaBand}>
           <h2 className={styles.ctaTitle}>{t('ctaTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaText')}</p>
@@ -152,6 +154,7 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
             {t('ctaButton')}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />

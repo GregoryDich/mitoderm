@@ -7,6 +7,8 @@ const ACCENTS: Record<string, string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 /** Edge-rendered Open Graph image. Query params:

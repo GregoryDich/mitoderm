@@ -114,6 +114,8 @@ export default async function ConcernRoute({
         backToHome: tp('backToHome'),
         contactCta: tp('contactCta'),
         openLine: tp('openLine'),
+        checklistTitle: tp('checklistTitle'),
+        checklist: (t.raw(`${slug}.checklist`) as string[]) ?? [],
       }}
     />
   );

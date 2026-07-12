@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
@@ -16,8 +15,14 @@ import CountUp from '@/components/Shared/CountUp/CountUp';
 import SocialStrip from '@/components/Social/SocialStrip';
 import PressStrip from '@/components/Press/PressStrip';
 import StoriesStrip from '@/components/Stories/StoriesStrip';
-import LinesShowcase from '@/components/Lines/LinesShowcase';
+import ProductShowcase from '@/components/Home/ProductShowcase';
 import ConcernsStrip from '@/components/Concerns/ConcernsStrip';
+import ResultsStrip from '@/components/Home/ResultsStrip';
+import PhilosophyStrip from '@/components/Home/PhilosophyStrip';
+import MethodStrip from '@/components/Home/MethodStrip';
+import CertStrip from '@/components/Home/CertStrip';
+import EmailCapture from '@/components/Home/EmailCapture';
+import HeroReveal from '@/components/Home/HeroReveal';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -38,6 +43,8 @@ const accentVar: Record<ProductAccent, string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 const HomePage: FC<Props> = ({
@@ -55,45 +62,25 @@ const HomePage: FC<Props> = ({
 
   const stats = (t.raw('stats') as { value: string; label: string }[]) ?? [];
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
-  const heroArt = publicAsset('/home/hero.webp');
+  const heroBase = publicAsset('/home/hero-base.webp');
+  const heroLit = publicAsset('/home/hero-lit.webp');
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      {heroArt && (
-        <div className={styles.heroArt} aria-hidden="true">
-          <Image
-            src={heroArt}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className={styles.heroArtImg}
-          />
-          <span className={styles.heroArtScrim} />
-        </div>
-      )}
       <div className={styles.glows} aria-hidden="true">
         <span className={styles.glowA} />
         <span className={styles.glowB} />
       </div>
 
-      <section className={styles.hero}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.tagline}>{t('tagline')}</p>
-        <p className={styles.desc}>{t('description')}</p>
-        <div className={styles.ctaRow}>
-          <Link href="/catalog" className={styles.btnPrimary}>
-            {t('ctaPrimary')}
-          </Link>
-          <Link href="/form" className={styles.btnGhost}>
-            {t('ctaSecondary')}
-          </Link>
-        </div>
-      </section>
+      {heroBase && heroLit && (
+        <HeroReveal
+          base={heroBase}
+          lit={heroLit}
+          products={getCatalogItems(locale)
+            .filter((i) => i.status === 'available')
+            .map((i) => ({ slug: i.slug, name: i.name }))}
+        />
+      )}
 
       {/* Reveal-as-strip: the stats are direct children so the stagger
           cascades across them; numbers count up on entry. */}
@@ -105,6 +92,25 @@ const HomePage: FC<Props> = ({
           </div>
         ))}
       </Reveal>
+
+      {/* Standards & certifications — 4-icon trust grid (Figma). */}
+      <CertStrip />
+
+      {/* Philosophy — light paper section breaking the dark rhythm. */}
+      <PhilosophyStrip />
+
+      {/* The method — solution-aware rung: why regeneration, before the
+          products themselves. */}
+      <MethodStrip />
+
+      {/* Proof-first: real before/after sits between "why it works" and
+          "what to buy", so a skeptical buyer sees evidence before the
+          product sell. */}
+      <ResultsStrip />
+
+      {/* The collection — every product as its own editorial banner
+          (Figma centerpiece): big glowing shot + one-line USP + proof. */}
+      <ProductShowcase />
 
       <main className={styles.content}>
         {doctors.length > 0 && (
@@ -119,12 +125,6 @@ const HomePage: FC<Props> = ({
         <Reveal>
           <ConcernsStrip />
         </Reveal>
-
-        {lines.length > 0 && (
-          <Reveal>
-            <LinesShowcase lines={lines} />
-          </Reveal>
-        )}
 
         <Reveal>
         <section className={styles.block}>
@@ -207,11 +207,15 @@ const HomePage: FC<Props> = ({
         <Reveal>
         <section className={styles.ctaBand}>
           <span className={styles.ctaGlow} aria-hidden="true" />
+          <span className={styles.ctaKicker}>{t('ctaBandKicker')}</span>
           <h2 className={styles.ctaTitle}>{t('ctaBandTitle')}</h2>
           <p className={styles.ctaText}>{t('ctaBandText')}</p>
-          <Link href="/form" className={styles.btnPrimary}>
-            {t('ctaBandButton')}
-          </Link>
+          {/* Single-field capture — the warmest intent goes to the partner
+              application (pre-filled), not the 9-field contact form. */}
+          <EmailCapture
+            placeholder={t('emailPlaceholder')}
+            cta={t('ctaBandButton')}
+          />
         </section>
         </Reveal>
       </main>

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import Catalog from '@/components/Catalog/Catalog';
-import { getCatalogItems } from '@/products';
+import { getCatalogItems, getLineSummaries } from '@/products';
 import { LocaleType } from '@/types';
 import {
   SITE_NAME,
@@ -60,10 +60,11 @@ export default function CatalogPage({
 }) {
   unstable_setRequestLocale(lang);
   const items = getCatalogItems(lang);
+  const lines = getLineSummaries(lang);
   return (
     <main>
       <Suspense fallback={null}>
-        <Catalog items={items} />
+        <Catalog items={items} lines={lines} />
       </Suspense>
     </main>
   );

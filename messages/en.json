@@ -13,7 +13,8 @@
     "seminars": "Seminars",
     "lines": "Lines",
     "concerns": "Concerns",
-    "blog": "Blog"
+    "blog": "Blog",
+    "partner": "Become a Partner"
   },
   "science": {
     "eyebrow": "THE MITODERM SCIENCE STACK",
@@ -27,25 +28,29 @@
         "eyebrow": "PILLAR 01 · CELL SIGNALLING",
         "title": "Exosomes — the signalling layer",
         "lead": "Nanometre-scale extracellular vesicles that carry a multi-protein, multi-RNA payload between cells.",
-        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact."
+        "body": "Free growth factors hit a barrier and stop. Exosomes survive the trip, deliver several signals at once and participate in a richer conversation with the recipient cells. The V-Tech serum leads with carrier design so the payload reaches the upper dermis intact.",
+        "chairside": "“We apply cellular messengers that tell your skin to repair itself — the result builds from the very first session.”"
       },
       "polynucleotides": {
         "eyebrow": "PILLAR 02 · DERMAL SCAFFOLD",
         "title": "Polynucleotides — rebuilding the scaffold",
         "lead": "Long nucleotide chains that bind water and instruct fibroblasts to rebuild dermal scaffolding.",
-        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier."
+        "body": "The V-Tech Gel Mask layers low-molecular polynucleotides together with biomimetic peptides and snail mucin. Inside a session, the mask is the seal that turns serum delivery into structural change — density, plumpness and a quieted post-procedure barrier.",
+        "chairside": "“The mask seals the treatment in and rebuilds the skin’s supportive scaffold — that’s the density you’ll feel.”"
       },
       "nad": {
         "eyebrow": "PILLAR 03 · MITOCHONDRIAL RECOVERY",
         "title": "NAD+ — powering the recovery",
         "lead": "The coenzyme central to mitochondrial energy production and DNA repair — the substrate of visible glow.",
-        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols."
+        "body": "EXO-NAD is a three-step longevity peeling: pH normalizer, peptide-priming Longevity Serum and the NAD+ peel itself. Run on alternating weeks alongside V-Tech to address signalling and substrate without colliding the two protocols.",
+        "chairside": "“This peel recharges the skin’s own energy metabolism — glow without downtime.”"
       },
       "delivery": {
         "eyebrow": "PILLAR 04 · CONTROLLED DELIVERY",
         "title": "Microneedling delivery — the protocol's exit step",
         "lead": "All three pillars are only as good as the channels they travel through.",
-        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course."
+        "body": "MitoPen E30-Ultima is the delivery instrument the V-Tech and Exosignal protocols are written for: five speeds, dial-locked depth, sterile click-in cartridges. Mitoscan completes the loop on the diagnostic side — chair-side HD imaging at baseline, mid-course and end-of-course.",
+        "chairside": "“The device places the actives at a precise, controlled depth — the same result, visit after visit.”"
       }
     },
     "protocol": {
@@ -59,7 +64,8 @@
       "title": "Bring the protocol into your clinic",
       "text": "Pricing, training and protocol support — we work with your existing menu rather than against it.",
       "button": "Contact us"
-    }
+    },
+    "chairsideLabel": "What to tell your client"
   },
   "concerns": {
     "eyebrow": "BY CONCERN",
@@ -70,25 +76,49 @@
       "eyebrow": "FACE · DENSITY",
       "title": "Loss of density & structural aging",
       "text": "V-Tech serum, gel mask and Exotech — the exosome face system for density, plumpness and post-procedure recovery.",
-      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface."
+      "explainer": "From the mid-20s collagen synthesis falls roughly 1% a year, and the fat pads and bone that scaffold the face slowly recede. The result reads as flatness and slackening rather than lines — which is why a density protocol works on the structure underneath, not only the surface.",
+      "checklist": [
+        "Cheeks and jawline read flat or slack rather than lined",
+        "Skin looks tired despite consistent homecare",
+        "Asks for firmness without injectables",
+        "Needs faster, calmer recovery after lasers, peels or microneedling"
+      ]
     },
     "hair": {
       "eyebrow": "SCALP · HAIR LOSS",
       "title": "Hair loss & scalp thinning",
       "text": "ExoSignal serum and spray — protocol pairing for follicle health and visible scalp coverage.",
-      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective."
+      "explainer": "Thinning starts at the follicle, not the strand: shortening growth cycles and a miniaturising follicle produce finer hairs and a wider parting long before any bald patch. Acting early — while the follicle is still active — is what keeps a protocol effective.",
+      "checklist": [
+        "A widening parting or thinning crown and temples",
+        "More hair in the brush or the drain than before",
+        "Shedding after stress, illness or postpartum",
+        "Wants to act early, before transplant-level loss"
+      ]
     },
     "longevity": {
       "eyebrow": "FACE · LONGEVITY",
       "title": "Dullness, fatigue, longevity",
       "text": "EXO-NAD three-step peeling — mitochondrial recovery and visible glow without resurfacing downtime.",
-      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin."
+      "explainer": "Dull, tired skin is often a cellular-energy story: as mitochondrial output and NAD+ levels fall, cells repair and renew more slowly and the surface loses its bounce and glow. A longevity protocol works on that energy layer rather than resurfacing the skin.",
+      "checklist": [
+        "Dull, uneven tone and lost glow",
+        "“I look tired” without a specific wrinkle complaint",
+        "Wants visible radiance before an event, without downtime",
+        "Interested in longevity and prevention, not correction alone"
+      ]
     },
     "devices": {
       "eyebrow": "CLINIC · DIAGNOSTIC + DELIVERY",
       "title": "Diagnose, deliver, document",
       "text": "Mitoscan for HD scalp and follicle imaging; MitoPen E30-Ultima for motorised auto-stamp delivery.",
-      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients."
+      "explainer": "You can't improve what you don't measure. HD imaging at day 0 sets the baseline every later result is judged against, and controlled, repeatable delivery is what turns a good serum into a reproducible outcome across patients.",
+      "checklist": [
+        "You want documented before/after evidence for every course",
+        "Results vary between staff members or visits",
+        "You need a baseline photo to sell a course honestly",
+        "Protocol consistency matters more than one hero product"
+      ]
     }
   },
   "keyActives": {
@@ -107,7 +137,15 @@
     "ctaText": "Pricing, training and protocol support — get in touch.",
     "ctaButton": "Contact us",
     "relatedTitle": "Continue reading",
-    "featuredProductsTitle": "Featured in this protocol"
+    "featuredProductsTitle": "Featured in this protocol",
+    "filterLabel": "Filter articles",
+    "featured": "Featured",
+    "cat_all": "All",
+    "cat_exosomes": "Exosomes",
+    "cat_hair": "Hair",
+    "cat_protocols": "Protocols",
+    "cat_education": "Education",
+    "cat_longevity": "Longevity"
   },
   "catalog": {
     "eyebrow": "CATALOG",
@@ -116,7 +154,7 @@
     "filterAll": "All",
     "filterExosome": "Exosomes",
     "filterMask": "Masks",
-    "filterPeel": "Peels",
+    "filterPeel": "Peelings",
     "filterBioSpicules": "Bio-Spicules",
     "available": "Available",
     "comingSoon": "Coming soon",
@@ -127,7 +165,6 @@
     "filterSerum": "Serums",
     "filterGel": "Gels",
     "filterHair": "Hair",
-    "filterPeel": "Peelings",
     "filterDevice": "Devices",
     "searchPlaceholder": "Search products",
     "searchLabel": "Search the catalog",
@@ -135,10 +172,25 @@
     "resultCount": "Showing {shown} of {total}",
     "clearFilters": "Clear filters",
     "addToList": "Add to my list",
-    "removeFromList": "Remove from my list"
+    "removeFromList": "Remove from my list",
+    "openLine": "Open the line"
   },
   "product": {
     "keyBenefits": "Key Benefits",
+    "triad": [
+      {
+        "word": "Unique",
+        "note": "A one-of-a-kind Italian technology developed by VM Corporation."
+      },
+      {
+        "word": "Effective",
+        "note": "Firming, renewal and biological rejuvenation from the first session."
+      },
+      {
+        "word": "Safe",
+        "note": "Professional, sterile and single-dose — engineered for the clinic."
+      }
+    ],
     "activeIngredients": "Active Ingredients",
     "backToCatalog": "Back to catalog",
     "contactForPrice": "Contact for Price",
@@ -282,7 +334,11 @@
     "founderText": "Ilona founded Mitoderm to bring clinical-grade exosome technology to aesthetic practitioners across Israel — pairing hands-on professional training with a protocol-led product line built on science.",
     "ctaTitle": "Talk to a Mitoderm specialist",
     "ctaText": "Get pricing, protocols and onboarding for your clinic.",
-    "ctaButton": "Contact us"
+    "ctaButton": "Contact us",
+    "manifesto": "Mitoderm presents an advanced technology based on a unique combination from Italy, developed by VM Corporation experts, designed to provide results of firming, renewal, and biological skin rejuvenation.",
+    "circleTitle": "Join the Mitoderm Circle",
+    "circleText": "Wholesale pricing, ready-to-run protocols, training and a place in our specialist directory — partner clinics grow with us.",
+    "circleButton": "Become a Partner"
   },
   "faq": {
     "title": "FAQs",
@@ -345,7 +401,16 @@
     "successTitle": "Application received",
     "successText": "We'll reach out shortly. Once approved you'll receive a magic-link to sign into /pro for 90 days.",
     "errorDuplicate": "An application with this email already exists. Reach out to support if you don't have your magic link.",
-    "errorGeneric": "Something went wrong. Please try again or write us directly."
+    "errorGeneric": "Something went wrong. Please try again or write us directly.",
+    "perksTitle": "Partner benefits",
+    "perks": [
+      "Wholesale pricing for clinics",
+      "Ready-to-run treatment protocols",
+      "Hands-on training & certification",
+      "Listing in the specialist directory",
+      "Marketing materials for your clients",
+      "Priority support on WhatsApp"
+    ]
   },
   "pro": {
     "title": "Mitoderm /pro portal",
@@ -383,7 +448,8 @@
     "postsTitle": "FROM THE JOURNAL",
     "backToHome": "Back to homepage",
     "contactCta": "Talk to a specialist",
-    "openLine": "Open the line"
+    "openLine": "Open the line",
+    "checklistTitle": "Is this your client?"
   },
   "consent": {
     "title": "Cookies & analytics",
@@ -641,11 +707,35 @@
       }
     ],
     "tableTitle": "What we use",
-    "tableColumns": ["Name", "Purpose", "Category", "Lifetime", "Provider"],
+    "tableColumns": [
+      "Name",
+      "Purpose",
+      "Category",
+      "Lifetime",
+      "Provider"
+    ],
     "tableRows": [
-      ["mitoderm_consent_v1", "Remembers your cookie choice", "Strictly necessary", "Persistent (local storage)", "Mitoderm"],
-      ["mitoderm_utm_v1", "Remembers how you reached us (campaign attribution)", "Strictly necessary", "Session (local storage)", "Mitoderm"],
-      ["_ga, _ga_*", "Aggregate analytics — which pages are used", "Analytics (consent)", "Up to 24 months", "Google Analytics 4"]
+      [
+        "mitoderm_consent_v1",
+        "Remembers your cookie choice",
+        "Strictly necessary",
+        "Persistent (local storage)",
+        "Mitoderm"
+      ],
+      [
+        "mitoderm_utm_v1",
+        "Remembers how you reached us (campaign attribution)",
+        "Strictly necessary",
+        "Session (local storage)",
+        "Mitoderm"
+      ],
+      [
+        "_ga, _ga_*",
+        "Aggregate analytics — which pages are used",
+        "Analytics (consent)",
+        "Up to 24 months",
+        "Google Analytics 4"
+      ]
     ],
     "contactHeading": "Contact",
     "contactText": "Questions about cookies: write to info@mitoderm.com."
@@ -705,10 +795,22 @@
     "door": "It opens the door to the world of innovative treatments — where you'll discover this breakthrough technology first-hand.",
     "programTitle": "Event program",
     "agenda": [
-      { "time": "19:00", "title": "Welcome & Networking" },
-      { "time": "19:30", "title": "Behind-the-Scenes Story" },
-      { "time": "20:30", "title": "Exclusive Product Reveal" },
-      { "time": "21:15", "title": "How to Grow Your Business with Mitoderm" }
+      {
+        "time": "19:00",
+        "title": "Welcome & Networking"
+      },
+      {
+        "time": "19:30",
+        "title": "Behind-the-Scenes Story"
+      },
+      {
+        "time": "20:30",
+        "title": "Exclusive Product Reveal"
+      },
+      {
+        "time": "21:15",
+        "title": "How to Grow Your Business with Mitoderm"
+      }
     ],
     "byArrangement": "By prior arrangement only.",
     "reserveCta": "Reserve your seat",
@@ -716,7 +818,77 @@
     "viewOnInstagram": "View on Instagram",
     "ctaTitle": "Want a private seminar at your clinic?",
     "ctaText": "We host on-site training and certification across Israel and the EU.",
-    "ctaButton": "Request a seminar"
+    "ctaButton": "Request a seminar",
+    "programsTitle": "Training programs",
+    "takeawaysTitle": "What you take away",
+    "whyTitle": "Why train with us",
+    "programs": [
+      {
+        "title": "Training Day — Cosmeticians · Facial",
+        "topics": [
+          "Introduction to exosomes and skin biology",
+          "How exosomes communicate with and renew cells",
+          "The clinical advantages of synthetic, stable exosomes",
+          "Protocols tailored for maximum effectiveness",
+          "Integrating treatments for clinic differentiation"
+        ]
+      },
+      {
+        "title": "Training Day — Cosmeticians · Scalp",
+        "topics": [
+          "The biological processes behind hair loss",
+          "Using exosomes for scalp restoration and faster growth",
+          "Diagnosing scalp conditions and tailoring protocols",
+          "Microneedling: precise, correct work with the scalp",
+          "Integrating treatments to generate results and sales"
+        ]
+      },
+      {
+        "title": "Training Day — Hair Stylists · Scalp",
+        "topics": [
+          "Understanding hair-loss and hair-growth processes",
+          "Fundamentals of microneedling and correct scalp work",
+          "Exosomes: innovative solutions for scalp restoration",
+          "Turning knowledge into differentiation and added value"
+        ]
+      }
+    ],
+    "takeaways": [
+      {
+        "title": "Certificate of participation",
+        "text": "Professional certification recognised across the field."
+      },
+      {
+        "title": "Clinical practice",
+        "text": "Hands-on experience and protocol customisation."
+      },
+      {
+        "title": "Expert lectures",
+        "text": "Professional leadership and knowledge expansion."
+      },
+      {
+        "title": "Advanced aesthetics",
+        "text": "Up-to-date, science-based techniques."
+      }
+    ],
+    "why": [
+      {
+        "title": "Innovative products",
+        "text": "The only company in Israel working with connective exosomes."
+      },
+      {
+        "title": "Professional network",
+        "text": "Meet and grow alongside leaders in aesthetics."
+      },
+      {
+        "title": "Personal growth",
+        "text": "Skills and expertise that elevate your practice."
+      },
+      {
+        "title": "Official Italian distributor",
+        "text": "Direct access to VM Corporation technology in Israel."
+      }
+    ]
   },
   "regimen": {
     "eyebrow": "REGIMEN BUILDER",
@@ -852,6 +1024,18 @@
     }
   },
   "home": {
+    "results": {
+      "eyebrow": "Proven results",
+      "title": "Real results, on real skin",
+      "subtitle": "Outcomes from professional in-clinic Mitoderm protocols — texture, density and recovery you can show a patient.",
+      "before": "Before",
+      "after": "After",
+      "dragHint": "Drag to compare",
+      "alt": "Before and after a professional Mitoderm treatment",
+      "disclaimer": "Individual results vary. Photographs are from professional treatments and are intended for professional use.",
+      "prev": "Previous",
+      "next": "Next"
+    },
     "eyebrow": "MITODERM",
     "title": "Where science meets beauty",
     "tagline": "Professional exosome skincare for clinics and aesthetic practitioners.",
@@ -861,20 +1045,20 @@
     "trustedBy": "TRUSTED BY CLINICIANS",
     "stats": [
       {
-        "value": "3+",
-        "label": "Product lines"
+        "value": "8",
+        "label": "Professional products"
       },
       {
-        "value": "3",
-        "label": "Locales served"
+        "value": "5",
+        "label": "Systems & lines"
       },
       {
         "value": "100%",
-        "label": "Professional use"
+        "label": "Professional-only"
       },
       {
-        "value": "IL",
-        "label": "Mitoderm HQ"
+        "value": "1+1=3",
+        "label": "Protocol synergy"
       }
     ],
     "featuredLabel": "FEATURED",
@@ -897,8 +1081,69 @@
       }
     ],
     "ctaBandTitle": "Bring Mitoderm to your clinic",
-    "ctaBandText": "Get in touch — our specialist will help with pricing, protocols and onboarding.",
-    "ctaBandButton": "Contact us"
+    "ctaBandText": "Join the professionals redefining skin longevity. Request access to the full catalog, pricing and training.",
+    "ctaBandButton": "Request access",
+    "badges": [
+      "Clinical-grade formulas",
+      "Sterile & single-dose",
+      "Professional-only",
+      "Italian technology"
+    ],
+    "heroBadge": "Exosome Science · Skin Longevity",
+    "heroTitle1": "The future of",
+    "heroTitle2": "regeneration.",
+    "heroDesc": "Mitoderm unites advanced exosome technology with precision devices to renew skin and hair at the cellular level — a complete professional ecosystem for visible, lasting longevity.",
+    "heroCta1": "Discover the collection",
+    "heroCta2": "View catalog",
+    "philosophy": {
+      "kicker": "The Mitoderm Philosophy",
+      "quote": "We believe beautiful skin is not applied — it is regenerated. Every formula and device is engineered to work with your biology, not against it.",
+      "stats": [
+        {
+          "value": "8",
+          "label": "Signature products"
+        },
+        {
+          "value": "100%",
+          "label": "Professional grade"
+        },
+        {
+          "value": "1",
+          "label": "Unified ecosystem"
+        }
+      ]
+    },
+    "certTitle": "Standards & certifications",
+    "emailPlaceholder": "Your professional email",
+    "ctaBandKicker": "Become a Partner",
+    "method": {
+      "kicker": "The Method",
+      "title": "Regeneration, not just treatment",
+      "lead": "Most professional skincare works on the surface. The Mitoderm protocol works with the skin’s own biology — signalling cells to repair, powering that repair with cellular energy, and delivering it exactly where it’s needed.",
+      "rows": [
+        {
+          "from": "Resurfacing",
+          "to": "Regeneration",
+          "note": "Renew the skin from within with NAD+ cellular energy, not only by removing the surface."
+        },
+        {
+          "from": "Adding volume",
+          "to": "Rebuilding tissue",
+          "note": "Concentrated exosome signals support the skin’s own repair — density and resilience, not just fill."
+        },
+        {
+          "from": "A single active",
+          "to": "A layered protocol",
+          "note": "Signal, scaffold, energy and delivery work as one system — the 1+1=3 effect."
+        },
+        {
+          "from": "Guesswork",
+          "to": "Diagnostics",
+          "note": "Mitoscan reads the skin in HD, so every protocol is measured to the client, not assumed."
+        }
+      ],
+      "scienceCta": "Explore the science"
+    }
   },
   "contactForm": {
     "eyebrow": "CONTACT",
@@ -919,11 +1164,34 @@
     "errorServer": "Something went wrong. Please try again or email us directly."
   },
   "lines": {
-    "eyebrow": "PRODUCT LINES",
-    "title": "Built as systems, not single SKUs",
-    "subtitle": "Each Mitoderm line is engineered as a complete protocol — products, ingredients and application steps designed to work together in the clinic.",
+    "eyebrow": "The Collection",
+    "title": "A complete ecosystem of regeneration",
+    "subtitle": "Each line is a protocol — its products are designed to work together, not alone.",
     "explore": "Explore the line",
-    "comingSoon": "Coming soon"
+    "comingSoon": "Coming soon",
+    "details": "Details",
+    "highlights": {
+      "exosomes": [
+        "Density, firmness & post-procedure recovery",
+        "Serum + mask + gel — the 1+1=3 protocol",
+        "Visible from the very first session"
+      ],
+      "exosignal-hair": [
+        "Clinic ampoules + daily home spray",
+        "Follicle health & visible scalp coverage",
+        "A continuous regenerative signal"
+      ],
+      "peeling": [
+        "Three-step longevity peel",
+        "Mitochondrial recovery & visible glow",
+        "No resurfacing downtime"
+      ],
+      "devices": [
+        "Diagnose with Mitoscan, deliver with MitoPen",
+        "HD baseline → measurable results",
+        "Reproducible outcomes across patients"
+      ]
+    }
   },
   "linePage": {
     "productsTitle": "PRODUCTS IN THIS LINE",
@@ -938,7 +1206,9 @@
     "waitlistEmailPlaceholder": "Your work email",
     "waitlistSuccessTitle": "You're on the list",
     "waitlistSuccessText": "We'll only write when the line is ready — no other emails, no list rentals.",
-    "waitlistError": "Couldn't add you just now. Please try again."
+    "waitlistError": "Couldn't add you just now. Please try again.",
+    "synergyHeading": "1 + 1 = 3",
+    "synergyBody": "When combining synthetic exosomes with equipment, the synergistic effect makes the result much stronger. Exosomes don't just \"add\" but \"triple\" the result! After a controlled injury, the material is dripped onto the skin, effectively giving the skin a reservoir of growth factors, peptides, proteins, and plant stem cells, so the skin uses new reserves and rebuilds itself."
   },
   "waitlist": {
     "emailLabel": "Email address",

@@ -1,0 +1,380 @@
+/* ---- Spotlight-reveal hero ----
+ * Full-first-screen block: the flat lineup photo sits in a full-width,
+ * aspect-locked box; the lit twin of the same shot is masked to a soft
+ * circle that trails the cursor (mask itself is set from JS per frame).
+ * The box letterboxes instead of cover-cropping because the photo is
+ * 2.34:1 — cover on a 16:10 screen would push MITOPEN and EXO-NAD (and
+ * their hotspots) out of the frame. */
+
+.hero {
+  position: relative;
+  /* .page already reserves 88px for the fixed nav. */
+  height: calc(100vh - 88px);
+  height: calc(100dvh - 88px);
+  min-height: 540px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      120% 60% at 50% 0%,
+      rgba(58, 42, 24, 0.55) 0%,
+      rgba(24, 17, 11, 0.35) 45%,
+      rgba(8, 8, 10, 0) 75%
+    ),
+    #0a0806;
+}
+
+.photoBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Full width until the section is wider than the photo AR, then cap
+   * to section height (pillarbox) so it never crops. */
+  width: min(100%, calc((100vh - 88px) * 2.344));
+  width: min(100%, calc((100dvh - 88px) * 2.344));
+  overflow: hidden;
+}
+
+.zoom {
+  position: absolute;
+  inset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .zoom {
+    animation: heroZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.baseImg,
+.litImg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.litImg {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.litOn {
+  opacity: 1;
+}
+
+/* Blends the letterboxed photo edges into the section's dark set. */
+.photoFeather {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 44px 26px #0a0806;
+}
+
+/* ---- hotspots ---- */
+.hotspots {
+  position: absolute;
+  inset: 0;
+}
+
+.hotspot {
+  position: absolute;
+  display: block;
+  border-radius: 12px;
+  outline: none;
+}
+
+.hotspot:focus-visible {
+  outline: 2px solid rgba(223, 186, 116, 0.85);
+  outline-offset: 3px;
+}
+
+.debug {
+  outline: 1px dashed rgba(111, 183, 186, 0.8);
+}
+
+.chip {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translate(-50%, 8px);
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(10, 8, 6, 0.72);
+  border: 1px solid rgba(223, 186, 116, 0.45);
+  backdrop-filter: blur(6px);
+  color: #e6cf9a;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.chipUp {
+  bottom: calc(100% + 4px);
+  transform: translate(-50%, -8px);
+}
+
+.hotspot:hover .chip,
+.hotspot:focus-visible .chip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- text overlay ---- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.overlay a {
+  pointer-events: auto;
+}
+
+/* Top-start corner: the photo carries its own baked-in centered
+ * MITODERM wordmark, so the H1 must stay out of the middle. */
+.headBlock {
+  position: absolute;
+  top: clamp(16px, 3.5vh, 40px);
+  inset-inline-start: clamp(24px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  gap: 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(223, 186, 116, 0.4);
+  background: rgba(10, 8, 6, 0.35);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e6cf9a;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #dfba74;
+}
+
+.title {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(32px, 3.9vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #f5f2f0;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.55);
+}
+
+.line1,
+.line2 {
+  display: block;
+}
+
+.line2 {
+  margin-top: 2px;
+}
+
+.titleAccent {
+  font-style: italic;
+  background: linear-gradient(100deg, #e6cf9a, #dfba74, #9c7a34);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Hebrew display serif has no true italic — keep gradient, drop slant. */
+:global([dir='rtl']) .titleAccent {
+  font-style: normal;
+}
+
+.desc {
+  position: absolute;
+  bottom: clamp(28px, 6vh, 56px);
+  inset-inline-start: clamp(24px, 4vw, 56px);
+  max-width: 300px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(245, 242, 240, 0.78);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+.ctaBlock {
+  position: absolute;
+  bottom: clamp(28px, 6vh, 56px);
+  inset-inline-end: clamp(24px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btnPrimary {
+  padding: 15px 32px;
+  border-radius: 40px;
+  background-color: #dfba74;
+  color: #0a0a0b;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(223, 186, 116, 0.28);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.btnText {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.72);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #f5f2f0;
+  }
+}
+
+.arrow {
+  display: inline-block;
+}
+
+:global([dir='rtl']) .arrow {
+  transform: scaleX(-1);
+}
+
+/* ---- entrance (spec timing: blur-rise title, staged fade-ups) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .line1,
+  .line2,
+  .badge,
+  .desc,
+  .ctaBlock {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .line1 {
+    animation-name: heroRevealIn;
+    animation-duration: 1.1s;
+    animation-delay: 0.25s;
+  }
+  .line2 {
+    animation-name: heroRevealIn;
+    animation-duration: 1.1s;
+    animation-delay: 0.42s;
+  }
+  .badge {
+    animation-name: heroFadeUp;
+    animation-duration: 1s;
+    animation-delay: 0.12s;
+  }
+  .desc {
+    animation-name: heroFadeUp;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+  }
+  .ctaBlock {
+    animation-name: heroFadeUp;
+    animation-duration: 1s;
+    animation-delay: 0.85s;
+  }
+}
+
+@keyframes heroRevealIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 480px;
+  }
+  .headBlock {
+    inset-inline: 20px;
+  }
+  /* Portrait keeps the letterboxed full-width strip: the complete
+   * lineup stays visible and the photo's baked-in wordmark can't
+   * collide with the H1 (which owns the dark zone above it). */
+  .title {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+  .desc {
+    display: none;
+  }
+  .ctaBlock {
+    inset-inline: 20px;
+    align-items: stretch;
+    text-align: center;
+    bottom: 24px;
+  }
+  .btnPrimary {
+    text-align: center;
+  }
+  .btnText {
+    justify-content: center;
+  }
+}

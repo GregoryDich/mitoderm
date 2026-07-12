@@ -131,6 +131,23 @@ owner decision):**
   4.5 with a per-product system prompt (facts, rules, locale).
   Rate-limited 10 req/IP/min. Frontend falls back to fuzzy
   matcher when `ANTHROPIC_API_KEY` is unset.
+- **Spotlight-reveal homepage hero** (owner-requested, replaces the
+  floating-product hero + `HeroProduct`) —
+  `src/components/Home/HeroReveal.tsx`. Owner's two lineup photos
+  (`public/home/hero-base.webp` flat / `hero-lit.webp` glowing, same
+  composition) in a full-width aspect-locked letterbox; a soft
+  radial-gradient mask (R=260, lerped 0.1/frame) trails the cursor and
+  reveals the lit photo — the product under the pointer "lights up".
+  Percent-positioned hotspot links over each product → its PDP, with
+  gold name chips on hover/focus (chips flip above for MITOPEN /
+  Mitoscan to clear the overlay paragraph; EXOCELL has no live PDP →
+  lights + labels, no link). H1 sits top-start because the photos
+  carry a baked-in centered MITODERM wordmark. Touch / no-hover shows
+  the lit photo, no listeners. SSR first paint = flat photo (no
+  flash). Entrance: Ken Burns zoom + staggered blur-rise/fade-ups;
+  reduced-motion drops all of it. Hotspot rects tunable via
+  `?debugHotspots`. Existing `home.hero*` locale keys reused — zero
+  copy changes.
 
 ---
 

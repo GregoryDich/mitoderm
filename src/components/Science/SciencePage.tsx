@@ -2,12 +2,14 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import Reveal from '@/components/Shared/Reveal/Reveal';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import { publicAsset } from '@/lib/public-asset';
 import styles from './SciencePage.module.scss';
 
 interface Pillar {
   key: string;
-  accent: 'teal' | 'gold' | 'rose';
+  accent: 'teal' | 'gold' | 'rose' | 'amber' | 'steel';
   href?: string;
   hrefLabelKey?: string;
 }
@@ -23,6 +25,8 @@ const accentVar: Record<Pillar['accent'], string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 const SciencePage: FC = () => {
@@ -30,20 +34,18 @@ const SciencePage: FC = () => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
-        <section className={styles.lead}>
+        <Reveal className={styles.lead}>
           <p className={styles.leadText}>{t('leadParagraph')}</p>
-        </section>
+        </Reveal>
 
+        <Reveal>
         <ol className={styles.pillars}>
           {pillars.map((p, i) => {
             const art = publicAsset(`/science/${p.key}.webp`);
@@ -70,6 +72,16 @@ const SciencePage: FC = () => {
                 <h2 className={styles.pillarTitle}>{t(`pillars.${p.key}.title`)}</h2>
                 <p className={styles.pillarLead}>{t(`pillars.${p.key}.lead`)}</p>
                 <p className={styles.pillarBodyText}>{t(`pillars.${p.key}.body`)}</p>
+                {/* Chairside script — the one line a practitioner can
+                    say to their client, verbatim. */}
+                <blockquote className={styles.chairside}>
+                  <span className={styles.chairsideLabel}>
+                    {t('chairsideLabel')}
+                  </span>
+                  <p className={styles.chairsideText}>
+                    {t(`pillars.${p.key}.chairside`)}
+                  </p>
+                </blockquote>
                 {p.href && p.hrefLabelKey && (
                   <Link href={p.href} className={styles.pillarLink}>
                     {t(p.hrefLabelKey)} <span className={styles.arrow}>→</span>
@@ -80,7 +92,9 @@ const SciencePage: FC = () => {
             );
           })}
         </ol>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.protocol}>
           <span className={styles.protocolEyebrow}>{t('protocol.eyebrow')}</span>
           <h2 className={styles.protocolTitle}>{t('protocol.title')}</h2>
@@ -94,7 +108,9 @@ const SciencePage: FC = () => {
             </Link>
           </div>
         </section>
+        </Reveal>
 
+        <Reveal>
         <section className={styles.cta}>
           <h2 className={styles.ctaTitle}>{t('cta.title')}</h2>
           <p className={styles.ctaText}>{t('cta.text')}</p>
@@ -102,6 +118,7 @@ const SciencePage: FC = () => {
             {t('cta.button')}
           </Link>
         </section>
+        </Reveal>
       </main>
 
       <Footer />

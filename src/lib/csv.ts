@@ -13,6 +13,13 @@ export function toCsv(
     if (v == null) return '';
     let s = typeof v === 'string' ? v : String(v);
     s = s.replace(/\r?\n/g, ' ');
+    // Formula-injection guard: a cell starting with = + - @ (or a
+    // control char) is executed as a formula by Excel/Sheets. Lead
+    // fields are attacker-controlled via public forms, so prefix a
+    // single quote before RFC-4180 quoting.
+    if (/^[=+\-@\t\r]/.test(s)) {
+      s = "'" + s;
+    }
     if (/[",]/.test(s)) {
       s = '"' + s.replace(/"/g, '""') + '"';
     }

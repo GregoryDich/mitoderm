@@ -3,7 +3,7 @@
     "slug": "v-tech-serum",
     "category": "serum",
     "status": "available",
-    "accent": "teal",
+    "accent": "gold",
     "image": "/products/v-tech-system/hero.webp",
     "gallery": [],
     "content": {
@@ -725,6 +725,24 @@
               "a": "The gold particle acts as a microcarrier — improves topical penetration and helps the peptide reach fibroblasts in the upper dermis without degradation."
             }
           ]
+        },
+        "bundle": {
+          "title": "Complete the V-Tech facial protocol",
+          "intro": "The gel mask seals and soothes — pair it with the serum and finishing gel for the full session.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Step 1 — Active"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Step 2 — Seal & soothe"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Step 3 — Recovery finish"
+            }
+          ]
         }
       },
       "ru": {
@@ -842,6 +860,24 @@
             {
               "q": "Как работает пептид с золотым носителем (Acetyl Heptapeptide-9)?",
               "a": "Частица золота выступает микроносителем — улучшает проникновение и помогает пептиду достичь фибробластов верхней дермы без деградации."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Полный лицевой протокол V-Tech",
+          "intro": "Гель-маска запечатывает и успокаивает — сочетайте её с сывороткой и финишным гелем для полной процедуры.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "Шаг 1 — Актив"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "Шаг 2 — Запечатать и успокоить"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Шаг 3 — Финиш-восстановление"
             }
           ]
         }
@@ -963,6 +999,24 @@
               "a": "חלקיק הזהב משמש כמיקרו-נשא — משפר חדירה ועוזר לפפטיד להגיע לפיברובלסטים בדרמיס העליון בלי דגרדציה."
             }
           ]
+        },
+        "bundle": {
+          "title": "השלימו את פרוטוקול הפנים V-Tech",
+          "intro": "מסכת הג׳ל אוטמת ומרגיעה — שלבו אותה עם הסרום וג׳ל הגימור לטיפול מלא.",
+          "items": [
+            {
+              "slug": "v-tech-serum",
+              "role": "שלב 1 — חומר פעיל"
+            },
+            {
+              "slug": "v-tech-gel-mask",
+              "role": "שלב 2 — איטום והרגעה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "שלב 3 — גימור התאוששות"
+            }
+          ]
         }
       }
     }
@@ -971,7 +1025,7 @@
     "slug": "exotech-gel",
     "category": "gel",
     "status": "available",
-    "accent": "rose",
+    "accent": "gold",
     "image": "/products/exotech-gel/hero.webp",
     "gallery": [],
     "content": {
@@ -1074,6 +1128,24 @@
             {
               "q": "Can it be layered under makeup the next day?",
               "a": "Yes — Exotech leaves no residue once absorbed and is compatible with mineral foundation."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "Pairs across the protocol",
+          "intro": "The conductive medium that carries every treatment — from the V-Tech serum to device work with MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "Conductive medium"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Facial active"
+            },
+            {
+              "slug": "mitopen",
+              "role": "Device delivery"
             }
           ]
         }
@@ -1179,6 +1251,24 @@
               "a": "Да — Exotech не оставляет следов после впитывания и совместим с минеральным тональным."
             }
           ]
+        },
+        "bundle": {
+          "title": "Работает по всему протоколу",
+          "intro": "Проводящая среда, которая несёт каждый актив — от сыворотки V-Tech до работы устройством MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "Проводящая среда"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Лицевой актив"
+            },
+            {
+              "slug": "mitopen",
+              "role": "Доставка устройством"
+            }
+          ]
         }
       },
       "he": {
@@ -1280,6 +1370,24 @@
             {
               "q": "אפשר להניח איפור ביום שלמחרת?",
               "a": "כן — Exotech לא משאיר שאריות אחרי ספיגה ומסתדר עם מייקאפ מינרלי."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "משתלב לאורך כל הפרוטוקול",
+          "intro": "המדיום המוליך שנושא כל טיפול — מהסרום V-Tech ועד עבודה עם מכשיר MitoPen.",
+          "items": [
+            {
+              "slug": "exotech-gel",
+              "role": "מדיום מוליך"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "חומר פעיל לפנים"
+            },
+            {
+              "slug": "mitopen",
+              "role": "החדרה במכשיר"
             }
           ]
         }
@@ -1762,7 +1870,7 @@
     "slug": "exosignal-hair-spray",
     "category": "hair",
     "status": "available",
-    "accent": "gold",
+    "accent": "teal",
     "image": "/products/exosignal-hair-spray/hero.png",
     "gallery": [],
     "content": {
@@ -1864,6 +1972,20 @@
             {
               "q": "Suitable for patients on finasteride or minoxidil?",
               "a": "Yes — Exosignal Hair Spray works through a different mechanism and does not interfere with either. Many patients run them simultaneously."
+            }
+          ]
+        },
+        "bundle": {
+          "title": "The complete Exosignal hair system",
+          "intro": "In-clinic ampoules plus the daily home spray — professional results maintained between sessions.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "In-clinic ampoules"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Daily home care"
             }
           ]
         }
@@ -1968,6 +2090,20 @@
               "a": "Да — Exosignal Hair Spray работает через другой механизм и не мешает им. Многие пациенты применяют параллельно."
             }
           ]
+        },
+        "bundle": {
+          "title": "Полная система для волос Exosignal",
+          "intro": "Ампулы в клинике плюс ежедневный домашний спрей — профессиональный результат сохраняется между сеансами.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "Ампулы в клинике"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "Ежедневный домашний уход"
+            }
+          ]
         }
       },
       "he": {
@@ -2070,6 +2206,20 @@
               "a": "כן — Exosignal Hair Spray פועל במנגנון שונה ואינו מפריע. הרבה מטופלים מפעילים את שניהם במקביל."
             }
           ]
+        },
+        "bundle": {
+          "title": "מערכת השיער המלאה של Exosignal",
+          "intro": "אמפולות במרפאה יחד עם ספריי ביתי יומי — תוצאות מקצועיות נשמרות בין המפגשים.",
+          "items": [
+            {
+              "slug": "exosignal-hair",
+              "role": "אמפולות במרפאה"
+            },
+            {
+              "slug": "exosignal-hair-spray",
+              "role": "טיפוח ביתי יומי"
+            }
+          ]
         }
       }
     }
@@ -2078,7 +2228,7 @@
     "slug": "exo-nad",
     "category": "peel",
     "status": "available",
-    "accent": "gold",
+    "accent": "amber",
     "image": "/products/exo-nad/hero.png",
     "content": {
       "en": {
@@ -2171,7 +2321,21 @@
           "Pre-resurfacing preparation"
         ],
         "ctaTitle": "Add the NAD+ longevity peeling to your menu",
-        "ctaText": "Contact us for pricing, training and protocol support."
+        "ctaText": "Contact us for pricing, training and protocol support.",
+        "bundle": {
+          "title": "Finish the longevity peel",
+          "intro": "Support the NAD+ peel with the conductive recovery gel for comfort and even delivery.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "Longevity peel"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Recovery finish"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "EXO-NAD пилинг долголетия",
@@ -2263,7 +2427,21 @@
           "Подготовка к шлифовкам"
         ],
         "ctaTitle": "Добавить NAD+ пилинг в меню",
-        "ctaText": "Свяжитесь с нами для условий, обучения и поддержки протокола."
+        "ctaText": "Свяжитесь с нами для условий, обучения и поддержки протокола.",
+        "bundle": {
+          "title": "Завершите пилинг долголетия",
+          "intro": "Поддержите NAD+-пилинг проводящим восстанавливающим гелем — для комфорта и равномерной доставки.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "Пилинг долголетия"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Финиш-восстановление"
+            }
+          ]
+        }
       },
       "he": {
         "name": "פילינג EXO-NAD ללונג׳ביטי",
@@ -2355,7 +2533,21 @@
           "הכנה ל-resurfacing"
         ],
         "ctaTitle": "להוסיף את הפילינג NAD+ לתפריט",
-        "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול."
+        "ctaText": "צרו קשר לתמחור, הדרכה ותמיכת פרוטוקול.",
+        "bundle": {
+          "title": "סיימו את פילינג אריכות הימים",
+          "intro": "תמכו בפילינג NAD+ בעזרת ג׳ל ההתאוששות המוליך — לנוחות ולהחדרה אחידה.",
+          "items": [
+            {
+              "slug": "exo-nad",
+              "role": "פילינג אריכות ימים"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "גימור התאוששות"
+            }
+          ]
+        }
       }
     }
   },
@@ -2363,7 +2555,7 @@
     "slug": "mitoscan",
     "category": "device",
     "status": "available",
-    "accent": "teal",
+    "accent": "steel",
     "image": "/products/mitoscan/hero.webp",
     "content": {
       "en": {
@@ -2379,15 +2571,36 @@
           "Compact tabletop footprint — handle 200 × 50 × 50 mm, 1.9 kg total"
         ],
         "stats": [
-          { "value": "10 MP", "label": "Camera resolution" },
-          { "value": "8.5\"", "label": "Display" },
-          { "value": "3", "label": "Lighting modes" }
+          {
+            "value": "10 MP",
+            "label": "Camera resolution"
+          },
+          {
+            "value": "8.5\"",
+            "label": "Display"
+          },
+          {
+            "value": "3",
+            "label": "Lighting modes"
+          }
         ],
         "benefits": [
-          { "title": "Chair-side consultation", "text": "Freeze the live feed mid-exam and walk the patient through what you see — density, follicle health, scalp condition." },
-          { "title": "Three lighting modes", "text": "Switch between standard, polarised and UV-style lighting to surface different layers of the scalp and hair shaft." },
-          { "title": "Protocol planning", "text": "Pairs with the Exosignal Hair line — pre-treatment baseline, mid-course check, end-of-course comparison." },
-          { "title": "Records and follow-up", "text": "Capture freeze-frame stills for the patient chart and side-by-side reviews at follow-up sessions." }
+          {
+            "title": "Chair-side consultation",
+            "text": "Freeze the live feed mid-exam and walk the patient through what you see — density, follicle health, scalp condition."
+          },
+          {
+            "title": "Three lighting modes",
+            "text": "Switch between standard, polarised and UV-style lighting to surface different layers of the scalp and hair shaft."
+          },
+          {
+            "title": "Protocol planning",
+            "text": "Pairs with the Exosignal Hair line — pre-treatment baseline, mid-course check, end-of-course comparison."
+          },
+          {
+            "title": "Records and follow-up",
+            "text": "Capture freeze-frame stills for the patient chart and side-by-side reviews at follow-up sessions."
+          }
         ],
         "ingredientsIntro": "What's in the box",
         "ingredients": [
@@ -2426,7 +2639,21 @@
           "Patient education"
         ],
         "ctaTitle": "Add Mitoscan to your clinic",
-        "ctaText": "Contact us for pricing, lead time and operator training."
+        "ctaText": "Contact us for pricing, lead time and operator training.",
+        "bundle": {
+          "title": "From diagnosis to protocol",
+          "intro": "Mitoscan reads the skin in HD, then guides the right in-clinic protocol — starting with the V-Tech system.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "HD diagnostic"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Recommended protocol"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "Mitoscan",
@@ -2441,15 +2668,36 @@
           "Компактный форм-фактор — ручка 200 × 50 × 50 мм, общий вес 1.9 кг"
         ],
         "stats": [
-          { "value": "10 Мп", "label": "Разрешение камеры" },
-          { "value": "8.5\"", "label": "Экран" },
-          { "value": "3", "label": "Режима подсветки" }
+          {
+            "value": "10 Мп",
+            "label": "Разрешение камеры"
+          },
+          {
+            "value": "8.5\"",
+            "label": "Экран"
+          },
+          {
+            "value": "3",
+            "label": "Режима подсветки"
+          }
         ],
         "benefits": [
-          { "title": "Консультация рядом с креслом", "text": "Зафиксировать живой кадр прямо во время осмотра и обсудить плотность, состояние фолликула и кожи головы с пациентом." },
-          { "title": "Три режима подсветки", "text": "Стандартная, поляризованная и UV-подсветка вытягивают разные слои кожи и волосяного стержня." },
-          { "title": "Планирование курса", "text": "Связка с линией Exosignal Hair — базовый кадр, контроль в середине курса, итоговое сравнение." },
-          { "title": "Документация и контроль", "text": "Сохранённые кадры идут в карту пациента и в сравнения на последующих визитах." }
+          {
+            "title": "Консультация рядом с креслом",
+            "text": "Зафиксировать живой кадр прямо во время осмотра и обсудить плотность, состояние фолликула и кожи головы с пациентом."
+          },
+          {
+            "title": "Три режима подсветки",
+            "text": "Стандартная, поляризованная и UV-подсветка вытягивают разные слои кожи и волосяного стержня."
+          },
+          {
+            "title": "Планирование курса",
+            "text": "Связка с линией Exosignal Hair — базовый кадр, контроль в середине курса, итоговое сравнение."
+          },
+          {
+            "title": "Документация и контроль",
+            "text": "Сохранённые кадры идут в карту пациента и в сравнения на последующих визитах."
+          }
         ],
         "ingredientsIntro": "В комплекте",
         "ingredients": [
@@ -2488,7 +2736,21 @@
           "Объяснение пациенту"
         ],
         "ctaTitle": "Добавить Mitoscan в клинику",
-        "ctaText": "Свяжитесь с нами по цене, срокам поставки и обучению оператора."
+        "ctaText": "Свяжитесь с нами по цене, срокам поставки и обучению оператора.",
+        "bundle": {
+          "title": "От диагностики к протоколу",
+          "intro": "Mitoscan считывает кожу в HD и направляет к нужному протоколу в клинике — начиная с системы V-Tech.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "HD-диагностика"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Рекомендуемый протокол"
+            }
+          ]
+        }
       },
       "he": {
         "name": "Mitoscan",
@@ -2503,15 +2765,36 @@
           "מידות הידית 200 × 50 × 50 מ\"מ, משקל כולל 1.9 ק\"ג"
         ],
         "stats": [
-          { "value": "10MP", "label": "רזולוציית מצלמה" },
-          { "value": "8.5\"", "label": "מסך" },
-          { "value": "3", "label": "מצבי תאורה" }
+          {
+            "value": "10MP",
+            "label": "רזולוציית מצלמה"
+          },
+          {
+            "value": "8.5\"",
+            "label": "מסך"
+          },
+          {
+            "value": "3",
+            "label": "מצבי תאורה"
+          }
         ],
         "benefits": [
-          { "title": "אבחון ליד הלקוח", "text": "הקפאת תמונה חיה תוך כדי בדיקה — להסביר ללקוח על צפיפות, מצב הזקיק ומצב הקרקפת." },
-          { "title": "שלושה מצבי תאורה", "text": "מעבר בין תאורה רגילה, מקטבת ו-UV חושף שכבות שונות של הקרקפת ושל גוף השערה." },
-          { "title": "תכנון פרוטוקול", "text": "משתלב עם סדרת Exosignal Hair — תמונה בסיסית, בדיקת אמצע קורס וסיכום." },
-          { "title": "תיעוד ומעקב", "text": "תמונות מוקפאות נשמרות בכרטיס הלקוח להשוואה במפגשי המשך." }
+          {
+            "title": "אבחון ליד הלקוח",
+            "text": "הקפאת תמונה חיה תוך כדי בדיקה — להסביר ללקוח על צפיפות, מצב הזקיק ומצב הקרקפת."
+          },
+          {
+            "title": "שלושה מצבי תאורה",
+            "text": "מעבר בין תאורה רגילה, מקטבת ו-UV חושף שכבות שונות של הקרקפת ושל גוף השערה."
+          },
+          {
+            "title": "תכנון פרוטוקול",
+            "text": "משתלב עם סדרת Exosignal Hair — תמונה בסיסית, בדיקת אמצע קורס וסיכום."
+          },
+          {
+            "title": "תיעוד ומעקב",
+            "text": "תמונות מוקפאות נשמרות בכרטיס הלקוח להשוואה במפגשי המשך."
+          }
         ],
         "ingredientsIntro": "תכולת האריזה",
         "ingredients": [
@@ -2550,7 +2833,21 @@
           "הסבר ללקוח"
         ],
         "ctaTitle": "להוסיף את Mitoscan לקליניקה",
-        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכת מפעיל."
+        "ctaText": "צרו קשר למחיר, זמן אספקה והדרכת מפעיל.",
+        "bundle": {
+          "title": "מאבחון לפרוטוקול",
+          "intro": "Mitoscan סורק את העור ב-HD ומכוון לפרוטוקול הנכון במרפאה — החל ממערכת V-Tech.",
+          "items": [
+            {
+              "slug": "mitoscan",
+              "role": "אבחון HD"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "פרוטוקול מומלץ"
+            }
+          ]
+        }
       }
     }
   },
@@ -2558,7 +2855,7 @@
     "slug": "mitopen",
     "category": "device",
     "status": "available",
-    "accent": "gold",
+    "accent": "steel",
     "image": "/products/mitopen/hero.webp",
     "content": {
       "en": {
@@ -2574,15 +2871,36 @@
           "Wired and wireless (built-in battery) variants — 318 g handle"
         ],
         "stats": [
-          { "value": "5", "label": "Speed settings" },
-          { "value": "318 g", "label": "Handle weight" },
-          { "value": "5 V / 1 A", "label": "Power" }
+          {
+            "value": "5",
+            "label": "Speed settings"
+          },
+          {
+            "value": "318 g",
+            "label": "Handle weight"
+          },
+          {
+            "value": "5 V / 1 A",
+            "label": "Power"
+          }
         ],
         "benefits": [
-          { "title": "Repeatable depth control", "text": "The dial ring locks needle depth so the practitioner can move across zones without drifting off-protocol." },
-          { "title": "Auto-stamp motor", "text": "Five speeds let you tune cadence to the indication — slower on bony areas, faster on dense zones." },
-          { "title": "Sterile click-in cartridges", "text": "Sealed sterile cartridges click in and lock with a counter-clockwise twist; safer changeover between patients." },
-          { "title": "Two variants", "text": "Wireless model for chair-side mobility, wired model for back-to-back sessions in a busy room." }
+          {
+            "title": "Repeatable depth control",
+            "text": "The dial ring locks needle depth so the practitioner can move across zones without drifting off-protocol."
+          },
+          {
+            "title": "Auto-stamp motor",
+            "text": "Five speeds let you tune cadence to the indication — slower on bony areas, faster on dense zones."
+          },
+          {
+            "title": "Sterile click-in cartridges",
+            "text": "Sealed sterile cartridges click in and lock with a counter-clockwise twist; safer changeover between patients."
+          },
+          {
+            "title": "Two variants",
+            "text": "Wireless model for chair-side mobility, wired model for back-to-back sessions in a busy room."
+          }
         ],
         "ingredientsIntro": "What's in the box",
         "ingredients": [
@@ -2623,7 +2941,25 @@
           "Hair-loss scalp sessions with Exosignal Hair"
         ],
         "ctaTitle": "Add MitoPen to your clinic",
-        "ctaText": "Contact us for pricing, cartridge supply and operator training."
+        "ctaText": "Contact us for pricing, cartridge supply and operator training.",
+        "bundle": {
+          "title": "Precision delivery, paired",
+          "intro": "The microchanneling pen works with the conductive gel and the V-Tech actives to maximise absorption.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "Delivery device"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Conductive medium"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Facial active"
+            }
+          ]
+        }
       },
       "ru": {
         "name": "MitoPen E30-Ultima",
@@ -2638,15 +2974,36 @@
           "Проводная и беспроводная версии — ручка 318 г"
         ],
         "stats": [
-          { "value": "5", "label": "Скоростей" },
-          { "value": "318 г", "label": "Вес ручки" },
-          { "value": "5 В / 1 А", "label": "Питание" }
+          {
+            "value": "5",
+            "label": "Скоростей"
+          },
+          {
+            "value": "318 г",
+            "label": "Вес ручки"
+          },
+          {
+            "value": "5 В / 1 А",
+            "label": "Питание"
+          }
         ],
         "benefits": [
-          { "title": "Повторяемая глубина", "text": "Кольцо фиксирует глубину иглы — оператор работает по зонам без ухода от протокола." },
-          { "title": "Мотор авто-штамп", "text": "Пять скоростей: медленнее на костных зонах, быстрее на плотных участках." },
-          { "title": "Стерильные сменные картриджи", "text": "Запечатанные стерильные картриджи фиксируются поворотом против часовой; безопасная смена между пациентами." },
-          { "title": "Две версии", "text": "Беспроводная — мобильность у кресла, проводная — для интенсивной работы." }
+          {
+            "title": "Повторяемая глубина",
+            "text": "Кольцо фиксирует глубину иглы — оператор работает по зонам без ухода от протокола."
+          },
+          {
+            "title": "Мотор авто-штамп",
+            "text": "Пять скоростей: медленнее на костных зонах, быстрее на плотных участках."
+          },
+          {
+            "title": "Стерильные сменные картриджи",
+            "text": "Запечатанные стерильные картриджи фиксируются поворотом против часовой; безопасная смена между пациентами."
+          },
+          {
+            "title": "Две версии",
+            "text": "Беспроводная — мобильность у кресла, проводная — для интенсивной работы."
+          }
         ],
         "ingredientsIntro": "Комплект поставки",
         "ingredients": [
@@ -2687,7 +3044,25 @@
           "Сессии по выпадению волос с Exosignal Hair"
         ],
         "ctaTitle": "Добавить MitoPen в клинику",
-        "ctaText": "Свяжитесь с нами по цене, поставке картриджей и обучению."
+        "ctaText": "Свяжитесь с нами по цене, поставке картриджей и обучению.",
+        "bundle": {
+          "title": "Точная доставка в паре",
+          "intro": "Ручка для микроканалинга работает с проводящим гелем и активами V-Tech для максимального впитывания.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "Устройство доставки"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "Проводящая среда"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "Лицевой актив"
+            }
+          ]
+        }
       },
       "he": {
         "name": "MitoPen E30-Ultima",
@@ -2702,15 +3077,36 @@
           "גרסה חוטית ואלחוטית — משקל ידית 318 גרם"
         ],
         "stats": [
-          { "value": "5", "label": "מהירויות" },
-          { "value": "318 ג׳", "label": "משקל ידית" },
-          { "value": "5V / 1A", "label": "הספק" }
+          {
+            "value": "5",
+            "label": "מהירויות"
+          },
+          {
+            "value": "318 ג׳",
+            "label": "משקל ידית"
+          },
+          {
+            "value": "5V / 1A",
+            "label": "הספק"
+          }
         ],
         "benefits": [
-          { "title": "עומק עקבי", "text": "טבעת הכיוון נועלת את עומק המחט — המפעיל עובר בין אזורים בלי לסטות מהפרוטוקול." },
-          { "title": "מנוע Auto-stamp", "text": "חמש מהירויות מאפשרות להתאים את הקצב לאזור — איטי על אזורים גרמיים, מהיר על אזורים צפופים." },
-          { "title": "מחסניות סטריליות", "text": "מחסניות אטומות לשימוש חד-פעמי ננעלות בסיבוב נגד כיוון השעון — החלפה בטוחה בין לקוחות." },
-          { "title": "שתי גרסאות", "text": "אלחוטית — לניידות; חוטית — לסשנים אינטנסיביים בקליניקה עמוסה." }
+          {
+            "title": "עומק עקבי",
+            "text": "טבעת הכיוון נועלת את עומק המחט — המפעיל עובר בין אזורים בלי לסטות מהפרוטוקול."
+          },
+          {
+            "title": "מנוע Auto-stamp",
+            "text": "חמש מהירויות מאפשרות להתאים את הקצב לאזור — איטי על אזורים גרמיים, מהיר על אזורים צפופים."
+          },
+          {
+            "title": "מחסניות סטריליות",
+            "text": "מחסניות אטומות לשימוש חד-פעמי ננעלות בסיבוב נגד כיוון השעון — החלפה בטוחה בין לקוחות."
+          },
+          {
+            "title": "שתי גרסאות",
+            "text": "אלחוטית — לניידות; חוטית — לסשנים אינטנסיביים בקליניקה עמוסה."
+          }
         ],
         "ingredientsIntro": "תכולת האריזה",
         "ingredients": [
@@ -2751,7 +3147,25 @@
           "סשנים נגד נשירת שיער עם Exosignal Hair"
         ],
         "ctaTitle": "להוסיף את MitoPen לקליניקה",
-        "ctaText": "צרו קשר למחיר, אספקת מחסניות והדרכה."
+        "ctaText": "צרו קשר למחיר, אספקת מחסניות והדרכה.",
+        "bundle": {
+          "title": "החדרה מדויקת, בשילוב",
+          "intro": "עט המיקרו-תיעול פועל עם הג׳ל המוליך והחומרים הפעילים של V-Tech למיצוי ספיגה מרבי.",
+          "items": [
+            {
+              "slug": "mitopen",
+              "role": "מכשיר החדרה"
+            },
+            {
+              "slug": "exotech-gel",
+              "role": "מדיום מוליך"
+            },
+            {
+              "slug": "v-tech-serum",
+              "role": "חומר פעיל לפנים"
+            }
+          ]
+        }
       }
     }
   }

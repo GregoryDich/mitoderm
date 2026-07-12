@@ -1,0 +1,227 @@
+.results {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, 100% - 2 * clamp(20px, 5vw, 60px));
+  margin-inline: auto;
+  padding: clamp(60px, 9vw, 110px) 0 0;
+}
+
+.head {
+  max-width: 720px;
+  margin-bottom: clamp(32px, 5vw, 52px);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #dfba74;
+  margin-bottom: 18px;
+}
+
+.eyebrowLine {
+  width: 28px;
+  height: 1px;
+  background-color: #dfba74;
+}
+
+.title {
+  font-size: clamp(30px, 4.4vw, 56px);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  color: #f5f2f0;
+}
+
+.subtitle {
+  font-size: clamp(15px, 1.7vw, 18px);
+  line-height: 1.55;
+  color: rgba(245, 242, 240, 0.62);
+  margin: 0;
+}
+
+.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 240, 0.45);
+
+  &::before {
+    content: '↔';
+    font-size: 14px;
+    color: #dfba74;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.2vw, 26px);
+}
+
+.card {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 2464 / 700;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* subtle centre divider to signal the before | after split */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  inset-inline-start: 50%;
+  width: 1px;
+  background: rgba(245, 242, 240, 0.35);
+  pointer-events: none;
+}
+
+.chip {
+  position: absolute;
+  inset-block-end: 12px;
+  inset-inline-start: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dfba74;
+  background: rgba(10, 10, 11, 0.62);
+  backdrop-filter: blur(6px);
+}
+
+.disclaimer {
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(245, 242, 240, 0.4);
+}
+
+@media screen and (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- results carousel ---- */
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(10px, 2vw, 26px);
+  /* Carousel controls are directional UI, not text: keep prev on the
+     left (‹) and next on the right (›) in every locale so RTL doesn't
+     flip the columns and leave the chevrons pointing inward. */
+  direction: ltr;
+
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 6px;
+    border-radius: 20px;
+  }
+}
+
+.frame {
+  min-width: 0;
+  max-width: 860px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.nav {
+  flex-shrink: 0;
+  width: clamp(44px, 5vw, 58px);
+  height: clamp(44px, 5vw, 58px);
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.5);
+  background: rgba(10, 10, 11, 0.5);
+  color: #dfba74;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: #dfba74;
+    color: #08080a;
+  }
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 2px;
+  }
+}
+
+.counter {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(245, 242, 240, 0.7);
+  /* keep "current / total" order in RTL (else it renders "total / current") */
+  direction: ltr;
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  direction: ltr;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(245, 242, 240, 0.22);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    background: rgba(245, 242, 240, 0.5);
+  }
+  &:focus-visible {
+    outline: 2px solid #dfba74;
+    outline-offset: 2px;
+  }
+}
+
+.dotActive {
+  width: 22px;
+  border-radius: 5px;
+  background: #dfba74;
+}
+
+@media (max-width: 560px) {
+  .nav {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}

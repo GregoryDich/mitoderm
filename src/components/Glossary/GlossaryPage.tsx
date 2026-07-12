@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import Reveal from '@/components/Shared/Reveal/Reveal';
 import type { ProductChip } from '@/products';
 import styles from './GlossaryPage.module.scss';
 
@@ -19,6 +21,8 @@ const accentVar: Record<ProductChip['accent'], string> = {
   teal: '#6fb7ba',
   gold: '#dfba74',
   rose: '#b4607e',
+  amber: '#cf9b4e',
+  steel: '#8ba0ab',
 };
 
 interface Props {
@@ -30,14 +34,11 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
-      <header className={styles.intro}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('eyebrow')}
-        </div>
-        <h1 className={styles.title}>{t('title')}</h1>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
-      </header>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
 
       <main className={styles.content}>
         {entries.length > 0 && (
@@ -50,6 +51,7 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
           </nav>
         )}
 
+        <Reveal>
         <dl className={styles.list}>
           {entries.map((e) => (
             <div key={e.id} id={e.id} className={styles.entry}>
@@ -79,6 +81,7 @@ const GlossaryPage: FC<Props> = ({ entries }) => {
             </div>
           ))}
         </dl>
+        </Reveal>
       </main>
 
       <Footer />

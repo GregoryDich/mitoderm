@@ -1,0 +1,152 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  /* Nav clearance (88px) is provided by the .page wrapper's padding-top,
+   *  consistently with every other page; this is just the hero's own
+   *  breathing room below the nav. */
+  padding: clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px) clamp(28px, 4vw, 44px);
+  isolation: isolate;
+}
+
+/* Two blurred glow blobs behind the copy — the Figma depth cue. */
+.glowA,
+.glowB {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glowA {
+  inset-block-start: -14%;
+  inset-inline-end: 6%;
+  width: clamp(280px, 40vw, 520px);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(223, 186, 116, 0.2), transparent 70%);
+}
+
+.glowB {
+  inset-block-start: 24%;
+  inset-inline-start: -8%;
+  width: clamp(240px, 34vw, 440px);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(111, 183, 186, 0.14), transparent 72%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  .inner {
+    align-items: center;
+    text-align: center;
+  }
+  .lead {
+    margin-inline: auto;
+  }
+}
+
+.start {
+  .inner {
+    align-items: flex-start;
+    text-align: start;
+    max-width: 1080px;
+  }
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--mt-text-muted, rgba(245, 242, 240, 0.7));
+  transition: color 0.18s ease;
+
+  &:hover {
+    color: var(--mt-accent-gold, #dfba74);
+  }
+}
+
+.backArrow {
+  display: inline-block;
+}
+
+:global([dir='rtl']) .backArrow {
+  transform: scaleX(-1);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.74rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mt-accent-gold, #dfba74);
+  margin-bottom: 20px;
+}
+
+.kickerLine {
+  width: 28px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.title {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: var(--mt-text, #f5f2f0);
+}
+
+.lead {
+  margin: 22px 0 0;
+  max-width: 680px;
+  font-size: clamp(15px, 1.7vw, 19px);
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--mt-text-muted, rgba(245, 242, 240, 0.7));
+}
+
+/* Load-in cascade — reuses the homepage heroEnter pattern. */
+@media (prefers-reduced-motion: no-preference) {
+  .inner > * {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: pageHeaderEnter 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  .inner > :nth-child(1) {
+    animation-delay: 0.04s;
+  }
+  .inner > :nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  .inner > :nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .inner > :nth-child(4) {
+    animation-delay: 0.44s;
+  }
+  .inner > :nth-child(5) {
+    animation-delay: 0.56s;
+  }
+}
+
+@keyframes pageHeaderEnter {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

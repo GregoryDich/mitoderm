@@ -24,34 +24,6 @@
   transform: scaleX(-1);
 }
 
-.heroArt {
-  position: absolute;
-  top: 0;
-  inset-inline: 0;
-  height: clamp(560px, 86vh, 900px);
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.heroArtImg {
-  object-fit: cover;
-  /* Keep the ambient field muted so overlaid copy stays readable. */
-  opacity: 0.55;
-}
-
-.heroArtScrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 8, 10, 0.55) 0%,
-    rgba(8, 8, 10, 0.35) 40%,
-    rgba(8, 8, 10, 0.85) 80%,
-    #08080a 100%
-  );
-}
-
 .glows {
   position: absolute;
   inset: 0;
@@ -98,11 +70,6 @@
       animation: glowDriftB linear both;
       animation-timeline: scroll(nearest);
     }
-    .heroArt {
-      animation: heroRecede linear both;
-      animation-timeline: scroll(nearest);
-      animation-range: 0 120vh;
-    }
   }
 }
 
@@ -115,136 +82,6 @@
 @keyframes glowDriftB {
   to {
     transform: translateY(-260px);
-  }
-}
-
-@keyframes heroRecede {
-  to {
-    transform: translateY(14vh);
-    opacity: 0.4;
-  }
-}
-
-.hero {
-  position: relative;
-  z-index: 1;
-  width: min(var(--cw), 100% - 2 * var(--gutter));
-  margin-inline: auto;
-  padding: clamp(80px, 12vw, 160px) 0 clamp(56px, 8vw, 100px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  text-align: start;
-}
-
-/* Load-in cascade: eyebrow → title → tagline → desc → CTAs rise in
- * sequence on first paint. Pure CSS, disabled under reduced motion. */
-@media (prefers-reduced-motion: no-preference) {
-  .hero > * {
-    opacity: 0;
-    transform: translateY(18px);
-    animation: heroEnter 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
-  }
-  .hero > :nth-child(1) {
-    animation-delay: 0.05s;
-  }
-  .hero > :nth-child(2) {
-    animation-delay: 0.15s;
-  }
-  .hero > :nth-child(3) {
-    animation-delay: 0.28s;
-  }
-  .hero > :nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  .hero > :nth-child(5) {
-    animation-delay: 0.52s;
-  }
-}
-
-@keyframes heroEnter {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--accent);
-}
-
-.eyebrowLine {
-  width: 28px;
-  height: 1px;
-  background-color: var(--accent);
-}
-
-.title {
-  font-size: clamp(44px, 8vw, 104px);
-  font-weight: 300;
-  line-height: 1.02;
-  letter-spacing: -1.5px;
-  max-width: 920px;
-  overflow-wrap: anywhere;
-}
-
-.tagline {
-  font-size: clamp(18px, 2.4vw, 26px);
-  font-weight: 300;
-  line-height: 1.4;
-  color: rgba(245, 242, 240, 0.7);
-  max-width: 760px;
-}
-
-.desc {
-  max-width: 640px;
-  font-size: clamp(15px, 1.6vw, 16px);
-  line-height: 1.7;
-  color: rgba(245, 242, 240, 0.62);
-}
-
-.ctaRow {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 18px;
-}
-
-.btnPrimary {
-  padding: 17px 36px;
-  border-radius: 40px;
-  background-color: var(--txt);
-  color: var(--bg);
-  font-size: 15px;
-  font-weight: 500;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-
-  &:hover {
-    opacity: 0.92;
-    transform: translateY(-1px);
-  }
-}
-
-.btnGhost {
-  padding: 17px 34px;
-  border-radius: 40px;
-  background: transparent;
-  border: 1px solid rgba(245, 242, 240, 0.25);
-  color: var(--txt);
-  font-size: 15px;
-  font-weight: 500;
-  transition: border-color 0.15s ease, color 0.15s ease;
-
-  &:hover {
-    border-color: var(--txt);
   }
 }
 
@@ -471,11 +308,23 @@
   background: color-mix(in srgb, var(--accent) 16%, transparent);
 }
 
+.ctaKicker {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #dfba74;
+  margin-bottom: 18px;
+}
+
 .ctaTitle {
   position: relative;
-  font-size: clamp(28px, 3.8vw, 44px);
-  font-weight: 300;
-  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
 }
 
 .ctaText {
@@ -498,4 +347,37 @@
   .why {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---- trust badges under the stat strip ---- */
+.badgeRow {
+  position: relative;
+  z-index: 1;
+  width: min(var(--cw), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  padding: 18px 0 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: rgba(245, 242, 240, 0.6);
+}
+
+.badgeTick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.45);
+  color: #dfba74;
+  font-size: 9.5px;
 }

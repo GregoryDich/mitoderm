@@ -171,6 +171,7 @@
 
 .pillarTitle {
   margin: 0;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(22px, 3vw, 32px);
   font-weight: 400;
   line-height: 1.15;
@@ -248,6 +249,7 @@
 
 .protocolTitle {
   margin: 0 0 14px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(24px, 3vw, 34px);
   font-weight: 400;
   line-height: 1.2;
@@ -280,6 +282,7 @@
 
 .ctaTitle {
   margin: 0 0 10px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
   font-size: clamp(22px, 2.6vw, 28px);
   font-weight: 400;
 }
@@ -346,4 +349,35 @@
     flex: 1 1 auto;
     width: auto;
   }
+}
+
+/* ---- chairside script ---- */
+.chairside {
+  margin: 18px 0 0;
+  padding: 16px 20px;
+  border-inline-start: 2px solid var(--accent, #dfba74);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 12px 12px 0;
+}
+
+[dir='rtl'] .chairside {
+  border-radius: 12px 0 0 12px;
+}
+
+.chairsideLabel {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent, #dfba74);
+  margin-bottom: 6px;
+}
+
+.chairsideText {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(245, 242, 240, 0.78);
 }

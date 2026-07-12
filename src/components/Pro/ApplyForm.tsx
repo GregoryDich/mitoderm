@@ -1,14 +1,21 @@
 'use client';
 
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
+import PageHeader from '@/components/Shared/PageHeader/PageHeader';
 import styles from './ApplyForm.module.scss';
 
 const ApplyForm: FC = () => {
   const t = useTranslations('apply');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  // Pre-fill from the homepage email-capture (?email=…). Read on the
+  // client to avoid a useSearchParams Suspense boundary.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('email');
+    if (q) setEmail(q);
+  }, []);
   const [phone, setPhone] = useState('');
   const [clinic, setClinic] = useState('');
   const [license, setLicense] = useState('');
@@ -58,15 +65,23 @@ const ApplyForm: FC = () => {
 
   return (
     <div className={`pageScroll ${styles.page}`}>
+      <PageHeader
+        kicker={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+      />
       <main className={styles.container}>
-        <header className={styles.head}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowLine} />
-            {t('eyebrow')}
-          </div>
-          <h1 className={styles.title}>{t('title')}</h1>
-          <p className={styles.subtitle}>{t('subtitle')}</p>
-        </header>
+        {/* Membership perks — WIIFM before any form field. */}
+        <ul className={styles.perks} aria-label={t('perksTitle')}>
+          {(t.raw('perks') as string[]).map((p) => (
+            <li key={p} className={styles.perk}>
+              <span className={styles.perkTick} aria-hidden="true">
+                ✓
+              </span>
+              {p}
+            </li>
+          ))}
+        </ul>
 
         {done ? (
           <section className={styles.success}>

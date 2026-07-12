@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../globals.scss';
-import { Rubik, Fraunces } from 'next/font/google';
+import { Rubik, Fraunces, Frank_Ruhl_Libre, Playfair_Display } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import ScrollToTop from '@/components/Layout/ScrollToTop/ScrollToTop';
@@ -62,6 +62,35 @@ const fraunces = Fraunces({
   variable: '--font-display',
   subsets: ['latin'],
 });
+
+/** Fraunces is Latin-only, so Hebrew/Cyrillic headings fell back to
+ *  Georgia (Hebrew → tofu, Russian → generic serif). Load a script-
+ *  appropriate display serif for each and expose it under the SAME
+ *  `--font-display` variable; only the active locale's font is attached
+ *  to <body> below, so every `var(--font-display)` usage resolves to a
+ *  face that actually has the glyphs — no per-component changes needed. */
+const frankRuhl = Frank_Ruhl_Libre({
+  weight: ['400', '500', '700'],
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-display',
+  subsets: ['hebrew', 'latin'],
+});
+const playfair = Playfair_Display({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+  subsets: ['latin', 'cyrillic'],
+});
+
+/** The display serif whose variable to attach, keyed by locale. */
+const displayFontByLocale: Record<string, { variable: string }> = {
+  he: frankRuhl,
+  ru: playfair,
+  en: fraunces,
+};
+
 const FLAG_DISPLAY_SERIF = process.env.NEXT_PUBLIC_DISPLAY_SERIF === '1';
 
 export async function generateStaticParams() {
@@ -157,11 +186,19 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <NextIntlClientProvider messages={messages}>
         <body
+          // --font-display is the display serif for the active locale:
+          // Fraunces (en), Playfair (ru, Cyrillic), Frank Ruhl Libre (he,
+          // Hebrew). Only the locale's face is attached, so every
+          // var(--font-display) usage gets glyphs that actually exist.
           className={`${rubik.className} ${
-            FLAG_DISPLAY_SERIF ? fraunces.variable : ''
+            (displayFontByLocale[params.lang] ?? fraunces).variable
           }`}
           data-display-serif={FLAG_DISPLAY_SERIF ? '1' : undefined}
           dir={params.lang === 'he' ? 'rtl' : 'ltr'}
+          // The site is dark end-to-end; the legacy light --colorBG body
+          // base showed through under the footer/on overscroll. Pin the
+          // app backdrop to the dark base so nothing light bleeds in.
+          style={{ backgroundColor: '#08080a' }}
         >
           <ConsentProvider>
           <CatalogIndexProvider items={catalogIndex}>

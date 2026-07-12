@@ -236,6 +236,14 @@ function Dot({ color }: { color: string }) {
   );
 }
 
-function accentColor(a: 'teal' | 'gold' | 'rose') {
-  return a === 'teal' ? '#6fb7ba' : a === 'gold' ? '#dfba74' : '#b4607e';
+function accentColor(a: 'teal' | 'gold' | 'rose' | 'amber' | 'steel') {
+  return a === 'teal'
+    ? '#6fb7ba'
+    : a === 'gold'
+    ? '#dfba74'
+    : a === 'amber'
+    ? '#cf9b4e'
+    : a === 'steel'
+    ? '#8ba0ab'
+    : '#b4607e';
 }
