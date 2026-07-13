@@ -21,6 +21,25 @@
       "he": "משתלב עם"
     }
   },
+  "groups": {
+    "hair-scalp": {
+      "kicker": {
+        "en": "Hair & Scalp Line",
+        "ru": "Линия для волос и кожи головы",
+        "he": "קו שיער וקרקפת"
+      },
+      "title": {
+        "en": "In the clinic, and at home.",
+        "ru": "В клинике и дома.",
+        "he": "בקליניקה, וגם בבית."
+      },
+      "note": {
+        "en": "One protocol in two steps — the professional treatment, continued every day.",
+        "ru": "Один протокол в два шага — профессиональная процедура, продолженная каждый день.",
+        "he": "פרוטוקול אחד בשני צעדים — הטיפול המקצועי, ממשיך בכל יום."
+      }
+    }
+  },
   "items": [
     {
       "slug": "v-tech-serum",
@@ -158,6 +177,7 @@
       "name": "Exosignal Hair",
       "image": "/products/exosignal-hair/hero.webp",
       "surface": "dark",
+      "pairGroup": "hair-scalp",
       "line": {
         "en": "Hair & Scalp",
         "ru": "Волосы и кожа головы",
@@ -200,6 +220,7 @@
       "name": "Exosignal Spray Home",
       "image": "/products/exosignal-hair-spray/hero.png",
       "surface": "dark",
+      "pairGroup": "hair-scalp",
       "line": {
         "en": "Hair & Scalp",
         "ru": "Волосы и кожа головы",

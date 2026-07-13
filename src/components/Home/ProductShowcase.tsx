@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Reveal from '@/components/Shared/Reveal/Reveal';
@@ -16,6 +16,9 @@ interface Item {
   name: string;
   image: string;
   surface: 'dark' | 'light' | 'gold';
+  /** Consecutive items sharing a pairGroup collapse into one split-in-half
+   *  "line" section instead of two full-width banners. */
+  pairGroup?: string;
   badge?: L;
   line: L;
   tagline: L;
@@ -26,8 +29,15 @@ interface Item {
   pairsWith?: string[];
 }
 
+interface Group {
+  kicker: L;
+  title: L;
+  note?: L;
+}
+
 const DATA = showcase as unknown as {
   meta: { kicker: L; title: L; learnMore: L; pairsLabel: L };
+  groups?: Record<string, Group>;
   items: Item[];
 };
 
@@ -42,14 +52,129 @@ const surfaceClass: Record<Item['surface'], string> = {
   gold: styles.gold,
 };
 
+/** Collapse the flat item list into render blocks: a run of consecutive
+ *  items that share a pairGroup becomes one `duo` block; everything else
+ *  stays a standalone `single` banner. */
+type Block =
+  | { kind: 'single'; item: Item }
+  | { kind: 'duo'; group: string; items: Item[] };
+
+function toBlocks(items: Item[]): Block[] {
+  const blocks: Block[] = [];
+  for (let i = 0; i < items.length; i += 1) {
+    const it = items[i];
+    if (it.pairGroup) {
+      const group = it.pairGroup;
+      const run: Item[] = [it];
+      while (i + 1 < items.length && items[i + 1].pairGroup === group) {
+        run.push(items[i + 1]);
+        i += 1;
+      }
+      blocks.push({ kind: 'duo', group, items: run });
+    } else {
+      blocks.push({ kind: 'single', item: it });
+    }
+  }
+  return blocks;
+}
+
+const BLOCKS = toBlocks(DATA.items);
+
 /** The collection — every product as its own editorial banner, matching
  *  the Figma: a large glowing product shot beside a strong one-line USP,
  *  three proof points and a link. Surfaces alternate dark / light / gold
- *  and the image side flips row to row for rhythm. RTL-safe, reveal on
- *  scroll (reduced-motion falls back to instant). */
+ *  and the image side flips row to row for rhythm. Paired products (a
+ *  clinic + home line) share a single split-in-half section. RTL-safe,
+ *  reveal on scroll (reduced-motion falls back to instant). */
 const ProductShowcase: FC = () => {
   const locale = useLocale() as Loc;
   const pick = (l: L) => l[locale] ?? l.en;
+
+  /** Shared text body — reused by full banners and duo half-cards. */
+  const body = (p: Item, opts?: { compact?: boolean }) => (
+    <>
+      <div className={styles.metaRow}>
+        <span className={styles.line}>{pick(p.line)}</span>
+        {p.badge && <span className={styles.badge}>{pick(p.badge)}</span>}
+      </div>
+
+      <h3 className={`${styles.name} ${opts?.compact ? styles.nameSm : ''}`}>
+        {p.name}
+      </h3>
+      <p className={styles.tagline}>{pick(p.tagline)}</p>
+      <p className={styles.desc}>{pick(p.description)}</p>
+
+      <ul className={styles.highlights}>
+        {p.highlights.map((h) => (
+          <li key={h.en} className={styles.highlight}>
+            <span className={styles.tick} aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="12" height="12">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            {pick(h)}
+          </li>
+        ))}
+      </ul>
+
+      {p.pairsWith && p.pairsWith.length > 0 && (
+        <div className={styles.pairs}>
+          <span className={styles.pairsLabel}>{pick(DATA.meta.pairsLabel)}</span>
+          <span className={styles.pairsChips}>
+            {p.pairsWith
+              .filter((s) => NAME_BY_SLUG[s])
+              .map((s) => (
+                <Link
+                  key={s}
+                  href={`/products/${s}`}
+                  className={styles.pairChip}
+                  onClick={() => track('catalog_card_click', { slug: s, from: 'pairs' })}
+                >
+                  {NAME_BY_SLUG[s]}
+                </Link>
+              ))}
+          </span>
+        </div>
+      )}
+
+      <Link
+        href={`/products/${p.slug}`}
+        className={styles.cta}
+        onClick={() =>
+          track('catalog_card_click', { slug: p.slug, from: 'showcase' })
+        }
+      >
+        {pick(DATA.meta.learnMore)}
+        <span className={styles.arrow} aria-hidden="true">
+          →
+        </span>
+      </Link>
+    </>
+  );
+
+  const media = (p: Item) => (
+    <Reveal variant="scale" className={styles.mediaCol}>
+      <span className={styles.glow} aria-hidden="true" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={p.image}
+        alt={`${p.name} — ${pick(p.tagline)}`}
+        className={styles.media}
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+      />
+    </Reveal>
+  );
+
+  let rowIndex = 0;
 
   return (
     <div className={styles.wrap} id="collection">
@@ -58,8 +183,60 @@ const ProductShowcase: FC = () => {
         <h2 className={styles.title}>{pick(DATA.meta.title)}</h2>
       </header>
 
-      {DATA.items.map((p, i) => {
-        const reversed = i % 2 === 1;
+      {BLOCKS.map((block) => {
+        if (block.kind === 'duo') {
+          const g = DATA.groups?.[block.group];
+          const surface = block.items[0].surface;
+          return (
+            <section
+              key={`duo-${block.group}`}
+              className={`${styles.row} ${styles.duoRow} ${surfaceClass[surface]}`}
+            >
+              <div className={styles.duoInner}>
+                {g && (
+                  <Reveal variant="rise" className={styles.duoHead}>
+                    <span className={styles.kickerSm}>{pick(g.kicker)}</span>
+                    <h3 className={styles.duoTitle}>{pick(g.title)}</h3>
+                    {g.note && <p className={styles.duoNote}>{pick(g.note)}</p>}
+                  </Reveal>
+                )}
+
+                <div className={styles.duoGrid}>
+                  {block.items.map((p, j) => (
+                    <Fragment key={p.slug}>
+                      {j > 0 && (
+                        <span className={styles.duoDivider} aria-hidden="true" />
+                      )}
+                      <Reveal
+                        variant="rise"
+                        delay={j * 90}
+                        className={styles.duoCard}
+                      >
+                        <div className={styles.duoMedia}>
+                          <span className={styles.glow} aria-hidden="true" />
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={p.image}
+                            alt={`${p.name} — ${pick(p.tagline)}`}
+                            className={styles.media}
+                            loading="lazy"
+                            decoding="async"
+                            draggable={false}
+                          />
+                        </div>
+                        <div className={styles.duoText}>{body(p, { compact: true })}</div>
+                      </Reveal>
+                    </Fragment>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        const p = block.item;
+        const reversed = rowIndex % 2 === 1;
+        rowIndex += 1;
         return (
           <section
             key={p.slug}
@@ -68,96 +245,9 @@ const ProductShowcase: FC = () => {
             }`}
           >
             <div className={styles.inner}>
-              <Reveal
-                variant="scale"
-                className={styles.mediaCol}
-              >
-                <span className={styles.glow} aria-hidden="true" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.image}
-                  alt={`${p.name} — ${pick(p.tagline)}`}
-                  className={styles.media}
-                  loading="lazy"
-                  decoding="async"
-                  draggable={false}
-                />
-              </Reveal>
-
+              {media(p)}
               <Reveal variant="rise" delay={80} className={styles.textCol}>
-                <div className={styles.metaRow}>
-                  <span className={styles.line}>{pick(p.line)}</span>
-                  {p.badge && (
-                    <span className={styles.badge}>{pick(p.badge)}</span>
-                  )}
-                </div>
-
-                <h3 className={styles.name}>{p.name}</h3>
-                <p className={styles.tagline}>{pick(p.tagline)}</p>
-                <p className={styles.desc}>{pick(p.description)}</p>
-
-                <ul className={styles.highlights}>
-                  {p.highlights.map((h) => (
-                    <li key={h.en} className={styles.highlight}>
-                      <span className={styles.tick} aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="12" height="12">
-                          <path
-                            d="M5 12.5l4.5 4.5L19 7"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                      {pick(h)}
-                    </li>
-                  ))}
-                </ul>
-
-                {p.pairsWith && p.pairsWith.length > 0 && (
-                  <div className={styles.pairs}>
-                    <span className={styles.pairsLabel}>
-                      {pick(DATA.meta.pairsLabel)}
-                    </span>
-                    <span className={styles.pairsChips}>
-                      {p.pairsWith
-                        .filter((s) => NAME_BY_SLUG[s])
-                        .map((s) => (
-                          <Link
-                            key={s}
-                            href={`/products/${s}`}
-                            className={styles.pairChip}
-                            onClick={() =>
-                              track('catalog_card_click', {
-                                slug: s,
-                                from: 'pairs',
-                              })
-                            }
-                          >
-                            {NAME_BY_SLUG[s]}
-                          </Link>
-                        ))}
-                    </span>
-                  </div>
-                )}
-
-                <Link
-                  href={`/products/${p.slug}`}
-                  className={styles.cta}
-                  onClick={() =>
-                    track('catalog_card_click', {
-                      slug: p.slug,
-                      from: 'showcase',
-                    })
-                  }
-                >
-                  {pick(DATA.meta.learnMore)}
-                  <span className={styles.arrow} aria-hidden="true">
-                    →
-                  </span>
-                </Link>
+                {body(p)}
               </Reveal>
             </div>
           </section>
