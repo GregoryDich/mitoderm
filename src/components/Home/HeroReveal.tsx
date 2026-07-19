@@ -17,6 +17,11 @@ export interface HeroHotspotProduct {
 interface Props {
   base: string;
   lit: string;
+  /** Portrait twins (853×1844) for the mobile hero — the same base/lit
+   *  pair, composed vertically so phones get a full-height poster instead
+   *  of the letterboxed wide strip. Falls back to the wide shot if absent. */
+  basePortrait?: string;
+  litPortrait?: string;
   products: HeroHotspotProduct[];
 }
 
@@ -67,7 +72,13 @@ const HOTSPOTS: {
   { slug: 'exo-nad', left: 94.8, top: 65, width: 4.6, height: 24 },
 ];
 
-const HeroReveal: FC<Props> = ({ base, lit, products }) => {
+const HeroReveal: FC<Props> = ({
+  base,
+  lit,
+  basePortrait,
+  litPortrait,
+  products,
+}) => {
   const t = useTranslations('home');
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -157,6 +168,23 @@ const HeroReveal: FC<Props> = ({ base, lit, products }) => {
 
   return (
     <section ref={sectionRef} className={styles.hero}>
+      {/* Mobile-only portrait poster: the flat base with the lit twin
+          revealed under a slow, self-drifting spotlight (no hover on
+          touch). Reduced-motion shows the lit poster fully lit. */}
+      {basePortrait && litPortrait && (
+        <div className={styles.photoMobile} aria-hidden="true">
+          <div
+            className={styles.mBase}
+            style={{ backgroundImage: `url(${basePortrait})` }}
+          />
+          <div
+            className={styles.mLit}
+            style={{ backgroundImage: `url(${litPortrait})` }}
+          />
+          <span className={styles.mScrim} />
+        </div>
+      )}
+
       <div
         ref={boxRef}
         className={styles.photoBox}

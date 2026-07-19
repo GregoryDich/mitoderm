@@ -64,6 +64,8 @@ const HomePage: FC<Props> = ({
   const why = (t.raw('why') as { title: string; text: string }[]) ?? [];
   const heroBase = publicAsset('/home/hero-base.webp');
   const heroLit = publicAsset('/home/hero-lit.webp');
+  const heroBasePortrait = publicAsset('/home/hero-base-portrait.webp');
+  const heroLitPortrait = publicAsset('/home/hero-lit-portrait.webp');
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -76,6 +78,8 @@ const HomePage: FC<Props> = ({
         <HeroReveal
           base={heroBase}
           lit={heroLit}
+          basePortrait={heroBasePortrait ?? undefined}
+          litPortrait={heroLitPortrait ?? undefined}
           products={getCatalogItems(locale)
             .filter((i) => i.status === 'available')
             .map((i) => ({ slug: i.slug, name: i.name }))}
