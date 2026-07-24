@@ -41,19 +41,20 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 .head-rule{ height:2px; width:34mm; background:var(--acc); margin-top:6mm; border-radius:2px; }
 
 /* ---- cover ---- */
-.cover{ page:cover; background:#14161b; color:#efe9dd; height:297mm; display:flex; padding:11mm; }
-.cover-frame{ flex:1; border:1px solid rgba(220,190,120,.34); display:flex; flex-direction:column; justify-content:space-between; padding:16mm 14mm; position:relative; }
+.cover{ page:cover; background:radial-gradient(135% 100% at 50% 20%, #fdfcfa 0%, #f5f2ec 60%, #ece5da 100%); color:#2a2723; height:297mm; display:flex; padding:11mm; }
+.cover-frame{ flex:1; border:1px solid rgba(140,120,70,.30); display:flex; flex-direction:column; justify-content:space-between; padding:16mm 14mm; position:relative; }
 .cover-frame::before,.cover-frame::after{ content:""; position:absolute; width:16px; height:16px; border:2px solid var(--acc); }
 .cover-frame::before{ top:-1px; right:-1px; border-left:0; border-bottom:0; }
 .cover-frame::after{ bottom:-1px; left:-1px; border-right:0; border-top:0; }
-.cover-top,.cover-bottom{ font-family:var(--label); font-size:8.5pt; letter-spacing:.28em; text-transform:uppercase; color:#b9ad93; }
+.cover-top,.cover-bottom{ font-family:var(--label); font-size:8.5pt; letter-spacing:.28em; text-transform:uppercase; color:#9a8f79; }
 .cover-bottom{ display:flex; justify-content:space-between; }
 .cover-center{ text-align:center; }
-.cover-wm{ font-family:var(--serif); font-weight:900; font-size:52pt; letter-spacing:.06em; color:#f4eee2; }
-.cover-rule{ width:56mm; height:2px; background:linear-gradient(90deg,transparent,var(--acc),transparent); margin:9mm auto; }
-.cover-title{ font-family:var(--serif); font-weight:700; font-size:23pt; color:#eadfca; }
-.cover-sub{ margin-top:7mm; font-size:11pt; color:#cfc6b4; letter-spacing:.02em; }
-.cover-sub-en{ margin-top:2mm; font-family:var(--label); font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:#8f866f; }
+.cover-logo{ display:block; width:118mm; max-width:82%; margin:0 auto; mix-blend-mode:multiply; }
+.cover-wm{ font-family:var(--serif); font-weight:900; font-size:52pt; letter-spacing:.06em; color:#2b2822; }
+.cover-rule{ width:56mm; height:2px; background:linear-gradient(90deg,transparent,var(--acc),transparent); margin:7mm auto 9mm; }
+.cover-title{ font-family:var(--serif); font-weight:700; font-size:23pt; color:#3a352d; }
+.cover-sub{ margin-top:6mm; font-size:11pt; color:#6b6353; letter-spacing:.02em; }
+.cover-sub-en{ margin-top:2mm; font-family:var(--label); font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:#a89c82; }
 
 /* ---- toc ---- */
 .toc-list{ list-style:none; margin:0; padding:0; counter-reset:none; }

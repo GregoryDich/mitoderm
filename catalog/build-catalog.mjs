@@ -7,6 +7,8 @@ import { CSS } from './styles.mjs';
 const __dir = dirname(fileURLToPath(import.meta.url));
 const CONTENT = join(__dir, 'content');
 const FONTS = join(__dir, 'fonts.css');
+const LOGO = join(__dir, 'assets', 'mitoderm-logo.png');
+const logoUri = existsSync(LOGO) ? `data:image/png;base64,${readFileSync(LOGO).toString('base64')}` : '';
 
 // Section order + file map
 const ORDER = [
@@ -206,11 +208,11 @@ function renderContacts(d) {
 
 // -------- cover + toc --------
 function renderCover() {
-  return `<section class="section cover">
+  return `<section class="section cover" style="--acc:#a9781f">
     <div class="cover-frame">
       <div class="cover-top">MITODERM · ISRAEL</div>
       <div class="cover-center">
-        <div class="cover-wm">MITODERM</div>
+        ${logoUri ? `<img class="cover-logo" src="${logoUri}" alt="MITODERM — Where Science Meets Beauty">` : `<div class="cover-wm">MITODERM</div>`}
         <div class="cover-rule"></div>
         <h1 class="cover-title">קטלוג טכנולוגיה ומוצרים</h1>
         <div class="cover-sub">אקסוזומים סינתטיים · פולינוקלאוטידים · רפואה רגנרטיבית</div>
