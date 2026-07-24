@@ -13,16 +13,23 @@ const logoUri = existsSync(LOGO) ? `data:image/png;base64,${readFileSync(LOGO).t
 const ORDER = [
   { key: 'about', file: 'about.json', kind: 'about' },
   { key: 'exosomes', file: 'exosomes.json', kind: 'exosomes' },
+  // ── Chapter 1 · קרקפת (Scalp / trichology) ──
+  { key: 'ch-scalp', file: 'chapter-1-scalp.json', kind: 'chapter' },
+  { key: 'exosignal-hair', file: 'hair.json', kind: 'product' },
+  { key: 'mitoscan', file: 'mitoscan.json', kind: 'device' },
+  // ── Chapter 2 · מעצבי שיער (Hair stylists / salons) ──
+  { key: 'ch-stylists', file: 'chapter-2-stylists.json', kind: 'chapter' },
+  { key: 'exosignal-spray', file: 'spray.json', kind: 'product' },
+  // ── Chapter 3 · קוסמטולוגים (Cosmetologists / estheticians) ──
+  { key: 'ch-cosmetology', file: 'chapter-3-cosmetology.json', kind: 'chapter' },
   { key: 'v-tech', file: 'vtech.json', kind: 'product' },
   { key: 'exo-nad', file: 'exonad.json', kind: 'product' },
-  { key: 'exosignal-hair', file: 'hair.json', kind: 'product' },
-  { key: 'exosignal-spray', file: 'spray.json', kind: 'product' },
   { key: 'exotech-gel', file: 'exotech.json', kind: 'product' },
   { key: 'exocell-mask', file: 'exocell.json', kind: 'product' },
   { key: 'biospicule-serum', file: 'biospicule-serum.json', kind: 'product' },
   { key: 'derma-cream', file: 'derma-cream.json', kind: 'product' },
   { key: 'mitopen', file: 'mitopen.json', kind: 'device' },
-  { key: 'mitoscan', file: 'mitoscan.json', kind: 'device' },
+  // ── Back matter ──
   { key: 'comparison', file: 'comparison.json', kind: 'comparison' },
   { key: 'protocols', file: 'protocols.json', kind: 'protocols' },
   { key: 'faq', file: 'faq.json', kind: 'faq' },
@@ -91,6 +98,7 @@ function cSpecStrip(d, isDevice) {
     if (arr(d.actives).length) cells.push(specCell(IC.flask, 'רכיבים פעילים', chips(d.actives)));
     if (d.use) cells.push(specCell(IC.clock, 'שימוש ופרוטוקול', `<p class="spec-p">${esc(d.use)}</p>`));
     if (d.pack) cells.push(specCell(IC.box, 'אריזה', `<p class="spec-p">${esc(d.pack)}${d.origin ? ` · ${esc(d.origin)}` : ''}</p>`));
+    if (d.contra) cells.push(specCell(IC.spec, 'התוויות נגד', `<p class="spec-p">${esc(d.contra)}</p>`));
   }
   if (arr(d.combos).length) cells.push(specCell(IC.device, 'שילוב במכשור', chips(d.combos)));
   return cells.length ? `<div class="spec-strip avoid-break">${cells.join('')}</div>` : '';
@@ -99,6 +107,17 @@ function cSpecStrip(d, isDevice) {
 const cBullets = (d) => arr(d.bullets).length ? `<ul class="c-bullets">${arr(d.bullets).map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : '';
 const cPhases = (d) => arr(d.phases).length ? `<div class="phases avoid-break">${arr(d.phases).map(p => `<div class="phase"><h4>${p.vol ? `<span class="vol">${esc(p.vol)}</span>` : ''}${esc(p.name)}</h4><p>${esc(p.body)}</p></div>`).join('')}</div>` : '';
 const cInd = (d) => arr(d.indications).length ? `<div class="ind-block avoid-break"><h4>אינדיקציות</h4>${chips(d.indications)}</div>` : '';
+function cClinical(d) {
+  const c = d.clinical;
+  if (!c) return '';
+  const metrics = arr(c.metrics).map(m => `<div class="cl-metric"><div class="cl-v">${esc(m.v)}</div><div class="cl-k">${esc(m.k)}</div></div>`).join('');
+  const ncol = Math.min(3, arr(c.metrics).length || 3);
+  return `<div class="clinical avoid-break">
+    <div class="cl-head"><span class="cl-badge">${esc(c.badge || 'מחקר קליני')}</span>${c.scope ? `<span class="cl-scope">${esc(c.scope)}</span>` : ''}</div>
+    ${metrics ? `<div class="cl-metrics" style="grid-template-columns:repeat(${ncol},1fr)">${metrics}</div>` : ''}
+    ${c.note ? `<div class="cl-note">${esc(c.note)}</div>` : ''}
+  </div>`;
+}
 
 function renderProductC(d, meta) {
   const a = PAL[d.accent] || PAL.gold;
@@ -117,7 +136,28 @@ function renderProductC(d, meta) {
     ${cBullets(d)}
     ${cSpecStrip(d, isDevice)}
     ${cInd(d)}
+    ${cClinical(d)}
     ${d.closingTagline ? `<div class="closing"><span>${esc(d.closingTagline)}</span></div>` : ''}
+  </section>`;
+}
+
+function renderChapter(d, products) {
+  const a = PAL[d.accent] || PAL.gold;
+  const idx = arr(products).map(p => `<li class="chidx-item">
+      <span class="chidx-he">${esc(p.hebrewName || p.latinName || '')}</span>
+      <span class="chidx-lat">${esc(p.latinName || '')}</span>
+      ${p.usage ? `<span class="chidx-u">${esc(usageLabel(p.usage))}</span>` : ''}
+    </li>`).join('');
+  return `<section class="section chapter" style="--acc:${a.acc};--deep:${a.deep};--tint:${a.tint};--soft:${a.soft}">
+    <div class="chapter-inner">
+      ${d.eyebrow ? `<div class="chapter-eyebrow">${esc(d.eyebrow)}</div>` : ''}
+      <div class="chapter-num">פרק ${esc(d.number || '')}</div>
+      <h1 class="chapter-title">${esc(d.titleHe || '')}</h1>
+      ${d.subEn ? `<div class="chapter-suben">${esc(d.subEn)}</div>` : ''}
+      <div class="chapter-rule"></div>
+      ${d.blurb ? `<p class="chapter-blurb">${esc(d.blurb)}</p>` : ''}
+      ${idx ? `<div class="chidx-lead">בפרק זה</div><ul class="chidx">${idx}</ul>` : ''}
+    </div>
   </section>`;
 }
 
@@ -190,23 +230,30 @@ function renderCover() {
     </div>
   </section>`;
 }
-function renderToc(items) {
+function renderToc(entries) {
+  const rows = entries.map(e => {
+    if (e.type === 'chapter') return `<li class="toc-chap"><span class="toc-cn">פרק ${esc(e.num)}</span><span class="toc-ct">${esc(e.he)}</span><span class="toc-en">${esc(e.en || '')}</span></li>`;
+    const cls = e.type === 'product' ? 'toc-sub' : '';
+    return `<li class="${cls}"><span class="toc-t">${esc(e.he)}</span><span class="toc-en">${esc(e.en || '')}</span></li>`;
+  }).join('');
   return `<section class="section toc">
     ${sectionHead('CATALOG', 'תוכן העניינים', 'Contents')}
-    <ol class="toc-list">${items.map((it, i) => `<li><span class="toc-n">${String(i + 1).padStart(2, '0')}</span><span class="toc-t">${esc(it.he)}</span><span class="toc-en">${esc(it.en || '')}</span></li>`).join('')}</ol>
+    <ul class="toc-list">${rows}</ul>
   </section>`;
 }
 
 // ---- compact CSS overrides ----
 const COMPACT = `
 .section{padding:0}
-.pc .product-hero{padding:4.5mm 6mm 4mm;margin-bottom:3.5mm}
+.spec-cell{padding:4.6mm 5mm}
+.spec-strip{margin:1mm 0 4mm}
+.pc .product-hero{padding:4.2mm 6mm 3.6mm;margin-bottom:3mm}
 .pc .product-latin{font-size:26pt}
 .pc .product-he{font-size:13.5pt;margin-top:1mm}
 .pc .product-suben{margin-top:1.8mm}
 .pc .product-tag{font-size:11pt;margin-top:3mm}
 .pc .product-intro{font-size:9.9pt;margin-bottom:3.2mm;line-height:1.5}
-.c-bullets{list-style:none;margin:0 0 3.6mm;padding:0;display:grid;gap:2mm}
+.c-bullets{list-style:none;margin:0 0 3mm;padding:0;display:grid;gap:1.8mm}
 .c-bullets li{position:relative;padding-inline-start:5.5mm;font-size:9.7pt;line-height:1.46;color:var(--ink2)}
 .c-bullets li::before{content:"";position:absolute;inset-inline-start:0;top:2.1mm;width:2.1mm;height:2.1mm;background:var(--acc);border-radius:50%}
 .phases{display:grid;gap:2.2mm;margin:0 0 3.6mm}
@@ -219,21 +266,77 @@ const COMPACT = `
 .ind-block h4{font-family:var(--label);font-size:8.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 2.5mm}
 .science-2{column-count:2;column-gap:8mm}
 .science-2 .sci-block{break-inside:avoid;margin-bottom:4mm}
+
+/* ---- chapter divider (full page) ---- */
+.section.chapter{min-height:255mm;display:flex;flex-direction:column;justify-content:center}
+.chapter-inner{position:relative;overflow:hidden;border:1px solid var(--hair2);border-radius:5px;background:linear-gradient(155deg,var(--soft) 0%,var(--panel) 70%);padding:24mm 20mm}
+.chapter-inner::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:var(--acc)}
+.chapter-eyebrow{font-family:var(--label);font-weight:700;font-size:8.5pt;letter-spacing:.28em;text-transform:uppercase;color:var(--acc);margin-bottom:8mm}
+.chapter-num{font-family:var(--serif);font-weight:900;font-size:26pt;color:var(--acc);opacity:.32;line-height:1;margin-bottom:1mm}
+.chapter-title{font-family:var(--serif);font-weight:900;font-size:42pt;color:var(--ink);letter-spacing:-.01em;line-height:1.04}
+.chapter-suben{font-family:var(--label);font-size:10.5pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4mm}
+.chapter-rule{height:2px;width:42mm;background:var(--acc);margin:8mm 0;border-radius:2px}
+.chapter-blurb{font-size:11.2pt;line-height:1.62;color:var(--ink2);max-width:150mm;margin:0 0 10mm}
+.chidx-lead{font-family:var(--label);font-weight:700;font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2mm}
+.chidx{list-style:none;margin:0;padding:0}
+.chidx-item{display:flex;align-items:baseline;gap:4mm;padding:3.2mm 0;border-top:1px solid var(--hair)}
+.chidx-item:last-child{border-bottom:1px solid var(--hair)}
+.chidx-he{font-family:var(--serif);font-weight:700;font-size:12.5pt;color:var(--deep)}
+.chidx-lat{font-family:var(--label);font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.chidx-u{margin-inline-start:auto;font-family:var(--label);font-size:7pt;letter-spacing:.05em;color:var(--acc);border:1px solid var(--hair2);border-radius:999px;padding:.5mm 2.4mm;white-space:nowrap}
+
+/* ---- clinical results block ---- */
+.clinical{border:1px solid var(--hair2);border-radius:4px;background:var(--soft);padding:4.5mm 5mm;margin:1mm 0 3.6mm}
+.cl-head{display:flex;align-items:center;gap:3mm;flex-wrap:wrap;margin-bottom:3mm}
+.cl-badge{font-family:var(--label);font-weight:700;font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--acc);border-radius:999px;padding:1mm 3mm}
+.cl-scope{font-size:8.6pt;color:var(--muted)}
+.cl-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.cl-metric{background:var(--panel);border:1px solid var(--hair);border-radius:3px;padding:3mm 3.2mm}
+.cl-v{font-family:var(--serif);font-weight:900;font-size:13pt;color:var(--deep);line-height:1.05;text-align:right;unicode-bidi:plaintext}
+.cl-k{font-size:7.8pt;color:var(--muted);margin-top:1.6mm;line-height:1.32}
+.cl-note{font-size:8.2pt;color:var(--muted);margin-top:3mm;font-style:italic}
+
+/* ---- chapter-aware TOC ---- */
+.toc-chap{margin-top:3mm;padding-top:4mm!important;border-bottom:1.5px solid var(--hair2)!important}
+.toc-chap:first-child{margin-top:0}
+.toc-cn{font-family:var(--label);font-weight:700;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);min-width:15mm}
+.toc-ct{font-family:var(--serif);font-size:15pt;font-weight:900;color:var(--ink)}
+.toc-sub{padding-inline-start:9mm!important}
+.toc-sub .toc-t{font-size:11.5pt;font-weight:400;color:var(--ink2)}
 `;
 
 // ================= ASSEMBLE =================
 const loaded = ORDER.map(m => ({ meta: m, data: m.file ? load(m.file) : {} })).filter(x => x.data !== null);
-const tocItems = loaded.map(({ meta, data }) => {
-  if (meta.kind === 'about') return { he: 'אודות MITODERM', en: 'About' };
-  if (meta.kind === 'exosomes') return { he: data.title || 'אקסוזומים סינתטיים', en: 'Exosome Technology' };
-  if (meta.kind === 'comparison') return { he: 'טבלת השוואת מוצרים', en: 'Comparison' };
-  if (meta.kind === 'protocols') return { he: 'פרוטוקולי טיפול', en: 'Protocols' };
-  if (meta.kind === 'faq') return { he: 'שאלות נפוצות', en: 'FAQ' };
-  if (meta.kind === 'contacts') return { he: 'צור קשר', en: 'Contact' };
-  return { he: data.hebrewName || data.latinName || meta.key, en: data.latinName || '' };
-});
 
-const render = ({ meta, data }) => {
+// group product/device pages under the chapter that precedes them (for divider index + TOC)
+const chapterProducts = new Map(); // loaded-index of a chapter -> [product data, ...]
+{
+  let curChap = -1;
+  loaded.forEach((x, i) => {
+    if (x.meta.kind === 'chapter') { curChap = i; chapterProducts.set(i, []); }
+    else if ((x.meta.kind === 'product' || x.meta.kind === 'device') && curChap >= 0) chapterProducts.get(curChap).push(x.data);
+  });
+}
+
+const tocEntries = [];
+{
+  let inChapter = false;
+  for (const { meta, data } of loaded) {
+    if (meta.kind === 'chapter') { inChapter = true; tocEntries.push({ type: 'chapter', num: data.number || '', he: data.titleHe || '', en: data.subEn || '' }); continue; }
+    let he, en;
+    if (meta.kind === 'about') { he = 'אודות MITODERM'; en = 'About'; }
+    else if (meta.kind === 'exosomes') { he = data.title || 'אקסוזומים סינתטיים'; en = 'Exosome Technology'; }
+    else if (meta.kind === 'comparison') { he = 'טבלת השוואת מוצרים'; en = 'Comparison'; inChapter = false; }
+    else if (meta.kind === 'protocols') { he = 'פרוטוקולי טיפול'; en = 'Protocols'; }
+    else if (meta.kind === 'faq') { he = 'שאלות נפוצות'; en = 'FAQ'; }
+    else if (meta.kind === 'contacts') { he = 'צור קשר'; en = 'Contact'; }
+    else { he = data.hebrewName || data.latinName || meta.key; en = data.latinName || ''; }
+    tocEntries.push({ type: inChapter ? 'product' : 'item', he, en });
+  }
+}
+
+const render = ({ meta, data }, i) => {
+  if (meta.kind === 'chapter') return renderChapter(data, chapterProducts.get(i) || []);
   if (meta.kind === 'about') return renderAboutC(data);
   if (meta.kind === 'exosomes') return renderExosomesC(data);
   if (meta.kind === 'product' || meta.kind === 'device') return renderProductC(data, meta);
@@ -245,15 +348,16 @@ const render = ({ meta, data }) => {
 };
 
 if (process.env.ONLY) {
-  const item = loaded.find(x => x.meta.file === process.env.ONLY);
+  const idx = loaded.findIndex(x => x.meta.file === process.env.ONLY);
+  const item = loaded[idx];
   const fc = existsSync(FONTS) ? readFileSync(FONTS, 'utf8') : '';
   writeFileSync(join(__dir, 'preview.html'),
-    `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>${fc}${CSS}${COMPACT}\n.section{break-before:auto;padding:14mm 15mm}body{background:#fff}</style></head><body><main class="book">${item ? render(item) : ''}</main></body></html>`);
+    `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>${fc}${CSS}${COMPACT}\n.section{break-before:auto;padding:14mm 15mm}body{background:#fff}</style></head><body><main class="book">${item ? render(item, idx) : ''}</main></body></html>`);
   console.log(`preview.html written for ${process.env.ONLY}`);
   process.exit(0);
 }
 
-const bodyHtml = [renderCover(), renderToc(tocItems), ...loaded.map(render)];
+const bodyHtml = [renderCover(), renderToc(tocEntries), ...loaded.map(render)];
 const fontsCss = existsSync(FONTS) ? readFileSync(FONTS, 'utf8') : '';
 const html = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><title>MITODERM — קטלוג (מהדורה מתומצתת)</title>
 <style>${fontsCss}${CSS}${COMPACT}</style></head><body>
@@ -262,10 +366,15 @@ const html = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-
 writeFileSync(join(__dir, 'mitoderm-catalog-16.html'), html);
 
 // ---- Markdown ----
-let md = `# MITODERM — קטלוג טכנולוגיה ומוצרים (מהדורה מתומצתת)\n\n**אקסוזומים סינתטיים · פולינוקלאוטידים (PDRN) · רפואה רגנרטיבית · Made in Italy**\n\n*מהדורת 2026 · לשימוש מקצועי בלבד*\n\n## תוכן העניינים\n\n${tocItems.map((it, i) => `${i + 1}. ${it.he}`).join('\n')}\n`;
+const tocMd = tocEntries.map(e => {
+  if (e.type === 'chapter') return `\n**פרק ${e.num} — ${e.he}**`;
+  return `- ${e.he}`;
+}).join('\n');
+let md = `# MITODERM — קטלוג טכנולוגיה ומוצרים (מהדורה מתומצתת)\n\n**אקסוזומים סינתטיים · פולינוקלאוטידים (PDRN) · רפואה רגנרטיבית · Made in Italy**\n\n*מהדורת 2026 · לשימוש מקצועי בלבד*\n\n## תוכן העניינים\n${tocMd}\n`;
 const mdBlocks = (blocks) => arr(blocks).map(bl => `\n## ${bl.h}\n\n${paras(bl.b).join('\n\n')}\n`).join('');
 for (const { meta, data } of loaded) {
-  if (meta.kind === 'about') md += `\n\n---\n\n# ${data.title || 'אודות MITODERM'}\n${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}${mdBlocks(data.blocks)}${data.origin ? `\n*${data.origin}*\n` : ''}`;
+  if (meta.kind === 'chapter') md += `\n\n---\n\n# פרק ${data.number || ''} · ${data.titleHe || ''}\n${data.subEn ? `\n*${data.subEn}*\n` : ''}${data.blurb ? `\n${data.blurb}\n` : ''}`;
+  else if (meta.kind === 'about') md += `\n\n---\n\n# ${data.title || 'אודות MITODERM'}\n${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}${mdBlocks(data.blocks)}${data.origin ? `\n*${data.origin}*\n` : ''}`;
   else if (meta.kind === 'exosomes') md += `\n\n---\n\n# ${data.title}\n${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}${mdBlocks(data.blocks)}${data.closing ? `\n> ${data.closing}\n` : ''}`;
   else if (meta.kind === 'product' || meta.kind === 'device') {
     md += `\n\n---\n\n# ${data.latinName}${data.hebrewName ? ` — ${data.hebrewName}` : ''}\n${data.subtitleEn ? `\n*${data.subtitleEn}*\n` : ''}${data.usage ? `\n**סיווג שימוש:** ${usageLabel(data.usage)}\n` : ''}${data.tagline ? `\n> ${data.tagline}\n` : ''}${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}`;
@@ -275,8 +384,15 @@ for (const { meta, data } of loaded) {
     if (arr(data.specs).length) md += `\n**מאפיינים טכניים:** ${arr(data.specs).map(s => `${s.k}: ${s.v}`).join(' · ')}\n`;
     if (data.use) md += `\n**שימוש:** ${data.use}\n`;
     if (data.pack) md += `\n**אריזה:** ${data.pack}${data.origin ? ` · ${data.origin}` : ''}\n`;
+    if (data.contra) md += `\n**התוויות נגד:** ${data.contra}\n`;
     if (arr(data.combos).length) md += `\n**שילוב במכשור:** ${arr(data.combos).join(' · ')}\n`;
     if (arr(data.indications).length) md += `\n**אינדיקציות:** ${arr(data.indications).join(' · ')}\n`;
+    if (data.clinical) {
+      const c = data.clinical;
+      md += `\n**${c.badge || 'מחקר קליני'}:** ${c.scope || ''}\n`;
+      for (const m of arr(c.metrics)) md += `- ${m.v} — ${m.k}\n`;
+      if (c.note) md += `\n*${c.note}*\n`;
+    }
     if (data.closingTagline) md += `\n*${data.closingTagline}*\n`;
   }
   else if (meta.kind === 'comparison') md += `\n\n---\n\n# ${data.title}\n\n| ${arr(data.columns).join(' | ')} |\n| ${arr(data.columns).map(() => '---').join(' | ')} |\n${arr(data.rows).map(r => `| ${arr(r).join(' | ')} |`).join('\n')}\n\n**מקרא:** לשימוש מקצועי בלבד · לטיפוח ביתי · מקצועי + ביתי\n`;
