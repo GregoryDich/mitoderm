@@ -4,7 +4,12 @@ import { writeAsset } from './admin-store';
 
 const FILE_PATH = 'src/data/doctors.json';
 
-export type DoctorProfession = 'doctor' | 'cosmetologist' | 'clinic';
+export type DoctorProfession =
+  | 'doctor'
+  | 'cosmetologist'
+  | 'trichologist'
+  | 'hair-stylist'
+  | 'clinic';
 export type DoctorArea = 'north' | 'center' | 'south' | 'jerusalem' | 'eilat';
 
 export interface Doctor {

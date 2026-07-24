@@ -17,7 +17,14 @@ type AreaFilter = 'all' | DoctorArea;
 type ProfFilter = 'all' | DoctorProfession;
 
 const AREAS: AreaFilter[] = ['all', 'north', 'center', 'jerusalem', 'south', 'eilat'];
-const PROFS: ProfFilter[] = ['all', 'doctor', 'cosmetologist', 'clinic'];
+const PROFS: ProfFilter[] = [
+  'all',
+  'cosmetologist',
+  'trichologist',
+  'hair-stylist',
+  'doctor',
+  'clinic',
+];
 
 const ClinicsPage: FC<Props> = ({ doctors }) => {
   const t = useTranslations('clinics');

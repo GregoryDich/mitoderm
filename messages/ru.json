@@ -1163,8 +1163,10 @@
     },
     "profession": {
       "all": "Все",
-      "doctor": "Врач",
       "cosmetologist": "Косметолог",
+      "trichologist": "Трихолог",
+      "hair-stylist": "Стилист по волосам",
+      "doctor": "Врач",
       "clinic": "Клиника"
     }
   },

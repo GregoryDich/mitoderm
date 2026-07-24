@@ -9,6 +9,8 @@ export const dynamic = 'force-dynamic';
 const PROFESSION_LABEL: Record<string, string> = {
   doctor: 'Doctor / MD',
   cosmetologist: 'Cosmetologist',
+  trichologist: 'Trichologist',
+  'hair-stylist': 'Hair stylist',
   clinic: 'Clinic / Brand',
 };
 

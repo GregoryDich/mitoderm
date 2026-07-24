@@ -11,6 +11,8 @@ interface Props {
 const PROFESSION_BADGE: Record<Doctor['profession'], string> = {
   doctor: 'MD',
   cosmetologist: 'Cosmetologist',
+  trichologist: 'Trichologist',
+  'hair-stylist': 'Hair stylist',
   clinic: 'Clinic',
 };
 

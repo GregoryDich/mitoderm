@@ -1158,8 +1158,10 @@
     },
     "profession": {
       "all": "הכל",
-      "doctor": "רופא/ה",
       "cosmetologist": "קוסמטיקאי/ת",
+      "trichologist": "טריכולוג/ית",
+      "hair-stylist": "מעצב/ת שיער",
+      "doctor": "רופא/ה",
       "clinic": "מרפאה"
     }
   },

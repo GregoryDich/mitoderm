@@ -961,8 +961,10 @@
     },
     "profession": {
       "all": "All",
-      "doctor": "Doctor",
       "cosmetologist": "Cosmetologist",
+      "trichologist": "Trichologist",
+      "hair-stylist": "Hair stylist",
+      "doctor": "Doctor",
       "clinic": "Clinic"
     }
   },

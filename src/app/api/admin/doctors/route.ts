@@ -10,7 +10,13 @@ import { logAudit, requestMeta } from '@/lib/audit-log';
 
 export const dynamic = 'force-dynamic';
 
-const PROFESSIONS: DoctorProfession[] = ['doctor', 'cosmetologist', 'clinic'];
+const PROFESSIONS: DoctorProfession[] = [
+  'doctor',
+  'cosmetologist',
+  'trichologist',
+  'hair-stylist',
+  'clinic',
+];
 const AREAS: DoctorArea[] = ['north', 'center', 'south', 'jerusalem', 'eilat'];
 
 function bad(reason: string, status = 400) {

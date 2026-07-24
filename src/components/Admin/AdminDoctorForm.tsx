@@ -16,8 +16,10 @@ interface Props {
 }
 
 const PROFESSIONS: { v: DoctorProfession; label: string }[] = [
+  { v: 'cosmetologist', label: 'Cosmetologist (face)' },
+  { v: 'trichologist', label: 'Trichologist (scalp)' },
+  { v: 'hair-stylist', label: 'Hair stylist' },
   { v: 'doctor', label: 'Doctor / MD' },
-  { v: 'cosmetologist', label: 'Cosmetologist' },
   { v: 'clinic', label: 'Clinic / Brand' },
 ];
 
