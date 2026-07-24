@@ -1,6 +1,7 @@
 {
   "type": "device",
   "slug": "mitopen",
+  "usage": "device",
   "accent": "graphite",
   "eyebrow": "מכשור · העברה טרנס-אפידרמלית",
   "latinName": "MITOPEN",

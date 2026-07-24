@@ -46,6 +46,18 @@ const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').r
 const paras = (b = '') => String(b).split(/\n{2,}/).map(t => t.trim()).filter(Boolean);
 const arr = (x) => Array.isArray(x) ? x : (x ? [x] : []);
 
+function usageBadge(u) {
+  const pro = '<span class="ubadge ubadge-pro">לשימוש מקצועי בלבד</span>';
+  const home = '<span class="ubadge ubadge-home">לטיפוח ביתי</span>';
+  if (u === 'both') return `<div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי</span>${home}</div>`;
+  if (u === 'home') return `<div class="usage-row">${home}</div>`;
+  if (u === 'device') return '<div class="usage-row"><span class="ubadge ubadge-pro">מכשור מקצועי</span></div>';
+  if (u === 'pro') return `<div class="usage-row">${pro}</div>`;
+  return '';
+}
+const usageLabel = (u) => ({ pro: 'לשימוש מקצועי בלבד', home: 'לטיפוח ביתי', both: 'לשימוש מקצועי + טיפוח ביתי', device: 'מכשור מקצועי' }[u] || '');
+const LEGEND_HTML = '<div class="legend"><b><span class="dot dot-pro"></span>לשימוש מקצועי בלבד</b><b><span class="dot dot-home"></span>לטיפוח ביתי</b><b><span class="dot dot-pro"></span><span class="dot dot-home"></span>מקצועי + ביתי</b></div>';
+
 const IC = {
   flask: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 3h6M10 3v6l-5 8a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-8V3"/><path d="M7.5 15h9"/></svg>',
   clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
@@ -90,6 +102,7 @@ function renderProductC(d, meta) {
   return `<section class="section product pc" style="--acc:${a.acc};--deep:${a.deep};--tint:${a.tint};--soft:${a.soft}">
     <div class="product-hero">
       ${d.eyebrow ? `<div class="eyebrow">${esc(d.eyebrow)}</div>` : ''}
+      ${usageBadge(d.usage)}
       <h1 class="product-latin">${esc(d.latinName || '')}</h1>
       <div class="product-he">${esc(d.hebrewName || '')}</div>
       ${d.subtitleEn ? `<div class="product-suben">${esc(d.subtitleEn)}</div>` : ''}
@@ -132,6 +145,7 @@ function renderComparison(d) {
     ${sectionHead('OVERVIEW', d.title || 'טבלת השוואת מוצרים', d.subtitleEn)}
     <div class="table-wrap"><table class="cmp"><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead>
     <tbody>${rows.map(r => `<tr>${arr(r).map((c, i) => `<td${i === 0 ? ' class="c0"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    ${LEGEND_HTML}
   </section>`;
 }
 function renderProtocols(d) {
@@ -250,7 +264,7 @@ for (const { meta, data } of loaded) {
   if (meta.kind === 'about') md += `\n\n---\n\n# ${data.title || 'אודות MITODERM'}\n${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}${mdBlocks(data.blocks)}${data.origin ? `\n*${data.origin}*\n` : ''}`;
   else if (meta.kind === 'exosomes') md += `\n\n---\n\n# ${data.title}\n${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}${mdBlocks(data.blocks)}${data.closing ? `\n> ${data.closing}\n` : ''}`;
   else if (meta.kind === 'product' || meta.kind === 'device') {
-    md += `\n\n---\n\n# ${data.latinName}${data.hebrewName ? ` — ${data.hebrewName}` : ''}\n${data.subtitleEn ? `\n*${data.subtitleEn}*\n` : ''}${data.tagline ? `\n> ${data.tagline}\n` : ''}${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}`;
+    md += `\n\n---\n\n# ${data.latinName}${data.hebrewName ? ` — ${data.hebrewName}` : ''}\n${data.subtitleEn ? `\n*${data.subtitleEn}*\n` : ''}${data.usage ? `\n**סיווג שימוש:** ${usageLabel(data.usage)}\n` : ''}${data.tagline ? `\n> ${data.tagline}\n` : ''}${data.intro ? `\n${paras(data.intro).join('\n\n')}\n` : ''}`;
     for (const p of arr(data.phases)) md += `\n**${p.name}${p.vol ? ` (${p.vol})` : ''}** — ${p.body}\n`;
     if (arr(data.bullets).length) md += `\n${arr(data.bullets).map(b => `- ${b}`).join('\n')}\n`;
     if (arr(data.actives).length) md += `\n**רכיבים פעילים:** ${arr(data.actives).join(' · ')}\n`;
@@ -261,7 +275,7 @@ for (const { meta, data } of loaded) {
     if (arr(data.indications).length) md += `\n**אינדיקציות:** ${arr(data.indications).join(' · ')}\n`;
     if (data.closingTagline) md += `\n*${data.closingTagline}*\n`;
   }
-  else if (meta.kind === 'comparison') md += `\n\n---\n\n# ${data.title}\n\n| ${arr(data.columns).join(' | ')} |\n| ${arr(data.columns).map(() => '---').join(' | ')} |\n${arr(data.rows).map(r => `| ${arr(r).join(' | ')} |`).join('\n')}\n`;
+  else if (meta.kind === 'comparison') md += `\n\n---\n\n# ${data.title}\n\n| ${arr(data.columns).join(' | ')} |\n| ${arr(data.columns).map(() => '---').join(' | ')} |\n${arr(data.rows).map(r => `| ${arr(r).join(' | ')} |`).join('\n')}\n\n**מקרא:** לשימוש מקצועי בלבד · לטיפוח ביתי · מקצועי + ביתי\n`;
   else if (meta.kind === 'protocols') { md += `\n\n---\n\n# ${data.title}\n`; for (const it of arr(data.items)) md += `\n## ${it.name}\n\n${it.body}\n`; }
   else if (meta.kind === 'faq') { md += `\n\n---\n\n# ${data.title}\n`; for (const it of arr(data.items)) md += `\n**ש: ${it.q}**\n\nת: ${it.a}\n`; }
   else if (meta.kind === 'contacts') md += `\n\n---\n\n# ${data.title}\n\n- אתר: ${data.site}\n- דוא"ל: ${data.email}\n- טלפון: ${data.phone}\n- כתובת: ${data.address}\n\n${data.copyright}\n`;

@@ -553,6 +553,18 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 .product-intro{ font-size:10.6pt; color:var(--ink2); margin-bottom:5mm; }
 .product-intro.dc p:first-child::first-letter{ font-family:var(--serif); font-weight:900; font-size:27pt; float:inline-start; line-height:.86; padding-inline-end:2.2mm; color:var(--acc); }
 
+/* ---- usage designation badges ---- */
+.usage-row{ display:flex; gap:2mm; margin:2.5mm 0 0; flex-wrap:wrap; }
+.ubadge{ font-family:var(--label); font-size:7.5pt; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:1.1mm 3mm; border-radius:999px; border:1px solid; white-space:nowrap; display:inline-flex; align-items:center; gap:1.4mm; }
+.ubadge::before{ content:""; width:1.8mm; height:1.8mm; border-radius:50%; background:currentColor; }
+.ubadge-pro{ color:var(--deep); border-color:var(--acc); background:var(--tint); }
+.ubadge-home{ color:#2f6d55; border-color:#7bb79c; background:#e8f3ed; }
+.legend{ display:flex; gap:5mm; flex-wrap:wrap; margin-top:5mm; font-family:var(--label); font-size:8pt; letter-spacing:.03em; color:var(--muted); }
+.legend b{ display:inline-flex; align-items:center; gap:1.6mm; font-weight:600; color:var(--ink2); }
+.legend .dot{ width:2mm; height:2mm; border-radius:50%; display:inline-block; }
+.legend .dot-pro{ background:var(--acc); }
+.legend .dot-home{ background:#5aa385; }
+
 /* ---- science 2-col editorial ---- */
 .science{ column-count:2; column-gap:8mm; margin-bottom:5mm; }
 .sci-block{ break-inside:avoid; margin-bottom:4mm; }
@@ -678,6 +690,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#a9781f;--deep:#7f5a13;--tint:#f4ecd7;--soft:#faf5e9">
     <div class="product-hero">
       <div class="eyebrow">אקסוזומים סינתטיים · PDRN · פפטידים ביומימטיים</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי בלבד</span></div>
       <h1 class="product-latin">V-TECH SYSTEM</h1>
       <div class="product-he">מערכת V-TECH</div>
       <div class="product-suben">Synthetic Exosomes + PDRN — Cellular Regeneration</div>
@@ -696,6 +709,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#a85f2e;--deep:#824823;--tint:#f5e6d9;--soft:#fbf1e9">
     <div class="product-hero">
       <div class="eyebrow">פילינג NAD⁺ · אריכות תאית · אנטי-אייג'ינג מטבולי</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי בלבד</span></div>
       <h1 class="product-latin">EXO-NAD SYSTEM</h1>
       <div class="product-he">מערכת EXO-NAD — פילינג אריכות תאית</div>
       <div class="product-suben">NAD⁺ Longevity Peeling — Mitochondrial Recovery</div>
@@ -714,6 +728,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#7c4f86;--deep:#5c3a64;--tint:#eee1f1;--soft:#f7eff8">
     <div class="product-hero">
       <div class="eyebrow">אקסוזומים סינתטיים · VEGF · WNT/β-catenin · פפטידים ביו-מימטיים</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי בלבד</span></div>
       <h1 class="product-latin">EXOSIGNAL HAIR</h1>
       <div class="product-he">מערכת EXOSIGNAL HAIR</div>
       <div class="product-suben">Synthetic Exosomes + Growth Factors — Follicular Signaling</div>
@@ -732,6 +747,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#2f8083;--deep:#215c5e;--tint:#dbeceb;--soft:#ecf6f5">
     <div class="product-hero">
       <div class="eyebrow">אקסוזומים סינתטיים · פפטידים ביו-מימטיים · שימוש ביתי יומי</div>
+      <div class="usage-row"><span class="ubadge ubadge-home">לטיפוח ביתי</span></div>
       <h1 class="product-latin">EXOSIGNAL HAIR SPRAY</h1>
       <div class="product-he">ספריי EXOSIGNAL HAIR</div>
       <div class="product-suben">Daily Leave-On Scalp Spray — Home Maintenance</div>
@@ -750,6 +766,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#2f8083;--deep:#215c5e;--tint:#dbeceb;--soft:#ecf6f5">
     <div class="product-hero">
       <div class="eyebrow">ג'ל אקסוזומלי · PDRN · מוצין חלזון · שיקום מחסום</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי</span><span class="ubadge ubadge-home">לטיפוח ביתי</span></div>
       <h1 class="product-latin">EXOTECH GEL</h1>
       <div class="product-he">‏EXOTECH GEL</div>
       <div class="product-suben">Exosomal Recovery Gel — Post-Procedure Repair &amp; Hydration</div>
@@ -768,6 +785,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#a2537a;--deep:#7c3d5c;--tint:#f3e0ea;--soft:#faeef3">
     <div class="product-hero">
       <div class="eyebrow">מסכת שיקום אינטנסיבית · אקסוזומים קונצנטרטיביים</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי</span><span class="ubadge ubadge-home">לטיפוח ביתי</span></div>
       <h1 class="product-latin">EXOCELL MASK</h1>
       <div class="product-he">‏EXOCELL MASK</div>
       <div class="product-suben">Intensive Recovery Mask — Real-Time Skin Repair</div>
@@ -786,6 +804,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#3f5f78;--deep:#2d4658;--tint:#e0e8ef;--soft:#eef3f7">
     <div class="product-hero">
       <div class="eyebrow">מכשור · העברה טרנס-אפידרמלית</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">מכשור מקצועי</span></div>
       <h1 class="product-latin">MITOPEN</h1>
       <div class="product-he">עט מיקרונידלינג מקצועי</div>
       <div class="product-suben">Professional Cordless Microneedling Pen</div>
@@ -804,6 +823,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 <section class="section product" style="--acc:#3f5f78;--deep:#2d4658;--tint:#e0e8ef;--soft:#eef3f7">
     <div class="product-hero">
       <div class="eyebrow">אבחון · הדמיה · בינה מלאכותית</div>
+      <div class="usage-row"><span class="ubadge ubadge-pro">מכשור מקצועי</span></div>
       <h1 class="product-latin">MITOSCAN</h1>
       <div class="product-he">מערכת אבחון שיער וקרקפת</div>
       <div class="product-suben">AI Hair &amp; Scalp Diagnostic Imaging</div>
@@ -829,6 +849,7 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
   </header>
     <div class="table-wrap"><table class="cmp"><thead><tr><th>מוצר</th><th>ייעוד מרכזי</th><th>אוכלוסיית יעד</th><th>תדירות טיפול</th><th>שילובים מומלצים</th></tr></thead>
     <tbody><tr><td class="c0">V-TECH SYSTEM</td><td>עידוד התחדשות עורית ואנטי-אייג'ינג</td><td>עור מזדקן, צלקות, פוסט-אקנה</td><td>1–1.5 מ"ל לטיפול · סדרה של ~4 טיפולים, אחת לשבועיים</td><td>Microneedling, RF, לייזר CO₂</td></tr><tr><td class="c0">EXO-NAD</td><td>הזנת עור ב-NAD⁺, אנרגיה תאית ואנטי-אייג'ינג</td><td>עור עייף ועמום, פיגמנטציה</td><td>4–6 טיפולים, אחת לשבועיים</td><td>Microneedling, LED, לייזר פיגמנטציה</td></tr><tr><td class="c0">EXOSIGNAL HAIR</td><td>חיזוק והמרצת צמיחת שיער</td><td>נשירה אנדרוגנטית (גברים/נשים), שיער דליל</td><td>6–10 טיפולים, אחת לשבועיים</td><td>Microneedling קרקפת, PRP, MITOSCAN</td></tr><tr><td class="c0">EXOSIGNAL SPRAY</td><td>תחזוקת קרקפת ושיער בבית</td><td>כל מטופל/ת לאחר טיפול קרקפת</td><td>יומי (1–2 פעמים)</td><td>משלים את EXOSIGNAL HAIR</td></tr><tr><td class="c0">EXOTECH GEL</td><td>שיקום ולחות לאחר פרוצדורות</td><td>עור מגורה לאחר לייזר / פילינג</td><td>יומי · לאחר טיפול במרפאה</td><td>לאחר לייזר, RF, פילינג, Microneedling</td></tr><tr><td class="c0">EXOCELL MASK</td><td>שיקום מיידי אינטנסיבי במרפאה</td><td>עור יבש ומגורה לאחר טיפול פולשני</td><td>15–20 דקות, מיד לאחר הטיפול</td><td>Microneedling, לייזר, פילינג עמוק</td></tr></tbody></table></div>
+    <div class="legend"><b><span class="dot dot-pro"></span>לשימוש מקצועי בלבד</b><b><span class="dot dot-home"></span>לטיפוח ביתי</b><b><span class="dot dot-pro"></span><span class="dot dot-home"></span>מקצועי + ביתי</b></div>
   </section>
 <section class="section protocols" style="--acc:#a85f2e;--deep:#824823;--tint:#f5e6d9;--soft:#fbf1e9">
     <header class="sec-head">

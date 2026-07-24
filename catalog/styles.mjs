@@ -72,6 +72,18 @@ h1,h2,h3,h4{margin:0; font-weight:700; line-height:1.18; text-wrap:balance}
 .product-intro{ font-size:10.6pt; color:var(--ink2); margin-bottom:5mm; }
 .product-intro.dc p:first-child::first-letter{ font-family:var(--serif); font-weight:900; font-size:27pt; float:inline-start; line-height:.86; padding-inline-end:2.2mm; color:var(--acc); }
 
+/* ---- usage designation badges ---- */
+.usage-row{ display:flex; gap:2mm; margin:2.5mm 0 0; flex-wrap:wrap; }
+.ubadge{ font-family:var(--label); font-size:7.5pt; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:1.1mm 3mm; border-radius:999px; border:1px solid; white-space:nowrap; display:inline-flex; align-items:center; gap:1.4mm; }
+.ubadge::before{ content:""; width:1.8mm; height:1.8mm; border-radius:50%; background:currentColor; }
+.ubadge-pro{ color:var(--deep); border-color:var(--acc); background:var(--tint); }
+.ubadge-home{ color:#2f6d55; border-color:#7bb79c; background:#e8f3ed; }
+.legend{ display:flex; gap:5mm; flex-wrap:wrap; margin-top:5mm; font-family:var(--label); font-size:8pt; letter-spacing:.03em; color:var(--muted); }
+.legend b{ display:inline-flex; align-items:center; gap:1.6mm; font-weight:600; color:var(--ink2); }
+.legend .dot{ width:2mm; height:2mm; border-radius:50%; display:inline-block; }
+.legend .dot-pro{ background:var(--acc); }
+.legend .dot-home{ background:#5aa385; }
+
 /* ---- science 2-col editorial ---- */
 .science{ column-count:2; column-gap:8mm; margin-bottom:5mm; }
 .sci-block{ break-inside:avoid; margin-bottom:4mm; }

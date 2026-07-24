@@ -52,6 +52,19 @@ const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').r
 const paras = (body = '') => String(body).split(/\n{2,}/).map(t => t.trim()).filter(Boolean);
 const arr = (x) => Array.isArray(x) ? x : (x ? [x] : []);
 
+const USAGE = { 'v-tech': 'pro', 'exo-nad': 'pro', 'exosignal-hair': 'pro', 'exosignal-spray': 'home', 'exotech-gel': 'both', 'exocell-mask': 'both', 'mitopen': 'device', 'mitoscan': 'device' };
+function usageBadge(u) {
+  const pro = '<span class="ubadge ubadge-pro">לשימוש מקצועי בלבד</span>';
+  const home = '<span class="ubadge ubadge-home">לטיפוח ביתי</span>';
+  if (u === 'both') return `<div class="usage-row"><span class="ubadge ubadge-pro">לשימוש מקצועי</span>${home}</div>`;
+  if (u === 'home') return `<div class="usage-row">${home}</div>`;
+  if (u === 'device') return '<div class="usage-row"><span class="ubadge ubadge-pro">מכשור מקצועי</span></div>';
+  if (u === 'pro') return `<div class="usage-row">${pro}</div>`;
+  return '';
+}
+const usageLabel = (u) => ({ pro: 'לשימוש מקצועי בלבד', home: 'לטיפוח ביתי', both: 'לשימוש מקצועי + טיפוח ביתי', device: 'מכשור מקצועי' }[u] || '');
+const LEGEND_HTML = '<div class="legend"><b><span class="dot dot-pro"></span>לשימוש מקצועי בלבד</b><b><span class="dot dot-home"></span>לטיפוח ביתי</b><b><span class="dot dot-pro"></span><span class="dot dot-home"></span>מקצועי + ביתי</b></div>';
+
 // ---------------- SVG icons for spec strip ----------------
 const IC = {
   flask: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 3h6M10 3v6l-5 8a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-8V3"/><path d="M7.5 15h9"/></svg>',
@@ -124,6 +137,7 @@ function renderProduct(d, meta) {
   return `<section class="section product" style="--acc:${a.acc};--deep:${a.deep};--tint:${a.tint};--soft:${a.soft}">
     <div class="product-hero">
       ${d.eyebrow ? `<div class="eyebrow">${esc(d.eyebrow)}</div>` : ''}
+      ${usageBadge(USAGE[meta.key] || (isDevice ? 'device' : 'pro'))}
       <h1 class="product-latin">${esc(d.latinName || '')}</h1>
       <div class="product-he">${esc(d.hebrewName || '')}</div>
       ${d.subtitleEn ? `<div class="product-suben">${esc(d.subtitleEn)}</div>` : ''}
@@ -166,6 +180,7 @@ function renderComparison(d) {
     ${sectionHead('OVERVIEW', d.title || 'טבלת השוואת מוצרים', d.subtitleEn)}
     <div class="table-wrap"><table class="cmp"><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead>
     <tbody>${rows.map(r => `<tr>${arr(r).map((c, i) => `<td${i === 0 ? ' class="c0"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    ${LEGEND_HTML}
   </section>`;
 }
 
@@ -233,9 +248,10 @@ function renderToc(items) {
 // ================= MARKDOWN RENDERERS =================
 const mdParas = (b) => paras(b).join('\n\n');
 function mdList(title, items) { const a = arr(items); return a.length ? `**${title}**\n\n${a.map(i => `- ${i}`).join('\n')}\n\n` : ''; }
-function mdProduct(d) {
+function mdProduct(d, usage) {
   let s = `\n\n---\n\n# ${d.latinName || ''}${d.hebrewName ? ` — ${d.hebrewName}` : ''}\n`;
   if (d.subtitleEn) s += `\n*${d.subtitleEn}*\n`;
+  if (usage) s += `\n**סיווג שימוש:** ${usageLabel(usage)}\n`;
   if (d.tagline) s += `\n> ${d.tagline}\n`;
   if (d.intro) s += `\n${mdParas(d.intro)}\n`;
   for (const bl of arr(d.scienceBlocks)) s += `\n## ${bl.heading}\n\n${mdParas(bl.body)}\n`;
@@ -316,8 +332,8 @@ let md = `# MITODERM — קטלוג טכנולוגיה ומוצרים\n\n**אק�
 for (const { meta, data } of present) {
   if (meta.kind === 'about') { md += `\n\n---\n\n# ${data.title || 'אודות MITODERM'}\n`; for (const bl of arr(data.blocks)) md += `\n## ${bl.heading}\n\n${mdParas(bl.body)}\n`; }
   else if (meta.kind === 'exosomes') { md += `\n\n---\n\n# ${data.title || 'סדרת האקסוזומים'}\n`; if (data.intro) md += `\n${mdParas(data.intro)}\n`; for (const bl of arr(data.mechanism)) md += `\n## ${bl.heading}\n\n${mdParas(bl.body)}\n`; if (data.closing) md += `\n> ${data.closing}\n`; }
-  else if (meta.kind === 'product' || meta.kind === 'device') md += mdProduct(data);
-  else if (meta.kind === 'comparison') { md += `\n\n---\n\n# ${data.title || 'טבלת השוואת מוצרים'}\n\n| ${arr(data.columns).join(' | ')} |\n| ${arr(data.columns).map(() => '---').join(' | ')} |\n${arr(data.rows).map(r => `| ${arr(r).join(' | ')} |`).join('\n')}\n`; }
+  else if (meta.kind === 'product' || meta.kind === 'device') md += mdProduct(data, USAGE[meta.key] || (meta.kind === 'device' ? 'device' : 'pro'));
+  else if (meta.kind === 'comparison') { md += `\n\n---\n\n# ${data.title || 'טבלת השוואת מוצרים'}\n\n| ${arr(data.columns).join(' | ')} |\n| ${arr(data.columns).map(() => '---').join(' | ')} |\n${arr(data.rows).map(r => `| ${arr(r).join(' | ')} |`).join('\n')}\n\n**מקרא:** לשימוש מקצועי בלבד · לטיפוח ביתי · מקצועי + ביתי\n`; }
   else if (meta.kind === 'protocols') { md += `\n\n---\n\n# ${data.title || 'פרוטוקולי טיפול'}\n`; for (const it of arr(data.items)) md += `\n## ${it.name}\n\n${it.body}\n`; }
   else if (meta.kind === 'beforeafter') md += `\n\n---\n\n# לפני / אחרי\n\nמומלץ לתעד כל מטופל/ת באור, זווית ותאורה עקביים, בהפרש של לפחות 3 חודשים.\n`;
   else if (meta.kind === 'faq') { md += `\n\n---\n\n# ${data.title || 'שאלות נפוצות'}\n`; for (const it of arr(data.items)) md += `\n**ש: ${it.q}**\n\nת: ${it.a}\n`; }

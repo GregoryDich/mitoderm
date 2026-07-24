@@ -1,6 +1,7 @@
 {
   "type": "device",
   "slug": "mitoscan",
+  "usage": "device",
   "accent": "teal",
   "eyebrow": "אבחון · הדמיה · בינה מלאכותית",
   "latinName": "MITOSCAN",
