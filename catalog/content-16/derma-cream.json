@@ -1,0 +1,26 @@
+{
+  "type": "product",
+  "slug": "derma-cream",
+  "usage": "both",
+  "accent": "sage",
+  "eyebrow": "MITODERM BIOSPICULE SYSTEM · טיפוח יומי",
+  "latinName": "DERMA RECOVERY CREAM",
+  "hebrewName": "קרם דרמה ריקוברי",
+  "subtitleEn": "Snail Collagen · Daily Nourishing Collagen Cream",
+  "tagline": "קרם קולגן מזין ליום — הזנה, לחות ומראה בריא וזוהר.",
+  "intro": "DERMA RECOVERY CREAM הוא קרם קולגן מזין לשימוש יומי, המשלב קולגן מיובּא ומוצין חלזון עם קומפלקס מרגיע ומחזק-מחסום. מעניק לעור תחושת רעננות ואיזון, מתאים לכל סוגי העור, ומנוסח גם לתמיכה בנוחות העור לאחר טיפולים מקצועיים.",
+  "bullets": [
+    "Hydrolyzed Collagen ו-Snail Secretion Filtrate (מוצין חלזון) תומכים בלחות, בגמישות ובמראה בריא של העור.",
+    "Galactomyces Ferment Filtrate ו-Niacinamide לאחידות גוון ולזוהר.",
+    "Madecassoside, Allantoin, Panthenol, Adenosine וחמאת שיאה — רכיבים מרגיעים ומחזקי-מחסום, מתאימים גם לעור רגיש.",
+    "מרקם מזין נספג היטב; לשימוש יומי בוקר ו/או ערב על עור נקי.",
+    "מנוסח לתמיכה בנוחות העור לאחר פרוצדורות מקצועיות (לייזר, פילינג, מיקרונידלינג)."
+  ],
+  "actives": ["Hydrolyzed Collagen", "Snail Secretion Filtrate", "Galactomyces Ferment Filtrate", "Niacinamide", "Madecassoside · Allantoin", "Panthenol · Adenosine · Shea Butter"],
+  "use": "יומי · בוקר ו/או ערב · על עור נקי עד ספיגה · SPF ביום",
+  "pack": "50 מ\"ל · 1.69 fl.oz (jar airless)",
+  "combos": ["טיפוח יומי", "לאחר טיפול מקצועי", "לאחר Spicule Serum"],
+  "indications": ["עור יבש", "צורך בלחות והזנה", "עור רגיש", "תחזוקה יומית", "נוחות לאחר פרוצדורות"],
+  "origin": "Made in Korea",
+  "closingTagline": "DERMA RECOVERY. Nourish, soothe, glow."
+}

@@ -19,6 +19,8 @@ const ORDER = [
   { key: 'exosignal-spray', file: 'spray.json', kind: 'product' },
   { key: 'exotech-gel', file: 'exotech.json', kind: 'product' },
   { key: 'exocell-mask', file: 'exocell.json', kind: 'product' },
+  { key: 'biospicule-serum', file: 'biospicule-serum.json', kind: 'product' },
+  { key: 'derma-cream', file: 'derma-cream.json', kind: 'product' },
   { key: 'mitopen', file: 'mitopen.json', kind: 'device' },
   { key: 'mitoscan', file: 'mitoscan.json', kind: 'device' },
   { key: 'comparison', file: 'comparison.json', kind: 'comparison' },
@@ -34,6 +36,8 @@ const PAL = {
   plum:     { acc: '#7c4f86', deep: '#5c3a64', tint: '#eee1f1', soft: '#f7eff8' },
   rose:     { acc: '#a2537a', deep: '#7c3d5c', tint: '#f3e0ea', soft: '#faeef3' },
   graphite: { acc: '#3f5f78', deep: '#2d4658', tint: '#e0e8ef', soft: '#eef3f7' },
+  forest:   { acc: '#3f6b4a', deep: '#2b4a33', tint: '#dbe9de', soft: '#edf4ee' },
+  sage:     { acc: '#6d8a5e', deep: '#4a6440', tint: '#e6efdf', soft: '#f1f6eb' },
 };
 
 const load = (f) => {
