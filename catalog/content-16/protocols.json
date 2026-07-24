@@ -1,0 +1,13 @@
+{
+  "type": "protocols",
+  "title": "פרוטוקולי טיפול",
+  "subtitleEn": "Treatment Protocols",
+  "items": [
+    { "name": "אנטי-אייג'ינג", "body": "V-TECH + EXO-NAD עם Microneedling (MITOPEN) לפנים, צוואר ומחשוף; תחזוקה ביתית עם EXOTECH GEL." },
+    { "name": "פיגמנטציה", "body": "פתיחה בפילינג EXO-NAD (חומצות AHA) לאיחוד גוון, בהמשך V-TECH; במקרים עמוקים — שילוב לייזר. שינוי נראה לרוב לאחר 2–3 טיפולים." },
+    { "name": "פוסט-אקנה וצלקות", "body": "EXO-NAD ו-V-TECH עם Microneedling לשיקום מרקם וצלקות שטחיות; מתאים גם לפיגמנטציה פוסט-דלקתית." },
+    { "name": "טיפולי שיער", "body": "סדרת EXOSIGNAL HAIR עם Microneedling לקרקפת ומדידות MITOSCAN; תחזוקה ביתית עם EXOSIGNAL SPRAY." },
+    { "name": "רגנרציה / לאחר לייזר-RF", "body": "בשלב ראשון EXOTECH GEL או EXOCELL MASK להרגעה ולשיקום מחסום; בהמשך V-TECH ו-NAD לחידוש עמוק." },
+    { "name": "לאחר Microneedling", "body": "מיד לאחר הפציעה המבוקרת מורחים V-Tech Serum לניצול חלון הספיגה, ולסיום מסכת ג'ל לאיטום ולהרגעה." }
+  ]
+}

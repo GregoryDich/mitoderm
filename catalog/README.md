@@ -30,6 +30,26 @@ Cover · Contents · About MITODERM · Exosome technology · V-TECH SYSTEM (4pp)
 EXO-NAD (4pp) · EXOSIGNAL HAIR (4pp) · EXOSIGNAL SPRAY · EXOTECH GEL · EXOCELL MASK ·
 MITOPEN · MITOSCAN · Comparison table · Treatment protocols · Before/After · FAQ · Contact.
 
+## Condensed 16-page edition (`-16`)
+
+A shorter, Skymedic-style edition (~18 A4 pages, ~2.9k words) — one page per
+product (Latin name → subtitle → tight bullets → spec strip → indication chips →
+tagline). Source in `content-16/*.json`, built by `build-16.mjs`.
+
+```bash
+node build-16.mjs   # -> mitoderm-catalog-16.html + .md
+# render with the same headless-Chromium flags as render.sh, targeting the -16 html
+```
+
+This edition applies the scientific-accuracy corrections from the fact-check
+(topical delivery tied to microneedling, NAD⁺ pathway wording, endogenous VEGF,
+peptides as signalling peptides, MitoScan TE caveat, FAQ contraindications, GMP/ISO
+cosmetic wording) and folds in the owner's updated product data: EXO-NAD as the
+3-phase *Skin Longevity Peeling* system, EXOCELL as the biocellulose mask, and the
+full EXOSIGNAL Hair composition (Copper Tripeptide-1, Oligopeptide-20, PDRN, HMW-HA,
+Panthenol, Glutathione, Biotin). Owner business claims ("only in Israel", exclusive
+distributor, exact certifications) are left for the owner to confirm.
+
 ## Notes
 
 - **Text-first edition.** Product/before-after photography is deferred; the layout
