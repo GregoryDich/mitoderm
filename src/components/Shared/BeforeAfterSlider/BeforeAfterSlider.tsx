@@ -4,19 +4,36 @@ import { FC, useCallback, useRef, useState, PointerEvent, KeyboardEvent } from '
 import styles from './BeforeAfterSlider.module.scss';
 
 interface Props {
-  /** A single "before | after" composite image (left half = before,
-   *  right half = after). The component reveals each half via CSS, so
+  /** A single "before | after" composite image. By default the left half
+   *  is "before" and the right half is "after"; some source shots are
+   *  mounted the other way round, so `beforeSide` flips which physical
+   *  half each label sits over. The component reveals halves via CSS, so
    *  no pre-split assets are needed. */
   src: string;
   beforeLabel: string;
   afterLabel: string;
   alt: string;
+  /** Physical side that holds the "before" half of the composite. */
+  beforeSide?: 'left' | 'right';
 }
 
 /** Draggable before/after comparison. Physical (LTR) by design — the
  *  image halves are physically left=before / right=after regardless of
  *  page direction. Pointer + keyboard accessible (role="slider"). */
-const BeforeAfterSlider: FC<Props> = ({ src, beforeLabel, afterLabel, alt }) => {
+const BeforeAfterSlider: FC<Props> = ({
+  src,
+  beforeLabel,
+  afterLabel,
+  alt,
+  beforeSide = 'left',
+}) => {
+  // The slider mirrors the composite: the after-half (right of the file) is
+  // revealed on the LEFT of the frame, the before-half shows on the RIGHT.
+  // So for a standard file (before on its left half) the LEFT tag names the
+  // "after" result; a file mounted the other way flips that.
+  const leftIsBefore = beforeSide === 'right';
+  const leftLabel = leftIsBefore ? beforeLabel : afterLabel;
+  const rightLabel = leftIsBefore ? afterLabel : beforeLabel;
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
 
@@ -63,8 +80,20 @@ const BeforeAfterSlider: FC<Props> = ({ src, beforeLabel, afterLabel, alt }) => 
           clipPath: `inset(0 ${100 - pos}% 0 0)`,
         }}
       />
-      <span className={`${styles.tag} ${styles.tagBefore}`}>{beforeLabel}</span>
-      <span className={`${styles.tag} ${styles.tagAfter}`}>{afterLabel}</span>
+      <span
+        className={`${styles.tag} ${styles.tagLeft} ${
+          leftIsBefore ? '' : styles.tagResult
+        }`}
+      >
+        {leftLabel}
+      </span>
+      <span
+        className={`${styles.tag} ${styles.tagRight} ${
+          leftIsBefore ? styles.tagResult : ''
+        }`}
+      >
+        {rightLabel}
+      </span>
       <div
         className={styles.handle}
         style={{ left: `${pos}%` }}

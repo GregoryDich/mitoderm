@@ -75,12 +75,17 @@
   pointer-events: none;
 }
 
-.tagBefore {
+.tagLeft {
   left: 12px;
   color: rgba(245, 242, 240, 0.72);
 }
 
-.tagAfter {
+.tagRight {
   right: 12px;
+  color: rgba(245, 242, 240, 0.72);
+}
+
+/* The "after" result is the emphasised (gold) tag, whichever side it's on. */
+.tagResult {
   color: #dfba74;
 }

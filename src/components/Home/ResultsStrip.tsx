@@ -5,8 +5,17 @@ import { useTranslations } from 'next-intl';
 import BeforeAfterSlider from '@/components/Shared/BeforeAfterSlider/BeforeAfterSlider';
 import styles from './ResultsStrip.module.scss';
 
-/** All 18 real before/after composites downloaded from mitoderm.com. */
-const SHOTS = Array.from({ length: 18 }, (_, i) => String(i + 1));
+/** Real before/after composites from mitoderm.com. Most mount before-left /
+ *  after-right, but the source set is inconsistent: these few are mounted
+ *  the other way (before on the right), and #4 is a vertical top/bottom
+ *  composite with its own baked-in labels — it can't render in a horizontal
+ *  compare, so it's excluded. Owner: to fix a mislabelled shot, move its
+ *  number in or out of REVERSED (no code change needed elsewhere). */
+const REVERSED = new Set(['5', '9', '11']);
+const EXCLUDED = new Set(['4']);
+const SHOTS = Array.from({ length: 18 }, (_, i) => String(i + 1)).filter(
+  (n) => !EXCLUDED.has(n)
+);
 
 /** "Real results, on real skin" — a carousel of drag-to-compare
  *  before/after sliders (arrows + dots + counter), matching the
@@ -65,6 +74,7 @@ const ResultsStrip: FC = () => {
             src={`/proof/before-after/${SHOTS[i]}.webp`}
             beforeLabel={t('before')}
             afterLabel={t('after')}
+            beforeSide={REVERSED.has(SHOTS[i]) ? 'right' : 'left'}
             alt={t('alt')}
           />
         </div>
