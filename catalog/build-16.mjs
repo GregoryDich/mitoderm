@@ -141,22 +141,17 @@ function renderProductC(d, meta) {
   </section>`;
 }
 
-function renderChapter(d, products) {
+function renderChapter(d) {
   const a = PAL[d.accent] || PAL.gold;
-  const idx = arr(products).map(p => `<li class="chidx-item">
-      <span class="chidx-he">${esc(p.hebrewName || p.latinName || '')}</span>
-      <span class="chidx-lat">${esc(p.latinName || '')}</span>
-      ${p.usage ? `<span class="chidx-u">${esc(usageLabel(p.usage))}</span>` : ''}
-    </li>`).join('');
+  // Clean title-only divider: chapter opens on its own page; the chapter's
+  // product pages follow directly (the in-chapter index was removed by owner request).
   return `<section class="section chapter" style="--acc:${a.acc};--deep:${a.deep};--tint:${a.tint};--soft:${a.soft}">
-    <div class="chapter-inner">
+    <div class="chapter-inner chapter-inner--title">
       ${d.eyebrow ? `<div class="chapter-eyebrow">${esc(d.eyebrow)}</div>` : ''}
       <div class="chapter-num">פרק ${esc(d.number || '')}</div>
       <h1 class="chapter-title">${esc(d.titleHe || '')}</h1>
       ${d.subEn ? `<div class="chapter-suben">${esc(d.subEn)}</div>` : ''}
       <div class="chapter-rule"></div>
-      ${d.blurb ? `<p class="chapter-blurb">${esc(d.blurb)}</p>` : ''}
-      ${idx ? `<div class="chidx-lead">בפרק זה</div><ul class="chidx">${idx}</ul>` : ''}
     </div>
   </section>`;
 }
