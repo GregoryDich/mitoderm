@@ -222,6 +222,13 @@
 .overlay {
   position: absolute;
   inset: 0;
+  /* Track the photo box, not the section: on ultra-wide screens the photo
+   * is height-capped and centered, so anchoring the copy to the section
+   * edge pushed the badge/H1 off into the dark side bar (clipped). Capping
+   * the overlay to the photo width keeps the copy over the photo. */
+  margin-inline: auto;
+  max-width: min(100%, calc((100vh - 88px) * 2.344));
+  max-width: min(100%, calc((100dvh - 88px) * 2.344));
   pointer-events: none;
   z-index: 5;
   display: flex;

@@ -38,6 +38,40 @@
         "ru": "Один протокол в два шага — профессиональная процедура, продолженная каждый день.",
         "he": "פרוטוקול אחד בשני צעדים — הטיפול המקצועי, ממשיך בכל יום."
       }
+    },
+    "face": {
+      "kicker": {
+        "en": "V-Tech Face Line",
+        "ru": "Линия для лица V-Tech",
+        "he": "קו הפנים V-Tech"
+      },
+      "title": {
+        "en": "Three steps. One result.",
+        "ru": "Три шага. Один результат.",
+        "he": "שלושה שלבים. תוצאה אחת."
+      },
+      "note": {
+        "en": "Serum, mask and gel — the 1+1=3 protocol for facial regeneration.",
+        "ru": "Сыворотка, маска и гель — протокол 1+1=3 для обновления кожи лица.",
+        "he": "סרום, מסכה וג׳ל — פרוטוקול 1+1=3 להתחדשות הפנים."
+      }
+    },
+    "devices": {
+      "kicker": {
+        "en": "Line Devices",
+        "ru": "Приборы линейки",
+        "he": "מכשירי הליין"
+      },
+      "title": {
+        "en": "Precise technology. Visible results.",
+        "ru": "Точная технология. Видимый результат.",
+        "he": "טכנולוגיה מדויקת. תוצאות נראות לעין."
+      },
+      "note": {
+        "en": "Diagnostics and micro-delivery — the hardware behind every Mitoderm protocol.",
+        "ru": "Диагностика и микро-доставка — оборудование за каждым протоколом Mitoderm.",
+        "he": "אבחון והחדרת מיקרו — החומרה שמאחורי כל פרוטוקול של Mitoderm."
+      }
     }
   },
   "items": [
@@ -46,6 +80,7 @@
       "name": "V-Tech System",
       "image": "/products/v-tech-system/hero.webp",
       "surface": "dark",
+      "pairGroup": "face",
       "badge": {
         "en": "Flagship",
         "ru": "Флагман",
@@ -93,6 +128,7 @@
       "name": "Exocell Mask",
       "image": "/products/exocell-mask/hero.png",
       "surface": "light",
+      "pairGroup": "face",
       "line": {
         "en": "Facial Regeneration",
         "ru": "Регенерация лица",
@@ -135,6 +171,7 @@
       "name": "Exotech Gel",
       "image": "/products/exotech-gel/hero.webp",
       "surface": "light",
+      "pairGroup": "face",
       "line": {
         "en": "Facial Regeneration",
         "ru": "Регенерация лица",
@@ -308,6 +345,7 @@
       "name": "Mitoscan",
       "image": "/products/mitoscan/hero.webp",
       "surface": "dark",
+      "pairGroup": "devices",
       "badge": {
         "en": "Technology",
         "ru": "Технология",
@@ -354,6 +392,7 @@
       "name": "MitoPen",
       "image": "/products/mitopen/hero.webp",
       "surface": "gold",
+      "pairGroup": "devices",
       "line": {
         "en": "Devices",
         "ru": "Устройства",
