@@ -22,10 +22,22 @@ const AREA_LABEL: Record<string, string> = {
   eilat: 'Eilat',
 };
 
-export default async function AdminDoctors() {
+export default async function AdminDoctors({
+  searchParams,
+}: {
+  searchParams?: { q?: string };
+}) {
   if (!isAdmin()) redirect('/admin');
-  const doctors = await readDoctors();
-  doctors.sort((a, b) => a.name.localeCompare(b.name));
+  const all = await readDoctors();
+  all.sort((a, b) => a.name.localeCompare(b.name));
+  const q = (searchParams?.q ?? '').trim().toLowerCase();
+  const doctors = q
+    ? all.filter((d) =>
+        `${d.name} ${d.city} ${d.contact} ${d.profession}`
+          .toLowerCase()
+          .includes(q)
+      )
+    : all;
 
   return (
     <div>
@@ -56,9 +68,9 @@ export default async function AdminDoctors() {
               color: 'rgba(245,242,240,0.55)',
             }}
           >
-            {doctors.length} entries — published entries surface in the
-            “Trusted by” strip on product pages and the clinic locator
-            on /about.
+            {q ? `${doctors.length} of ${all.length}` : all.length} entries —
+            published entries surface in the “Trusted by” strip on product
+            pages and the clinic locator on /about.
           </p>
         </div>
         <div style={{ display: 'flex', gap: 8 }}>
@@ -77,6 +89,20 @@ export default async function AdminDoctors() {
             Export CSV
           </a>
           <Link
+            href="/admin/doctors/import"
+            style={{
+              padding: '12px 18px',
+              borderRadius: 30,
+              border: '1px solid rgba(245,242,240,0.2)',
+              color: 'rgba(245,242,240,0.85)',
+              fontSize: 13,
+              fontWeight: 500,
+              textDecoration: 'none',
+            }}
+          >
+            Import CSV
+          </Link>
+          <Link
             href="/admin/doctors/new"
             style={{
               padding: '12px 22px',
@@ -93,7 +119,40 @@ export default async function AdminDoctors() {
         </div>
       </header>
 
-      {doctors.length === 0 ? (
+      <form
+        method="get"
+        style={{ display: 'flex', gap: 8, marginBottom: 18, maxWidth: 460 }}
+      >
+        <input
+          type="search"
+          name="q"
+          defaultValue={q}
+          placeholder="Search name, city, phone or type…"
+          style={{
+            flex: 1,
+            padding: '11px 16px',
+            borderRadius: 30,
+            border: '1px solid rgba(255,255,255,0.14)',
+            background: 'rgba(0,0,0,0.25)',
+            color: '#f5f2f0',
+            fontSize: 14,
+          }}
+        />
+        {q && (
+          <Link
+            href="/admin/doctors"
+            style={{
+              alignSelf: 'center',
+              fontSize: 13,
+              color: 'rgba(245,242,240,0.55)',
+            }}
+          >
+            Clear
+          </Link>
+        )}
+      </form>
+
+      {all.length === 0 ? (
         <div
           style={{
             padding: 28,
@@ -106,6 +165,19 @@ export default async function AdminDoctors() {
         >
           No entries yet. Add the first cosmetologist / doctor / clinic —
           published entries become public social proof on the site.
+        </div>
+      ) : doctors.length === 0 ? (
+        <div
+          style={{
+            padding: 28,
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            borderRadius: 14,
+            color: 'rgba(245,242,240,0.6)',
+            fontSize: 14,
+          }}
+        >
+          No entries match “{q}”.
         </div>
       ) : (
         <div

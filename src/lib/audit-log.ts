@@ -7,6 +7,7 @@ export type AuditAction =
   | 'product.delete'
   | 'product.duplicate'
   | 'doctor.create'
+  | 'doctor.import'
   | 'doctor.update'
   | 'doctor.delete'
   | 'lead.update'

@@ -71,16 +71,16 @@ async function persist(
   return { persisted: 'local' };
 }
 
-function makeId(name: string): string {
-  return (
-    name
-      .toLowerCase()
-      .replace(/[^a-z0-9א-ת]+/g, '-')
-      .replace(/^-|-$/g, '')
-      .slice(0, 60) +
-    '-' +
-    Math.random().toString(36).slice(2, 7)
-  );
+/** Next clean sequential id (md-001, md-002, …) from the current max.
+ *  Keeps the whole table on one tidy scheme regardless of how a record
+ *  was added — single form, bulk import or seed. */
+function nextDoctorId(all: Doctor[]): string {
+  let max = 0;
+  for (const d of all) {
+    const m = /^md-(\d+)$/.exec(d.id);
+    if (m) max = Math.max(max, parseInt(m[1], 10));
+  }
+  return `md-${String(max + 1).padStart(3, '0')}`;
 }
 
 export async function createDoctor(
@@ -91,7 +91,7 @@ export async function createDoctor(
   const all = await readDoctors();
   const now = new Date().toISOString();
   const doc: Doctor = {
-    id: makeId(input.name),
+    id: nextDoctorId(all),
     name: input.name,
     profession: input.profession,
     city: input.city,
@@ -107,6 +107,55 @@ export async function createDoctor(
   all.push(doc);
   await persist(all, `chore(admin): add doctor ${doc.id}`);
   return doc;
+}
+
+export type DoctorInput = Omit<
+  Doctor,
+  'id' | 'createdAt' | 'updatedAt' | 'isPublished'
+> & { isPublished?: boolean };
+
+/** Create many records in one write. Skips rows that duplicate an existing
+ *  entry (same name + contact, case-insensitive) so re-running an import is
+ *  safe. Ids are assigned as a clean md-NNN run after the current max. */
+export async function createDoctorsBulk(
+  inputs: DoctorInput[]
+): Promise<{ created: number; skipped: number }> {
+  const all = await readDoctors();
+  const now = new Date().toISOString();
+  const key = (name: string, contact: string) =>
+    `${name.trim().toLowerCase()}|${contact.trim().toLowerCase()}`;
+  const seen = new Set(all.map((d) => key(d.name, d.contact)));
+
+  let created = 0;
+  let skipped = 0;
+  for (const input of inputs) {
+    const k = key(input.name, input.contact);
+    if (seen.has(k)) {
+      skipped += 1;
+      continue;
+    }
+    seen.add(k);
+    all.push({
+      id: nextDoctorId(all),
+      name: input.name,
+      profession: input.profession,
+      city: input.city,
+      area: input.area,
+      contact: input.contact,
+      instagram: input.instagram,
+      photo: input.photo,
+      bio: input.bio,
+      isPublished: input.isPublished ?? false,
+      createdAt: now,
+      updatedAt: now,
+    });
+    created += 1;
+  }
+
+  if (created > 0) {
+    await persist(all, `chore(admin): bulk import ${created} doctors`);
+  }
+  return { created, skipped };
 }
 
 export async function updateDoctor(

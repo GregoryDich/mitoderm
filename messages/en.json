@@ -966,7 +966,9 @@
       "hair-stylist": "Hair stylist",
       "doctor": "Doctor",
       "clinic": "Clinic"
-    }
+    },
+    "prev": "Previous",
+    "next": "Next"
   },
   "footer": {
     "copyright": "© 2026 Mitoderm. All Rights Reserved.",

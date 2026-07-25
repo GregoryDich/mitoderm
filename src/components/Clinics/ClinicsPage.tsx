@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useMemo, useState } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Layout/Footer/Footer';
@@ -16,7 +16,21 @@ interface Props {
 type AreaFilter = 'all' | DoctorArea;
 type ProfFilter = 'all' | DoctorProfession;
 
+const PER_PAGE = 12;
 const AREAS: AreaFilter[] = ['all', 'north', 'center', 'jerusalem', 'south', 'eilat'];
+
+/** Windowed page list: 1 … current-1 current current+1 … N (with ellipses). */
+function pageList(current: number, total: number): (number | '…')[] {
+  const out: (number | '…')[] = [];
+  for (let n = 1; n <= total; n += 1) {
+    if (n === 1 || n === total || (n >= current - 1 && n <= current + 1)) {
+      out.push(n);
+    } else if (out[out.length - 1] !== '…') {
+      out.push('…');
+    }
+  }
+  return out;
+}
 const PROFS: ProfFilter[] = [
   'all',
   'cosmetologist',
@@ -42,6 +56,16 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
       return hay.includes(q);
     });
   }, [doctors, area, prof, query]);
+
+  // Paginate so a full directory (100+ specialists) loads in pages instead
+  // of one endless scroll. Reset to page 1 whenever the filter set changes.
+  const [page, setPage] = useState(1);
+  useEffect(() => {
+    setPage(1);
+  }, [area, prof, query]);
+  const totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
+  const current = Math.min(page, totalPages);
+  const paged = visible.slice((current - 1) * PER_PAGE, current * PER_PAGE);
 
   return (
     <div className={`pageScroll ${styles.page}`}>
@@ -105,7 +129,7 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
         ) : (
           <Reveal>
           <ul className={styles.grid}>
-            {visible.map((d) => (
+            {paged.map((d) => (
               <li key={d.id} className={styles.card}>
                 <div className={styles.cardHead}>
                   <div className={styles.avatar} aria-hidden="true">
@@ -151,6 +175,48 @@ const ClinicsPage: FC<Props> = ({ doctors }) => {
             ))}
           </ul>
           </Reveal>
+        )}
+
+        {totalPages > 1 && (
+          <nav className={styles.pager} aria-label={t('professionLabel')}>
+            <button
+              type="button"
+              className={styles.pageBtn}
+              disabled={current === 1}
+              onClick={() => setPage(current - 1)}
+              aria-label={t('prev')}
+            >
+              <span className={styles.pageArrow}>‹</span>
+            </button>
+            {pageList(current, totalPages).map((n, idx) =>
+              n === '…' ? (
+                <span key={`gap-${idx}`} className={styles.pageGap}>
+                  …
+                </span>
+              ) : (
+                <button
+                  key={n}
+                  type="button"
+                  className={`${styles.pageBtn} ${
+                    n === current ? styles.pageActive : ''
+                  }`}
+                  aria-current={n === current ? 'page' : undefined}
+                  onClick={() => setPage(n)}
+                >
+                  {n}
+                </button>
+              )
+            )}
+            <button
+              type="button"
+              className={styles.pageBtn}
+              disabled={current === totalPages}
+              onClick={() => setPage(current + 1)}
+              aria-label={t('next')}
+            >
+              <span className={styles.pageArrow}>›</span>
+            </button>
+          </nav>
         )}
 
         <Reveal>
