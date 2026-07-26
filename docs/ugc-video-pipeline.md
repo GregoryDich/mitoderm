@@ -155,3 +155,91 @@ up in Cowork. Use **palmier** to manage the local ones.
 - **B — Write the script + storyboard pack**: 8–12 UGC scripts across
   en/ru/he from real product data, drop-in for any tool. *(fastest value)*
 - **C — Both**, B first (scripts) then A (engine renders them).
+
+---
+
+## 7. Breaking the MCP / localhost wall — why it happens & how people fix it
+
+**Can I edit my own MCP JSON?** Yes — nothing blocks the file write. I can
+run `claude mcp add …` or author `.mcp.json`. What editing JSON does *not*
+do is bridge this session to your machine. Three separate reasons the wall
+exists here:
+
+1. **This is an isolated cloud container** (Claude Code on the web). Its
+   `127.0.0.1` is the container's own loopback, **not your laptop**. That's
+   why `curl http://127.0.0.1:19789/mcp` (palmier) returns *"couldn't
+   connect"* — palmier runs on *your* machine, invisible to this sandbox.
+2. **MCP servers load at session start**, not hot. A server added mid-run
+   isn't callable until the session restarts.
+3. **Web sessions are platform-managed.** `claude mcp list` here shows
+   *"No MCP servers configured"* — the Adobe/Figma/Zapier/etc. tools are
+   injected by the platform, so my local config edits aren't even the
+   source of truth for what *this* session loads.
+
+So editing JSON helps a **local** Claude Code, not this web sandbox reaching
+your localhost. Confirmed by the community: *"When using Claude.ai there's
+no way to reach local MCP servers."*
+
+### The fixes people actually use (two planes)
+
+- **Plane A — run Claude Code LOCALLY** (`claude` in your terminal on your
+  machine). Then `127.0.0.1` = your machine, palmier is reachable,
+  `claude mcp add` works on restart, filesystem + localhost are yours. This
+  is where heavy MCP/automation power lives. Committed `.mcp.json` (below)
+  makes palmier auto-load there.
+- **Plane B — for web/claude.ai, expose things over public HTTPS.** A cloud
+  session can only reach the public internet (through the proxy), so:
+  - **Tunnel local tools**: `cloudflared tunnel` / `ngrok` / **Tailscale
+    Funnel** turns `127.0.0.1:19789` into a real `https://…` URL, then add
+    that as a **Custom Connector** in claude.ai settings. TLS is mandatory;
+    self-signed certs are refused.
+  - **Use hosted automation as the bridge**: **n8n (cloud) / Make / Zapier**
+    expose public webhooks my container *can* call. Claude does the
+    reasoning + generation; the webhook does the app-specific steps.
+
+### The dominant community pattern for exactly your goal
+
+Claude = brain, **n8n/Make = hands**. The widely-shared IG→UGC pipeline:
+
+```
+Apify Instagram Scraper  →  faster-whisper / AssemblyAI (transcribe)
+   (top reels + captions)          │
+                                    ▼
+        Notion / Google Sheets  ←  store transcripts + metrics
+                                    │
+                                    ▼
+   Claude (script writing) ── webhook ──►  n8n orchestrates render + publish
+```
+
+This works from **any** Claude (web or local) because n8n/Make/Zapier
+webhooks are public HTTPS — it sidesteps the localhost problem entirely.
+n8n even has an **n8n-MCP** so Claude can build/trigger the workflows.
+
+### IG-scrape replacement that works without those SaaS tools
+
+- **Terminal-native**: `yt-dlp` (downloads public reels/TikToks/YT by URL) +
+  `faster-whisper` (transcribe). Discovery/ranking of "best reels" still
+  needs an API (Apify) or manual URL curation. Note: from a datacenter IP
+  (this container) IG often blocks or demands cookies — so run the scrape
+  via **n8n+Apify**, and let Claude take the transcripts from there.
+
+### Notion
+
+Notion **is** connected to this session — I can stand up a content-calendar
+/ script database now (scripts, status, language, target reel, publish
+date) and write the generated scripts straight into it. Say the word.
+
+### Are the tools you listed "the best"? (honest take)
+
+- **Talking-head UGC**: Arcads / Creatify / HeyGen are stronger for ad-style
+  UGC than ugcdrop; ugcdrop is fine for cheap bulk.
+- **Captions / long→short**: Submagic and **Opus Clip** (klap alternative)
+  lead.
+- **Code video**: **Remotion** is the best free/deterministic option — it's
+  what we're building here.
+- **Scheduling**: Metricool + Buffer are proven; postoro is newer.
+- **Scrape**: Apify (managed) or yt-dlp+faster-whisper (free).
+- **Automation glue**: n8n (self-host/cloud) or Make; Zapier for breadth.
+
+Sources: community reports on Claude localhost/MCP limits and tunnels, and
+n8n/Make IG-scrape-transcribe workflows — see chat for links.
