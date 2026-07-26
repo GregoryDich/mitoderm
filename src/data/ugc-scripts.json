@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "note": "Render-ready UGC short scripts. Drafts — owner is copy-sensitive, edit freely. Consumed by the Remotion engine (remotion/) and readable in docs/ugc-scripts.md. On-screen text is trilingual (en/ru/he); vo is the spoken track to record or dub. Fps 30; durationInFrames = sum(scene.dur)*fps.",
+    "fps": 30,
+    "format": "1080x1920",
+    "brand": {
+      "bg": "#08080a",
+      "text": "#f5f2f0",
+      "accents": { "gold": "#dfba74", "teal": "#6fb7ba", "rose": "#b4607e" }
+    }
+  },
+  "scripts": [
+    {
+      "id": "vtech-unaware-hook",
+      "title": "What are exosomes?",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "unaware",
+      "accent": "gold",
+      "hook": {
+        "en": "Your skin cells send messages. This is the messenger.",
+        "ru": "Клетки кожи обмениваются сигналами. Это — их посыльный.",
+        "he": "תאי העור שולחים אותות. זה השליח."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Not a cream. A signal.", "ru": "Не крем. Сигнал.", "he": "לא קרם. אות." }, "vo": { "en": "This isn't skincare the way you think about it." } },
+        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Exosomes = cell messengers", "ru": "Экзосомы = посыльные клеток", "he": "אקזוסומים = שליחי התא" }, "vo": { "en": "Exosomes are tiny messengers your cells use to tell each other to repair." } },
+        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "+ 2% PDRN to power it", "ru": "+ 2% PDRN как топливо", "he": "+ 2% PDRN כדלק" }, "vo": { "en": "V-Tech pairs synthetic exosomes with two percent PDRN — the fuel for renewal." } },
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Ask your clinic for V-Tech", "ru": "Спросите V-Tech в клинике", "he": "בקשו V-Tech במרפאה" }, "vo": { "en": "Ask your practitioner about V-Tech." } }
+      ],
+      "cta": { "en": "Save this. Ask your clinic.", "ru": "Сохрани. Спроси в клинике.", "he": "שמור. שאל במרפאה." },
+      "caption": {
+        "en": "Exosomes, explained in 14 seconds. The messenger your skin already speaks. #exosomes #skincare",
+        "ru": "Экзосомы за 14 секунд. Язык, на котором кожа уже говорит. #экзосомы #уходзакожей",
+        "he": "אקזוסומים ב-14 שניות. השפה שהעור כבר מדבר. #אקזוסומים"
+      },
+      "hashtags": ["#exosomes", "#skincare", "#antiaging", "#mitoderm", "#vtech"]
+    },
+    {
+      "id": "vtech-problem-plateau",
+      "title": "Where creams stop",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "problem",
+      "accent": "gold",
+      "hook": {
+        "en": "If your serum stopped working, it's not you.",
+        "ru": "Если сыворотка перестала работать — дело не в тебе.",
+        "he": "אם הסרום הפסיק לעבוד — זה לא אתה."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "The plateau is real", "ru": "Плато существует", "he": "הרמה קיימת" }, "vo": { "en": "Every good routine hits a wall." } },
+        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Topicals sit on top", "ru": "Кремы остаются сверху", "he": "תכשירים נשארים למעלה" }, "vo": { "en": "Most topicals sit on the surface — they can't tell your cells to rebuild." } },
+        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "Exosomes speak cell-to-cell", "ru": "Экзосомы говорят клетка-клетке", "he": "אקזוסומים מדברים מתא לתא" }, "vo": { "en": "Exosomes work differently — they signal the cell itself." } },
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "That's the V-Tech difference", "ru": "В этом разница V-Tech", "he": "זה ההבדל של V-Tech" }, "vo": { "en": "That's why a professional exosome protocol restarts progress." } }
+      ],
+      "cta": { "en": "Book an exosome consult", "ru": "Запишись на консультацию", "he": "קבע ייעוץ" },
+      "caption": {
+        "en": "Hit a skincare plateau? Here's the biology of why — and what moves past it. #skincareplateau #exosomes",
+        "ru": "Плато в уходе? Вот биология причины — и что двигает дальше. #уходзакожей #экзосомы",
+        "he": "נתקעת ברמה? הנה הביולוגיה — ומה מזיז קדימה. #אקזוסומים"
+      },
+      "hashtags": ["#skincareplateau", "#exosomes", "#pdrn", "#mitoderm"]
+    },
+    {
+      "id": "vtech-mechanism",
+      "title": "How V-Tech works",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "solution",
+      "accent": "gold",
+      "hook": {
+        "en": "One ampoule. Three ways it rebuilds skin.",
+        "ru": "Одна ампула. Три пути обновления кожи.",
+        "he": "אמפולה אחת. שלוש דרכים לבנות עור."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "1 — Synthetic exosomes", "ru": "1 — Синтетические экзосомы", "he": "1 — אקזוסומים סינתטיים" }, "vo": { "en": "One: synthetic exosomes signal cellular renewal." } },
+        { "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "2 — 2% PDRN", "ru": "2 — 2% PDRN", "he": "2 — 2% PDRN" }, "vo": { "en": "Two: two percent PDRN drives repair and density." } },
+        { "dur": 3, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "3 — Peptides + stem cells", "ru": "3 — Пептиды + стволовые клетки", "he": "3 — פפטידים + תאי גזע" }, "vo": { "en": "Three: biomimetic peptides and plant stem cells reinforce and protect." } },
+        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "5 ml, single-use, in-clinic", "ru": "5 мл, разовая, в клинике", "he": "5 מ\"ל, חד-פעמי, במרפאה" }, "vo": { "en": "Five milliliters, single-use, for professional protocols." } }
+      ],
+      "cta": { "en": "For professional use — ask your clinic", "ru": "Для профи — спроси в клинике", "he": "לשימוש מקצועי — שאל במרפאה" },
+      "caption": {
+        "en": "The V-Tech serum, decoded: exosomes + PDRN + peptides in one 5 ml ampoule. #howitworks #exosomes",
+        "ru": "Сыворотка V-Tech по полочкам: экзосомы + PDRN + пептиды в 5 мл. #какработает #экзосомы",
+        "he": "סרום V-Tech מפוענח: אקזוסומים + PDRN + פפטידים ב-5 מ\"ל. #אקזוסומים"
+      },
+      "hashtags": ["#exosomes", "#pdrn", "#peptides", "#vtech", "#mitoderm"]
+    },
+    {
+      "id": "vtech-proof-firstsession",
+      "title": "From the first session",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "product",
+      "accent": "gold",
+      "hook": {
+        "en": "92% saw visible firming by session four.",
+        "ru": "92% увидели упругость к четвёртой процедуре.",
+        "he": "92% ראו מיצוק עד הטיפול הרביעי."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Firming from the first session", "ru": "Упругость с первой процедуры", "he": "מיצוק כבר מהטיפול הראשון" }, "vo": { "en": "Patients notice a difference from the first session." } },
+        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "92% visible firming · session 4", "ru": "92% упругости · процедура 4", "he": "92% מיצוק · טיפול 4" }, "vo": { "en": "In protocol, ninety-two percent reported visible firming by the fourth." } },
+        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "4–6 sessions · full course", "ru": "4–6 процедур · полный курс", "he": "4–6 טיפולים · קורס מלא" }, "vo": { "en": "A full course is four to six sessions, two weeks apart." } },
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Ask for the V-Tech protocol", "ru": "Спроси протокол V-Tech", "he": "בקש את פרוטוקול V-Tech" }, "vo": { "en": "Ask your clinic for the V-Tech protocol." } }
+      ],
+      "cta": { "en": "Book your first session", "ru": "Запишись на первую процедуру", "he": "קבע טיפול ראשון" },
+      "caption": {
+        "en": "Real protocol numbers: firming from session one, 92% by session four. #results #exosomes #skincare",
+        "ru": "Реальные цифры протокола: упругость с первой, 92% к четвёртой. #результаты #экзосомы",
+        "he": "מספרים אמיתיים: מיצוק מהטיפול הראשון, 92% ברביעי. #תוצאות"
+      },
+      "hashtags": ["#results", "#exosomes", "#skinfirming", "#mitoderm", "#vtech"]
+    },
+    {
+      "id": "vtech-pro-economics",
+      "title": "Grow your clinic",
+      "product": "v-tech-serum",
+      "audience": "practitioner",
+      "awareness": "solution",
+      "accent": "gold",
+      "hook": {
+        "en": "The treatment your clients ask for by name.",
+        "ru": "Процедура, которую клиенты просят по названию.",
+        "he": "הטיפול שהלקוחות מבקשים בשם."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Add exosomes to your menu", "ru": "Добавь экзосомы в меню", "he": "הוסף אקזוסומים לתפריט" }, "vo": { "en": "Exosome therapy is the fastest-growing ask in aesthetics." } },
+        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "~60–70% typical gross margin", "ru": "~60–70% типовая маржа", "he": "~60–70% רווח גולמי טיפוסי" }, "vo": { "en": "Per session margins are strong — and repeat over a full course." } },
+        { "dur": 4, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "Protocol + training included", "ru": "Протокол + обучение", "he": "פרוטוקול + הדרכה" }, "vo": { "en": "You get the protocol, the training, and a specialist on call." } },
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Become a V-Tech partner", "ru": "Стань партнёром V-Tech", "he": "הפוך לשותף V-Tech" }, "vo": { "en": "Become a V-Tech partner clinic." } }
+      ],
+      "cta": { "en": "Become a partner", "ru": "Стать партнёром", "he": "להפוך לשותף" },
+      "caption": {
+        "en": "Cosmetologists: exosome demand is here. Strong margins, full protocol, training. DM to partner. #aesthetics #clinicgrowth",
+        "ru": "Косметологам: спрос на экзосомы уже здесь. Маржа, протокол, обучение. В директ. #косметология",
+        "he": "לקוסמטיקאיות: הביקוש לאקזוסומים כאן. רווח, פרוטוקול, הדרכה. #קוסמטיקה"
+      },
+      "hashtags": ["#aesthetics", "#cosmetology", "#clinicgrowth", "#exosomes", "#mitoderm"]
+    },
+    {
+      "id": "vtech-pro-protocol",
+      "title": "1 + 1 = 3",
+      "product": "v-tech-serum",
+      "audience": "practitioner",
+      "awareness": "product",
+      "accent": "gold",
+      "hook": {
+        "en": "Serum plus mask. One plus one equals three.",
+        "ru": "Сыворотка плюс маска. Один плюс один — три.",
+        "he": "סרום ומסכה. אחד ועוד אחד שווה שלוש."
+      },
+      "scenes": [
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Step 1 — V-Tech Serum", "ru": "Шаг 1 — V-Tech сыворотка", "he": "שלב 1 — סרום V-Tech" }, "vo": { "en": "Step one: apply the V-Tech serum to cleansed skin." } },
+        { "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "Step 2 — V-Tech Gel Mask", "ru": "Шаг 2 — гель-маска V-Tech", "he": "שלב 2 — מסכת ג'ל V-Tech" }, "vo": { "en": "Step two: layer the V-Tech gel mask for fifteen to twenty minutes." } },
+        { "dur": 4, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "Occlusion drives it deeper", "ru": "Окклюзия — глубже проникновение", "he": "אוקלוזיה מחדירה עמוק יותר" }, "vo": { "en": "The mask's occlusion pushes the actives deeper — that's the one-plus-one-equals-three effect." } },
+        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Leave the serum on — don't rinse", "ru": "Сыворотку не смывай", "he": "אל תשטוף את הסרום" }, "vo": { "en": "Leave the serum on. Don't rinse." } }
+      ],
+      "cta": { "en": "Get the full protocol", "ru": "Получи полный протокол", "he": "קבל את הפרוטוקול המלא" },
+      "caption": {
+        "en": "The V-Tech protocol in 13s: serum + gel mask occlusion for the 1+1=3 effect. Save it. #protocol #aesthetics",
+        "ru": "Протокол V-Tech за 13с: сыворотка + окклюзия маской = 1+1=3. Сохрани. #протокол",
+        "he": "פרוטוקול V-Tech ב-13 שניות: סרום + מסכה = 1+1=3. שמור. #פרוטוקול"
+      },
+      "hashtags": ["#protocol", "#aesthetics", "#cosmetology", "#vtech", "#mitoderm"]
+    }
+  ]
+}

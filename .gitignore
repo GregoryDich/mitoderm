@@ -16,3 +16,6 @@ tsconfig.tsbuildinfo
 /playwright-report/
 /test-results/
 /.playwright/
+
+# Remotion render output
+/out
