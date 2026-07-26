@@ -1,12 +1,17 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import ProductPage from '@/components/Product/ProductPage';
+import ProductJourney, {
+  JourneyStrings,
+} from '@/components/Product/ProductJourney/ProductJourney';
 import JsonLd from '@/components/Seo/JsonLd';
 import { getProduct, products } from '@/products';
+import { getJourney } from '@/lib/journey';
 import { getPostsForProduct } from '@/posts';
 import { LocaleType } from '@/types';
 import { readDoctors } from '@/lib/doctors-store';
+import { productInquiryMessage, whatsappHref } from '@/lib/whatsapp';
 import {
   SITE_URL,
   SITE_NAME,
@@ -170,6 +175,32 @@ export default async function Page({
 
   const relatedPosts = getPostsForProduct(slug, lang, 2);
 
+  // Journey — the cinematic, scroll-driven top of the PDP for opted-in
+  // products (docs/product-funnel.md). Renders above the classic page,
+  // whose hero is suppressed so the two don't duplicate the hook.
+  const journey = getJourney(slug);
+  const waHref = whatsappHref(productInquiryMessage(c.name, lang));
+  let journeyStrings: JourneyStrings | null = null;
+  if (journey) {
+    const tj = await getTranslations({
+      locale: lang,
+      namespace: 'productJourney',
+    });
+    const tp = await getTranslations({ locale: lang, namespace: 'product' });
+    journeyStrings = {
+      scrollHint: tj('scrollHint'),
+      ctaContact: waHref ? tp('contactViaWhatsApp') : tp('contactForPrice'),
+      chapters: {
+        arrival: { kicker: tj('ch1Kicker'), title: tj('ch1Title') },
+        plateau: { kicker: tj('ch2Kicker'), title: tj('ch2Title') },
+        mechanism: { kicker: tj('ch3Kicker'), title: tj('ch3Title') },
+        product: { kicker: tj('ch4Kicker'), title: tj('ch4Title') },
+        proof: { kicker: tj('ch5Kicker'), title: tj('ch5Title') },
+        partner: { kicker: tj('ch6Kicker'), title: tj('ch6Title') },
+      },
+    };
+  }
+
   return (
     <main>
       <ProductPage
@@ -177,6 +208,17 @@ export default async function Page({
         locale={lang}
         trustedBy={doctors}
         relatedPosts={relatedPosts}
+        journeySlot={
+          journey && journeyStrings ? (
+            <ProductJourney
+              product={product}
+              locale={lang}
+              config={journey}
+              strings={journeyStrings}
+              waHref={waHref || undefined}
+            />
+          ) : undefined
+        }
       />
       <JsonLd id="ld-product" data={productLd} />
       <JsonLd id="ld-breadcrumb" data={breadcrumbsLd} />

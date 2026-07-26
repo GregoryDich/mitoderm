@@ -1,0 +1,11 @@
+{
+  "slug": "v-tech-serum",
+  "chapters": [
+    { "id": "arrival", "media": "/products/v-tech-system/hero.webp" },
+    { "id": "plateau", "media": "/products/v-tech-system/hero.webp" },
+    { "id": "mechanism", "media": "/products/v-tech-system/hero.webp" },
+    { "id": "product", "media": "/products/v-tech-system/hero.webp" },
+    { "id": "proof", "media": "/products/v-tech-system/hero.webp" },
+    { "id": "partner", "media": "/products/v-tech-system/hero.webp" }
+  ]
+}

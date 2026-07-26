@@ -1217,5 +1217,20 @@
   "waitlist": {
     "emailLabel": "Email address",
     "sending": "Adding…"
+  },
+  "productJourney": {
+    "scrollHint": "Scroll to begin",
+    "ch1Kicker": "01 — Arrival",
+    "ch1Title": "Not another serum",
+    "ch2Kicker": "02 — Your client’s plateau",
+    "ch2Title": "Where topicals stop",
+    "ch3Kicker": "03 — How it works",
+    "ch3Title": "Exosomes, made usable",
+    "ch4Kicker": "04 — In your hands",
+    "ch4Title": "The protocol you run",
+    "ch5Kicker": "05 — The proof",
+    "ch5Title": "What the chair shows",
+    "ch6Kicker": "06 — Join the table",
+    "ch6Title": "You won’t do it alone"
   }
 }

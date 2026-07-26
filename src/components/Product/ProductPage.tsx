@@ -29,6 +29,12 @@ interface Props {
   locale: LocaleType;
   trustedBy?: Doctor[];
   relatedPosts?: PostSummary[];
+  /** Optional cinematic Journey rendered at the very top of the scroll
+   *  container (inside `.pageScroll`, so it shares the same scroller as the
+   *  rest of the page — the site scrolls inside this element, not the
+   *  window). When present, the classic hero is suppressed to avoid
+   *  duplicating the hook. */
+  journeySlot?: ReactNode;
 }
 
 const accentVar: Record<ProductAccent, string> = {
@@ -92,7 +98,9 @@ const ProductPage: FC<Props> = ({
   locale,
   trustedBy = [],
   relatedPosts = [],
+  journeySlot,
 }) => {
+  const suppressHero = !!journeySlot;
   const t = useTranslations('product');
   const c = product.content[locale];
   const waHref = whatsappHref(productInquiryMessage(c.name, locale));
@@ -171,6 +179,9 @@ const ProductPage: FC<Props> = ({
         <span className={styles.glowB} />
       </div>
 
+      {journeySlot}
+
+      {!suppressHero && (
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <Link href="/catalog" className={styles.back}>
@@ -219,6 +230,7 @@ const ProductPage: FC<Props> = ({
           sizes="(max-width: 1024px) 100vw, 520px"
         />
       </section>
+      )}
 
       {trustedBy.length > 0 && (
         <TrustedByStrip doctors={trustedBy} label={t('trustedBy')} />
