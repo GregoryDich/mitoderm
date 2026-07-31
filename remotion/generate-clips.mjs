@@ -150,8 +150,14 @@ for (const id of ids) {
     const still = sourceStill(id, scene);
     // Kling grammar (docs/virality-rubric.md pt 6): subject/style first,
     // exactly ONE named camera move, stated LAST.
+    // Reframe (real product) scenes get MOTION-ONLY prompts: describing
+    // objects that aren't in the source frame makes i2v hallucinate them
+    // (a phantom jar appeared in a hand scene — owner caught it live).
     const camera = scene.camera || 'slow push-in over 5 seconds';
-    const prompt = `${scene.visual}. ${style.look}. Camera: ${camera}.`;
+    const prompt =
+      scene.keyframe === 'reframe'
+        ? `Subtle cinematic motion over this exact product shot. Do not add, remove, or transform any objects, packaging, or text. ${style.look}. Camera: ${camera}.`
+        : `${scene.visual}. ${style.look}. Camera: ${camera}.`;
     const out = path.join(outDir, `${scene.id}.mp4`);
     // Money guard: each clip costs real dollars — never regenerate an
     // existing one unless explicitly forced.

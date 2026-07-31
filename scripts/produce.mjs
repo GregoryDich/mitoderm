@@ -52,6 +52,24 @@ const run = (label, cmd, argv) => {
 // ---- Gate 0: rubric lint (free) -----------------------------------------
 run('Gate 0 — rubric lint', 'node', ['scripts/rubric-lint.mjs', scriptId]);
 
+// ---- Gate 0.5: Evidence Card (Evidence-Based Creation) ------------------
+// No idea spends money without showing its evidence, confidence and the
+// red-team case first. Paid stages require explicit --approve.
+const APPROVE = args.includes('--approve');
+{
+  const n = script.scenes.length;
+  console.log('\n━━ Gate 0.5 — Evidence Card');
+  console.log(`  hook:       ${script.hook?.en ?? '—'}`);
+  console.log(`  evidence:   ${script.evidence ?? '⚠ NONE — self-authored idea'}`);
+  console.log(`  confidence: ${script.confidence ?? '⚠ unset'}`);
+  console.log(`  red team:   ${script.adversarial ?? '⚠ not challenged'}`);
+  console.log(`  est. cost:  ~$${(n * 0.38 + 0.15).toFixed(2)} (frames + ${n} clips)`);
+  if (process.env.FAL_KEY && !APPROVE) {
+    console.log('\nPaid generation blocked: re-run with --approve after reviewing the card.');
+    process.exit(0);
+  }
+}
+
 // ---- Stage 1/2: generation (key-gated, graceful without) ----------------
 const hasImageKey = !!(
   process.env.FAL_KEY || process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY

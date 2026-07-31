@@ -24,6 +24,279 @@
   },
   "scripts": [
     {
+      "id": "mitoderm-doc-ugc",
+      "title": "Почему я перестала использовать обычные сыворотки (док-UGC)",
+      "product": "v-tech-serum",
+      "audience": "practitioner",
+      "awareness": "solution",
+      "accent": "gold",
+      "evidence": "Owner-authored production script (2026-07-31) + doc-UGC trust container per ClinicGrower med-spa playbook; face-first per tiktok-2026-07-31 scrape",
+      "confidence": 0.8,
+      "adversarial": "Talking-head lines carried by VO-over-footage (no lip-sync tool yet — HeyGen pending); t2i character consistency solved via single master portrait reused for i2v; 30s+ doc length needs strong beat pacing to hold retention.",
+      "characterFrame": "/ugc-frames/mitoderm-doc-ugc/master-portrait.png",
+      "hook": {
+        "en": "Honestly? I mostly stopped using regular serums.",
+        "ru": "Честно? Я почти перестала использовать обычные сыворотки.",
+        "he": "בכנות? כמעט הפסקתי להשתמש בסרומים רגילים."
+      },
+      "scenes": [
+        {
+          "id": "s1",
+          "dur": 3,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slight handheld drift",
+          "keyframe": "character",
+          "visual": "cosmetologist woman late 30s in a bright clinic room looking straight at camera, natural daylight, minimal makeup, honest documentary phone-shot feel, white walls, 9:16",
+          "onScreen": {
+            "en": "I stopped using regular serums",
+            "ru": "Я перестала пользоваться обычными сыворотками",
+            "he": "הפסקתי עם סרומים רגילים"
+          },
+          "vo": {
+            "ru": "Честно? Последние несколько месяцев я практически перестала использовать обычные сыворотки.",
+            "en": "Honestly? These past months I have mostly stopped using regular serums."
+          }
+        },
+        {
+          "id": "s2",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-right",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "keyframe": "reframe",
+          "visual": "V-Tech kit on clinic worktable",
+          "onScreen": {
+            "en": "Looking for what actually works",
+            "ru": "Искала то, что реально работает",
+            "he": "חיפשתי מה שבאמת עובד"
+          },
+          "vo": {
+            "ru": "Я искала решение, которое действительно работает в протоколах восстановления кожи.",
+            "en": "I was looking for something that actually works in skin-repair protocols."
+          }
+        },
+        {
+          "id": "s3",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-left",
+          "transition": "cut",
+          "camera": "over-the-shoulder, slight handheld",
+          "visual": "cosmetologist consulting a patient in bright clinic, examining facial skin, over-the-shoulder documentary angle, natural light, 9:16",
+          "onScreen": {
+            "en": "Science, not marketing",
+            "ru": "Наука, а не маркетинг",
+            "he": "מדע, לא שיווק"
+          },
+          "vo": {
+            "ru": "Меня интересовал не маркетинг, а научная база и воспроизводимые результаты.",
+            "en": "I cared about the science and reproducible results, not the marketing."
+          }
+        },
+        {
+          "id": "s4",
+          "dur": 4,
+          "media": "/products/v-tech-gel-mask/hero.png",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "locked-off macro close-up",
+          "keyframe": "reframe",
+          "visual": "V-Tech product macro",
+          "onScreen": {
+            "en": "Exosome Technology · Sterile · QC",
+            "ru": "Экзосомы · Стерильно · Контроль качества",
+            "he": "אקזוסומים · סטרילי · בקרת איכות"
+          },
+          "vo": {
+            "ru": "Профессиональное применение. Экзосомная технология. Стерильное производство.",
+            "en": "Professional use. Exosome technology. Sterile production."
+          }
+        },
+        {
+          "id": "s5",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "keyframe": "character",
+          "visual": "same cosmetologist preparing a treatment at the clinic table, calm precise hand movements, documentary daylight, 9:16",
+          "onScreen": {
+            "en": "Now in my working protocols",
+            "ru": "Теперь в моих рабочих протоколах",
+            "he": "עכשיו בפרוטוקולים שלי"
+          },
+          "vo": {
+            "ru": "Именно поэтому я включила продукты MITODERM в свои рабочие протоколы.",
+            "en": "That is why I brought MITODERM products into my working protocols."
+          }
+        },
+        {
+          "id": "s6",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-right",
+          "transition": "cut",
+          "camera": "glam beauty-light sweep (Glam)",
+          "visual": "calm glowing patient skin close-up after treatment, soft daylight, premium clinic detail, 9:16",
+          "onScreen": {
+            "en": "Recovery ✔ Comfort ✔ Protocol ✔",
+            "ru": "Восстановление ✔ Комфорт ✔ Протокол ✔",
+            "he": "התאוששות ✔ נוחות ✔ פרוטוקול ✔"
+          },
+          "vo": {
+            "ru": "Восстановление. Комфорт пациента. Современный профессиональный протокол.",
+            "en": "Recovery. Patient comfort. A modern professional protocol."
+          }
+        },
+        {
+          "id": "s7",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "push-up",
+          "transition": "dissolve",
+          "camera": "slow dolly in toward the face (Super Dolly In)",
+          "keyframe": "character",
+          "visual": "same cosmetologist close-up, warm confident look at camera, natural light, documentary, 9:16",
+          "onScreen": {
+            "en": "Worth studying this technology",
+            "ru": "Эту технологию стоит изучить",
+            "he": "שווה ללמוד את הטכנולוגיה"
+          },
+          "vo": {
+            "ru": "Если вы работаете в эстетической медицине — стоит хотя бы изучить эту технологию.",
+            "en": "If you work in aesthetic medicine, this technology is worth studying."
+          }
+        }
+      ],
+      "cta": {
+        "en": "Professional Solutions for Aesthetic Medicine",
+        "ru": "Профессиональные решения для эстетической медицины",
+        "he": "פתרונות מקצועיים לרפואה אסתטית"
+      },
+      "caption": {
+        "en": "Why I mostly stopped using regular serums — a practitioner’s honest take on exosome protocols. Learn more. #aestheticmedicine #exosomes #cosmetology #skinprotocol #mitoderm",
+        "ru": "Почему я почти перестала использовать обычные сыворотки — честный взгляд практика на экзосомные протоколы. #эстетическаямедицина #экзосомы #косметология #протокол #mitoderm",
+        "he": "למה כמעט הפסקתי עם סרומים רגילים — מבט כן של מטפלת על פרוטוקולי אקזוסומים. #רפואהאסתטית #אקזוסומים #mitoderm"
+      },
+      "hashtags": [
+        "#aestheticmedicine",
+        "#exosomes",
+        "#cosmetology",
+        "#skinprotocol",
+        "#mitoderm"
+      ]
+    },
+    {
+      "id": "vtech-pdrn-pov",
+      "title": "POV: your skin needs PDRN (evidence-based)",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "problem",
+      "accent": "gold",
+      "evidence": "src/data/trends/tiktok-2026-07-31.json — container pov-face-application-checklist (top-3: 1.6M/9x, 1.6M/7x, 1.0M/7x; no-VO winners)",
+      "hook": {
+        "en": "POV: your skin needs PDRN",
+        "ru": "POV: твоей коже нужен PDRN",
+        "he": "POV: העור שלך צריך PDRN"
+      },
+      "scenes": [
+        {
+          "id": "s1",
+          "dur": 2,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slight handheld drift",
+          "visual": "extreme macro close-up of a woman 38 forehead with fine lines, honest real skin texture, a slim silver applicator pointing at the lines, bright natural daylight, authentic phone-shot feel, 9:16",
+          "onScreen": {
+            "en": "POV: your skin needs PDRN",
+            "ru": "POV: коже нужен PDRN",
+            "he": "POV: העור צריך PDRN"
+          }
+        },
+        {
+          "id": "s2",
+          "dur": 2.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "locked-off macro close-up",
+          "visual": "macro of a golden serum drop being applied under the eye from a glass applicator, dewy skin, soft daylight, authentic beauty macro, 9:16",
+          "onScreen": {
+            "en": "2% PDRN. The repair signal.",
+            "ru": "2% PDRN. Сигнал восстановления.",
+            "he": "2% PDRN. אות התיקון."
+          }
+        },
+        {
+          "id": "s3",
+          "dur": 2.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-right",
+          "transition": "cut",
+          "camera": "glam beauty-light sweep (Glam)",
+          "visual": "radiant calm glowing cheek and jawline of the same woman, redness gone, dewy healthy glow, soft window light, beauty editorial, 9:16",
+          "onScreen": {
+            "en": "Barrier ✔ Redness ✔ Glow ✔",
+            "ru": "Барьер ✔ Краснота ✔ Сияние ✔",
+            "he": "מחסום ✔ אדמומיות ✔ זוהר ✔"
+          }
+        },
+        {
+          "id": "s4",
+          "dur": 2.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "keyframe": "reframe",
+          "visual": "V-Tech system kit, real packaging",
+          "onScreen": {
+            "en": "V-Tech: 2% PDRN + exosomes",
+            "ru": "V-Tech: 2% PDRN + экзосомы",
+            "he": "V-Tech: 2% PDRN + אקזוסומים"
+          }
+        },
+        {
+          "id": "s5",
+          "dur": 2,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "push-up",
+          "transition": "dissolve",
+          "camera": "slow dolly in toward the hands (Super Dolly In)",
+          "visual": "cosmetologist in white gloves preparing a treatment in a bright premium clinic, client relaxed in background bokeh, professional warm, 9:16",
+          "onScreen": {
+            "en": "In-clinic only",
+            "ru": "Только в клинике",
+            "he": "רק במרפאה"
+          }
+        }
+      ],
+      "cta": {
+        "en": "Ask your clinic for V-Tech",
+        "ru": "Спроси V-Tech в клинике",
+        "he": "בקשו V-Tech במרפאה"
+      },
+      "caption": {
+        "en": "POV: your skin has been asking for PDRN. Barrier repaired, redness down, glow back — the in-clinic way. #pdrn #skinbarrier #exosomes #skincare #mitoderm",
+        "ru": "POV: твоя кожа давно просит PDRN. Барьер, краснота, сияние — клинический путь. #pdrn #барьеркожи #экзосомы #уходзакожей #mitoderm",
+        "he": "POV: העור שלך מבקש PDRN. מחסום, אדמומיות, זוהר — בדרך הקלינית. #pdrn #אקזוסומים #mitoderm"
+      },
+      "hashtags": [
+        "#pdrn",
+        "#skinbarrier",
+        "#exosomes",
+        "#skincare",
+        "#mitoderm"
+      ],
+      "confidence": 0.85,
+      "adversarial": "(1) container proven for retail cream, ours is in-clinic — colder CTA; (2) t2i faces may read AI — mitigated with authentic phone-shot prompts; (3) no trending sound at render — owner adds rising audio at post time. Weakest link: CTA scene."
+    },
+    {
       "id": "vtech-unaware-hook",
       "title": "What are exosomes?",
       "product": "v-tech-serum",
@@ -138,7 +411,10 @@
         "#antiaging",
         "#pdrn",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     },
     {
       "id": "vtech-problem-plateau",
@@ -255,7 +531,10 @@
         "#pdrn",
         "#skinbarrier",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     },
     {
       "id": "vtech-mechanism",
@@ -375,7 +654,10 @@
         "#peptides",
         "#vtech",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     },
     {
       "id": "vtech-proof-firstsession",
@@ -475,7 +757,10 @@
         "#results",
         "#skincare",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     },
     {
       "id": "vtech-pro-economics",
@@ -575,7 +860,10 @@
         "#clinicgrowth",
         "#exosomes",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     },
     {
       "id": "vtech-pro-protocol",
@@ -675,7 +963,10 @@
         "#cosmetology",
         "#exosomes",
         "#mitoderm"
-      ]
+      ],
+      "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
+      "confidence": 0.55,
+      "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
     }
   ]
 }

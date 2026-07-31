@@ -157,6 +157,22 @@ for (const id of ids) {
       // Product scenes carry "keyframe": "reframe" — the REAL still gets
       // outpainted to native 9:16 instead of a t2i model inventing a fake
       // product. Everything else is generated from the visual prompt.
+      // 'character' scenes share ONE master portrait — the same face across
+      // the whole reel (t2i would invent a new woman per scene). First
+      // character scene generates the master; the rest reuse it; i2v then
+      // animates each scene differently.
+      if (scene.keyframe === 'character') {
+        const master = path.join(outDir, 'master-portrait.png');
+        if (!fs.existsSync(master)) {
+          process.stdout.write(`[master] ${scene.id} ... `);
+          const buf = await generate[backend](prompt);
+          fs.writeFileSync(master, buf);
+          console.log(`saved master ${(buf.length / 1e3).toFixed(0)} KB`);
+        }
+        fs.copyFileSync(master, out);
+        console.log(`[character] ${scene.id}: reuses master portrait`);
+        continue;
+      }
       if (scene.keyframe === 'reframe') {
         const still = path.join(root, 'public', scene.media.replace(/^\//, ''));
         process.stdout.write(`[reframe] ${scene.id} ... `);

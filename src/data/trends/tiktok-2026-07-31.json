@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-07-31",
+  "source": "apify clockworks/tiktok-scraper",
+  "queries": [
+    "exosome skincare",
+    "pdrn skin",
+    "salmon dna facial"
+  ],
+  "container_extracted": {
+    "name": "pov-face-application-checklist",
+    "evidence": "frames read from top-3 (no VO in any: music + burned text only)",
+    "beats": [
+      "extreme close-up of REAL face with visible problem (wrinkles/redness), first 0.5s",
+      "text hook: 'POV: your skin needs PDRN' / 'My damaged skin barrier'",
+      "APPLICATION shot: product touching skin (applicator, dots)",
+      "transformation glow + benefit checklist: Barrier OK / Redness down / Glow back",
+      "product reveal last; CTA in caption"
+    ],
+    "duration_band_s": [
+      11,
+      21
+    ],
+    "key_insight": "faces first, product second; NO voiceover in winners"
+  },
+  "top": [
+    {
+      "author": "albina",
+      "plays": 1600000,
+      "fans": 226000,
+      "ratio": 7.1,
+      "dur": 11,
+      "text": "Your skin need PDRN ✨\n\n#skin #skincare #anua #glow #kbeauty",
+      "url": "https://www.tiktok.com/@albina/video/7648684105575533844"
+    },
+    {
+      "author": "skinwithjen",
+      "plays": 1600000,
+      "fans": 182500,
+      "ratio": 8.8,
+      "dur": 21,
+      "text": "Red, sensitive skin? This Vegan PDRN cream calms it down + recharges hydration 🫧\n\nGrab it for a steal during Amazon Prim",
+      "url": "https://www.tiktok.com/@skinwithjen/video/7653416310428257556"
+    },
+    {
+      "author": "ailimee__",
+      "plays": 1000000,
+      "fans": 153100,
+      "ratio": 6.5,
+      "dur": 17,
+      "text": "Skin barrier repair ✔Redness down ✔Glow back ✔ \n\n@VT Cosmetics US VT PDRN Capsule Cream | Product gifted\n\n#vtcosmetics #",
+      "url": "https://www.tiktok.com/@ailimee__/video/7635756272704359702"
+    },
+    {
+      "author": "dermdoctor",
+      "plays": 534000,
+      "fans": 17900000,
+      "ratio": 0.0,
+      "dur": 51,
+      "text": "SALMON DNA…  IS IT WORTH THE HYPE? I'm pretty skeptical about PDRN products, but the magic is actually in this formulati",
+      "url": "https://www.tiktok.com/@dermdoctor/video/7576857471868849438"
+    },
+    {
+      "author": "xopeachy_keen",
+      "plays": 482200,
+      "fans": 68000,
+      "ratio": 7.1,
+      "dur": 19,
+      "text": "📌 When Korean Skincare Meets Technology\n\nProducts:\n-Link in my bio 🔗\n-Use [𝙆𝙀𝙀𝙉10] for 10% off your order*\n-Hydra Pen H6",
+      "url": "https://www.tiktok.com/@xopeachy_keen/video/7583125515351919879"
+    },
+    {
+      "author": "nicoule__________",
+      "plays": 376700,
+      "fans": 69000,
+      "ratio": 5.5,
+      "dur": 19,
+      "text": "@Hanskin 💗 🌟\navailable on Amazon and TikTok Shop ✨💗 🛍️\n\n#ShakePDRN #hanskin #skintok #koreanskincare #kbeauty ",
+      "url": "https://www.tiktok.com/@nicoule__________/video/7665154699414277397"
+    },
+    {
+      "author": "your.master.aesthetician",
+      "plays": 248700,
+      "fans": 3567,
+      "ratio": 69.7,
+      "dur": 70,
+      "text": "@PlatedSkinScience When @haileybieber mentions my favorite skincare line @platedskinscience it’s a good day to say the l",
+      "url": "https://www.tiktok.com/@your.master.aesthetician/video/7641581401912921358"
+    },
+    {
+      "author": "jasminnlily_",
+      "plays": 198600,
+      "fans": 1200000,
+      "ratio": 0.2,
+      "dur": 17,
+      "text": "Salmon DNA for glowy skin 🐟✨ @anua_global ad PDRN has become one of my essential skincare ingredients and this serum has",
+      "url": "https://www.tiktok.com/@jasminnlily_/video/7449450715438697750"
+    },
+    {
+      "author": "caressmd",
+      "plays": 176500,
+      "fans": 352800,
+      "ratio": 0.5,
+      "dur": 26,
+      "text": "glazed glowing skin using @VT Cosmetics US PDRN range available @Amazon for up to 70% off during black friday ad\n \nprodu",
+      "url": "https://www.tiktok.com/@caressmd/video/7576332420383771926"
+    },
+    {
+      "author": "mushumajed",
+      "plays": 164900,
+      "fans": 869800,
+      "ratio": 0.2,
+      "dur": 137,
+      "text": "هذا المكون بنشوفه في منتجات كثيرة السنة الجاية😍\nOp: @zakia \n@The INKEY List exosome hydro glow complex \n#skincare #exoso",
+      "url": "https://www.tiktok.com/@mushumajed/video/7590077433496292628"
+    }
+  ]
+}
