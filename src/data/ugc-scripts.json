@@ -359,6 +359,14 @@
             "en": "POV: your skin needs PDRN",
             "ru": "POV: коже нужен PDRN",
             "he": "POV: העור צריך PDRN"
+          },
+          "frames": {
+            "start": {
+              "prompt": "extreme close-up of a woman 38 looking at her reflection, honest tired skin with fine lines, natural window light, authentic phone-shot feel, 9:16"
+            },
+            "end": {
+              "editFromStart": "her expression softens into a gentle hopeful half-smile, light slightly warmer, everything else identical"
+            }
           }
         },
         {
@@ -373,6 +381,14 @@
             "en": "2% PDRN. The repair signal.",
             "ru": "2% PDRN. Сигнал восстановления.",
             "he": "2% PDRN. אות התיקון."
+          },
+          "frames": {
+            "start": {
+              "prompt": "macro of dewy glowing skin texture on a cheekbone with a single golden serum drop resting on the skin, soft daylight, 9:16"
+            },
+            "end": {
+              "editFromStart": "the golden drop has fully absorbed leaving a subtle glow trail, skin looks plumper, same framing"
+            }
           }
         },
         {
@@ -387,6 +403,14 @@
             "en": "Barrier ✔ Redness ✔ Glow ✔",
             "ru": "Барьер ✔ Краснота ✔ Сияние ✔",
             "he": "מחסום ✔ אדמומיות ✔ זוהר ✔"
+          },
+          "frames": {
+            "start": {
+              "prompt": "radiant calm glowing cheek and jawline of a woman, redness gone, dewy healthy glow, soft window light, beauty editorial, 9:16"
+            },
+            "end": {
+              "editFromStart": "camera slightly closer, glow more luminous, a soft light sweep across the skin, same person same angle"
+            }
           }
         },
         {
@@ -403,7 +427,16 @@
             "ru": "V-Tech: 2% PDRN + экзосомы",
             "he": "V-Tech: 2% PDRN + אקזוסומים"
           },
-          "editPrompt": "this exact V-Tech product kit standing open on a white marble bathroom shelf beside a small green plant, soft morning daylight from a window, dewy fresh atmosphere, premium skincare editorial"
+          "editPrompt": "this exact V-Tech product kit standing open on a white marble bathroom shelf beside a small green plant, soft morning daylight from a window, dewy fresh atmosphere, premium skincare editorial",
+          "frames": {
+            "start": {
+              "editOf": "/products/v-tech-system/hero.webp",
+              "prompt": "this exact V-Tech product kit standing open on a white marble bathroom shelf beside a small green plant, soft morning daylight, dewy atmosphere, premium skincare editorial, 9:16"
+            },
+            "end": {
+              "editFromStart": "camera moved slightly closer to the kit, morning light a touch warmer, tiny water droplets on the marble, same products identical"
+            }
+          }
         },
         {
           "id": "s5",
@@ -417,6 +450,14 @@
             "en": "In-clinic only",
             "ru": "Только в клинике",
             "he": "רק במרפאה"
+          },
+          "frames": {
+            "start": {
+              "prompt": "cosmetologist in white gloves preparing a treatment in a bright premium clinic, client relaxed in background bokeh, professional warm, 9:16"
+            },
+            "end": {
+              "editFromStart": "her hands have finished arranging the sterile tray, she begins to turn toward the client, same room same light"
+            }
           }
         }
       ],

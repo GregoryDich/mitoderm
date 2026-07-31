@@ -60,6 +60,22 @@ async function genFal(prompt) {
 // packaging (no letterbox voids — the owner read those as "square video").
 // Fallback: Ideogram v3 reframe ($0.03, black-void look).
 const MIME = { '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
+
+// nano-banana (Gemini) edit of any local image — the workhorse of the
+// start/end pair flow ($0.04/frame).
+async function genNanoEdit(filePath, prompt) {
+  const ext = path.extname(filePath).toLowerCase();
+  const uri = `data:${MIME[ext] || 'image/png'};base64,${fs.readFileSync(filePath).toString('base64')}`;
+  const j = await falQueue(
+    'fal-ai/nano-banana/edit',
+    { prompt: `${prompt} 9:16 vertical composition, 1080x1920.`, image_urls: [uri], num_images: 1 },
+    process.env.FAL_KEY,
+    { timeoutMin: 5 }
+  );
+  const url = j.images?.[0]?.url;
+  if (!url) throw new Error(`nano-edit: ${JSON.stringify(j).slice(0, 160)}`);
+  return downloadWithRetry(url);
+}
 async function genReframe(stillPath, envPrompt) {
   const ext = path.extname(stillPath).toLowerCase();
   const dataUri = `data:${MIME[ext] || 'image/png'};base64,${fs.readFileSync(stillPath).toString('base64')}`;
@@ -141,9 +157,58 @@ for (const id of ids) {
   const outDir = path.join(root, 'public/ugc-frames', id);
   fs.mkdirSync(outDir, { recursive: true });
   console.log(`\n=== ${id} (${script.scenes.length} scenes) ===`);
+  let prevEnd = null; // for chain: end of scene N feeds start of N+1
   for (const scene of script.scenes) {
     const prompt = fullPrompt(scene);
     const out = path.join(outDir, `${scene.id}.png`);
+
+    // ---- Storyboard 2.0: START/END frame pairs (owner-approved flow) ----
+    // start = nano-edit of a real photo OR t2i; end = nano-edit OF START
+    // (identity lock between the two); FLF video then interpolates.
+    if (scene.frames) {
+      const startOut = path.join(outDir, `${scene.id}-start.png`);
+      const endOut = path.join(outDir, `${scene.id}-end.png`);
+      if (!backend) {
+        console.log(`[dry] ${scene.id} START: ${scene.frames.start.prompt}`);
+        console.log(`[dry] ${scene.id} END(editFromStart): ${scene.frames.end.editFromStart}`);
+        continue;
+      }
+      try {
+        if (fs.existsSync(startOut) && !process.argv.includes('--force')) {
+          console.log(`[skip] ${scene.id}-start exists`);
+        } else if (scene.chain && prevEnd && fs.existsSync(prevEnd)) {
+          fs.copyFileSync(prevEnd, startOut);
+          console.log(`[chain] ${scene.id}-start = end of previous scene`);
+        } else if (scene.frames.start.editOf) {
+          const still = path.join(root, 'public', scene.frames.start.editOf.replace(/^\//, ''));
+          process.stdout.write(`[pair-start:edit] ${scene.id} ... `);
+          const buf = await genNanoEdit(still, `${scene.frames.start.prompt}. ${style.look}`);
+          fs.writeFileSync(startOut, buf);
+          console.log('saved');
+        } else {
+          process.stdout.write(`[pair-start:t2i] ${scene.id} ... `);
+          const buf = await generate[backend](`${scene.frames.start.prompt}. ${style.look}. Avoid: ${style.negative}.`);
+          fs.writeFileSync(startOut, buf);
+          console.log('saved');
+        }
+        if (fs.existsSync(endOut) && !process.argv.includes('--force')) {
+          console.log(`[skip] ${scene.id}-end exists`);
+        } else {
+          process.stdout.write(`[pair-end:edit] ${scene.id} ... `);
+          const buf = await genNanoEdit(startOut, `${scene.frames.end.editFromStart}. Keep everything else EXACTLY identical to the source image.`);
+          fs.writeFileSync(endOut, buf);
+          console.log('saved');
+        }
+        // старый одиночный слот = start (совместимость рендера/тумбнейла)
+        fs.copyFileSync(startOut, out);
+        prevEnd = endOut;
+      } catch (e) {
+        console.log(`FAILED: ${e.message}`);
+      }
+      continue;
+    }
+    prevEnd = null;
+
     if (!backend) {
       console.log(`[dry] ${scene.id}: ${prompt}`);
       continue;

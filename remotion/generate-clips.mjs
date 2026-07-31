@@ -65,6 +65,41 @@ function dataUri(file) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// First/last-frame интерполяция. Primary: Kling 2.5 (tail_image_url принят
+// схемой — проверено валидационной пробой). Бюджетный фоллбэк:
+// FLF_MODEL=fal-ai/pixverse/v4.5/transition ($0.05/сегмент).
+const FLF_MODEL = process.env.FLF_MODEL || 'fal-ai/kling-video/v2.5-turbo/pro/image-to-video';
+async function falFirstLast(prompt, startUri, endUri) {
+  const payload =
+    FLF_MODEL.includes('pixverse')
+      ? { prompt, first_image_url: startUri, last_image_url: endUri, aspect_ratio: '9:16', duration: 5 }
+      : { prompt, image_url: startUri, tail_image_url: endUri, duration: '5' };
+  const submit = await fetch(`https://queue.fal.run/${FLF_MODEL}`, {
+    method: 'POST',
+    headers: { Authorization: `Key ${KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!submit.ok) throw new Error(`flf submit ${submit.status}: ${await submit.text()}`);
+  const { request_id, status_url, response_url } = await submit.json();
+  process.stdout.write(`req=${request_id} `);
+  const deadline = Date.now() + 10 * 60 * 1000;
+  for (;;) {
+    if (Date.now() > deadline) throw new Error('flf poll timeout');
+    await sleep(6000);
+    let st;
+    try {
+      st = await (await fetch(status_url, { headers: { Authorization: `Key ${KEY}` } })).json();
+    } catch { continue; }
+    if (st.status === 'COMPLETED') break;
+    if (st.status === 'FAILED' || st.status === 'CANCELLED') throw new Error(`flf: ${st.status}`);
+    process.stdout.write('.');
+  }
+  const j = await (await fetch(response_url, { headers: { Authorization: `Key ${KEY}` } })).json();
+  const url = j.video?.url || j.videos?.[0]?.url;
+  if (!url) throw new Error(`flf: no video url: ${JSON.stringify(j).slice(0, 200)}`);
+  return downloadWithRetry(url);
+}
+
 // Queue API + polling: video models run for minutes — a held sync
 // connection through a proxy is fragile, the queue survives it. Per fal
 // billing docs, validation failures and 5xx are never charged.
@@ -170,6 +205,18 @@ for (const id of ids) {
       continue;
     }
     try {
+      // Storyboard 2.0: пара кадров -> интерполяция (владелец утверждает
+      // кадры до трат на видео; движение контролируемо, не выдумывается).
+      const startF = path.join(root, 'public/ugc-frames', id, `${scene.id}-start.png`);
+      const endF = path.join(root, 'public/ugc-frames', id, `${scene.id}-end.png`);
+      if (scene.frames && fs.existsSync(startF) && fs.existsSync(endF)) {
+        process.stdout.write(`[flf] ${scene.id} ... `);
+        const motionPrompt = `Smooth cinematic interpolation between the two frames, natural continuous motion, nothing added or removed. Camera: ${camera}.`;
+        const buf = await falFirstLast(motionPrompt, dataUri(startF), dataUri(endF));
+        fs.writeFileSync(out, buf);
+        console.log(`saved ${(buf.length / 1e6).toFixed(2)} MB -> ${path.relative(root, out)}`);
+        continue;
+      }
       process.stdout.write(`[fal] ${scene.id} ... `);
       const buf = await falImageToVideo(prompt, dataUri(still));
       fs.writeFileSync(out, buf);

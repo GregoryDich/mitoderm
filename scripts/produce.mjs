@@ -78,6 +78,30 @@ if (hasImageKey)
   run('Stage 1 — keyframes', 'node', ['remotion/generate-frames.mjs', scriptId]);
 else console.log('\n━━ Stage 1 — keyframes: no image key, using product stills');
 
+// ---- Gate 1a: контактный лист пар кадров (Storyboard 2.0) ---------------
+// Сценарий с frames-парами: владелец утверждает КАДРЫ до трат на видео.
+const usesPairs = script.scenes.some((sc) => sc.frames);
+if (usesPairs) {
+  const allPairs = script.scenes
+    .filter((sc) => sc.frames)
+    .every(
+      (sc) =>
+        fs.existsSync(path.join(root, 'public/ugc-frames', scriptId, `${sc.id}-start.png`)) &&
+        fs.existsSync(path.join(root, 'public/ugc-frames', scriptId, `${sc.id}-end.png`))
+    );
+  if (allPairs) {
+    run('Gate 1a — контактный лист (сверка кадров)', 'node', [
+      'scripts/contact-sheet.mjs', scriptId,
+    ]);
+    if (!YES) {
+      console.log(
+        `Сверь кадры: out/contact-${scriptId}.png\nПродолжить (видео-деньги): node scripts/produce.mjs ${scriptId} ${locale} --approve --yes [--hq]`
+      );
+      process.exit(0);
+    }
+  }
+}
+
 // --hq goes straight to Kling in Stage 3 — paying for LTX drafts on the
 // same run would overwrite the HQ clips and double-spend.
 if (process.env.FAL_KEY && !HQ)
