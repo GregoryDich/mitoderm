@@ -47,17 +47,21 @@ const FFMPEG = path.join(
   'node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg'
 );
 
+// Dedicated reel actor (apify/instagram-reel-scraper) — cleaner than the
+// general scraper for this job. NOTE (2026-07-31, live test): IG anti-bot
+// blocks Apify's FREE-tier proxy pool in waves ("Empty or private data");
+// auth+run+parse verified working — on a block, retry later or upgrade the
+// Apify plan for residential proxies.
+const ACTOR = 'apify~instagram-reel-scraper';
 const apifyInput = {
-  directUrls: CREATORS.map((u) => `https://www.instagram.com/${u}/`),
-  resultsType: 'posts',
+  username: CREATORS,
   resultsLimit: PER_CREATOR,
-  addParentData: false,
 };
 
 if (!APIFY) {
   console.log('[dry] APIFY_TOKEN not set. Would run:');
   console.log(
-    '  POST https://api.apify.com/v2/acts/apify~instagram-scraper/run-sync-get-dataset-items?token=***'
+    '  POST https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?token=***'
   );
   console.log('  input:', JSON.stringify(apifyInput, null, 2));
   console.log(
@@ -74,7 +78,7 @@ console.log(
   `[apify] scraping ${CREATORS.length} creators × ${PER_CREATOR} posts…`
 );
 const runRes = await fetch(
-  `https://api.apify.com/v2/acts/apify~instagram-scraper/run-sync-get-dataset-items?token=${APIFY}&timeout=300`,
+  `https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?token=${APIFY}&timeout=300`,
   {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
