@@ -55,25 +55,41 @@ async function genFal(prompt) {
   return downloadWithRetry(url);
 }
 
-// Real product still -> native 9:16 via generative reframe (outpaint).
-// Keeps the ACTUAL packaging (brand-safe) instead of letting a t2i model
-// invent a fake product. Ideogram v3 reframe: $0.03/image.
+// Real product still -> native 9:16 FULL-BLEED via generative expand.
+// Bria expand ($0.04) grows the actual ENVIRONMENT around the real
+// packaging (no letterbox voids — the owner read those as "square video").
+// Fallback: Ideogram v3 reframe ($0.03, black-void look).
 const MIME = { '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
-async function genReframe(stillPath) {
+async function genReframe(stillPath, envPrompt) {
   const ext = path.extname(stillPath).toLowerCase();
-  const b64 = fs.readFileSync(stillPath).toString('base64');
-  const j = await falQueue(
-    'fal-ai/ideogram/v3/reframe',
-    {
-      image_url: `data:${MIME[ext] || 'image/png'};base64,${b64}`,
-      image_size: { width: 1080, height: 1920 },
-    },
-    process.env.FAL_KEY,
-    { timeoutMin: 5 }
-  );
-  const url = j.images?.[0]?.url;
-  if (!url) throw new Error(`no image url: ${JSON.stringify(j).slice(0, 160)}`);
-  return downloadWithRetry(url);
+  const dataUri = `data:${MIME[ext] || 'image/png'};base64,${fs.readFileSync(stillPath).toString('base64')}`;
+  try {
+    const j = await falQueue(
+      'fal-ai/bria/expand',
+      {
+        image_url: dataUri,
+        canvas_size: [1080, 1920],
+        aspect_ratio: '9:16',
+        prompt: envPrompt,
+      },
+      process.env.FAL_KEY,
+      { timeoutMin: 5 }
+    );
+    const url = j.images?.[0]?.url ?? j.image?.url;
+    if (!url) throw new Error(`bria: no url: ${JSON.stringify(j).slice(0, 160)}`);
+    return await downloadWithRetry(url);
+  } catch (e) {
+    process.stdout.write(`[bria failed: ${String(e.message).slice(0, 60)}; ideogram] `);
+    const j = await falQueue(
+      'fal-ai/ideogram/v3/reframe',
+      { image_url: dataUri, image_size: { width: 1080, height: 1920 } },
+      process.env.FAL_KEY,
+      { timeoutMin: 5 }
+    );
+    const url = j.images?.[0]?.url;
+    if (!url) throw new Error(`no image url: ${JSON.stringify(j).slice(0, 160)}`);
+    return downloadWithRetry(url);
+  }
 }
 
 async function genOpenAI(prompt) {
@@ -144,7 +160,7 @@ for (const id of ids) {
       if (scene.keyframe === 'reframe') {
         const still = path.join(root, 'public', scene.media.replace(/^\//, ''));
         process.stdout.write(`[reframe] ${scene.id} ... `);
-        const buf = await genReframe(still);
+        const buf = await genReframe(still, `${scene.visual}. ${style.look}`);
         fs.writeFileSync(out, buf);
         console.log(`saved ${(buf.length / 1e3).toFixed(0)} KB -> ${path.relative(root, out)}`);
         continue;

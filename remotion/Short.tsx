@@ -125,6 +125,63 @@ const Visual: React.FC<{ source: Source; motion?: string; dur: number }> = ({
   );
 };
 
+/** Center word-pop captions — the native visual language of top reels:
+ *  words appear sequentially across the first ~55% of the beat, each with
+ *  a spring pop; key tokens (numbers/percent) take the accent color. */
+const WordPop: React.FC<{
+  text: string;
+  accent: string;
+  rtl: boolean;
+  durFrames: number;
+}> = ({ text, accent, rtl, durFrames }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const words = text.split(/\s+/).filter(Boolean);
+  const span = Math.max(durFrames * 0.5 - 4, 1);
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        insetInlineStart: 54,
+        insetInlineEnd: 54,
+        top: '58%',
+        direction: rtl ? 'rtl' : 'ltr',
+        textAlign: 'center',
+        fontFamily: FONT,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        columnGap: 18,
+        rowGap: 4,
+      }}
+    >
+      {words.map((w, i) => {
+        const appear = 3 + (i * span) / Math.max(words.length - 1, 1);
+        const s = spring({ frame: frame - appear, fps, config: { damping: 14, stiffness: 160 } });
+        const key = /[0-9%₪$]|—/.test(w);
+        return (
+          <span
+            key={i}
+            style={{
+              fontSize: 82,
+              lineHeight: 1.12,
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              color: key ? accent : '#ffffff',
+              opacity: Math.min(s * 1.4, 1),
+              transform: `scale(${interpolate(s, [0, 1], [1.35, 1])})`,
+              textShadow: '0 4px 26px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.9)',
+              display: 'inline-block',
+            }}
+          >
+            {w}
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
 const SceneView: React.FC<{
   scene: Scene;
   source: Source;
@@ -138,81 +195,51 @@ const SceneView: React.FC<{
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const rtl = locale === 'he';
-  const enter = spring({ frame: frame - 3, fps, config: { damping: 200 } });
-  const y = interpolate(enter, [0, 1], [40, 0]);
+  const enter = spring({ frame: frame - 2, fps, config: { damping: 200 } });
+  // Punch-in on every cut: 6-frame settle adds cut energy (rubric pacing).
+  const punch = interpolate(frame, [0, 6], [1.06, 1], {
+    extrapolateRight: 'clamp',
+  });
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#08080a' }}>
-      <Visual source={source} motion={scene.motion} dur={durFrames} />
+      <AbsoluteFill style={{ transform: `scale(${punch})` }}>
+        <Visual source={source} motion={scene.motion} dur={durFrames} />
+      </AbsoluteFill>
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(8,8,10,0.55) 0%, rgba(8,8,10,0.22) 38%, rgba(8,8,10,0.92) 100%)',
+            'linear-gradient(180deg, rgba(8,8,10,0.5) 0%, rgba(8,8,10,0.12) 40%, rgba(8,8,10,0.7) 100%)',
         }}
       />
       {isFirst && (
         <div
           style={{
             position: 'absolute',
-            insetInlineStart: 72,
-            insetInlineEnd: 72,
-            top: 150,
+            insetInlineStart: 60,
+            insetInlineEnd: 60,
+            top: 140,
             direction: rtl ? 'rtl' : 'ltr',
-            textAlign: rtl ? 'right' : 'left',
+            textAlign: 'center',
             fontFamily: FONT,
             color: '#f5f2f0',
-            fontSize: 60,
-            lineHeight: 1.1,
-            fontWeight: 700,
+            fontSize: 58,
+            lineHeight: 1.12,
+            fontWeight: 800,
             letterSpacing: '-0.02em',
             opacity: enter,
-            textShadow: '0 4px 30px rgba(0,0,0,0.6)',
+            textShadow: '0 4px 30px rgba(0,0,0,0.8)',
           }}
         >
           {hook}
         </div>
       )}
-      <div
-        style={{
-          position: 'absolute',
-          insetInlineStart: 72,
-          insetInlineEnd: 72,
-          bottom: 300,
-          direction: rtl ? 'rtl' : 'ltr',
-          textAlign: rtl ? 'right' : 'left',
-          fontFamily: FONT,
-          transform: `translateY(${y}px)`,
-          opacity: enter,
-        }}
-      >
-        <div
-          style={{
-            display: 'inline-block',
-            color: '#08080a',
-            background: accent,
-            padding: '4px 18px',
-            borderRadius: 999,
-            fontSize: 26,
-            fontWeight: 700,
-            letterSpacing: '0.14em',
-            marginBottom: 22,
-          }}
-        >
-          {String(index + 1).padStart(2, '0')}
-        </div>
-        <div
-          style={{
-            color: '#f5f2f0',
-            fontSize: 76,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            textShadow: '0 4px 30px rgba(0,0,0,0.65)',
-          }}
-        >
-          {scene.onScreen[locale]}
-        </div>
-      </div>
+      <WordPop
+        text={scene.onScreen[locale] ?? scene.onScreen.en}
+        accent={accent}
+        rtl={rtl}
+        durFrames={durFrames}
+      />
     </AbsoluteFill>
   );
 };
