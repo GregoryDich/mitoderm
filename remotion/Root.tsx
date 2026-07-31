@@ -21,6 +21,7 @@ export const RemotionRoot: React.FC = () => {
           sources: undefined,
           audioSrc: undefined,
           audioVolume: 0.35,
+          voSrcs: undefined,
         }}
         calculateMetadata={({ props }) => ({
           durationInFrames: totalDurationInFrames(props.scriptId),

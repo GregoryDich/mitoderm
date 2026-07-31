@@ -4,6 +4,7 @@ import {
   Audio,
   Img,
   OffthreadVideo,
+  Sequence,
   interpolate,
   spring,
   staticFile,
@@ -63,6 +64,24 @@ export const totalDurationInFrames = (scriptId: string): number => {
   const s = getScript(scriptId);
   const scenes = s.scenes.reduce((a, sc) => a + Math.round(sc.dur * FPS), 0);
   return scenes + END - transitionCount(s) * TRANSITION;
+};
+
+/** Absolute start frame of each scene on the timeline — a non-'cut'
+ *  transition overlaps the next sequence by TRANSITION frames. Used to
+ *  align per-scene voiceover; must mirror the TransitionSeries layout. */
+const sceneStarts = (s: Script): number[] => {
+  const starts: number[] = [];
+  let acc = 0;
+  s.scenes.forEach((sc, i) => {
+    if (i > 0) {
+      const prev = s.scenes[i - 1];
+      acc +=
+        Math.round(prev.dur * FPS) -
+        ((prev.transition ?? 'cut') !== 'cut' ? TRANSITION : 0);
+    }
+    starts.push(acc);
+  });
+  return starts;
 };
 
 // Ken-Burns transform for a scene, over its own local timeline.
@@ -255,10 +274,16 @@ export const Short: React.FC<{
   /** Path under public/ to a licensed music track; baked when provided. */
   audioSrc?: string;
   audioVolume?: number;
-}> = ({ scriptId, locale, sources, audioSrc, audioVolume = 0.35 }) => {
+  /** Per-scene voiceover mp3 paths under public/ (null = no VO for that
+   *  scene). Aligned to scene starts; music auto-ducks when present. */
+  voSrcs?: (string | null)[];
+}> = ({ scriptId, locale, sources, audioSrc, audioVolume = 0.35, voSrcs }) => {
   const script = getScript(scriptId);
   const accent = ACCENTS[script.accent] ?? ACCENTS.gold;
   const total = totalDurationInFrames(script.id);
+  const starts = sceneStarts(script);
+  const hasVo = !!voSrcs?.some(Boolean);
+  const musicVol = hasVo ? audioVolume * 0.45 : audioVolume; // duck under VO
 
   const resolved: Source[] = script.scenes.map(
     (sc, i) =>
@@ -304,13 +329,24 @@ export const Short: React.FC<{
           src={staticFile(audioSrc)}
           loop
           volume={(f) =>
-            audioVolume *
+            musicVol *
             interpolate(f, [0, 15, total - 30, total], [0, 1, 1, 0], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             })
           }
         />
+      )}
+      {voSrcs?.map((src, i) =>
+        src ? (
+          <Sequence
+            key={`vo${i}`}
+            from={starts[i]}
+            durationInFrames={Math.round(script.scenes[i].dur * FPS) + TRANSITION}
+          >
+            <Audio src={staticFile(src)} volume={0.95} />
+          </Sequence>
+        ) : null
       )}
       <Progress accent={accent} />
     </AbsoluteFill>

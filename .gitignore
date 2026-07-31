@@ -21,3 +21,4 @@ tsconfig.tsbuildinfo
 /out
 /public/ugc-clips
 /public/ugc-frames
+/public/ugc-vo

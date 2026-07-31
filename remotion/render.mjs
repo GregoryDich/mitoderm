@@ -64,12 +64,25 @@ const sources = script.scenes.map((sc) => {
 const kinds = sources.map((s) => s.type[0]).join('');
 console.log(`[sources] ${scriptId}: ${kinds} (v=clip,i=frame/still)`);
 
+// Per-scene voiceover: public/ugc-vo/<id>/<locale>/<sceneId>.mp3 (falls
+// back to the EN take when the locale has none).
+const voSrcs = script.scenes.map((sc) => {
+  for (const loc of [locale, 'en']) {
+    const rel = `ugc-vo/${scriptId}/${loc}/${sc.id}.mp3`;
+    if (fs.existsSync(path.join(root, 'public', rel))) return rel;
+  }
+  return null;
+});
+const voCount = voSrcs.filter(Boolean).length;
+if (voCount) console.log(`[vo] ${voCount}/${script.scenes.length} scenes voiced`);
+
 const inputProps = {
   scriptId,
   locale,
   sources,
   audioSrc,
   audioVolume: audioCfg?.volume ?? 0.35,
+  voSrcs,
 };
 const composition = await selectComposition({
   serveUrl: bundleLocation,
