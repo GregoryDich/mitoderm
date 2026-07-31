@@ -16,6 +16,7 @@
 // cannot approve the Firefly/HF MCP image tools).
 import fs from 'node:fs';
 import path from 'node:path';
+import { falQueue, downloadWithRetry } from './fal-utils.mjs';
 
 const root = process.cwd();
 const data = JSON.parse(
@@ -39,24 +40,40 @@ const backend = process.env.FAL_KEY
 const fullPrompt = (scene) =>
   `${scene.visual}. Style: ${style.look}. ${style.aspect}. No text or logos. Avoid: ${style.negative}.`;
 
+// Text-to-image keyframe. Default flux/dev ($0.025/img, proven look);
+// override with FAL_IMAGE_MODEL (e.g. a stronger model) without code edits.
+const IMAGE_MODEL = process.env.FAL_IMAGE_MODEL || 'fal-ai/flux/dev';
 async function genFal(prompt) {
-  const r = await fetch('https://fal.run/fal-ai/flux/dev', {
-    method: 'POST',
-    headers: {
-      Authorization: `Key ${process.env.FAL_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      prompt,
-      image_size: { width: 1080, height: 1920 },
-      num_images: 1,
-    }),
-  });
-  if (!r.ok) throw new Error(`fal ${r.status}: ${await r.text()}`);
-  const j = await r.json();
+  const j = await falQueue(
+    IMAGE_MODEL,
+    { prompt, image_size: { width: 1080, height: 1920 }, num_images: 1 },
+    process.env.FAL_KEY,
+    { timeoutMin: 5 }
+  );
   const url = j.images?.[0]?.url;
-  const img = await fetch(url);
-  return Buffer.from(await img.arrayBuffer());
+  if (!url) throw new Error(`no image url: ${JSON.stringify(j).slice(0, 160)}`);
+  return downloadWithRetry(url);
+}
+
+// Real product still -> native 9:16 via generative reframe (outpaint).
+// Keeps the ACTUAL packaging (brand-safe) instead of letting a t2i model
+// invent a fake product. Ideogram v3 reframe: $0.03/image.
+const MIME = { '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
+async function genReframe(stillPath) {
+  const ext = path.extname(stillPath).toLowerCase();
+  const b64 = fs.readFileSync(stillPath).toString('base64');
+  const j = await falQueue(
+    'fal-ai/ideogram/v3/reframe',
+    {
+      image_url: `data:${MIME[ext] || 'image/png'};base64,${b64}`,
+      image_size: { width: 1080, height: 1920 },
+    },
+    process.env.FAL_KEY,
+    { timeoutMin: 5 }
+  );
+  const url = j.images?.[0]?.url;
+  if (!url) throw new Error(`no image url: ${JSON.stringify(j).slice(0, 160)}`);
+  return downloadWithRetry(url);
 }
 
 async function genOpenAI(prompt) {
@@ -121,6 +138,17 @@ for (const id of ids) {
       continue;
     }
     try {
+      // Product scenes carry "keyframe": "reframe" — the REAL still gets
+      // outpainted to native 9:16 instead of a t2i model inventing a fake
+      // product. Everything else is generated from the visual prompt.
+      if (scene.keyframe === 'reframe') {
+        const still = path.join(root, 'public', scene.media.replace(/^\//, ''));
+        process.stdout.write(`[reframe] ${scene.id} ... `);
+        const buf = await genReframe(still);
+        fs.writeFileSync(out, buf);
+        console.log(`saved ${(buf.length / 1e3).toFixed(0)} KB -> ${path.relative(root, out)}`);
+        continue;
+      }
       process.stdout.write(`[${backend}] ${scene.id} ... `);
       const buf = await generate[backend](prompt);
       fs.writeFileSync(out, buf);
