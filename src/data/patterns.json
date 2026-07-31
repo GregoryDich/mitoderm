@@ -2,7 +2,11 @@
   "meta": {
     "note": "Pattern Genome lite — reusable MECHANISMS, not examples (store the why, not the artifact). Consumed by script-writing: pick one hook archetype + one container per reel, camera phrases go verbatim into scene.camera. Confidence per July-2026 research sweep (docs/virality-rubric.md sources); re-validate quarterly — patterns age.",
     "updated": "2026-07-31",
-    "maturity_levels": ["hypothesis", "validated", "canonical"]
+    "maturity_levels": [
+      "hypothesis",
+      "validated",
+      "canonical"
+    ]
   },
   "hooks": [
     {
@@ -77,16 +81,76 @@
     }
   ],
   "camera": [
-    { "phrase": "slow push-in over 5 seconds", "preset": "Super Dolly In", "feel": "intimacy, focus", "when": "hero product, faces", "confidence": 0.9 },
-    { "phrase": "crash zoom in", "preset": "Crash Zoom In", "feel": "urgency, punch", "when": "hooks, reveals", "confidence": 0.85 },
-    { "phrase": "slow orbit clockwise, max 30 degrees", "preset": "360 Orbit (partial)", "feel": "premium showcase", "when": "packshots", "confidence": 0.85 },
-    { "phrase": "slow dolly right", "preset": "Dolly Right", "feel": "progress, journey", "when": "step sequences", "confidence": 0.8 },
-    { "phrase": "focus change from foreground to subject", "preset": "Focus Change", "feel": "discovery", "when": "macro droplets, ingredient shots", "confidence": 0.85 },
-    { "phrase": "glam beauty-light sweep (Glam)", "preset": "Glam", "feel": "luxury skin glow", "when": "skin close-ups", "confidence": 0.8 },
-    { "phrase": "slight handheld drift", "preset": "Handheld", "feel": "authenticity, UGC", "when": "testimonial/portrait beats", "confidence": 0.85 },
-    { "phrase": "locked-off macro close-up", "preset": "Static", "feel": "clinical precision", "when": "diagrams, texture — max one per reel", "confidence": 0.8 },
-    { "phrase": "slow crane up", "preset": "Crane Up", "feel": "scale, arrival", "when": "clinic/space establishing", "confidence": 0.75 },
-    { "phrase": "slow push-in through the gel layer (Through Object)", "preset": "Through Object In", "feel": "penetration/absorption metaphor", "when": "occlusion & actives beats", "confidence": 0.75 }
+    {
+      "phrase": "slow push-in over 5 seconds",
+      "preset": "Super Dolly In",
+      "feel": "intimacy, focus",
+      "when": "hero product, faces",
+      "confidence": 0.9
+    },
+    {
+      "phrase": "crash zoom in",
+      "preset": "Crash Zoom In",
+      "feel": "urgency, punch",
+      "when": "hooks, reveals",
+      "confidence": 0.85
+    },
+    {
+      "phrase": "slow orbit clockwise, max 30 degrees",
+      "preset": "360 Orbit (partial)",
+      "feel": "premium showcase",
+      "when": "packshots",
+      "confidence": 0.85
+    },
+    {
+      "phrase": "slow dolly right",
+      "preset": "Dolly Right",
+      "feel": "progress, journey",
+      "when": "step sequences",
+      "confidence": 0.8
+    },
+    {
+      "phrase": "focus change from foreground to subject",
+      "preset": "Focus Change",
+      "feel": "discovery",
+      "when": "macro droplets, ingredient shots",
+      "confidence": 0.85
+    },
+    {
+      "phrase": "glam beauty-light sweep (Glam)",
+      "preset": "Glam",
+      "feel": "luxury skin glow",
+      "when": "skin close-ups",
+      "confidence": 0.8
+    },
+    {
+      "phrase": "slight handheld drift",
+      "preset": "Handheld",
+      "feel": "authenticity, UGC",
+      "when": "testimonial/portrait beats",
+      "confidence": 0.85
+    },
+    {
+      "phrase": "locked-off macro close-up",
+      "preset": "Static",
+      "feel": "clinical precision",
+      "when": "diagrams, texture — max one per reel",
+      "confidence": 0.8
+    },
+    {
+      "phrase": "slow crane up",
+      "preset": "Crane Up",
+      "feel": "scale, arrival",
+      "when": "clinic/space establishing",
+      "confidence": 0.75
+    },
+    {
+      "phrase": "slow push-in through the gel layer (Through Object)",
+      "preset": "Through Object In",
+      "feel": "penetration/absorption metaphor",
+      "when": "occlusion & actives beats",
+      "confidence": 0.75
+    }
   ],
   "grammar_rules": [
     "One named camera move per clip — two moves confuse the model.",
@@ -95,10 +159,35 @@
     "Subject → environment → action → lighting → style → camera (Kling order)."
   ],
   "negative": [
-    { "id": "logo-intro", "mechanism": "Branding in frame 1 signals 'ad' — instant scroll.", "confidence": 0.9 },
-    { "id": "static-over-4s", "mechanism": "Any shot >4s without visual change is the top drop-off trigger.", "confidence": 0.85 },
-    { "id": "hashtag-stuffing", "mechanism": ">5 hashtags is hard-capped by IG (Dec 2025) and reads as spam.", "confidence": 0.95 },
-    { "id": "spoken-cta-midvideo", "mechanism": "Verbal CTA inside the video body kills retention; CTA belongs in caption/comments.", "confidence": 0.8 },
-    { "id": "trending-commercial-audio-business", "mechanism": "Business accounts can't legally use trending commercial audio — mute-risk + takedowns; bake licensed tracks at render.", "confidence": 0.95 }
+    {
+      "id": "logo-intro",
+      "mechanism": "Branding in frame 1 signals 'ad' — instant scroll.",
+      "confidence": 0.9
+    },
+    {
+      "id": "static-over-4s",
+      "mechanism": "Any shot >4s without visual change is the top drop-off trigger.",
+      "confidence": 0.85
+    },
+    {
+      "id": "hashtag-stuffing",
+      "mechanism": ">5 hashtags is hard-capped by IG (Dec 2025) and reads as spam.",
+      "confidence": 0.95
+    },
+    {
+      "id": "spoken-cta-midvideo",
+      "mechanism": "Verbal CTA inside the video body kills retention; CTA belongs in caption/comments.",
+      "confidence": 0.8
+    },
+    {
+      "id": "trending-commercial-audio-business",
+      "mechanism": "Business accounts can't legally use trending commercial audio — mute-risk + takedowns; bake licensed tracks at render.",
+      "confidence": 0.95
+    },
+    {
+      "id": "object-touching-face",
+      "mechanism": "i2v physics of tool-to-skin contact is the weakest spot of current models — applicator near an eye reads instantly as AI (owner caught a 'brush poking the eyeball').",
+      "confidence": 0.95
+    }
   ]
 }

@@ -15,14 +15,156 @@
     "style": {
       "look": "cinematic clinical-luxury skincare, deep near-black background, warm gold key light with soft rim light, shallow depth of field, premium editorial, subtle film grain",
       "aspect": "9:16 vertical, 1080x1920",
-      "negative": "text, watermark, logo, deformed hands, extra fingers, low quality, cluttered, busy background, invented product packaging, fictional jars or bottles"
+      "negative": "text, watermark, logo, deformed hands, extra fingers, low quality, cluttered, busy background, invented product packaging, fictional jars or bottles, objects touching the face, applicators or pipettes near eyes, tools poking skin"
     },
     "audio": {
       "music": "/audio/ugc/minimal-pulse.mp3",
       "volume": 0.35
+    },
+    "grade": {
+      "warmth": 0.1,
+      "vignette": 0.28
     }
   },
   "scripts": [
+    {
+      "id": "mitoderm-hybrid-01",
+      "title": "Гибрид: реальная съёмка + ИИ-сборка (реплики владельца)",
+      "product": "v-tech-serum",
+      "audience": "practitioner",
+      "awareness": "solution",
+      "accent": "gold",
+      "pacing": "doc",
+      "evidence": "Owner doc-script (REELS №001 lines) + real phone footage per docs/shotlist-hybrid.md — hybrid lane chosen by owner after AI-only ceiling",
+      "confidence": 0.9,
+      "adversarial": "Quality now depends on footage quality (light/stability); talking scene needs either selfie take or HeyGen fallback; voice must be human recording, not TTS.",
+      "hook": {
+        "en": "Honestly, I stopped picking products by pretty promises.",
+        "ru": "Если честно, я перестала выбирать препараты по красивым обещаниям.",
+        "he": "בכנות, הפסקתי לבחור מוצרים לפי הבטחות יפות."
+      },
+      "scenes": [
+        {
+          "id": "s1",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "real footage: selfie talking (shot 9)",
+          "visual": "REAL: селфи-реплика из шот-листа",
+          "onScreen": {
+            "en": "No more pretty promises",
+            "ru": "Хватит красивых обещаний",
+            "he": "די להבטחות יפות"
+          },
+          "vo": {
+            "ru": "Если честно, я перестала выбирать препараты только по красивым обещаниям."
+          }
+        },
+        {
+          "id": "s2",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-right",
+          "transition": "cut",
+          "camera": "real footage: unboxing (shot 2)",
+          "visual": "REAL: открытие коробки",
+          "onScreen": {
+            "en": "Clear technology. Real QC.",
+            "ru": "Понятная технология. Контроль качества.",
+            "he": "טכנולוגיה ברורה. בקרת איכות."
+          },
+          "vo": {
+            "ru": "Сегодня для меня важнее понятная технология, качество производства и предсказуемый протокол."
+          }
+        },
+        {
+          "id": "s3",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-left",
+          "transition": "cut",
+          "camera": "real footage: consult (shot 8)",
+          "visual": "REAL: консультация со спины",
+          "onScreen": {
+            "en": "Patients trust the result",
+            "ru": "Пациенты доверяют результату",
+            "he": "מטופלים סומכים על התוצאה"
+          },
+          "vo": {
+            "ru": "Пациенты доверяют мне результат. Поэтому я внимательно выбираю, с чем работаю."
+          }
+        },
+        {
+          "id": "s4",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "real footage: ampoule macro (shot 3)",
+          "visual": "REAL: ампула в руке",
+          "onScreen": {
+            "en": "Professional Use · QC",
+            "ru": "Professional Use · Контроль качества",
+            "he": "שימוש מקצועי · בקרה"
+          },
+          "vo": {
+            "ru": "Профессиональное применение. Контроль качества. Регенеративная технология."
+          }
+        },
+        {
+          "id": "s5",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "real footage: prep (shot 7)",
+          "visual": "REAL: набор препарата",
+          "onScreen": {
+            "en": "Part of my protocols",
+            "ru": "Часть моих протоколов",
+            "he": "חלק מהפרוטוקולים שלי"
+          },
+          "vo": {
+            "ru": "MITODERM стал частью моих профессиональных протоколов — потому что для меня важны качество, безопасность и доверие пациентов."
+          }
+        },
+        {
+          "id": "s6",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "push-up",
+          "transition": "dissolve",
+          "camera": "real footage: smile (shot 10)",
+          "visual": "REAL: взгляд в камеру",
+          "onScreen": {
+            "en": "Study the technology yourself",
+            "ru": "Изучите технологию сами",
+            "he": "תלמדו את הטכנולוגיה בעצמכם"
+          },
+          "vo": {
+            "ru": "Если вы работаете в эстетической медицине — изучите технологию сами. Именно так начинаются правильные решения."
+          }
+        }
+      ],
+      "cta": {
+        "en": "Professional Solutions for Aesthetic Medicine",
+        "ru": "Профессиональные решения для эстетической медицины",
+        "he": "פתרונות מקצועיים לרפואה אסתטית"
+      },
+      "caption": {
+        "en": "Why professionals stopped choosing by promises — quality, safety, predictable protocols. #aestheticmedicine #exosomes #cosmetology #protocol #mitoderm",
+        "ru": "Почему профессионалы перестали выбирать по обещаниям — качество, безопасность, предсказуемый протокол. #эстетическаямедицина #экзосомы #косметология #протокол #mitoderm",
+        "he": "למה מקצוענים הפסיקו לבחור לפי הבטחות. #רפואהאסתטית #אקזוסומים #mitoderm"
+      },
+      "hashtags": [
+        "#aestheticmedicine",
+        "#exosomes",
+        "#cosmetology",
+        "#protocol",
+        "#mitoderm"
+      ]
+    },
     {
       "id": "mitoderm-doc-ugc",
       "title": "Почему я перестала использовать обычные сыворотки (док-UGC)",
@@ -212,7 +354,7 @@
           "motion": "zoom-in",
           "transition": "cut",
           "camera": "slight handheld drift",
-          "visual": "extreme macro close-up of a woman 38 forehead with fine lines, honest real skin texture, a slim silver applicator pointing at the lines, bright natural daylight, authentic phone-shot feel, 9:16",
+          "visual": "extreme close-up of a woman 38 looking at her reflection, honest tired skin with fine lines, natural window light, authentic phone-shot feel, no objects near the face, 9:16",
           "onScreen": {
             "en": "POV: your skin needs PDRN",
             "ru": "POV: коже нужен PDRN",
@@ -226,7 +368,7 @@
           "motion": "zoom-in",
           "transition": "cut",
           "camera": "locked-off macro close-up",
-          "visual": "macro of a golden serum drop being applied under the eye from a glass applicator, dewy skin, soft daylight, authentic beauty macro, 9:16",
+          "visual": "macro of dewy glowing skin texture on a cheekbone with a single golden serum drop resting on the skin, soft daylight, no tools or applicators, 9:16",
           "onScreen": {
             "en": "2% PDRN. The repair signal.",
             "ru": "2% PDRN. Сигнал восстановления.",

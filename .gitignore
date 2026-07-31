@@ -23,3 +23,4 @@ tsconfig.tsbuildinfo
 /public/ugc-frames
 /public/ugc-vo
 /.heygen-cache.json
+/public/footage/incoming

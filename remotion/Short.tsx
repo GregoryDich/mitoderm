@@ -56,6 +56,9 @@ type Source = {
 const FPS = 30;
 const TRANSITION = 12; // frames
 const END = 75; // 2.5s end card
+const GRADE: { warmth: number; vignette: number } =
+  (data as { meta?: { grade?: { warmth: number; vignette: number } } }).meta
+    ?.grade ?? { warmth: 0, vignette: 0 };
 const ACCENTS: Record<string, string> = { gold: '#dfba74', teal: '#6fb7ba', rose: '#b4607e' };
 const FONT = '"Inter","Helvetica Neue","Segoe UI",system-ui,-apple-system,sans-serif';
 
@@ -174,14 +177,16 @@ const WordPop: React.FC<{
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        columnGap: 18,
-        rowGap: 4,
+        columnGap: 26,
+        rowGap: 6,
       }}
     >
       {words.map((w, i) => {
         const appear = 3 + (i * span) / Math.max(words.length - 1, 1);
         const s = spring({ frame: frame - appear, fps, config: { damping: 14, stiffness: 160 } });
         const key = /[0-9%₪$]|—/.test(w);
+        // Pop via rise+small scale — a big scale overshoot visually merged
+        // neighbouring words mid-animation ("вклинике" bug).
         return (
           <span
             key={i}
@@ -192,7 +197,8 @@ const WordPop: React.FC<{
               letterSpacing: '-0.02em',
               color: key ? accent : '#ffffff',
               opacity: Math.min(s * 1.4, 1),
-              transform: `scale(${interpolate(s, [0, 1], [1.35, 1])})`,
+              transform: `translateY(${interpolate(s, [0, 1], [18, 0])}px) scale(${interpolate(s, [0, 1], [1.12, 1])})`,
+              transformOrigin: 'center bottom',
               textShadow: '0 4px 26px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.9)',
               display: 'inline-block',
             }}
@@ -235,30 +241,28 @@ const SceneView: React.FC<{
             'linear-gradient(180deg, rgba(8,8,10,0.5) 0%, rgba(8,8,10,0.12) 40%, rgba(8,8,10,0.7) 100%)',
         }}
       />
-      {isFirst && (
-        <div
-          style={{
-            position: 'absolute',
-            insetInlineStart: 60,
-            insetInlineEnd: 60,
-            top: 140,
-            direction: rtl ? 'rtl' : 'ltr',
-            textAlign: 'center',
-            fontFamily: FONT,
-            color: '#f5f2f0',
-            fontSize: 58,
-            lineHeight: 1.12,
-            fontWeight: 800,
-            letterSpacing: '-0.02em',
-            opacity: enter,
-            textShadow: '0 4px 30px rgba(0,0,0,0.8)',
-          }}
-        >
-          {hook}
-        </div>
-      )}
+      {/* Unified grade: one warm wash + vignette over EVERY source (real
+          footage or AI) so scenes stop reading as different videos. */}
+      <AbsoluteFill
+        style={{
+          background: `rgba(223, 186, 116, ${GRADE.warmth})`,
+          mixBlendMode: 'soft-light',
+          pointerEvents: 'none',
+        }}
+      />
+      <AbsoluteFill
+        style={{
+          background: `radial-gradient(ellipse 90% 75% at 50% 45%, transparent 55%, rgba(0,0,0,${GRADE.vignette}) 100%)`,
+          pointerEvents: 'none',
+        }}
+      />
+      {/* Scene 1 shows ONE text element — the hook as the center word-pop.
+          Hook overlay + onScreen used to duplicate the same message twice
+          on the opening frame (owner caught it). */}
       <WordPop
-        text={scene.onScreen[locale] ?? scene.onScreen.en}
+        text={
+          isFirst ? hook : scene.onScreen[locale] ?? scene.onScreen.en
+        }
         accent={accent}
         rtl={rtl}
         durFrames={durFrames}
