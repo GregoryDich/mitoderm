@@ -479,7 +479,11 @@
         "#mitoderm"
       ],
       "confidence": 0.85,
-      "adversarial": "(1) container proven for retail cream, ours is in-clinic — colder CTA; (2) t2i faces may read AI — mitigated with authentic phone-shot prompts; (3) no trending sound at render — owner adds rising audio at post time. Weakest link: CTA scene."
+      "adversarial": "(1) container proven for retail cream, ours is in-clinic — colder CTA; (2) t2i faces may read AI — mitigated with authentic phone-shot prompts; (3) no trending sound at render — owner adds rising audio at post time. Weakest link: CTA scene.",
+      "audio": {
+        "music": "/audio/ugc/sugarsnaps-fit14.mp3",
+        "volume": 0.35
+      }
     },
     {
       "id": "vtech-unaware-hook",

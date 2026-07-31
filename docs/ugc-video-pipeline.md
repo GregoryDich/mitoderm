@@ -268,7 +268,30 @@ script: `docs/virality-rubric.md`. Repo nodes: `scripts/trends-scrape.mjs`
 
 **Себестоимость ролика ≈ $1.5–2** (5 клипов × $0.35 + сборка/субтитры $0).
 Музыка: лицензионная только (бизнес-аккаунты не могут брать трендовые
-коммерческие треки) — Pixabay free сейчас, Epidemic ~$25/мес позже.
+коммерческие треки) — **Epidemic Sound подключён** (см. ниже).
+
+### 🎵 Epidemic Sound — музыкальный узел (LIVE)
+
+Токен владельца с `epidemicsound.com/account/api-keys` — это ключ их
+**MCP-сервера** `www.epidemicsound.com/a/mcp-service/mcp` (Apollo GraphQL
+bridge), НЕ partner-content-api (тот отвечает 401). Живёт 30 дней —
+перевыпускать на той же странице. Env: `EPIDEMIC_TOKEN` (только env, не в
+репо). Узел: `scripts/fetch-music.mjs`:
+
+- `search "<term>"` — топ треков (инструментал по умолчанию) + preview URL;
+- `get <id> --fit <sec> --name <slug> --set <scriptId>` — **EditRecording**:
+  их AI-аранжировщик пересобирает трек под длину рила (муз. концовка вместо
+  фейда, макс 300s), скачивает MP3 320kbps в `public/audio/ugc/`
+  (gitignored — лицензионный ассет подписки) и прописывает
+  `script.audio.music`;
+- `vo "<text>" --voice <id> --lang ru` — **TTS голосами артистов ES**,
+  34 языка вкл. русский (проверено live) — запасной RU-голос вместо
+  ElevenLabs free (там только EN-премейды);
+- `voices [lang]` — ростер голосов.
+
+Статусы генераций ES: `GENERATING → DONE` (не COMPLETED). Download edit —
+`{jobId, editId}`. Первый прогон: Sugarsnaps (Ennio Máno, 112bpm) пересобран
+в 16.7s под 13.6s-рил `vtech-pdrn-pov`, запечён в рендер (aac-дорожка).
 
 ### Проверенные блюпринты-источники
 - Front half: [n8n #12045 — Viral IG Reels → scripts (Apify+Whisper+LLM)](https://n8n.io/workflows/12045-transform-viral-instagram-reels-into-original-scripts-with-ai-perplexity-and-apify/)

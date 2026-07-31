@@ -24,3 +24,4 @@ tsconfig.tsbuildinfo
 /public/ugc-vo
 /.heygen-cache.json
 /public/footage/incoming
+/public/audio/ugc/
