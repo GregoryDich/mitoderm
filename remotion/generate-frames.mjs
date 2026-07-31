@@ -115,6 +115,11 @@ for (const id of ids) {
       console.log(`[dry] ${scene.id}: ${prompt}`);
       continue;
     }
+    // Money guard: don't regenerate an existing frame unless forced.
+    if (fs.existsSync(out) && !process.argv.includes('--force')) {
+      console.log(`[skip] ${scene.id}: frame exists (--force to regenerate)`);
+      continue;
+    }
     try {
       process.stdout.write(`[${backend}] ${scene.id} ... `);
       const buf = await generate[backend](prompt);

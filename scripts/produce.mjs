@@ -60,11 +60,15 @@ if (hasImageKey)
   run('Stage 1 — keyframes', 'node', ['remotion/generate-frames.mjs', scriptId]);
 else console.log('\n━━ Stage 1 — keyframes: no image key, using product stills');
 
-if (process.env.FAL_KEY)
+// --hq goes straight to Kling in Stage 3 — paying for LTX drafts on the
+// same run would overwrite the HQ clips and double-spend.
+if (process.env.FAL_KEY && !HQ)
   run('Stage 2 — draft clips (LTX-2)', 'node', [
     'remotion/generate-clips.mjs', scriptId, '--draft',
   ]);
-else console.log('━━ Stage 2 — draft clips: no FAL_KEY, stills-only draft');
+else if (!HQ)
+  console.log('━━ Stage 2 — draft clips: no FAL_KEY, stills-only draft');
+else console.log('━━ Stage 2 — skipped (--hq goes straight to Kling)');
 
 run('Stage 2 — draft render', 'node', ['remotion/render.mjs', scriptId, locale]);
 

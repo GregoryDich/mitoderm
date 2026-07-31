@@ -63,8 +63,13 @@ function dataUri(file) {
   return `data:${MIME[ext] || 'image/png'};base64,${b64}`;
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Queue API + polling: video models run for minutes — a held sync
+// connection through a proxy is fragile, the queue survives it. Per fal
+// billing docs, validation failures and 5xx are never charged.
 async function falImageToVideo(prompt, imageUri) {
-  const r = await fetch(`https://fal.run/${MODEL}`, {
+  const submit = await fetch(`https://queue.fal.run/${MODEL}`, {
     method: 'POST',
     headers: { Authorization: `Key ${KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -74,12 +79,59 @@ async function falImageToVideo(prompt, imageUri) {
       aspect_ratio: '9:16',
     }),
   });
-  if (!r.ok) throw new Error(`fal ${r.status}: ${await r.text()}`);
-  const j = await r.json();
+  if (!submit.ok) throw new Error(`fal submit ${submit.status}: ${await submit.text()}`);
+  const { request_id, status_url, response_url } = await submit.json();
+  process.stdout.write(`req=${request_id} `);
+
+  const deadline = Date.now() + 10 * 60 * 1000;
+  for (;;) {
+    if (Date.now() > deadline) throw new Error('fal: 10min poll timeout');
+    await sleep(6000);
+    let st;
+    try {
+      const r = await fetch(status_url, { headers: { Authorization: `Key ${KEY}` } });
+      st = await r.json();
+    } catch {
+      continue; // transient proxy hiccup — keep polling
+    }
+    if (st.status === 'COMPLETED') break;
+    if (st.status === 'FAILED' || st.status === 'CANCELLED')
+      throw new Error(`fal: ${st.status}`);
+    process.stdout.write('.');
+  }
+  const res = await fetch(response_url, { headers: { Authorization: `Key ${KEY}` } });
+  const j = await res.json();
   const url = j.video?.url || j.videos?.[0]?.url;
-  if (!url) throw new Error('fal: no video url in response');
-  const v = await fetch(url);
-  return Buffer.from(await v.arrayBuffer());
+  if (!url) throw new Error(`fal: no video url: ${JSON.stringify(j).slice(0, 200)}`);
+  return downloadWithRetry(url);
+}
+
+// The clip is already PAID FOR by the time we download it — never lose it
+// to a transient proxy 503. Node-fetch through the agent proxy flakes where
+// curl succeeds (seen live with Apify), so fall back to curl, with backoff.
+async function downloadWithRetry(url, attempts = 4) {
+  const { execFileSync } = await import('node:child_process');
+  const os = await import('node:os');
+  for (let i = 0; i < attempts; i++) {
+    if (i > 0) await sleep(2000 * 2 ** i);
+    try {
+      const v = await fetch(url);
+      if (v.ok) return Buffer.from(await v.arrayBuffer());
+      process.stdout.write(`[dl ${v.status}] `);
+    } catch (e) {
+      process.stdout.write('[dl err] ');
+    }
+    try {
+      const tmp = path.join(os.tmpdir(), `fal-dl-${i}.bin`);
+      execFileSync('curl', ['-sS', '-f', '-m', '120', '-o', tmp, url], { stdio: 'pipe' });
+      const buf = fs.readFileSync(tmp);
+      fs.rmSync(tmp, { force: true });
+      if (buf.length > 1000) return buf;
+    } catch {
+      process.stdout.write('[curl err] ');
+    }
+  }
+  throw new Error(`download failed after ${attempts} attempts: ${url.slice(0, 80)}`);
 }
 
 for (const id of ids) {
@@ -87,14 +139,26 @@ for (const id of ids) {
   if (!script) continue;
   const outDir = path.join(root, 'public/ugc-clips', id);
   fs.mkdirSync(outDir, { recursive: true });
-  console.log(`\n=== ${id} (${script.scenes.length} scenes, model ${MODEL}) ===`);
-  for (const scene of script.scenes) {
+  // --only s1  → generate a single scene (cheap probe before batching)
+  const onlyIdx = args.indexOf('--only');
+  const only = onlyIdx >= 0 ? args[onlyIdx + 1] : null;
+  const scenes = only
+    ? script.scenes.filter((s) => s.id === only)
+    : script.scenes;
+  console.log(`\n=== ${id} (${scenes.length} scenes, model ${MODEL}) ===`);
+  for (const scene of scenes) {
     const still = sourceStill(id, scene);
     // Kling grammar (docs/virality-rubric.md pt 6): subject/style first,
     // exactly ONE named camera move, stated LAST.
     const camera = scene.camera || 'slow push-in over 5 seconds';
     const prompt = `${scene.visual}. ${style.look}. Camera: ${camera}.`;
     const out = path.join(outDir, `${scene.id}.mp4`);
+    // Money guard: each clip costs real dollars — never regenerate an
+    // existing one unless explicitly forced.
+    if (fs.existsSync(out) && !args.includes('--force')) {
+      console.log(`[skip] ${scene.id}: clip exists (--force to regenerate)`);
+      continue;
+    }
     if (!KEY) {
       console.log(`[dry] ${scene.id}: still=${path.relative(root, still)}\n        prompt="${prompt}"`);
       continue;
