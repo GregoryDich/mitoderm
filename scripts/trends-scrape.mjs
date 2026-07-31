@@ -61,7 +61,7 @@ const apifyInput = {
 if (!APIFY) {
   console.log('[dry] APIFY_TOKEN not set. Would run:');
   console.log(
-    '  POST https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?token=***'
+    `  POST https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?token=***`
   );
   console.log('  input:', JSON.stringify(apifyInput, null, 2));
   console.log(
