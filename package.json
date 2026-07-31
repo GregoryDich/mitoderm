@@ -19,7 +19,9 @@
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install --with-deps chromium",
     "remotion:studio": "remotion studio remotion/index.ts",
-    "remotion:render": "node remotion/render.mjs"
+    "remotion:render": "node remotion/render.mjs",
+    "ugc:frames": "node remotion/generate-frames.mjs",
+    "ugc:clips": "node remotion/generate-clips.mjs"
   },
   "dependencies": {
     "@next/env": "^15.1.0",
@@ -39,6 +41,7 @@
     "@remotion/bundler": "^4.0.499",
     "@remotion/cli": "^4.0.499",
     "@remotion/renderer": "^4.0.499",
+    "@remotion/transitions": "^4.0.503",
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^20",
     "@types/react": "^18",

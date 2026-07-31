@@ -15,9 +15,13 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1080}
         height={1920}
-        defaultProps={{ scriptId: 'vtech-mechanism', locale: 'en' as const }}
+        defaultProps={{
+          scriptId: 'vtech-mechanism',
+          locale: 'en' as const,
+          sources: undefined,
+        }}
         calculateMetadata={({ props }) => ({
-          durationInFrames: totalDurationInFrames(props.scriptId, FPS),
+          durationInFrames: totalDurationInFrames(props.scriptId),
         })}
       />
     </>

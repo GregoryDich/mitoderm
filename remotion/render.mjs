@@ -37,7 +37,24 @@ const bundleLocation = await bundle({
 });
 process.stdout.write('\n');
 
-const inputProps = { scriptId, locale };
+// Resolve one visual source per scene: generated clip > generated frame >
+// product still. Frames/clips are dropped in by generate-frames/clips scripts
+// (or higgsfield/Kling exports into public/ugc-clips/<id>/<sceneId>.mp4).
+const scripts = JSON.parse(
+  fs.readFileSync(path.join(root, 'src/data/ugc-scripts.json'), 'utf8')
+).scripts;
+const script = scripts.find((s) => s.id === scriptId) || scripts[0];
+const sources = script.scenes.map((sc) => {
+  const clip = path.join(root, 'public/ugc-clips', scriptId, `${sc.id}.mp4`);
+  const frame = path.join(root, 'public/ugc-frames', scriptId, `${sc.id}.png`);
+  if (fs.existsSync(clip)) return { type: 'video', src: `ugc-clips/${scriptId}/${sc.id}.mp4` };
+  if (fs.existsSync(frame)) return { type: 'image', src: `ugc-frames/${scriptId}/${sc.id}.png` };
+  return { type: 'image', src: sc.media.replace(/^\//, '') };
+});
+const kinds = sources.map((s) => s.type[0]).join('');
+console.log(`[sources] ${scriptId}: ${kinds} (v=clip,i=frame/still)`);
+
+const inputProps = { scriptId, locale, sources };
 const composition = await selectComposition({
   serveUrl: bundleLocation,
   id: 'Short',

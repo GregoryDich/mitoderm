@@ -2,88 +2,124 @@ import React from 'react';
 import {
   AbsoluteFill,
   Img,
-  Sequence,
+  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
+import {
+  TransitionSeries,
+  linearTiming,
+} from '@remotion/transitions';
+import { fade } from '@remotion/transitions/fade';
+import { slide } from '@remotion/transitions/slide';
+import { wipe } from '@remotion/transitions/wipe';
 import data from '../src/data/ugc-scripts.json';
 
-// ---- types (loose — the JSON is the source of truth) --------------------
 type Locale = 'en' | 'ru' | 'he';
 type L = Record<Locale, string>;
-type Scene = { dur: number; media: string; onScreen: L; vo?: { en: string } };
+type Scene = {
+  id: string;
+  dur: number;
+  media: string;
+  motion?: string;
+  transition?: string;
+  onScreen: L;
+};
 type Script = {
   id: string;
-  title: string;
   accent: 'gold' | 'teal' | 'rose';
-  audience: string;
   hook: L;
   scenes: Scene[];
   cta: L;
 };
+// One resolved visual source per scene, chosen at render time (clip > frame > still).
+type Source = { type: 'video' | 'image'; src: string };
 
-const ACCENTS: Record<string, string> = {
-  gold: '#dfba74',
-  teal: '#6fb7ba',
-  rose: '#b4607e',
-};
-
-const FONT =
-  '"Inter", "Helvetica Neue", "Segoe UI", system-ui, -apple-system, sans-serif';
+const FPS = 30;
+const TRANSITION = 12; // frames
+const END = 75; // 2.5s end card
+const ACCENTS: Record<string, string> = { gold: '#dfba74', teal: '#6fb7ba', rose: '#b4607e' };
+const FONT = '"Inter","Helvetica Neue","Segoe UI",system-ui,-apple-system,sans-serif';
 
 export const getScript = (id: string): Script =>
   (data.scripts as unknown as Script[]).find((s) => s.id === id) ??
   (data.scripts[0] as unknown as Script);
 
-// ---- one scene ----------------------------------------------------------
+export const totalDurationInFrames = (scriptId: string): number => {
+  const s = getScript(scriptId);
+  const scenes = s.scenes.reduce((a, sc) => a + Math.round(sc.dur * FPS), 0);
+  return scenes + END - s.scenes.length * TRANSITION;
+};
+
+// Ken-Burns transform for a scene, over its own local timeline.
+const kenBurns = (motion: string | undefined, frame: number, dur: number) => {
+  const p = interpolate(frame, [0, dur], [0, 1], { extrapolateRight: 'clamp' });
+  switch (motion) {
+    case 'zoom-out':
+      return `scale(${interpolate(p, [0, 1], [1.18, 1.05])})`;
+    case 'pan-left':
+      return `scale(1.14) translateX(${interpolate(p, [0, 1], [3, -3])}%)`;
+    case 'pan-right':
+      return `scale(1.14) translateX(${interpolate(p, [0, 1], [-3, 3])}%)`;
+    case 'push-up':
+      return `scale(1.14) translateY(${interpolate(p, [0, 1], [3, -3])}%)`;
+    case 'zoom-in':
+    default:
+      return `scale(${interpolate(p, [0, 1], [1.05, 1.18])})`;
+  }
+};
+
+const Visual: React.FC<{ source: Source; motion?: string; dur: number }> = ({
+  source,
+  motion,
+  dur,
+}) => {
+  const frame = useCurrentFrame();
+  const transform = kenBurns(motion, frame, dur);
+  const style: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  };
+  return (
+    <AbsoluteFill style={{ transform }}>
+      {source.type === 'video' ? (
+        <OffthreadVideo src={staticFile(source.src)} muted style={style} />
+      ) : (
+        <Img src={staticFile(source.src)} style={style} />
+      )}
+    </AbsoluteFill>
+  );
+};
+
 const SceneView: React.FC<{
   scene: Scene;
+  source: Source;
   accent: string;
   locale: Locale;
   index: number;
   isFirst: boolean;
   hook: string;
-}> = ({ scene, accent, locale, index, isFirst, hook }) => {
+  durFrames: number;
+}> = ({ scene, source, accent, locale, index, isFirst, hook, durFrames }) => {
   const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
+  const { fps } = useVideoConfig();
   const rtl = locale === 'he';
-
-  // slow Ken-Burns push on the media
-  const scale = interpolate(frame, [0, durationInFrames], [1.06, 1.16], {
-    extrapolateRight: 'clamp',
-  });
-
-  // text rises + fades in
-  const enter = spring({ frame: frame - 4, fps, config: { damping: 200 } });
-  const y = interpolate(enter, [0, 1], [44, 0]);
-  const textOut = interpolate(
-    frame,
-    [durationInFrames - 8, durationInFrames],
-    [1, 0],
-    { extrapolateLeft: 'clamp' }
-  );
+  const enter = spring({ frame: frame - 3, fps, config: { damping: 200 } });
+  const y = interpolate(enter, [0, 1], [40, 0]);
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#08080a' }}>
-      <AbsoluteFill style={{ transform: `scale(${scale})` }}>
-        <Img
-          src={staticFile(scene.media.replace(/^\//, ''))}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-      </AbsoluteFill>
-
-      {/* legibility veil */}
+      <Visual source={source} motion={scene.motion} dur={durFrames} />
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(8,8,10,0.55) 0%, rgba(8,8,10,0.25) 38%, rgba(8,8,10,0.92) 100%)',
+            'linear-gradient(180deg, rgba(8,8,10,0.55) 0%, rgba(8,8,10,0.22) 38%, rgba(8,8,10,0.92) 100%)',
         }}
       />
-
-      {/* hook (first scene only), top */}
       {isFirst && (
         <div
           style={{
@@ -106,8 +142,6 @@ const SceneView: React.FC<{
           {hook}
         </div>
       )}
-
-      {/* on-screen line, lower third */}
       <div
         style={{
           position: 'absolute',
@@ -118,7 +152,7 @@ const SceneView: React.FC<{
           textAlign: rtl ? 'right' : 'left',
           fontFamily: FONT,
           transform: `translateY(${y}px)`,
-          opacity: Math.min(enter, textOut),
+          opacity: enter,
         }}
       >
         <div
@@ -131,7 +165,6 @@ const SceneView: React.FC<{
             fontSize: 26,
             fontWeight: 700,
             letterSpacing: '0.14em',
-            textTransform: 'uppercase',
             marginBottom: 22,
           }}
         >
@@ -154,7 +187,6 @@ const SceneView: React.FC<{
   );
 };
 
-// ---- end card -----------------------------------------------------------
 const EndCard: React.FC<{ cta: string; accent: string; locale: Locale }> = ({
   cta,
   accent,
@@ -163,7 +195,6 @@ const EndCard: React.FC<{ cta: string; accent: string; locale: Locale }> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({ frame, fps, config: { damping: 200 } });
-  const rtl = locale === 'he';
   return (
     <AbsoluteFill
       style={{
@@ -171,76 +202,84 @@ const EndCard: React.FC<{ cta: string; accent: string; locale: Locale }> = ({
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: FONT,
-        direction: rtl ? 'rtl' : 'ltr',
+        direction: locale === 'he' ? 'rtl' : 'ltr',
       }}
     >
       <div style={{ opacity: s, transform: `scale(${interpolate(s, [0, 1], [0.9, 1])})`, textAlign: 'center', padding: 80 }}>
-        <div style={{ color: '#f5f2f0', fontSize: 68, fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-          {cta}
-        </div>
+        <div style={{ color: '#f5f2f0', fontSize: 68, fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.02em' }}>{cta}</div>
         <div style={{ marginTop: 40, display: 'inline-block', height: 6, width: 120, background: accent, borderRadius: 6 }} />
-        <div style={{ marginTop: 40, color: 'rgba(245,242,240,0.6)', fontSize: 30, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-          Mitoderm
-        </div>
+        <div style={{ marginTop: 40, color: 'rgba(245,242,240,0.6)', fontSize: 30, letterSpacing: '0.2em', textTransform: 'uppercase' }}>Mitoderm</div>
       </div>
     </AbsoluteFill>
   );
 };
 
-// ---- progress bar -------------------------------------------------------
 const Progress: React.FC<{ accent: string }> = ({ accent }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
-  const w = interpolate(frame, [0, durationInFrames], [0, 100], {
-    extrapolateRight: 'clamp',
-  });
+  const w = interpolate(frame, [0, durationInFrames], [0, 100], { extrapolateRight: 'clamp' });
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 8, background: 'rgba(255,255,255,0.12)' }}>
+    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 8, background: 'rgba(255,255,255,0.12)', zIndex: 10 }}>
       <div style={{ height: '100%', width: `${w}%`, background: accent }} />
     </div>
   );
 };
 
-// ---- composition --------------------------------------------------------
-export const Short: React.FC<{ scriptId: string; locale: Locale }> = ({
-  scriptId,
-  locale,
-}) => {
-  const { fps } = useVideoConfig();
+const presentation = (t: string | undefined) => {
+  switch (t) {
+    case 'slide-left':
+      return slide({ direction: 'from-right' });
+    case 'wipe-up':
+      return wipe({ direction: 'from-bottom' });
+    case 'dissolve':
+    default:
+      return fade();
+  }
+};
+
+export const Short: React.FC<{
+  scriptId: string;
+  locale: Locale;
+  sources?: Source[];
+}> = ({ scriptId, locale, sources }) => {
   const script = getScript(scriptId);
   const accent = ACCENTS[script.accent] ?? ACCENTS.gold;
-  const endSec = 2.5;
 
-  let acc = 0;
+  const resolved: Source[] = script.scenes.map(
+    (sc, i) =>
+      sources?.[i] ?? { type: 'image', src: sc.media.replace(/^\//, '') }
+  );
+
   return (
     <AbsoluteFill style={{ backgroundColor: '#08080a' }}>
-      {script.scenes.map((scene, i) => {
-        const from = Math.round(acc * fps);
-        const durationInFrames = Math.round(scene.dur * fps);
-        acc += scene.dur;
-        return (
-          <Sequence key={i} from={from} durationInFrames={durationInFrames}>
-            <SceneView
-              scene={scene}
-              accent={accent}
-              locale={locale}
-              index={i}
-              isFirst={i === 0}
-              hook={script.hook[locale]}
-            />
-          </Sequence>
-        );
-      })}
-      <Sequence from={Math.round(acc * fps)} durationInFrames={Math.round(endSec * fps)}>
-        <EndCard cta={script.cta[locale]} accent={accent} locale={locale} />
-      </Sequence>
+      <TransitionSeries>
+        {script.scenes.flatMap((scene, i) => {
+          const durFrames = Math.round(scene.dur * FPS);
+          return [
+            <TransitionSeries.Sequence key={`s${i}`} durationInFrames={durFrames}>
+              <SceneView
+                scene={scene}
+                source={resolved[i]}
+                accent={accent}
+                locale={locale}
+                index={i}
+                isFirst={i === 0}
+                hook={script.hook[locale]}
+                durFrames={durFrames}
+              />
+            </TransitionSeries.Sequence>,
+            <TransitionSeries.Transition
+              key={`t${i}`}
+              presentation={presentation(scene.transition)}
+              timing={linearTiming({ durationInFrames: TRANSITION })}
+            />,
+          ];
+        })}
+        <TransitionSeries.Sequence key="end" durationInFrames={END}>
+          <EndCard cta={script.cta[locale]} accent={accent} locale={locale} />
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
       <Progress accent={accent} />
     </AbsoluteFill>
   );
-};
-
-export const totalDurationInFrames = (scriptId: string, fps: number): number => {
-  const script = getScript(scriptId);
-  const scenes = script.scenes.reduce((a, s) => a + s.dur, 0);
-  return Math.round((scenes + 2.5) * fps);
 };

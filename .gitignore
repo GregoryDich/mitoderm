@@ -19,3 +19,5 @@ tsconfig.tsbuildinfo
 
 # Remotion render output
 /out
+/public/ugc-clips
+/public/ugc-frames

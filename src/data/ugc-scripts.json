@@ -1,12 +1,17 @@
 {
   "meta": {
-    "note": "Render-ready UGC short scripts. Drafts — owner is copy-sensitive, edit freely. Consumed by the Remotion engine (remotion/) and readable in docs/ugc-scripts.md. On-screen text is trilingual (en/ru/he); vo is the spoken track to record or dub. Fps 30; durationInFrames = sum(scene.dur)*fps.",
+    "note": "Render-ready UGC storyboards. Drafts — owner is copy-sensitive, edit freely. Consumed by the Remotion engine (remotion/) and readable in docs/ugc-scripts.md. Each scene carries: onScreen (trilingual burned text), vo (spoken track), visual (image-gen prompt for the keyframe), motion (Ken-Burns), transition (to next scene). Frames are generated into public/ugc-frames/<id>/<sceneId>.png by remotion/generate-frames.mjs; if absent, the engine falls back to scene.media (a product still).",
     "fps": 30,
     "format": "1080x1920",
     "brand": {
       "bg": "#08080a",
       "text": "#f5f2f0",
       "accents": { "gold": "#dfba74", "teal": "#6fb7ba", "rose": "#b4607e" }
+    },
+    "style": {
+      "look": "cinematic clinical-luxury skincare, deep near-black background, warm gold key light with soft rim light, shallow depth of field, premium editorial, subtle film grain",
+      "aspect": "9:16 vertical, 1080x1920",
+      "negative": "text, watermark, logo, deformed hands, extra fingers, low quality, cluttered, busy background"
     }
   },
   "scripts": [
@@ -17,23 +22,15 @@
       "audience": "patient",
       "awareness": "unaware",
       "accent": "gold",
-      "hook": {
-        "en": "Your skin cells send messages. This is the messenger.",
-        "ru": "Клетки кожи обмениваются сигналами. Это — их посыльный.",
-        "he": "תאי העור שולחים אותות. זה השליח."
-      },
+      "hook": { "en": "Your skin cells send messages. This is the messenger.", "ru": "Клетки кожи обмениваются сигналами. Это — их посыльный.", "he": "תאי העור שולחים אותות. זה השליח." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Not a cream. A signal.", "ru": "Не крем. Сигнал.", "he": "לא קרם. אות." }, "vo": { "en": "This isn't skincare the way you think about it." } },
-        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Exosomes = cell messengers", "ru": "Экзосомы = посыльные клеток", "he": "אקזוסומים = שליחי התא" }, "vo": { "en": "Exosomes are tiny messengers your cells use to tell each other to repair." } },
-        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "+ 2% PDRN to power it", "ru": "+ 2% PDRN как топливо", "he": "+ 2% PDRN כדלק" }, "vo": { "en": "V-Tech pairs synthetic exosomes with two percent PDRN — the fuel for renewal." } },
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Ask your clinic for V-Tech", "ru": "Спросите V-Tech в клинике", "he": "בקשו V-Tech במרפאה" }, "vo": { "en": "Ask your practitioner about V-Tech." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "dissolve", "visual": "extreme macro of a single glowing gold micro-droplet suspended in dark serum, bokeh, near-black background, cinematic rim light", "onScreen": { "en": "Not a cream. A signal.", "ru": "Не крем. Сигнал.", "he": "לא קרם. אות." }, "vo": { "en": "This isn't skincare the way you think about it." } },
+        { "id": "s2", "dur": 4, "media": "/products/v-tech-system/hero.webp", "motion": "pan-right", "transition": "dissolve", "visual": "abstract 3D render of tiny luminous vesicles traveling between two stylized skin cells, gold particles, dark clinical background, shallow depth of field", "onScreen": { "en": "Exosomes = cell messengers", "ru": "Экзосомы = посыльные клеток", "he": "אקזוסומים = שליחי התא" }, "vo": { "en": "Exosomes are tiny messengers your cells use to tell each other to repair." } },
+        { "id": "s3", "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "motion": "zoom-out", "transition": "slide-left", "visual": "V-Tech gold serum ampoule standing on a dark reflective surface, one drop falling, warm gold key light, luxury product photography, 9:16", "onScreen": { "en": "+ 2% PDRN to power it", "ru": "+ 2% PDRN как топливо", "he": "+ 2% PDRN כדלק" }, "vo": { "en": "V-Tech pairs synthetic exosomes with two percent PDRN — the fuel for renewal." } },
+        { "id": "s4", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "elegant hand of a cosmetologist in a bright clinic holding the V-Tech serum ampoule toward camera, soft focus background, premium editorial", "onScreen": { "en": "Ask your clinic for V-Tech", "ru": "Спросите V-Tech в клинике", "he": "בקשו V-Tech במרפאה" }, "vo": { "en": "Ask your practitioner about V-Tech." } }
       ],
       "cta": { "en": "Save this. Ask your clinic.", "ru": "Сохрани. Спроси в клинике.", "he": "שמור. שאל במרפאה." },
-      "caption": {
-        "en": "Exosomes, explained in 14 seconds. The messenger your skin already speaks. #exosomes #skincare",
-        "ru": "Экзосомы за 14 секунд. Язык, на котором кожа уже говорит. #экзосомы #уходзакожей",
-        "he": "אקזוסומים ב-14 שניות. השפה שהעור כבר מדבר. #אקזוסומים"
-      },
+      "caption": { "en": "Exosomes, explained in 14 seconds. The messenger your skin already speaks. #exosomes #skincare", "ru": "Экзосомы за 14 секунд. Язык, на котором кожа уже говорит. #экзосомы #уходзакожей", "he": "אקזוסומים ב-14 שניות. השפה שהעור כבר מדבר. #אקזוסומים" },
       "hashtags": ["#exosomes", "#skincare", "#antiaging", "#mitoderm", "#vtech"]
     },
     {
@@ -43,23 +40,15 @@
       "audience": "patient",
       "awareness": "problem",
       "accent": "gold",
-      "hook": {
-        "en": "If your serum stopped working, it's not you.",
-        "ru": "Если сыворотка перестала работать — дело не в тебе.",
-        "he": "אם הסרום הפסיק לעבוד — זה לא אתה."
-      },
+      "hook": { "en": "If your serum stopped working, it's not you.", "ru": "Если сыворотка перестала работать — дело не в тебе.", "he": "אם הסרום הפסיק לעבוד — זה לא אתה." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "The plateau is real", "ru": "Плато существует", "he": "הרמה קיימת" }, "vo": { "en": "Every good routine hits a wall." } },
-        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Topicals sit on top", "ru": "Кремы остаются сверху", "he": "תכשירים נשארים למעלה" }, "vo": { "en": "Most topicals sit on the surface — they can't tell your cells to rebuild." } },
-        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "Exosomes speak cell-to-cell", "ru": "Экзосомы говорят клетка-клетке", "he": "אקזוסומים מדברים מתא לתא" }, "vo": { "en": "Exosomes work differently — they signal the cell itself." } },
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "That's the V-Tech difference", "ru": "В этом разница V-Tech", "he": "זה ההבדל של V-Tech" }, "vo": { "en": "That's why a professional exosome protocol restarts progress." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "dissolve", "visual": "close portrait of a woman 40s examining her skin in soft window light, thoughtful, natural, cinematic, muted tones", "onScreen": { "en": "The plateau is real", "ru": "Плато существует", "he": "הרמה קיימת" }, "vo": { "en": "Every good routine hits a wall." } },
+        { "id": "s2", "dur": 4, "media": "/products/v-tech-system/hero.webp", "motion": "pan-left", "transition": "dissolve", "visual": "macro cross-section illustration of cream sitting on the top layer of skin, unable to penetrate, dark editorial, gold accents", "onScreen": { "en": "Topicals sit on top", "ru": "Кремы остаются сверху", "he": "תכשירים נשארים למעלה" }, "vo": { "en": "Most topicals sit on the surface — they can't tell your cells to rebuild." } },
+        { "id": "s3", "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "motion": "zoom-out", "transition": "wipe-up", "visual": "glowing signal passing deep between skin cell layers, luminous gold pathways, 3D medical render, dark background", "onScreen": { "en": "Exosomes speak cell-to-cell", "ru": "Экзосомы говорят клетка-клетке", "he": "אקזוסומים מדברים מתא לתא" }, "vo": { "en": "Exosomes work differently — they signal the cell itself." } },
+        { "id": "s4", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "V-Tech serum ampoule hero shot, warm gold light, condensation, luxury, near-black background, 9:16", "onScreen": { "en": "That's the V-Tech difference", "ru": "В этом разница V-Tech", "he": "זה ההבדל של V-Tech" }, "vo": { "en": "That's why a professional exosome protocol restarts progress." } }
       ],
       "cta": { "en": "Book an exosome consult", "ru": "Запишись на консультацию", "he": "קבע ייעוץ" },
-      "caption": {
-        "en": "Hit a skincare plateau? Here's the biology of why — and what moves past it. #skincareplateau #exosomes",
-        "ru": "Плато в уходе? Вот биология причины — и что двигает дальше. #уходзакожей #экзосомы",
-        "he": "נתקעת ברמה? הנה הביולוגיה — ומה מזיז קדימה. #אקזוסומים"
-      },
+      "caption": { "en": "Hit a skincare plateau? Here's the biology of why — and what moves past it. #skincareplateau #exosomes", "ru": "Плато в уходе? Вот биология причины — и что двигает дальше. #уходзакожей #экзосомы", "he": "נתקעת ברמה? הנה הביולוגיה — ומה מזיז קדימה. #אקזוסומים" },
       "hashtags": ["#skincareplateau", "#exosomes", "#pdrn", "#mitoderm"]
     },
     {
@@ -69,23 +58,15 @@
       "audience": "patient",
       "awareness": "solution",
       "accent": "gold",
-      "hook": {
-        "en": "One ampoule. Three ways it rebuilds skin.",
-        "ru": "Одна ампула. Три пути обновления кожи.",
-        "he": "אמפולה אחת. שלוש דרכים לבנות עור."
-      },
+      "hook": { "en": "One ampoule. Three ways it rebuilds skin.", "ru": "Одна ампула. Три пути обновления кожи.", "he": "אמפולה אחת. שלוש דרכים לבנות עור." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "1 — Synthetic exosomes", "ru": "1 — Синтетические экзосомы", "he": "1 — אקזוסומים סינתטיים" }, "vo": { "en": "One: synthetic exosomes signal cellular renewal." } },
-        { "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "2 — 2% PDRN", "ru": "2 — 2% PDRN", "he": "2 — 2% PDRN" }, "vo": { "en": "Two: two percent PDRN drives repair and density." } },
-        { "dur": 3, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "3 — Peptides + stem cells", "ru": "3 — Пептиды + стволовые клетки", "he": "3 — פפטידים + תאי גזע" }, "vo": { "en": "Three: biomimetic peptides and plant stem cells reinforce and protect." } },
-        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "5 ml, single-use, in-clinic", "ru": "5 мл, разовая, в клинике", "he": "5 מ\"ל, חד-פעמי, במרפאה" }, "vo": { "en": "Five milliliters, single-use, for professional protocols." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "slide-left", "visual": "V-Tech serum ampoule center frame on dark pedestal, single spotlight, luxury product shot, gold reflections, 9:16", "onScreen": { "en": "1 — Synthetic exosomes", "ru": "1 — Синтетические экзосомы", "he": "1 — אקזוסומים סינתטיים" }, "vo": { "en": "One: synthetic exosomes signal cellular renewal." } },
+        { "id": "s2", "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "motion": "pan-right", "transition": "slide-left", "visual": "macro of a golden 2% PDRN droplet with molecular sparkle, dark serum background, cinematic, shallow depth of field", "onScreen": { "en": "2 — 2% PDRN", "ru": "2 — 2% PDRN", "he": "2 — 2% PDRN" }, "vo": { "en": "Two: two percent PDRN drives repair and density." } },
+        { "id": "s3", "dur": 3, "media": "/products/exotech-gel/hero.webp", "motion": "zoom-out", "transition": "wipe-up", "visual": "abstract render of peptide chains and plant stem cells as glowing gold filaments weaving a mesh, dark clinical background", "onScreen": { "en": "3 — Peptides + stem cells", "ru": "3 — Пептиды + стволовые клетки", "he": "3 — פפטידים + תאי גזע" }, "vo": { "en": "Three: biomimetic peptides and plant stem cells reinforce and protect." } },
+        { "id": "s4", "dur": 4, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "single-use 5 ml V-Tech ampoule held in a gloved clinical hand, sterile bright clinic bokeh, premium, 9:16", "onScreen": { "en": "5 ml, single-use, in-clinic", "ru": "5 мл, разовая, в клинике", "he": "5 מ\"ל, חד-פעמי, במרפאה" }, "vo": { "en": "Five milliliters, single-use, for professional protocols." } }
       ],
       "cta": { "en": "For professional use — ask your clinic", "ru": "Для профи — спроси в клинике", "he": "לשימוש מקצועי — שאל במרפאה" },
-      "caption": {
-        "en": "The V-Tech serum, decoded: exosomes + PDRN + peptides in one 5 ml ampoule. #howitworks #exosomes",
-        "ru": "Сыворотка V-Tech по полочкам: экзосомы + PDRN + пептиды в 5 мл. #какработает #экзосомы",
-        "he": "סרום V-Tech מפוענח: אקזוסומים + PDRN + פפטידים ב-5 מ\"ל. #אקזוסומים"
-      },
+      "caption": { "en": "The V-Tech serum, decoded: exosomes + PDRN + peptides in one 5 ml ampoule. #howitworks #exosomes", "ru": "Сыворотка V-Tech по полочкам: экзосомы + PDRN + пептиды в 5 мл. #какработает #экзосомы", "he": "סרום V-Tech מפוענח: אקזוסומים + PDRN + פפטידים ב-5 מ\"ל. #אקזוסומים" },
       "hashtags": ["#exosomes", "#pdrn", "#peptides", "#vtech", "#mitoderm"]
     },
     {
@@ -95,23 +76,15 @@
       "audience": "patient",
       "awareness": "product",
       "accent": "gold",
-      "hook": {
-        "en": "92% saw visible firming by session four.",
-        "ru": "92% увидели упругость к четвёртой процедуре.",
-        "he": "92% ראו מיצוק עד הטיפול הרביעי."
-      },
+      "hook": { "en": "92% saw visible firming by session four.", "ru": "92% увидели упругость к четвёртой процедуре.", "he": "92% ראו מיצוק עד הטיפול הרביעי." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Firming from the first session", "ru": "Упругость с первой процедуры", "he": "מיצוק כבר מהטיפול הראשון" }, "vo": { "en": "Patients notice a difference from the first session." } },
-        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "92% visible firming · session 4", "ru": "92% упругости · процедура 4", "he": "92% מיצוק · טיפול 4" }, "vo": { "en": "In protocol, ninety-two percent reported visible firming by the fourth." } },
-        { "dur": 4, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "4–6 sessions · full course", "ru": "4–6 процедур · полный курс", "he": "4–6 טיפולים · קורס מלא" }, "vo": { "en": "A full course is four to six sessions, two weeks apart." } },
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Ask for the V-Tech protocol", "ru": "Спроси протокол V-Tech", "he": "בקש את פרוטוקול V-Tech" }, "vo": { "en": "Ask your clinic for the V-Tech protocol." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "dissolve", "visual": "radiant close-up of firm glowing skin on a cheekbone, dewy, soft gold light, beauty editorial, 9:16", "onScreen": { "en": "Firming from the first session", "ru": "Упругость с первой процедуры", "he": "מיצוק כבר מהטיפול הראשון" }, "vo": { "en": "Patients notice a difference from the first session." } },
+        { "id": "s2", "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "motion": "zoom-out", "transition": "wipe-up", "visual": "clean data visualization vibe: elegant rising gold curve over a dark clinical backdrop, minimal, premium", "onScreen": { "en": "92% visible firming · session 4", "ru": "92% упругости · процедура 4", "he": "92% מיצוק · טיפול 4" }, "vo": { "en": "In protocol, ninety-two percent reported visible firming by the fourth." } },
+        { "id": "s3", "dur": 4, "media": "/products/v-tech-system/hero.webp", "motion": "pan-right", "transition": "dissolve", "visual": "flat-lay of four V-Tech ampoules in a row on dark stone, warm light, spa luxury, 9:16", "onScreen": { "en": "4–6 sessions · full course", "ru": "4–6 процедур · полный курс", "he": "4–6 טיפולים · קורס מלא" }, "vo": { "en": "A full course is four to six sessions, two weeks apart." } },
+        { "id": "s4", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "smiling confident woman in a clinic reception, natural glowing skin, soft bokeh, premium editorial", "onScreen": { "en": "Ask for the V-Tech protocol", "ru": "Спроси протокол V-Tech", "he": "בקש את פרוטוקול V-Tech" }, "vo": { "en": "Ask your clinic for the V-Tech protocol." } }
       ],
       "cta": { "en": "Book your first session", "ru": "Запишись на первую процедуру", "he": "קבע טיפול ראשון" },
-      "caption": {
-        "en": "Real protocol numbers: firming from session one, 92% by session four. #results #exosomes #skincare",
-        "ru": "Реальные цифры протокола: упругость с первой, 92% к четвёртой. #результаты #экзосомы",
-        "he": "מספרים אמיתיים: מיצוק מהטיפול הראשון, 92% ברביעי. #תוצאות"
-      },
+      "caption": { "en": "Real protocol numbers: firming from session one, 92% by session four. #results #exosomes #skincare", "ru": "Реальные цифры протокола: упругость с первой, 92% к четвёртой. #результаты #экзосомы", "he": "מספרים אמיתיים: מיצוק מהטיפול הראשון, 92% ברביעי. #תוצאות" },
       "hashtags": ["#results", "#exosomes", "#skinfirming", "#mitoderm", "#vtech"]
     },
     {
@@ -121,23 +94,15 @@
       "audience": "practitioner",
       "awareness": "solution",
       "accent": "gold",
-      "hook": {
-        "en": "The treatment your clients ask for by name.",
-        "ru": "Процедура, которую клиенты просят по названию.",
-        "he": "הטיפול שהלקוחות מבקשים בשם."
-      },
+      "hook": { "en": "The treatment your clients ask for by name.", "ru": "Процедура, которую клиенты просят по названию.", "he": "הטיפול שהלקוחות מבקשים בשם." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Add exosomes to your menu", "ru": "Добавь экзосомы в меню", "he": "הוסף אקזוסומים לתפריט" }, "vo": { "en": "Exosome therapy is the fastest-growing ask in aesthetics." } },
-        { "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "~60–70% typical gross margin", "ru": "~60–70% типовая маржа", "he": "~60–70% רווח גולמי טיפוסי" }, "vo": { "en": "Per session margins are strong — and repeat over a full course." } },
-        { "dur": 4, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "Protocol + training included", "ru": "Протокол + обучение", "he": "פרוטוקול + הדרכה" }, "vo": { "en": "You get the protocol, the training, and a specialist on call." } },
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Become a V-Tech partner", "ru": "Стань партнёром V-Tech", "he": "הפוך לשותף V-Tech" }, "vo": { "en": "Become a V-Tech partner clinic." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "slide-left", "visual": "modern aesthetic clinic treatment room, warm light, V-Tech ampoule on a tray, premium, 9:16", "onScreen": { "en": "Add exosomes to your menu", "ru": "Добавь экзосомы в меню", "he": "הוסף אקזוסומים לתפריט" }, "vo": { "en": "Exosome therapy is the fastest-growing ask in aesthetics." } },
+        { "id": "s2", "dur": 4, "media": "/products/v-tech-gel-mask/hero.png", "motion": "zoom-out", "transition": "wipe-up", "visual": "elegant minimal gold upward bar chart on dark background suggesting margin growth, premium, no text", "onScreen": { "en": "~60–70% typical gross margin", "ru": "~60–70% типовая маржа", "he": "~60–70% רווח גולמי טיפוסי" }, "vo": { "en": "Per session margins are strong — and repeat over a full course." } },
+        { "id": "s3", "dur": 4, "media": "/products/exotech-gel/hero.webp", "motion": "pan-left", "transition": "dissolve", "visual": "cosmetologist reviewing a printed protocol card with a colleague in a bright clinic, professional, warm", "onScreen": { "en": "Protocol + training included", "ru": "Протокол + обучение", "he": "פרוטוקול + הדרכה" }, "vo": { "en": "You get the protocol, the training, and a specialist on call." } },
+        { "id": "s4", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "V-Tech system box and ampoules arranged as a premium partner kit on dark surface, gold light, 9:16", "onScreen": { "en": "Become a V-Tech partner", "ru": "Стань партнёром V-Tech", "he": "הפוך לשותף V-Tech" }, "vo": { "en": "Become a V-Tech partner clinic." } }
       ],
       "cta": { "en": "Become a partner", "ru": "Стать партнёром", "he": "להפוך לשותף" },
-      "caption": {
-        "en": "Cosmetologists: exosome demand is here. Strong margins, full protocol, training. DM to partner. #aesthetics #clinicgrowth",
-        "ru": "Косметологам: спрос на экзосомы уже здесь. Маржа, протокол, обучение. В директ. #косметология",
-        "he": "לקוסמטיקאיות: הביקוש לאקזוסומים כאן. רווח, פרוטוקול, הדרכה. #קוסמטיקה"
-      },
+      "caption": { "en": "Cosmetologists: exosome demand is here. Strong margins, full protocol, training. DM to partner. #aesthetics #clinicgrowth", "ru": "Косметологам: спрос на экзосомы уже здесь. Маржа, протокол, обучение. В директ. #косметология", "he": "לקוסמטיקאיות: הביקוש לאקזוסומים כאן. רווח, פרוטוקול, הדרכה. #קוסמטיקה" },
       "hashtags": ["#aesthetics", "#cosmetology", "#clinicgrowth", "#exosomes", "#mitoderm"]
     },
     {
@@ -147,23 +112,15 @@
       "audience": "practitioner",
       "awareness": "product",
       "accent": "gold",
-      "hook": {
-        "en": "Serum plus mask. One plus one equals three.",
-        "ru": "Сыворотка плюс маска. Один плюс один — три.",
-        "he": "סרום ומסכה. אחד ועוד אחד שווה שלוש."
-      },
+      "hook": { "en": "Serum plus mask. One plus one equals three.", "ru": "Сыворотка плюс маска. Один плюс один — три.", "he": "סרום ומסכה. אחד ועוד אחד שווה שלוש." },
       "scenes": [
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Step 1 — V-Tech Serum", "ru": "Шаг 1 — V-Tech сыворотка", "he": "שלב 1 — סרום V-Tech" }, "vo": { "en": "Step one: apply the V-Tech serum to cleansed skin." } },
-        { "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "onScreen": { "en": "Step 2 — V-Tech Gel Mask", "ru": "Шаг 2 — гель-маска V-Tech", "he": "שלב 2 — מסכת ג'ל V-Tech" }, "vo": { "en": "Step two: layer the V-Tech gel mask for fifteen to twenty minutes." } },
-        { "dur": 4, "media": "/products/exotech-gel/hero.webp", "onScreen": { "en": "Occlusion drives it deeper", "ru": "Окклюзия — глубже проникновение", "he": "אוקלוזיה מחדירה עמוק יותר" }, "vo": { "en": "The mask's occlusion pushes the actives deeper — that's the one-plus-one-equals-three effect." } },
-        { "dur": 3, "media": "/products/v-tech-system/hero.webp", "onScreen": { "en": "Leave the serum on — don't rinse", "ru": "Сыворотку не смывай", "he": "אל תשטוף את הסרום" }, "vo": { "en": "Leave the serum on. Don't rinse." } }
+        { "id": "s1", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "zoom-in", "transition": "slide-left", "visual": "gloved hand applying V-Tech serum to a client's cleansed face in a clinic, macro, warm light, premium", "onScreen": { "en": "Step 1 — V-Tech Serum", "ru": "Шаг 1 — V-Tech сыворотка", "he": "שלב 1 — סרום V-Tech" }, "vo": { "en": "Step one: apply the V-Tech serum to cleansed skin." } },
+        { "id": "s2", "dur": 3, "media": "/products/v-tech-gel-mask/hero.png", "motion": "pan-right", "transition": "slide-left", "visual": "clinician laying a clear V-Tech gel mask over a client's face, spa lighting, serene, 9:16", "onScreen": { "en": "Step 2 — V-Tech Gel Mask", "ru": "Шаг 2 — гель-маска V-Tech", "he": "שלב 2 — מסכת ג'ל V-Tech" }, "vo": { "en": "Step two: layer the V-Tech gel mask for fifteen to twenty minutes." } },
+        { "id": "s3", "dur": 4, "media": "/products/exotech-gel/hero.webp", "motion": "zoom-in", "transition": "wipe-up", "visual": "macro of actives visibly absorbing deeper under an occlusive gel layer, glowing gold, dark clinical render", "onScreen": { "en": "Occlusion drives it deeper", "ru": "Окклюзия — глубже проникновение", "he": "אוקלוזיה מחדירה עמוק יותר" }, "vo": { "en": "The mask's occlusion pushes the actives deeper — that's the one-plus-one-equals-three effect." } },
+        { "id": "s4", "dur": 3, "media": "/products/v-tech-system/hero.webp", "motion": "push-up", "transition": "dissolve", "visual": "calm client resting with glowing skin after treatment, soft clinic light, premium editorial, 9:16", "onScreen": { "en": "Leave the serum on — don't rinse", "ru": "Сыворотку не смывай", "he": "אל תשטוף את הסרום" }, "vo": { "en": "Leave the serum on. Don't rinse." } }
       ],
       "cta": { "en": "Get the full protocol", "ru": "Получи полный протокол", "he": "קבל את הפרוטוקול המלא" },
-      "caption": {
-        "en": "The V-Tech protocol in 13s: serum + gel mask occlusion for the 1+1=3 effect. Save it. #protocol #aesthetics",
-        "ru": "Протокол V-Tech за 13с: сыворотка + окклюзия маской = 1+1=3. Сохрани. #протокол",
-        "he": "פרוטוקול V-Tech ב-13 שניות: סרום + מסכה = 1+1=3. שמור. #פרוטוקול"
-      },
+      "caption": { "en": "The V-Tech protocol in 13s: serum + gel mask occlusion for the 1+1=3 effect. Save it. #protocol #aesthetics", "ru": "Протокол V-Tech за 13с: сыворотка + окклюзия маской = 1+1=3. Сохрани. #протокол", "he": "פרוטוקול V-Tech ב-13 שניות: סרום + מסכה = 1+1=3. שמור. #פרוטוקול" },
       "hashtags": ["#protocol", "#aesthetics", "#cosmetology", "#vtech", "#mitoderm"]
     }
   ]
