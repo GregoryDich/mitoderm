@@ -19,6 +19,8 @@ export const RemotionRoot: React.FC = () => {
           scriptId: 'vtech-mechanism',
           locale: 'en' as const,
           sources: undefined,
+          audioSrc: undefined,
+          audioVolume: 0.35,
         }}
         calculateMetadata={({ props }) => ({
           durationInFrames: totalDurationInFrames(props.scriptId),

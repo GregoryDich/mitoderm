@@ -1,0 +1,134 @@
+{
+  "name": "Mitoderm — produce & post a short (fal Kling → upload-post)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Produce & post (back half)\nModeled on n8n template #3501 (Kling + auto-post), with upload-post.com instead of Blotato and the repo's Remotion for full assembly.\n\n**Two modes:**\n1. **Quick clip** (this workflow, standalone): POST the webhook `{ \"imageUrl\": \"...\", \"prompt\": \"...\", \"caption\": \"...\" }` → fal Kling 2.5 i2v (~$0.35/5s) → publish via upload-post (free 10/mo, then $24/mo).\n2. **Full branded reel**: render in the repo (`npm run remotion:render -- <id> <locale>`), then POST here with `{ \"videoUrl\": \"...\", \"caption\": \"...\" }` — the fal step is skipped automatically.\n\n**Env vars:** `FAL_KEY`, `UPLOADPOST_KEY`, `UPLOADPOST_USER`.\nTikTok goes in **draft mode** first — flip `post_mode` when confident.",
+        "height": 420,
+        "width": 440
+      },
+      "name": "README",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mitoderm-produce",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "name": "Webhook /mitoderm-produce",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [40, 480]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "typeValidation": "loose" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.body.videoUrl }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "name": "Need to generate?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [260, 480]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://fal.run/fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Key {{ $env.FAL_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ prompt: $json.body.prompt, image_url: $json.body.imageUrl, duration: '5', aspect_ratio: '9:16' }) }}",
+        "options": { "timeout": 600000 }
+      },
+      "name": "fal Kling 2.5 i2v (~$0.35)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 360]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normalize: either the fal output or the caller-provided videoUrl.\nconst body = $('Webhook /mitoderm-produce').item.json.body;\nconst falOut = $json.video?.url || $json.videos?.[0]?.url || null;\nreturn [{ json: { videoUrl: body.videoUrl || falOut, caption: body.caption || '' } }];"
+      },
+      "name": "Pick video URL",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 480]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.videoUrl }}",
+        "options": { "response": { "response": { "responseFormat": "file" } } }
+      },
+      "name": "Download MP4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 480]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.upload-post.com/api/upload",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Apikey {{ $env.UPLOADPOST_KEY }}" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "title", "value": "={{ $('Pick video URL').item.json.caption }}" },
+            { "name": "user", "value": "={{ $env.UPLOADPOST_USER }}" },
+            { "name": "platform[]", "value": "instagram" },
+            { "name": "platform[]", "value": "tiktok" },
+            { "name": "post_mode", "value": "draft" },
+            {
+              "name": "video",
+              "parameterType": "formBinaryData",
+              "inputDataFieldName": "data"
+            }
+          ]
+        }
+      },
+      "name": "upload-post → IG + TikTok(draft)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1140, 480]
+    }
+  ],
+  "connections": {
+    "Webhook /mitoderm-produce": { "main": [[{ "node": "Need to generate?", "type": "main", "index": 0 }]] },
+    "Need to generate?": {
+      "main": [
+        [{ "node": "fal Kling 2.5 i2v (~$0.35)", "type": "main", "index": 0 }],
+        [{ "node": "Pick video URL", "type": "main", "index": 0 }]
+      ]
+    },
+    "fal Kling 2.5 i2v (~$0.35)": { "main": [[{ "node": "Pick video URL", "type": "main", "index": 0 }]] },
+    "Pick video URL": { "main": [[{ "node": "Download MP4", "type": "main", "index": 0 }]] },
+    "Download MP4": { "main": [[{ "node": "upload-post → IG + TikTok(draft)", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

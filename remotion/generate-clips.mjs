@@ -11,8 +11,9 @@
 // public/ugc-clips/<id>/<sceneId>.mp4 — the engine picks them up either way.)
 //
 // Usage:
-//   FAL_KEY=... node remotion/generate-clips.mjs <scriptId> [--all]
-//   FAL_VIDEO_MODEL=fal-ai/kling-video/v1.6/standard/image-to-video (default)
+//   FAL_KEY=... node remotion/generate-clips.mjs <scriptId> [--all] [--hero|--draft]
+//     (default route: Kling 2.5 Turbo Pro; --hero: Veo 3.1 Fast;
+//      --draft: LTX-2; FAL_VIDEO_MODEL env overrides the route)
 //
 // No key -> prints the plan and exits (this headless session has no key).
 import fs from 'node:fs';
@@ -25,10 +26,26 @@ const data = JSON.parse(
 const style = data.meta.style;
 const args = process.argv.slice(2);
 const all = args.includes('--all');
-const ids = all ? data.scripts.map((s) => s.id) : [args[0] || 'vtech-mechanism'];
-const MODEL =
-  process.env.FAL_VIDEO_MODEL ||
-  'fal-ai/kling-video/v1.6/standard/image-to-video';
+const ids = all
+  ? data.scripts.map((s) => s.id)
+  : [args.find((a) => !a.startsWith('--')) || 'vtech-mechanism'];
+
+// Model routing (July 2026, per docs/ugc-video-pipeline.md research):
+//   default — Kling 2.5 Turbo Pro: community-best for skin texture / serum
+//             macro at ~$0.35 per 5s 9:16 clip
+//   --hero  — Veo 3.1 Fast: cinematic language + native audio, ~$0.50/5s
+//   --draft — LTX-2: cheap volume drafts, ~$0.20-0.25/5s
+const ROUTES = {
+  default: 'fal-ai/kling-video/v2.5-turbo/pro/image-to-video',
+  hero: 'fal-ai/veo3.1/fast/image-to-video',
+  draft: 'fal-ai/ltx-video-v2/image-to-video',
+};
+const route = args.includes('--hero')
+  ? 'hero'
+  : args.includes('--draft')
+  ? 'draft'
+  : 'default';
+const MODEL = process.env.FAL_VIDEO_MODEL || ROUTES[route];
 const KEY = process.env.FAL_KEY;
 
 const MIME = { '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
@@ -73,7 +90,10 @@ for (const id of ids) {
   console.log(`\n=== ${id} (${script.scenes.length} scenes, model ${MODEL}) ===`);
   for (const scene of script.scenes) {
     const still = sourceStill(id, scene);
-    const prompt = `${scene.visual}. Camera: subtle ${scene.motion || 'push-in'} move. ${style.look}.`;
+    // Kling grammar (docs/virality-rubric.md pt 6): subject/style first,
+    // exactly ONE named camera move, stated LAST.
+    const camera = scene.camera || 'slow push-in over 5 seconds';
+    const prompt = `${scene.visual}. ${style.look}. Camera: ${camera}.`;
     const out = path.join(outDir, `${scene.id}.mp4`);
     if (!KEY) {
       console.log(`[dry] ${scene.id}: still=${path.relative(root, still)}\n        prompt="${prompt}"`);

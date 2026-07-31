@@ -40,10 +40,20 @@ process.stdout.write('\n');
 // Resolve one visual source per scene: generated clip > generated frame >
 // product still. Frames/clips are dropped in by generate-frames/clips scripts
 // (or higgsfield/Kling exports into public/ugc-clips/<id>/<sceneId>.mp4).
-const scripts = JSON.parse(
+const scriptsData = JSON.parse(
   fs.readFileSync(path.join(root, 'src/data/ugc-scripts.json'), 'utf8')
-).scripts;
+);
+const scripts = scriptsData.scripts;
 const script = scripts.find((s) => s.id === scriptId) || scripts[0];
+
+// Licensed music: baked only when the file actually exists under public/.
+const audioCfg = script.audio ?? scriptsData.meta.audio;
+let audioSrc;
+if (audioCfg?.music) {
+  const rel = audioCfg.music.replace(/^\//, '');
+  if (fs.existsSync(path.join(root, 'public', rel))) audioSrc = rel;
+  else console.log(`[audio] ${audioCfg.music} not found — rendering silent`);
+}
 const sources = script.scenes.map((sc) => {
   const clip = path.join(root, 'public/ugc-clips', scriptId, `${sc.id}.mp4`);
   const frame = path.join(root, 'public/ugc-frames', scriptId, `${sc.id}.png`);
@@ -54,7 +64,13 @@ const sources = script.scenes.map((sc) => {
 const kinds = sources.map((s) => s.type[0]).join('');
 console.log(`[sources] ${scriptId}: ${kinds} (v=clip,i=frame/still)`);
 
-const inputProps = { scriptId, locale, sources };
+const inputProps = {
+  scriptId,
+  locale,
+  sources,
+  audioSrc,
+  audioVolume: audioCfg?.volume ?? 0.35,
+};
 const composition = await selectComposition({
   serveUrl: bundleLocation,
   id: 'Short',

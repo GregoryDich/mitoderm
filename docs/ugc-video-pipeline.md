@@ -243,3 +243,45 @@ date) and write the generated scripts straight into it. Say the word.
 
 Sources: community reports on Claude localhost/MCP limits and tunnels, and
 n8n/Make IG-scrape-transcribe workflows — see chat for links.
+
+---
+
+## 8. FINAL STACK (locked July 2026 — 5-agent research sweep)
+
+Full research: prices/API-vs-MCP verified per tool. Rubric that gates every
+script: `docs/virality-rubric.md`. Repo nodes: `scripts/trends-scrape.mjs`
+(Apify+Groq), `remotion/generate-clips.mjs` (fal routing),
+`remotion/render.mjs` (assembly+music), `scripts/publish.mjs` (upload-post),
+`automation/n8n-*.json` (owner's n8n).
+
+| Решение | Инструмент | Цена | Роль |
+|---|---|---|---|
+| ✅ купить | [fal.ai](https://fal.ai/pricing) | ~$10 депозит, pay-as-you-go | Kling 2.5 Turbo Pro **$0.35/5s** (лучший для кожи/сывороток); Veo 3.1 Fast $0.50 hero; LTX-2 $0.20 драфты |
+| ✅ бесплатно | [Apify](https://apify.com/apify/instagram-scraper) | $5 кредита/мес free | Скрейп топ-рилсов 10 креаторов ≈ $3–5/прогон |
+| ✅ бесплатно | [Groq](https://console.groq.com) | $0.04/час аудио | Транскрипты: 100 рилсов ≈ $0.05 |
+| ✅ бесплатно | [upload-post.com](https://upload-post.com) | 10 постов/мес free → $24/мес | Автопост IG Reels + TikTok (официальный audited API) |
+| ⏸ позже | [HeyGen API](https://www.heygen.com/api-pricing) | кошелёк от $5, ~$0.5–2/30s | Говорящие головы (avatar UGC) |
+| ⏸ позже | [Metricool](https://metricool.com) MCP | ~€43/мес Advanced | Аналитика + расписание (MCP реальный, ~28 тулов) |
+| ⏸ позже | [Arcads](https://arcads.ai) | $110/мес | Только hero-ads: самые живые AI-актёры |
+| ❌ скинуть | Higgsfield подписка | $15–99/мес | Наценка над теми же моделями; **словарь камер берём бесплатно** ([camera-controls](https://higgsfield.ai/camera-controls)); их MCP `mcp.higgsfield.ai/mcp` — опция для ручного режима |
+| ❌ скинуть | postoro (vaporware-waitlist) · trendsee (нет API) · klap/submagic (Remotion жжёт субтитры бесплатно) · Buffer/Later (API мертвы) · vidIQ MCP (YouTube-only, Max) · браузерные скрейперы (ручные) | — | — |
+
+**Себестоимость ролика ≈ $1.5–2** (5 клипов × $0.35 + сборка/субтитры $0).
+Музыка: лицензионная только (бизнес-аккаунты не могут брать трендовые
+коммерческие треки) — Pixabay free сейчас, Epidemic ~$25/мес позже.
+
+### Проверенные блюпринты-источники
+- Front half: [n8n #12045 — Viral IG Reels → scripts (Apify+Whisper+LLM)](https://n8n.io/workflows/12045-transform-viral-instagram-reels-into-original-scripts-with-ai-perplexity-and-apify/)
+- Back half: [n8n #3501 — GPT-4 + Kling + автопост (Dr. Firas)](https://n8n.io/workflows/3501-generate-and-auto-post-social-videos-to-multiple-platforms-with-gpt-4-and-kling-ai/), #5035/#10358 (Veo3 daily)
+- Наши версии: `automation/n8n-trends.json`, `automation/n8n-produce.json`
+  (только встроенные ноды, `$env`-креды, без vendor lock-in)
+
+### 🔓 Разблокировка (шаги владельца, в порядке ценности)
+1. **FAL_KEY** — https://fal.ai → Keys → прислать (env). Я генерю Kling-клипы
+   по раскадровкам и собираю первый кинематографичный reel.
+2. **Публичный URL n8n** (домен из Coolify) — проверяю доступность, импортируешь
+   два JSON из `automation/`.
+3. **APIFY_TOKEN** — https://console.apify.com → Integrations.
+4. **UPLOADPOST_KEY + профиль** — https://upload-post.com (free tier).
+5. *(опция)* **GROQ_API_KEY** — https://console.groq.com (free).
+6. *(опция)* Higgsfield MCP коннектором в claude.ai: `mcp.higgsfield.ai/mcp`.

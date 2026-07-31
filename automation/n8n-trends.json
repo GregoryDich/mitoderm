@@ -1,0 +1,107 @@
+{
+  "name": "Mitoderm — weekly reels trends (Apify → rank → transcripts)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Trends scraper (front half)\nModeled on n8n template #12045 (Apify + Whisper + LLM).\n\n**Setup:** self-hosted n8n → Settings → set env vars `APIFY_TOKEN`, `GROQ_API_KEY`.\nEdit the creators list in the **Apify run** node body.\n\nOutput: ranked top-reels JSON per creator (views, caption, hashtags, transcript) — wire the last node into your sink of choice (Notion / Google Sheets / HTTP to your repo webhook).\n\nSame logic exists as a repo script: `scripts/trends-scrape.mjs` (dry-runs without keys).",
+        "height": 360,
+        "width": 420
+      },
+      "name": "README",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "weeks", "triggerAtDay": [1], "triggerAtHour": 8 }]
+        }
+      },
+      "name": "Every Monday 08:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [40, 420]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/apify~instagram-scraper/run-sync-get-dataset-items?token={{ $env.APIFY_TOKEN }}&timeout=300",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ directUrls: ['https://www.instagram.com/dr.dray/','https://www.instagram.com/dermdoctor/','https://www.instagram.com/skincarebyhyram/','https://www.instagram.com/drshereeneidriss/','https://www.instagram.com/thebeautyprofessor/'], resultsType: 'posts', resultsLimit: 30 }) }}",
+        "options": { "timeout": 300000 }
+      },
+      "name": "Apify run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 420]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Keep reels, rank top-5 per creator by views (outlier-remix source).\nconst items = $input.all().map(i => i.json);\nconst reels = items.filter(it => it.type === 'Video' && it.videoUrl).map(it => ({\n  creator: it.ownerUsername,\n  url: it.url,\n  views: it.videoPlayCount ?? it.videoViewCount ?? 0,\n  likes: it.likesCount ?? 0,\n  caption: it.caption ?? '',\n  hashtags: it.hashtags ?? [],\n  duration: it.videoDuration ?? null,\n  videoUrl: it.videoUrl,\n}));\nconst by = {};\nfor (const r of reels) (by[r.creator] ??= []).push(r);\nconst top = Object.values(by).flatMap(a => a.sort((x,y)=>y.views-x.views).slice(0,5));\nreturn top.map(t => ({ json: t }));"
+      },
+      "name": "Rank top reels",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 420]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.videoUrl }}",
+        "options": { "response": { "response": { "responseFormat": "file" } } }
+      },
+      "name": "Download reel (CDN url is short-lived)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 420]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/audio/transcriptions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $env.GROQ_API_KEY }}" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "model", "value": "whisper-large-v3-turbo" },
+            {
+              "name": "file",
+              "parameterType": "formBinaryData",
+              "inputDataFieldName": "data"
+            }
+          ]
+        }
+      },
+      "name": "Groq transcribe ($0.04/hr)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 420]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge transcript back with reel metadata → final trend row.\nconst meta = $('Rank top reels').item.json;\nconst text = $json.text ?? null;\nreturn [{ json: { ...meta, videoUrl: undefined, transcript: text } }];"
+      },
+      "name": "Trend row (wire to Notion/Sheets)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 420]
+    }
+  ],
+  "connections": {
+    "Every Monday 08:00": { "main": [[{ "node": "Apify run", "type": "main", "index": 0 }]] },
+    "Apify run": { "main": [[{ "node": "Rank top reels", "type": "main", "index": 0 }]] },
+    "Rank top reels": { "main": [[{ "node": "Download reel (CDN url is short-lived)", "type": "main", "index": 0 }]] },
+    "Download reel (CDN url is short-lived)": { "main": [[{ "node": "Groq transcribe ($0.04/hr)", "type": "main", "index": 0 }]] },
+    "Groq transcribe ($0.04/hr)": { "main": [[{ "node": "Trend row (wire to Notion/Sheets)", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

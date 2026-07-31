@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   Img,
   OffthreadVideo,
   interpolate,
@@ -25,7 +26,12 @@ type Scene = {
   dur: number;
   media: string;
   motion?: string;
+  /** 'cut' (default, hard jump cut per the virality rubric) | 'dissolve' |
+   *  'slide-left' | 'wipe-up' — transition INTO the next segment. */
   transition?: string;
+  /** Kling-grammar camera instruction (one named move, used by
+   *  generate-clips.mjs — not by this renderer). */
+  camera?: string;
   onScreen: L;
 };
 type Script = {
@@ -48,10 +54,15 @@ export const getScript = (id: string): Script =>
   (data.scripts as unknown as Script[]).find((s) => s.id === id) ??
   (data.scripts[0] as unknown as Script);
 
+// A transition element is inserted only for non-'cut' scenes; hard cuts
+// (the rubric default) cost no overlap frames.
+const transitionCount = (s: Script): number =>
+  s.scenes.filter((sc) => (sc.transition ?? 'cut') !== 'cut').length;
+
 export const totalDurationInFrames = (scriptId: string): number => {
   const s = getScript(scriptId);
   const scenes = s.scenes.reduce((a, sc) => a + Math.round(sc.dur * FPS), 0);
-  return scenes + END - s.scenes.length * TRANSITION;
+  return scenes + END - transitionCount(s) * TRANSITION;
 };
 
 // Ken-Burns transform for a scene, over its own local timeline.
@@ -241,9 +252,13 @@ export const Short: React.FC<{
   scriptId: string;
   locale: Locale;
   sources?: Source[];
-}> = ({ scriptId, locale, sources }) => {
+  /** Path under public/ to a licensed music track; baked when provided. */
+  audioSrc?: string;
+  audioVolume?: number;
+}> = ({ scriptId, locale, sources, audioSrc, audioVolume = 0.35 }) => {
   const script = getScript(scriptId);
   const accent = ACCENTS[script.accent] ?? ACCENTS.gold;
+  const total = totalDurationInFrames(script.id);
 
   const resolved: Source[] = script.scenes.map(
     (sc, i) =>
@@ -255,7 +270,7 @@ export const Short: React.FC<{
       <TransitionSeries>
         {script.scenes.flatMap((scene, i) => {
           const durFrames = Math.round(scene.dur * FPS);
-          return [
+          const seq = (
             <TransitionSeries.Sequence key={`s${i}`} durationInFrames={durFrames}>
               <SceneView
                 scene={scene}
@@ -267,7 +282,12 @@ export const Short: React.FC<{
                 hook={script.hook[locale]}
                 durFrames={durFrames}
               />
-            </TransitionSeries.Sequence>,
+            </TransitionSeries.Sequence>
+          );
+          // Hard cut (rubric default): consecutive sequences, no overlap.
+          if ((scene.transition ?? 'cut') === 'cut') return [seq];
+          return [
+            seq,
             <TransitionSeries.Transition
               key={`t${i}`}
               presentation={presentation(scene.transition)}
@@ -279,6 +299,19 @@ export const Short: React.FC<{
           <EndCard cta={script.cta[locale]} accent={accent} locale={locale} />
         </TransitionSeries.Sequence>
       </TransitionSeries>
+      {audioSrc && (
+        <Audio
+          src={staticFile(audioSrc)}
+          loop
+          volume={(f) =>
+            audioVolume *
+            interpolate(f, [0, 15, total - 30, total], [0, 1, 1, 0], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+            })
+          }
+        />
+      )}
       <Progress accent={accent} />
     </AbsoluteFill>
   );
