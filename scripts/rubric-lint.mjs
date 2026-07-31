@@ -35,19 +35,24 @@ for (const s of scripts) {
   const issues = [];
   const warn = [];
 
-  // pt 4 — pacing: beats 1.5–3s, hard ceiling 4s for any static shot
+  // pt 4 — pacing: beats 1.5–3s (product) / up to 8s for VO-driven doc
+  // format (pacing:"doc" — scenes stretched to fit narration, rubric pt 3
+  // educational band applies)
+  const doc = s.pacing === 'doc';
+  const beatCap = doc ? 8 : 4;
   for (const sc of s.scenes) {
-    if (sc.dur > 4) issues.push(`${sc.id}: scene ${sc.dur}s > 4s hard cap (rubric pt 4)`);
-    else if (sc.dur < 1.5 || sc.dur > 3)
+    if (sc.dur > beatCap) issues.push(`${sc.id}: scene ${sc.dur}s > ${beatCap}s cap (rubric pt 4)`);
+    else if (!doc && (sc.dur < 1.5 || sc.dur > 3))
       warn.push(`${sc.id}: beat ${sc.dur}s outside 1.5–3s target`);
   }
 
-  // pt 3 — total length 7–30s for product reels
+  // pt 3 — total: 7–30s product reels; doc/educational up to 45s
   const nonCut = s.scenes.filter((sc) => (sc.transition ?? 'cut') !== 'cut').length;
   const total =
     s.scenes.reduce((a, sc) => a + sc.dur, 0) + END_SEC - nonCut * TRANS_SEC;
-  if (total < 7 || total > 30)
-    issues.push(`total ${total.toFixed(1)}s outside 7–30s band (rubric pt 3)`);
+  const maxTotal = doc ? 45 : 30;
+  if (total < 7 || total > maxTotal)
+    issues.push(`total ${total.toFixed(1)}s outside 7–${maxTotal}s band (rubric pt 3)`);
 
   // pt 1 — hook must exist in all locales, ≤12 words (2-second proxy)
   for (const loc of LOCALES) {

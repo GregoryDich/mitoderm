@@ -173,6 +173,28 @@ for (const id of ids) {
         console.log(`[character] ${scene.id}: reuses master portrait`);
         continue;
       }
+      // 'edit' — РЕАЛЬНАЯ пачка, пересобранная в нужную сцену через
+      // nano-banana (Gemini) edit на fal ($0.04): упаковка настоящая,
+      // окружение — какое нужно (запрос владельца: «пачку перегенерировать
+      // как нам нужно — gpt img / gemini»).
+      if (scene.keyframe === 'edit') {
+        const still = path.join(root, 'public', scene.media.replace(/^\//, ''));
+        const ext2 = path.extname(still).toLowerCase();
+        const uri = `data:${MIME[ext2] || 'image/png'};base64,${fs.readFileSync(still).toString('base64')}`;
+        process.stdout.write(`[nano-edit] ${scene.id} ... `);
+        const j = await falQueue(
+          'fal-ai/nano-banana/edit',
+          { prompt: `${scene.editPrompt || scene.visual}. Keep the product packaging EXACTLY as in the source image — same logo, labels, proportions. 9:16 vertical composition, 1080x1920.`, image_urls: [uri], num_images: 1 },
+          process.env.FAL_KEY,
+          { timeoutMin: 5 }
+        );
+        const url = j.images?.[0]?.url;
+        if (!url) throw new Error(`nano-edit: ${JSON.stringify(j).slice(0, 160)}`);
+        const buf = await downloadWithRetry(url);
+        fs.writeFileSync(out, buf);
+        console.log(`saved ${(buf.length / 1e3).toFixed(0)} KB`);
+        continue;
+      }
       if (scene.keyframe === 'reframe') {
         const still = path.join(root, 'public', scene.media.replace(/^\//, ''));
         process.stdout.write(`[reframe] ${scene.id} ... `);

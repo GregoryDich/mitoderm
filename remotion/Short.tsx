@@ -43,7 +43,15 @@ type Script = {
   cta: L;
 };
 // One resolved visual source per scene, chosen at render time (clip > frame > still).
-type Source = { type: 'video' | 'image'; src: string };
+// mediaDur (seconds) lets the engine slow a shorter clip to fill a longer
+// VO-fitted scene instead of freezing/ending early.
+type Source = {
+  type: 'video' | 'image';
+  src: string;
+  mediaDur?: number;
+  /** Clip carries its own (lip-synced) voice: play it, never slow it. */
+  hasAudio?: boolean;
+};
 
 const FPS = 30;
 const TRANSITION = 12; // frames
@@ -114,10 +122,25 @@ const Visual: React.FC<{ source: Source; motion?: string; dur: number }> = ({
     height: '100%',
     objectFit: 'cover',
   };
+  // Scene stretched past the clip length (VO-fit)? Slow the clip to cover
+  // the whole beat — doc pacing tolerates gentle slow-mo; never freeze.
+  const sceneSec = dur / FPS;
+  const rate =
+    source.type === 'video' &&
+    !source.hasAudio && // never slow a lip-synced clip
+    source.mediaDur &&
+    source.mediaDur < sceneSec - 0.05
+      ? Math.max(source.mediaDur / sceneSec, 0.4)
+      : 1;
   return (
     <AbsoluteFill style={{ transform }}>
       {source.type === 'video' ? (
-        <OffthreadVideo src={staticFile(source.src)} muted style={style} />
+        <OffthreadVideo
+          src={staticFile(source.src)}
+          muted={!source.hasAudio}
+          playbackRate={rate}
+          style={style}
+        />
       ) : (
         <Img src={staticFile(source.src)} style={style} />
       )}

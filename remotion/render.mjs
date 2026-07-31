@@ -54,10 +54,46 @@ if (audioCfg?.music) {
   if (fs.existsSync(path.join(root, 'public', rel))) audioSrc = rel;
   else console.log(`[audio] ${audioCfg.music} not found — rendering silent`);
 }
+const { execFileSync } = await import('node:child_process');
+const FFPROBE_BIN = path.join(
+  root,
+  'node_modules/@remotion/compositor-linux-x64-gnu/ffprobe'
+);
+const probeDur = (file) => {
+  try {
+    return parseFloat(
+      execFileSync(FFPROBE_BIN, [
+        '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', file,
+      ]).toString()
+    );
+  } catch {
+    return undefined;
+  }
+};
+const hasAudioStream = (file) => {
+  try {
+    return (
+      execFileSync(FFPROBE_BIN, [
+        '-v', 'error', '-select_streams', 'a:0',
+        '-show_entries', 'stream=codec_name', '-of', 'csv=p=0', file,
+      ]).toString().trim().length > 0
+    );
+  } catch {
+    return false;
+  }
+};
 const sources = script.scenes.map((sc) => {
   const clip = path.join(root, 'public/ugc-clips', scriptId, `${sc.id}.mp4`);
   const frame = path.join(root, 'public/ugc-frames', scriptId, `${sc.id}.png`);
-  if (fs.existsSync(clip)) return { type: 'video', src: `ugc-clips/${scriptId}/${sc.id}.mp4` };
+  if (fs.existsSync(clip))
+    return {
+      type: 'video',
+      src: `ugc-clips/${scriptId}/${sc.id}.mp4`,
+      mediaDur: probeDur(clip),
+      // Lip-synced clips (HeyGen) carry their own voice — the engine plays
+      // it and skips the separate VO track for that scene.
+      hasAudio: hasAudioStream(clip),
+    };
   if (fs.existsSync(frame)) return { type: 'image', src: `ugc-frames/${scriptId}/${sc.id}.png` };
   return { type: 'image', src: sc.media.replace(/^\//, '') };
 });
@@ -66,7 +102,9 @@ console.log(`[sources] ${scriptId}: ${kinds} (v=clip,i=frame/still)`);
 
 // Per-scene voiceover: public/ugc-vo/<id>/<locale>/<sceneId>.mp3 (falls
 // back to the EN take when the locale has none).
-const voSrcs = script.scenes.map((sc) => {
+const voSrcs = script.scenes.map((sc, i) => {
+  // Scene's clip already speaks (lip-sync) — no duplicate VO on top.
+  if (sources[i]?.hasAudio) return null;
   for (const loc of [locale, 'en']) {
     const rel = `ugc-vo/${scriptId}/${loc}/${sc.id}.mp3`;
     if (fs.existsSync(path.join(root, 'public', rel))) return rel;

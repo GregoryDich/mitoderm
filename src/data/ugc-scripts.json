@@ -15,7 +15,7 @@
     "style": {
       "look": "cinematic clinical-luxury skincare, deep near-black background, warm gold key light with soft rim light, shallow depth of field, premium editorial, subtle film grain",
       "aspect": "9:16 vertical, 1080x1920",
-      "negative": "text, watermark, logo, deformed hands, extra fingers, low quality, cluttered, busy background"
+      "negative": "text, watermark, logo, deformed hands, extra fingers, low quality, cluttered, busy background, invented product packaging, fictional jars or bottles"
     },
     "audio": {
       "music": "/audio/ugc/minimal-pulse.mp3",
@@ -42,7 +42,7 @@
       "scenes": [
         {
           "id": "s1",
-          "dur": 3,
+          "dur": 6.1,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "zoom-in",
           "transition": "cut",
@@ -61,7 +61,7 @@
         },
         {
           "id": "s2",
-          "dur": 3.5,
+          "dur": 5.6,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "pan-right",
           "transition": "cut",
@@ -80,7 +80,7 @@
         },
         {
           "id": "s3",
-          "dur": 4,
+          "dur": 5.8,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "pan-left",
           "transition": "cut",
@@ -98,7 +98,7 @@
         },
         {
           "id": "s4",
-          "dur": 4,
+          "dur": 6.3,
           "media": "/products/v-tech-gel-mask/hero.png",
           "motion": "zoom-in",
           "transition": "cut",
@@ -117,13 +117,13 @@
         },
         {
           "id": "s5",
-          "dur": 4,
+          "dur": 5.2,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "zoom-in",
           "transition": "cut",
           "camera": "slow push-in over 5 seconds",
           "keyframe": "character",
-          "visual": "same cosmetologist preparing a treatment at the clinic table, calm precise hand movements, documentary daylight, 9:16",
+          "visual": "same cosmetologist hands in white gloves arranging sterile instruments on a clinic tray, calm precise movements, NO product containers or bottles visible, documentary daylight, 9:16",
           "onScreen": {
             "en": "Now in my working protocols",
             "ru": "Теперь в моих рабочих протоколах",
@@ -136,7 +136,7 @@
         },
         {
           "id": "s6",
-          "dur": 3.5,
+          "dur": 5.5,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "pan-right",
           "transition": "cut",
@@ -154,7 +154,7 @@
         },
         {
           "id": "s7",
-          "dur": 3.5,
+          "dur": 6,
           "media": "/products/v-tech-system/hero.webp",
           "motion": "push-up",
           "transition": "dissolve",
@@ -188,7 +188,8 @@
         "#cosmetology",
         "#skinprotocol",
         "#mitoderm"
-      ]
+      ],
+      "pacing": "doc"
     },
     {
       "id": "vtech-pdrn-pov",
@@ -253,13 +254,14 @@
           "motion": "zoom-in",
           "transition": "cut",
           "camera": "slow push-in over 5 seconds",
-          "keyframe": "reframe",
+          "keyframe": "edit",
           "visual": "V-Tech system kit, real packaging",
           "onScreen": {
             "en": "V-Tech: 2% PDRN + exosomes",
             "ru": "V-Tech: 2% PDRN + экзосомы",
             "he": "V-Tech: 2% PDRN + אקזוסומים"
-          }
+          },
+          "editPrompt": "this exact V-Tech product kit standing open on a white marble bathroom shelf beside a small green plant, soft morning daylight from a window, dewy fresh atmosphere, premium skincare editorial"
         },
         {
           "id": "s5",

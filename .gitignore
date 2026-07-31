@@ -22,3 +22,4 @@ tsconfig.tsbuildinfo
 /public/ugc-clips
 /public/ugc-frames
 /public/ugc-vo
+/.heygen-cache.json
