@@ -1,0 +1,97 @@
+{
+  "name": "Mitoderm — Telegram вход (идея → клип → ответ в чат)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Telegram-вход в Creative Decision OS\n\n**Setup (один раз):**\n1. @BotFather → /newbot → получить токен.\n2. n8n → Credentials → Telegram API → вставить токен.\n3. n8n нужен ПУБЛИЧНЫЙ URL для вебхуков Telegram. Локальный Docker: `cloudflared tunnel --url http://localhost:5678`, полученный https-адрес прописать в env n8n: `WEBHOOK_URL=https://…`.\n4. Импортировать также n8n-produce.json (этот workflow дергает его вебхук).\n\n**Формат сообщения боту:**\n`clip <imageUrl> | <промпт сцены> | <подпись>` → Kling-клип через fal → ответ файлом.\nЛюбой другой текст → бот вернёт инструкцию и команду репо для полного пака (`node scripts/produce.mjs <id> <locale> --hq`).\n\nEnv: FAL_KEY (в n8n-produce), N8N_PRODUCE_WEBHOOK (например http://localhost:5678/webhook/mitoderm-produce).",
+        "height": 460,
+        "width": 460
+      },
+      "name": "README",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": { "updates": ["message"], "additionalFields": {} },
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [60, 520]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Разбор команды: `clip <imageUrl> | <prompt> | <caption>`\nconst msg = $json.message ?? {};\nconst text = (msg.text ?? '').trim();\nconst chatId = msg.chat?.id;\nconst m = text.match(/^clip\\s+(\\S+)\\s*\\|\\s*([^|]+?)\\s*(?:\\|\\s*(.+))?$/is);\nif (m) {\n  return [{ json: { mode: 'clip', chatId, imageUrl: m[1], prompt: m[2].trim(), caption: (m[3] ?? '').trim() } }];\n}\nreturn [{ json: { mode: 'help', chatId } }];"
+      },
+      "name": "Parse command",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [280, 520]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "typeValidation": "loose" },
+          "conditions": [
+            { "leftValue": "={{ $json.mode }}", "rightValue": "clip", "operator": { "type": "string", "operation": "equals" } }
+          ],
+          "combinator": "and"
+        }
+      },
+      "name": "clip?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [500, 520]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.N8N_PRODUCE_WEBHOOK || 'http://localhost:5678/webhook/mitoderm-produce' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ imageUrl: $json.imageUrl, prompt: $json.prompt, caption: $json.caption }) }}",
+        "options": { "timeout": 600000 }
+      },
+      "name": "→ produce workflow",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 400]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Parse command').item.json.chatId }}",
+        "text": "=Готово. Ответ produce-пайплайна:\n{{ JSON.stringify($json).slice(0, 800) }}",
+        "additionalFields": {}
+      },
+      "name": "Reply: result",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [940, 400]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "Форматы:\n\n1) Быстрый клип (fal Kling, ~$0.35):\nclip <imageUrl> | <промпт сцены> | <подпись>\n\n2) Полный брендированный пак (Remotion, субтитры, обложка):\nв терминале репо — node scripts/produce.mjs <scriptId> <locale> --hq\nСценарии: vtech-unaware-hook · vtech-problem-plateau · vtech-mechanism · vtech-proof-firstsession · vtech-pro-economics · vtech-pro-protocol\nЛокали: en · ru · he",
+        "additionalFields": {}
+      },
+      "name": "Reply: help",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [720, 640]
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": { "main": [[{ "node": "Parse command", "type": "main", "index": 0 }]] },
+    "Parse command": { "main": [[{ "node": "clip?", "type": "main", "index": 0 }]] },
+    "clip?": {
+      "main": [
+        [{ "node": "→ produce workflow", "type": "main", "index": 0 }],
+        [{ "node": "Reply: help", "type": "main", "index": 0 }]
+      ]
+    },
+    "→ produce workflow": { "main": [[{ "node": "Reply: result", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

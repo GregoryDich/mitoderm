@@ -21,7 +21,9 @@
     "remotion:studio": "remotion studio remotion/index.ts",
     "remotion:render": "node remotion/render.mjs",
     "ugc:frames": "node remotion/generate-frames.mjs",
-    "ugc:clips": "node remotion/generate-clips.mjs"
+    "ugc:clips": "node remotion/generate-clips.mjs",
+    "ugc:produce": "node scripts/produce.mjs",
+    "ugc:lint": "node scripts/rubric-lint.mjs"
   },
   "dependencies": {
     "@next/env": "^15.1.0",

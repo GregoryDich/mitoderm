@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "note": "Pattern Genome lite — reusable MECHANISMS, not examples (store the why, not the artifact). Consumed by script-writing: pick one hook archetype + one container per reel, camera phrases go verbatim into scene.camera. Confidence per July-2026 research sweep (docs/virality-rubric.md sources); re-validate quarterly — patterns age.",
+    "updated": "2026-07-31",
+    "maturity_levels": ["hypothesis", "validated", "canonical"]
+  },
+  "hooks": [
+    {
+      "id": "bold-claim",
+      "mechanism": "Contrarian/absolute statement inside 2s creates instant stake; viewer stays to judge it.",
+      "when": "Category myths, positioning against habit (e.g. 'not a cream').",
+      "example_in_repo": "vtech-unaware-hook",
+      "confidence": 0.9,
+      "maturity": "canonical",
+      "source": "OpusClip hook taxonomy; TikTok for Business first-seconds data"
+    },
+    {
+      "id": "curiosity-gap",
+      "mechanism": "Open question that cannot be answered yes/no; Zeigarnik loop holds until payoff.",
+      "when": "Educational reels; close the loop only in the last second.",
+      "example_in_repo": "vtech-problem-plateau",
+      "confidence": 0.9,
+      "maturity": "canonical",
+      "source": "OpusClip; retention >=65% at 3s benchmark"
+    },
+    {
+      "id": "pattern-interrupt",
+      "mechanism": "Unexpected visual/sound in frame 1 breaks scroll autopilot; no logo intros ever.",
+      "when": "Saturated feeds; macro texture or needle-to-bottle contrast for skincare.",
+      "example_in_repo": "vtech-mechanism (macro droplet first frame)",
+      "confidence": 0.85,
+      "maturity": "validated",
+      "source": "OpusClip; virvid retention study"
+    },
+    {
+      "id": "proof-first",
+      "mechanism": "Lead with the RESULT (number, before/after) — trust borrowed from evidence, story explains after.",
+      "when": "Product-aware audience; clinical niches.",
+      "example_in_repo": "vtech-proof-firstsession (92% first frame)",
+      "confidence": 0.9,
+      "maturity": "canonical",
+      "source": "OpusClip proof-first archetype; med-spa case studies"
+    }
+  ],
+  "containers": [
+    {
+      "id": "before-after-story",
+      "mechanism": "Transformation wrapped in a client story/voiceover — narrative carries the proof past ad-blindness.",
+      "when": "Strongest med-aesthetic format; needs real (consented) imagery.",
+      "confidence": 0.9,
+      "maturity": "canonical",
+      "source": "ClinicGrower med-spa playbook"
+    },
+    {
+      "id": "expectation-vs-reality",
+      "mechanism": "Sets up a wrong guess, corrects it — double retention beat (guess + reveal).",
+      "when": "Lighthearted clinic content; 7Q Spa case hit 2.4M views organically.",
+      "confidence": 0.8,
+      "maturity": "validated",
+      "source": "ClinicGrower 7Q Spa case"
+    },
+    {
+      "id": "clinic-grade-ingredient-explained",
+      "mechanism": "'The thing your clinic uses, decoded' — authority + insider access. Exosomes/PDRN trend arc (celebrity catalysts) makes this hot now.",
+      "when": "Unaware/problem-aware patients; our default educational container.",
+      "confidence": 0.85,
+      "maturity": "validated",
+      "source": "Business of Fashion PDRN/exosome trend reporting"
+    },
+    {
+      "id": "x-vs-y-comparison",
+      "mechanism": "Comparison is self-sustaining: viewers argue in comments, algorithm reads debate as engagement.",
+      "when": "Product-aware; Medicube-vs-Anua style formats in K-beauty prove it.",
+      "confidence": 0.8,
+      "maturity": "validated",
+      "source": "BoF / Get the Gloss K-beauty comparison meta"
+    }
+  ],
+  "camera": [
+    { "phrase": "slow push-in over 5 seconds", "preset": "Super Dolly In", "feel": "intimacy, focus", "when": "hero product, faces", "confidence": 0.9 },
+    { "phrase": "crash zoom in", "preset": "Crash Zoom In", "feel": "urgency, punch", "when": "hooks, reveals", "confidence": 0.85 },
+    { "phrase": "slow orbit clockwise, max 30 degrees", "preset": "360 Orbit (partial)", "feel": "premium showcase", "when": "packshots", "confidence": 0.85 },
+    { "phrase": "slow dolly right", "preset": "Dolly Right", "feel": "progress, journey", "when": "step sequences", "confidence": 0.8 },
+    { "phrase": "focus change from foreground to subject", "preset": "Focus Change", "feel": "discovery", "when": "macro droplets, ingredient shots", "confidence": 0.85 },
+    { "phrase": "glam beauty-light sweep (Glam)", "preset": "Glam", "feel": "luxury skin glow", "when": "skin close-ups", "confidence": 0.8 },
+    { "phrase": "slight handheld drift", "preset": "Handheld", "feel": "authenticity, UGC", "when": "testimonial/portrait beats", "confidence": 0.85 },
+    { "phrase": "locked-off macro close-up", "preset": "Static", "feel": "clinical precision", "when": "diagrams, texture — max one per reel", "confidence": 0.8 },
+    { "phrase": "slow crane up", "preset": "Crane Up", "feel": "scale, arrival", "when": "clinic/space establishing", "confidence": 0.75 },
+    { "phrase": "slow push-in through the gel layer (Through Object)", "preset": "Through Object In", "feel": "penetration/absorption metaphor", "when": "occlusion & actives beats", "confidence": 0.75 }
+  ],
+  "grammar_rules": [
+    "One named camera move per clip — two moves confuse the model.",
+    "Camera instruction goes LAST in the video prompt.",
+    "Always add a 'slow' modifier — fast moves warp; orbits <=30 degrees.",
+    "Subject → environment → action → lighting → style → camera (Kling order)."
+  ],
+  "negative": [
+    { "id": "logo-intro", "mechanism": "Branding in frame 1 signals 'ad' — instant scroll.", "confidence": 0.9 },
+    { "id": "static-over-4s", "mechanism": "Any shot >4s without visual change is the top drop-off trigger.", "confidence": 0.85 },
+    { "id": "hashtag-stuffing", "mechanism": ">5 hashtags is hard-capped by IG (Dec 2025) and reads as spam.", "confidence": 0.95 },
+    { "id": "spoken-cta-midvideo", "mechanism": "Verbal CTA inside the video body kills retention; CTA belongs in caption/comments.", "confidence": 0.8 },
+    { "id": "trending-commercial-audio-business", "mechanism": "Business accounts can't legally use trending commercial audio — mute-risk + takedowns; bake licensed tracks at render.", "confidence": 0.95 }
+  ]
+}

@@ -285,3 +285,27 @@ script: `docs/virality-rubric.md`. Repo nodes: `scripts/trends-scrape.mjs`
 4. **UPLOADPOST_KEY + профиль** — https://upload-post.com (free tier).
 5. *(опция)* **GROQ_API_KEY** — https://console.groq.com (free).
 6. *(опция)* Higgsfield MCP коннектором в claude.ai: `mcp.higgsfield.ai/mcp`.
+
+---
+
+## 9. Production Core v1 — единая точка входа
+
+Полная карта решений: `docs/creative-decision-os.md`. Кратко:
+
+```
+Gate 0 (rubric-lint, бесплатно) → draft render (stills/LTX-2) → превью-кадры
+   → Gate 1 (человек) → HQ клипы (Kling 2.5) → Gate 2 (ffprobe QA)
+   → ЭКСПОРТ-ПАК: reel.mp4 + thumbnail + caption + hashtags + SRT + storyboard
+```
+
+```bash
+npm run ugc:lint                                        # проверить раскадровки
+node scripts/produce.mjs vtech-mechanism en --yes       # бесплатный полный пак
+FAL_KEY=... node scripts/produce.mjs vtech-mechanism en --hq  # кинематографичный
+```
+
+Знания системы: `src/data/patterns.json` (Pattern Genome) ·
+`src/data/decision-journal.jsonl` (журнал решений) ·
+`docs/virality-rubric.md` (пороги). Telegram-вход:
+`automation/n8n-telegram.json` (см. README-ноду внутри — нужен cloudflared-
+туннель для вебхуков Telegram при локальном n8n).
