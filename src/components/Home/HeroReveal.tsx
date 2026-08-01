@@ -167,6 +167,7 @@ const HeroReveal: FC<Props> = ({
   const bySlug = new Map(products.map((p) => [p.slug, p]));
 
   return (
+    <>
     <section ref={sectionRef} className={styles.hero}>
       {/* Mobile-only portrait poster: the flat base with the lit twin
           revealed under a slow, self-drifting spotlight (no hover on
@@ -254,32 +255,37 @@ const HeroReveal: FC<Props> = ({
         )}
       </div>
 
-      <div className={styles.overlay}>
-        <div className={styles.headBlock}>
-          <span className={styles.badge}>
-            <span className={styles.badgeDot} aria-hidden="true" />
-            {t('heroBadge')}
+    </section>
+
+    {/* Intro copy — its own section under the photo block (owner request
+        01.08: the hero keeps only the interactive lineup; the badge/H1/
+        desc/CTA column follows as the next, centered section). */}
+    <section className={styles.intro}>
+      <div className={styles.headBlock}>
+        <span className={styles.badge}>
+          <span className={styles.badgeDot} aria-hidden="true" />
+          {t('heroBadge')}
+        </span>
+        <h1 className={styles.title}>
+          <span className={styles.line1}>{t('heroTitle1')}</span>
+          <span className={`${styles.line2} ${styles.titleAccent}`}>
+            {t('heroTitle2')}
           </span>
-          <h1 className={styles.title}>
-            <span className={styles.line1}>{t('heroTitle1')}</span>
-            <span className={`${styles.line2} ${styles.titleAccent}`}>
-              {t('heroTitle2')}
-            </span>
-          </h1>
-        </div>
+        </h1>
+      </div>
 
-        <p className={styles.desc}>{t('heroDesc')}</p>
+      <p className={styles.desc}>{t('heroDesc')}</p>
 
-        <div className={styles.ctaBlock}>
-          <Link href="/catalog" className={styles.btnPrimary}>
-            {t('heroCta1')}
-          </Link>
-          <Link href="/catalog" className={styles.btnText}>
-            {t('heroCta2')} <span className={styles.arrow}>→</span>
-          </Link>
-        </div>
+      <div className={styles.ctaBlock}>
+        <Link href="/catalog" className={styles.btnPrimary}>
+          {t('heroCta1')}
+        </Link>
+        <Link href="/catalog" className={styles.btnText}>
+          {t('heroCta2')} <span className={styles.arrow}>→</span>
+        </Link>
       </div>
     </section>
+    </>
   );
 };
 

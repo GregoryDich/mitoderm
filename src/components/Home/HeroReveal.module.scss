@@ -213,72 +213,34 @@
   transform: translate(-50%, 0);
 }
 
-/* ---- text overlay ----
- * One cohesive column pinned to the top-start corner. The photo carries
- * its own baked-in centered MITODERM wordmark, so the copy stays in the
- * dark upper-start quadrant and out of the middle. Grouping badge → H1 →
- * desc → CTA (instead of flinging the title to the top and the buttons
- * to the bottom) is what removes the two dead gaps. */
-.overlay {
-  position: absolute;
-  inset: 0;
-  /* Track the photo box, not the section: on ultra-wide screens the photo
-   * is height-capped and centered, so anchoring the copy to the section
-   * edge pushed the badge/H1 off into the dark side bar (clipped). Capping
-   * the overlay to the photo width keeps the copy over the photo. */
-  margin-inline: auto;
-  max-width: min(100%, calc((100vh - 88px) * 2.344));
-  max-width: min(100%, calc((100dvh - 88px) * 2.344));
-  pointer-events: none;
-  z-index: 5;
+/* ---- intro section ----
+ * The copy column (badge → H1 → desc → CTA) is its own centered section
+ * right under the photo block (owner request 01.08) — the photo carries
+ * only the interactive lineup, the message follows at reading pace. */
+.intro {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: clamp(16px, 2.2vh, 26px);
-  padding-block-start: clamp(18px, 3.4vh, 40px);
+  align-items: center;
+  text-align: center;
+  gap: clamp(18px, 2.6vh, 28px);
+  padding-block: clamp(56px, 9vh, 104px) clamp(48px, 7vh, 88px);
   padding-inline: clamp(24px, 4vw, 56px);
-}
-
-/* Soft corner scrim behind the copy so the badge/H1/desc/CTA stay legible
- * over whichever products sit under the top-start quadrant, while the rest
- * of the lineup keeps its full contrast. */
-.overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    125% 95% at 0% 0%,
-    rgba(8, 8, 10, 0.82) 0%,
-    rgba(8, 8, 10, 0.45) 28%,
-    rgba(8, 8, 10, 0) 54%
-  );
-}
-
-:global([dir='rtl']) .overlay::before {
-  background: radial-gradient(
-    125% 95% at 100% 0%,
-    rgba(8, 8, 10, 0.82) 0%,
-    rgba(8, 8, 10, 0.45) 28%,
-    rgba(8, 8, 10, 0) 54%
-  );
-}
-
-.overlay a {
-  pointer-events: auto;
-}
-
-.overlay > * {
-  position: relative;
+  background:
+    radial-gradient(
+      90% 70% at 50% 0%,
+      rgba(58, 42, 24, 0.28) 0%,
+      rgba(8, 8, 10, 0) 70%
+    ),
+    #08080a;
 }
 
 .headBlock {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: start;
-  gap: 14px;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
 
 .badge {
@@ -338,12 +300,11 @@
 }
 
 .desc {
-  max-width: 340px;
-  font-size: 14px;
+  max-width: 640px;
+  font-size: clamp(14px, 1.15vw, 16px);
   font-weight: 300;
   line-height: 1.7;
   color: rgba(245, 242, 240, 0.78);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
 }
 
 .ctaBlock {
@@ -351,6 +312,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 14px 24px;
 }
 
@@ -481,36 +443,20 @@
     display: block;
   }
 
-  .overlay {
-    justify-content: flex-end;
-    align-items: stretch;
-    text-align: center;
+  .intro {
+    padding-block: clamp(40px, 7vh, 64px) clamp(36px, 6vh, 56px);
+    padding-inline: 22px;
     gap: 16px;
-    padding: 20px 22px clamp(26px, 5vh, 44px);
-  }
-  /* Bottom scrim comes from .mScrim on the poster; drop the corner one. */
-  .overlay::before {
-    display: none;
-  }
-  .headBlock {
-    align-items: center;
-    text-align: center;
-    gap: 14px;
-  }
-  .badge {
-    align-self: center;
   }
   .title {
     font-size: clamp(30px, 8.5vw, 40px);
   }
-  .desc {
-    display: none;
-  }
   .ctaBlock {
     align-items: stretch;
-    justify-content: center;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    max-width: 340px;
   }
   .btnPrimary {
     text-align: center;
