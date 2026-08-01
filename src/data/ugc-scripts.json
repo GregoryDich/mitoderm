@@ -1568,6 +1568,164 @@
           "whyFromWinner": "у победителя продукт и «артикул в описании» строго в конце — переносим точно"
         }
       ]
+    },
+    {
+      "id": "vtech-cosmo-thoughts",
+      "title": "Мысли косметолога во время процедуры (POV-юмор)",
+      "product": "v-tech-serum",
+      "audience": "pro",
+      "awareness": "product",
+      "accent": "teal",
+      "pacing": "doc",
+      "market": "IL (русскоязычные косметологи)",
+      "evidence": "src/data/trends/tiktok-2026-08-01-comedy.json — контейнер inner-monologue-pov: @hai.aesthetics 395k plays / 31.7k likes / ~250 fans = x1599 (рекорд всех наших скрапов), eng 8.8%, 10.06.2026 СВЕЖИЙ; юмор-паттерн подтверждён: @zarina_kosmet 616k/94.5k eng 19% (RU), @evanryleex 575k/97.4k eng 24%, @estheticianpete 42.4M/6.2M eng 20.1% (скиты про косметолог×клиент)",
+      "confidence": 0.8,
+      "adversarial": "Риск 1: юмор внутреннего монолога должен узнаваться именно косметологами (профессиональные микро-боли), не широкой аудиторией — это фича, не баг: ЦА сузится, но зашерится внутри профсообщества («это я»). Риск 2: нужен ОДИН реальный кадр процедуры — без съёмки контейнер мёртв (AI-руки на лице запрещены нашим же правилом); съёмка = 3 ракурса × 30s на телефон. Риск 3: панч «это не я, это V-Tech» должен остаться самоиронией, не превратиться в рекламу — продукт появляется только в последних 6 секундах.",
+      "hook": {
+        "ru": "Мысли косметолога во время процедуры",
+        "en": "An esthetician's thoughts mid-treatment",
+        "he": "מחשבות של קוסמטיקאית באמצע טיפול"
+      },
+      "cta": {
+        "ru": "V-Tech — ссылка в шапке",
+        "en": "V-Tech — link in bio",
+        "he": "V-Tech — קישור בביו"
+      },
+      "caption": {
+        "ru": "Отметь косметолога, у которого в голове ровно это 😅 А в конце — да, экзосомы делают половину магии. V-Tech для кабинета — ссылка в шапке.",
+        "en": "Tag an esthetician whose head sounds exactly like this 😅 V-Tech for clinics — link in bio.",
+        "he": "תייגי קוסמטיקאית 😅 V-Tech לקליניקה — קישור בביו."
+      },
+      "hashtags": [
+        "#косметолог",
+        "#косметологизраиль",
+        "#процедура",
+        "#экзосомы",
+        "#юморкосметолога"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "top-down over the treatment couch, static",
+          "hybridSlot": true,
+          "visual": "REAL FOOTAGE SLOT: gloved hands smoothing gel over a relaxed client face on the couch, warm clinic light, top-down, 9:16",
+          "onScreen": {
+            "ru": "Мысли косметолога во время процедуры",
+            "en": "An esthetician's thoughts mid-treatment",
+            "he": "מחשבות באמצע טיפול"
+          },
+          "vo": {
+            "ru": "Так. Долгие, непрерывные движения. Долгие. Непрерывные.",
+            "en": "Okay. Long continuous movements. Long. Continuous."
+          },
+          "whyFromWinner": "hai: хук-титр «my thoughts during a cleanse» + мантра «long continuous movements» — вход в POV без приветствия"
+        },
+        {
+          "id": "s2",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "side angle at couch level, static",
+          "hybridSlot": true,
+          "visual": "REAL FOOTAGE SLOT: same treatment, side angle, hands working on the forehead, 9:16",
+          "onScreen": {
+            "ru": "Зачем я начала со лба?",
+            "en": "Why did I start at the forehead?",
+            "he": "למה התחלתי מהמצח?"
+          },
+          "vo": {
+            "ru": "Зачем я начала со лба? Я всегда начинаю со лба... Ладно. Никто не заметил.",
+            "en": "Why did I start at the forehead? I always start at the forehead... Fine. Nobody noticed."
+          },
+          "whyFromWinner": "hai: дословный бит «Why’d I start at the forehead?» — узнавание профессиональной микро-паники"
+        },
+        {
+          "id": "s3",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "close-up of the client relaxed face, static",
+          "hybridSlot": true,
+          "visual": "REAL FOOTAGE SLOT: client face serene, mask/gel glistening, esthetician hands in frame, 9:16",
+          "onScreen": {
+            "ru": "«А эффект сразу будет?»",
+            "en": "'Will I see results right away?'",
+            "he": "«יהיה אפקט מיד?»"
+          },
+          "vo": {
+            "ru": "Она спросила, будет ли эффект сразу. Я улыбнулась. И не прочитала лекцию про фибробласты. Держусь.",
+            "en": "She asked if she'll see results right away. I smiled. And did not deliver the fibroblast lecture. Holding it together."
+          },
+          "whyFromWinner": "zarina/pete: типаж клиентки как источник юмора; наша боль из honest-timeline переупакована в шутку"
+        },
+        {
+          "id": "s4",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "top-down, static",
+          "hybridSlot": true,
+          "visual": "REAL FOOTAGE SLOT: client fully asleep, tiny snore vibe, hands still working, 9:16",
+          "onScreen": {
+            "ru": "Уснула = комплимент",
+            "en": "Asleep = a compliment",
+            "he": "נרדמה = מחמאה"
+          },
+          "vo": {
+            "ru": "Уснула. Значит, руки — золото. Или я перегрела пар?.. Нет. Руки — золото.",
+            "en": "She fell asleep. So my hands are gold. Or did I overheat the steamer?.. No. Hands. Gold."
+          },
+          "whyFromWinner": "hai: «I hope the steam’s not bothering her» — тревожная забота как юмор"
+        },
+        {
+          "id": "s5",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "macro of hands applying serum ampoule, static",
+          "hybridSlot": true,
+          "visual": "REAL FOOTAGE SLOT: opening the V-Tech ampoule, applying serum — the real pack visible in frame, 9:16",
+          "onScreen": {
+            "ru": "Финальный аккорд: экзосомы",
+            "en": "The finale: exosomes",
+            "he": "הפינאלה: אקזוזומים"
+          },
+          "vo": {
+            "ru": "Финал — экзосомы. Сейчас она проснётся, посмотрит в зеркало и скажет, что я волшебница.",
+            "en": "The finale — exosomes. Now she'll wake up, look in the mirror and call me a magician."
+          },
+          "whyFromWinner": "структура hai: ритуал идёт к финальному штриху; продукт входит в кадр естественно, руками"
+        },
+        {
+          "id": "s6",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "keyframe": "edit",
+          "visual": "V-Tech system kit on clinic shelf, real packaging",
+          "editPrompt": "this exact V-Tech product kit standing on a white clinic shelf, soft professional daylight, premium medical aesthetic, subtle teal accent, 9:16",
+          "onScreen": {
+            "ru": "Это не я. Это V-Tech 😌 · ссылка в шапке",
+            "en": "It's not me. It's V-Tech 😌 · link in bio",
+            "he": "זה לא אני. זה V-Tech 😌"
+          },
+          "vo": {
+            "ru": "Ладно. Это не только я. Это V-Tech. Но ей знать не обязательно.",
+            "en": "Okay. It's not just me. It's V-Tech. But she doesn't need to know."
+          },
+          "whyFromWinner": "панч-финал одной репликой и мгновенный конец (формула из разборов: обрыв на пике → пересмотры); продукт+CTA строго последними"
+        }
+      ]
     }
   ]
 }
