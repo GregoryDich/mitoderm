@@ -3,6 +3,9 @@
   z-index: 1;
   width: min(var(--cw, 1160px), 100% - 2 * var(--gutter, clamp(20px, 5vw, 60px)));
   margin-inline: auto;
+  /* Breathing room above the label — the stat strip no longer draws its
+   * full-width bottom rule, spacing separates the sections instead. */
+  padding-block-start: clamp(36px, 5vw, 64px);
 }
 
 .head {
