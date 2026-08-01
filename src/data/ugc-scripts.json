@@ -1156,6 +1156,207 @@
       "evidence": "NONE — authored against docs/virality-rubric.md, not scraped winners",
       "confidence": 0.55,
       "adversarial": "Self-authored container; retention untested; product-box-centric visuals underperform face-first content per tiktok-2026-07-31 evidence."
+    },
+    {
+      "id": "vtech-honest-timeline",
+      "title": "Неделя на экзосомах — эффекта ноль (честный таймлайн)",
+      "product": "v-tech-serum",
+      "audience": "patient",
+      "awareness": "solution",
+      "accent": "teal",
+      "pacing": "doc",
+      "evidence": "src/data/trends/tiktok-2026-08-01.json — контейнер honest-crisis-explainer: @yapobeauty 1.6M plays / 95k likes / 16k fans = x102.6 outlier (сильнейший в выборке из 75), RU-язык, транскрипт+кадры прочитаны",
+      "confidence": 0.8,
+      "adversarial": "Риск 1: у победителя кризис реальный (кислотная чистка), у экзосом кризиса нет — заменяем на честное «эффекта нет неделю», то же управление ожиданиями без выдумки. Риск 2: контейнер держится на человеке и голосе — с маскот-озвучкой или без презентера доверие умрёт; сцена s2 требует съёмку владельца или липсинк. Риск 3: '21 день коллагену' — общебиологический факт, но не наше клиническое исследование; формулировка без цифр обещаний.",
+      "hook": {
+        "en": "A week on exosomes. Zero effect.",
+        "ru": "Неделя на экзосомах. Эффекта ноль.",
+        "he": "שבוע על אקזוזומים. אפס אפקט."
+      },
+      "cta": {
+        "en": "V-Tech — link in bio",
+        "ru": "V-Tech — ссылка в шапке",
+        "he": "V-Tech — קישור בביו"
+      },
+      "caption": {
+        "ru": "Как вам честный таймлайн? Если пользуетесь экзосомами и «ничего не происходит» — работа идёт под кожей, просто ей нужно время. Вопросы — в комменты, отвечу всем. Сыворотка — ссылка в шапке.",
+        "en": "Honest timeline. If you're on exosomes and 'nothing is happening' — the work is happening under the skin. Questions in the comments. Link in bio.",
+        "he": "ציר זמן כן. שאלות בתגובות. קישור בביו."
+      },
+      "hashtags": [
+        "#экзосомы",
+        "#уходзакожей",
+        "#сыворотка",
+        "#pdrn",
+        "#skincare"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "dur": 3,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "locked-off macro close-up",
+          "visual": "honest macro of dull tired facial skin texture of a woman 35, uneven tone, no makeup, no filter feel, natural window light, no objects near the face, 9:16",
+          "onScreen": {
+            "ru": "Неделя. Эффекта ноль.",
+            "en": "One week. Zero effect.",
+            "he": "שבוע. אפס אפקט."
+          },
+          "vo": {
+            "ru": "Неделя на экзосомной сыворотке — и никакого вау-эффекта.",
+            "en": "A week on an exosome serum — and no wow effect."
+          },
+          "frames": {
+            "start": {
+              "prompt": "honest macro of dull tired facial skin texture of a woman 35, uneven tone, no-makeup no-filter feel, natural window light, 9:16"
+            },
+            "end": {
+              "editFromStart": "camera a touch closer on the same skin, light unchanged, still dull and honest, everything else identical"
+            }
+          }
+        },
+        {
+          "id": "s2",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "static selfie framing",
+          "keyframe": "character",
+          "hybridSlot": true,
+          "visual": "the same woman talking to camera calmly, slight knowing smile, grey hoodie, home daylight, selfie distance, hands visible but nothing touching the face, 9:16",
+          "onScreen": {
+            "ru": "И это нормально",
+            "en": "And that's normal",
+            "he": "וזה נורמלי"
+          },
+          "vo": {
+            "ru": "И это нормально. Сейчас объясню, что происходит под кожей.",
+            "en": "And that's normal. Let me explain what's happening under the skin."
+          }
+        },
+        {
+          "id": "s3",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "visual": "cinematic abstract macro of skin dermis layers with tiny glowing signal particles travelling between cells, teal and gold palette, scientific but beautiful, 9:16",
+          "onScreen": {
+            "ru": "Экзосомы = сигнал клеткам",
+            "en": "Exosomes = a signal to cells",
+            "he": "אקזוזומים = אות לתאים"
+          },
+          "vo": {
+            "ru": "Экзосомы не мажут эффект сверху. Это сигналы — они дают клеткам команду работать.",
+            "en": "Exosomes don't paint an effect on top. They're signals telling your cells to work."
+          },
+          "frames": {
+            "start": {
+              "prompt": "cinematic abstract macro of skin dermis layers with tiny glowing signal particles travelling between cells, teal and gold palette, scientific but beautiful, 9:16"
+            },
+            "end": {
+              "editFromStart": "the glowing particles have reached the cells which now glow softly awake, same palette, same composition"
+            }
+          }
+        },
+        {
+          "id": "s4",
+          "dur": 4,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "locked-off macro close-up",
+          "visual": "macro of fresh collagen fibers forming as delicate luminous lattice under translucent skin surface, elegant medical visualization, teal accent, 9:16",
+          "onScreen": {
+            "ru": "Новый коллаген ≈ 21 день",
+            "en": "New collagen ≈ 21 days",
+            "he": "קולגן חדש ≈ 21 יום"
+          },
+          "vo": {
+            "ru": "Новому коллагену нужно около трёх недель. Всё, что даёт мгновенный вау — это плёнка силиконов.",
+            "en": "New collagen takes about three weeks. Anything instant is just a silicone film."
+          },
+          "frames": {
+            "start": {
+              "prompt": "macro of fresh collagen fibers forming as delicate luminous lattice under translucent skin surface, elegant medical visualization, teal accent, 9:16"
+            },
+            "end": {
+              "editFromStart": "the lattice is denser and more organized, glow slightly stronger, same framing and palette"
+            }
+          }
+        },
+        {
+          "id": "s5",
+          "dur": 4.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "pan-right",
+          "transition": "cut",
+          "camera": "slow lateral pan",
+          "visual": "the same honest cheek skin from scene one now gradually smoother and more even-toned, natural window light, believable subtle improvement not a glossy filter, 9:16",
+          "onScreen": {
+            "ru": "День 7 · День 14 · День 21",
+            "en": "Day 7 · Day 14 · Day 21",
+            "he": "יום 7 · יום 14 · יום 21"
+          },
+          "vo": {
+            "ru": "Первая неделя — увлажнение. Вторая — ровнее тон. С третьей — плотность и упругость.",
+            "en": "Week one — hydration. Week two — evener tone. From week three — density and firmness."
+          },
+          "frames": {
+            "chain": true,
+            "start": {
+              "prompt": "honest macro of a woman cheek skin slightly hydrated but still imperfect, natural window light, believable, 9:16"
+            },
+            "end": {
+              "editFromStart": "the same skin visibly smoother and more even-toned yet still natural and believable, not glossy, same light and framing"
+            }
+          }
+        },
+        {
+          "id": "s6",
+          "dur": 3.5,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "top-down flat lay, static",
+          "keyframe": "edit",
+          "visual": "V-Tech serum bottle flat lay with SPF cream, real packaging",
+          "editPrompt": "this exact V-Tech product flat-lay on warm beige linen next to a minimalist white SPF cream tube, morning window light, clean skincare-routine aesthetic, nothing else in frame, 9:16",
+          "onScreen": {
+            "ru": "Курс 4 недели + SPF утром",
+            "en": "4-week course + morning SPF",
+            "he": "קורס 4 שבועות + SPF"
+          },
+          "vo": {
+            "ru": "Поэтому курс — минимум четыре недели. И утром SPF, обязательно.",
+            "en": "So the course is at least four weeks. And SPF every morning."
+          }
+        },
+        {
+          "id": "s7",
+          "dur": 3,
+          "media": "/products/v-tech-system/hero.webp",
+          "motion": "zoom-in",
+          "transition": "cut",
+          "camera": "slow push-in over 5 seconds",
+          "keyframe": "edit",
+          "visual": "V-Tech system kit hero, real packaging",
+          "editPrompt": "this exact V-Tech product kit standing on a white marble shelf, soft morning daylight, dewy premium atmosphere, subtle teal accent in the background, 9:16",
+          "onScreen": {
+            "ru": "V-Tech · ссылка в шапке",
+            "en": "V-Tech · link in bio",
+            "he": "V-Tech · קישור בביו"
+          },
+          "vo": {
+            "ru": "V-Tech с экзосомами и PDRN — ссылка в шапке.",
+            "en": "V-Tech with exosomes and PDRN — link in bio."
+          }
+        }
+      ]
     }
   ]
 }

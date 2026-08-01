@@ -79,6 +79,22 @@ transcript and proceed:
 This is the standing approach for "вытащи фото из диалога" — use it
 proactively whenever inline images must become files, without asking.
 
+## RULE: идеи роликов — только со скрапа (постоянное, от владельца 01.08)
+
+Никакого самопридумывания идей без явной просьбы владельца. Каждый новый
+сценарий обязан начинаться со свежего скрапа и нести полный провенанс:
+
+1. `clockworks~tiktok-scraper` (Apify) по нишевым запросам EN+RU →
+   outlier-скоринг: `ratio = plays/fans`, `eng = (likes+3*shares+2*saves)/plays`.
+2. Топ перекачать с `shouldDownloadVideos: true` → прочитать покадрово
+   (ffmpeg `-ss` кадры) + транскрипт Groq whisper (`language=ru/en`).
+3. Извлечённый контейнер и метрики победителя сохранить в
+   `src/data/trends/tiktok-<date>.json` (method, winner: url/plays/likes/
+   fans/ratio/eng/why_chosen, transcript_arc, container_extracted).
+4. В сценарии заполнить `evidence` (ссылка на trends-файл + цифры),
+   `confidence`, `adversarial`. Отчёт владельцу: чем пользовался, откуда
+   скрапил, сколько лайков/просмотров у источника, почему взят именно он.
+
 ## SKILL: take ship-now actions without poking the owner
 
 Don't stall on owner questions that the roadmap (`STATE.md` § 5) has
