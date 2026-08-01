@@ -225,6 +225,16 @@ const ProductShowcase: FC = () => {
                           />
                         </div>
                         <div className={styles.duoText}>{body(p, { compact: true })}</div>
+                        {/* Each half of the split row navigates to its own
+                            product — the divider splits the click areas. */}
+                        <Link
+                          href={`/products/${p.slug}`}
+                          className={styles.rowLink}
+                          aria-label={p.name}
+                          onClick={() =>
+                            track('catalog_card_click', { slug: p.slug, from: 'showcase-duo' })
+                          }
+                        />
                       </Reveal>
                     </Fragment>
                   ))}
@@ -250,6 +260,16 @@ const ProductShowcase: FC = () => {
                 {body(p)}
               </Reveal>
             </div>
+            {/* Whole banner is the click target; .cta / .pairChip stay on
+                top of it (z-index) so their own links keep working. */}
+            <Link
+              href={`/products/${p.slug}`}
+              className={styles.rowLink}
+              aria-label={p.name}
+              onClick={() =>
+                track('catalog_card_click', { slug: p.slug, from: 'showcase-row' })
+              }
+            />
           </section>
         );
       })}
