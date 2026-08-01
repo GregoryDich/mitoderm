@@ -3,6 +3,10 @@
     "palmier": {
       "type": "http",
       "url": "http://127.0.0.1:19789/mcp"
+    },
+    "heygen-hyperframes": {
+      "type": "http",
+      "url": "https://mcp.heygen.com/mcp/"
     }
   }
 }

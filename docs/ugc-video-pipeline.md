@@ -260,7 +260,8 @@ script: `docs/virality-rubric.md`. Repo nodes: `scripts/trends-scrape.mjs`
 | ✅ бесплатно | [Apify](https://apify.com/apify/instagram-scraper) | $5 кредита/мес free | Скрейп топ-рилсов 10 креаторов ≈ $3–5/прогон |
 | ✅ бесплатно | [Groq](https://console.groq.com) | $0.04/час аудио | Транскрипты: 100 рилсов ≈ $0.05 |
 | ✅ бесплатно | [upload-post.com](https://upload-post.com) | 10 постов/мес free → $24/мес | Автопост IG Reels + TikTok (официальный audited API) |
-| ⏸ позже | [HeyGen API](https://www.heygen.com/api-pricing) | кошелёк от $5, ~$0.5–2/30s | Говорящие головы (avatar UGC) |
+| ✅ куплен | [HeyGen API](https://www.heygen.com/api-pricing) | кошелёк от $5, ~$0.5–2/30s | Говорящие головы (talking-photo, `scripts/generate-talkinghead.mjs`) |
+| ⏸ только локально | HeyGen HyperFrames MCP (`mcp.heygen.com/mcp/`) | входит в HeyGen | HTML/GSAP motion-graphics видео. **Из headless-контейнера недоступен**: auth только OAuth-браузер, и `compose`/`render_video` отключены для CLI-клиентов by design (их инструкция шлёт CLI-агентов на локальные skills `npx skills add heygen-com/hyperframes`). Функционально дублирует наш Remotion (тот бесплатен и уже в конвейере). Добавлен в `.mcp.json` — в локальной сессии на Mac Claude Code сам поднимет OAuth; ценен как расшариваемый проект в app.heygen.com / Magic Edit UI для владельца |
 | ⏸ позже | [Metricool](https://metricool.com) MCP | ~€43/мес Advanced | Аналитика + расписание (MCP реальный, ~28 тулов) |
 | ⏸ позже | [Arcads](https://arcads.ai) | $110/мес | Только hero-ads: самые живые AI-актёры |
 | ❌ скинуть | Higgsfield подписка | $15–99/мес | Наценка над теми же моделями; **словарь камер берём бесплатно** ([camera-controls](https://higgsfield.ai/camera-controls)); их MCP `mcp.higgsfield.ai/mcp` — опция для ручного режима |
