@@ -100,18 +100,21 @@
   background-repeat: no-repeat;
 }
 
-/* The lit twin, revealed by a big soft ellipse that drifts on its own. */
+/* The lit twin. Idle: a SMALL soft ellipse drifts as a "touch me" hint —
+ * most of the poster stays dark (owner 01.08: it was reading fully golden).
+ * Touch: JS masks it to a circle under the finger (desktop-hover analogue),
+ * .mLitTouch pausing the drift. */
 .mLit {
   --m: radial-gradient(
     closest-side,
-    #000 26%,
-    rgba(0, 0, 0, 0.45) 58%,
-    rgba(0, 0, 0, 0) 82%
+    #000 22%,
+    rgba(0, 0, 0, 0.4) 55%,
+    rgba(0, 0, 0, 0) 80%
   );
   -webkit-mask-image: var(--m);
   mask-image: var(--m);
-  -webkit-mask-size: 150% 78%;
-  mask-size: 150% 78%;
+  -webkit-mask-size: 74% 34%;
+  mask-size: 74% 34%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
@@ -122,11 +125,15 @@
   }
 }
 
-/* Reduced motion (and no-mask fallback): show the lit poster in full. */
+.mLitTouch {
+  animation: none !important;
+}
+
+/* Reduced motion: keep the poster calm — flat base, no drift; touch
+ * spotlight still works via the JS mask. */
 @media (prefers-reduced-motion: reduce) {
-  .mLit {
-    -webkit-mask-image: none;
-    mask-image: none;
+  .mLit:not(.mLitTouch) {
+    opacity: 0;
   }
 }
 
@@ -146,6 +153,18 @@
 }
 
 /* Bottom scrim so the overlaid copy stays legible over the lineup. */
+/* Hotspot layer mirroring the drawn poster box: the portrait renders as
+ * cover anchored to the top, so a top-anchored, full-width box with the
+ * poster's own aspect keeps percent coordinates true to the image even
+ * when the container crops the bottom. */
+.mHotspots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  aspect-ratio: 853 / 1844;
+}
+
 .mScrim {
   position: absolute;
   inset: 0;
@@ -210,6 +229,16 @@
 .hotspot:hover .chip,
 .hotspot:focus-visible .chip {
   opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Touch analogue of hover: JS flags the hotspot under the finger. */
+.chipOn {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.chipUp.chipOn {
   transform: translate(-50%, 0);
 }
 

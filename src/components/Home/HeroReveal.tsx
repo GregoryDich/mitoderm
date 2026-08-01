@@ -72,6 +72,28 @@ const HOTSPOTS: {
   { slug: 'exo-nad', left: 94.8, top: 65, width: 4.6, height: 24 },
 ];
 
+/** Portrait-poster hotspots (percent of the 853×1844 mobile composition,
+ *  measured off the rendered poster region by region). Same contract as
+ *  HOTSPOTS; the poster does not mirror in RTL. Tune with ?debugHotspots. */
+const PORTRAIT_HOTSPOTS: typeof HOTSPOTS = [
+  { slug: 'mitopen', left: 2, top: 33, width: 11, height: 19, chipAbove: true },
+  { slug: 'mitoscan', left: 13, top: 41, width: 31, height: 13 },
+  { slug: 'v-tech-serum', left: 44, top: 32, width: 18, height: 24, chipAbove: true },
+  { slug: 'exosignal-hair', left: 62, top: 38, width: 21, height: 14 },
+  { slug: 'exosignal-hair-spray', left: 83, top: 44, width: 17, height: 15 },
+  {
+    slug: null,
+    fallbackLabel: 'EXOCELL Mask',
+    left: 4,
+    top: 60,
+    width: 37,
+    height: 17,
+  },
+  { slug: 'exo-nad', left: 33, top: 60, width: 30, height: 20 },
+  { slug: 'v-tech-serum', left: 63, top: 62, width: 36, height: 18 },
+  { slug: 'exotech-gel', left: 12, top: 81, width: 43, height: 11, chipAbove: true },
+];
+
 const HeroReveal: FC<Props> = ({
   base,
   lit,
@@ -91,6 +113,12 @@ const HeroReveal: FC<Props> = ({
   const [canHover, setCanHover] = useState(true);
   const [active, setActive] = useState(false);
   const [debug, setDebug] = useState(false);
+  // Mobile poster: index of the PORTRAIT_HOTSPOTS entry under the finger
+  // (shows its chip), plus refs for the touch-driven spotlight.
+  const [touchSpot, setTouchSpot] = useState<number | null>(null);
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const mLitRef = useRef<HTMLDivElement>(null);
+  const touchFade = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     setDebug(window.location.search.includes('debugHotspots'));
@@ -166,6 +194,51 @@ const HeroReveal: FC<Props> = ({
 
   const bySlug = new Map(products.map((p) => [p.slug, p]));
 
+  /** Touch spotlight on the portrait poster: the lit twin is revealed in a
+   *  soft circle under the finger (desktop-hover analogue) and the hotspot
+   *  under the finger shows its name chip. Release fades back to idle. */
+  const onPosterTouch = (e: React.TouchEvent) => {
+    const box = mobileRef.current;
+    const litEl = mLitRef.current;
+    if (!box || !litEl) return;
+    const r = box.getBoundingClientRect();
+    const t = e.touches[0];
+    if (!t) return;
+    const x = t.clientX - r.left;
+    const y = t.clientY - r.top;
+    const g = `radial-gradient(circle 170px at ${x.toFixed(0)}px ${y.toFixed(
+      0
+    )}px, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 42%, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0) 100%)`;
+    litEl.style.setProperty('mask-image', g);
+    litEl.style.setProperty('-webkit-mask-image', g);
+    litEl.style.setProperty('mask-size', '100% 100%');
+    litEl.style.setProperty('-webkit-mask-size', '100% 100%');
+    litEl.classList.add(styles.mLitTouch);
+    if (touchFade.current) clearTimeout(touchFade.current);
+    const px = (x / r.width) * 100;
+    const py = (y / r.height) * 100;
+    const idx = PORTRAIT_HOTSPOTS.findIndex(
+      (h) =>
+        px >= h.left && px <= h.left + h.width &&
+        py >= h.top && py <= h.top + h.height
+    );
+    setTouchSpot(idx >= 0 ? idx : null);
+  };
+
+  const onPosterTouchEnd = () => {
+    touchFade.current = setTimeout(() => {
+      const litEl = mLitRef.current;
+      if (litEl) {
+        litEl.classList.remove(styles.mLitTouch);
+        litEl.style.removeProperty('mask-image');
+        litEl.style.removeProperty('-webkit-mask-image');
+        litEl.style.removeProperty('mask-size');
+        litEl.style.removeProperty('-webkit-mask-size');
+      }
+      setTouchSpot(null);
+    }, 1300);
+  };
+
   return (
     <>
     <section ref={sectionRef} className={styles.hero}>
@@ -173,16 +246,73 @@ const HeroReveal: FC<Props> = ({
           revealed under a slow, self-drifting spotlight (no hover on
           touch). Reduced-motion shows the lit poster fully lit. */}
       {basePortrait && litPortrait && (
-        <div className={styles.photoMobile} aria-hidden="true">
+        <div
+          ref={mobileRef}
+          className={styles.photoMobile}
+          onTouchStart={onPosterTouch}
+          onTouchMove={onPosterTouch}
+          onTouchEnd={onPosterTouchEnd}
+          onTouchCancel={onPosterTouchEnd}
+        >
           <div
             className={styles.mBase}
             style={{ backgroundImage: `url(${basePortrait})` }}
+            aria-hidden="true"
           />
           <div
+            ref={mLitRef}
             className={styles.mLit}
             style={{ backgroundImage: `url(${litPortrait})` }}
+            aria-hidden="true"
           />
-          <span className={styles.mScrim} />
+          <span className={styles.mScrim} aria-hidden="true" />
+
+          {/* Product hotspots on the portrait poster — the whole lineup is
+              tappable; the touched product lights up and names itself.
+              The layer mirrors the drawn image box (cover, anchored top),
+              so percent coordinates match the poster exactly. */}
+          <div className={styles.mHotspots}>
+            {PORTRAIT_HOTSPOTS.map((h, i) => {
+              const product = h.slug ? bySlug.get(h.slug) : undefined;
+              if (h.slug && !product) return null;
+              const label = product?.name ?? h.fallbackLabel ?? '';
+              const pos = {
+                left: `${h.left}%`,
+                top: `${h.top}%`,
+                width: `${h.width}%`,
+                height: `${h.height}%`,
+              };
+              const chip = (
+                <span
+                  className={`${styles.chip} ${h.chipAbove ? styles.chipUp : ''} ${
+                    touchSpot === i ? styles.chipOn : ''
+                  }`}
+                >
+                  {label}
+                </span>
+              );
+              return product ? (
+                <Link
+                  key={`m-${h.slug}-${i}`}
+                  href={`/products/${product.slug}`}
+                  aria-label={label}
+                  className={`${styles.hotspot} ${debug ? styles.debug : ''}`}
+                  style={pos}
+                >
+                  {chip}
+                </Link>
+              ) : (
+                <span
+                  key={`mx-${i}`}
+                  className={`${styles.hotspot} ${debug ? styles.debug : ''}`}
+                  style={pos}
+                  aria-hidden="true"
+                >
+                  {chip}
+                </span>
+              );
+            })}
+          </div>
         </div>
       )}
 
