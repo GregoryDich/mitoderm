@@ -1324,16 +1324,16 @@
           "transition": "cut",
           "camera": "top-down flat lay, static",
           "keyframe": "edit",
-          "visual": "V-Tech serum bottle flat lay with SPF cream, real packaging",
-          "editPrompt": "this exact V-Tech product flat-lay on warm beige linen next to a minimalist white SPF cream tube, morning window light, clean skincare-routine aesthetic, nothing else in frame, 9:16",
+          "visual": "V-Tech Serum and V-Tech Gel Mask flat lay, real packaging",
+          "editPrompt": "this exact V-Tech product set flat-lay on warm beige linen, morning window light, clean skincare-routine aesthetic, nothing else in frame, 9:16",
           "onScreen": {
-            "ru": "Курс 4 недели + SPF утром",
-            "en": "4-week course + morning SPF",
-            "he": "קורס 4 שבועות + SPF"
+            "ru": "Курс 4 недели: сыворотка + маска",
+            "en": "4-week course: serum + mask",
+            "he": "קורס 4 שבועות: סרום + מסכה"
           },
           "vo": {
-            "ru": "Поэтому курс — минимум четыре недели. И утром SPF, обязательно.",
-            "en": "So the course is at least four weeks. And SPF every morning."
+            "ru": "Поэтому курс — минимум четыре недели. Сыворотка работает в паре с гель-маской: один плюс один равно три.",
+            "en": "So the course is at least four weeks. The serum works paired with the gel mask: one plus one equals three."
           }
         },
         {
@@ -1369,7 +1369,7 @@
       "market": "IL (русскоязычные косметологи)",
       "evidence": "src/data/trends/tiktok-2026-08-01.json + docs/trends-report-2026-08-01.md — контейнер honest-crisis-explainer: @yapobeauty 1.6M plays / 95k likes / 15.6k fans = x102.6 outlier, 15 434 сохранения; арка «правда → наука → ответ на возражение → протокол → продукт последним» перенесена в B2B: возражение клиентки вместо кризиса кожи",
       "confidence": 0.75,
-      "adversarial": "Риск 1: B2B-аудитория уже, чем у победителя (consumer) — компенсация: боль «клиент требует мгновенный эффект» универсальна для каждого косметолога, сейв-механика «сохрани и отправь клиентке» повторяет 15.4k сохранений победителя. Риск 2: юмор про клиенток не должен звучать высокомерно — тон «мы с тобой это проходили», не насмешка. Риск 3: контейнер держится на презентере — s2/s6 в идеале съёмка живого человека (гибрид), фолбэк — character-кадры без липсинка только как драфт.",
+      "adversarial": "Риск 1: B2B-аудитория уже, чем у победителя (consumer) — компенсация: боль «клиент требует мгновенный эффект» универсальна для каждого косметолога, сейв-механика «сохрани и отправь клиентке» повторяет 15.4k сохранений победителя. Риск 2: юмор про клиенток не должен звучать высокомерно — тон «мы с тобой это проходили», не насмешка. Риск 3: контейнер держится на презентере — s2/s6 в идеале съёмка живого человека (гибрид), фолбэк — character-кадры без липсинка только как драфт. Риск 4 (синхронизация с линейкой, правка владельца 01.08): SPF удалён — в линейке Mitoderm его нет, сторонние продукты не рекламируем; протокольная сцена продаёт наш дуэт 1+1=3.",
       "hook": {
         "ru": "Клиентка на 3-й день: «Где эффект?»",
         "en": "Client on day 3: 'Where's the effect?'",
@@ -1511,7 +1511,7 @@
             "he": "יום 7 · יום 14 · יום 21"
           },
           "vo": {
-            "ru": "Скрипт для клиентки: неделя — гидратация. Две — ровнее тон. Три — плотность. Показываем фото «до» — и она ваша навсегда.",
+            "ru": "Скрипт для клиентки: первая неделя — гидратация и заживление. Две — ровнее тон. Три — плотность. Показываем фото «до» — и она ваша навсегда.",
             "en": "The client script: week one — hydration. Week two — evener tone. Week three — density. Show her the 'before' photo — and she's yours forever."
           },
           "whyFromWinner": "бит состава/протокола победителя → наш таймлайн-скрипт; «фото до — и она ваша навсегда» — боль/мечта косметолога про удержание",
@@ -1533,18 +1533,18 @@
           "transition": "cut",
           "camera": "top-down flat lay, static",
           "keyframe": "edit",
-          "visual": "V-Tech serum professional flat lay, real packaging",
-          "editPrompt": "this exact V-Tech product flat-lay on a clean clinic tray with white gauze and a professional appointment card, cool daylight, sterile premium clinic aesthetic, nothing else in frame, 9:16",
+          "visual": "V-Tech Serum ampoule and V-Tech Gel Mask professional flat lay, real packaging",
+          "editPrompt": "this exact V-Tech product set arranged as a professional flat-lay on a clean clinic tray with white gauze and a professional appointment card, cool daylight, sterile premium clinic aesthetic, nothing else in frame, 9:16",
           "onScreen": {
-            "ru": "Протокол: курс 4 недели + SPF",
-            "en": "Protocol: 4-week course + SPF",
-            "he": "פרוטוקול: 4 שבועות + SPF"
+            "ru": "Протокол 1+1=3: сыворотка + маска",
+            "en": "Protocol 1+1=3: serum + mask",
+            "he": "פרוטוקול 1+1=3: סרום + מסכה"
           },
           "vo": {
-            "ru": "Протокол: курс четыре недели, домашний уход, утром SPF. И клиентка возвращается не с претензией, а на следующий курс.",
-            "en": "Protocol: a four-week course, home care, morning SPF. And the client comes back for the next course, not with a complaint."
+            "ru": "Протокол: сыворотка плюс гель-маска — наше «один плюс один равно три». Курс четыре недели. И клиентка возвращается не с претензией, а на следующий курс.",
+            "en": "The protocol: serum plus gel mask — our 'one plus one equals three'. A four-week course. And the client comes back for the next course, not with a complaint."
           },
-          "whyFromWinner": "бит протокола («каждый день + SPF») перенесён дословно, добавлен B2B-смысл: протокол = возвращаемость"
+          "whyFromWinner": "бит протокола победителя («каждый день + SPF») перенесён на НАШ протокол 1+1=3 (V-Tech Serum + Gel Mask из продуктовой базы) — без рекламы сторонних продуктов; B2B-смысл: протокол = возвращаемость + апсейл маски"
         },
         {
           "id": "s7",
@@ -1562,7 +1562,7 @@
             "he": "V-Tech · לקליניקה · קישור בביו"
           },
           "vo": {
-            "ru": "V-Tech — экзосомы и PDRN для профессионалов. Ссылка в шапке.",
+            "ru": "V-Tech — синтетические экзосомы и два процента PDRN для профессионалов. Ссылка в шапке.",
             "en": "V-Tech — exosomes and PDRN for professionals. Link in bio."
           },
           "whyFromWinner": "у победителя продукт и «артикул в описании» строго в конце — переносим точно"
