@@ -36,6 +36,7 @@ const InterestDrawer = dynamic(
 import { InterestListProvider } from '@/components/InterestList/InterestListProvider';
 import { RecentlyViewedProvider } from '@/components/RecentlyViewed/RecentlyViewedProvider';
 import { CatalogIndexProvider } from '@/components/Catalog/CatalogIndexProvider';
+import CallbackModal from '@/components/Shared/CallbackModal/CallbackModal';
 import { getCatalogItems } from '@/products';
 import type { LocaleType } from '@/types';
 import PromoBar from '@/components/Layout/PromoBar/PromoBar';
@@ -229,6 +230,7 @@ export default async function RootLayout({
                 position:absolute (so #main collapses to 0 height) —
                 which caused the footer-over-hero overlap. */}
             <div id="main">{children}</div>
+            <CallbackModal />
             <ScrollToTop />
             <A11yWidget />
             <InterestDrawer />

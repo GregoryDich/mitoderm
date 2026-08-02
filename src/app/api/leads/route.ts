@@ -32,6 +32,10 @@ const RELAXED_SOURCES: Record<string, { defaultMessage: string }> = {
   'bio-spicules-waitlist': {
     defaultMessage: 'Notify me when the Bio-Spicules line launches.',
   },
+  // Compact popup — name/phone/profession; message is composed client-side.
+  'callback-modal': {
+    defaultMessage: 'Callback request from the popup form.',
+  },
 };
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

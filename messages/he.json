@@ -1232,5 +1232,31 @@
     "ch5Title": "מה הכיסא מראה",
     "ch6Kicker": "06 — הצטרף",
     "ch6Title": "לא תעשה זאת לבד"
+  },
+  "callbackModal": {
+    "kicker": "פנייה מהירה",
+    "title": "הזמינו שיחה",
+    "subtitle": "ארבעה שדות — נחזור אליכם עם מחיר ופרוטוקול.",
+    "name": "שם",
+    "profession": "מקצוע",
+    "profession_cosmetologist": "קוסמטיקאי/ת",
+    "profession_doctor": "רופא/ה",
+    "profession_clinic": "קליניקה",
+    "phone": "טלפון",
+    "email": "אימייל",
+    "agree": "אני מאשר/ת יצירת קשר לגבי מוצרי מיטודרם",
+    "submit": "הזמינו שיחה",
+    "sending": "שולח…",
+    "note": "לפניות מקצועיות בלבד. הפרטים משמשים אך ורק למענה.",
+    "successTitle": "הבקשה התקבלה!",
+    "successText": "המומחה שלנו ייצור קשר בקרוב עם מחיר ופרוטוקול.",
+    "successClose": "סיום",
+    "close": "סגירה",
+    "errorRequired": "נא למלא שם וטלפון.",
+    "errorEmail": "נא לבדוק את כתובת האימייל.",
+    "errorAgree": "נא לאשר את תיבת ההסכמה.",
+    "errorServer": "משהו השתבש — נסו שוב.",
+    "leadMessage": "בקשת שיחה מהטופס הקופץ",
+    "openButton": "הזמינו שיחה"
   }
 }

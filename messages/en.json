@@ -1232,5 +1232,31 @@
     "ch5Title": "What the chair shows",
     "ch6Kicker": "06 — Join the table",
     "ch6Title": "You won’t do it alone"
+  },
+  "callbackModal": {
+    "kicker": "QUICK REQUEST",
+    "title": "Request a callback",
+    "subtitle": "Four fields — we come back with the price list and protocol.",
+    "name": "Name",
+    "profession": "Profession",
+    "profession_cosmetologist": "Cosmetologist",
+    "profession_doctor": "Doctor",
+    "profession_clinic": "Clinic",
+    "phone": "Phone",
+    "email": "Email",
+    "agree": "I agree to be contacted about Mitoderm products",
+    "submit": "Request a callback",
+    "sending": "Sending…",
+    "note": "Professional enquiries only. Your details are used solely to reply.",
+    "successTitle": "Request received!",
+    "successText": "Our specialist will contact you shortly with the price list and protocol.",
+    "successClose": "Done",
+    "close": "Close",
+    "errorRequired": "Please fill in your name and phone.",
+    "errorEmail": "Please check the email address.",
+    "errorAgree": "Please confirm the consent checkbox.",
+    "errorServer": "Something went wrong — please try again.",
+    "leadMessage": "Callback request from the popup form",
+    "openButton": "Request a callback"
   }
 }

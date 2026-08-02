@@ -23,6 +23,7 @@ import MethodStrip from '@/components/Home/MethodStrip';
 import CertStrip from '@/components/Home/CertStrip';
 import EmailCapture from '@/components/Home/EmailCapture';
 import HeroReveal from '@/components/Home/HeroReveal';
+import CallbackButton from '@/components/Shared/CallbackModal/CallbackButton';
 import TrustedByStrip from '@/components/Product/TrustedByStrip';
 import type { SocialPost } from '@/lib/social-store';
 import type { PressItem } from '@/lib/press-store';
@@ -220,6 +221,7 @@ const HomePage: FC<Props> = ({
             placeholder={t('emailPlaceholder')}
             cta={t('ctaBandButton')}
           />
+          <CallbackButton />
         </section>
         </Reveal>
       </main>

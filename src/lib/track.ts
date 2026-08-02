@@ -4,6 +4,7 @@ type GtagWindow = Window & {
 
 type EventName =
   | 'cta_click'
+  | 'callback_modal_open'
   | 'lead_submit'
   | 'lead_success'
   | 'catalog_filter'

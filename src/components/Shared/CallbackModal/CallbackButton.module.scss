@@ -1,0 +1,40 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 40px;
+  border: 1px solid rgba(223, 186, 116, 0.5);
+  background: rgba(223, 186, 116, 0.07);
+  color: #e6cf9a;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease,
+    transform 0.16s ease;
+
+  &:hover {
+    background: #dfba74;
+    color: #0a0a0b;
+    transform: translateY(-1px);
+  }
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: cbPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes cbPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot { animation: none; }
+}

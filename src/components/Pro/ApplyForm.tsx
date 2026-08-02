@@ -4,6 +4,7 @@ import { FC, FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
 import PageHeader from '@/components/Shared/PageHeader/PageHeader';
+import CallbackButton from '@/components/Shared/CallbackModal/CallbackButton';
 import styles from './ApplyForm.module.scss';
 
 const ApplyForm: FC = () => {
@@ -71,6 +72,10 @@ const ApplyForm: FC = () => {
         lead={t('subtitle')}
       />
       <main className={styles.container}>
+        {/* Compact-popup escape hatch before the long application. */}
+        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <CallbackButton />
+        </div>
         {/* Membership perks — WIIFM before any form field. */}
         <ul className={styles.perks} aria-label={t('perksTitle')}>
           {(t.raw('perks') as string[]).map((p) => (
