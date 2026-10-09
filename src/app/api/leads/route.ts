@@ -95,9 +95,10 @@ export async function POST(req: Request) {
   const email = clip(body.email, 200);
   const phone = clip(body.phone, 40);
   const clinic = clip(body.clinic, 160);
-  // For waitlist sources we accept an empty message and substitute the
-  // default — the visitor opted in by clicking, not by writing copy.
-  const message = clip(body.message, 4000) || (relaxed?.defaultMessage ?? '');
+  // For relaxed sources we accept an empty message and store the default
+  // instead — the visitor opted in by clicking, not by writing copy.
+  const typedMessage = clip(body.message, 4000);
+  const message = typedMessage || (relaxed?.defaultMessage ?? '');
 
   const errors: Record<string, string> = {};
   if (!relaxed?.nameOptional && !name) errors.name = 'required';
@@ -109,7 +110,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
-  const classification = classifyLead({ message, clinic, email });
+  const locale: 'en' | 'ru' | 'he' =
+    body.locale === 'ru' || body.locale === 'he' ? body.locale : 'en';
+
+  // Classify only what the visitor typed — never the English placeholder.
+  // With no comment, the page language beats a clinic name (often a Latin
+  // brand) as the language signal shown in admin.
+  const signals = classifyLead({ message: typedMessage, clinic, email });
+  const classification = typedMessage ? signals : { ...signals, lang: locale };
 
   // Capture UTM + landing attribution from the client body, falling
   // back to the Referer header for landing when the client didn't
@@ -126,9 +134,6 @@ export async function POST(req: Request) {
     referrer: clip(req.headers.get('referer'), 200) || undefined,
   };
   const hasUtm = Object.values(utm).some(Boolean);
-
-  const locale: 'en' | 'ru' | 'he' =
-    body.locale === 'ru' || body.locale === 'he' ? body.locale : 'en';
 
   // Best-effort local persistence for dev; safe to fail in serverless.
   // Production: replace with a real sink — DB, CRM, or an email transport

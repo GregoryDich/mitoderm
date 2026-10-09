@@ -144,7 +144,8 @@
 .optional {
   letter-spacing: 0.04em;
   text-transform: none;
-  color: rgba(245, 242, 240, 0.42);
+  /* 0.5 → ~4.9:1 on the form surface (WCAG 1.4.3 needs 4.5:1 at 12px). */
+  color: rgba(245, 242, 240, 0.5);
 }
 
 /* Disclosure for the optional comment field. */
