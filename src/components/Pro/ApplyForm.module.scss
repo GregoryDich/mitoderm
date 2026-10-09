@@ -74,6 +74,88 @@
   grid-column: 1 / -1;
 }
 
+.quick {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ---- optional details (native <details>: keyboard + SR built in) ---- */
+.more {
+  margin-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.moreSummary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(245, 242, 240, 0.75);
+  transition: color 0.15s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    color: #f5f2f0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(223, 186, 116, 0.7);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+}
+
+.moreIcon {
+  position: relative;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 186, 116, 0.55);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 9px;
+    height: 1.5px;
+    background: #dfba74;
+    transition: transform 0.2s ease;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.more[open] .moreIcon::after {
+  transform: rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moreIcon::before,
+  .moreIcon::after {
+    transition: none;
+  }
+}
+
+.optional {
+  color: rgba(245, 242, 240, 0.45);
+}
+
+.moreGrid {
+  margin-top: 14px;
+}
+
 .label {
   font-size: 12px;
   letter-spacing: 0.04em;

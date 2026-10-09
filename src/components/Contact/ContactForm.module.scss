@@ -141,6 +141,51 @@
   font-family: var(--font-Rubik);
 }
 
+.optional {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(245, 242, 240, 0.42);
+}
+
+/* Disclosure for the optional comment field. */
+.addMessage {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  background: none;
+  border: none;
+  color: rgba(245, 242, 240, 0.7);
+  font-family: var(--font-Rubik);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--txt);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 70%, transparent);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+}
+
+.addIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--accent);
+  font-size: 15px;
+  line-height: 1;
+}
+
 .inputError {
   border-color: #c46078;
 }

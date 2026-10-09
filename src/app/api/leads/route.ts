@@ -25,16 +25,25 @@ interface LeadBody {
   locale?: 'en' | 'ru' | 'he';
 }
 
-/** Sources whose default validation is relaxed (e.g. waitlists where
- *  email alone is enough). Add a new entry here to enable a fresh
- *  waitlist origin without a full route refactor. */
-const RELAXED_SOURCES: Record<string, { defaultMessage: string }> = {
+/** Sources whose default validation is relaxed: the message may be empty
+ *  (the default is stored instead), and with `nameOptional` the name may
+ *  be too (waitlists where email alone is enough). Add a new entry here to
+ *  enable a fresh origin without a full route refactor. */
+const RELAXED_SOURCES: Record<
+  string,
+  { defaultMessage: string; nameOptional?: boolean }
+> = {
   'bio-spicules-waitlist': {
     defaultMessage: 'Notify me when the Bio-Spicules line launches.',
+    nameOptional: true,
   },
   // Compact popup — name/phone/profession; message is composed client-side.
   'callback-modal': {
     defaultMessage: 'Callback request from the popup form.',
+  },
+  // Main contact form — the comment field is optional.
+  'contact-form': {
+    defaultMessage: 'Contact request from the website form (no comment).',
   },
 };
 
@@ -73,7 +82,14 @@ export async function POST(req: Request) {
   }
 
   const source = clip(body.source, 80);
-  const relaxed = source ? RELAXED_SOURCES[source] : undefined;
+  // Coming-soon line pages post `${slug}-waitlist`; any of them is an
+  // email-only opt-in, not just the one listed above.
+  const relaxed = source
+    ? RELAXED_SOURCES[source] ??
+      (/^[a-z0-9-]+-waitlist$/.test(source)
+        ? { defaultMessage: `Waitlist opt-in (${source}).`, nameOptional: true }
+        : undefined)
+    : undefined;
 
   const name = clip(body.name, 120);
   const email = clip(body.email, 200);
@@ -84,7 +100,7 @@ export async function POST(req: Request) {
   const message = clip(body.message, 4000) || (relaxed?.defaultMessage ?? '');
 
   const errors: Record<string, string> = {};
-  if (!relaxed && !name) errors.name = 'required';
+  if (!relaxed?.nameOptional && !name) errors.name = 'required';
   if (!email) errors.email = 'required';
   else if (!emailRe.test(email)) errors.email = 'invalid';
   if (!message) errors.message = 'required';

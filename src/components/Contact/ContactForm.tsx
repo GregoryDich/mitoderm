@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useEffect, useRef, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Footer from '@/components/Layout/Footer/Footer';
 import { track } from '@/lib/track';
@@ -40,6 +40,15 @@ const ContactForm: FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  // The comment is optional and folded away so the form reads as four
+  // short fields; opening it is one click.
+  const [showMessage, setShowMessage] = useState(false);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  // A server-side message error keeps the region open.
+  const messageOpen = showMessage || !!errors.message;
+  useEffect(() => {
+    if (showMessage) messageRef.current?.focus();
+  }, [showMessage]);
 
   const set = (k: keyof FormState) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -50,7 +59,6 @@ const ContactForm: FC = () => {
     if (!v.name.trim()) next.name = t('errorRequired');
     if (!v.email.trim()) next.email = t('errorRequired');
     else if (!emailRe.test(v.email)) next.email = t('errorEmail');
-    if (!v.message.trim()) next.message = t('errorRequired');
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -66,7 +74,7 @@ const ContactForm: FC = () => {
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ ...v, locale, utm }),
+        body: JSON.stringify({ ...v, source: 'contact-form', locale, utm }),
       });
       if (!res.ok) {
         const data = (await res.json().catch(() => ({}))) as {
@@ -198,21 +206,39 @@ const ContactForm: FC = () => {
               </label>
             </div>
 
-            <label className={styles.field}>
-              <span className={styles.label}>{t('message')}</span>
-              <textarea
-                rows={5}
-                className={`${styles.input} ${styles.textarea} ${
-                  errors.message ? styles.inputError : ''
-                }`}
-                value={v.message}
-                onChange={set('message')}
-                aria-invalid={!!errors.message}
-              />
-              {errors.message && (
-                <span className={styles.errMsg}>{errors.message}</span>
-              )}
-            </label>
+            <button
+              type="button"
+              className={styles.addMessage}
+              aria-expanded={messageOpen}
+              aria-controls="contact-message-region"
+              onClick={() => setShowMessage((o) => !o)}
+            >
+              <span className={styles.addIcon} aria-hidden="true">
+                {messageOpen ? '−' : '+'}
+              </span>
+              {t('addMessage')}
+            </button>
+            <div id="contact-message-region" hidden={!messageOpen}>
+              <label className={styles.field}>
+                <span className={styles.label}>
+                  {t('message')}{' '}
+                  <span className={styles.optional}>({t('optional')})</span>
+                </span>
+                <textarea
+                  ref={messageRef}
+                  rows={4}
+                  className={`${styles.input} ${styles.textarea} ${
+                    errors.message ? styles.inputError : ''
+                  }`}
+                  value={v.message}
+                  onChange={set('message')}
+                  aria-invalid={!!errors.message}
+                />
+                {errors.message && (
+                  <span className={styles.errMsg}>{errors.message}</span>
+                )}
+              </label>
+            </div>
 
             <button
               type="submit"

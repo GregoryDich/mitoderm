@@ -11,12 +11,6 @@ const ApplyForm: FC = () => {
   const t = useTranslations('apply');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // Pre-fill from the homepage email-capture (?email=…). Read on the
-  // client to avoid a useSearchParams Suspense boundary.
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get('email');
-    if (q) setEmail(q);
-  }, []);
   const [phone, setPhone] = useState('');
   const [clinic, setClinic] = useState('');
   const [license, setLicense] = useState('');
@@ -29,6 +23,22 @@ const ApplyForm: FC = () => {
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [moreOpen, setMoreOpen] = useState(false);
+
+  // Pre-fill from the homepage email-capture (?email=…) and from a
+  // partner's referral link (?ref=CODE), which also opens the optional
+  // section so the applicant sees the code was applied. Read on the
+  // client to avoid a useSearchParams Suspense boundary.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('email');
+    if (q) setEmail(q);
+    const ref = params.get('ref');
+    if (ref) {
+      setReferralCode(ref.slice(0, 80));
+      setMoreOpen(true);
+    }
+  }, []);
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -73,7 +83,7 @@ const ApplyForm: FC = () => {
       />
       <main className={styles.container}>
         {/* Compact-popup escape hatch before the long application. */}
-        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+        <div className={styles.quick}>
           <CallbackButton />
         </div>
         {/* Membership perks — WIIFM before any form field. */}
@@ -151,55 +161,71 @@ const ApplyForm: FC = () => {
                   className={styles.input}
                 />
               </label>
-              <label className={styles.field}>
-                <span className={styles.label}>{t('license')}</span>
-                <input
-                  type="text"
-                  value={license}
-                  onChange={(e) => setLicense(e.target.value)}
-                  className={styles.input}
-                />
-              </label>
-              <label className={styles.field}>
-                <span className={styles.label}>{t('city')}</span>
-                <input
-                  type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  className={styles.input}
-                />
-              </label>
-              <label className={`${styles.field} ${styles.wide}`}>
-                <span className={styles.label}>{t('instagram')}</span>
-                <input
-                  type="text"
-                  value={instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
-                  placeholder="@mitodermclinic"
-                  className={styles.input}
-                />
-              </label>
-              <label className={`${styles.field} ${styles.wide}`}>
-                <span className={styles.label}>{t('message')}</span>
-                <textarea
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value.slice(0, 2000))}
-                  className={styles.input}
-                  placeholder={t('messagePlaceholder')}
-                />
-              </label>
-              <label className={styles.field}>
-                <span className={styles.label}>{t('referralCode')}</span>
-                <input
-                  type="text"
-                  value={referralCode}
-                  onChange={(e) => setReferralCode(e.target.value.slice(0, 80))}
-                  className={styles.input}
-                  placeholder={t('referralCodePlaceholder')}
-                />
-              </label>
             </div>
+
+            {/* Everything beyond the four essentials is optional and folded
+                away — the form reads short; nothing is lost. */}
+            <details
+              className={styles.more}
+              open={moreOpen}
+              onToggle={(e) => setMoreOpen(e.currentTarget.open)}
+            >
+              <summary className={styles.moreSummary}>
+                <span className={styles.moreIcon} aria-hidden="true" />
+                {t('moreDetails')}{' '}
+                <span className={styles.optional}>({t('optional')})</span>
+              </summary>
+              <div className={`${styles.grid} ${styles.moreGrid}`}>
+                <label className={styles.field}>
+                  <span className={styles.label}>{t('license')}</span>
+                  <input
+                    type="text"
+                    value={license}
+                    onChange={(e) => setLicense(e.target.value)}
+                    className={styles.input}
+                  />
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.label}>{t('city')}</span>
+                  <input
+                    type="text"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    className={styles.input}
+                  />
+                </label>
+                <label className={`${styles.field} ${styles.wide}`}>
+                  <span className={styles.label}>{t('instagram')}</span>
+                  <input
+                    type="text"
+                    value={instagram}
+                    onChange={(e) => setInstagram(e.target.value)}
+                    placeholder="@mitodermclinic"
+                    className={styles.input}
+                  />
+                </label>
+                <label className={`${styles.field} ${styles.wide}`}>
+                  <span className={styles.label}>{t('message')}</span>
+                  <textarea
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value.slice(0, 2000))}
+                    className={styles.input}
+                    placeholder={t('messagePlaceholder')}
+                  />
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.label}>{t('referralCode')}</span>
+                  <input
+                    type="text"
+                    value={referralCode}
+                    onChange={(e) => setReferralCode(e.target.value.slice(0, 80))}
+                    className={styles.input}
+                    placeholder={t('referralCodePlaceholder')}
+                  />
+                </label>
+              </div>
+            </details>
             {err && <p className={styles.err}>{err}</p>}
             <button
               type="submit"

@@ -410,7 +410,9 @@
       "Listing in the specialist directory",
       "Marketing materials for your clients",
       "Priority support on WhatsApp"
-    ]
+    ],
+    "moreDetails": "More details",
+    "optional": "optional"
   },
   "pro": {
     "title": "Mitoderm /pro portal",
@@ -1165,7 +1167,9 @@
     "errorRequired": "This field is required",
     "errorEmail": "Please enter a valid email",
     "disclaimer": "For professional inquiries only. Your details are used solely to respond to your request.",
-    "errorServer": "Something went wrong. Please try again or email us directly."
+    "errorServer": "Something went wrong. Please try again or email us directly.",
+    "addMessage": "Add a comment",
+    "optional": "optional"
   },
   "lines": {
     "eyebrow": "The Collection",
